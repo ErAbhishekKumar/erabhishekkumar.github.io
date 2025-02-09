@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Rank Checker</title>
+    <!-- Content Security Policy (CSP) to allow inline scripts and external scripts from cdnjs -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+</head>
+<body>
+    <!-- Buttons for different branches -->
+    <button class="branchButton" data-branch="civil">5th Civil (2021-25)</button>
+    <button class="branchButton" data-branch="electrical">5th Electrical (2021-25)</button>
+
+    <!-- Civil form section (hidden initially) -->
+    <div id="civilFormSection" class="formSection" style="display: none;">
+        <h1>5th Sem. (2021-25) Rank Check - Civil</h1>
+        <h4>In All Your Civil Engg. Batchmates in Bihar Engineering University</h4>
+        <h2>Enter Registration Number</h2>
+        <form id="civilRegForm">
+            <label for="civil_reg_no">Registration Number:</label>
+            <input type="text" id="civil_reg_no" name="reg_no" required>
+            <button type="button" class="fetchResultButton" data-branch="civil">Show Result</button>
+        </form>
+        <div id="civilResultSection" style="display: none;">
+            <h3>Result:</h3>
+            <div id="civilResult"></div>
+        </div>
+    </div>
+
+    <!-- Electrical form section (hidden initially) -->
+    <div id="electricalFormSection" class="formSection" style="display: none;">
+        <h1>5th Sem. (2021-25) Rank Check - Electrical</h1>
+        <h4>In All Your Electrical Engg. Batchmates in Bihar Engineering University</h4>
+        <h2>Enter Registration Number</h2>
+        <form id="electricalRegForm">
+            <label for="electrical_reg_no">Registration Number:</label>
+            <input type="text" id="electrical_reg_no" name="reg_no" required>
+            <button type="button" class="fetchResultButton" data-branch="electrical">Show Result</button>
+        </form>
+        <div id="electricalResultSection" style="display: none;">
+            <h3>Result:</h3>
+            <div id="electricalResult"></div>
+        </div>
+    </div>
+
+    <script>
+        // File URLs for different branches
+        const fileUrls = {
+            civil: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/all_college_results.xlsx',
+            electrical: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/electrical_results.xlsx'
+        };
+
+        // Show the respective form section when a branch button is clicked
+        document.querySelectorAll('.branchButton').forEach(button => {
+            button.addEventListener('click', function() {
+                const branch = this.getAttribute('data-branch');
+                document.querySelectorAll('.formSection').forEach(section => section.style.display = 'none'); // Hide all sections
+                document.getElementById(`${branch}FormSection`).style.display = 'block'; // Show the clicked branch's form
+            });
+        });
+
+        // Fetch the Excel file for the selected branch
+        async function fetchExcelData(branch) {
+            const fileUrl = fileUrls[branch];
+            const response = await fetch(fileUrl);
+            const data = await response.arrayBuffer();
+            const workbook = XLSX.read(data, { type: 'array' });
+            const sheet = workbook.Sheets[workbook.SheetNames[0]]; // Assuming data is in the first sheet
+            const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+            return jsonData;
+        }
+
+        // Handle result fetching for each branch
+        document.querySelectorAll('.fetchResultButton').forEach(button => {
+            button.addEventListener('click', async function() {
+                const branch = this.getAttribute('data-branch');
+                const regNoInputId = `${branch}_reg_no`;
+                const resultSectionId = `${branch}ResultSection`;
+                const resultDivId = `${branch}Result`;
+
+                const regNo = document.getElementById(regNoInputId).value;
+
+                if (!regNo.trim()) {
+                    alert('Please enter a registration number.');
+                    return;
+                }
+
+                const data = await fetchExcelData(branch);
+                const studentData = data.slice(1); // Removing the first row (headers)
+
+                const student = studentData.find(row => row[0] == regNo);
+
+                if (student) {
+                    const name = student[1];
+                    const sgpa = student[2];
+
+                    const totalStudents = studentData.length;
+                    const rank = studentData.filter(row => row[2] >= sgpa).length;
+                    const sameSgpaCount = studentData.filter(row => row[2] == sgpa).length;
+
+                    document.getElementById(resultDivId).innerHTML = `
+                        <p>Name: ${name}</p>
+                        <p>Rank: ${rank} / ${totalStudents}</p>
+                        <p>SGPA: ${sgpa}</p>
+                        <p>Number of students with the same SGPA: ${sameSgpaCount}</p>
+                    `;
+                } else {
+                    document.getElementById(resultDivId).innerHTML = '<p>No student found with this Registration Number.</p>';
+                }
+
+                document.getElementById(resultSectionId).style.display = 'block'; // Show the result section
+            });
+        });
+    </script>
+</body>
+</html>

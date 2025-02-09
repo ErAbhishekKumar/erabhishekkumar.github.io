@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://sbteonline.bihar.gov.in https://sbte-api.anantdrishti.com;">
+    <title>SBTE Result(Unofficial)</title>
+    <script>
+        // Function to ensure only one checkbox is checked
+        function toggleCheckbox(selected) {
+            var checkboxes = document.getElementsByName("rollType");
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox !== selected) {
+                    checkbox.checked = false;
+                }
+            });
+        }
+
+        // Function to handle form submission
+        function submitForm() {
+            var rollNo = document.getElementById("rollNo").value;
+            var checkbox1 = document.getElementById("checkbox1");
+            var checkbox2 = document.getElementById("checkbox2");
+            var checkbox3 = document.getElementById("checkbox3");
+
+            if (rollNo.length === 12) {
+                var url = "https://sbte-api.anantdrishti.com/util/downloadResult?rollNumber=";
+                var rollPrefix = rollNo.slice(0, 9);  // First 9 digits (fixed part)
+                var openedTabs = [];  // Store opened tab references
+
+                // Function to handle PDF download
+                function handleDownload(tab, url) {
+                    setTimeout(function() {
+                        var currentUrl = tab.location.href;
+                        if (currentUrl === url || currentUrl.includes("pdf")) {
+                            // PDF downloaded, tab can be closed
+                            tab.close();
+                        }
+                    }, 5000); // Check after 5 seconds
+                }
+
+                if (checkbox1.checked) {
+                    // Roll No 001 to 060
+                    var rollLastThree = rollNo.slice(-3);
+                    if (parseInt(rollLastThree) >= 1 && parseInt(rollLastThree) <= 60) {
+                        for (let i = 1; i <= 60; i++) {
+                            let formattedRoll = rollPrefix + String(i).padStart(3, '0');
+                            let tab = window.open(url + formattedRoll, "_blank");
+                            if (tab) {
+                                openedTabs.push(tab);
+                                handleDownload(tab, url + formattedRoll); // Handle download and auto-close
+                            } else {
+                                alert("Popup blocked! Please enable popups.");
+                                break;
+                            }
+                        }
+                    } else {
+                        alert("Please enter a roll number between 001 and 060.");
+                    }
+                } else if (checkbox2.checked) {
+                    // Roll No 001 to 120
+                    var rollLastThree = rollNo.slice(-3);
+                    if (parseInt(rollLastThree) >= 1 && parseInt(rollLastThree) <= 120) {
+                        for (let i = 1; i <= 120; i++) {
+                            let formattedRoll = rollPrefix + String(i).padStart(3, '0');
+                            let tab = window.open(url + formattedRoll, "_blank");
+                            if (tab) {
+                                openedTabs.push(tab);
+                                handleDownload(tab, url + formattedRoll); // Handle download and auto-close
+                            } else {
+                                alert("Popup blocked! Please enable popups.");
+                                break;
+                            }
+                        }
+                    } else {
+                        alert("Please enter a roll number between 001 and 120.");
+                    }
+                } else if (checkbox3.checked) {
+                    // Single Student Roll No
+                    var tab = window.open(url + rollNo, "_blank");
+                    if (tab) {
+                        openedTabs.push(tab);
+                        handleDownload(tab, url + rollNo); // Handle download and auto-close
+                    } else {
+                        alert("Popup blocked! Please enable popups.");
+                    }
+                } else {
+                    alert("Please select one checkbox.");
+                }
+            } else {
+                alert("Please enter a valid 12-digit roll number.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>SBTE Result (Unofficial)</h1><br>
+    <div id="result1"></div> 
+
+
+
+    <script>
+
+        const apiUrl = "https://sbte-api.anantdrishti.com/util/resultNotice"; // Replace with your API endpoint
+
+
+
+        fetch(apiUrl)
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                // Display fetched data
+
+                const resultElement = document.getElementById("result1");
+
+                resultElement.textContent = JSON.stringify(data, null, 2); // Pretty-print JSON
+
+            })
+
+            .catch(error => {
+
+                console.error("Error fetching data:", error);
+
+            });
+
+    </script>
+
+    <label for="rollNo">Enter Roll Number:</label>
+    <input type="text" id="rollNo" maxlength="12" placeholder="Enter 12-digit roll number" required>
+    <br><br>
+
+    <label>
+        <input type="checkbox" id="checkbox1" name="rollType" onclick="toggleCheckbox(this)">
+        Roll No 001 to 060
+    </label><br>
+
+    <label>
+        <input type="checkbox" id="checkbox2" name="rollType" onclick="toggleCheckbox(this)">
+        Roll No 001 to 120
+    </label><br>
+
+    <label>
+        <input type="checkbox" id="checkbox3" name="rollType" onclick="toggleCheckbox(this)" checked>
+        Single Student Roll No
+    </label><br><br>
+
+    <button onclick="submitForm()">Submit</button>
+    <br>
+    <p>
+    <div id="result"></div> </p>
+
+
+
+    <script>
+
+        const apiUrl = "https://sbte-api.anantdrishti.com/util/notices"; // Replace with your API endpoint
+
+
+
+        fetch(apiUrl)
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                // Display fetched data
+
+                const resultElement = document.getElementById("result");
+
+                resultElement.textContent = JSON.stringify(data, null, 2); // Pretty-print JSON
+
+            })
+
+            .catch(error => {
+
+                console.error("Error fetching data:", error);
+
+            });
+
+    </script>
+
+    <!-- Footer Section -->
+    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 14px; color: #888; background-color: #fff; padding: 10px 0;">
+        <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
+        <p><small>This website is made for the purpose of downloading results easily.</small></p>
+    </footer>
+</body>
+</html>

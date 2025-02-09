@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        label { margin-right: 10px; }
+        select, button { margin: 10px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; vertical-align: middle; }
+        th { background-color: #f2f2f2; }
+        td.sgpa { white-space: nowrap; } /* Prevent wrapping in SGPA column */
+        #loading { display: none; margin-top: 20px; }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #f9f9f9;
+            color: #000;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: 100%; /* Position the tooltip below the text */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .sgpa-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .sgpa-tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #f9f9f9;
+            color: #000;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -100px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(10px);
+        }
+        .sgpa-tooltip:hover .tooltiptext,
+        .sgpa-tooltip:focus .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .exclamation {
+            color: red;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        #instructions-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        #instructions-popup.show {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+        #instructions-popup h2 {
+            margin-top: 0;
+        }
+        #instructions-popup p {
+            margin: 10px 0;
+        }
+        #instructions-popup button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #instructions-popup button:hover {
+            background-color: #0056b3;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        @media (max-width: 600px) {
+            body { margin: 10px; }
+            table { font-size: 12px; }
+            th, td { padding: 5px; }
+            select, button { width: 100%; margin: 5px 0; }
+            .tooltip .tooltiptext, .sgpa-tooltip .tooltiptext {
+                width: 150px;
+                margin-left: -75px;
+            }
+        }
+        @media print {
+            body * {
+                visibility: hidden; /* Hide everything */
+            }
+            #results-table, #results-table * {
+                visibility: visible; /* Show only the table */
+            }
+            #results-table {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Results Table</h1>
+
+    <label for="session">Session:</label>
+    <select id="session">
+        <!-- Options will be dynamically generated -->
+    </select>
+
+    <label for="branch">Branch:</label>
+    <select id="branch">
+        <option value="101">CE</option>
+        <option value="102">ME</option>
+        <option value="103">EE</option>
+        <option value="104">ECE</option>
+        <option value="105">CSE</option>
+        <option value="106">IT</option>
+        <option value="107">LT</option>
+        <option value="110">EEE</option>
+        <option value="111">IE</option>
+    </select>
+
+    <label for="semester">Semester:</label>
+    <select id="semester">
+        <option value="I">1st Sem</option>
+        <option value="II">2nd Sem</option>
+        <option value="III">3rd Sem</option>
+        <option value="IV">4th Sem</option>
+        <option value="V">5th Sem</option>
+        <option value="VI">6th Sem</option>
+        <option value="VII">7th Sem</option>
+        <option value="VIII">8th Sem</option>
+    </select>
+
+    <label for="college">College:</label>
+    <select id="college">
+        <option value="157">Government Engineering College, Sheikhpura</option>
+        <option value="107">MIT Muzaffarpur</option>
+        <option value="108">Bhagalpur College of Engineering</option>
+        <option value="109">Nalanda College of Engineering</option>
+        <option value="110">Gaya College of Engineering</option>
+        <option value="111">Darbhanga College of Engineering</option>
+        <option value="113">Motihari College Of Engineering</option>
+        <option value="117">Lok Nayak Jai Prakash Institute of Technology</option>
+        <option value="124">Sershah Engineering College, Sasaram</option>
+        <option value="125">Rashtrakavi Ramdhari Singh Dinkar College of Engineering</option>
+        <option value="126">Bakhtiyarpur College of Engineering</option>
+        <option value="127">Sitamarhi Institute of Technology</option>
+        <option value="128">B.P. Mandal College of Engineering</option>
+        <option value="129">Katihar Engineering College</option>
+        <option value="130">Supaul College of Engineering</option>
+        <option value="131">Purnea College of Engineering</option>
+        <option value="132">Saharsa College of Engineering</option>
+        <option value="133">Government Engineering College, Jamui</option>
+        <option value="134">Government Engineering College, Banka</option>
+        <option value="135">Government Engineering College, Vaishali</option>
+        <option value="141">Government Engineering College, Nawada</option>
+        <option value="142">Government Engineering College, Kishanganj</option>
+        <option value="144">Government Engineering College, Munger</option>
+        <option value="145">Government Engineering College, Sheohar</option>
+        <option value="146">Government Engineering College, West Champaran</option>
+        <option value="147">Government Engineering College, Aurangabad</option>
+        <option value="148">Government Engineering College, Kaimur</option>
+        <option value="149">Government Engineering College, Gopalganj</option>
+        <option value="150">Government Engineering College, Madhubani</option>
+        <option value="151">Government Engineering College, Siwan</option>
+        <option value="152">Government Engineering College, Jehanabad</option>
+        <option value="153">Government Engineering College, Arwal</option>
+        <option value="154">Government Engineering College, Khagaria</option>
+        <option value="155">Government Engineering College, Buxar</option>
+        <option value="156">Government Engineering College, Bhojpur</option>
+        <option value="158">Government Engineering College, Lakhisarai</option>
+        <option value="159">Government Engineering College, Samastipur</option>
+        <option value="165">Shri Phanishwar Nath Renu Engineering College</option>
+    </select>
+
+    <button id="fetch-results">Fetch Results</button>
+    <button id="instructions-button">Instructions</button>
+    <div id="loading">Fetching results, please wait...</div>
+
+    <div id="overlay"></div>
+    <div id="instructions-popup">
+        <h2>Instructions</h2>
+        <ul>
+            <li>This webpage allows you to fetch and display results for students from various colleges.</li>
+            <li>Select the appropriate session, branch, semester, and college, then click "Fetch Results" to retrieve the data.</li>
+            <li>While fetching results, ensure that you have a stable internet connection to avoid interruptions.</li>
+            <li>Use the sorting options to organize the results based on registration number, SGPA, or CGPA.</li>
+            <li>If a student has failed in any subject, a red exclamation mark (!) will appear in the SGPA column. Hovering over the exclamation mark will display the names of the failed subjects.</li>
+            <li>You can filter the table based on failed subjects after the results are fetched.</li>
+            <li>Clicking on a registration number will show links to the results for all semesters from 1st to 8th.</li>
+            <li>If you encounter any errors, try fetching the results again or check your network connection.</li>
+            <li>Contact me via Telegram: <a href="https://t.me/erabhishekkumar" target="_blank">https://t.me/erabhishekkumar</a></li>
+        </ul>
+        <button id="close-popup">Close</button>
+    </div>
+
+    <div id="results-table" style="display:none;">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Registration No</th>
+                    <th style="width: 30%;">Name</th>
+                    <th style="width: auto;"> <!-- Adjust width to fit content -->
+                        SGPA
+                        <select id="sort-options-sgpa" onchange="sortTable('sgpa')">
+                            <option value="reg-asc">Ascending Reg No</option>
+                            <option value="sgpa-desc">Descending SGPA</option>
+                            <option value="failed-students">Failed Students</option>
+                        </select>
+                    </th>
+                    <th style="width: 25%;">
+                        Cur. CGPA
+                        <select id="sort-options-cgpa" onchange="sortTable('cgpa')">
+                            <option value="reg-asc">Ascending Reg No</option>
+                            <option value="cgpa-desc">Descending CGPA</option>
+                        </select>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <button id="print-table" style="display:none;">Print Table</button>
+
+    <script>
+        let abortController = new AbortController();
+        let isFetching = false;
+        let failedSubjectsSet = new Set();
+        let regularFailures = 0;
+        let lateralFailures = 0;
+        const maxFailures = 6;
+        let userScrolled = false;
+
+        const baseUrls = generateBaseUrls();
+
+        function generateBaseUrls() {
+            const baseUrls = {
+                "2019": {
+                    "I": "https://results.akuexam.net/ResultsBTechBPharm1stSemPub2019.aspx?Sem=I&RegNo=",
+                    "II": "https://results.akuexam.net/ResultsBTechBPharm2ndSemPub2020.aspx?Sem=II&RegNo=",
+                    "III": "https://results.akuexam.net/ResultsBTechBPharm3rdSemPub2020.aspx?Sem=III&RegNo=",
+                    "IV": "https://results.akuexam.net/ResultsBTechBPharm4thSemPub2021.aspx?Sem=IV&RegNo=",
+                    "V": "https://results.akuexam.net/ResultsBTechBPharm5thSemPub2021.aspx?Sem=V&RegNo=",
+                    "VI": "https://results.akuexam.net/ResultsBTechBPharm6thSemPub2022.aspx?Sem=VI&RegNo=",
+                    "VII": "http://results.beup.ac.in/ResultsBTech7thSem2022_B2019Pub.aspx?Sem=VII&RegNo=",
+                    "VIII": "http://results.beup.ac.in/ResultsBTech8thSem2023Pub.aspx?Sem=VIII&RegNo="
+                },
+                "2020": {
+                    "I": "https://results.akuexam.net/ResultsBTechBPharm1stSemPub2020.aspx?Sem=I&RegNo=",
+                    "II": "https://results.akuexam.net/ResultsBTechBPharm2ndSemPub2021.aspx?Sem=II&RegNo=",
+                    "III": "https://results.akuexam.net/ResultsBTechBPharm3rdSemPub2021.aspx?Sem=III&RegNo=",
+                    "IV": "https://results.akuexam.net/ResultsBTechBPharm4thSemPub2022.aspx?Sem=IV&RegNo=",
+                    "V": "http://results.beup.ac.in/ResultsBTech5thSem2022_B2020Pub.aspx?Sem=V&RegNo=",
+                    "VI": "http://results.beup.ac.in/ResultsBTech6thSem2023_B2020Pub.aspx?Sem=VI&RegNo=",
+                    "VII": "http://results.beup.ac.in/ResultsBTech7thSem2023_B2020Pub.aspx?Sem=VII&RegNo=",
+                    "VIII": "http://results.beup.ac.in/ResultsBTech8thSem2024Pub.aspx?Sem=VIII&RegNo="
+                },
+                "2021": {
+                    "I": "https://results.akuexam.net/ResultsBTechBPharm1stSemPub2021.aspx?Sem=I&RegNo=",
+                    "II": "https://results.akuexam.net/ResultsBTechBPharm2ndSemPub2022.aspx?Sem=II&RegNo=",
+                    "III": "https://results.beup.ac.in/ResultsBTech3rdSem2022_B2021Pub.aspx?Sem=III&RegNo=",
+                    "IV": "https://results.beup.ac.in/ResultsBTech4thSem2023_B2021Pub.aspx?Sem=IV&RegNo=",
+                    "V": "https://results.beup.ac.in/ResultsBTech5thSem2023_B2021Pub.aspx?Sem=V&RegNo=",
+                    "VI": "https://results.beup.ac.in/ResultsBTech6thSem2024_B2021Pub.aspx?Sem=VI&RegNo=",
+                    "VII": "https://results.beup.ac.in/ResultsBTech7thSem2024_B2021Pub.aspx?Sem=VII&RegNo=",
+                    "VIII": "https://results.beup.ac.in/ResultsBTech8thSem2025Pub.aspx?Sem=VIII&RegNo="
+                },
+                "2022": {
+        "I": "https://results.beup.ac.in/ResultsBTech1stSem2022_B2022Pub.aspx?Sem=I&RegNo=",
+        "II": "https://results.beup.ac.in/ResultsBTech2ndSem2023_B2022Pub.aspx?Sem=II&RegNo=",
+        "III": "https://results.beup.ac.in/ResultsBTech3rdSem2023_B2022Pub.aspx?Sem=III&RegNo=",
+        "IV": "https://results.beup.ac.in/ResultsBTech4thSem2024_B2022Pub.aspx?Sem=IV&RegNo=",
+        "V": "https://results.beup.ac.in/ResultsBTech5thSem2024_B2022Pub.aspx?Sem=V&RegNo=",
+        "VI": "https://results.beup.ac.in/ResultsBTech6thSem2025_B2022Pub.aspx?Sem=VI&RegNo=",
+        "VII": "https://results.beup.ac.in/ResultsBTech7thSem2025_B2022Pub.aspx?Sem=VII&RegNo=",
+        "VIII": "https://results.beup.ac.in/ResultsBTech8thSem2026Pub.aspx?Sem=VIII&RegNo="
+    },
+                "2023": {
+                    "I": "https://results.beup.ac.in/ResultsBTech1stSem2023_B2023Pub.aspx?Sem=I&RegNo=",
+                    "II": "https://results.beup.ac.in/ResultsBTech2ndSem2024_B2023Pub.aspx?Sem=II&RegNo=",
+                    "III": "https://results.beup.ac.in/ResultsBTech3rdSem2024_B2023Pub.aspx?Sem=III&RegNo=",
+                    "IV": "https://results.beup.ac.in/ResultsBTech4thSem2025_B2023Pub.aspx?Sem=IV&RegNo=",
+                    "V": "https://results.beup.ac.in/ResultsBTech5thSem2025_B2023Pub.aspx?Sem=V&RegNo=",
+                    "VI": "https://results.beup.ac.in/ResultsBTech6thSem2026_B2023Pub.aspx?Sem=VI&RegNo=",
+                    "VII": "https://results.beup.ac.in/ResultsBTech7thSem2026_B2023Pub.aspx?Sem=VII&RegNo=",
+                    "VIII": "https://results.beup.ac.in/ResultsBTech8thSem2027Pub.aspx?Sem=VIII&RegNo="
+                },
+                "2024": {
+                    "I": "https://results.beup.ac.in/ResultsBTech1stSem2024_B2024Pub.aspx?Sem=I&RegNo=",
+                    "II": "https://results.beup.ac.in/ResultsBTech2ndSem2025_B2024Pub.aspx?Sem=II&RegNo=",
+                    "III": "https://results.beup.ac.in/ResultsBTech3rdSem2025_B2024Pub.aspx?Sem=III&RegNo=",
+                    "IV": "https://results.beup.ac.in/ResultsBTech4thSem2026_B2024Pub.aspx?Sem=IV&RegNo=",
+                    "V": "https://results.beup.ac.in/ResultsBTech5thSem2026_B2024Pub.aspx?Sem=V&RegNo=",
+                    "VI": "https://results.beup.ac.in/ResultsBTech6thSem2027_B2024Pub.aspx?Sem=VI&RegNo=",
+                    "VII": "https://results.beup.ac.in/ResultsBTech7thSem2027_B2024Pub.aspx?Sem=VII&RegNo=",
+                    "VIII": "https://results.beup.ac.in/ResultsBTech8thSem2028Pub.aspx?Sem=VIII&RegNo="
+                },
+                "2025": {
+                    "I": "https://results.beup.ac.in/ResultsBTech1stSem2025_B2025Pub.aspx?Sem=I&RegNo=",
+                    "II": "https://results.beup.ac.in/ResultsBTech2ndSem2026_B2025Pub.aspx?Sem=II&RegNo=",
+                    "III": "https://results.beup.ac.in/ResultsBTech3rdSem2026_B2025Pub.aspx?Sem=III&RegNo=",
+                    "IV": "https://results.beup.ac.in/ResultsBTech4thSem2027_B2025Pub.aspx?Sem=IV&RegNo=",
+                    "V": "https://results.beup.ac.in/ResultsBTech5thSem2027_B2025Pub.aspx?Sem=V&RegNo=",
+                    "VI": "https://results.beup.ac.in/ResultsBTech6thSem2028_B2025Pub.aspx?Sem=VI&RegNo=",
+                    "VII": "https://results.beup.ac.in/ResultsBTech7thSem2028_B2025Pub.aspx?Sem=VII&RegNo=",
+                    "VIII": "https://results.beup.ac.in/ResultsBTech8thSem2029Pub.aspx?Sem=VIII&RegNo="
+                }
+            };
+
+            const startYear = 2026;
+            const endYear = 2030; // Adjust this to the desired end year
+            const semesters = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+            const baseUrlPatterns = {
+                "I": "https://results.beup.ac.in/ResultsBTech1stSem{year}_B{startYear}Pub.aspx?Sem=I&RegNo=",
+                "II": "https://results.beup.ac.in/ResultsBTech2ndSem{year}_B{startYear}Pub.aspx?Sem=II&RegNo=",
+                "III": "https://results.beup.ac.in/ResultsBTech3rdSem{year}_B{startYear}Pub.aspx?Sem=III&RegNo=",
+                "IV": "https://results.beup.ac.in/ResultsBTech4thSem{year}_B{startYear}Pub.aspx?Sem=IV&RegNo=",
+                "V": "https://results.beup.ac.in/ResultsBTech5thSem{year}_B{startYear}Pub.aspx?Sem=V&RegNo=",
+                "VI": "https://results.beup.ac.in/ResultsBTech6thSem{year}_B{startYear}Pub.aspx?Sem=VI&RegNo=",
+                "VII": "https://results.beup.ac.in/ResultsBTech7thSem{year}_B{startYear}Pub.aspx?Sem=VII&RegNo=",
+                "VIII": "https://results.beup.ac.in/ResultsBTech8thSem{year}Pub.aspx?Sem=VIII&RegNo="
+            };
+
+            for (let year = startYear; year <= endYear; year++) {
+                const session = `${year}-${year + 4}`;
+                baseUrls[session] = {};
+                semesters.forEach((sem, index) => {
+                    const semYear = year + Math.floor(index / 2);
+                    baseUrls[session][sem] = baseUrlPatterns[sem].replace("{year}", semYear).replace("{startYear}", year);
+                });
+            }
+
+            return baseUrls;
+        }
+
+        function resetTable() {
+            const tableBody = document.querySelector('#results-table tbody');
+            tableBody.innerHTML = ''; // Clear the table body
+            document.getElementById('results-table').style.display = 'none'; // Hide the table
+            document.getElementById('print-table').style.display = 'none'; // Hide the print button
+
+            // Reset SGPA sort options
+            const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
+            sortOptionsSgpa.innerHTML = `
+                <option value="reg-asc">Ascending Reg No</option>
+                <option value="sgpa-desc">Descending SGPA</option>
+                <option value="failed-students">Failed Students</option>
+            `;
+
+            // Clear the failed subjects set
+            failedSubjectsSet.clear();
+        }
+
+        function handleError(error) {
+            console.error(error);
+            const errorElement = document.getElementById('error');
+            if (errorElement) {
+                errorElement.textContent = error.message;
+            } else {
+                const errorDiv = document.createElement('div');
+                errorDiv.id = 'error';
+                errorDiv.textContent = error.message;
+                document.body.appendChild(errorDiv);
+            }
+        }
+
+        function handleAbortError(error) {
+            console.log('Fetch aborted');
+            const errorElement = document.getElementById('error');
+            if (errorElement) {
+                errorElement.textContent = 'Fetch aborted';
+            } else {
+                const errorDiv = document.createElement('div');
+                errorDiv.id = 'error';
+                errorDiv.textContent = 'Fetch aborted';
+                document.body.appendChild(errorDiv);
+            }
+        }
+
+        function displayLoadingMessage() {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.style.display = 'block';
+            } else {
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'loading';
+                loadingDiv.textContent = 'Loading...';
+                document.body.appendChild(loadingDiv);
+            }
+        }
+
+        function hideLoadingMessage() {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.style.display = 'none';
+            }
+        }
+
+        function abortFetch() {
+            abortController.abort(); // Abort any ongoing fetch
+            abortController = new AbortController(); // Create a new AbortController
+            isFetching = false; // Reset the fetching flag
+        }
+
+        function scrollToBottom() {
+            if (!userScrolled) {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY < document.body.scrollHeight - window.innerHeight) {
+                userScrolled = true;
+            } else {
+                userScrolled = false;
+            }
+        });
+
+        async function fetchResult(regNo, baseUrl, row) {
+            try {
+                const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
+                const data = await response.json();
+                const text = data.contents;
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+
+                let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
+                let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
+                let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+
+                if (baseUrl.includes('akuexam.net')) {
+                    nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
+                    sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
+                    cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+                }
+
+                const name = doc.querySelector(nameSelector)?.textContent.trim();
+                const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
+                const cgpa = cgpaSelector ? doc.querySelector(cgpaSelector)?.textContent.trim() : 'N/A';
+
+                if (!name || !sgpa) {
+                    throw new Error('Incomplete data');
+                }
+
+                let failedSubjects = [];
+                const tables = doc.querySelectorAll('#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
+                tables.forEach(table => {
+                    const rows = table.querySelectorAll('tr');
+                    rows.forEach(row => {
+                        const gradeCell = row.querySelector('td:nth-child(6)');
+                        if (gradeCell && gradeCell.textContent.trim() === 'F') {
+                            const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
+                            failedSubjects.push(subjectName);
+                            failedSubjectsSet.add(subjectName);
+                        }
+                    });
+                });
+
+                let sgpaContent = sgpa;
+                let sgpaTooltip = '';
+                if (failedSubjects.length > 0) {
+                    sgpaContent += ' <span class="exclamation">!</span>';
+                    sgpaTooltip = `<div class="sgpa-tooltip">${sgpa}<span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
+                }
+
+                row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
+            } catch (error) {
+                console.error(`Error fetching result for ${regNo}:`, error);
+                row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
+            }
+        }
+
+        document.getElementById('session').addEventListener('change', abortFetch);
+        document.getElementById('branch').addEventListener('change', abortFetch);
+        document.getElementById('semester').addEventListener('change', abortFetch);
+        document.getElementById('college').addEventListener('change', abortFetch);
+
+        document.getElementById('fetch-results').addEventListener('click', function() {
+            abortFetch();
+            fetchResults();
+        });
+
+        async function fetchResults() {
+            if (isFetching) return; // Prevent multiple fetches
+            isFetching = true;
+
+            resetTable();
+            displayLoadingMessage();
+            abortFetch();
+
+            const session = document.getElementById('session').value;
+            const branch = document.getElementById('branch').value;
+            const semester = document.getElementById('semester').value;
+            const college = document.getElementById('college').value;
+
+            const baseUrl = baseUrls[session][semester];
+            const tableBody = document.querySelector('#results-table tbody');
+            tableBody.innerHTML = ''; // Clear the table body before fetching new results
+
+            const fetchedRegNos = new Set(); // To track already fetched registration numbers
+
+            async function fetchStudents(entryType) {
+                let startSerial = entryType === '0' ? 1 : 901;
+                let endSerial = entryType === '0' ? 120 : 980;
+                let consecutiveFailures = 0; // Counter for consecutive failures
+
+                for (let i = startSerial; i <= endSerial; i++) {
+                    const serial = i.toString().padStart(3, '0');
+                    let regNo = `${session.slice(2)}${branch}${college}${serial}`;
+
+                    if (entryType === '9') {
+                        const firstTwoDigits = parseInt(session.slice(2, 4)) + 1;
+                        regNo = `${firstTwoDigits}${branch}${college}${serial}`;
+                    }
+
+                    if (fetchedRegNos.has(regNo)) {
+                        continue; // Skip if this registration number is already processed
+                    }
+
+                    fetchedRegNos.add(regNo); // Mark this registration number as processed
+
+                    try {
+                        // Add delay to prevent too many requests at once
+                        await new Promise(resolve => setTimeout(resolve, 500));
+
+                        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
+                        const data = await response.json();
+                        const text = data.contents;
+
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(text, 'text/html');
+
+                        let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
+                        let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
+                        let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+
+                        if (baseUrl.includes('akuexam.net')) {
+                            nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
+                            sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
+                            cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+                        }
+
+                        const name = doc.querySelector(nameSelector)?.textContent.trim();
+                        const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
+                        const cgpa = cgpaSelector ? doc.querySelector(cgpaSelector)?.textContent.trim() : 'N/A';
+
+                        if (!name || !sgpa) {
+                            consecutiveFailures++;
+                            if (consecutiveFailures >= maxFailures) {
+                                console.log(`Stopping fetch after ${maxFailures} consecutive failures for ${entryType === '0' ? 'regular' : 'lateral'} entries.`);
+                                break;
+                            }
+                            continue;
+                        }
+
+                        consecutiveFailures = 0; // Reset the counter on success
+
+                        let failedSubjects = [];
+                        const tables = doc.querySelectorAll('#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
+                        tables.forEach(table => {
+                            const rows = table.querySelectorAll('tr');
+                            rows.forEach(row => {
+                                const gradeCell = row.querySelector('td:nth-child(6)');
+                                if (gradeCell && gradeCell.textContent.trim() === 'F') {
+                                    const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
+                                    failedSubjects.push(subjectName);
+                                    failedSubjectsSet.add(subjectName);
+                                }
+                            });
+                        });
+
+                        let sgpaContent = sgpa;
+                        let sgpaTooltip = '';
+                        if (failedSubjects.length > 0) {
+                            sgpaContent += ' <span class="exclamation">!</span>';
+                            sgpaTooltip = `<div class="sgpa-tooltip">${sgpaContent}<span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
+                        }
+
+                        const row = document.createElement('tr');
+                        row.classList.add('fade-in'); // Add animation class
+                        row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
+                        tableBody.appendChild(row);
+
+                        // Display the table incrementally
+                        document.getElementById('results-table').style.display = 'block';
+                        document.getElementById('print-table').style.display = 'block'; // Show the print button
+
+                        // Scroll to bottom while fetching
+                        scrollToBottom();
+
+                    } catch (error) {
+                        if (error.name === 'AbortError') {
+                            console.log(`Fetch aborted for ${regNo}`);
+                            break;
+                        } else {
+                            console.error(`Error fetching result for ${regNo}:`, error);
+
+                            const row = document.createElement('tr');
+                            row.classList.add('fade-in'); // Add animation class
+                            row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
+                            tableBody.appendChild(row);
+                        }
+                    }
+                }
+            }
+
+            // Fetch regular students first
+            await fetchStudents('0');
+            await fetchStudents('1');
+
+            // If not 1st or 2nd semester, fetch lateral students after regular
+            if (semester !== 'I' && semester !== 'II') {
+                await fetchStudents('9');
+            }
+
+            hideLoadingMessage();
+            isFetching = false; // Reset the fetching flag
+
+            // Scroll to top once fetching is complete
+            scrollToTop();
+
+            // Add options for each unique failed subject to the SGPA sort dropdown
+            const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
+            failedSubjectsSet.forEach(subject => {
+                const option = document.createElement('option');
+                option.value = subject;
+                option.textContent = subject;
+                sortOptionsSgpa.appendChild(option);
+            });
+        }
+
+        function generateSemesterLinks(regNo, session, branch, college) {
+            const semesters = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+            return semesters.map(sem => `<a href="${baseUrls[session][sem] + regNo}" target="_blank">${sem} Sem</a>`).join('<br>');
+        }
+
+        function sortTable(column) {
+            const tableBody = document.querySelector('#results-table tbody');
+            const rows = Array.from(tableBody.rows);
+            const sortOption = document.getElementById(`sort-options-${column}`).value;
+
+            if (sortOption === 'reg-asc') {
+                rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
+                rows.sort((a, b) => {
+                    const regA = parseInt(a.cells[0].textContent);
+                    const regB = parseInt(b.cells[0].textContent);
+                    return regA - regB;
+                });
+            } else if (sortOption === 'sgpa-desc' && column === 'sgpa') {
+                rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
+                rows.sort((a, b) => {
+                    const sgpaA = parseFloat(a.cells[2].textContent) || 0;
+                    const sgpaB = parseFloat(b.cells[2].textContent) || 0;
+                    return sgpaB - sgpaA;
+                });
+            } else if (sortOption === 'cgpa-desc' && column === 'cgpa') {
+                rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
+                rows.sort((a, b) => {
+                    const cgpaA = parseFloat(a.cells[3].textContent) || 0;
+                    const cgpaB = parseFloat(b.cells[3].textContent) || 0;
+                    return cgpaB - cgpaA;
+                });
+            } else if (sortOption === 'failed-students' && column === 'sgpa') {
+                rows.forEach(row => {
+                    const sgpaCell = row.cells[2];
+                    const exclamationMark = sgpaCell.querySelector('.exclamation');
+                    if (exclamationMark) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                return;
+            } else if (failedSubjectsSet.has(sortOption) && column === 'sgpa') {
+                rows.forEach(row => {
+                    const sgpaCell = row.cells[2];
+                    const tooltipText = sgpaCell.querySelector('.tooltiptext');
+                    if (tooltipText && tooltipText.textContent.includes(sortOption)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                return;
+            }
+
+            tableBody.innerHTML = '';
+            rows.forEach(row => tableBody.appendChild(row));
+        }
+
+        // Add event listeners to dropdowns to abort fetch on change
+        document.getElementById('session').addEventListener('change', abortFetch);
+        document.getElementById('branch').addEventListener('change', abortFetch);
+        document.getElementById('semester').addEventListener('change', abortFetch);
+        document.getElementById('college').addEventListener('change', abortFetch);
+
+        document.getElementById('instructions-button').addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'block';
+            const popup = document.getElementById('instructions-popup');
+            popup.style.display = 'block';
+            setTimeout(() => popup.classList.add('show'), 10); // Add a slight delay to trigger the transition
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'none';
+            const popup = document.getElementById('instructions-popup');
+            popup.classList.remove('show');
+            setTimeout(() => popup.style.display = 'none', 500); // Wait for the transition to complete before hiding
+        });
+
+        document.getElementById('print-table').addEventListener('click', function() {
+            window.print();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sessionSelect = document.getElementById('session');
+            const currentYear = new Date().getFullYear();
+            const startYear = 2019;
+
+            for (let year = startYear; year <= currentYear; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = `${year}-${year + 4}`;
+                sessionSelect.appendChild(option);
+            }
+        });
+    </script>
+</body>
+</html>

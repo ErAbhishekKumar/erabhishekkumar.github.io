@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th Sem Results</title>
+    <style>
+        .hidden { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; position: relative; }
+        button { margin: 10px 0; }
+        a { color: blue; text-decoration: underline; cursor: pointer; }
+        select { margin-left: 5px; }
+    </style>
+    <style>
+    @media print {
+        body * {
+            visibility: hidden; /* Sab kuchh hide kar do */
+        }
+        #table-container, #table-container * {
+            visibility: visible; /* Sirf table-container dikhna chahiye */
+        }
+        #table-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Upcoming Result</h1>
+    <p>6th Sem Result (2021-25)</p>
+    <button onclick="showButtons()">Check Result</button>
+
+    <!-- Buttons for options -->
+    <div id="buttons-container" class="hidden">
+        <button onclick="showSpecificInput()">Specific Reg No</button>
+        <button onclick="showRangeInput()">Range of Reg Nos</button>
+    </div>
+
+    <!-- Input for specific reg no -->
+    <div id="specific-input" class="hidden">
+        <input type="text" id="specific-reg-no" placeholder="Enter Registration No">
+        <button onclick="fetchSpecificResult()">Submit</button>
+    </div>
+
+    <!-- Input for range of reg nos -->
+    <div id="range-input" class="hidden">
+        <input type="text" id="start-reg-no" placeholder="Start Registration No">
+        <input type="text" id="end-reg-no" placeholder="End Registration No">
+        <button onclick="fetchRangeResults()">Submit</button>
+    </div>
+
+    <!-- Table to display results -->
+    <div id="table-container" class="hidden">
+        <table id="result-table">
+            <thead>
+                <tr>
+                    <th>Reg No</th>
+                    <th>Name</th>
+                    <th>
+                        SGPA
+                        <select id="sort-options" onchange="sortTable()">
+                            <option value="reg-asc">Ascending Reg No</option>
+                            <option value="sgpa-desc">Descending SGPA</option>
+                        </select>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button onclick="printTable()">Print</button>
+    </div>
+
+    <script>
+        function showButtons() {
+            document.getElementById('buttons-container').classList.remove('hidden');
+        }
+
+        function showSpecificInput() {
+            document.getElementById('specific-input').classList.remove('hidden');
+            document.getElementById('range-input').classList.add('hidden');
+        }
+
+        function showRangeInput() {
+            document.getElementById('range-input').classList.remove('hidden');
+            document.getElementById('specific-input').classList.add('hidden');
+        }
+
+        async function fetchRangeResults() {
+            const startRegNo = parseInt(document.getElementById('start-reg-no').value);
+            const endRegNo = parseInt(document.getElementById('end-reg-no').value);
+
+            if (isNaN(startRegNo) || isNaN(endRegNo) || startRegNo > endRegNo) {
+                alert("Please enter valid registration numbers with a proper range.");
+                return;
+            }
+
+            const tableBody = document.getElementById('result-table').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // Clear existing table data
+
+            document.getElementById('table-container').classList.remove('hidden');
+
+            for (let regNo = startRegNo; regNo <= endRegNo; regNo++) {
+                await fetchDataSequential(regNo, tableBody);
+            }
+        }
+
+        async function fetchSpecificResult() {
+            const specificRegNo = parseInt(document.getElementById('specific-reg-no').value);
+
+            if (isNaN(specificRegNo)) {
+                alert("Please enter a valid registration number.");
+                return;
+            }
+
+            const tableBody = document.getElementById('result-table').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // Clear existing table data
+
+            document.getElementById('table-container').classList.remove('hidden');
+            await fetchDataSequential(specificRegNo, tableBody);
+        }
+
+        async function fetchDataSequential(regNo, tableBody) {
+            const url = `https://api.allorigins.win/get?url=${encodeURIComponent(`http://results.beup.ac.in/ResultsBTech6thSem2024_B2021Pub.aspx?Sem=VI&RegNo=${regNo}`)}`;
+
+            try {
+                let response, result, retryCount = 0, maxRetries = 20;
+
+                do {
+                    response = await fetch(url);
+                    result = await response.json();
+                    retryCount++;
+                } while (!result.contents.includes('ContentPlaceHolder1_GridView3') && retryCount < maxRetries);
+
+                if (!result.contents.includes('ContentPlaceHolder1_GridView3')) {
+                    console.error(`Table not found for Reg No ${regNo} after ${maxRetries} retries.`);
+                    return;
+                }
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(result.contents, "text/html");
+                const noRecordFound = doc.querySelector('#ContentPlaceHolder1_GridView3')?.textContent.includes("No Record Found !!!");
+
+                if (noRecordFound) {
+                    console.log(`No record found for Reg No ${regNo}. Skipping.`);
+                    return;
+                }
+
+                const nameElement = doc.querySelector('#ContentPlaceHolder1_DataList1_StudentNameLabel_0');
+                const sgpaElement = doc.querySelector('#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0');
+
+                const name = nameElement ? nameElement.textContent.trim() : 'N/A';
+                const sgpa = sgpaElement ? sgpaElement.textContent.trim() : 'N/A';
+
+                const row = tableBody.insertRow();
+                const regNoCell = row.insertCell(0);
+                const nameCell = row.insertCell(1);
+                const sgpaCell = row.insertCell(2);
+
+                const link = document.createElement('a');
+                link.href = `http://results.beup.ac.in/ResultsBTech6thSem2024_B2021Pub.aspx?Sem=VI&RegNo=${regNo}`;
+                link.target = '_blank';
+                link.textContent = regNo;
+                regNoCell.appendChild(link);
+
+                nameCell.innerText = name;
+                sgpaCell.innerText = sgpa;
+
+            } catch (error) {
+                console.error(`Error fetching data for Reg No ${regNo}:`, error);
+
+                const row = tableBody.insertRow();
+                row.insertCell(0).innerText = regNo;
+                row.insertCell(1).innerText = 'Error fetching data';
+                row.insertCell(2).innerText = 'N/A';
+            }
+        }
+
+        function sortTable() {
+            const tableBody = document.querySelector('#result-table tbody');
+            const rows = Array.from(tableBody.rows);
+            const sortOption = document.getElementById('sort-options').value;
+
+            if (sortOption === 'reg-asc') {
+                rows.sort((a, b) => {
+                    const regA = parseInt(a.cells[0].innerText);
+                    const regB = parseInt(b.cells[0].innerText);
+                    return regA - regB;
+                });
+            } else if (sortOption === 'sgpa-desc') {
+                rows.sort((a, b) => {
+                    const sgpaA = parseFloat(a.cells[2].innerText) || 0;
+                    const sgpaB = parseFloat(b.cells[2].innerText) || 0;
+                    return sgpaB - sgpaA;
+                });
+            }
+
+            // Clear and append sorted rows
+            tableBody.innerHTML = '';
+            rows.forEach(row => tableBody.appendChild(row));
+        }
+
+        function printTable() {
+    window.print();
+}
+    </script>
+</body>
+</html>
