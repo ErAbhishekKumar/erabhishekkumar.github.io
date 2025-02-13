@@ -5,7 +5,7 @@ This repository contains a personal website hosted on GitHub Pages, featuring to
 This website resource is publically available data.It is not any official webiste.
 
 **Features**
-* Rank checker for competitive exams.
+* Rank checker for exams.
 * Educational resources and results display.
 * Feel free to explore or contribute: [Visit Site](https://erabhishekkumar.github.io)
 
