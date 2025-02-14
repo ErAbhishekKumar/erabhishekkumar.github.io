@@ -48,4 +48,36 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- gecsheikhpura Folder -->
+    <url>
+        <loc>https://erabhishekkumar.github.io/gecsheikhpura/index.html</loc>
+        <lastmod>2025-02-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://erabhishekkumar.github.io/gecsheikhpura/about.html</loc>
+        <lastmod>2025-02-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://erabhishekkumar.github.io/gecsheikhpura/contact.html</loc>
+        <lastmod>2025-02-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://erabhishekkumar.github.io/gecsheikhpura/courses.html</loc>
+        <lastmod>2025-02-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://erabhishekkumar.github.io/gecsheikhpura/faculty.html</loc>
+        <lastmod>2025-02-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
