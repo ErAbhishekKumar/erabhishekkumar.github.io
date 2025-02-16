@@ -1,0 +1,68 @@
+name: Deploy HTML with Secret
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create xml.html
+        run: |
+          echo '<!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Secure Google Doc Viewer</title>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-3C1T7N3KJ9"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag("js", new Date());
+              gtag("config", "G-3C1T7N3KJ9", {
+                "user_agent": navigator.userAgent,
+                "referrer": document.referrer
+              });
+            </script>
+            <script>
+              document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+              document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && (e.key === "u" || e.key === "s" || e.key === "c" || e.key === "p")) {
+                  e.preventDefault();
+                }
+              });
+
+              function checkApp() {
+                var userAgent = navigator.userAgent || "";
+                if (userAgent.includes("org.telegram.messenger") || userAgent.includes("org.thunderdog.challegram")) {
+                  fetch("config.json")
+                    .then(response => response.json())
+                    .then(data => {
+                      document.getElementById("docFrame").src = data.googleDocLink;
+                    });
+                } else {
+                  document.body.innerHTML = "<h2>Access Denied</h2><p>This page can only be viewed in Telegram WebView.</p>";
+                }
+              }
+            </script>
+          </head>
+          <body onload="checkApp()">
+            <h2>Google Document Viewer</h2>
+            <iframe id="docFrame" width="90%" height="80vh"></iframe>
+          </body>
+          </html>' > xml.html
+
+      - name: Create config.json
+        run: |
+          echo '{"googleDocLink": "${{ secrets.GOOGLE }}"}' > config.json
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .
