@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYQ</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        #content { user-select: none; -webkit-user-select: none; }
+    </style>
+    <script>
+        function isTelegram() {
+            let userAgent = navigator.userAgent || "";
+            return userAgent.includes("Telegram") || userAgent.includes("tg_android");
+        }
+
+        async function fetchContent() {
+            if (!isTelegram()) {
+                document.body.innerHTML = "<h2>Access Denied</h2><p>.</p>";
+                return;
+            }
+
+            try {
+                let response = await fetch("https://secret-1o4o.onrender.com/");
+                let text = await response.text();
+                document.getElementById("content").innerHTML = text;
+            } catch (error) {
+                document.getElementById("content").innerHTML = "<h2>Error fetching document.</h2>";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchContent);
+
+        document.addEventListener("copy", (event) => {
+            event.preventDefault();
+            alert("Please isme ka text copy mat karo");
+        });
+    </script>
+</head>
+<body>
+    <h2>PYQ</h2>
+    <div id="content">Loading...</div>
+</body>
+</html>
