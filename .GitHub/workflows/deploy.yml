@@ -1,4 +1,4 @@
-name: Deploy Secure HTML
+name: Deploy HTML with Secret
 
 on:
   push:
@@ -12,18 +12,48 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create config.json (Private)
+      - name: Create Secure HTML
         run: |
-          echo '{ "GOOGLE": "${{ secrets.GOOGLE }}" }' > config.json
+          echo '<!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Secure Google Doc Viewer</title>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-3C1T7N3KJ9"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag("js", new Date());
+              gtag("config", "G-3C1T7N3KJ9", {
+                "user_agent": navigator.userAgent,
+                "referrer": document.referrer
+              });
+            </script>
+            <script>
+              document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+              document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && (e.key === "u" || e.key === "s" || e.key === "c" || e.key === "p")) {
+                  e.preventDefault();
+                }
+              });
 
-      - name: Create Encrypted HTML (Base64)
-        run: |
-          echo "PHN0eWxlPmh0bWx7ZGlzcGxheTpub25lfTwvc3R5bGU+" | base64 -d > xml.html
-          echo "PCEtLSBIVFRMIEZpbGUgU3RhcnQgLS0+" | base64 -d >> xml.html
-          echo "PCFET0NUWVBFIGh0bWw+" | base64 -d >> xml.html
-          echo "PGh0bWw+CjxIZWFkPgo8bWV0YSBjaGFyc2V0PSJVVEYtOCI+" | base64 -d >> xml.html
-          echo "PHRpdGxlPkVuY3J5cHRlZCBHb29nbGUgRG9jIFZpZXdlcjwvdGl0bGU+" | base64 -d >> xml.html
-          echo "PHNjcmlwdD4KZnVuY3Rpb24gZGVjcnlwdEJhc2U2NCgkc3RyKSB7IC8vIERlY3J5cHRpb24KcmV0dXJuIGF0b2IoJHN0cik7Cn0KZnVuY3Rpb24gY2hlY2tBcHAoKSB7IC8vIFRlbGVncmFtIENoZWNrCnZhciB1c2VyQWdlbnQgPSBuYXZpZ2F0b3IudXNlckFnZW50IHwgfCBcIiI7CmlmICh1c2VyQWdlbnQuaW5jbHVkZXMoXCJvcmcudGVsZWdyYW0ubWVzc2VuZ2VyXCIpKSB7CmZldGNoKFwiY29uZmlnLmpzb25cIikKLnRoZW4ocmVzcG9uc2UgPT4gcmVzcG9uc2UuanNvbigpKQoudGhlbihkYXRhID0+IHsKZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJkb2NGcmFtZVwiKS5zcmMgPSBkYXRhLkdPT0dMRTsKfSk7Cn0gZWxzZSB7CmRvY3VtZW50LmJvZHkuaW5uZXJIVE1MID0gJzxIMj5BY2Nlc3MgRGVuaWVkPC9IMj48cD5Zb3UgYXJlIHVuYXV0aG9yaXplZDwvcD4nOwp9Cn0KPC9zY3JpcHQ+CjwvaGVhZD4KPGJvZHkgb25sb2FkPSJjaGVja0FwcCgpIj4KPCEtLSBIZWFkaW5nIC0tPgo8aDI+RmlsZXM8L2gyPgo8aWZyYW1lIGlkPSJkb2NGcmFtZSIgd2lkdGg9IjkwJSIgaGVpZ2h0PSI4MHZoIj48L2lmcmFtZT4KPC9ib2R5Pgo8L2h0bWw+" | base64 -d >> xml.html
+              function checkApp() {
+                var userAgent = navigator.userAgent || "";
+                if (userAgent.includes("org.telegram.messenger") || userAgent.includes("org.thunderdog.challegram")) {
+                  var docLink = "${{ secrets.GOOGLE }}";
+                  document.getElementById("docFrame").src = docLink;
+                } else {
+                  document.body.innerHTML = "<h2>Access Denied</h2><p>You Are unauthorised</p>";
+                }
+              }
+            </script>
+          </head>
+          <body onload="checkApp()">
+            <h2>Files</h2>
+            <iframe id="docFrame" width="90%" height="80vh"></iframe>
+          </body>
+          </html>' > index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
