@@ -1,4 +1,4 @@
-name: Deploy HTML with Secret
+name: Deploy HTML
 
 on:
   push:
@@ -11,49 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Create Secure HTML
-        run: |
-          echo '<!DOCTYPE html>
-          <html>
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Secure Google Doc Viewer</title>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-3C1T7N3KJ9"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag("js", new Date());
-              gtag("config", "G-3C1T7N3KJ9", {
-                "user_agent": navigator.userAgent,
-                "referrer": document.referrer
-              });
-            </script>
-            <script>
-              document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
-              document.addEventListener("keydown", function (e) {
-                if (e.ctrlKey && (e.key === "u" || e.key === "s" || e.key === "c" || e.key === "p")) {
-                  e.preventDefault();
-                }
-              });
-
-              function checkApp() {
-                var userAgent = navigator.userAgent || "";
-                if (userAgent.includes("org.telegram.messenger") || userAgent.includes("org.thunderdog.challegram")) {
-                  var docLink = "${{ secrets.GOOGLE }}";
-                  document.getElementById("docFrame").src = docLink;
-                } else {
-                  document.body.innerHTML = "<h2>Access Denied</h2><p>You Are unauthorised</p>";
-                }
-              }
-            </script>
-          </head>
-          <body onload="checkApp()">
-            <h2>Files</h2>
-            <iframe id="docFrame" width="90%" height="80vh"></iframe>
-          </body>
-          </html>' > index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
