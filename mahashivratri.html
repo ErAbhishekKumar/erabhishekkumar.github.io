@@ -5,20 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Maha Shivratri</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-            background: black;
-            transition: background-color 0.5s ease-in-out;
-        }
-        /* Background Video */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; text-align: center; color: white; overflow: hidden; background: black; }
+
+        /* Background Video Container */
         #videoContainer {
             position: fixed;
             top: 0;
@@ -31,47 +21,15 @@
         video, iframe {
             width: 100vw;
             height: 100vh;
-            object-fit: cover; /* Ensure full cover without gaps */
+            object-fit: cover;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            pointer-events: none; /* Prevent user interaction */
+            pointer-events: none;
         }
-        /* Overlay Gradient (For Adapting Colors) */
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-            transition: background-color 0.5s ease-in-out;
-        }
-        .container {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            display: none;
-        }
-        button {
-            background: #ff9800;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        button:hover {
-            background: #e68900;
-        }
+
+        /* Popup Box */
         .popup {
             display: none;
             position: fixed;
@@ -82,39 +40,67 @@
             padding: 20px;
             border-radius: 10px;
             color: black;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            width: 300px;
+            text-align: center;
+            z-index: 2;
         }
-        input {
-            padding: 8px;
-            font-size: 16px;
-            width: 80%;
-            margin-bottom: 10px;
+        .popup input { width: 90%; padding: 8px; margin-bottom: 10px; font-size: 16px; }
+        .popup .close-btn {
+            position: absolute;
+            top: 5px; right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: red;
         }
+
+        /* Text Message */
+        .container {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        /* Buttons */
+        button {
+            background: #ff9800;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover { background: #e68900; }
+
     </style>
 </head>
 <body>
 
+    <!-- Background Video -->
     <div id="videoContainer">
-        <!-- Default Background Video -->
-        <video autoplay loop muted playsinline id="defaultVideo">
+        <video autoplay loop playsinline id="defaultVideo">
             <source src="Happy Maha Shivratri.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
-        
-        <!-- YouTube Background Video (Initially Hidden) -->
         <iframe id="youtubeVideo" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
     </div>
 
-    <!-- Color Adaptation Overlay -->
-    <div id="overlay"></div>
-
+    <!-- Name Greeting Message -->
     <div class="container" id="messageContainer">
         <h1 id="greeting"></h1>
     </div>
 
     <button onclick="showPopup()">Create Your Own</button>
 
-    <!-- Name + Video Input Popup -->
+    <!-- Input Popup -->
     <div class="popup" id="popup">
+        <span class="close-btn" onclick="closePopup()">×</span>
         <h3>Enter Your Name</h3>
         <input type="text" id="nameInput" placeholder="Enter Name">
         <h3>Enter YouTube Video Link (Optional)</h3>
@@ -126,6 +112,19 @@
     <script>
         function showPopup() {
             document.getElementById("popup").style.display = "block";
+            document.addEventListener("click", closePopupOutside);
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.removeEventListener("click", closePopupOutside);
+        }
+
+        function closePopupOutside(event) {
+            let popup = document.getElementById("popup");
+            if (event.target !== popup && !popup.contains(event.target)) {
+                closePopup();
+            }
         }
 
         function generateLink() {
@@ -143,16 +142,18 @@
         }
 
         function extractYouTubeID(url) {
-            let videoId = "";
-            if (url.includes("youtu.be/")) {
-                videoId = url.split("youtu.be/")[1].split("?")[0];
-            } else if (url.includes("youtube.com/watch?v=")) {
-                videoId = new URL(url).searchParams.get("v");
-            } else if (url.includes("youtube.com/embed/")) {
-                videoId = url.split("embed/")[1].split("?")[0];
-            }
-            return videoId;
-        }
+    let videoId = "";
+    if (url.includes("youtu.be/")) {
+        videoId = url.split("youtu.be/")[1].split("?")[0];
+    } else if (url.includes("youtube.com/watch?v=")) {
+        videoId = new URL(url).searchParams.get("v");
+    } else if (url.includes("youtube.com/embed/")) {
+        videoId = url.split("embed/")[1].split("?")[0];
+    } else if (url.includes("youtube.com/shorts/")) {
+        videoId = url.split("shorts/")[1].split("?")[0]; // Extract Shorts ID
+    }
+    return videoId;
+}
 
         function shareLink(url) {
             if (navigator.share) {
