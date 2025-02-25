@@ -150,42 +150,41 @@
     } else if (url.includes("youtube.com/embed/")) {
         videoId = url.split("embed/")[1].split("?")[0];
     } else if (url.includes("youtube.com/shorts/")) {
-        videoId = url.split("shorts/")[1].split("?")[0]; // Extract Shorts ID
+        videoId = url.split("shorts/")[1].split("?")[0]; // Shorts ke liye support added
     }
     return videoId;
 }
 
-        function shareLink(url) {
-            if (navigator.share) {
-                navigator.share({
-                    title: "Happy Maha Shivratri!",
-                    text: "महाशिवरात्रि की हार्दिक शुभकामनाएं!",
-                    url: url
-                }).catch(error => console.log("Sharing failed:", error));
-            } else {
-                alert("Your browser does not support sharing. Copy the link manually: " + url);
-            }
-        }
+window.onload = function() {
+    let params = new URLSearchParams(window.location.search);
+    let name = params.get("name");
+    let videoId = params.get("video");
 
-        window.onload = function() {
-            let params = new URLSearchParams(window.location.search);
-            let name = params.get("name");
-            let videoId = params.get("video");
+    if (name) {
+        document.getElementById("greeting").innerHTML = 
+            `<h1>${name} के तरफ से महाशिवरात्रि की आपको हार्दिक शुभकामनाएं।🙏🏻</h1>`;
+        document.getElementById("messageContainer").style.display = "block";
+    }
 
-            if (name) {
-                document.getElementById("greeting").innerHTML = 
-                    `<h1>${name} के तरफ से महाशिवरात्रि की आपको हार्दिक शुभकामनाएं।🙏🏻</h1>`;
-                document.getElementById("messageContainer").style.display = "block";
-            }
+    if (videoId) {
+        let youtubeVideo = document.getElementById("youtubeVideo");
+        youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&mute=1&controls=0&modestbranding=1&showinfo=0`;
+        youtubeVideo.setAttribute("allow", "autoplay; encrypted-media"); // **Ensures autoplay**
+        youtubeVideo.style.display = "block";
 
-            if (videoId) {
-                let youtubeVideo = document.getElementById("youtubeVideo");
-                youtubeVideo.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&loop=1&playlist=" + videoId + "&mute=0&controls=0&modestbranding=1&showinfo=0";
-                youtubeVideo.style.display = "block";
+        document.getElementById("defaultVideo").style.display = "none";
+    }
+};
+// ** Ensure Video Fits Screen Orientation **
+function adjustVideoSize() {
+    let video = document.querySelector("video, iframe");
+    video.style.width = "100vw";
+    video.style.height = "100vh";
+    video.style.objectFit = "cover"; // Prevent cropping/stretching
+}
 
-                document.getElementById("defaultVideo").style.display = "none";
-            }
-        };
+window.addEventListener("resize", adjustVideoSize);
+adjustVideoSize();
     </script>
 
 </body>
