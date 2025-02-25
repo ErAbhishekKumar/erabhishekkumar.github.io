@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Maha Shivratri</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            background: #ff9800;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #e68900;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted>
+        <source src="Happy Maha Shivratri.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container" id="messageContainer">
+        <h1 id="greeting"></h1>
+    </div>
+
+    <button onclick="showPopup()">Create Your Own</button>
+
+    <div class="popup" id="popup">
+        <h3>Enter Name</h3>
+        <input type="text" id="nameInput" placeholder="Enter Name">
+        <br>
+        <button onclick="generateLink()">Submit</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function generateLink() {
+            let name = document.getElementById("nameInput").value.trim();
+            if (name) {
+                let shareUrl = window.location.origin + window.location.pathname + "?name=" + encodeURIComponent(name);
+                document.getElementById("popup").innerHTML = 
+                    `<h3>Share this link:</h3>
+                     <input type="text" value="${shareUrl}" readonly>
+                     <br>
+                     <button onclick="copyToClipboard()">Copy Link</button>`;
+            }
+        }
+
+        function copyToClipboard() {
+            let input = document.querySelector("input[readonly]");
+            input.select();
+            document.execCommand("copy");
+            alert("Link copied!");
+        }
+
+        window.onload = function() {
+            let params = new URLSearchParams(window.location.search);
+            let name = params.get("name");
+            if (name) {
+                document.getElementById("greeting").innerHTML = 
+                    `<h1>${name} के तरफ से महाशिवरात्रि की आपको हार्दिक शुभकामनाएं।🙏🏻</h1>`;
+            }
+        };
+    </script>
+
+</body>
+</html>
