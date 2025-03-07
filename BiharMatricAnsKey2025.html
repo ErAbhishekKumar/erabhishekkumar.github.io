@@ -163,7 +163,6 @@
         var a = document.createElement("a");
         a.href = url;
         a.target = "_blank";
-        a.download = option.text + ".pdf";  // फाइल का नाम सेट करो
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
