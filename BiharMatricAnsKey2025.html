@@ -148,21 +148,27 @@
         }
 
         function downloadSelectedPDFs() {
-            var selectBox = document.getElementById("subject");
-            var selectedOptions = Array.from(selectBox.selectedOptions);
-            
-            if (selectedOptions.length === 0) {
-                alert("Please select at least one subject.");
-                return;
-            }
+    var selectBox = document.getElementById("subject");
+    var selectedOptions = Array.from(selectBox.selectedOptions);
+    
+    if (selectedOptions.length === 0) {
+        alert("Please select at least one subject.");
+        return;
+    }
 
-            selectedOptions.forEach(option => {
-                var url = "http://objmatric.biharboardonline.com/files/" + option.value + ".pdf";
-                window.open(url, "_blank");
-            });
+    selectedOptions.forEach(option => {
+        var url = "http://objmatric.biharboardonline.com/files/" + option.value + ".pdf";
 
-            // कोई भी reset नहीं होगा
-        }
+        // Anchor tag create करके डाउनलोड करवाते हैं
+        var a = document.createElement("a");
+        a.href = url;
+        a.target = "_blank";
+        a.download = option.text + ".pdf";  // फाइल का नाम सेट करो
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+}
     </script>
     <p>
         <h2><a href="http://objmatric.biharboardonline.com/">Official Website Link for (Bihar Board Matric Answer Key 2025)</a></h2>
