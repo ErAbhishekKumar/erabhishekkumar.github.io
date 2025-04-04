@@ -277,6 +277,46 @@
     </div>
 
     <button id="print-table" style="display:none;">Print Table</button>
+    <script>
+        async function fetchWithRetry(url, maxRetries = Infinity, delay = 5000) {
+    let attempt = 0;
+    while (attempt < maxRetries) {
+        try {
+            let response = await fetch(url);
+            if (response.status === 200) {
+                return response; // Success, return the response
+            }
+            console.warn(`Attempt ${attempt + 1}: Response ${response.status}, Retrying...`);
+        } catch (error) {
+            console.error(`Attempt ${attempt + 1}: Error ${error}, Retrying...`);
+        }
+        attempt++;
+        await new Promise(resolve => setTimeout(resolve, delay)); // Wait before retrying
+    }
+    throw new Error("Max retries reached, no successful response.");
+}
+
+async function fetchAndProcessResult(regNo) {
+    let url = `https://your-api-endpoint.com/result?reg=${regNo}`;  // अपनी API का URL डालें
+    try {
+        let response = await fetchWithRetry(url);
+        let data = await response.json();  // या text() अगर JSON नहीं है
+        
+        // अब data को टेबल में ऐड करें (केवल valid response पर)
+        addToTable(data);
+    } catch (error) {
+        console.error(`Failed to fetch data for Reg No: ${regNo}`);
+    }
+}
+
+function addToTable(data) {
+    let table = document.getElementById("resultTable"); // अपने टेबल का ID डालें
+    let row = table.insertRow();
+    row.insertCell(0).innerText = data.name;
+    row.insertCell(1).innerText = data.sgpa;
+    row.insertCell(2).innerText = data.regNo;
+}
+    </script>
 
     <script>
         let abortController = new AbortController();
