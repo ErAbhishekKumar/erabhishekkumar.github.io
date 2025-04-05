@@ -4,117 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Rank Checker</title>
-    <!-- Content Security Policy (CSP) to allow inline scripts and external scripts from cdnjs -->
+
+    <!-- Google Ads & Tag Manager -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TRJKMKM2');</script>
+
+    <!-- Meta Tags -->
+    <meta name="google-site-verification" content="IrNwqZseywnZinPv4xz34hKzvnOKzsMZ0o7QVeiywc0">
+    <meta name="google-site-verification" content="D1snizFbH-3P8XKUzq-WXkrtRajZFyMj_qcNVDqTXLY" />
+    
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        h4 {
+            color: #555;
+        }
+
+        #branchSelect {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .formSection {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: stretch; /* Ensure buttons stretch to match input height */
+        }
+
+        input[type="number"] {
+            flex: 1; /* Allow input to take available space */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px; /* Space between input and buttons */
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 2px 0; /* Space between buttons */
+            height: 100%; /* Make buttons fill the height of the container */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #formContainer {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            #branchSelect {
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Buttons for different branches -->
-    <button class="branchButton" data-branch="civil">5th Civil (2021-25)</button>
-    <button class="branchButton" data-branch="electrical">5th Electrical (2021-25)</button><br>
-    <button class="branchButton" data-branch="civil6">6th Civil (2021-25)</button>
-    <button class="branchButton" data-branch="electrical6">6th Electrical (2021-25)</button> <br>
-    <button class="branchButton" data-branch="civil2nd2327">2nd Civil (2023-27)</button>
-
-    <!-- Civil form section (hidden initially) -->
-    <div id="civilFormSection" class="formSection" style="display: none;">
-        <h1>5th Sem. (2021-25) Rank Check - Civil</h1>
-        <h4>In All Your Civil Engg. Batchmates in Bihar Engineering University</h4>
-        <h2>Enter Registration Number</h2>
-        <form id="civilRegForm">
-            <label for="civil_reg_no">Registration Number:</label>
-            <input type="text" id="civil_reg_no" name="reg_no" required>
-            <button type="button" class="fetchResultButton" data-branch="civil">Show Result</button>
-        </form>
-        <div id="civilResultSection" style="display: none;">
-            <h3>Result:</h3>
-            <div id="civilResult"></div>
-        </div>
-    </div>
-
-    <!-- Electrical form section (hidden initially) -->
-    <div id="electricalFormSection" class="formSection" style="display: none;">
-        <h1>5th Sem. (2021-25) Rank Check - Electrical</h1>
-        <h4>In All Your Electrical Engg. Batchmates in Bihar Engineering University</h4>
-        <h2>Enter Registration Number</h2>
-        <form id="electricalRegForm">
-            <label for="electrical_reg_no">Registration Number:</label>
-            <input type="text" id="electrical_reg_no" name="reg_no" required>
-            <button type="button" class="fetchResultButton" data-branch="electrical">Show Result</button>
-        </form>
-        <div id="electricalResultSection" style="display: none;">
-            <h3>Result:</h3>
-            <div id="electricalResult"></div>
-        </div>
-    </div>
-
-    <!-- 6th Civil form section (hidden initially) -->
-    <div id="civil6FormSection" class="formSection" style="display: none;">
-        <h1>6th Sem. (2021-25) Rank Check - Civil</h1>
-        <h4>In All Your Civil Engg. Batchmates in Bihar Engineering University</h4>
-        <h2>Enter Registration Number</h2>
-        <form id="civil6RegForm">
-            <label for="civil6_reg_no">Registration Number:</label>
-            <input type="text" id="civil6_reg_no" name="reg_no" required>
-            <button type="button" class="fetchResultButton" data-branch="civil6">Show Result</button>
-        </form>
-        <div id="civil6ResultSection" style="display: none;">
-            <h3>Result:</h3>
-            <div id="civil6Result"></div>
-        </div>
-    </div>
-
-    <!-- 6th Electrical form section (hidden initially) -->
-    <div id="electrical6FormSection" class="formSection" style="display: none;">
-        <h1>6th Sem. (2021-25) Rank Check - Electrical</h1>
-        <h4>In All Your Electrical Engg. Batchmates in Bihar Engineering University</h4>
-        <h2>Enter Registration Number</h2>
-        <form id="electrical6RegForm">
-            <label for="electrical6_reg_no">Registration Number:</label>
-            <input type="text" id="electrical6_reg_no" name="reg_no" required>
-            <button type="button" class="fetchResultButton" data-branch="electrical6">Show Result</button>
-        </form>
-        <div id="electrical6ResultSection" style="display: none;">
-            <h3>Result:</h3>
-            <div id="electrical6Result"></div>
-        </div>
-    </div>
-
-    <div id="civil2nd2327FormSection" class="formSection" style="display: none;">
-        <h1>2nd Sem. (2023-27) Rank Check - Civil</h1>
-        <h4>In All Your Civil Engg. Batchmates in Bihar Engineering University</h4>
-        <h2>Enter Registration Number</h2>
-        <form id="civil2nd2327RegForm">
-            <label for="civil2nd2327_reg_no">Registration Number:</label>
-            <input type="text" id="civil2nd2327_reg_no" name="reg_no" required>
-            <button type="button" class="fetchResultButton" data-branch="civil2nd2327">Show Result</button>
-        </form>
-        <div id="civil2nd2327ResultSection" style="display: none;">
-            <h3>Result:</h3>
-            <div id="civil2nd2327Result"></div>
-        </div>
-    </div>
+    <h1>Select Your Branch</h1>
+    <select id="branchSelect">
+        <option value="">-- Select a Branch --</option>
+    </select>
+    <div id="formContainer"></div>
 
     <script>
-        // File URLs for different branches
-        const fileUrls = {
-            civil: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/5thce2125.xlsx',
-            electrical: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/5thee2125.xlsx',
-            civil6: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/6thce2125.xlsx',
-            electrical6: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/6thee2125.xlsx',// New file for 6th Civil
-            civil2nd2327: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndce2327.xlsx'
-        };
+        // Data structure for branches
+        const branches = [
+            { name: "5th Civil (2021-25)", key: "civil", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/5thce2125.xlsx' },
+            { name: "5th Electrical (2021-25)", key: "electrical", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/5thee2125.xlsx' },
+            { name: "6th Civil (2021-25)", key: "civil6", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/6thce2125.xlsx' },
+            { name: "6th Electrical (2021-25)", key: "electrical6", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/6thee2125.xlsx' },
+            { name: "2nd Civil (2023-27)", key: "civil2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndce2327.xlsx' },
+            { name: "2nd Mechanical (2023-27)", key: "mec2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndme2327.xlsx' },
+            { name: "2nd Electrical (2023-27)", key: "ee2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndee2327.xlsx' },
+            { name: "2nd Electronics (2023-27)", key: "ece2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndece2327.xlsx' }
+        ];
 
-        // Show the respective form section when a branch button is clicked
-        document.querySelectorAll('.branchButton').forEach(button => {
-            button.addEventListener('click', function() {
-                const branch = this.getAttribute('data-branch');
-                document.querySelectorAll('.formSection').forEach(section => section.style.display = 'none'); // Hide all sections
-                document.getElementById(`${branch}FormSection`).style.display = 'block'; // Show the clicked branch's form
-            });
+        // Populate the dropdown with branches
+        const branchSelect = document.getElementById('branchSelect');
+        branches.forEach(branch => {
+            const option = document.createElement('option');
+            option.value = branch.key;
+            option.textContent = branch.name;
+            branchSelect.appendChild(option);
         });
+
+        // Generate forms dynamically
+        const formContainer = document.getElementById('formContainer');
+
+        branches.forEach(branch => {
+            const formSection = document.createElement('div');
+            formSection.id = `${branch.key}FormSection`;
+            formSection.className = 'formSection';
+            formSection.style.display = 'none'; // Initially hide all form sections
+
+            formSection.innerHTML = `
+                <h2>${branch.name} Rank Check</h2>
+                <h4>In All Your ${branch.name.split(' ')[1]} Engg. Batchmates in Bihar Engineering University</h4>
+                <h2>Enter Registration Number</h2>
+                <div class="input-container">
+                    <input type="number" id="${branch.key}_reg_no" name="reg_no" required>
+                    <div class="button-container">
+                        <button type="button" onclick="changeValue('${branch.key}_reg_no', 1)">+1</button>
+                        <button type="button" onclick="changeValue('${branch.key}_reg_no', -1)">-1</button>
+                    </div>
+                </div>
+                <button type="button" class="fetchResultButton" data-branch="${branch.key}">Show Result</button>
+                <div id="${branch.key}ResultSection" style="display: none;" class="result">
+                    <h3>Result:</h3>
+                    <div id="${branch.key}Result"></div>
+                </div>
+            `;
+            formContainer.appendChild(formSection);
+        });
+
+        // File URLs for different branches
+        const fileUrls = Object.fromEntries(branches.map(branch => [branch.key, branch.fileUrl]));
+
+        // Show the respective form section when a branch is selected
+        branchSelect.addEventListener('change', function() {
+            const selectedBranch = this.value;
+            document.querySelectorAll('.formSection').forEach(section => section.style.display = 'none'); // Hide all sections
+            if (selectedBranch) {
+                document.getElementById(`${selectedBranch}FormSection`).style.display = 'block'; // Show the selected branch's form
+
+                // Retrieve the last entered registration number from local storage
+                const lastRegNo = localStorage.getItem('reg_no');
+                if (lastRegNo) {
+                    document.getElementById(`${selectedBranch}_reg_no`).value = lastRegNo; // Fill the input with the last registration number
+                    // Automatically trigger the search
+                    document.querySelector(`.fetchResultButton[data-branch="${selectedBranch}"]`).click();
+                }
+            }
+        });
+
+        // Function to change the value of the input and trigger the result button
+        function changeValue(inputId, change) {
+            const input = document.getElementById(inputId);
+            const currentValue = parseInt(input.value) || 0; // Default to 0 if input is empty
+            input.value = currentValue + change;
+
+            // Trigger the Show Result button click
+            const fetchButton = document.querySelector(`.fetchResultButton[data-branch="${inputId.split('_')[0]}"]`);
+            if (fetchButton) {
+                fetchButton.click();
+            }
+        }
 
         // Fetch the Excel file for the selected branch
         async function fetchExcelData(branch) {
@@ -128,9 +234,9 @@
         }
 
         // Handle result fetching for each branch
-        document.querySelectorAll('.fetchResultButton').forEach(button => {
-            button.addEventListener('click', async function() {
-                const branch = this.getAttribute('data-branch');
+        document.addEventListener('click', async function(event) {
+            if (event.target.classList.contains('fetchResultButton')) {
+                const branch = event.target.getAttribute('data-branch');
                 const regNoInputId = `${branch}_reg_no`;
                 const resultSectionId = `${branch}ResultSection`;
                 const resultDivId = `${branch}Result`;
@@ -141,6 +247,9 @@
                     alert('Please enter a registration number.');
                     return;
                 }
+
+                // Save the registration number to local storage without branch name
+                localStorage.setItem('reg_no', regNo);
 
                 const data = await fetchExcelData(branch);
                 const studentData = data.slice(1); // Removing the first row (headers)
@@ -166,7 +275,7 @@
                 }
 
                 document.getElementById(resultSectionId).style.display = 'block'; // Show the result section
-            });
+            }
         });
     </script>
 </body>
