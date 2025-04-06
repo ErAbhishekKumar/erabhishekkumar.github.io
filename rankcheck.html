@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Rank Checker</title>
 
-    <!-- Google Ads & Tag Manager -->
+     <!-- Google Ads & Tag Manager -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TRJKMKM2');</script>
 
@@ -16,7 +16,7 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,46 +29,21 @@
         h1 {
             text-align: center;
             color: #4CAF50;
+            min-height: 50px; /* Fixed height to prevent layout shift */
         }
 
         h2 {
             color: #333;
         }
 
-        h4 {
-            color: #555;
-        }
-
-        #branchSelect {
-            width: 100%;
-            padding: 10px;
-            margin: 20px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .formSection {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-
         .input-container {
             display: flex;
-            align-items: stretch; /* Ensure buttons stretch to match input height */
+            align-items: center;
+            margin: 20px 0;
         }
 
         input[type="number"] {
-            flex: 1; /* Allow input to take available space */
+            flex: 1;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -76,9 +51,12 @@
             margin-right: 10px; /* Space between input and buttons */
         }
 
-        .button-container {
-            display: flex;
-            flex-direction: column;
+        .button-container {  /* 4 buttons in one row and 4 in another row */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            gap: 10px; /* Space between buttons */
+            justify-content: space-between;
+            margin: 20px 0;
         }
 
         button {
@@ -89,12 +67,16 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            margin: 2px 0; /* Space between buttons */
-            height: 100%; /* Make buttons fill the height of the container */
+            flex: 1 1 ; /* Make buttons responsive */
+            margin: 2px; /* Space between buttons */
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #0d23e6;
+        }
+
+        .active {
+            background-color: #0d23e6; /* Highlight color for active button */
         }
 
         #formContainer {
@@ -113,146 +95,241 @@
             margin: 5px 0;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
+        .clear-button {
+            background: #f00;
+            border: #333;  
+            cursor: pointer;
+            font-size: 20px;
+            color: #1500ff;
+            margin-left: 5px; /* Adjust position */
+        }
 
-            #branchSelect {
-                font-size: 14px;
-            }
-
-            button {
-                width: 100%;
-            }
+        .clear-button:hover {
+            color: #f00; /* Change color on hover */
         }
     </style>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Select Your Branch</h1>
-    <select id="branchSelect">
-        <option value="">-- Select a Branch --</option>
-    </select>
-    <div id="formContainer"></div>
+    <h1 id="dynamicHeading">Rank Check In All Your Batchmates in Bihar Engineering University</h1>
+    <div id="formContainer">
+        <h2>Enter Registration Number</h2>
+        <div class="input-container">
+            <input type="number" id="reg_no" oninput="limitlength(this,11); checkInput()" name="reg_no" required oninput="updateHeading()">
+            <script>
+                function limitlength(element, maxLength) {
+                    if (element.value.length > maxLength) {
+                        element.value = element.value.slice(0, maxLength);
+                    }
+                }
+            </script>
+            <button class="clear-button" id="clearButton" onclick="clearInput()">Clear</button>
+            <button type="button" id="incrementButton" onclick="changeValue(1)" disabled>+1</button>
+            <button type="button" id="decrementButton" onclick="changeValue(-1)" disabled>-1</button>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="setSemester('1st')">1st</button>
+            <button type="button" onclick="setSemester('2nd')">2nd</button>
+            <button type="button" onclick="setSemester('3rd')">3rd</button>
+            <button type="button" onclick="setSemester('4th')">4th</button>
+            <button type="button" onclick="setSemester('5th')">5th</button>
+            <button type="button" onclick="setSemester('6th')">6th</button>
+            <button type="button" onclick="setSemester('7th')">7th</button>
+            <button type="button" onclick="setSemester('8th')">8th</button>
+        </div>
+        <div id="resultSection" style="display: none;" class="result">
+            <h3>Result:</h3>
+            <div id="result"></div>
+        </div>
+    </div>
 
     <script>
         // Data structure for branches
-        const branches = [
-            { name: "5th Civil (2021-25)", key: "civil", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/5thce2125.xlsx' },
-            { name: "5th Electrical (2021-25)", key: "electrical", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/5thee2125.xlsx' },
-            { name: "6th Civil (2021-25)", key: "civil6", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/6thce2125.xlsx' },
-            { name: "6th Electrical (2021-25)", key: "electrical6", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/6thee2125.xlsx' },
-            { name: "2nd Civil (2023-27)", key: "civil2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndce2327.xlsx' },
-            { name: "2nd Mechanical (2023-27)", key: "mec2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndme2327.xlsx' },
-            { name: "2nd Electrical (2023-27)", key: "ee2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndee2327.xlsx' },
-            { name: "2nd Electronics (2023-27)", key: "ece2nd2327", fileUrl: 'https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/2ndece2327.xlsx' }
-        ];
+        const branches = {
+            '101': 'Civil',
+            '102': 'Mechanical',
+            '103': 'Electrical',
+            '104': 'Electronics & Communication',
+            '105': 'Computer Science',
+            '110': 'Electrical & Electronics'
+        };
 
-        // Populate the dropdown with branches
-        const branchSelect = document.getElementById('branchSelect');
-        branches.forEach(branch => {
-            const option = document.createElement('option');
-            option.value = branch.key;
-            option.textContent = branch.name;
-            branchSelect.appendChild(option);
-        });
+        // Retrieve the last entered registration number and semester from local storage
+        const lastRegNo = localStorage.getItem('reg_no');
+        const lastSemester = localStorage.getItem('semester');
+        if (lastRegNo) {
+            document.getElementById('reg_no').value = lastRegNo; // Fill the input with the last registration number
+            checkInput(); // Check input to enable buttons if valid
+        }
+        if (lastSemester) {
+            setSemester(lastSemester, true); // Set the last semester on load
+        }
 
-        // Generate forms dynamically
-        const formContainer = document.getElementById('formContainer');
+        // Function to check input validity and enable/disable buttons
+        function checkInput() {
+            const input = document.getElementById('reg_no');
+            const incrementButton = document.getElementById('incrementButton');
+            const decrementButton = document.getElementById('decrementButton');
 
-        branches.forEach(branch => {
-            const formSection = document.createElement('div');
-            formSection.id = `${branch.key}FormSection`;
-            formSection.className = 'formSection';
-            formSection.style.display = 'none'; // Initially hide all form sections
-
-            formSection.innerHTML = `
-                <h2>${branch.name} Rank Check</h2>
-                <h4>In All Your ${branch.name.split(' ')[1]} Engg. Batchmates in Bihar Engineering University</h4>
-                <h2>Enter Registration Number</h2>
-                <div class="input-container">
-                    <input type="number" id="${branch.key}_reg_no" name="reg_no" required>
-                    <div class="button-container">
-                        <button type="button" onclick="changeValue('${branch.key}_reg_no', 1)">+1</button>
-                        <button type="button" onclick="changeValue('${branch.key}_reg_no', -1)">-1</button>
-                    </div>
-                </div>
-                <button type="button" class="fetchResultButton" data-branch="${branch.key}">Show Result</button>
-                <div id="${branch.key}ResultSection" style="display: none;" class="result">
-                    <h3>Result:</h3>
-                    <div id="${branch.key}Result"></div>
-                </div>
-            `;
-            formContainer.appendChild(formSection);
-        });
-
-        // File URLs for different branches
-        const fileUrls = Object.fromEntries(branches.map(branch => [branch.key, branch.fileUrl]));
-
-        // Show the respective form section when a branch is selected
-        branchSelect.addEventListener('change', function() {
-            const selectedBranch = this.value;
-            document.querySelectorAll('.formSection').forEach(section => section.style.display = 'none'); // Hide all sections
-            if (selectedBranch) {
-                document.getElementById(`${selectedBranch}FormSection`).style.display = 'block'; // Show the selected branch's form
-
-                // Retrieve the last entered registration number from local storage
-                const lastRegNo = localStorage.getItem('reg_no');
-                if (lastRegNo) {
-                    document.getElementById(`${selectedBranch}_reg_no`).value = lastRegNo; // Fill the input with the last registration number
-                    // Automatically trigger the search
-                    document.querySelector(`.fetchResultButton[data-branch="${selectedBranch}"]`).click();
-                }
+            // Enable or disable buttons based on input length
+            if (input.value.length === 11) {
+                incrementButton.disabled = false;
+                decrementButton.disabled = false;
+            } else {
+                incrementButton.disabled = true;
+                decrementButton.disabled = true;
             }
-        });
 
-        // Function to change the value of the input and trigger the result button
-        function changeValue(inputId, change) {
-            const input = document.getElementById(inputId);
+            // Hide result section if input is empty
+            if (input.value.length === 0) {
+                document.getElementById('resultSection').style.display = 'none';
+            }
+        }
+
+        // Function to change the value of the input
+        function changeValue(change) {
+            const input = document.getElementById('reg_no');
             const currentValue = parseInt(input.value) || 0; // Default to 0 if input is empty
             input.value = currentValue + change;
+            updateHeading(); // Update heading after changing value
+            localStorage.setItem('reg_no', input.value); // Save the registration number to local storage
 
-            // Trigger the Show Result button click
-            const fetchButton = document.querySelector(`.fetchResultButton[data-branch="${inputId.split('_')[0]}"]`);
-            if (fetchButton) {
-                fetchButton.click();
+            // Fetch and display the rank for the currently active semester
+            const activeSemester = localStorage.getItem('semester');
+            if (activeSemester) {
+                setSemester(activeSemester); // Call setSemester to fetch the rank
             }
+        }
+
+        // Function to clear the input
+        function clearInput() {
+            const input = document.getElementById('reg_no');
+            const clearButton = document.getElementById('clearButton');
+
+            // Store the current registration number before clearing
+            const currentRegNo = input.value;
+
+            // Clear the input
+            input.value = '';
+            updateHeading(); // Update heading after clearing input
+            document.getElementById('resultSection').style.display = 'none'; // Hide result section
+            checkInput(); // Check input to disable buttons
+            removeActiveSemester(); // Remove active semester highlight
+
+            // Change clear button to undo button
+            clearButton.innerText = "Undo";
+            clearButton.setAttribute("onclick", "undoClear('" + currentRegNo + "')");
+        }
+
+        // Function to undo the clear action
+        function undoClear(previousRegNo) {
+            const input = document.getElementById('reg_no');
+            input.value = previousRegNo; // Restore last registration number
+            updateHeading(); // Update heading
+            checkInput(); // Check input to enable buttons
+
+            // Change undo button back to clear button
+            const clearButton = document.getElementById('clearButton');
+            clearButton.innerText = "Clear";
+            clearButton.setAttribute("onclick", "clearInput()");
+        }
+
+        // Function to remove active semester highlight
+        function removeActiveSemester() {
+            const buttons = document.querySelectorAll('.button-container button');
+            buttons.forEach(button => button.classList.remove('active'));
+            localStorage.removeItem('semester'); // Clear semester from local storage
+        }
+
+        // Function to update the heading based on the registration number
+        function updateHeading() {
+            const regNo = document.getElementById('reg_no').value;
+
+            if (regNo.length === 11) {
+                const branchCode = regNo.substring(2, 5);
+                const sessionDigit = regNo.charAt(8);
+                const branch = branches[branchCode];
+
+                let startYear;
+                if (sessionDigit === '9') {
+                    startYear = (parseInt(regNo.substring(0, 2)) - 1); // One year less
+                } else {
+                    startYear = parseInt(regNo.substring(0, 2));
+                }
+                const endYear = startYear + 4; // Add 4 years for the session
+                const session = `20${startYear}-20${endYear}`; // Format session as YYYY
+
+                if (branch) {
+                    document.getElementById('dynamicHeading').innerText = `${branch} Engineering ${session} Rank Check In All Your ${branch} Engg. Batchmates in Bihar Engineering University`;
+                }
+            } else {
+                document.getElementById('dynamicHeading').innerText = 'Rank Check In All Your Batchmates in Bihar Engineering University';
+            }
+        }
+
+        // Function to set the semester and fetch data
+        function setSemester(semester, fromLoad = false) {
+            const regNo = document.getElementById('reg_no').value;
+
+            // Clear previous active button
+            const buttons = document.querySelectorAll('.button-container button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Highlight the selected button
+            const selectedButton = Array.from(buttons).find(button => button.textContent === semester);
+            if (selectedButton) {
+                selectedButton.classList.add('active');
+            }
+
+            // Save the selected semester to local storage
+            localStorage.setItem('semester', semester);
+
+            // Save the current registration number to local storage
+            localStorage.setItem('reg_no', regNo);
+            updateHeading(); // Update heading with the current registration number
+
+            if (regNo.length !== 11) {
+                alert('Please enter a valid 11-digit registration number.');
+                return;
+            }
+
+            const admissionYear = regNo.substring(0, 2);
+            const sessionDigit = regNo.charAt(8);
+            const branchCode = regNo.substring(2, 5);
+            const branch = branches[branchCode];
+
+            if (!branch) {
+                alert('Invalid branch code in registration number.');
+                return;
+            }
+
+            let startYear;
+            if (sessionDigit === '9') {
+                startYear = (parseInt(admissionYear) - 1); // One year less
+            } else {
+                startYear = parseInt(admissionYear);
+            }
+            const endYear = startYear + 4; // Add 4 years for the session
+
+            const session = `${startYear}${endYear.toString().slice(-2)}`; // Format session as YYYY-YY
+            const branchShortName = branchCode === '101' ? 'ce' : branchCode === '102' ? 'me' : branchCode === '103' ? 'ee' : branchCode === '104' ? 'ece' : branchCode === '105' ? 'cse' : 'eee';
+            const fileUrl = `https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/${semester.toLowerCase()}${branchShortName}${session}.xlsx`;
+            fetchExcelData(fileUrl, regNo, branch, session);
         }
 
         // Fetch the Excel file for the selected branch
-        async function fetchExcelData(branch) {
-            const fileUrl = fileUrls[branch];
-            const response = await fetch(fileUrl);
-            const data = await response.arrayBuffer();
-            const workbook = XLSX.read(data, { type: 'array' });
-            const sheet = workbook.Sheets[workbook.SheetNames[0]]; // Assuming data is in the first sheet
-            const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-            return jsonData;
-        }
-
-        // Handle result fetching for each branch
-        document.addEventListener('click', async function(event) {
-            if (event.target.classList.contains('fetchResultButton')) {
-                const branch = event.target.getAttribute('data-branch');
-                const regNoInputId = `${branch}_reg_no`;
-                const resultSectionId = `${branch}ResultSection`;
-                const resultDivId = `${branch}Result`;
-
-                const regNo = document.getElementById(regNoInputId).value;
-
-                if (!regNo.trim()) {
-                    alert('Please enter a registration number.');
-                    return;
+        async function fetchExcelData(fileUrl, regNo, branch, session) {
+            try {
+                const response = await fetch(fileUrl);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
                 }
-
-                // Save the registration number to local storage without branch name
-                localStorage.setItem('reg_no', regNo);
-
-                const data = await fetchExcelData(branch);
-                const studentData = data.slice(1); // Removing the first row (headers)
+                const data = await response.arrayBuffer();
+                const workbook = XLSX.read(data, { type: 'array' });
+                const sheet = workbook.Sheets[workbook.SheetNames[0]]; // Assuming data is in the first sheet
+                const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                const studentData = jsonData.slice(1); // Removing the first row (headers)
 
                 const student = studentData.find(row => row[0] == regNo);
 
@@ -264,19 +341,22 @@
                     const rank = studentData.filter(row => row[2] >= sgpa).length;
                     const sameSgpaCount = studentData.filter(row => row[2] == sgpa).length;
 
-                    document.getElementById(resultDivId).innerHTML = `
+                    document.getElementById('result').innerHTML = `
                         <p>Name: ${name}</p>
                         <p>Rank: ${rank} / ${totalStudents}</p>
                         <p>SGPA: ${sgpa}</p>
                         <p>Number of students with the same SGPA: ${sameSgpaCount}</p>
                     `;
                 } else {
-                    document.getElementById(resultDivId).innerHTML = '<p>No student found with this Registration Number.</p>';
+                    document.getElementById('result').innerHTML = '<p>No student found with this Registration Number.</p>';
                 }
 
-                document.getElementById(resultSectionId).style.display = 'block'; // Show the result section
+                document.getElementById('resultSection').style.display = 'block'; // Show the result section
+            } catch (error) {
+                document.getElementById('result').innerHTML = '<p>Error fetching data. Please try again later.</p>';
+                console.error('Error fetching data:', error);
             }
-        });
+        }
     </script>
 </body>
 </html>
