@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Rank Checker</title>
+    <title>BEU Rank Check - Logical Abhishek</title>
 
      <!-- Google Ads & Tag Manager -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
@@ -18,6 +18,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
     
     <style>
+        html {
+            height: 100%;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        /* Update AdSense container spacing */
+        .adsense-container {
+            margin: 5px 0;
+        }
+
+        .footer {
+            background-color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            margin-top: auto;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -107,42 +133,157 @@
         .clear-button:hover {
             color: #f00; /* Change color on hover */
         }
+
+        /* Add navigation menu styles */
+        .nav-menu {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;  /* Reduced from 20px */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .nav-menu a {
+            color: #1e88e5;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #f0f2f5;
+        }
+
+        /* Update header styles to match index.html */
+        .header {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            padding: 1.5rem;  /* Reduced from 2rem */
+            text-align: center;
+            margin-bottom: 1rem;  /* Reduced from 2rem */
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        #dynamicHeading {
+            margin: 0;  /* Remove default margin */
+            color: #4CAF50;
+            min-height: 50px;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            #dynamicHeading {
+                font-size: 1.2rem;
+            }
+            .button-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on mobile */
+            }
+            input[type="number"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .input-container {
+                flex-direction: column;
+            }
+            .clear-button, #incrementButton, #decrementButton {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            .nav-menu a {
+                margin: 2px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 id="dynamicHeading">Rank Check In All Your Batchmates in Bihar Engineering University</h1>
-    <div id="formContainer">
-        <h2>Enter Registration Number</h2>
-        <div class="input-container">
-            <input type="number" id="reg_no" oninput="limitlength(this,11); checkInput()" name="reg_no" required oninput="updateHeading()">
-            <script>
-                function limitlength(element, maxLength) {
-                    if (element.value.length > maxLength) {
-                        element.value = element.value.slice(0, maxLength);
+    <header class="header">
+        <h1>BEU Rank Check</h1>
+        <p>Check your rank among all students</p>
+    </header>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="beuresult.html">BEU Result</a>
+        <a href="SBTEResult.html">SBTE Result</a>
+        <a href="rankcheck.html">Rank Check</a>
+        <a href="colleges.html">College Codes</a>
+    </nav>
+
+    <!-- Add AdSense ad unit -->
+    <div style="text-align: center; margin: 5px 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6429074331864701"
+             data-ad-slot="your-ad-slot-id"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <h1 id="dynamicHeading">Rank Check In All Your Batchmates in Bihar Engineering University</h1>
+        <div id="formContainer">
+            <h2>Enter Registration Number</h2>
+            <div class="input-container">
+                <input type="number" id="reg_no" oninput="limitlength(this,11); checkInput()" name="reg_no" required oninput="updateHeading()">
+                <script>
+                    function limitlength(element, maxLength) {
+                        if (element.value.length > maxLength) {
+                            element.value = element.value.slice(0, maxLength);
+                        }
                     }
-                }
-            </script>
-            <button class="clear-button" id="clearButton" onclick="clearInput()">Clear</button>
-            <button type="button" id="incrementButton" onclick="changeValue(1)" disabled>+1</button>
-            <button type="button" id="decrementButton" onclick="changeValue(-1)" disabled>-1</button>
-        </div>
-        <div class="button-container">
-            <button type="button" onclick="setSemester('1st')">1st</button>
-            <button type="button" onclick="setSemester('2nd')">2nd</button>
-            <button type="button" onclick="setSemester('3rd')">3rd</button>
-            <button type="button" onclick="setSemester('4th')">4th</button>
-            <button type="button" onclick="setSemester('5th')">5th</button>
-            <button type="button" onclick="setSemester('6th')">6th</button>
-            <button type="button" onclick="setSemester('7th')">7th</button>
-            <button type="button" onclick="setSemester('8th')">8th</button>
-        </div>
-        <div id="resultSection" style="display: none;" class="result">
-            <h3>Result:</h3>
-            <div id="result"></div>
+                </script>
+                <button class="clear-button" id="clearButton" onclick="clearInput()">Clear</button>
+                <button type="button" id="incrementButton" onclick="changeValue(1)" disabled>+1</button>
+                <button type="button" id="decrementButton" onclick="changeValue(-1)" disabled>-1</button>
+            </div>
+            <div class="button-container">
+                <button type="button" onclick="setSemester('1st')">1st</button>
+                <button type="button" onclick="setSemester('2nd')">2nd</button>
+                <button type="button" onclick="setSemester('3rd')">3rd</button>
+                <button type="button" onclick="setSemester('4th')">4th</button>
+                <button type="button" onclick="setSemester('5th')">5th</button>
+                <button type="button" onclick="setSemester('6th')">6th</button>
+                <button type="button" onclick="setSemester('7th')">7th</button>
+                <button type="button" onclick="setSemester('8th')">8th</button>
+            </div>
+            <div id="resultSection" style="display: none;" class="result">
+                <h3>Result:</h3>
+                <div id="result"></div>
+            </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
+        <p><small>This website is made for the purpose of information and All the data shown is available in public.</small></p>
+        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank">Telegram</a></p>
+    </footer>
 
     <script>
         // Data structure for branches
