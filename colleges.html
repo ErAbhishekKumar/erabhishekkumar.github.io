@@ -62,13 +62,106 @@
                 opacity: 1;
             }
         }
+
+        /* Header styles */
+        .header {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+
+        /* Navigation menu styles */
+        .nav-menu {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .nav-menu a {
+            display: inline-block;
+            color: #1e88e5;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+            background: none;
+            width: auto;
+            max-width: none;
+            font-weight: normal;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #f0f2f5;
+            transform: none;
+        }
+
+        /* College links - keep existing styles */
+        .college-links a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: linear-gradient(90deg, #ff7eb3, #ff758c);
+            width: 90%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bold;
+        }
+
+        .college-links a:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            .nav-menu a {
+                margin: 2px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
 </head>
 <body>
+    <header class="header">
+        <h1>College Codes</h1>
+        <p>BEU College Information</p>
+    </header>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="beuresult.html">BEU Result</a>
+        <a href="SBTEResult.html">SBTE Result</a>
+        <a href="rankcheck.html">Rank Check</a>
+        <a href="colleges.html">College Codes</a>
+        <a href="gecsheikhpura/branch.html">GEC Sheikhpura</a>
+        <a href="wifibookmark.html">WiFi Tools</a>
+    </nav>
     <h3>List of All Government B.Tech. College's Websites</h3>
-    <div>
+    <div class="college-links">
         <a href="https://www.mitmuzaffarpur.org/">1. 107-MIT Muzaffarpur</a>
         <a href="https://www.bcebhagalpur.ac.in/">2. 108-Bhagalpur College of Engineering, Bhagalpur</a>
         <a href="https://ncechandi.ac.in/">3. 109-Nalanda College of Engineering, Nalanda</a>
