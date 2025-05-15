@@ -94,8 +94,115 @@
             }
         }
     </script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+
+        .nav-menu {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-menu a {
+            color: #1e88e5;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Update footer to not overlap content */
+        .footer {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            .nav-menu a {
+                margin: 2px;
+                font-size: 0.9rem;
+            }
+            .container {
+                padding: 10px;
+            }
+            input, select, button {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .result-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header class="header">
+        <h1>SBTE Result</h1>
+        <p>Unofficial Result Portal</p>
+    </header>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="beuresult.html">BEU Result</a>
+        <a href="SBTEResult.html">SBTE Result</a>
+        <a href="rankcheck.html">Rank Check</a>
+        <a href="colleges.html">College Codes</a>
+        <a href="gecsheikhpura/branch.html">GEC Sheikhpura</a>
+        <a href="wifibookmark.html">WiFi Tools</a>
+    </nav>
     <h1>SBTE Result (Unofficial)</h1><br>
     <div id="result1"></div> 
 
@@ -129,29 +236,31 @@
 
     </script>
 
-    <label for="rollNo">Enter Roll Number:</label>
-    <input type="text" id="rollNo" maxlength="12" placeholder="Enter 12-digit roll number" required>
-    <br><br>
+    <div class="container">
+        <label for="rollNo">Enter Roll Number:</label>
+        <input type="text" id="rollNo" maxlength="12" placeholder="Enter 12-digit roll number" required>
+        <br><br>
 
-    <label>
-        <input type="checkbox" id="checkbox1" name="rollType" onclick="toggleCheckbox(this)">
-        Roll No 001 to 060
-    </label><br>
+        <label>
+            <input type="checkbox" id="checkbox1" name="rollType" onclick="toggleCheckbox(this)">
+            Roll No 001 to 060
+        </label><br>
 
-    <label>
-        <input type="checkbox" id="checkbox2" name="rollType" onclick="toggleCheckbox(this)">
-        Roll No 001 to 120
-    </label><br>
+        <label>
+            <input type="checkbox" id="checkbox2" name="rollType" onclick="toggleCheckbox(this)">
+            Roll No 001 to 120
+        </label><br>
 
-    <label>
-        <input type="checkbox" id="checkbox3" name="rollType" onclick="toggleCheckbox(this)" checked>
-        Single Student Roll No
-    </label><br><br>
+        <label>
+            <input type="checkbox" id="checkbox3" name="rollType" onclick="toggleCheckbox(this)" checked>
+            Single Student Roll No
+        </label><br><br>
 
-    <button onclick="submitForm()">Submit</button>
-    <br>
-    <p>
-    <div id="result"></div> </p>
+        <button onclick="submitForm()">Submit</button>
+        <br>
+        <p>
+        <div id="result"></div> </p>
+    </div>
 
 
 
@@ -184,9 +293,10 @@
     </script>
 
     <!-- Footer Section -->
-    <footer style="position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 14px; color: #888; background-color: #fff; padding: 10px 0;">
+    <footer class="footer">
         <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
-        <p><small>This website is made for the purpose of downloading results easily.</small></p>
+        <p><small>This website is made for the purpose of information and All the data shown is available in public.</small></p>
+        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank">Telegram</a></p>
     </footer>
 </body>
 </html>
