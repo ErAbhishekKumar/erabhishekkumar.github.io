@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Fetcher</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background: #0056b3;
+    }
+    #queueFrame {
+      width: 90%;
+      margin: 20px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      min-height: 100px;
+    }
+    .queue-item {
+      padding: 5px;
+      margin: 5px;
+      background: #f0f0f0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Result Fetcher</h1>
+    <div class="form-group">
+      <label for="regno">Registration Number:</label>
+      <input type="text" id="regno" placeholder="Enter 11-digit Registration Number">
+    </div>
+    <div class="form-group">
+      <label for="serverip">Server IP:</label>
+      <input type="text" id="serverip" placeholder="Enter Server IP Address" value="192.168.7.36">
+    </div>
+    <div class="form-group">
+      <button onclick="submitRegNo()">Submit</button>
+    </div>
+    <div id="queueFrame">
+      <h3>Live Queue Status</h3>
+      <div id="queueList"></div>
+    </div>
+    <div class="status" id="status"></div>
+    <iframe id="resultFrame" style="display:none;"></iframe>
+  </div>
+
+  <script>
+    let queue = [];
+    let processedRegnos = new Set(); // Track processed registration numbers
+    let processing = false;
+
+    function updateQueueDisplay() {
+      const queueList = document.getElementById("queueList");
+      queueList.innerHTML = queue.length ? 
+        queue.map((item, index) => `
+          <div class="queue-item">
+            ${index + 1}. RegNo: ${item.regno} | Server: ${item.serverip}
+            ${index === 0 && processing ? '(Processing...)' : ''}
+          </div>
+        `).join('') : 
+        '<p>Queue is empty</p>';
+    }
+
+    function submitRegNo() {
+      const regno = document.getElementById("regno").value.trim();
+      const serverip = document.getElementById("serverip").value.trim();
+      
+      if (!/^\d{11}$/.test(regno)) {
+        alert("Please enter a valid 11-digit Registration Number.");
+        return;
+      }
+      
+      if (!serverip) {
+        alert("Please enter server IP address");
+        return;
+      }
+
+      // Check for duplicates
+      if (processedRegnos.has(regno) || queue.some(item => item.regno === regno)) {
+        alert("This registration number is already in queue or has been processed!");
+        return;
+      }
+
+      queue.push({regno, serverip});
+      updateQueueDisplay();
+      document.getElementById("status").innerText = `✅ Added to queue. Position: ${queue.length}`;
+      processQueue();
+    }
+
+    async function processQueue() {
+      if (processing || queue.length === 0) return;
+      processing = true;
+      updateQueueDisplay();
+
+      const {regno, serverip} = queue[0];
+      const fetchUrl = `http://${serverip}:7860/result?reg=${regno}`;
+
+      try {
+        const response = await fetch(fetchUrl);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${regno}_result.html`;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+
+        processedRegnos.add(regno); // Add to processed set
+        document.getElementById("status").innerText = `✅ Downloaded result for ${regno}`;
+      } catch (e) {
+        document.getElementById("status").innerText = `❌ Error: ${e.message}`;
+        console.error(e);
+      }
+
+      queue.shift();
+      processing = false;
+      updateQueueDisplay();
+
+      if (queue.length > 0) {
+        setTimeout(processQueue, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
