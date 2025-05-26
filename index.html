@@ -103,6 +103,28 @@
             text-align: center;
             margin-top: 20px; /* Added margin top */
         }
+
+        /* Notification Bar Styles */
+        .notification-bar {
+            background-color: hsl(0, 0%, 100%);
+            color: rgb(253, 0, 0);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .notification-content {
+            display: inline-block;
+            animation: scroll-left 30s linear infinite;
+            padding-left: 100%;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
@@ -116,6 +138,12 @@
         <h1>Logical Abhishek</h1>
         <p>All Bihar Technical Education Tools in One Place</p>
     </header>
+
+    <div class="notification-bar">
+        <div class="notification-content">
+            🔔 Important: 4th Sem BEU RANK CHECK is updated ! Stay tuned for updates.
+        </div>
+    </div>
 
     <div class="container">
         <div class="tools-grid">
