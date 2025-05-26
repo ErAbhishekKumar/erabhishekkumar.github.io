@@ -106,13 +106,30 @@
 
         /* Notification Bar Styles */
         .notification-bar {
-            background-color: hsl(0, 0%, 100%);
-            color: rgb(253, 0, 0);
-            padding: 10px 0;
+            background-color: #ffffff;
+            padding: 8px 0;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .notification-bar.abhishek {
+            color: #ff0000;
+        }
+
+        .notification-bar.beu {
+            color: #1e88e5;
+        }
+
+        .notification-bar.beu a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        .notification-bar.beu a:hover {
+            text-decoration: underline;
         }
 
         .notification-content {
@@ -139,9 +156,17 @@
         <p>All Bihar Technical Education Tools in One Place</p>
     </header>
 
-    <div class="notification-bar">
+    <div class="notification-bar abhishek">
         <div class="notification-content">
-            🔔 Important: 4th Sem BEU RANK CHECK is updated ! Stay tuned for updates.
+            <span class="notification-prefix">By Abhishek:</span> 
+            🔔 Important: 4th Sem BEU RANK CHECK is updated! Stay tuned for updates.
+        </div>
+    </div>
+
+    <div class="notification-bar beu">
+        <div class="notification-content" id="beuNotices">
+            <span class="notification-prefix">By BEU:</span> 
+            Loading notices...
         </div>
     </div>
 
@@ -184,6 +209,41 @@
             navigator.clipboard.writeText("javascript:(function(){document.querySelector('.btn.custom-btn').removeAttribute('disabled');})();");
             alert("Code copied successfully!");
         }
+
+        // Add BEU notices fetch and display
+        async function fetchBEUNotices() {
+            try {
+                const response = await fetch('https://beu-bih.ac.in/backend/v1/notice/get-notice-board?isimportant=1', {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                const data = await response.json();
+                
+                if (data && data.length > 0) {
+                    const noticesText = data
+                        .map(notice => {
+                            const link = notice.link.startsWith('http') ? 
+                                notice.link : 
+                                `https://beu-bih.ac.in/backend/${notice.link}`;
+                            return `📢 <a href="${link}" target="_blank">${notice.board}</a>`;
+                        })
+                        .join(' | ');
+                    
+                    document.getElementById('beuNotices').innerHTML = 
+                        `<span class="notification-prefix">By BEU:</span> ${noticesText}`;
+                }
+            } catch (error) {
+                console.error('Error fetching BEU notices:', error);
+            }
+        }
+
+        // Fetch notices when page loads
+        fetchBEUNotices();
+        // Refresh notices every 5 minutes
+        setInterval(fetchBEUNotices, 300000);
     </script>
 </body>
 </html>
