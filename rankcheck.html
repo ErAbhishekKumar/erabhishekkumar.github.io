@@ -465,11 +465,18 @@
             const session = `${startYear}${endYear.toString().slice(-2)}`; // Format session as YYYY-YY
             const branchShortName = branchCode === '101' ? 'ce' : branchCode === '102' ? 'me' : branchCode === '103' ? 'ee' : branchCode === '104' ? 'ece' : branchCode === '105' ? 'cse' : 'eee';
             const fileUrl = `https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/${semester.toLowerCase()}${branchShortName}${session}.xlsx`;
-            fetchExcelData(fileUrl, regNo, branch, session);
+
+            // If 8th semester, also prepare CGPA file URL and pass flag
+            if (semester === '8th') {
+                const cgpaFileUrl = `https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/${semester.toLowerCase()}${branchShortName}${session}cgpa.xlsx`;
+                fetchExcelData(fileUrl, regNo, branch, session, true, cgpaFileUrl);
+            } else {
+                fetchExcelData(fileUrl, regNo, branch, session);
+            }
         }
 
         // Fetch the Excel file for the selected branch
-        async function fetchExcelData(fileUrl, regNo, branch, session) {
+        async function fetchExcelData(fileUrl, regNo, branch, session, is8thSem = false, cgpaFileUrl = null) {
             try {
                 const response = await fetch(fileUrl);
                 if (!response.ok) {
@@ -483,24 +490,70 @@
 
                 const student = studentData.find(row => row[0] == regNo);
 
+                let resultHtml = '';
                 if (student) {
                     const name = student[1];
                     const sgpa = student[2];
 
                     const totalStudents = studentData.length;
-                    const rank = studentData.filter(row => row[2] >= sgpa).length;
+                    // Find all SGPA values in descending order
+                    const sortedSgpas = studentData.map(row => row[2]).sort((a, b) => b - a);
+                    // Find the minimum index (rank) for this SGPA
+                    const sgpaIndex = sortedSgpas.findIndex(val => val == sgpa);
+                    const rank = sgpaIndex + 1;
                     const sameSgpaCount = studentData.filter(row => row[2] == sgpa).length;
 
-                    document.getElementById('result').innerHTML = `
+                    resultHtml += `
                         <p>Name: ${name}</p>
                         <p>Rank: ${rank} / ${totalStudents}</p>
                         <p>SGPA: ${sgpa}</p>
                         <p>Number of students with the same SGPA: ${sameSgpaCount}</p>
                     `;
+
+                    // If 8th semester, also fetch and show CGPA info
+                    if (is8thSem && cgpaFileUrl) {
+                        try {
+                            const cgpaResponse = await fetch(cgpaFileUrl);
+                            if (cgpaResponse.ok) {
+                                const cgpaData = await cgpaResponse.arrayBuffer();
+                                const cgpaWorkbook = XLSX.read(cgpaData, { type: 'array' });
+                                const cgpaSheet = cgpaWorkbook.Sheets[cgpaWorkbook.SheetNames[0]];
+                                const cgpaJsonData = XLSX.utils.sheet_to_json(cgpaSheet, { header: 1 });
+                                const cgpaStudentData = cgpaJsonData.slice(1);
+
+                                const cgpaStudent = cgpaStudentData.find(row => row[0] == regNo);
+                                if (cgpaStudent) {
+                                    const cgpa = cgpaStudent[2];
+                                    const totalCgpaStudents = cgpaStudentData.length;
+                                    // Find all CGPA values in descending order
+                                    const sortedCgpas = cgpaStudentData.map(row => row[2]).sort((a, b) => b - a);
+                                    // Find the minimum index (rank) for this CGPA
+                                    const cgpaIndex = sortedCgpas.findIndex(val => val == cgpa);
+                                    const cgpaRank = cgpaIndex + 1;
+                                    const sameCgpaCount = cgpaStudentData.filter(row => row[2] == cgpa).length;
+
+                                    resultHtml += `
+                                        <hr>
+                                        <p><b>CGPA Details (8th Sem):</b></p>
+                                        <p>CGPA: ${cgpa}</p>
+                                        <p>CGPA Rank: ${cgpaRank} / ${totalCgpaStudents}</p>
+                                        <p>Number of students with the same CGPA: ${sameCgpaCount}</p>
+                                    `;
+                                } else {
+                                    resultHtml += `<p>No CGPA data found for this Registration Number.</p>`;
+                                }
+                            } else {
+                                resultHtml += `<p>Could not fetch CGPA data.</p>`;
+                            }
+                        } catch (cgpaErr) {
+                            resultHtml += `<p>Error fetching CGPA data.</p>`;
+                        }
+                    }
                 } else {
-                    document.getElementById('result').innerHTML = '<p>No student found with this Registration Number.</p>';
+                    resultHtml = '<p>No student found with this Registration Number.</p>';
                 }
 
+                document.getElementById('result').innerHTML = resultHtml;
                 document.getElementById('resultSection').style.display = 'block'; // Show the result section
             } catch (error) {
                 document.getElementById('result').innerHTML = '<p>Error fetching data. Please try again later.</p>';
