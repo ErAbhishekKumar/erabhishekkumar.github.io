@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCERT Quiz - Logical Abhishek</title>
+
+     <!-- Google Ads & Tag Manager -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TRJKMKM2');</script>
+
+    <!-- AMP-->
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <!-- Meta Tags -->
+    <meta name="google-site-verification" content="IrNwqZseywnZinPv4xz34hKzvnOKzsMZ0o7QVeiywc0">
+    <meta name="google-site-verification" content="D1snizFbH-3P8XKUzq-WXkrtRajZFyMj_qcNVDqTXLY" />
+    
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+    
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        /* Update AdSense container spacing */
+        .adsense-container {
+            margin: 5px 0;
+        }
+
+        .footer {
+            background-color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            margin-top: auto;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            min-height: 50px; /* Fixed height to prevent layout shift */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px; /* Space between input and buttons */
+        }
+
+        .button-container {  /* 4 buttons in one row and 4 in another row */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            gap: 10px; /* Space between buttons */
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            flex: 1 1 ; /* Make buttons responsive */
+            margin: 2px; /* Space between buttons */
+        }
+
+        button:hover {
+            background-color: #0d23e6;
+        }
+
+        .active {
+            background-color: #0d23e6; /* Highlight color for active button */
+        }
+
+        #formContainer {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+
+        .clear-button {
+            background: #f00;
+            border: #333;  
+            cursor: pointer;
+            font-size: 20px;
+            color: #1500ff;
+            margin-left: 5px; /* Adjust position */
+        }
+
+        .clear-button:hover {
+            color: #f00; /* Change color on hover */
+        }
+
+        /* Add navigation menu styles */
+        .nav-menu {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;  /* Reduced from 20px */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .nav-menu a {
+            color: #1e88e5;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #f0f2f5;
+        }
+
+        /* Update header styles to match index.html */
+        .header {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            padding: 1.5rem;  /* Reduced from 2rem */
+            text-align: center;
+            margin-bottom: 1rem;  /* Reduced from 2rem */
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        #dynamicHeading {
+            margin: 0;  /* Remove default margin */
+            color: #4CAF50;
+            min-height: 50px;
+            margin-bottom: 15px;
+        }
+
+        /* Quiz specific styles */
+        .quiz-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 24px 18px;
+        }
+        .quiz-question {
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz-option-btn {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background: #f7f7f7;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: left;
+            transition: background 0.2s;
+        }
+        .quiz-option-btn.correct {
+            background: #c8f7c5 !important;
+            border-color: #2ecc40;
+        }
+        .quiz-option-btn.incorrect {
+            background: #ffd6d6 !important;
+            border-color: #e74c3c;
+        }
+        .quiz-explanation {
+            margin-top: 12px;
+            background: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .quiz-nav {
+            margin-top: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .quiz-nav button {
+            padding: 8px 18px;
+            border-radius: 4px;
+            border: none;
+            background: #1e88e5;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .quiz-nav button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .dropdown-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0 10px 0;
+        }
+        select {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #aaa;
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            #dynamicHeading {
+                font-size: 1.2rem;
+            }
+            .button-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on mobile */
+            }
+            input[type="number"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .input-container {
+                flex-direction: column;
+            }
+            .clear-button, #incrementButton, #decrementButton {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            .nav-menu a {
+                margin: 2px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- amp -->
+    <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-6429074331864701">
+    </amp-auto-ads>
+    
+    <header class="header">
+        <h1>NCERT Quiz</h1>
+        <p>Practice MCQs for Class 7-10</p>
+    </header>
+
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="beuresult.html">BEU Result</a>
+        <a href="SBTEResult.html">SBTE Result</a>
+        <a href="rankcheck.html">Rank Check</a>
+        <a href="colleges.html">College Codes</a>
+    </nav>
+
+    <!-- Add AdSense ad unit -->
+    <div style="text-align: center; margin: 5px 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6429074331864701"
+             data-ad-slot="your-ad-slot-id"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="container">
+        <div class="dropdown-container">
+            <select id="classDropdown">
+                <option value="">Select Class</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+            </select>
+            <select id="subjectDropdown" disabled>
+                <option value="">Select Subject</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="polity">Polity</option>
+                <option value="geography">Geography</option>
+            </select>
+            <select id="chapterDropdown" disabled>
+                <option value="">Select Chapter</option>
+            </select>
+        </div>
+        <div id="quizSection"></div>
+    </div>
+
+    <footer class="footer">
+        <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
+        <p><small>This website is made for the purpose of information and All the data shown is available in public.</small></p>
+        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank">Telegram</a></p>
+    </footer>
+
+    <script>
+        // Static chapters data (example, update as needed)
+        const chaptersData = {
+            "7": {
+                "science": [
+                    "Nutrition in Plants",
+                    "Nutrition in Animals",
+                    "Fibre to Fabric",
+                    "Heat",
+                    "Acids, Bases and Salts"
+                    // ...add more chapters as needed
+                ],
+                "history": [
+                    "Tracing Changes Through a Thousand Years",
+                    "New Kings and Kingdoms"
+                    // ...add more chapters as needed
+                ],
+                "polity": [
+                    "On Equality",
+                    "Role of the Government in Health"
+                    // ...add more chapters as needed
+                ],
+                "geography": [
+                    "Environment",
+                    "Inside Our Earth"
+                    // ...add more chapters as needed
+                ]
+            },
+            "8": {
+                "science": [
+                    "Crop Production and Management",
+                    "Microorganisms: Friend and Foe"
+                    // ...add more chapters as needed
+                ],
+                // ...other subjects
+            },
+            "9": {
+                // ...subjects and chapters
+            },
+            "10": {
+                // ...subjects and chapters
+            }
+        };
+
+        let quizFileQuestions = []; // Store all questions from file for chapter filtering
+
+        // Enable subject dropdown after class is selected
+        document.getElementById('classDropdown').addEventListener('change', function() {
+            document.getElementById('subjectDropdown').disabled = !this.value;
+            document.getElementById('subjectDropdown').value = "";
+            document.getElementById('chapterDropdown').disabled = true;
+            document.getElementById('chapterDropdown').innerHTML = `<option value="">Select Chapter</option>`;
+            document.getElementById('quizSection').innerHTML = "";
+        });
+
+        // Subject dropdown logic
+        document.getElementById('subjectDropdown').addEventListener('change', function() {
+            const classVal = document.getElementById('classDropdown').value;
+            const subjectVal = this.value;
+            document.getElementById('chapterDropdown').disabled = true;
+            document.getElementById('chapterDropdown').innerHTML = `<option value="">Select Chapter</option>`;
+            document.getElementById('quizSection').innerHTML = "";
+            if (!classVal || !subjectVal) return;
+
+            // Populate chapter dropdown from static data
+            const chapters = (chaptersData[classVal] && chaptersData[classVal][subjectVal]) || [];
+            let chapterOptions = `<option value="">Select Chapter</option>`;
+            chapters.forEach((ch, idx) => {
+                // Use chapter number (idx+1) as value, display chapter name
+                chapterOptions += `<option value="${idx+1}">${ch}</option>`;
+            });
+            document.getElementById('chapterDropdown').innerHTML = chapterOptions;
+            document.getElementById('chapterDropdown').disabled = chapters.length === 0;
+
+            // No need to preload quizFileQuestions here, will fetch on chapter selection
+        });
+
+        // Chapter dropdown logic
+        document.getElementById('chapterDropdown').addEventListener('change', function() {
+            const chapterNo = this.value;
+            const classVal = document.getElementById('classDropdown').value;
+            const subjectVal = document.getElementById('subjectDropdown').value;
+            const chapters = (chaptersData[classVal] && chaptersData[classVal][subjectVal]) || [];
+            const chapterName = chapters[chapterNo - 1] || "";
+            document.getElementById('quizSection').innerHTML = "";
+            if (!chapterNo) return;
+
+            // File URL now includes chapter number as value
+            const fileUrl = `https://raw.githubusercontent.com/ErAbhishekKumar/erabhishekkumar.github.io/main/quiz_${classVal}_${subjectVal}_${chapterNo}.xlsx`;
+
+            // Try to fetch chapter-specific file
+            fetch(fileUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error("No quiz found");
+                    return response.arrayBuffer();
+                })
+                .then(data => {
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                    const questions = jsonData.slice(1).map(row => ({
+                        serial: row[0],
+                        question: row[1],
+                        options: [row[2], row[3], row[4], row[5]],
+                        right: row[6],
+                        explanation: row[7],
+                        chapter: row[8] ? row[8].toString().trim() : ""
+                    }));
+                    if (!questions.length) throw new Error("No quiz found in chapter file");
+                    // Show confirm with total questions
+                    if (!confirm(`Kya tum ready ho quiz dene ke liye?\nTotal Questions: ${questions.length}`)) {
+                        document.getElementById('chapterDropdown').value = "";
+                        return;
+                    }
+                    startQuiz(questions);
+                })
+                .catch(() => {
+                    alert("No questions found for this chapter.");
+                    document.getElementById('chapterDropdown').value = "";
+                });
+        });
+
+        // Quiz logic
+        let currentQ = 0, quizData = [];
+        function startQuiz(questions) {
+            quizData = questions;
+            currentQ = 0;
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const q = quizData[currentQ];
+            let html = `<div class="quiz-container">
+                <div class="quiz-question"><b>Q${currentQ+1}.</b> ${q.question}</div>
+                <div class="quiz-options">`;
+            ['A','B','C','D'].forEach((opt, idx) => {
+                html += `<button class="quiz-option-btn" data-opt="${opt}" onclick="selectOption('${opt}', this)">${opt}. ${q.options[idx]}</button>`;
+            });
+            html += `</div>
+                <div id="quizExplanation" class="quiz-explanation" style="display:none"></div>
+                <div class="quiz-nav">
+                    <button onclick="prevQuizQ()" ${currentQ===0?'disabled':''}>Prev</button>
+                    <button onclick="nextQuizQ()" ${currentQ===quizData.length-1?'disabled':''}>Next</button>
+                </div>
+            </div>`;
+            document.getElementById('quizSection').innerHTML = html;
+        }
+
+        window.selectOption = function(opt, btn) {
+            const q = quizData[currentQ];
+            const buttons = document.querySelectorAll('.quiz-option-btn');
+            buttons.forEach(b => b.disabled = true);
+            if (opt === q.right) {
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('incorrect');
+                // highlight correct
+                buttons.forEach(b => {
+                    if (b.getAttribute('data-opt') === q.right) b.classList.add('correct');
+                });
+            }
+            // Show explanation
+            const expl = document.getElementById('quizExplanation');
+            expl.innerHTML = `<b>Explanation:</b> ${q.explanation}`;
+            expl.style.display = "block";
+        };
+
+        window.prevQuizQ = function() {
+            if (currentQ > 0) {
+                currentQ--;
+                renderQuizQuestion();
+            }
+        };
+        window.nextQuizQ = function() {
+            if (currentQ < quizData.length-1) {
+                currentQ++;
+                renderQuizQuestion();
+            }
+        };
+    </script>
+</body>
+</html>
