@@ -521,31 +521,78 @@
 
         // Quiz logic
         let currentQ = 0, quizData = [];
+        // --- NEW: tracking state ---
+        let questionTimes   = [];   // प्रति प्रश्न लगा समय (seconds)
+        let questionAnswers = [];   // user के चुने उत्तर
+        let currentTimer    = 0;    // active question का चल रहा timer
+        let timerInterval   = null; // setInterval का id
+
         function startQuiz(questions) {
             quizData = questions;
             currentQ = 0;
+            questionTimes   = Array(questions.length).fill(0);
+            questionAnswers = Array(questions.length).fill(null);
+
             renderQuizQuestion();
         }
 
         function renderQuizQuestion() {
-            const q = quizData[currentQ];
-            let html = `<div class="quiz-container">
-                <div class="quiz-question"><b>Q${currentQ+1}.</b> ${q.question}</div>
-                <div class="quiz-options">`;
-            ['A','B','C','D'].forEach((opt, idx) => {
-                html += `<button class="quiz-option-btn" data-opt="${opt}" onclick="selectOption('${opt}', this)">${opt}. ${q.options[idx]}</button>`;
-            });
-            html += `</div>
-                <div id="quizExplanation" class="quiz-explanation" style="display:none"></div>
-                <div class="quiz-nav">
-                    <button onclick="prevQuizQ()" ${currentQ===0?'disabled':''}>Prev</button>
-                    <button onclick="nextQuizQ()" ${currentQ===quizData.length-1?'disabled':''}>Next</button>
-                </div>
-            </div>`;
-            document.getElementById('quizSection').innerHTML = html;
+    // 1️⃣ पिछले वाले question का timer रोकें
+    if (timerInterval) clearInterval(timerInterval);
+    currentTimer = 0;
+
+    const q = quizData[currentQ];
+
+    // 2️⃣ HTML बनायें
+    let html = `<div class="quiz-container">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div><i class="fas fa-stopwatch"></i> <span id="timer">0:00</span></div>
+            <div><span style="color:green;font-weight:bold;">+1</span> &nbsp; <span style="color:red;font-weight:bold;">-0.25</span></div>
+        </div>
+
+        <div class="quiz-question"><b>Q${currentQ + 1}.</b> ${q.question}</div>
+        <div class="quiz-options">`;
+
+    ['A', 'B', 'C', 'D'].forEach((opt, idx) => {
+        html += `<button class="quiz-option-btn"
+                         data-opt="${opt}"
+                         onclick="selectOption('${opt}', this)">
+                    ${opt}. ${q.options[idx]}
+                 </button>`;
+    });
+
+    html += `</div>
+        <div id="quizExplanation" class="quiz-explanation" style="display:none"></div>
+
+        <div class="quiz-nav" style="margin-top:16px;">
+            <button onclick="prevQuizQ()" ${currentQ === 0 ? 'disabled' : ''}>Prev</button>
+            <button onclick="nextQuizQ()" ${currentQ === quizData.length - 1 ? 'disabled' : ''}>Next</button>
+        </div>
+
+        <div style="text-align:center;margin-top:12px;">
+            <button onclick="submitQuiz()">Submit</button>
+        </div>
+    </div>`;
+
+    document.getElementById('quizSection').innerHTML = html;
+
+    // 3️⃣ नया timer चालू करें
+    timerInterval = setInterval(() => {
+        currentTimer++;
+        document.getElementById('timer').innerText = formatTime(currentTimer);
+    }, 1000);
+}
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
         window.selectOption = function(opt, btn) {
+            clearInterval(timerInterval);          // वही प्रश्न बंद
+            questionTimes[currentQ] = currentTimer; // समय save
+            questionAnswers[currentQ] = opt;        // उत्तर save
+
             const q = quizData[currentQ];
             const buttons = document.querySelectorAll('.quiz-option-btn');
             buttons.forEach(b => b.disabled = true);
@@ -576,6 +623,66 @@
                 renderQuizQuestion();
             }
         };
+ function submitQuiz() {
+    if (timerInterval) clearInterval(timerInterval);   // safety
+
+    let total = 0, correct = 0, wrong = 0, notAtt = 0;
+    let summary = `<div class="quiz-container"><h3 style="text-align:center;">Quiz Summary</h3>`;
+
+    quizData.forEach((q, idx) => {
+        const given = questionAnswers[idx];
+        const time  = formatTime(questionTimes[idx] || 0);
+
+        // full options with text
+        const correctText = q.right ? `${q.right}. ${q.options["ABCD".indexOf(q.right)]}` : "—";
+        const givenText   = given    ? `${given}. ${q.options["ABCD".indexOf(given)]}`     : "—";
+
+
+        let mark = 0, verdict = "Not Attempted";
+        if (!given) {
+            notAtt++;
+        } else if (given === q.right) {
+            mark = 1;  correct++; verdict = "✅ +1";
+        } else {
+            mark = -0.25; wrong++; verdict = "❌ -0.25";
+        }
+        total += mark;
+
+        summary += `<div style="border-bottom:1px solid #ccc;padding:8px 0;">
+            <b>Q${idx + 1}.</b> ${q.question}<br>
+            <b>Correct:</b> ${correctText} &nbsp; | &nbsp;
+            <b>Your:</b> ${givenText} &nbsp; | &nbsp;
+            <b>Time:</b> ${time} &nbsp; | &nbsp;
+            <b>Result:</b> ${verdict}
+        </div>`;
+    });
+
+    // stats block
+    summary += `<div style="padding:10px;background:#f9f9f9;margin-top:10px;">
+        <b>Total Marks:</b> ${total} / ${quizData.length}<br>
+        <b>Attempted:</b> ${quizData.length - notAtt}<br>
+        <b>Not Attempted:</b> ${notAtt}<br>
+        <b>Correct:</b> ${correct}<br>
+        <b>Wrong:</b> ${wrong}
+    </div>`;
+
+    // 🔁 reattempt button  ----  यही line पहले miss थी!
+    summary += `<div style="text-align:center; margin-top:15px;">
+        <button onclick="reattemptQuiz()" style="padding:10px 20px;font-size:16px;border-radius:6px;background:#1e88e5;color:white;border:none;cursor:pointer;">
+            🔁 Reattempt this quiz again
+        </button>
+    </div></div>`;   //  ←   बाहर वाले quiz‑container को यहीं close किया
+
+    document.getElementById('quizSection').innerHTML = summary;
+}
+
+
+    function reattemptQuiz() {
+    if (confirm("Do you want to attempt this quiz again from the beginning?")) {
+        startQuiz(quizData);  // फिर से वही quiz शुरू
+    }
+}
+
     </script>
 </body>
 </html>
