@@ -561,77 +561,85 @@
         });
 
         async function fetchResult(regNo, baseUrl, row) {
-        while (true) { // Infinite loop जब तक response 200 ना मिले
+    while (true) {
+        try {
+            const response = await fetch(
+                `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`,
+                { signal: abortController.signal }
+            );
 
-            try {
-                const response = await fetch(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
-                if (response.status !== 200) {
+            if (response.status !== 200) {
                 console.warn(`Retrying... Status Code: ${response.status}`);
-                await new Promise(resolve => setTimeout(resolve, 1000)); // 5 सेकंड का delay
-                continue; // दुबारा request करो
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                continue;
             }
-                const data = await response.text();
-                const text = data.contents;
 
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
+            const html = await response.text(); // ✅ FIXED: No .contents
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
 
-                let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
-                let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
-                let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+            // Selectors
+            let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
+            let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
+            let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
 
-                if (baseUrl.includes('akuexam.net')) {
-                    nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
-                    sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
-                    cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
-                }
+            if (baseUrl.includes('akuexam.net')) {
+                nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
+                sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
+                cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+            }
 
-                const name = doc.querySelector(nameSelector)?.textContent.trim();
-                const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
-                const cgpa = cgpaSelector ? doc.querySelector(cgpaSelector)?.textContent.trim() : 'N/A';
+            const name = doc.querySelector(nameSelector)?.textContent.trim();
+            const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
+            const cgpa = doc.querySelector(cgpaSelector)?.textContent.trim() || 'N/A';
 
-                if (!name || !sgpa) {
-                    throw new Error('Incomplete data');
-                }
+            if (!name || !sgpa) throw new Error('Incomplete data');
 
-                let failedSubjects = [];
-                const tables = doc.querySelectorAll('#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
-                tables.forEach(table => {
-                    const rows = table.querySelectorAll('tr');
-                    rows.forEach(row => {
-                        const gradeCell = row.querySelector('td:nth-child(6)');
-                        if (gradeCell && gradeCell.textContent.trim() === 'F') {
-                            const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
+            // Failed subjects
+            let failedSubjects = [];
+            const tables = doc.querySelectorAll(
+                '#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2'
+            );
+
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const gradeCell = row.querySelector('td:nth-child(6)');
+                    if (gradeCell && gradeCell.textContent.trim() === 'F') {
+                        const subjectName = row.querySelector('td:nth-child(2)')?.textContent.trim();
+                        if (subjectName) {
                             failedSubjects.push(subjectName);
                             failedSubjectsSet.add(subjectName);
                         }
-                    });
+                    }
                 });
+            });
 
-                let sgpaContent = sgpa;
-                let sgpaTooltip = '';
-                if (failedSubjects.length > 0) {
-                    sgpaContent += ' <span class="exclamation">!</span>';
-                    sgpaTooltip = `<div class="sgpa-tooltip">${sgpa}<span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
-                }
-
-                row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
-            } catch (error) {
-                console.error(`Error fetching result for ${regNo}:`, error);
-                row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
+            // SGPA cell with tooltip if failed subjects
+            let sgpaCellContent = sgpa;
+            if (failedSubjects.length > 0) {
+                sgpaCellContent = `<div class="sgpa-tooltip">${sgpa}<span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
             }
+
+            row.innerHTML = `
+                <td class="tooltip">
+                    <a href="${baseUrl + regNo}" target="_blank">${regNo}</a>
+                    <span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span>
+                </td>
+                <td>${name}</td>
+                <td class="sgpa">${sgpaCellContent}</td>
+                <td>${cgpa}</td>
+            `;
+
+            break; // ✅ IMPORTANT: exit loop after success
+
+        } catch (error) {
+            console.error(`Error fetching result for ${regNo}:`, error);
+            row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
+            break; // ✅ To avoid infinite loop on permanent error
         }
     }
-
-        document.getElementById('session').addEventListener('change', abortFetch);
-        document.getElementById('branch').addEventListener('change', abortFetch);
-        document.getElementById('semester').addEventListener('change', abortFetch);
-        document.getElementById('college').addEventListener('change', abortFetch);
-
-        document.getElementById('fetch-results').addEventListener('click', function() {
-            abortFetch();
-            fetchResults();
-        });
+}
 
         async function fetchResults() {
             if (isFetching) return; // Prevent multiple fetches
@@ -653,134 +661,122 @@
             const fetchedRegNos = new Set(); // To track already fetched registration numbers
 
             async function fetchStudents(entryType) {
-                let startSerial = entryType === '0' ? 1 : 901;
-                let endSerial = entryType === '0' ? 120 : 980;
-                let consecutiveFailures = 0; // Counter for consecutive failures
+    const startSerial = entryType === '0' ? 1 : 901;
+    const endSerial = entryType === '0' ? 120 : 980;
+    let consecutiveFailures = 0;
+    const maxFailures = 15; // Define maxFailures here if not globally declared
 
-                for (let i = startSerial; i <= endSerial; i++) {
-                    const serial = i.toString().padStart(3, '0');
-                    let regNo = `${session.slice(2)}${branch}${college}${serial}`;
+    for (let i = startSerial; i <= endSerial; i++) {
+        const serial = i.toString().padStart(3, '0');
+        let regNo = `${session.slice(2)}${branch}${college}${serial}`;
 
-                    if (entryType === '9') {
-                        const firstTwoDigits = parseInt(session.slice(2, 4)) + 1;
-                        regNo = `${firstTwoDigits}${branch}${college}${serial}`;
-                    }
-
-                    if (fetchedRegNos.has(regNo)) {
-                        continue; // Skip if this registration number is already processed
-                    }
-
-                    fetchedRegNos.add(regNo); // Mark this registration number as processed
-
-                    try {
-                        // Add delay to prevent too many requests at once
-                        await new Promise(resolve => setTimeout(resolve, 500));
-
-                        const response = await fetch(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
-                        const data = await response.text();
-                        const text = data.contents;
-
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(text, 'text/html');
-
-                        let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
-                        let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
-                        let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
-
-                        if (baseUrl.includes('akuexam.net')) {
-                            nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
-                            sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
-                            cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
-                        }
-
-                        const name = doc.querySelector(nameSelector)?.textContent.trim();
-                        const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
-                        const cgpa = cgpaSelector ? doc.querySelector(cgpaSelector)?.textContent.trim() : 'N/A';
-
-                        if (!name || !sgpa) {
-                            consecutiveFailures++;
-                            if (consecutiveFailures >= maxFailures) {
-                                console.log(`Stopping fetch after ${maxFailures} consecutive failures for ${entryType === '0' ? 'regular' : 'lateral'} entries.`);
-                                break;
-                            }
-                            continue;
-                        }
-
-                        consecutiveFailures = 0; // Reset the counter on success
-
-                        let failedSubjects = [];
-                        const tables = doc.querySelectorAll('#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
-                        tables.forEach(table => {
-                            const rows = table.querySelectorAll('tr');
-                            rows.forEach(row => {
-                                const gradeCell = row.querySelector('td:nth-child(6)');
-                                if (gradeCell && gradeCell.textContent.trim() === 'F') {
-                                    const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
-                                    failedSubjects.push(subjectName);
-                                    failedSubjectsSet.add(subjectName);
-                                }
-                            });
-                        });
-
-                        let sgpaContent = sgpa;
-                        let sgpaTooltip = '';
-                        if (failedSubjects.length > 0) {
-                            sgpaContent += ' <span class="exclamation">!</span>';
-                            sgpaTooltip = `<div class="sgpa-tooltip">${sgpaContent}<span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
-                        }
-
-                        const row = document.createElement('tr');
-                        row.classList.add('fade-in'); // Add animation class
-                        row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
-                        tableBody.appendChild(row);
-
-                        // Display the table incrementally
-                        document.getElementById('results-table').style.display = 'block';
-                        document.getElementById('print-table').style.display = 'block'; // Show the print button
-
-                        // Scroll to bottom while fetching
-                        scrollToBottom();
-
-                    } catch (error) {
-                        if (error.name === 'AbortError') {
-                            console.log(`Fetch aborted for ${regNo}`);
-                            break;
-                        } else {
-                            console.error(`Error fetching result for ${regNo}:`, error);
-
-                            const row = document.createElement('tr');
-                            row.classList.add('fade-in'); // Add animation class
-                            row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
-                            tableBody.appendChild(row);
-                        }
-                    }
-                }
-            }
-
-            // Fetch regular students first
-            await fetchStudents('0');
-            await fetchStudents('1');
-
-            // If not 1st or 2nd semester, fetch lateral students after regular
-            if (semester !== 'I' && semester !== 'II') {
-                await fetchStudents('9');
-            }
-
-            hideLoadingMessage();
-            isFetching = false; // Reset the fetching flag
-
-            // Scroll to top once fetching is complete
-            scrollToTop();
-
-            // Add options for each unique failed subject to the SGPA sort dropdown
-            const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
-            failedSubjectsSet.forEach(subject => {
-                const option = document.createElement('option');
-                option.value = subject;
-                option.textContent = subject;
-                sortOptionsSgpa.appendChild(option);
-            });
+        if (entryType === '9') {
+            const firstTwoDigits = parseInt(session.slice(2, 4)) + 1;
+            regNo = `${firstTwoDigits}${branch}${college}${serial}`;
         }
+
+        if (fetchedRegNos.has(regNo)) continue;
+        fetchedRegNos.add(regNo);
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 500)); // Rate limiting
+
+            const response = await fetch(
+                `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`,
+                { signal: abortController.signal }
+            );
+
+            const html = await response.text(); // ✅ NO `.contents`
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Default selectors
+            let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
+            let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
+            let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+
+            if (baseUrl.includes('akuexam.net')) {
+                nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
+                sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
+                cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
+            }
+
+            const name = doc.querySelector(nameSelector)?.textContent.trim();
+            const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
+            const cgpa = doc.querySelector(cgpaSelector)?.textContent.trim() || 'N/A';
+
+            // Skip invalid entries
+            if (!name || !sgpa) {
+                consecutiveFailures++;
+                if (consecutiveFailures >= maxFailures) {
+                    console.log(`Stopped after ${maxFailures} failures for ${entryType === '0' ? 'regular' : entryType === '1' ? 'regular continuation' : 'lateral'} entries.`);
+                    break;
+                }
+                continue;
+            }
+
+            consecutiveFailures = 0;
+
+            // Failed subjects logic
+            let failedSubjects = [];
+            const tables = doc.querySelectorAll(
+                '#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2'
+            );
+
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const gradeCell = row.querySelector('td:nth-child(6)');
+                    if (gradeCell?.textContent.trim() === 'F') {
+                        const subjectName = row.querySelector('td:nth-child(2)')?.textContent.trim();
+                        if (subjectName) {
+                            failedSubjects.push(subjectName);
+                            failedSubjectsSet.add(subjectName);
+                        }
+                    }
+                });
+            });
+
+            // SGPA Tooltip
+            let sgpaDisplay = sgpa;
+            if (failedSubjects.length > 0) {
+                sgpaDisplay = `<div class="sgpa-tooltip">${sgpa} <span class="exclamation">!</span><span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
+            }
+
+            // Table Row Append
+            const row = document.createElement('tr');
+            row.classList.add('fade-in');
+            row.innerHTML = `
+                <td class="tooltip">
+                    <a href="${baseUrl + regNo}" target="_blank">${regNo}</a>
+                    <span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span>
+                </td>
+                <td>${name}</td>
+                <td class="sgpa">${sgpaDisplay}</td>
+                <td>${cgpa}</td>
+            `;
+            tableBody.appendChild(row);
+
+            // Display UI
+            document.getElementById('results-table').style.display = 'block';
+            document.getElementById('print-table').style.display = 'block';
+            scrollToBottom();
+
+        } catch (error) {
+            if (error.name === 'AbortError') {
+                console.log(`Fetch aborted for ${regNo}`);
+                break;
+            }
+
+            console.error(`Error fetching result for ${regNo}:`, error);
+
+            const row = document.createElement('tr');
+            row.classList.add('fade-in');
+            row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
+            tableBody.appendChild(row);
+        }
+    }
+}
 
         function generateSemesterLinks(regNo, session, branch, college) {
             const semesters = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
