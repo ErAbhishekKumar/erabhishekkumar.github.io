@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+   </script>
+    <!-- Meta Tags -->
+    <meta name="google-site-verification" content="IrNwqZseywnZinPv4xz34hKzvnOKzsMZ0o7QVeiywc0">
+    <meta name="google-site-verification" content="D1snizFbH-3P8XKUzq-WXkrtRajZFyMj_qcNVDqTXLY" />
+
+  <title>Math Practice</title>
+
+  <!-- Google Ads & Tag Manager -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TRJKMKM2');</script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      width: 95%;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
+    input[type="text"], button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+    .symbol-buttons button {
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: #add8e6;
+    }
+    .range-inputs {
+      margin: 15px 0;
+    }
+    .range-inputs input {
+      width: 45%;
+    }
+    .question-section input {
+      width: 45%;
+      font-weight: bold;
+    }
+    .number-pad {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .number-pad button {
+      width: 60px;
+      height: 60px;
+      font-size: 22px;
+      border-radius: 10px;
+      background-color: #f2f2f2;
+    }
+    #answerInput {
+      width: 90%;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+     #cancelBtn, #menuBtn {
+      position: absolute;
+      top: 10px;
+    }
+  
+    #cancelBtn {
+      right: 10px;
+    }
+    #menuBtn {
+      left: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    #inlineFeedback {
+      margin-top: 10px;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      color: white;
+    }
+    .header {
+      background-color: #2193b0;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            .nav-menu a {
+                margin: 2px;
+                font-size: 0.9rem;
+            }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Math Practice</h1>
+    </header>
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="beuresult.html">BEU Result</a>
+        <a href="SBTEResult.html">SBTE Result</a>
+        <a href="rankcheck.html">Rank Check</a>
+        <a href="colleges.html">College Codes</a>
+        <a href="ncertquiz.html">NCERT Quiz</a>
+        <a href="mathpractice.html">Math Practice Mode</a>
+    </nav>
+  <div class="container">
+    <button id="menuBtn" class="hidden">☰</button>
+    <button id="cancelBtn" class="hidden">X</button>
+
+
+    <div id="symbolSection" class="symbol-buttons">
+      <button onclick="selectOperation('multiplication', '❌')">❌</button>
+      <button onclick="selectOperation('addition', '+')">＋</button>
+      <button onclick="selectOperation('subtraction', '−')">−</button>
+      <button onclick="selectOperation('division', '÷')">÷</button>
+    </div>
+
+    <h2 id="operationHeading"></h2>
+
+    <div id="rangeSection" class="range-inputs hidden">
+      <input id="range1" type="text" placeholder="Range 1 (e.g. 1-10)" />
+      <input id="range2" type="text" placeholder="Range 2 (e.g. 1-10)" />
+      <button onclick="startPractice()">Start</button>
+    </div>
+
+    <div id="questionSection" class="question-section hidden">
+      <input id="value1" type="text" disabled />
+      <span id="symbol">?</span>
+      <input id="value2" type="text" disabled />
+    </div>
+
+    <input id="answerInput" type="text" placeholder="Your Answer" class="hidden" />
+    <div id="inlineFeedback"></div>
+
+    <div class="number-pad hidden" id="numpad">
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('.')">.</button>
+      <button onclick="appendValue('0')">0</button>
+      <button onclick="backspace()">←</button>
+      <button onclick="clearInput()">AC</button>
+      <button onclick="checkAnswer()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    let operation = '';
+    let symbol = '';
+    let savedRange1 = null;
+    let savedRange2 = null;
+
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("symbolSection").classList.remove("hidden");
+      document.getElementById("rangeSection").classList.add("hidden");
+      document.getElementById("questionSection").classList.add("hidden");
+      document.getElementById("answerInput").classList.add("hidden");
+      document.getElementById("numpad").classList.add("hidden");
+      document.getElementById("cancelBtn").classList.add("hidden");
+      document.getElementById("operationHeading").innerText = '';
+      document.getElementById("inlineFeedback").innerText = '';
+      document.getElementById("menuBtn").classList.add("hidden");
+    });
+
+    function selectOperation(op, sym) {
+      savedRange1 = null;
+      savedRange2 = null;
+      operation = op;
+      symbol = sym;
+      document.getElementById("range1").disabled = false;
+      document.getElementById("range2").disabled = false;
+      document.getElementById("range1").value = '';
+      document.getElementById("range2").value = '';
+      document.getElementById("operationHeading").innerText = op.charAt(0).toUpperCase() + op.slice(1);
+      document.getElementById("symbolSection").classList.add("hidden");
+      document.getElementById("rangeSection").classList.remove("hidden");
+      document.getElementById("menuBtn").classList.add("hidden");
+    }
+
+    function parseRange(rangeStr) {
+      const parts = rangeStr.split("-").map(v => v.trim());
+      if (parts.length !== 2) return null;
+      const [min, max] = parts.map(Number);
+      if (isNaN(min) || isNaN(max)) return null;
+      return { min, max, isFloat: parts.some(p => p.includes(".")) };
+    }
+
+    function getRandom(range) {
+      return range.isFloat
+        ? (Math.random() * (range.max - range.min) + range.min).toFixed(2)
+        : Math.floor(Math.random() * (range.max - range.min + 1) + range.min);
+    }
+
+    function startPractice() {
+      if (!savedRange1 || !savedRange2) {
+        const r1 = parseRange(document.getElementById("range1").value);
+        const r2 = parseRange(document.getElementById("range2").value);
+        if (!r1 || !r2) {
+          alert("Please enter valid range in both boxes (e.g. 1-100 or 1.5-5.5)");
+          return;
+        }
+        savedRange1 = r1;
+        savedRange2 = r2;
+        document.getElementById("range1").disabled = true;
+        document.getElementById("range2").disabled = true;
+        document.getElementById("rangeSection").classList.add("hidden");
+        document.getElementById("cancelBtn").classList.remove("hidden");
+        document.getElementById("questionSection").classList.remove("hidden");
+        document.getElementById("answerInput").classList.remove("hidden");
+        document.getElementById("numpad").classList.remove("hidden");
+        document.getElementById("menuBtn").classList.remove("hidden");
+    
+      }
+
+      let val1 = parseFloat(getRandom(savedRange1));
+      let val2 = parseFloat(getRandom(savedRange2));
+
+      if (operation === 'subtraction' && val1 < val2) {
+        [val1, val2] = [val2, val1];
+      }
+
+      document.getElementById("value1").value = val1;
+      document.getElementById("value2").value = val2;
+      document.getElementById("symbol").innerText = symbol;
+      document.getElementById("answerInput").value = "";
+      document.getElementById("inlineFeedback").innerText = "";
+    }
+
+    function appendValue(val) {
+      const input = document.getElementById("answerInput");
+      input.value += val;
+      input.focus();
+    }
+
+    function backspace() {
+      const input = document.getElementById("answerInput");
+      input.value = input.value.slice(0, -1);
+    }
+
+    function clearInput() {
+      document.getElementById("answerInput").value = "";
+    }
+
+    function checkAnswer() {
+      const val1 = parseFloat(document.getElementById("value1").value);
+      const val2 = parseFloat(document.getElementById("value2").value);
+      const userAnswer = parseFloat(document.getElementById("answerInput").value);
+      let correct = 0;
+
+      switch (operation) {
+        case 'multiplication': correct = val1 * val2; break;
+        case 'addition': correct = val1 + val2; break;
+        case 'subtraction': correct = val1 - val2; break;
+        case 'division': correct = val1 / val2; break;
+      }
+
+      const rounded = parseFloat(correct.toFixed(2));
+      const roundedUser = parseFloat(userAnswer.toFixed(2));
+      const isCorrect = Math.abs(rounded - roundedUser) < 0.01;
+
+      const feedback = document.getElementById("inlineFeedback");
+      feedback.style.backgroundColor = isCorrect ? "green" : "red";
+      feedback.innerText = isCorrect ? `✔ ${val1} ${symbol} ${val2} = ${rounded}` : `✘ ${val1} ${symbol} ${val2} = ${rounded}`;
+
+      setTimeout(() => {
+        startPractice();
+      }, 1000);
+    }
+
+    document.getElementById("cancelBtn").addEventListener("click", () => {
+      savedRange1 = null;
+      savedRange2 = null;
+      document.getElementById("range1").disabled = false;
+      document.getElementById("range2").disabled = false;
+      document.getElementById("rangeSection").classList.remove("hidden");
+      document.getElementById("questionSection").classList.add("hidden");
+      document.getElementById("answerInput").classList.add("hidden");
+      document.getElementById("numpad").classList.add("hidden");
+      document.getElementById("cancelBtn").classList.add("hidden");
+      document.getElementById("inlineFeedback").innerText = "";
+    });
+
+
+
+    document.addEventListener("keydown", function(event) {
+      const input = document.getElementById("answerInput");
+      if (!input.classList.contains("hidden")) {
+        if (event.key === "Enter") {
+          checkAnswer();
+        } else if (!isNaN(event.key) || event.key === ".") {
+          event.preventDefault();
+          input.value += event.key;
+        } else if (event.key === "Backspace") {
+          event.preventDefault();
+          input.value = input.value.slice(0, -1);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
