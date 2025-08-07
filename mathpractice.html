@@ -341,6 +341,14 @@
         }
       }
     });
+
+    // block mobile KeyboardEvent
+    document.getElementById("answerInput").addEventListener("focus", function() {
+      this.blur();
+    });
+    
+
+
   </script>
 </body>
 </html>
