@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Status Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        button.print-btn {
+            background-color: #2196F3;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #result {
+            margin-top: 20px;
+            overflow-x: auto;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        table { 
+            border-collapse: collapse; 
+            width: 100%;
+        }
+        td, th { 
+            border: 1px solid #444; 
+            padding: 6px; 
+            text-align: left;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Payment Status Checker</h2>
+
+    <div class="container">
+        <label>Financial Year:</label>
+        <select id="fin_val">
+            <option value="2526">25/26</option>
+            <option value="2425">24/25</option>
+            <option value="2324">23/24</option>
+        </select>
+
+        <label>ID Type:</label>
+        <select id="id_type">
+            <option value="Aadhaar">Aadhaar No</option>
+            <option value="Accnt">Account No</option>
+            <option value="Ben">Beneficiary ID</option>
+        </select>
+
+        <label>Value:</label>
+        <input type="text" id="value" placeholder="Enter your ID">
+
+        <button onclick="getData()">🔍 Search</button>
+        <button class="print-btn" onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        // Restore previous selections from localStorage
+        window.onload = () => {
+            if(localStorage.getItem("fin_val")) {
+                document.getElementById("fin_val").value = localStorage.getItem("fin_val");
+            }
+            if(localStorage.getItem("id_type")) {
+                document.getElementById("id_type").value = localStorage.getItem("id_type");
+            }
+            if(localStorage.getItem("value")) {
+                document.getElementById("value").value = localStorage.getItem("value");
+            }
+        }
+
+        async function getData() {
+            let fin_val = document.getElementById("fin_val").value;
+            let id_type = document.getElementById("id_type").value;
+            let value = document.getElementById("value").value;
+
+            // Save to localStorage
+            localStorage.setItem("fin_val", fin_val);
+            localStorage.setItem("id_type", id_type);
+            localStorage.setItem("value", value);
+
+            document.getElementById("result").innerHTML = "<p>⏳ Loading...</p>";
+
+            try {
+                let res = await fetch("https://pension-fis6.onrender.com/getdata", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ fin_val, id_type, value })
+                });
+
+                let data = await res.json();
+                if (data.html) {
+                    document.getElementById("result").innerHTML = data.html;
+                } else {
+                    document.getElementById("result").innerHTML = `<p style="color:red;">${data.error}</p>`;
+                }
+            } catch (err) {
+                document.getElementById("result").innerHTML = `<p style="color:red;">❌ Failed to fetch data</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
