@@ -5,6 +5,47 @@
     <title>Payment Status Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+
+        @media print {
+    @page {
+        size: landscape;  /* landscape orientation */
+        margin: 10mm;     /* page margin */
+    }
+
+    body {
+        background: white;
+        color: black;
+        padding: 0;
+    }
+
+    .container {
+        width: 100% !important;
+        box-shadow: none;
+    }
+
+    #result {
+        overflow: visible !important;
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    table {
+        width: 100% !important;
+        table-layout: auto !important;
+        font-size: 10pt;
+        transform: scale(0.95);       /* table slightly scale down if too wide */
+        transform-origin: top left;
+    }
+
+    td, th {
+        word-wrap: break-word;
+        white-space: normal !important;
+    }
+
+
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
