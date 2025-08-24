@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>LE & Regular Percentage Calculator</title>
+  <style>
+    body{font-family:sans-serif;background:#0f172a;color:#e5e7eb;margin:0;padding:20px}
+    h1{text-align:center;margin-bottom:20px}
+    h2{margin-top:30px;font-size:18px}
+    .sem{border:1px solid #334155;padding:12px;border-radius:10px;margin:10px 0;background:#1e293b}
+    .sub-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;margin:4px 0}
+    input,select{padding:8px;border-radius:6px;border:1px solid #475569;background:#0f172a;color:white;width:100%}
+    select{cursor:pointer}
+    .btn{padding:8px 12px;margin-top:6px;border:none;border-radius:6px;background:#0ea5e9;color:white;cursor:pointer}
+    .btn:hover{background:#0284c7}
+    .totals{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+    .totals div{background:#1e293b;padding:12px;border-radius:10px;flex:1;text-align:center}
+    label{margin-right:15px}
+    @media(max-width:600px){
+      .sub-row{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:6px}
+      .sub-row button{grid-column:span 2}
+    }
+    @media print{
+      body{background:white;color:black}
+      input,select,.btn,label{display:none !important}
+      .sem{border:1px solid #000;background:white;color:black}
+      .totals div{background:#f1f5f9;color:black;border:1px solid #000}
+      #printView{display:block !important}
+      #semesters,.totals{display:none !important}
+    }
+    table{border-collapse:collapse;width:100%;margin:10px 0}
+    table,th,td{border:1px solid #475569}
+    th,td{padding:6px;text-align:center}
+    #printView{display:none}
+  </style>
+</head>
+<body>
+  <h1>🎓 Percentage Calculator</h1>
+
+  <div style="text-align:center;margin-bottom:20px;">
+    <label><input type="checkbox" id="regularChk" checked> Regular</label>
+    <label><input type="checkbox" id="leChk"> Lateral Entry</label>
+  </div>
+
+  <div id="semesters"></div>
+
+  <div class="totals">
+    <div><b>Total Full:</b> <span id="totalFull">0</span></div>
+    <div><b>Total Obtained:</b> <span id="totalObt">0</span></div>
+    <div><b>Percentage:</b> <span id="percent">0%</span></div>
+  </div>
+
+  <div style="text-align:center;margin-top:20px;">
+    <button class="btn" onclick="preparePrint()">🖨️ Print / Save PDF</button>
+  </div>
+
+  <!-- Print Friendly View -->
+  <div id="printView"></div>
+
+<script>
+const TOTAL_SEMS = 8;
+const semWrap = document.getElementById("semesters");
+
+const regularChk=document.getElementById("regularChk");
+const leChk=document.getElementById("leChk");
+regularChk.onchange=()=>{if(regularChk.checked) leChk.checked=false;buildUI();};
+leChk.onchange=()=>{if(leChk.checked) regularChk.checked=false;buildUI();};
+
+// Subject row for Regular / LE (3–8)
+function makeSubjectRow(sem,subName="",obtVal="",fullVal="100"){
+  const row=document.createElement("div");
+  row.className="sub-row";
+  const sub=document.createElement("input"); sub.placeholder="Subject Name"; sub.value=subName;
+  const obt=document.createElement("input"); obt.type="number"; obt.placeholder="Obtained"; obt.value=obtVal;
+  
+  // full marks dropdown
+  const full=document.createElement("select");
+  ["100","50"].forEach(val=>{
+    let opt=document.createElement("option");
+    opt.value=val; opt.textContent=val;
+    if(val===fullVal) opt.selected=true;
+    full.append(opt);
+  });
+
+  const del=document.createElement("button"); del.textContent="✕"; del.className="btn"; del.style.background="#dc2626";
+  del.onclick=()=>{row.remove();update();};
+  [sub,obt,full].forEach(inp=>inp.oninput=update);
+  row.append(sub,obt,full,del);
+  return row;
+}
+
+// Regular Semester
+function makeRegularSem(sem,data=[]){
+  const div=document.createElement("div");
+  div.className="sem";
+  div.id="sem-"+sem;
+  div.innerHTML=`<h2>Semester ${sem}</h2>`;
+  const subs=document.createElement("div"); subs.id="subs-"+sem; div.append(subs);
+  if(data.length>0){
+    data.forEach(d=>subs.append(makeSubjectRow(sem,d.sub,d.obt,d.full)));
+  }else{
+    subs.append(makeSubjectRow(sem));
+  }
+  const add=document.createElement("button"); add.textContent="Add Subject"; add.className="btn";
+  add.onclick=()=>subs.append(makeSubjectRow(sem));
+  div.append(add);
+  return div;
+}
+
+// LE Semester 1 & 2
+function makeLESem(sem,data={}){
+  const div=document.createElement("div");
+  div.className="sem";
+  div.id="le-sem-"+sem;
+  div.innerHTML=`<h2>LE Semester ${sem}</h2>`;
+  const dipFull=document.createElement("input"); dipFull.type="number"; dipFull.placeholder="Diploma Full Marks"; dipFull.value=data.dipFull||"";
+  const dipObt=document.createElement("input"); dipObt.type="number"; dipObt.placeholder="Diploma Obtained"; dipObt.value=data.dipObt||"";
+
+  // btech full input (not dropdown)
+  const btechFull=document.createElement("input"); 
+  btechFull.type="number";
+  btechFull.placeholder=`B.Tech Full Marks (${sem===1?"1st Semester":"2nd Semester"})`;
+  btechFull.value=data.btechFull||"";
+
+  const comp=document.createElement("input"); comp.placeholder="Computed Obtained"; comp.readOnly=true; comp.value=data.comp||"";
+  [dipFull,dipObt,btechFull].forEach(inp=>inp.oninput=update);
+
+  // auto-fill LE semester 2 if semester 1 filled
+  if(sem===1){ 
+    dipFull.oninput=()=>{document.querySelector("#le-sem-2")?document.querySelector("#le-sem-2")._dipFull.value=dipFull.value:"";update();};
+    dipObt.oninput=()=>{document.querySelector("#le-sem-2")?document.querySelector("#le-sem-2")._dipObt.value=dipObt.value:"";update();};
+  }
+
+  div._dipFull=dipFull; div._dipObt=dipObt; div._btechFull=btechFull; div._comp=comp;
+  div.append(dipFull,dipObt,btechFull,comp);
+  return div;
+}
+
+function buildUI(){
+  semWrap.innerHTML="";
+  const le=leChk.checked;
+  let saved=loadData();
+  for(let s=1;s<=TOTAL_SEMS;s++){
+    if(le&&(s===1||s===2)) semWrap.append(makeLESem(s,saved[`sem${s}`]||{}));
+    else semWrap.append(makeRegularSem(s,saved[`sem${s}`]||[]));
+  }
+  update();
+}
+
+function update(){
+  let totalFull=0,totalObt=0;
+  const le=leChk.checked;
+  let saveObj={};
+  for(let s=1;s<=TOTAL_SEMS;s++){
+    if(le&&(s===1||s===2)){
+      const box=document.getElementById("le-sem-"+s);
+      if(!box) continue;
+      const df=parseFloat(box._dipFull.value)||0;
+      const dobt=parseFloat(box._dipObt.value)||0;
+      const bf=parseFloat(box._btechFull.value)||0;
+      let comp=0;
+      if(df>0) comp=(dobt/df)*bf;
+      box._comp.value=comp.toFixed(2);
+      totalFull+=bf; totalObt+=comp;
+      saveObj[`sem${s}`]={dipFull:box._dipFull.value,dipObt:box._dipObt.value,btechFull:box._btechFull.value,comp:box._comp.value};
+    }else{
+      const subs=document.getElementById("subs-"+s);
+      if(!subs) continue;
+      let arr=[];
+      [...subs.children].forEach(r=>{
+        const inp=r.querySelectorAll("input,select");
+        if(inp.length>=3){
+          const sub=inp[0].value, obt=inp[1].value, full=inp[2].value;
+          arr.push({sub,obt,full});
+          totalObt+=parseFloat(obt)||0; totalFull+=parseFloat(full)||0;
+        }
+      });
+      saveObj[`sem${s}`]=arr;
+    }
+  }
+  document.getElementById("totalFull").textContent=totalFull;
+  document.getElementById("totalObt").textContent=totalObt.toFixed(2);
+  document.getElementById("percent").textContent=(totalFull>0?(totalObt/totalFull*100).toFixed(2):0)+"%";
+  saveData(saveObj);
+}
+
+function saveData(data){
+  if(leChk.checked) localStorage.setItem("leData",JSON.stringify(data));
+  else localStorage.setItem("regularData",JSON.stringify(data));
+}
+function loadData(){
+  let d={};
+  if(leChk.checked){
+    let raw=localStorage.getItem("leData");
+    if(raw) d=JSON.parse(raw);
+  }else{
+    let raw=localStorage.getItem("regularData");
+    if(raw) d=JSON.parse(raw);
+  }
+  return d;
+}
+
+// 🖨️ Print View Generator
+function preparePrint(){
+  const printDiv=document.getElementById("printView");
+  printDiv.innerHTML="";
+  const le=leChk.checked;
+  const title=document.createElement("h2");
+  title.textContent= le ? "Lateral Entry Student" : "Regular Student";
+  printDiv.append(title);
+
+  for(let s=1;s<=TOTAL_SEMS;s++){
+    if(le && (s===1||s===2)){
+      const data=loadData()[`sem${s}`]||{};
+      let tbl=`<h3>Semester ${s}</h3><table><tr><th>Diploma Full</th><th>Diploma Obtained</th><th>B.Tech Full</th><th>Computed Obtained</th></tr>`;
+      tbl+=`<tr><td>${data.dipFull||""}</td><td>${data.dipObt||""}</td><td>${data.btechFull||""}</td><td>${data.comp||""}</td></tr></table>`;
+      printDiv.innerHTML+=tbl;
+    }else{
+      const arr=loadData()[`sem${s}`]||[];
+      if(arr.length>0){
+        let tbl=`<h3>Semester ${s}</h3><table><tr><th>Subject</th><th>Obtained</th><th>Full Marks</th></tr>`;
+        arr.forEach(d=>{
+          tbl+=`<tr><td>${d.sub}</td><td>${d.obt}</td><td>${d.full}</td></tr>`;
+        });
+        tbl+=`</table>`;
+        printDiv.innerHTML+=tbl;
+      }
+    }
+  }
+
+  // totals
+  printDiv.innerHTML+=`<h3>Total Marks</h3><table><tr><th>Total Full</th><th>Total Obtained</th><th>Percentage</th></tr>
+    <tr><td>${document.getElementById("totalFull").textContent}</td>
+    <td>${document.getElementById("totalObt").textContent}</td>
+    <td>${document.getElementById("percent").textContent}</td></tr></table>`;
+
+  window.print();
+}
+
+buildUI();
+</script>
+</body>
+</html>
