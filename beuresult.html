@@ -580,12 +580,21 @@
 
             try {
                 const response = await fetch(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
-                if (response.status !== 200) {
-                console.warn(`Retrying... Status Code: ${response.status}`);
-                await new Promise(resolve => setTimeout(resolve, 1000)); // 5 सेकंड का delay
-                continue; // दुबारा request करो
-            }
                 const htmlText = await response.text();
+
+                // ❌ अगर 200 नहीं है या "Service Unavailable" वाला page आया तो retry
+                if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
+                    console.warn("Retrying... Server busy or Service Unavailable");
+                    await new Promise(resolve => setTimeout(resolve, 1000)); // delay
+                    continue; // फिर से कोशिश करो
+                }
+                
+            //     if (response.status !== 200) {
+            //     console.warn(`Retrying... Status Code: ${response.status}`);
+            //     await new Promise(resolve => setTimeout(resolve, 1000)); // 5 सेकंड का delay
+            //     continue; // दुबारा request करो
+            // }
+               
 
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(htmlText, 'text/html');
@@ -933,5 +942,6 @@
     </footer>
 </body>
 </html>
+
 
 
