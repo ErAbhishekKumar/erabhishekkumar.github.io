@@ -699,8 +699,19 @@
                         // Add delay to prevent too many requests at once
                         await new Promise(resolve => setTimeout(resolve, 500));
 
-                        const response = await fetch(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
-                        const htmlText = await response.text();
+                        let htmlText;
+                        while (true) {
+                            const response = await fetch(`https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
+                            htmlText = await response.text();
+                        
+                            if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
+                                console.warn(`Retrying ${regNo}... Service Unavailable or bad status`);
+                                await new Promise(resolve => setTimeout(resolve, 1000));
+                                continue; // फिर से try करो
+                            }
+                            break; // ✅ सही response मिल गया तो बाहर निकलो
+                        }
+
         
 
                         const parser = new DOMParser();
@@ -942,6 +953,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
