@@ -141,10 +141,15 @@
             }
         }
         @media print {
+            /* Hide all ads when printing */
+            ins, .adsbygoogle, #instructions-button, #print-table, .nav-menu, .header, .donate-btn, .footer {
+                display: none !important;
+            }
+
             body * {
                 visibility: hidden; /* Hide everything */
             }
-            #results-table, #results-table * {
+            #results-table * {
                 visibility: visible; /* Show only the table */
             }
             #results-table {
@@ -253,7 +258,7 @@
 
     <button class="donate-btn" onclick="handleDonate()">₹ Donate</button>
 
-    <h1>Create Results Table<a href="https://erabhishekkumar.github.io/beuresult" target="_blank">Other Website</a></h1>
+    <h1>Create Results Table<a href="https://erabhishekkumar.github.io/beuresult" target="_blank" rel="noopener">Other Website</a></h1>
 
     <label for="session">Session:</label>
     <select id="session">
@@ -343,7 +348,7 @@
             <li>You can filter the table based on failed subjects after the results are fetched.</li>
             <li>Clicking on a registration number will show links to the results for all semesters from 1st to 8th.</li>
             <li>If you encounter any errors, try fetching the results again or check your network connection.</li>
-            <li>Contact me via Telegram: <a href="https://t.me/erabhishekkumar" target="_blank">https://t.me/erabhishekkumar</a></li>
+            <li>Contact me via Telegram: <a href="https://t.me/erabhishekkumar" target="_blank" rel="noopener">https://t.me/erabhishekkumar</a></li>
         </ul>
         <button id="close-popup">Close</button>
     </div>
@@ -949,7 +954,7 @@
     <footer class="footer">
         <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
         <p><small>This website is made for the purpose of information and All the data shown is available in public.</small></p>
-        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank">Telegram</a></p>
+        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank" rel="noopener">Telegram</a></p>
     </footer>
 </body>
 </html>
