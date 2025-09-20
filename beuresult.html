@@ -157,6 +157,22 @@
                 top: 0;
                 left: 0;
             }
+            /* Show footer URL in print */
+            .footer {
+                visibility: visible !important;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                color: #000;
+            }
+        
+            .footer::after {
+                content: "https://erabhishekkumar.github.io/beuresult.html";
+                display: block;
+                margin-top: 2px;
+            }
         }
         .nav-menu {
             background: white;
@@ -267,15 +283,42 @@
 
     <label for="branch">Branch:</label>
     <select id="branch">
-        <option value="101">CE</option>
-        <option value="102">ME</option>
-        <option value="103">EE</option>
-        <option value="104">ECE</option>
-        <option value="105">CSE</option>
-        <option value="106">IT</option>
-        <option value="107">LT</option>
-        <option value="110">EEE</option>
-        <option value="111">IE</option>
+        <option value="101">Civil Engg.</option>
+        <option value="102">Mechanical Engg.</option>
+        <option value="103">Electrical Engg.</option>
+        <option value="104">Electronics & Comm. Engg.</option>
+        <option value="105">Computer Science & Engg.</option>
+        <option value="106">Information Technology</option>
+        <option value="107">Leather Technology Engg.</option>
+        <option value="110">Electrical and Electronics Engg.</option>
+        <option value="111">Instrumentation Engg.</option>
+        <option value="161">Mechatronics Engg.</option>
+        <option value="117">Biomedical and Robotic Engg.</option>
+        <option value="116">Aeronautical Engg.</option>
+        <option value="112">Fire Technology and Safety</option>
+        <option value="119">Branch Code 119</option>
+        <option value="151">Branch Code 151</option>
+        <option value="115">Branch Code 115</option>
+        <option value="113">Branch Code 113</option>
+        <option value="114">Branch Code 114</option>
+        <option value="155">Branch Code 155</option>
+        <option value="157">Branch Code 157</option>
+        <option value="118">Branch Code 118</option>
+        <option value="153">Branch Code 153</option>
+        <option value="156">Branch Code 156</option>
+        <option value="154">Branch Code 154</option>
+        <option value="158">Branch Code 158</option>
+        <option value="171">Branch Code 171</option>
+        <option value="160">Branch Code 160</option>
+        <option value="162">Branch Code 162</option>
+        <option value="163">Branch Code 163</option>
+        <option value="164">Branch Code 164</option>
+        <option value="165">Branch Code 165</option>
+        <option value="166">Branch Code 166</option>
+        <option value="167">Branch Code 167</option>
+        <option value="168">Branch Code 168</option>
+
+
     </select>
 
     <label for="semester">Semester:</label>
@@ -292,7 +335,9 @@
 
     <label for="college">College:</label>
     <select id="college">
-        <option value="157">Government Engineering College, Sheikhpura</option>
+        <option value="102">VIDYA VIHAR INSTITUTE OF TECHNOLOGY, PURNIA</option>
+        <option value="103">NETAJI SUBHAS INSTITUTE OF TECHNOLOGY, BIHTA</option>
+        <option value="106">SITYOG INSTITUTE OF TECHNOLOGY, AURANGABAD</option>
         <option value="107">MIT Muzaffarpur</option>
         <option value="108">Bhagalpur College of Engineering</option>
         <option value="109">Nalanda College of Engineering</option>
@@ -300,6 +345,9 @@
         <option value="111">Darbhanga College of Engineering</option>
         <option value="113">Motihari College Of Engineering</option>
         <option value="117">Lok Nayak Jai Prakash Institute of Technology</option>
+        <option value="119">ADWAITA MISSION INSTITUTE OF TECHNOLOGY, BANKA</option>
+        <option value="122">EXALT COLLEGE OF ENGG. & TECH., VAISHALI</option>
+        <option value="123">SIWAN ENGINEERING & TECHNICAL INSTITUTE, SIWAN</option>
         <option value="124">Sershah Engineering College, Sasaram</option>
         <option value="125">Rashtrakavi Ramdhari Singh Dinkar College of Engineering</option>
         <option value="126">Bakhtiyarpur College of Engineering</option>
@@ -312,6 +360,9 @@
         <option value="133">Government Engineering College, Jamui</option>
         <option value="134">Government Engineering College, Banka</option>
         <option value="135">Government Engineering College, Vaishali</option>
+        <option value="136">MOTHERS INSTITUTE OF TECHNOLOGY, BIHTA</option>
+        <option value="139">R.P. SHARMA INSTITUTE OF TECHNOLOGY, PATNA</option>
+        <option value="140">MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY, NEORAGANJ, NEORA, PATNA</option>
         <option value="141">Government Engineering College, Nawada</option>
         <option value="142">Government Engineering College, Kishanganj</option>
         <option value="144">Government Engineering College, Munger</option>
@@ -327,9 +378,15 @@
         <option value="154">Government Engineering College, Khagaria</option>
         <option value="155">Government Engineering College, Buxar</option>
         <option value="156">Government Engineering College, Bhojpur</option>
+        <option value="157">Government Engineering College, Sheikhpura</option>
         <option value="158">Government Engineering College, Lakhisarai</option>
         <option value="159">Government Engineering College, Samastipur</option>
         <option value="165">Shri Phanishwar Nath Renu Engineering College</option>
+        <option value="166">MILLIA KISHANGANJ COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
+        <option value="167">MILLIA INSTITUTE OF TECHNOLOGY</option>
+        <option value="169">CIPET: INSTITUTE OF PETROCHEMICALS TECHNOLOGY (IPT), BIHTA, PATNA</option>
+        <option value="170">Dr. Ashok Gagan College</option>
+
     </select>
 
     <button id="fetch-results">Fetch Results</button>
@@ -948,6 +1005,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
