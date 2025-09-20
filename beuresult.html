@@ -141,39 +141,44 @@
             }
         }
         @media print {
-            /* Hide all ads when printing */
-            ins, .adsbygoogle, #instructions-button, #print-table, .nav-menu, .header, .donate-btn, .footer {
-                display: none !important;
-            }
+    /* Hide unwanted elements */
+    ins, .adsbygoogle, #instructions-button, #print-table, .nav-menu, .header, .donate-btn {
+        display: none !important;
+    }
 
-            body * {
-                visibility: hidden; /* Hide everything */
-            }
-            #results-table * {
-                visibility: visible; /* Show only the table */
-            }
-            #results-table {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            /* Show footer URL in print */
-            .footer {
-                visibility: visible !important;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                font-size: 12px;
-                color: #000;
-            }
-        
-            .footer::after {
-                content: "https://erabhishekkumar.github.io/beuresult.html";
-                display: block;
-                margin-top: 2px;
-            }
-        }
+    /* Make table visible and fit page */
+    #results-table {
+        display: block;
+        position: static;  /* remove absolute positioning */
+        width: 100%;       /* fit width */
+        overflow: visible;
+        page-break-inside: auto; /* allow multi-page tables */
+    }
+
+    #results-table * {
+        visibility: visible;
+    }
+
+    /* Footer at bottom of printed page */
+    .footer {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #000;
+    }
+
+    /* Add the URL */
+    .footer::after {
+        content: "https://erabhishekkumar.github.io/beuresult.html";
+        display: block;
+        margin-top: 2px;
+    }
+}
+
         .nav-menu {
             background: white;
             padding: 10px;
@@ -335,57 +340,58 @@
 
     <label for="college">College:</label>
     <select id="college">
-        <option value="102">VIDYA VIHAR INSTITUTE OF TECHNOLOGY, PURNIA</option>
-        <option value="103">NETAJI SUBHAS INSTITUTE OF TECHNOLOGY, BIHTA</option>
-        <option value="106">SITYOG INSTITUTE OF TECHNOLOGY, AURANGABAD</option>
-        <option value="107">MIT Muzaffarpur</option>
-        <option value="108">Bhagalpur College of Engineering</option>
-        <option value="109">Nalanda College of Engineering</option>
-        <option value="110">Gaya College of Engineering</option>
-        <option value="111">Darbhanga College of Engineering</option>
-        <option value="113">Motihari College Of Engineering</option>
-        <option value="117">Lok Nayak Jai Prakash Institute of Technology</option>
-        <option value="119">ADWAITA MISSION INSTITUTE OF TECHNOLOGY, BANKA</option>
-        <option value="122">EXALT COLLEGE OF ENGG. & TECH., VAISHALI</option>
-        <option value="123">SIWAN ENGINEERING & TECHNICAL INSTITUTE, SIWAN</option>
-        <option value="124">Sershah Engineering College, Sasaram</option>
-        <option value="125">Rashtrakavi Ramdhari Singh Dinkar College of Engineering</option>
-        <option value="126">Bakhtiyarpur College of Engineering</option>
-        <option value="127">Sitamarhi Institute of Technology</option>
-        <option value="128">B.P. Mandal College of Engineering</option>
-        <option value="129">Katihar Engineering College</option>
-        <option value="130">Supaul College of Engineering</option>
-        <option value="131">Purnea College of Engineering</option>
-        <option value="132">Saharsa College of Engineering</option>
-        <option value="133">Government Engineering College, Jamui</option>
-        <option value="134">Government Engineering College, Banka</option>
-        <option value="135">Government Engineering College, Vaishali</option>
-        <option value="136">MOTHERS INSTITUTE OF TECHNOLOGY, BIHTA</option>
-        <option value="139">R.P. SHARMA INSTITUTE OF TECHNOLOGY, PATNA</option>
-        <option value="140">MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY, NEORAGANJ, NEORA, PATNA</option>
-        <option value="141">Government Engineering College, Nawada</option>
-        <option value="142">Government Engineering College, Kishanganj</option>
-        <option value="144">Government Engineering College, Munger</option>
-        <option value="145">Government Engineering College, Sheohar</option>
-        <option value="146">Government Engineering College, West Champaran</option>
-        <option value="147">Government Engineering College, Aurangabad</option>
-        <option value="148">Government Engineering College, Kaimur</option>
-        <option value="149">Government Engineering College, Gopalganj</option>
-        <option value="150">Government Engineering College, Madhubani</option>
-        <option value="151">Government Engineering College, Siwan</option>
-        <option value="152">Government Engineering College, Jehanabad</option>
-        <option value="153">Government Engineering College, Arwal</option>
-        <option value="154">Government Engineering College, Khagaria</option>
-        <option value="155">Government Engineering College, Buxar</option>
-        <option value="156">Government Engineering College, Bhojpur</option>
-        <option value="157">Government Engineering College, Sheikhpura</option>
-        <option value="158">Government Engineering College, Lakhisarai</option>
-        <option value="159">Government Engineering College, Samastipur</option>
-        <option value="165">Shri Phanishwar Nath Renu Engineering College</option>
-        <option value="166">MILLIA KISHANGANJ COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
-        <option value="167">MILLIA INSTITUTE OF TECHNOLOGY</option>
-        <option value="169">CIPET: INSTITUTE OF PETROCHEMICALS TECHNOLOGY (IPT), BIHTA, PATNA</option>
-        <option value="170">Dr. Ashok Gagan College</option>
+        <option value="102">102-VIDYA VIHAR INSTITUTE OF TECHNOLOGY, PURNIA</option>
+        <option value="103">103-NETAJI SUBHAS INSTITUTE OF TECHNOLOGY, BIHTA</option>
+        <option value="106">106-SITYOG INSTITUTE OF TECHNOLOGY, AURANGABAD</option>
+        <option value="107">107-MIT Muzaffarpur</option>
+        <option value="108">108-Bhagalpur College of Engineering</option>
+        <option value="109">109-Nalanda College of Engineering</option>
+        <option value="110">110-Gaya College of Engineering</option>
+        <option value="111">111-Darbhanga College of Engineering</option>
+        <option value="113">113-Motihari College Of Engineering</option>
+        <option value="117">117-Lok Nayak Jai Prakash Institute of Technology</option>
+        <option value="119">119-ADWAITA MISSION INSTITUTE OF TECHNOLOGY, BANKA</option>
+        <option value="122">122-EXALT COLLEGE OF ENGG. & TECH., VAISHALI</option>
+        <option value="123">123-SIWAN ENGINEERING & TECHNICAL INSTITUTE, SIWAN</option>
+        <option value="124">124-Sershah Engineering College, Sasaram</option>
+        <option value="125">125-Rashtrakavi Ramdhari Singh Dinkar College of Engineering</option>
+        <option value="126">126-Bakhtiyarpur College of Engineering</option>
+        <option value="127">127-Sitamarhi Institute of Technology</option>
+        <option value="128">128-B.P. Mandal College of Engineering</option>
+        <option value="129">129-Katihar Engineering College</option>
+        <option value="130">130-Supaul College of Engineering</option>
+        <option value="131">131-Purnea College of Engineering</option>
+        <option value="132">132-Saharsa College of Engineering</option>
+        <option value="133">133-Government Engineering College, Jamui</option>
+        <option value="134">134-Government Engineering College, Banka</option>
+        <option value="135">135-Government Engineering College, Vaishali</option>
+        <option value="136">136-MOTHERS INSTITUTE OF TECHNOLOGY, BIHTA</option>
+        <option value="139">139-R.P. SHARMA INSTITUTE OF TECHNOLOGY, PATNA</option>
+        <option value="140">140-MAULANA AZAD COLLEGE OF ENGINEERING & TECHNOLOGY, NEORAGANJ, NEORA, PATNA</option>
+        <option value="141">141-Government Engineering College, Nawada</option>
+        <option value="142">142-Government Engineering College, Kishanganj</option>
+        <option value="144">144-Government Engineering College, Munger</option>
+        <option value="145">145-Government Engineering College, Sheohar</option>
+        <option value="146">146-Government Engineering College, West Champaran</option>
+        <option value="147">147-Government Engineering College, Aurangabad</option>
+        <option value="148">148-Government Engineering College, Kaimur</option>
+        <option value="149">149-Government Engineering College, Gopalganj</option>
+        <option value="150">150-Government Engineering College, Madhubani</option>
+        <option value="151">151-Government Engineering College, Siwan</option>
+        <option value="152">152-Government Engineering College, Jehanabad</option>
+        <option value="153">153-Government Engineering College, Arwal</option>
+        <option value="154">154-Government Engineering College, Khagaria</option>
+        <option value="155">155-Government Engineering College, Buxar</option>
+        <option value="156">156-Government Engineering College, Bhojpur</option>
+        <option value="157">157-Government Engineering College, Sheikhpura</option>
+        <option value="158">158-Government Engineering College, Lakhisarai</option>
+        <option value="159">159-Government Engineering College, Samastipur</option>
+        <option value="165">165-Shri Phanishwar Nath Renu Engineering College</option>
+        <option value="166">166-MILLIA KISHANGANJ COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
+        <option value="167">167-MILLIA INSTITUTE OF TECHNOLOGY</option>
+        <option value="169">169-CIPET: INSTITUTE OF PETROCHEMICALS TECHNOLOGY (IPT), BIHTA, PATNA</option>
+        <option value="170">170-Dr. Ashok Gagan College</option>
+
 
     </select>
 
@@ -1005,6 +1011,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
