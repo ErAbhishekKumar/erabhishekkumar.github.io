@@ -140,44 +140,47 @@
                 margin-left: -75px;
             }
         }
-        @media print {
-    /* Hide unwanted elements */
-    ins, .adsbygoogle, #instructions-button, #print-table, .nav-menu, .header, .donate-btn {
+    
+
+    @media print {
+    /* Hide everything else */
+    body * {
         display: none !important;
     }
 
-    /* Make table visible and fit page */
+    /* Show only results table */
+    #results-table, #results-table * {
+        display: table !important;
+        visibility: visible !important;
+    }
+
+    /* Make table fit page width */
     #results-table {
-        display: block;
-        position: static;  /* remove absolute positioning */
-        width: 100%;       /* fit width */
-        overflow: visible;
-        page-break-inside: auto; /* allow multi-page tables */
-    }
-
-    #results-table * {
-        visibility: visible;
-    }
-
-    /* Footer at bottom of printed page */
-    .footer {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        position: static;
         width: 100%;
-        text-align: center;
-        font-size: 12px;
-        color: #000;
+        max-width: 100%;
+        overflow: visible !important;
+        page-break-inside: auto;
+        margin: 0;
+        border-collapse: collapse;
     }
 
-    /* Add the URL */
-    .footer::after {
+    #results-table th, #results-table td {
+        font-size: 12px; /* Adjust font size to fit page */
+        padding: 5px;
+    }
+
+    /* Add URL below table */
+    #results-table::after {
         content: "https://erabhishekkumar.github.io/beuresult.html";
         display: block;
-        margin-top: 2px;
+        text-align: center;
+        font-size: 12px;
+        margin-top: 10px;
+        color: #000;
     }
 }
+
 
         .nav-menu {
             background: white;
@@ -1011,6 +1014,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
