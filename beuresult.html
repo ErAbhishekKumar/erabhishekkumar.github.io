@@ -16,6 +16,8 @@
         th, td { border: 1px solid #ddd; padding: 8px; text-align: center; vertical-align: middle; }
         th { background-color: #f2f2f2; }
         td.sgpa { white-space: nowrap; } /* Prevent wrapping in SGPA column */
+        .generated-link { display: none; text-align: center; margin-top: 10px; font-size: 12px; }
+        .generated-link a { color: #0000EE; text-decoration: underline; }
         #loading { display: none; margin-top: 20px; }
         .tooltip {
             position: relative;
@@ -143,38 +145,14 @@
     
 
         @media print {
-    /* Hide everything */
-    body * {
-        display: none !important;
-    }
+        /* Hide everything */
+        body * { display: none !important; }
 
-    /* Show only table */
-    #results-table {
-        display: table !important;
-        position: static;
-        width: 100%;
-        border-collapse: collapse;
+        /* Show only results table and generated link */
+        #results-table, #results-table * { display: table !important; visibility: visible !important; }
+        #results-table { position: static; width: 100%; border-collapse: collapse; }
+        .generated-link { display: block !important; visibility: visible !important; }
     }
-
-    #results-table * {
-        display: table-cell !important;
-        visibility: visible !important;
-    }
-
-    /* Add clickable link below table */
-    #results-table + .generated-link {
-        display: block;
-        text-align: center;
-        margin-top: 10px;
-        font-size: 12px;
-        color: #000;
-    }
-
-    #results-table + .generated-link a {
-        color: #0000EE;
-        text-decoration: underline;
-    }
-}
 
 
 
@@ -1014,6 +992,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
