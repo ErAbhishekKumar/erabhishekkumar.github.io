@@ -608,11 +608,6 @@
                 let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
                 let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
 
-                if (baseUrl.includes('akuexam.net')) {
-                    nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
-                    sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
-                    cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
-                }
 
                 const name = doc.querySelector(nameSelector)?.textContent.trim();
                 const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
@@ -726,11 +721,6 @@
                         let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
                         let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
 
-                        if (baseUrl.includes('akuexam.net')) {
-                            nameSelector = '#ctl00_ContentPlaceHolder1_DataList1_ctl00_StudentNameLabel';
-                            sgpaSelector = '#ctl00_ContentPlaceHolder1_DataList5_ctl00_GROSSTHEORYTOTALLabel';
-                            cgpaSelector = '#ctl00_ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
-                        }
 
                         const name = doc.querySelector(nameSelector)?.textContent.trim();
                         const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
@@ -958,6 +948,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
