@@ -618,7 +618,7 @@
                 }
 
                 let failedSubjects = [];
-                const tables = doc.querySelectorAll('#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
+                const tables = doc.querySelectorAll(' #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
                 tables.forEach(table => {
                     const rows = table.querySelectorAll('tr');
                     rows.forEach(row => {
@@ -738,7 +738,7 @@
                         consecutiveFailures = 0; // Reset the counter on success
 
                         let failedSubjects = [];
-                        const tables = doc.querySelectorAll('#ctl00_ContentPlaceHolder1_GridView1, #ctl00_ContentPlaceHolder1_GridView2, #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
+                        const tables = doc.querySelectorAll(' #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
                         tables.forEach(table => {
                             const rows = table.querySelectorAll('tr');
                             rows.forEach(row => {
@@ -948,6 +948,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
