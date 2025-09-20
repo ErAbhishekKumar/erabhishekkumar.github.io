@@ -142,44 +142,37 @@
         }
     
 
-    @media print {
-    /* Hide everything else */
-    body * {
-        display: none !important;
+        @media print {
+        /* Hide everything */
+        body * {
+            display: none !important;
+        }
+    
+        /* Show only the results table */
+        #results-table, #results-table * {
+            display: table !important;
+            visibility: visible !important;
+        }
+    
+        #results-table {
+            position: static;
+            width: 100%;
+            overflow: visible;
+            page-break-inside: auto;
+            margin: 0;
+        }
+    
+        /* Add the URL below the table */
+        #results-table::after {
+            content: "https://erabhishekkumar.github.io/beuresult.html";
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 10px;
+            color: #000;
+        }
     }
 
-    /* Show only results table */
-    #results-table, #results-table * {
-        display: table !important;
-        visibility: visible !important;
-    }
-
-    /* Make table fit page width */
-    #results-table {
-        position: static;
-        width: 100%;
-        max-width: 100%;
-        overflow: visible !important;
-        page-break-inside: auto;
-        margin: 0;
-        border-collapse: collapse;
-    }
-
-    #results-table th, #results-table td {
-        font-size: 12px; /* Adjust font size to fit page */
-        padding: 5px;
-    }
-
-    /* Add URL below table */
-    #results-table::after {
-        content: "https://erabhishekkumar.github.io/beuresult.html";
-        display: block;
-        text-align: center;
-        font-size: 12px;
-        margin-top: 10px;
-        color: #000;
-    }
-}
 
 
         .nav-menu {
@@ -1014,6 +1007,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
