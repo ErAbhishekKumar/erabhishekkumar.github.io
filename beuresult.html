@@ -145,14 +145,35 @@
     
 
         @media print {
-        /* Hide everything */
-        body * { display: none !important; }
-
-        /* Show only results table and generated link */
-        #results-table, #results-table * { display: table !important; visibility: visible !important; }
-        #results-table { position: static; width: 100%; border-collapse: collapse; }
-        .generated-link { display: block !important; visibility: visible !important; }
+    /* Hide all ads when printing */
+    ins, .adsbygoogle, #instructions-button, #print-table, .nav-menu, .header, .donate-btn, .footer {
+        display: none !important;
     }
+
+    body * {
+        visibility: hidden; /* Hide everything */
+    }
+
+    /* Show only results table and its content */
+    #results-table, #results-table * {
+        visibility: visible;
+    }
+    #results-table {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* Show generated link as well */
+    .generated-link {
+        visibility: visible !important;
+        display: block !important;
+        position: static; /* Avoid overlap */
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
 
 
 
@@ -992,6 +1013,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
