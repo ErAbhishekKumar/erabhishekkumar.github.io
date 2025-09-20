@@ -144,7 +144,7 @@
         }
     
 
-        @media print {
+@media print {
     /* Hide all ads when printing */
     ins, .adsbygoogle, #instructions-button, #print-table, .nav-menu, .header, .donate-btn, .footer {
         display: none !important;
@@ -154,7 +154,7 @@
         visibility: hidden; /* Hide everything */
     }
 
-    /* Show only results table and its content */
+    /* Show results table */
     #results-table, #results-table * {
         visibility: visible;
     }
@@ -165,12 +165,12 @@
     }
 
     /* Show generated link as well */
-    .generated-link {
+    .generated-link, .generated-link * {
         visibility: visible !important;
         display: block !important;
-        position: static; /* Avoid overlap */
-        margin-top: 10px;
+        position: static;
         text-align: center;
+        margin-top: 10px;
     }
 }
 
@@ -1013,6 +1013,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
