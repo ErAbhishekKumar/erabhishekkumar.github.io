@@ -88,7 +88,7 @@
             transform: translateY(-1px);
         }
 
-        table {
+        .results-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
@@ -96,30 +96,95 @@
             background: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            overflow: hidden;
+            overflow: visible;
+            position: relative;
+            table-layout: fixed;
         }
 
-        th,
-        td {
-            padding: 15px;
-            text-align: center;
-            vertical-align: middle;
+        .results-table th,
+        .results-table td {
+            padding: 12px 8px;
+            text-align: left;
             border-bottom: 1px solid #eee;
+            position: relative;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
-        th {
+        .results-table th {
             background-color: var(--primary-color);
             color: white;
             font-weight: 500;
+            white-space: normal;
+            min-height: 80px;
+            vertical-align: top;
         }
 
-        tr:hover {
+        /* Initial visibility states */
+        #results-table:not(.visible) {
+            display: none;
+        }
+
+        #results-table.visible {
+            display: block;
+        }
+
+        .results-table select {
+            display: block;
+            width: 100%;
+            margin-top: 8px;
+            font-size: 0.85em;
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .results-table select option {
+            padding: 4px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .results-table tr:hover {
             background-color: rgba(33, 150, 243, 0.05);
         }
 
-        td.sgpa {
+        .results-table td.sgpa {
+            text-align: center;
             white-space: nowrap;
-            font-weight: 500;
+        }
+
+        .results-table th.reg-no { 
+            width: 20%; 
+        }
+        
+        .results-table th.name { 
+            width: 45%; 
+        }
+        
+        .results-table th.sgpa-col,
+        .results-table th.cgpa-col { 
+            width: 17%; 
+            text-align: center;
+        }
+
+        #results-table:not([style*="display: block"]) select {
+            display: none;
+        }
+
+        .results-table th.reg-no { 
+            width: 15%; 
+        }
+        
+        .results-table th.name { 
+            width: 40%; 
+        }
+        
+        .results-table th.sgpa-col { 
+            width: 15%; 
+        }
+        
+        .results-table th.cgpa-col { 
+            width: 15%; 
         }
 
         /* Prevent wrapping in SGPA column */
@@ -149,38 +214,32 @@
         .tooltip .tooltiptext, .sgpa-tooltip .tooltiptext {
             visibility: hidden;
             min-width: 200px;
+            max-width: 300px;
             background-color: var(--card-bg);
             color: var(--text-color);
             text-align: center;
             border-radius: var(--border-radius);
             padding: 12px;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            pointer-events: none;
         }
 
-        .tooltip .tooltiptext::after, .sgpa-tooltip .tooltiptext::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -6px;
-            border-width: 6px;
-            border-style: solid;
-            border-color: var(--card-bg) transparent transparent transparent;
+        .tooltip .tooltiptext {
+            padding: 15px;
+            line-height: 1.8;
         }
 
         .tooltip:hover .tooltiptext, 
         .sgpa-tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
-            transform: translateX(-50%) translateY(0);
         }
+
+        /* Dynamic positioning will be handled by JavaScript */
 
         .exclamation {
             color: var(--accent-color);
@@ -384,47 +443,75 @@
 
 
         @media print {
-
-            /* Hide all ads when printing */
-            ins,
-            .adsbygoogle,
-            #instructions-button,
-            #print-table,
-            .nav-menu,
-            .header,
-            .donate-btn,
-            .footer {
+            /* Reset visibility */
+            body * {
+                visibility: hidden !important;
                 display: none !important;
             }
 
-            body * {
-                visibility: hidden;
-                /* Hide everything */
-            }
-
-            /* Show results table */
+            /* Show only results table */
             #results-table,
-            #results-table * {
-                visibility: visible;
+            .results-table,
+            .results-table * {
+                visibility: visible !important;
+                display: table !important;
             }
 
-            #results-table {
-                position: absolute;
-                top: 0;
-                left: 0;
+            .results-table th,
+            .results-table td {
+                display: table-cell !important;
+                padding: 8px !important;
+                border: 1px solid #000 !important;
             }
 
-            /* Show generated link as well at bottom of table  */
-            .generated-link,
-            .generated-link * {
-                visibility: visible;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                font-size: 12px;
-            }}
+            .results-table tr {
+                display: table-row !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Hide non-essential elements */
+            select,
+            button,
+            .tooltiptext,
+            #print-table,
+            .nav-menu,
+            .header,
+            .footer,
+            #instructions-button,
+            #instructions-popup,
+            #overlay,
+            .donate-btn {
+                display: none !important;
+            }
+
+            /* Table print layout */
+            .results-table {
+                width: 100% !important;
+                margin: 0 !important;
+                border-collapse: collapse !important;
+                table-layout: fixed !important;
+            }
+
+            /* Column widths for print */
+            .results-table th.reg-no { width: 20% !important; }
+            .results-table th.name { width: 45% !important; }
+            .results-table th.sgpa-col { width: 17% !important; }
+            .results-table th.cgpa-col { width: 17% !important; }
+
+            /* Show generated link at bottom */
+            .generated-link {
+                visibility: visible !important;
+                display: block !important;
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                text-align: center !important;
+                font-size: 10px !important;
+                padding: 10px 0 !important;
+                margin: 0 !important;
+            }
+        }
 
 
 
@@ -700,7 +787,7 @@
                 <tr>
                     <th class="reg-no">Registration No</th>
                     <th class="name">Name</th>
-                    <th class="auto-fit">
+                    <th class="sgpa-col">
                         SGPA
                         <select id="sort-options-sgpa" onchange="sortTable('sgpa')" aria-label="Sort by SGPA" title="Sort options for SGPA">
                             <option value="reg-asc">Ascending Reg No</option>
@@ -708,7 +795,7 @@
                             <option value="failed-students">Failed Students</option>
                         </select>
                     </th>
-                    <th class="marks">
+                    <th class="cgpa-col">
                         Cur. CGPA
                         <select id="sort-options-cgpa" onchange="sortTable('cgpa')" aria-label="Sort by CGPA" title="Sort options for CGPA">
                             <option value="reg-asc">Ascending Reg No</option>
@@ -1006,6 +1093,7 @@
             isFetching = true;
 
             resetTable();
+            document.getElementById('results-table').classList.remove('visible');
             displayLoadingMessage();
             abortFetch();
 
@@ -1109,7 +1197,8 @@
                         tableBody.appendChild(row);
 
                         // Display the table incrementally
-                        document.getElementById('results-table').style.display = 'block';
+                        const resultsTable = document.getElementById('results-table');
+                        resultsTable.classList.add('visible');
                         document.getElementById('print-table').style.display = 'block'; // Show the print button
 
                         // Scroll to bottom while fetching
@@ -1239,6 +1328,40 @@
             window.print();
         });
 
+        // Handle dynamic tooltip positioning
+        document.addEventListener('mouseover', function(event) {
+            const tooltip = event.target.closest('.tooltip');
+            if (tooltip) {
+                const tooltiptext = tooltip.querySelector('.tooltiptext');
+                if (tooltiptext) {
+                    // Get tooltip and viewport dimensions
+                    const rect = tooltip.getBoundingClientRect();
+                    const tooltipRect = tooltiptext.getBoundingClientRect();
+                    const viewportWidth = window.innerWidth;
+                    const viewportHeight = window.innerHeight;
+
+                    // Calculate position
+                    let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+                    let top = rect.top - tooltipRect.height - 10;
+
+                    // Check horizontal boundaries
+                    if (left < 10) left = 10;
+                    if (left + tooltipRect.width > viewportWidth - 10) {
+                        left = viewportWidth - tooltipRect.width - 10;
+                    }
+
+                    // Check vertical boundaries
+                    if (top < 10) {
+                        top = rect.bottom + 10; // Show below if not enough space above
+                    }
+
+                    // Apply position
+                    tooltiptext.style.left = left + 'px';
+                    tooltiptext.style.top = top + 'px';
+                }
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const sessionSelect = document.getElementById('session');
             const currentYear = new Date().getFullYear();
@@ -1250,6 +1373,30 @@
                 option.textContent = `${year}-${year + 4}`;
                 sessionSelect.appendChild(option);
             }
+
+            // Add observers for dynamic content
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                        // Ensure selects have proper wrapping for long options
+                        const selects = document.querySelectorAll('.results-table select');
+                        selects.forEach(select => {
+                            select.style.height = 'auto';
+                            const options = select.querySelectorAll('option');
+                            options.forEach(option => {
+                                if (option.textContent.length > 30) {
+                                    option.style.whiteSpace = 'normal';
+                                }
+                            });
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.body, { 
+                childList: true,
+                subtree: true
+            });
         });
     </script>
     <script>
