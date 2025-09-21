@@ -249,24 +249,26 @@
 
             /* Show college details at top */
             #results-table::before {
-                content: attr(data-college-name);
-                visibility: visible;
-                display: block;
-                font-size: 16px;
-                font-weight: bold;
-                text-align: center;
-                margin-bottom: 5px;
-            }
-
-            #results-table::after {
-                content: attr(data-branch-name) "\A" attr(data-semester);
+                content: attr(data-college-name) "\A" attr(data-branch-name) "\A" attr(data-semester);
                 visibility: visible;
                 display: block;
                 white-space: pre;
-                font-size: 14px;
-                font-weight: bold;
                 text-align: center;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+                line-height: 1.8;
+                font-size: 14px;
+            }
+
+            /* Style for all three lines */
+            #results-table::before {
+                font-weight: bold;
+            }
+
+            /* Extra space after college name */
+            #results-table[data-college-name]::before {
+                text-transform: uppercase;
+                font-size: 16px;
+                margin-bottom: 20px;
             }
 
             /* Show results table */
