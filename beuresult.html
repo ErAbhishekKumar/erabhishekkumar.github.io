@@ -1210,6 +1210,38 @@
             window.print();
         });
 
+        // Function to save selections to localStorage
+        function saveSelectionsToStorage() {
+            const session = document.getElementById('session').value;
+            const branch = document.getElementById('branch').value;
+            const semester = document.getElementById('semester').value;
+            const college = document.getElementById('college').value;
+
+            localStorage.setItem('beu_session', session);
+            localStorage.setItem('beu_branch', branch);
+            localStorage.setItem('beu_semester', semester);
+            localStorage.setItem('beu_college', college);
+        }
+
+        // Function to load selections from localStorage
+        function loadSelectionsFromStorage() {
+            const session = localStorage.getItem('beu_session');
+            const branch = localStorage.getItem('beu_branch');
+            const semester = localStorage.getItem('beu_semester');
+            const college = localStorage.getItem('beu_college');
+
+            if (session) document.getElementById('session').value = session;
+            if (branch) document.getElementById('branch').value = branch;
+            if (semester) document.getElementById('semester').value = semester;
+            if (college) document.getElementById('college').value = college;
+        }
+
+        // Add event listeners to save selections when changed
+        document.getElementById('session').addEventListener('change', saveSelectionsToStorage);
+        document.getElementById('branch').addEventListener('change', saveSelectionsToStorage);
+        document.getElementById('semester').addEventListener('change', saveSelectionsToStorage);
+        document.getElementById('college').addEventListener('change', saveSelectionsToStorage);
+
         document.addEventListener('DOMContentLoaded', function () {
             const sessionSelect = document.getElementById('session');
             const currentYear = new Date().getFullYear();
@@ -1221,6 +1253,9 @@
                 option.textContent = `${year}-${year + 4}`;
                 sessionSelect.appendChild(option);
             }
+
+            // Load saved selections when page loads
+            loadSelectionsFromStorage();
         });
     </script>
     <script>
