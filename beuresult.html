@@ -908,7 +908,8 @@
             async function fetchStudents(isLateral = false) {
                 let startSerial = isLateral ? 901 : 1;
                 let endSerial = isLateral ? 980 : 130;
-                let consecutiveFailures = 0;
+                let consecutiveNoResults = 0;
+                const maxConsecutiveNoResults = 6;
 
                 for (let i = startSerial; i <= endSerial; i++) {
                     const serial = i.toString().padStart(3, '0');
@@ -920,6 +921,9 @@
                     }
 
                     fetchedRegNos.add(regNo);
+
+                    // Reset consecutiveNoResults if result is found later
+                    let resultFound = false;
 
                     try {
                         // Add delay to prevent too many requests at once
@@ -953,15 +957,18 @@
                         const cgpa = cgpaSelector ? doc.querySelector(cgpaSelector)?.textContent.trim() : 'N/A';
 
                         if (!name || !sgpa) {
-                            consecutiveFailures++;
-                            if (consecutiveFailures >= maxFailures) {
-                                console.log(`Stopping fetch after ${maxFailures} consecutive failures for ${entryType === '0' ? 'regular' : 'lateral'} entries.`);
+                            consecutiveNoResults++;
+                            console.log(`No result for ${regNo}. Consecutive no results: ${consecutiveNoResults}`);
+                            if (consecutiveNoResults >= maxConsecutiveNoResults) {
+                                console.log(`Stopping ${isLateral ? 'lateral' : 'regular'} entry fetch after ${maxConsecutiveNoResults} consecutive no results`);
                                 break;
                             }
                             continue;
                         }
 
-                        consecutiveFailures = 0; // Reset the counter on success
+                        // Reset counter since we found a result
+                        consecutiveNoResults = 0;
+                        resultFound = true;
 
                         let failedSubjects = [];
                         const tables = doc.querySelectorAll(' #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
@@ -1031,10 +1038,10 @@
                 }
             }
 
-            // Fetch regular students (001-130)
+            // Fetch regular students first (001-130)
             await fetchStudents(false);
-            
-            // Fetch lateral entry students (901-980) only for 3rd semester onwards
+
+            // Only fetch lateral entry students (901-980) for 3rd semester onwards
             if (semester !== 'I' && semester !== 'II') {
                 await fetchStudents(true);
             }
