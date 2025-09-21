@@ -25,6 +25,40 @@
             margin: 10px 0;
         }
 
+        #results-table {
+            display: none;
+        }
+
+        #print-table {
+            display: none;
+        }
+
+        .print-header {
+            display: none;
+        }
+
+        .reg-col {
+            width: 20%;
+        }
+        
+        .name-col {
+            width: 30%;
+        }
+        
+        .sgpa-col {
+            width: auto;
+        }
+        
+        .cgpa-col {
+            width: 25%;
+        }
+
+        .sort-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -43,48 +77,21 @@
             background-color: #f2f2f2;
         }
 
-        /* Results container and table */
-        .results-container {
-            display: none;
-        }
-        
-        .results-container.visible {
-            display: block;
-        }
-
-        .results-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
         td.sgpa {
             white-space: nowrap;
         }
 
-        /* Generated link styles */
+        /* Prevent wrapping in SGPA column */
         .generated-link {
+            display: none;
             text-align: center;
-            padding: 15px 0;
+            margin-top: 10px;
             font-size: 12px;
-            border-top: 1px solid #eee;
-            margin-top: 20px;
         }
 
         .generated-link a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .generated-link a:hover {
-            color: var(--primary-dark);
+            color: #0000EE;
             text-decoration: underline;
-        }
-
-        /* Print button */
-        .print-btn {
-            display: none;
         }
 
         #loading {
@@ -258,82 +265,61 @@
 
 
         @media print {
-            /* Reset page margins */
-            @page {
-                margin: 1cm;
-            }
-
-            /* Hide all unnecessary elements */
+            /* Hide all ads when printing */
             ins,
             .adsbygoogle,
             #instructions-button,
-            .print-btn,
+            #print-table,
             .nav-menu,
             .header,
             .donate-btn,
-            .footer,
-            select,
-            button,
-            #loading,
-            #instructions-popup,
-            #overlay {
+            .footer {
                 display: none !important;
             }
 
-            /* Reset body layout */
-            body {
-                margin: 0;
-                padding: 0;
-                display: block;
-            }
-
-            /* Hide everything initially */
             body * {
                 visibility: hidden;
+                /* Hide everything */
             }
 
-            /* Show only results table and generated link */
-            .results-container,
-            .results-container *,
+            /* Show print content */
+            .print-header,
+            .print-header *,
+            #results-table,
+            #results-table *,
             .generated-link,
             .generated-link * {
-                visibility: visible !important;
+                visibility: visible;
             }
 
-            /* Container positioning */
-            .results-container {
-                margin: 0;
-                padding: 0;
+            .print-header {
+                position: relative;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .print-header h2 {
+                margin: 5px 0;
+                font-size: 18px;
+            }
+
+            #results-table {
                 width: 100%;
-                display: block !important;
+                margin: 0 auto;
             }
 
-            /* Table styles */
-            .results-table {
-                width: 100%;
-                border-collapse: collapse;
-                margin: 0 0 20px 0;
-                page-break-inside: avoid;
-            }
-
-            .results-table th,
-            .results-table td {
-                border: 1px solid #000;
-                padding: 8px;
-            }
-
-            /* Generated link styles */
             .generated-link {
-                display: block !important;
+                position: fixed;
+                bottom: 20px;
+                left: 0;
                 width: 100%;
                 text-align: center;
-                font-size: 10px;
-                margin-top: 20px;
-                padding-top: 10px;
-                border-top: 1px solid #eee;
-                position: relative;
-                page-break-inside: avoid;
-                page-break-before: auto;
+                font-size: 12px;
+            }
+
+            /* Word wrap for long college names */
+            .college-name {
+                word-wrap: break-word;
             }
         }
 
@@ -596,40 +582,46 @@
         <button id="close-popup">Close</button>
     </div>
 
-    <div class="results-container">
-        <div id="results-table">
-            <table class="results-table">
-                <thead>
-                    <tr>
-                        <th class="reg-no">Registration No</th>
-                        <th class="name">Name</th>
-                        <th class="sgpa-col">
-                            SGPA
-                            <select id="sort-options-sgpa" onchange="sortTable('sgpa')" title="Sort by SGPA">
-                                <option value="reg-asc">Ascending Reg No</option>
-                                <option value="sgpa-desc">Descending SGPA</option>
-                                <option value="failed-students">Failed Students</option>
-                            </select>
-                        </th>
-                        <th class="cgpa-col">
-                            Cur. CGPA
-                            <select id="sort-options-cgpa" onchange="sortTable('cgpa')" title="Sort by CGPA">
-                                <option value="reg-asc">Ascending Reg No</option>
-                                <option value="cgpa-desc">Descending CGPA</option>
-                            </select>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-            <div class="generated-link">
-                Generated by : <a href="https://erabhishekkumar.github.io/beuresult.html"
-                    target="_blank" rel="noopener">https://erabhishekkumar.github.io/beuresult.html</a>
-            </div>
-        </div>
+    <div class="print-header">
+        <h2 class="college-name"></h2>
+        <h2 class="branch-name"></h2>
+        <h2 class="semester-name"></h2>
+    </div>
+    <div id="results-table" style="display:none;">
+        <table>
+            <thead>
+                <tr>
+                    <th class="reg-col">Registration No</th>
+                    <th class="name-col">Name</th>
+                    <th class="sgpa-col">
+                        SGPA
+                        <div class="sort-info"></div>
+                        <select id="sort-options-sgpa" onchange="sortTable('sgpa')">
+                            <option value="reg-asc">Ascending Reg No</option>
+                            <option value="sgpa-desc">Descending SGPA</option>
+                            <option value="failed-students">Failed Students</option>
+                        </select>
+                    </th>
+                    <th class="cgpa-col">
+                        Cur. CGPA
+                        <div class="sort-info"></div>
+                        <select id="sort-options-cgpa" onchange="sortTable('cgpa')">
+                            <option value="reg-asc">Ascending Reg No</option>
+                            <option value="cgpa-desc">Descending CGPA</option>
+                        </select>
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="generated-link">
+        Generated by : <a href="https://erabhishekkumar.github.io/beuresult.html" rel="noopener"
+            target="_blank">https://erabhishekkumar.github.io/beuresult.html</a>
     </div>
 
-    <button id="print-table" class="print-btn">Print Table</button>
+
+    <button id="print-table" style="display:none;">Print Table</button>
 
     <script>
         let abortController = new AbortController();
@@ -745,8 +737,8 @@
         function resetTable() {
             const tableBody = document.querySelector('#results-table tbody');
             tableBody.innerHTML = ''; // Clear the table body
-            document.getElementById('results-table').classList.remove('visible'); // Hide the table
-            document.querySelector('.print-btn').style.display = 'none'; // Hide the print button
+            document.getElementById('results-table').style.display = 'none'; // Hide the table
+            document.getElementById('print-table').style.display = 'none'; // Hide the print button
 
             // Reset SGPA sort options
             const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
@@ -1012,11 +1004,18 @@
                         row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
                         tableBody.appendChild(row);
 
-                        // Display the table incrementally
-                        document.getElementById('results-table').classList.add('visible');
-                        document.querySelector('.print-btn').style.display = 'block'; // Show the print button
+            // Display the table incrementally
+            document.getElementById('results-table').classList.add('show');
+            document.getElementById('print-table').classList.add('show');
 
-                        // Scroll to bottom while fetching
+            // Update print header
+            const selectedCollege = document.getElementById('college');
+            const selectedBranch = document.getElementById('branch');
+            const selectedSemester = document.getElementById('semester');
+            
+            document.querySelector('.college-name').textContent = 'College: ' + selectedCollege.options[selectedCollege.selectedIndex].text;
+            document.querySelector('.branch-name').textContent = 'Branch: ' + selectedBranch.options[selectedBranch.selectedIndex].text;
+            document.querySelector('.semester-name').textContent = 'Semester: ' + selectedSemester.options[selectedSemester.selectedIndex].text;                        // Scroll to bottom while fetching
                         scrollToBottom();
 
                     } catch (error) {
@@ -1069,8 +1068,10 @@
             const tableBody = document.querySelector('#results-table tbody');
             const rows = Array.from(tableBody.rows);
             const sortOption = document.getElementById(`sort-options-${column}`).value;
+            const sortInfoElement = document.querySelector(`th.${column}-col .sort-info`);
 
             if (sortOption === 'reg-asc') {
+                sortInfoElement.textContent = '(Sorted by Registration No)';
                 rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
                 rows.sort((a, b) => {
                     const regA = parseInt(a.cells[0].textContent);
@@ -1078,6 +1079,7 @@
                     return regA - regB;
                 });
             } else if (sortOption === 'sgpa-desc' && column === 'sgpa') {
+                sortInfoElement.textContent = '(Sorted by SGPA Descending)';
                 rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
                 rows.sort((a, b) => {
                     const sgpaA = parseFloat(a.cells[2].textContent) || 0;
@@ -1085,6 +1087,7 @@
                     return sgpaB - sgpaA;
                 });
             } else if (sortOption === 'cgpa-desc' && column === 'cgpa') {
+                sortInfoElement.textContent = '(Sorted by CGPA Descending)';
                 rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
                 rows.sort((a, b) => {
                     const cgpaA = parseFloat(a.cells[3].textContent) || 0;
@@ -1092,6 +1095,7 @@
                     return cgpaB - cgpaA;
                 });
             } else if (sortOption === 'failed-students' && column === 'sgpa') {
+                sortInfoElement.textContent = '(Showing Failed Students Only)';
                 rows.forEach(row => {
                     const sgpaCell = row.cells[2];
                     const exclamationMark = sgpaCell.querySelector('.exclamation');
@@ -1103,6 +1107,7 @@
                 });
                 return;
             } else if (failedSubjectsSet.has(sortOption) && column === 'sgpa') {
+                sortInfoElement.textContent = `(Showing Failed in ${sortOption})`;
                 rows.forEach(row => {
                     const sgpaCell = row.cells[2];
                     const tooltipText = sgpaCell.querySelector('.tooltiptext');
@@ -1115,8 +1120,15 @@
                 return;
             }
 
+            // Clear and repopulate table
             tableBody.innerHTML = '';
             rows.forEach(row => tableBody.appendChild(row));
+            
+            // Update sort info for cgpa if needed
+            if (column === 'cgpa') {
+                document.querySelector('th.cgpa-col .sort-info').textContent = 
+                    sortOption === 'cgpa-desc' ? '(Sorted by CGPA Descending)' : '(Sorted by Registration No)';
+            }
         }
 
         // Add event listeners to dropdowns to abort fetch on change
