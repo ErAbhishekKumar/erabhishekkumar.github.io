@@ -1150,6 +1150,9 @@
                         row.style.display = 'none';
                     }
                 });
+                // adding this to show "Failed Students" in header
+                const sgpaHeader = document.querySelector('#results-table th:nth-child(3)');
+                sgpaHeader.dataset.sortType = "Failed Students";
                 return;
             } else if (failedSubjectsSet.has(sortOption) && column === 'sgpa') {
                 rows.forEach(row => {
@@ -1161,6 +1164,9 @@
                         row.style.display = 'none';
                     }
                 });
+                // adding this to show selected subject in header
+                const sgpaHeader = document.querySelector('#results-table th:nth-child(3)');
+                sgpaHeader.dataset.sortType = sortOption;
                 return;
             }
 
