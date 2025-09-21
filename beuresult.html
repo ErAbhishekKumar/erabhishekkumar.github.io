@@ -744,6 +744,8 @@
             abortController.abort(); // Abort any ongoing fetch
             abortController = new AbortController(); // Create a new AbortController
             isFetching = false; // Reset the fetching flag
+            document.getElementById('fetch-results').textContent = 'Fetch Results';
+            hideLoadingMessage();
         }
 
         function scrollToBottom() {
@@ -836,13 +838,16 @@
         document.getElementById('college').addEventListener('change', abortFetch);
 
         document.getElementById('fetch-results').addEventListener('click', function () {
-            abortFetch();
             fetchResults();
         });
 
         async function fetchResults() {
-            if (isFetching) return; // Prevent multiple fetches
+            if (isFetching) {
+                abortFetch();
+                return;
+            }
             isFetching = true;
+            document.getElementById('fetch-results').textContent = 'Stop fetching result';
 
             resetTable();
             displayLoadingMessage();
