@@ -25,40 +25,6 @@
             margin: 10px 0;
         }
 
-        #results-table {
-            display: none;
-        }
-
-        #print-table {
-            display: none;
-        }
-
-        .print-header {
-            display: none;
-        }
-
-        .reg-col {
-            width: 20%;
-        }
-        
-        .name-col {
-            width: 30%;
-        }
-        
-        .sgpa-col {
-            width: auto;
-        }
-        
-        .cgpa-col {
-            width: 25%;
-        }
-
-        .sort-info {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-        }
-
         table {
             width: 100%;
             border-collapse: collapse;
@@ -279,47 +245,77 @@
 
             body * {
                 visibility: hidden;
-                /* Hide everything */
             }
 
-            /* Show print content */
-            .print-header,
-            .print-header *,
+            /* Show college details at top */
+            #results-table::before {
+                content: attr(data-college-name);
+                visibility: visible;
+                display: block;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            #results-table::after {
+                content: attr(data-branch-name) "\A" attr(data-semester);
+                visibility: visible;
+                display: block;
+                white-space: pre;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            /* Show results table */
             #results-table,
-            #results-table *,
-            .generated-link,
-            .generated-link * {
+            #results-table * {
                 visibility: visible;
             }
 
-            .print-header {
-                position: relative;
-                margin-bottom: 20px;
+            #results-table {
+                position: absolute;
+                top: 80px;
+                left: 0;
+            }
+
+            /* Style table headers */
+            #results-table th {
+                font-weight: bold;
+                padding: 8px;
                 text-align: center;
             }
 
-            .print-header h2 {
-                margin: 5px 0;
-                font-size: 18px;
+            #sort-options-sgpa,
+            #sort-options-cgpa {
+                display: none;
             }
 
-            #results-table {
-                width: 100%;
-                margin: 0 auto;
+            /* Show sorting info */
+            #results-table thead tr th:nth-child(3)::after {
+                content: " (" attr(data-sort-type) ")";
+                font-size: 12px;
+                font-weight: normal;
             }
 
-            .generated-link {
-                position: fixed;
-                bottom: 20px;
+            #results-table thead tr th:nth-child(4)::after {
+                content: " (" attr(data-sort-type) ")";
+                font-size: 12px;
+                font-weight: normal;
+            }
+
+            /* Show generated link at bottom of table */
+            .generated-link,
+            .generated-link * {
+                visibility: visible;
+                position: absolute;
+                bottom: 0;
                 left: 0;
                 width: 100%;
                 text-align: center;
                 font-size: 12px;
-            }
-
-            /* Word wrap for long college names */
-            .college-name {
-                word-wrap: break-word;
             }
         }
 
@@ -582,29 +578,22 @@
         <button id="close-popup">Close</button>
     </div>
 
-    <div class="print-header">
-        <h2 class="college-name"></h2>
-        <h2 class="branch-name"></h2>
-        <h2 class="semester-name"></h2>
-    </div>
     <div id="results-table" style="display:none;">
         <table>
             <thead>
                 <tr>
-                    <th class="reg-col">Registration No</th>
-                    <th class="name-col">Name</th>
-                    <th class="sgpa-col">
+                    <th style="width: 20%;">Registration No</th>
+                    <th style="width: 30%;">Name</th>
+                    <th style="width: auto;"> <!-- Adjust width to fit content -->
                         SGPA
-                        <div class="sort-info"></div>
                         <select id="sort-options-sgpa" onchange="sortTable('sgpa')">
                             <option value="reg-asc">Ascending Reg No</option>
                             <option value="sgpa-desc">Descending SGPA</option>
                             <option value="failed-students">Failed Students</option>
                         </select>
                     </th>
-                    <th class="cgpa-col">
+                    <th style="width: 25%;">
                         Cur. CGPA
-                        <div class="sort-info"></div>
                         <select id="sort-options-cgpa" onchange="sortTable('cgpa')">
                             <option value="reg-asc">Ascending Reg No</option>
                             <option value="cgpa-desc">Descending CGPA</option>
@@ -616,7 +605,7 @@
         </table>
     </div>
     <div class="generated-link">
-        Generated by : <a href="https://erabhishekkumar.github.io/beuresult.html" rel="noopener"
+        Generated by : <a href="https://erabhishekkumar.github.io/beuresult.html"
             target="_blank">https://erabhishekkumar.github.io/beuresult.html</a>
     </div>
 
@@ -1004,18 +993,30 @@
                         row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
                         tableBody.appendChild(row);
 
-            // Display the table incrementally
-            document.getElementById('results-table').classList.add('show');
-            document.getElementById('print-table').classList.add('show');
+                        // Display the table incrementally
+                        const resultsTable = document.getElementById('results-table');
+                        resultsTable.style.display = 'block';
+                        document.getElementById('print-table').style.display = 'block'; // Show the print button
 
-            // Update print header
-            const selectedCollege = document.getElementById('college');
-            const selectedBranch = document.getElementById('branch');
-            const selectedSemester = document.getElementById('semester');
-            
-            document.querySelector('.college-name').textContent = 'College: ' + selectedCollege.options[selectedCollege.selectedIndex].text;
-            document.querySelector('.branch-name').textContent = 'Branch: ' + selectedBranch.options[selectedBranch.selectedIndex].text;
-            document.querySelector('.semester-name').textContent = 'Semester: ' + selectedSemester.options[selectedSemester.selectedIndex].text;                        // Scroll to bottom while fetching
+                        // Set table data attributes for printing
+                        const collegeSelect = document.getElementById('college');
+                        const branchSelect = document.getElementById('branch');
+                        const semesterSelect = document.getElementById('semester');
+                        
+                        resultsTable.dataset.collegeName = 'College Name: ' + collegeSelect.options[collegeSelect.selectedIndex].text;
+                        resultsTable.dataset.branchName = 'Branch: ' + branchSelect.options[branchSelect.selectedIndex].text;
+                        resultsTable.dataset.semester = 'Semester: ' + semesterSelect.options[semesterSelect.selectedIndex].text;
+
+                        // Update sort info in table headers
+                        const sgpaSortSelect = document.getElementById('sort-options-sgpa');
+                        const cgpaSortSelect = document.getElementById('sort-options-cgpa');
+                        const sgpaHeader = document.querySelector('#results-table th:nth-child(3)');
+                        const cgpaHeader = document.querySelector('#results-table th:nth-child(4)');
+                        
+                        sgpaHeader.dataset.sortType = sgpaSortSelect.options[sgpaSortSelect.selectedIndex].text;
+                        cgpaHeader.dataset.sortType = cgpaSortSelect.options[cgpaSortSelect.selectedIndex].text;
+
+                        // Scroll to bottom while fetching
                         scrollToBottom();
 
                     } catch (error) {
@@ -1068,10 +1069,8 @@
             const tableBody = document.querySelector('#results-table tbody');
             const rows = Array.from(tableBody.rows);
             const sortOption = document.getElementById(`sort-options-${column}`).value;
-            const sortInfoElement = document.querySelector(`th.${column}-col .sort-info`);
 
             if (sortOption === 'reg-asc') {
-                sortInfoElement.textContent = '(Sorted by Registration No)';
                 rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
                 rows.sort((a, b) => {
                     const regA = parseInt(a.cells[0].textContent);
@@ -1079,7 +1078,6 @@
                     return regA - regB;
                 });
             } else if (sortOption === 'sgpa-desc' && column === 'sgpa') {
-                sortInfoElement.textContent = '(Sorted by SGPA Descending)';
                 rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
                 rows.sort((a, b) => {
                     const sgpaA = parseFloat(a.cells[2].textContent) || 0;
@@ -1087,7 +1085,6 @@
                     return sgpaB - sgpaA;
                 });
             } else if (sortOption === 'cgpa-desc' && column === 'cgpa') {
-                sortInfoElement.textContent = '(Sorted by CGPA Descending)';
                 rows.forEach(row => row.style.display = ''); // Ensure all rows are displayed
                 rows.sort((a, b) => {
                     const cgpaA = parseFloat(a.cells[3].textContent) || 0;
@@ -1095,7 +1092,6 @@
                     return cgpaB - cgpaA;
                 });
             } else if (sortOption === 'failed-students' && column === 'sgpa') {
-                sortInfoElement.textContent = '(Showing Failed Students Only)';
                 rows.forEach(row => {
                     const sgpaCell = row.cells[2];
                     const exclamationMark = sgpaCell.querySelector('.exclamation');
@@ -1107,7 +1103,6 @@
                 });
                 return;
             } else if (failedSubjectsSet.has(sortOption) && column === 'sgpa') {
-                sortInfoElement.textContent = `(Showing Failed in ${sortOption})`;
                 rows.forEach(row => {
                     const sgpaCell = row.cells[2];
                     const tooltipText = sgpaCell.querySelector('.tooltiptext');
@@ -1120,15 +1115,20 @@
                 return;
             }
 
-            // Clear and repopulate table
+            // Update the sort type display
+            const sgpaSortSelect = document.getElementById('sort-options-sgpa');
+            const cgpaSortSelect = document.getElementById('sort-options-cgpa');
+            const sgpaHeader = document.querySelector('#results-table th:nth-child(3)');
+            const cgpaHeader = document.querySelector('#results-table th:nth-child(4)');
+            
+            if (column === 'sgpa') {
+                sgpaHeader.dataset.sortType = sgpaSortSelect.options[sgpaSortSelect.selectedIndex].text;
+            } else if (column === 'cgpa') {
+                cgpaHeader.dataset.sortType = cgpaSortSelect.options[cgpaSortSelect.selectedIndex].text;
+            }
+
             tableBody.innerHTML = '';
             rows.forEach(row => tableBody.appendChild(row));
-            
-            // Update sort info for cgpa if needed
-            if (column === 'cgpa') {
-                document.querySelector('th.cgpa-col .sort-info').textContent = 
-                    sortOption === 'cgpa-desc' ? '(Sorted by CGPA Descending)' : '(Sorted by Registration No)';
-            }
         }
 
         // Add event listeners to dropdowns to abort fetch on change
