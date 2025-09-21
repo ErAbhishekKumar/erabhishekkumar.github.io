@@ -11,193 +11,80 @@
         crossorigin="anonymous"></script>
 
     <style>
-        :root {
-            --primary-color: #2196f3;
-            --primary-dark: #1976d2;
-            --primary-light: #bbdefb;
-            --accent-color: #ff5722;
-            --bg-color: #f5f5f5;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --border-radius: 8px;
-            --shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .header {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .header h1 {
-            color: var(--primary-color);
-            margin: 0;
-            font-size: 2.2em;
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
 
         label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-color);
-            font-weight: 500;
+            margin-right: 10px;
         }
 
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            background-color: var(--card-bg);
-            margin-bottom: 15px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        select:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 2px var(--primary-light);
-        }
-
+        select,
         button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: var(--border-radius);
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px 5px;
+            margin: 10px 0;
         }
 
-        button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-1px);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Results container and table */
+        .results-container {
+            display: none;
+        }
+        
+        .results-container.visible {
+            display: block;
         }
 
         .results-table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 20px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: visible;
-            position: relative;
-            table-layout: fixed;
+            border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
-        .results-table th,
-        .results-table td {
-            padding: 12px 8px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .results-table th {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 500;
-            white-space: normal;
-            min-height: 80px;
-            vertical-align: top;
-        }
-
-        /* Initial visibility states */
-        #results-table:not(.visible) {
-            display: none;
-        }
-
-        #results-table.visible {
-            display: block;
-        }
-
-        .results-table select {
-            display: block;
-            width: 100%;
-            margin-top: 8px;
-            font-size: 0.85em;
-            padding: 6px;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .results-table select option {
-            padding: 4px;
-            white-space: normal;
-            word-wrap: break-word;
-        }
-
-        .results-table tr:hover {
-            background-color: rgba(33, 150, 243, 0.05);
-        }
-
-        .results-table td.sgpa {
-            text-align: center;
+        td.sgpa {
             white-space: nowrap;
         }
 
-        .results-table th.reg-no { 
-            width: 20%; 
-        }
-        
-        .results-table th.name { 
-            width: 45%; 
-        }
-        
-        .results-table th.sgpa-col,
-        .results-table th.cgpa-col { 
-            width: 17%; 
-            text-align: center;
-        }
-
-        #results-table:not([style*="display: block"]) select {
-            display: none;
-        }
-
-        .results-table th.reg-no { 
-            width: 15%; 
-        }
-        
-        .results-table th.name { 
-            width: 40%; 
-        }
-        
-        .results-table th.sgpa-col { 
-            width: 15%; 
-        }
-        
-        .results-table th.cgpa-col { 
-            width: 15%; 
-        }
-
-        /* Prevent wrapping in SGPA column */
+        /* Generated link styles */
         .generated-link {
-            display: none;
             text-align: center;
-            margin-top: 10px;
+            padding: 15px 0;
             font-size: 12px;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
         }
 
         .generated-link a {
-            color: #0000EE;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .generated-link a:hover {
+            color: var(--primary-dark);
             text-decoration: underline;
+        }
+
+        /* Print button */
+        .print-btn {
+            display: none;
         }
 
         #loading {
@@ -205,52 +92,63 @@
             margin-top: 20px;
         }
 
-        .tooltip, .sgpa-tooltip {
+        .tooltip {
             position: relative;
             display: inline-block;
-            cursor: pointer;
-        }
-
-        .tooltip .tooltiptext, .sgpa-tooltip .tooltiptext {
-            visibility: hidden;
-            min-width: 200px;
-            max-width: 300px;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            text-align: center;
-            border-radius: var(--border-radius);
-            padding: 12px;
-            position: fixed;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: all 0.2s ease;
-            pointer-events: none;
         }
 
         .tooltip .tooltiptext {
-            padding: 15px;
-            line-height: 1.8;
+            visibility: hidden;
+            width: 200px;
+            background-color: #f9f9f9;
+            color: #000;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            /* Position the tooltip below the text */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        .tooltip:hover .tooltiptext, 
-        .sgpa-tooltip:hover .tooltiptext {
+        .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
         }
 
-        /* Dynamic positioning will be handled by JavaScript */
-
-        .exclamation {
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-left: 4px;
+        .sgpa-tooltip {
+            position: relative;
+            display: inline-block;
         }
 
-        /* Custom styles for failed subjects tooltip */
         .sgpa-tooltip .tooltiptext {
-            font-size: 0.9em;
-            line-height: 1.6;
+            visibility: hidden;
+            width: 200px;
+            background-color: #f9f9f9;
+            color: #000;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -100px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(10px);
+        }
+
+        .sgpa-tooltip:hover .tooltiptext,
+        .sgpa-tooltip:focus .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .exclamation {
@@ -331,185 +229,111 @@
             z-index: 999;
         }
 
-        /* Mobile Responsiveness */
-        /* Print button state */
-        .print-btn {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             body {
                 margin: 10px;
-                padding: 10px;
-                font-size: 14px;
             }
 
-            .header {
-                padding: 15px;
+            table {
+                font-size: 12px;
             }
 
-            .header h1 {
-                font-size: 1.5rem;
+            th,
+            td {
+                padding: 5px;
             }
 
-            /* Table responsiveness */
-            .results-table {
-                display: block;
-                overflow-x: auto;
-                margin: 0 -10px;
-                padding: 0 10px;
-                scrollbar-width: thin;
-                scrollbar-color: var(--primary-color) var(--bg-color);
-            }
-            
-            .results-table::-webkit-scrollbar {
-                height: 6px;
-            }
-            
-            .results-table::-webkit-scrollbar-track {
-                background: var(--bg-color);
-            }
-            
-            .results-table::-webkit-scrollbar-thumb {
-                background-color: var(--primary-color);
-                border-radius: 3px;
-            }
-
-            .results-table th,
-            .results-table td {
-                padding: 8px;
-                font-size: 0.9rem;
-                white-space: nowrap;
-            }
-
-            /* Form controls */
             select,
             button {
                 width: 100%;
                 margin: 5px 0;
-                font-size: 1rem;
-                padding: 10px;
-            }
-
-            /* Tooltips */
-            .tooltip .tooltiptext,
-            .sgpa-tooltip .tooltiptext {
-                width: 200px;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 0.9rem;
-            }
-
-            /* Navigation */
-            .nav-menu {
-                padding: 10px;
-            }
-
-            .nav-menu a {
-                font-size: 0.9rem;
-                padding: 8px 12px;
-                margin: 2px;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            body {
-                font-size: 13px;
-            }
-
-            .header h1 {
-                font-size: 1.3rem;
-            }
-
-            .results-table th,
-            .results-table td {
-                padding: 6px;
-                font-size: 0.85rem;
-            }
-
-            select,
-            button {
-                font-size: 0.9rem;
-                padding: 8px;
             }
 
             .tooltip .tooltiptext,
             .sgpa-tooltip .tooltiptext {
-                width: 180px;
-                font-size: 0.85rem;
+                width: 150px;
+                margin-left: -75px;
             }
         }
 
 
         @media print {
-            /* Reset visibility */
-            body * {
-                visibility: hidden !important;
+            /* Reset page margins */
+            @page {
+                margin: 1cm;
+            }
+
+            /* Hide all unnecessary elements */
+            ins,
+            .adsbygoogle,
+            #instructions-button,
+            .print-btn,
+            .nav-menu,
+            .header,
+            .donate-btn,
+            .footer,
+            select,
+            button,
+            #loading,
+            #instructions-popup,
+            #overlay {
                 display: none !important;
             }
 
-            /* Show only results table */
-            #results-table,
-            .results-table,
-            .results-table * {
+            /* Reset body layout */
+            body {
+                margin: 0;
+                padding: 0;
+                display: block;
+            }
+
+            /* Hide everything initially */
+            body * {
+                visibility: hidden;
+            }
+
+            /* Show only results table and generated link */
+            .results-container,
+            .results-container *,
+            .generated-link,
+            .generated-link * {
                 visibility: visible !important;
-                display: table !important;
+            }
+
+            /* Container positioning */
+            .results-container {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: block !important;
+            }
+
+            /* Table styles */
+            .results-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 0 0 20px 0;
+                page-break-inside: avoid;
             }
 
             .results-table th,
             .results-table td {
-                display: table-cell !important;
-                padding: 8px !important;
-                border: 1px solid #000 !important;
+                border: 1px solid #000;
+                padding: 8px;
             }
 
-            .results-table tr {
-                display: table-row !important;
-                page-break-inside: avoid !important;
-            }
-
-            /* Hide non-essential elements */
-            select,
-            button,
-            .tooltiptext,
-            #print-table,
-            .nav-menu,
-            .header,
-            .footer,
-            #instructions-button,
-            #instructions-popup,
-            #overlay,
-            .donate-btn {
-                display: none !important;
-            }
-
-            /* Table print layout */
-            .results-table {
-                width: 100% !important;
-                margin: 0 !important;
-                border-collapse: collapse !important;
-                table-layout: fixed !important;
-            }
-
-            /* Column widths for print */
-            .results-table th.reg-no { width: 20% !important; }
-            .results-table th.name { width: 45% !important; }
-            .results-table th.sgpa-col { width: 17% !important; }
-            .results-table th.cgpa-col { width: 17% !important; }
-
-            /* Show generated link at bottom */
+            /* Generated link styles */
             .generated-link {
-                visibility: visible !important;
                 display: block !important;
-                position: fixed !important;
-                bottom: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                text-align: center !important;
-                font-size: 10px !important;
-                padding: 10px 0 !important;
-                margin: 0 !important;
+                width: 100%;
+                text-align: center;
+                font-size: 10px;
+                margin-top: 20px;
+                padding-top: 10px;
+                border-top: 1px solid #eee;
+                position: relative;
+                page-break-inside: avoid;
+                page-break-before: auto;
             }
         }
 
@@ -517,31 +341,22 @@
 
 
         .nav-menu {
-            background: var(--card-bg);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+            background: white;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .nav-menu a {
-            color: var(--text-color);
+            color: #1e88e5;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            transition: all 0.3s ease;
-            background-color: transparent;
-            font-weight: 500;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         .nav-menu a:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
+            background-color: #f0f2f5;
         }
 
         /* Add these new styles for sticky footer */
@@ -781,35 +596,37 @@
         <button id="close-popup">Close</button>
     </div>
 
-    <div id="results-table">
-        <table class="results-table">
-            <thead>
-                <tr>
-                    <th class="reg-no">Registration No</th>
-                    <th class="name">Name</th>
-                    <th class="sgpa-col">
-                        SGPA
-                        <select id="sort-options-sgpa" onchange="sortTable('sgpa')" aria-label="Sort by SGPA" title="Sort options for SGPA">
-                            <option value="reg-asc">Ascending Reg No</option>
-                            <option value="sgpa-desc">Descending SGPA</option>
-                            <option value="failed-students">Failed Students</option>
-                        </select>
-                    </th>
-                    <th class="cgpa-col">
-                        Cur. CGPA
-                        <select id="sort-options-cgpa" onchange="sortTable('cgpa')" aria-label="Sort by CGPA" title="Sort options for CGPA">
-                            <option value="reg-asc">Ascending Reg No</option>
-                            <option value="cgpa-desc">Descending CGPA</option>
-                        </select>
-                    </th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
-    <div class="generated-link">
-        Generated by : <a href="https://erabhishekkumar.github.io/beuresult.html"
-            target="_blank" rel="noopener">https://erabhishekkumar.github.io/beuresult.html</a>
+    <div class="results-container">
+        <div id="results-table">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th class="reg-no">Registration No</th>
+                        <th class="name">Name</th>
+                        <th class="sgpa-col">
+                            SGPA
+                            <select id="sort-options-sgpa" onchange="sortTable('sgpa')" title="Sort by SGPA">
+                                <option value="reg-asc">Ascending Reg No</option>
+                                <option value="sgpa-desc">Descending SGPA</option>
+                                <option value="failed-students">Failed Students</option>
+                            </select>
+                        </th>
+                        <th class="cgpa-col">
+                            Cur. CGPA
+                            <select id="sort-options-cgpa" onchange="sortTable('cgpa')" title="Sort by CGPA">
+                                <option value="reg-asc">Ascending Reg No</option>
+                                <option value="cgpa-desc">Descending CGPA</option>
+                            </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="generated-link">
+                Generated by : <a href="https://erabhishekkumar.github.io/beuresult.html"
+                    target="_blank" rel="noopener">https://erabhishekkumar.github.io/beuresult.html</a>
+            </div>
+        </div>
     </div>
 
     <button id="print-table" class="print-btn">Print Table</button>
@@ -928,8 +745,8 @@
         function resetTable() {
             const tableBody = document.querySelector('#results-table tbody');
             tableBody.innerHTML = ''; // Clear the table body
-            document.getElementById('results-table').style.display = 'none'; // Hide the table
-            document.getElementById('print-table').style.display = 'none'; // Hide the print button
+            document.getElementById('results-table').classList.remove('visible'); // Hide the table
+            document.querySelector('.print-btn').style.display = 'none'; // Hide the print button
 
             // Reset SGPA sort options
             const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
@@ -1093,7 +910,6 @@
             isFetching = true;
 
             resetTable();
-            document.getElementById('results-table').classList.remove('visible');
             displayLoadingMessage();
             abortFetch();
 
@@ -1197,9 +1013,8 @@
                         tableBody.appendChild(row);
 
                         // Display the table incrementally
-                        const resultsTable = document.getElementById('results-table');
-                        resultsTable.classList.add('visible');
-                        document.getElementById('print-table').style.display = 'block'; // Show the print button
+                        document.getElementById('results-table').classList.add('visible');
+                        document.querySelector('.print-btn').style.display = 'block'; // Show the print button
 
                         // Scroll to bottom while fetching
                         scrollToBottom();
@@ -1328,40 +1143,6 @@
             window.print();
         });
 
-        // Handle dynamic tooltip positioning
-        document.addEventListener('mouseover', function(event) {
-            const tooltip = event.target.closest('.tooltip');
-            if (tooltip) {
-                const tooltiptext = tooltip.querySelector('.tooltiptext');
-                if (tooltiptext) {
-                    // Get tooltip and viewport dimensions
-                    const rect = tooltip.getBoundingClientRect();
-                    const tooltipRect = tooltiptext.getBoundingClientRect();
-                    const viewportWidth = window.innerWidth;
-                    const viewportHeight = window.innerHeight;
-
-                    // Calculate position
-                    let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
-                    let top = rect.top - tooltipRect.height - 10;
-
-                    // Check horizontal boundaries
-                    if (left < 10) left = 10;
-                    if (left + tooltipRect.width > viewportWidth - 10) {
-                        left = viewportWidth - tooltipRect.width - 10;
-                    }
-
-                    // Check vertical boundaries
-                    if (top < 10) {
-                        top = rect.bottom + 10; // Show below if not enough space above
-                    }
-
-                    // Apply position
-                    tooltiptext.style.left = left + 'px';
-                    tooltiptext.style.top = top + 'px';
-                }
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             const sessionSelect = document.getElementById('session');
             const currentYear = new Date().getFullYear();
@@ -1373,30 +1154,6 @@
                 option.textContent = `${year}-${year + 4}`;
                 sessionSelect.appendChild(option);
             }
-
-            // Add observers for dynamic content
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                        // Ensure selects have proper wrapping for long options
-                        const selects = document.querySelectorAll('.results-table select');
-                        selects.forEach(select => {
-                            select.style.height = 'auto';
-                            const options = select.querySelectorAll('option');
-                            options.forEach(option => {
-                                if (option.textContent.length > 30) {
-                                    option.style.whiteSpace = 'normal';
-                                }
-                            });
-                        });
-                    }
-                });
-            });
-
-            observer.observe(document.body, { 
-                childList: true,
-                subtree: true
-            });
         });
     </script>
     <script>
