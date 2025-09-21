@@ -231,6 +231,20 @@
 
 
         @media print {
+            /* Page setup */
+            @page {
+                margin: 1cm;
+                size: A4 portrait;
+            }
+
+            /* Reset body for printing */
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                min-height: auto;
+            }
+
             /* Hide all ads when printing */
             ins,
             .adsbygoogle,
@@ -278,9 +292,12 @@
             }
 
             #results-table {
-                position: absolute;
-                top: 80px;
-                left: 0;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                margin: 0 auto;
+                width: 100%;
+                page-break-inside: auto;
             }
 
             /* Style table headers */
@@ -288,6 +305,28 @@
                 font-weight: bold;
                 padding: 8px;
                 text-align: center;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Ensure table rows break properly across pages */
+            #results-table tr {
+                page-break-inside: avoid;
+            }
+
+            /* Keep header on each page */
+            #results-table thead {
+                display: table-header-group;
+            }
+
+            /* Allow content to break across pages */
+            #results-table tbody {
+                display: table-row-group;
+            }
+
+            /* Ensure table cells don't break */
+            #results-table td {
+                page-break-inside: avoid;
             }
 
             #sort-options-sgpa,
