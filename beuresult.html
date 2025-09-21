@@ -741,11 +741,14 @@
         }
 
         function abortFetch() {
-            abortController.abort(); // Abort any ongoing fetch
-            abortController = new AbortController(); // Create a new AbortController
-            isFetching = false; // Reset the fetching flag
-            document.getElementById('fetch-results').textContent = 'Fetch Results';
-            hideLoadingMessage();
+            if (isFetching) {
+                abortController.abort(); // Abort any ongoing fetch
+                abortController = new AbortController(); // Create a new AbortController
+                isFetching = false; // Reset the fetching flag
+                hideLoadingMessage();
+                return true; // Return true to indicate fetch was aborted
+            }
+            return false; // Return false if there was nothing to abort
         }
 
         function scrollToBottom() {
@@ -766,26 +769,17 @@
             }
         });
 
-        async function fetchResult(regNo, baseUrl, row) {
-            while (true) { // Infinite loop जब तक response 200 ना मिले
-
+        async function fetchAndParseResult(regNo, baseUrl) {
+            while (true) {
                 try {
                     const response = await fetch(`https://beu-result-table.onrender.com/proxy?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
                     const htmlText = await response.text();
 
-                    // ❌ अगर 200 नहीं है या "Service Unavailable" वाला page आया तो retry
                     if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
                         console.warn("Retrying... Server busy or Service Unavailable");
-                        await new Promise(resolve => setTimeout(resolve, 1000)); // delay
-                        continue; // फिर से कोशिश करो
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        continue;
                     }
-
-                    //     if (response.status !== 200) {
-                    //     console.warn(`Retrying... Status Code: ${response.status}`);
-                    //     await new Promise(resolve => setTimeout(resolve, 1000)); // 5 सेकंड का delay
-                    //     continue; // दुबारा request करो
-                    // }
-
 
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
@@ -793,7 +787,6 @@
                     let nameSelector = '#ContentPlaceHolder1_DataList1_StudentNameLabel_0';
                     let sgpaSelector = '#ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0';
                     let cgpaSelector = '#ContentPlaceHolder1_GridView3 > tbody > tr:nth-child(2) > td:nth-child(9)';
-
 
                     const name = doc.querySelector(nameSelector)?.textContent.trim();
                     const sgpa = doc.querySelector(sgpaSelector)?.textContent.trim();
@@ -817,17 +810,13 @@
                         });
                     });
 
-                    let sgpaContent = sgpa;
-                    let sgpaTooltip = '';
-                    if (failedSubjects.length > 0) {
-                        sgpaContent += ' <span class="exclamation">!</span>';
-                        sgpaTooltip = `<div class="sgpa-tooltip">${sgpa}<span class="tooltiptext">Failed Sub.:<br>${failedSubjects.join('<br>')}</span></div>`;
-                    }
-
-                    row.innerHTML = `<td class="tooltip"><a href="${baseUrl + regNo}" target="_blank">${regNo}</a><span class="tooltiptext">${generateSemesterLinks(regNo, session, branch, college)}</span></td><td>${name}</td><td class="sgpa">${sgpaTooltip || sgpaContent}</td><td>${cgpa}</td>`;
+                    return { name, sgpa, cgpa, failedSubjects };
                 } catch (error) {
+                    if (error.name === 'AbortError') {
+                        throw error; // Re-throw abort errors
+                    }
                     console.error(`Error fetching result for ${regNo}:`, error);
-                    row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
+                    return null;
                 }
             }
         }
@@ -838,16 +827,20 @@
         document.getElementById('college').addEventListener('change', abortFetch);
 
         document.getElementById('fetch-results').addEventListener('click', function () {
-            fetchResults();
+            if (isFetching) {
+                this.textContent = 'Fetch Results';
+                abortFetch();
+            } else {
+                this.textContent = 'Stop fetching result';
+                fetchResults();
+            }
         });
 
         async function fetchResults() {
             if (isFetching) {
-                abortFetch();
                 return;
             }
             isFetching = true;
-            document.getElementById('fetch-results').textContent = 'Stop fetching result';
 
             resetTable();
             displayLoadingMessage();
@@ -890,10 +883,10 @@
 
                         let htmlText;
                         while (true) {
-                            const response = await fetch(`https://beu-result-table.onrender.com/proxy?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
-                            htmlText = await response.text();
-
-                            if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
+                        if (!isFetching) return; // Stop if fetching has been aborted
+                        const response = await fetch(`https://beu-result-table.onrender.com/proxy?quest=${encodeURIComponent(baseUrl + regNo)}`, { signal: abortController.signal });
+                        if (!isFetching) return; // Stop after fetch but before text()
+                        htmlText = await response.text();                            if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
                                 console.warn(`Retrying ${regNo}... Service Unavailable or bad status`);
                                 await new Promise(resolve => setTimeout(resolve, 1000));
                                 continue; // फिर से try करो
@@ -960,16 +953,18 @@
                         scrollToBottom();
 
                     } catch (error) {
-                        if (error.name === 'AbortError') {
+                        if (!isFetching || error.name === 'AbortError') {
                             console.log(`Fetch aborted for ${regNo}`);
-                            break;
+                            return; // Exit the entire fetchStudents function
                         } else {
                             console.error(`Error fetching result for ${regNo}:`, error);
 
-                            const row = document.createElement('tr');
-                            row.classList.add('fade-in'); // Add animation class
-                            row.innerHTML = `<td>${regNo}</td><td>Error fetching data</td><td>N/A</td><td>N/A</td>`;
-                            tableBody.appendChild(row);
+                            if (isFetching) { // Only add error row if we haven't aborted
+                                const row = document.createElement('tr');
+                                row.classList.add('fade-in'); // Add animation class
+                                row.innerHTML = `<td>${regNo}</td><td>Error fetching data(again try)</td><td>N/A</td><td>N/A</td>`;
+                                tableBody.appendChild(row);
+                            }
                         }
                     }
                 }
