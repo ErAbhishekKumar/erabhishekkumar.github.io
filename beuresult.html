@@ -905,25 +905,21 @@
 
             const fetchedRegNos = new Set(); // To track already fetched registration numbers
 
-            async function fetchStudents(entryType) {
-                let startSerial = entryType === '0' ? 1 : 901;
-                let endSerial = entryType === '0' ? 120 : 980;
-                let consecutiveFailures = 0; // Counter for consecutive failures
+            async function fetchStudents(isLateral = false) {
+                let startSerial = isLateral ? 901 : 1;
+                let endSerial = isLateral ? 980 : 130;
+                let consecutiveFailures = 0;
 
                 for (let i = startSerial; i <= endSerial; i++) {
                     const serial = i.toString().padStart(3, '0');
-                    let regNo = `${session.slice(2)}${branch}${college}${serial}`;
-
-                    if (entryType === '9') {
-                        const firstTwoDigits = parseInt(session.slice(2, 4)) + 1;
-                        regNo = `${firstTwoDigits}${branch}${college}${serial}`;
-                    }
+                    const yearDigits = parseInt(session.slice(2, 4)) + (isLateral ? 1 : 0);
+                    const regNo = `${yearDigits}${branch}${college}${serial}`;
 
                     if (fetchedRegNos.has(regNo)) {
-                        continue; // Skip if this registration number is already processed
+                        continue;
                     }
 
-                    fetchedRegNos.add(regNo); // Mark this registration number as processed
+                    fetchedRegNos.add(regNo);
 
                     try {
                         // Add delay to prevent too many requests at once
@@ -1035,13 +1031,12 @@
                 }
             }
 
-            // Fetch regular students first
-            await fetchStudents('0');
-            await fetchStudents('1');
-
-            // If not 1st or 2nd semester, fetch lateral students after regular
+            // Fetch regular students (001-130)
+            await fetchStudents(false);
+            
+            // Fetch lateral entry students (901-980) only for 3rd semester onwards
             if (semester !== 'I' && semester !== 'II') {
-                await fetchStudents('9');
+                await fetchStudents(true);
             }
 
             hideLoadingMessage();
