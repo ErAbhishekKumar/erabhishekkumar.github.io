@@ -1141,11 +1141,18 @@
             failedStudents++;
             const tooltipText = sgpaCell.querySelector('.tooltiptext');
             if (tooltipText) {
-                const failedSubjects = tooltipText.textContent.replace("Failed Sub.:", "").trim().split("\n");
+                // Proper split by <br> tags
+                const failedSubjects = tooltipText.innerHTML
+                    .replace("Failed Sub.:<br>", "")
+                    .split("<br>")
+                    .map(sub => sub.trim())
+                    .filter(sub => sub.length > 0);
+
                 failedSubjects.forEach(sub => {
                     subjectFailCount[sub] = (subjectFailCount[sub] || 0) + 1;
                 });
             }
+
         } else {
             passedStudents++;
         }
