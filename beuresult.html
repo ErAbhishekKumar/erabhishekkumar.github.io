@@ -660,7 +660,7 @@
     </div>
     <div id="stats-summary" style="display:none; margin-top:30px;">
   <h2>Result Analysis</h2>
-  <canvas id="resultChart" width="400" height="400"></canvas>
+  <canvas id="resultChart" width="200" height="200"></canvas>
   <div id="legend" style="margin-top:10px;"></div>
   <div id="summary-data" style="margin-top:20px; font-weight:bold;"></div>
 </div>
@@ -1205,11 +1205,15 @@
 }
 
 function getRandomColor() {
-    const r = Math.floor(Math.random()*200);
-    const g = Math.floor(Math.random()*200);
-    const b = Math.floor(Math.random()*200);
+    let r, g, b;
+    do {
+        r = Math.floor(Math.random() * 200);
+        g = Math.floor(Math.random() * 200);
+        b = Math.floor(Math.random() * 200);
+    } while (r < 100 && g > 150 && b < 100); // avoid "green-like" colors
     return `rgb(${r},${g},${b})`;
 }
+
 
 
         function generateSemesterLinks(regNo, session, branch, college) {
@@ -1406,3 +1410,4 @@ function getRandomColor() {
 </body>
 
 </html>
+
