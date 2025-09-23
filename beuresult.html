@@ -9,7 +9,6 @@
     <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         body {
@@ -364,13 +363,13 @@
                 font-size: 12px;
             }
             #stats-summary, #stats-summary * {
-                visibility: visible;
-            }
-            
-            #stats-summary {
-                page-break-before: always;
-                margin-top: 20px;
-            }
+    visibility: visible !important;
+}
+
+#stats-summary {
+    page-break-before: always;
+    margin-top: 20px;
+}
 
         }
 
@@ -662,7 +661,7 @@
     <div id="stats-summary" style="display:none; margin-top:30px;">
   <h2>Result Analysis</h2>
   <canvas id="resultChart" width="400" height="400"></canvas>
-  <div id="legend"></div>
+  <div id="legend" style="margin-top:10px;"></div>
   <div id="summary-data" style="margin-top:20px; font-weight:bold;"></div>
 </div>
 
@@ -1115,6 +1114,8 @@
 
             // Scroll to top once fetching is complete
             scrollToTop();
+            generateStatsAndChart();
+
 
             // Add options for each unique failed subject to the SGPA sort dropdown
             const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
@@ -1124,12 +1125,12 @@
                 option.textContent = subject;
                 sortOptionsSgpa.appendChild(option);
             });
-        }
-        generateStatsAndChart();
-
         
+        }
         function generateStatsAndChart() {
     const rows = document.querySelectorAll("#results-table tbody tr");
+    if (rows.length === 0) return;
+
     let total = rows.length;
     let passed = 0, failed = 0;
     let subjectFails = {};
@@ -1139,12 +1140,15 @@
         const exMark = sgpaCell.querySelector(".exclamation");
         if (exMark) {
             failed++;
-            // Tooltip text से subject निकालें
             const tooltip = sgpaCell.querySelector(".tooltiptext");
             if (tooltip) {
-                let subs = tooltip.textContent.replace("Failed Sub.:", "").trim().split("\n");
+                let subs = tooltip.textContent
+                    .replace("Failed Sub.:", "")
+                    .trim()
+                    .split("\n")
+                    .map(s => s.trim())
+                    .filter(s => s.length > 0);
                 subs.forEach(s => {
-                    s = s.trim();
                     if (!subjectFails[s]) subjectFails[s] = 0;
                     subjectFails[s]++;
                 });
@@ -1165,9 +1169,13 @@
         colors.push(getRandomColor());
     });
 
-    // Chart.js
+    // Destroy old chart if exists
+    if (window.resultChartInstance) {
+        window.resultChartInstance.destroy();
+    }
+
     const ctx = document.getElementById("resultChart").getContext("2d");
-    new Chart(ctx, {
+    window.resultChartInstance = new Chart(ctx, {
         type: "pie",
         data: {
             labels: labels,
@@ -1189,18 +1197,17 @@
 
     // Legend
     let legendHTML = labels.map((l, i) =>
-        `<div><span style="display:inline-block;width:20px;height:20px;background:${colors[i]}"></span> ${l}</div>`
+        `<div><span style="display:inline-block;width:20px;height:20px;background:${colors[i]};margin-right:5px;"></span>${l}</div>`
     ).join("");
     document.getElementById("legend").innerHTML = legendHTML;
 
     document.getElementById("stats-summary").style.display = "block";
 }
 
-// Random color for subjects
 function getRandomColor() {
-    const r = Math.floor(Math.random()*255);
-    const g = Math.floor(Math.random()*255);
-    const b = Math.floor(Math.random()*255);
+    const r = Math.floor(Math.random()*200);
+    const g = Math.floor(Math.random()*200);
+    const b = Math.floor(Math.random()*200);
     return `rgb(${r},${g},${b})`;
 }
 
@@ -1387,6 +1394,8 @@ function getRandomColor() {
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <footer class="footer">
         <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
@@ -1395,6 +1404,5 @@ function getRandomColor() {
         <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank" rel="noopener">Telegram</a></p>
     </footer>
 </body>
-
 
 </html>
