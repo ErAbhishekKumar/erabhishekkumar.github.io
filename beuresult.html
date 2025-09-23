@@ -810,6 +810,14 @@
 
             // Clear the failed subjects set
             failedSubjectsSet.clear();
+            // ✅ Reset summary and chart
+            if (window.resultChartInstance) {
+                window.resultChartInstance.destroy();
+                window.resultChartInstance = null;
+            }
+            document.getElementById("result-summary").style.display = "none";
+            document.getElementById("summaryDetails").innerHTML = "";
+
         }
 
         function handleError(error) {
@@ -1138,6 +1146,7 @@
             });
         
         }
+        
     function generateSummary() {
     const rows = document.querySelectorAll('#results-table tbody tr');
     let totalStudents = rows.length;
