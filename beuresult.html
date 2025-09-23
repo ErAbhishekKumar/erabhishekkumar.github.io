@@ -363,13 +363,18 @@
                 font-size: 12px;
             }
             #stats-summary, #stats-summary * {
-    visibility: visible !important;
-}
+                visibility: visible !important;
+            }
+            
+            #stats-summary {
+                page-break-before: always;
+                margin-top: 20px;
+            }
+            #resultChart {
+            max-width: 100% !important;
+            height: auto !important;
+        }
 
-#stats-summary {
-    page-break-before: always;
-    margin-top: 20px;
-}
 
         }
 
@@ -658,9 +663,9 @@
             <tbody></tbody>
         </table>
     </div>
-    <div id="stats-summary" style="display:none; margin-top:30px;">
+    <div id="stats-summary" style="display:none;">
   <h2>Result Analysis</h2>
-  <canvas id="resultChart" width="400" height="400"></canvas>
+  <canvas id="resultChart" style="max-width:100%; height:auto;"></canvas>
   <div id="legend" style="margin-top:10px;"></div>
   <div id="summary-data" style="margin-top:20px; font-weight:bold;"></div>
 </div>
@@ -1161,12 +1166,12 @@
     // Chart data
     let labels = ["Passed"];
     let data = [passed];
-    let colors = ["green"];
+    let colors = ["green"]; // ✅ Always green for passed
 
     Object.entries(subjectFails).forEach(([sub, count]) => {
         labels.push("Failed in " + sub);
         data.push(count);
-        colors.push(getRandomColor());
+        colors.push(getRandomColor(["green"])); // ✅ Exclude green
     });
 
     // Destroy old chart if exists
@@ -1183,6 +1188,10 @@
                 data: data,
                 backgroundColor: colors
             }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
         }
     });
 
@@ -1204,12 +1213,18 @@
     document.getElementById("stats-summary").style.display = "block";
 }
 
-function getRandomColor() {
-    const r = Math.floor(Math.random()*200);
-    const g = Math.floor(Math.random()*200);
-    const b = Math.floor(Math.random()*200);
-    return `rgb(${r},${g},${b})`;
+// ✅ Random color generator (excluding given list)
+function getRandomColor(exclude = []) {
+    let color;
+    do {
+        const r = Math.floor(Math.random()*200);
+        const g = Math.floor(Math.random()*200);
+        const b = Math.floor(Math.random()*200);
+        color = `rgb(${r},${g},${b})`;
+    } while (exclude.includes(color) || color.toLowerCase() === "green");
+    return color;
 }
+
 
 
         function generateSemesterLinks(regNo, session, branch, college) {
@@ -1406,3 +1421,4 @@ function getRandomColor() {
 </body>
 
 </html>
+
