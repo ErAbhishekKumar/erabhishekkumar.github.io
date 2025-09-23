@@ -238,6 +238,18 @@
                 margin: 1cm;
                 size: A4 portrait;
             }
+            table {
+                display: table !important;   /* normal table layout */
+                overflow: visible !important;
+                white-space: normal !important;
+                width: 100% !important;
+                table-layout: auto !important;
+            }
+
+            th, td {
+                word-wrap: break-word !important;
+                white-space: normal !important;
+            }
 
             /* Reset body for printing */
             body {
