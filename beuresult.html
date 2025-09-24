@@ -970,6 +970,9 @@
             isFetching = true;
 
             resetTable();
+            document.getElementById("fetch-results").disabled = true;
+            document.getElementById("fetch-results").textContent = "Fetching..."; 
+
             displayLoadingMessage();
             abortFetch();
 
@@ -1132,6 +1135,9 @@
 
             // Scroll to top once fetching is complete
             scrollToTop();
+            document.getElementById("fetch-results").disabled = false;
+            document.getElementById("fetch-results").textContent = "Fetch Results";
+
             generateSummary();
 
 
@@ -1423,6 +1429,7 @@
 </body>
 
 </html>
+
 
 
 
