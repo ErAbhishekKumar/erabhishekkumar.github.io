@@ -1122,7 +1122,7 @@
             if (semester !== 'I' && semester !== 'II') {
                 await fetchStudents(true);
             }
-        }
+        
 
             hideLoadingMessage();
             isFetching = false; // Reset the fetching flag
@@ -1134,7 +1134,7 @@
 
             generateSummary();
 
-
+        }
 
             // Add options for each unique failed subject to the SGPA sort dropdown
             const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
@@ -1145,7 +1145,7 @@
                 sortOptionsSgpa.appendChild(option);
             });
 
-        }
+        
 
         function generateSummary() {
             const rows = document.querySelectorAll('#results-table tbody tr');
