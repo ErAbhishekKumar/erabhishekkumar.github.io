@@ -995,7 +995,7 @@
                     // ❌ अगर 200 नहीं है या "Service Unavailable" वाला page आया तो retry
                     if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
                         console.warn("Retrying... Server busy or Service Unavailable");
-                        await new Promise(resolve => setTimeout(resolve, 100)); // delay
+                        // await new Promise(resolve => setTimeout(resolve, 100)); // delay
                         continue; // फिर से कोशिश करो
                     }
 
@@ -1113,7 +1113,7 @@
                     
                     
                 }
-            }
+            
 
             // Fetch regular students first (001-130)
             await fetchStudents(false);
@@ -1122,6 +1122,7 @@
             if (semester !== 'I' && semester !== 'II') {
                 await fetchStudents(true);
             }
+        }
 
             hideLoadingMessage();
             isFetching = false; // Reset the fetching flag
