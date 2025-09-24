@@ -950,7 +950,7 @@
                     // ❌ अगर 200 नहीं है या "Service Unavailable" वाला page आया तो retry
                     if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
                         console.warn("Retrying... Server busy or Service Unavailable");
-                        await new Promise(resolve => setTimeout(resolve, 1000)); // delay
+                        await new Promise(resolve => setTimeout(resolve, 100)); // delay
                         continue; // फिर से कोशिश करो
                     }
 
@@ -1059,7 +1059,7 @@
 
                     try {
                         // Add delay to prevent too many requests at once
-                        await new Promise(resolve => setTimeout(resolve, 500));
+                        await new Promise(resolve => setTimeout(resolve, 100));
 
                         let htmlText;
                         while (true) {
@@ -1068,7 +1068,7 @@
 
                             if (response.status !== 200 || htmlText.includes("Service Unavailable") || htmlText.includes("HTTP Error 503")) {
                                 console.warn(`Retrying ${regNo}... Service Unavailable or bad status`);
-                                await new Promise(resolve => setTimeout(resolve, 1000));
+                                await new Promise(resolve => setTimeout(resolve, 100));
                                 continue; // फिर से try करो
                             }
                             break; // ✅ सही response मिल गया तो बाहर निकलो
