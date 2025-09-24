@@ -889,6 +889,48 @@
             }
         });
 
+        function getFailedSubjects(doc) {
+            let failedSubjects = [];
+            let theorySubjects = new Set();
+
+            // --- Theory subjects collect ---
+            const theoryTable = doc.querySelector('#ContentPlaceHolder1_GridView1');
+            if (theoryTable) {
+                const rows = theoryTable.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const gradeCell = row.querySelector('td:nth-child(6)');
+                    if (gradeCell && gradeCell.textContent.trim() === 'F') {
+                        const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
+                        theorySubjects.add(subjectName);
+                        failedSubjects.push(subjectName); // Theory subject as it is
+                        failedSubjectsSet.add(subjectName);
+                    }
+                });
+            }
+
+            // --- Practical subjects collect ---
+            const practicalTable = doc.querySelector('#ContentPlaceHolder1_GridView2');
+            if (practicalTable) {
+                const rows = practicalTable.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const gradeCell = row.querySelector('td:nth-child(6)');
+                    if (gradeCell && gradeCell.textContent.trim() === 'F') {
+                        const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
+                        // अगर Theory में पहले से है तो suffix लगाओ
+                        const finalName = theorySubjects.has(subjectName)
+                            ? subjectName + " (Practical)"
+                            : subjectName;
+                        failedSubjects.push(finalName);
+                        failedSubjectsSet.add(finalName);
+                    }
+                });
+            }
+
+            return failedSubjects;
+        }
+        
+
+
         async function fetchResult(regNo, baseUrl, row) {
             while (true) { // Infinite loop जब तक response 200 ना मिले
 
@@ -926,19 +968,7 @@
                         throw new Error('Incomplete data');
                     }
 
-                    let failedSubjects = [];
-                    const tables = doc.querySelectorAll(' #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
-                    tables.forEach(table => {
-                        const rows = table.querySelectorAll('tr');
-                        rows.forEach(row => {
-                            const gradeCell = row.querySelector('td:nth-child(6)');
-                            if (gradeCell && gradeCell.textContent.trim() === 'F') {
-                                const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
-                                failedSubjects.push(subjectName);
-                                failedSubjectsSet.add(subjectName);
-                            }
-                        });
-                    });
+                    let failedSubjects = getFailedSubjects(doc);
 
                     let sgpaContent = sgpa;
                     let sgpaTooltip = '';
@@ -1052,19 +1082,7 @@
                         consecutiveNoResults = 0;
                         resultFound = true;
 
-                        let failedSubjects = [];
-                        const tables = doc.querySelectorAll(' #ContentPlaceHolder1_GridView1, #ContentPlaceHolder1_GridView2');
-                        tables.forEach(table => {
-                            const rows = table.querySelectorAll('tr');
-                            rows.forEach(row => {
-                                const gradeCell = row.querySelector('td:nth-child(6)');
-                                if (gradeCell && gradeCell.textContent.trim() === 'F') {
-                                    const subjectName = row.querySelector('td:nth-child(2)').textContent.trim();
-                                    failedSubjects.push(subjectName);
-                                    failedSubjectsSet.add(subjectName);
-                                }
-                            });
-                        });
+                        let failedSubjects = getFailedSubjects(doc);
 
                         let sgpaContent = sgpa;
                         let sgpaTooltip = '';
