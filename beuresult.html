@@ -268,6 +268,7 @@
             .adsbygoogle,
             #instructions-button,
             #print-table,
+            #Save-as-HTML,
             .nav-menu,
             .header,
             .donate-btn,
@@ -687,7 +688,8 @@
     </div>
 
 
-    <button id="print-table" style="display:none;">Print Table</button>
+    <button id="print-table" style="display:none;">Save as PDF</button>
+    <button id="Save-as-HTML" style="display:none;">Save as HTML</button>
 
     <script>
         let abortController = new AbortController();
@@ -805,6 +807,7 @@
             tableBody.innerHTML = ''; // Clear the table body
             document.getElementById('results-table').style.display = 'none'; // Hide the table
             document.getElementById('print-table').style.display = 'none'; // Hide the print button
+            document.getElementById('Save-as-HTML').style.display = 'none'; // Hide the Save as HTML button
 
             // Reset SGPA sort options
             const sortOptionsSgpa = document.getElementById('sort-options-sgpa');
@@ -1128,6 +1131,7 @@
                         const resultsTable = document.getElementById('results-table');
                         resultsTable.style.display = 'block';
                         document.getElementById('print-table').style.display = 'block'; // Show the print button
+                        document.getElementById('Save-as-HTML').style.display = 'block'; // Show the Save as HTML button
 
                         // Set table data attributes for printing
                         const collegeSelect = document.getElementById('college');
@@ -1381,6 +1385,123 @@
         document.getElementById('print-table').addEventListener('click', function () {
             window.print();
         });
+        //In save as HTML all functions like reg no hover tooltip show semester links, sgpa tooltip show failed subjects should work , also sort type in header should be visible and working also
+        document.getElementById('Save-as-HTML').addEventListener('click', function () {
+            const table = document.getElementById('results-table');
+            const collegeName = table.dataset.collegeName || '';
+            const branchName = table.dataset.branchName || '';
+            const session = table.dataset.session || '';
+            const semester = table.dataset.semester || '';
+
+            const headerHtml = `
+            <h2>BEU Results</h2>
+            <p>${collegeName}</p>
+            <p>${branchName}</p>
+            <p>${session}</p>
+            <p>${semester}</p>
+        `;
+
+            const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+">
+    <title>BEU Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .sgpa-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .sgpa-tooltip .tooltiptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .sgpa-tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .exclamation {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    ${headerHtml}
+    ${table.outerHTML}
+</body>
+</html> 
+        `;
+
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `BEU_Results_${branchName.replace('Branch: ', '')}_${session.replace('Session: ', '').replace('-', '_')}_${semester.replace('Semester: ', '')}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
 
         // Function to save selections to localStorage
         function saveSelectionsToStorage() {
