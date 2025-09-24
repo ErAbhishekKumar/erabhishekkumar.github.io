@@ -1387,6 +1387,7 @@
         });
         //In save as HTML all functions like reg no hover tooltip show semester links, sgpa tooltip show failed subjects should work 
         // also sort type in header should be visible and working when sort option select changed like failed subject or failed students etc
+        // Also a Print Button on top right corner
         document.getElementById('Save-as-HTML').addEventListener('click', function () {
             const table = document.getElementById('results-table');
             const collegeName = table.dataset.collegeName || '';
@@ -1476,6 +1477,7 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
+
         .sgpa-tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
@@ -1484,12 +1486,28 @@
             color: red;
             font-weight: bold;
         }
+        @media print {
+            body {
+                margin: 0;
+            }
+            table {
+                page-break-after: always;
+            }
+            #print-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-
+    <button id="print-button" onclick="window.print()" style="float: right; margin-bottom: 10px;">Print</button>
     ${headerHtml}
     ${table.outerHTML}
+    <div id="result-summary" style="margin-top: 30px;">
+        <h3>Result Summary</h3>
+        <canvas id="resultChart" style="max-width: 600px; aspect-ratio: 1/1; width:100%;"></canvas>
+        <div id="summaryDetails"></div>
+    </div>
 
     <script>
         function sortTable(column) {
@@ -1570,7 +1588,7 @@
             }
         });
     </script>
-    
+
 </body>
 </html> 
         `;
