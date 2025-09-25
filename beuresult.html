@@ -999,10 +999,8 @@
                         `;
 
                 } catch (error) {
-                    // ✅ Abort या network error आने पर भी retry करो
-                console.warn(`Retrying ${regNo} due to error:`, error.message);
-                await new Promise(resolve => setTimeout(resolve, 500));
-                continue;
+                    console.error(`Error fetching result for ${regNo}:`, error);
+                    row.innerHTML = `<td>${regNo}</td><td>Error!Please</td><td>Refresh</td><td>This page.</td>`;
                 }
             }
         }
@@ -1159,10 +1157,17 @@
                         scrollToBottom();
 
                     } catch (error) {
-                        // ✅ Abort या network error आने पर भी retry करो
-                    console.warn(`Retrying ${regNo} due to error:`, error.message);
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    continue;
+                        if (error.name === 'AbortError') {
+                                console.log(`Fetch aborted for ${regNo}`);
+                                break;
+                            } else {
+                                console.error(`Error fetching result for ${regNo}:`, error);
+
+                                const row = document.createElement('tr');
+                                row.classList.add('fade-in'); // Add animation class
+                                row.innerHTML = `<td>${regNo}</td><td>Error!Please</td><td>Refresh</td><td>This page.</td>`;
+                                tableBody.appendChild(row);
+                            }
                     }
                 }
             }
