@@ -1419,7 +1419,7 @@
             const tableClone = resultsTable.cloneNode(true);
             const summaryHtml = resultSummary ? resultSummary.innerHTML : "";
 
-            // include the same JS your page uses (tooltip, !, pie chart, highlight, etc.)
+            // collect ALL inline <script> from current page (tooltip, filter, chart etc.)
             const extraScripts = Array.from(document.querySelectorAll("script"))
                 .map(s => s.outerHTML)
                 .join("\n");
@@ -1430,7 +1430,7 @@
         <head>
         <meta charset="UTF-8">
         <title>Saved Results</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         h2 { text-align: center; }
@@ -1467,7 +1467,7 @@
             ${summaryHtml}
         </div>
 
-        <!-- original page scripts included -->
+        <!-- include original page scripts -->
         ${extraScripts}
         </body>
         </html>
