@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEU Result - Logical Abhishek</title>
-        <!-- हमेशा <head> के तुरंत बाद रखें -->
+       
     <script>
-      // अगर page iframe में है तो तुरंत रोक दो
+
       if (window.top !== window.self) {
-        // Option 1: साफ-साफ message दिखाओ और आगे execution रोक दो
+
         document.documentElement.innerHTML = "<div style='font-family:sans-serif;padding:40px;text-align:center;'><h2>Embedding not allowed</h2><p>This page cannot be displayed inside an iframe.</p></div>";
         // Stop further scripts
         throw new Error("Blocked: page loaded inside iframe");
