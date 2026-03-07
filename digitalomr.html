@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Digital OMR Evaluator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
+    <style>
+        :root { --p: #2563eb; --s: #16a34a; --d: #dc2626; --bg: #f8fafc; --text: #1e293b; }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 15px; margin: 0; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .hidden { display: none !important; }
+        h2 { text-align: center; color: var(--p); margin-top: 0; }
+        
+        .card { border: 1px solid #e2e8f0; padding: 18px; border-radius: 10px; margin-bottom: 15px; background: #fff; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; margin-top: 5px; font-size: 15px; }
+        button { background: var(--p); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: 600; margin-top: 10px; font-size: 15px; transition: 0.2s; }
+        button:hover { opacity: 0.9; }
+        .btn-s { background: var(--s); }
+        .btn-d { background: var(--d); }
+        .btn-o { background: transparent; border: 2px solid var(--p); color: var(--p); }
+        
+        /* Information Boxes */
+        .info-box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; color: #0369a1; }
+        .info-box strong { color: #0284c7; }
+        .info-box ul { margin: 8px 0 0 20px; padding: 0; }
+        .lock-msg { background: #fef2f2; color: #991b1b; padding: 12px; border-radius: 8px; text-align: center; font-weight: bold; margin-bottom: 15px; border: 1px solid #fee2e2; }
+
+        /* OMR Grid */
+        .omr-grid { column-count: 3; column-gap: 25px; margin-top: 15px; }
+        @media (max-width: 768px) { .omr-grid { column-count: 2; } }
+        @media (max-width: 480px) { .omr-grid { column-count: 1; } }
+        .q-row { display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; break-inside: avoid; border: 1px solid transparent; }
+        .opts { display: flex; gap: 6px; }
+        .circle { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--p); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; cursor: pointer; background: white; transition: 0.1s; }
+        .circle.active { background: var(--p); color: white; }
+        .circle.readonly { cursor: default; opacity: 0.8; }
+        
+        /* Summary Mode Classes */
+        .q-correct { border-color: var(--s); background: #f0fdf4; }
+        .q-wrong { border-color: var(--d); background: #fef2f2; }
+        .circle.s-correct { background: var(--s) !important; color: white !important; border-color: var(--s) !important; }
+        .circle.s-wrong { background: var(--d) !important; color: white !important; border-color: var(--d) !important; }
+        .circle.s-master { border: 2px dashed #000; font-weight: 900; background: #fef9c3; color: #000; }
+
+        .fast-input { background: #eff6ff; padding: 12px; border-radius: 8px; border: 1px solid #bfdbfe; margin-bottom: 15px; }
+        .preview-area { font-family: monospace; font-size: 13px; margin-top: 8px; color: #1e40af; background: #fff; padding: 5px; border-radius: 4px; border: 1px dashed #93c5fd; min-height: 30px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="screen-start">
+        <h2>Digital OMR Evaluator</h2>
+        
+        <div id="url-status-msg"></div>
+
+        <div class="info-box" id="general-instructions">
+            <strong>📖 How it works:</strong>
+            <ul>
+                <li><b>Students:</b> Enter your exam details, fill the OMR, and provide the Master Key to get your score.</li>
+                <li><b>Teachers:</b> Create an exam, fill the Master Key, calculate results, and share the generated Link/QR with your students.</li>
+            </ul>
+        </div>
+
+        <div class="card" id="load-box">
+            <label>Load Saved Exam (Optional):</label>
+            <select id="load-exam" onchange="loadExamSettings()"></select>
+            <p style="font-size: 12px; color: #64748b; margin-top: 5px;">Selecting a saved exam will restore your previously entered settings and Master Key.</p>
+        </div>
+
+        <div class="card">
+            <label>Exam Name:</label>
+            <input type="text" id="ex-name" placeholder="e.g. BSSC Mock Test 1">
+            <div style="display:flex; gap:15px; margin-top:10px;">
+                <div style="flex:1"><label>Total Questions:</label><input type="number" id="ex-total" value="100"></div>
+                <div style="flex:1"><label>Marks per Question:</label><input type="number" id="ex-marks" value="1"></div>
+            </div>
+            <label style="margin-top:10px;">Negative Marking Penalty:</label>
+            <select id="ex-neg">
+                <option value="0">None (0)</option>
+                <option value="0.25">1/4 (0.25)</option>
+                <option value="0.3333">1/3 (0.33)</option>
+                <option value="0.5">1/2 (0.50)</option>
+            </select>
+            <button onclick="startExam()">Start Attempting</button>
+        </div>
+    </div>
+
+    <div id="screen-omr" class="hidden">
+        <h2 id="omr-title-head">OMR Sheet</h2>
+        
+        <div class="info-box">
+            <strong>📝 Instructions:</strong> Tap the circles to select your answers. Use the Fast Input box below to quickly type multiple answers (e.g., ABCD). Use '0' or Space to skip a question.
+        </div>
+
+        <div class="fast-input">
+            <label>⚡ Fast Input (Your Answers):</label>
+            <input type="text" id="omr-fast" oninput="handleFast('user')" placeholder="Type answers here (A, B, C, D)...">
+            <div id="preview-user" class="preview-area"></div>
+        </div>
+        
+        <div class="omr-grid" id="grid-user"></div>
+        
+        <div style="margin-top:20px; display: flex; gap: 10px;">
+            <button class="btn-o" onclick="location.reload()">Home</button>
+            <button class="btn-s" onclick="showEvalOptions()">Next: View Evaluation</button>
+        </div>
+    </div>
+
+    <div id="screen-eval" class="hidden">
+        <h2 id="eval-title">Evaluation Key Setup</h2>
+        <div id="lock-banner" class="hidden lock-msg">🔒 Master Key is Locked (Student Mode)</div>
+        
+        <div id="qr-upload-box" class="card">
+            <label>📁 Option 1: Upload QR Key</label>
+            <p style="font-size: 12px; color: #64748b;">If someone shared a Result QR code with you, upload it here.</p>
+            <input type="file" accept="image/*" onchange="scanKeyQR(this)">
+        </div>
+
+        <div id="manual-key-box" class="card">
+            <h3>Option 2: Enter Master Key</h3>
+            <p style="font-size: 12px; color: #64748b;">Provide the correct answers to evaluate your performance.</p>
+            <div class="fast-input" id="key-input-container">
+                <input type="text" id="key-fast" oninput="handleFast('key')" placeholder="Type correct answers (A, B, C, D)...">
+                <div id="preview-key" class="preview-area"></div>
+            </div>
+            <div class="omr-grid" id="grid-key"></div>
+        </div>
+
+        <button class="btn-s" onclick="calculateResult()">Calculate Final Marks</button>
+        <button class="btn-o" onclick="showScreen('screen-omr')">Back to My Answers</button>
+    </div>
+
+    <div id="screen-result" class="hidden">
+        <h2>Result Dashboard</h2>
+        <div class="card" style="text-align:center;">
+            <p style="color: #64748b; font-weight: bold; margin-bottom: 5px;">Your Final Score</p>
+            <h1 id="res-score" style="font-size:60px; margin:0 0 15px 0; color:var(--p);">0.00</h1>
+            <div style="display:flex; justify-content:space-around; font-weight:bold; font-size: 18px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
+                <span style="color:var(--s);">Correct: <span id="res-c">0</span></span>
+                <span style="color:var(--d);">Wrong: <span id="res-w">0</span></span>
+                <span style="color:#64748b;">Unattempted: <span id="res-u">0</span></span>
+            </div>
+        </div>
+        
+        <button class="btn-o" style="border-width: 2px;" onclick="renderSummary()">🔍 View Detailed Attempt Review</button>
+        
+        <div id="share-section" class="card" style="text-align:center; margin-top:20px;">
+            <p style="color: #0f172a;"><b>Share this Key with Students/Friends:</b></p>
+            <p style="font-size: 12px; color: #64748b;">Scanning this QR or clicking the link will allow others to evaluate their answers against your Master Key.</p>
+            <div id="qrcode" style="display:flex; justify-content:center; margin:15px;"></div>
+            <div style="background: #f1f5f9; padding: 10px; border-radius: 6px; overflow-x: auto;">
+                <p id="share-url" style="font-size:12px; margin:0; white-space: nowrap;"></p>
+            </div>
+        </div>
+        
+        <button onclick="location.reload()" style="background: #475569;">Back to Home Screen</button>
+    </div>
+
+    <div id="screen-summary" class="hidden">
+        <h2>Detailed Attempt Review</h2>
+        <div class="card" style="font-size: 14px; text-align: center; background: #f8fafc;">
+            <span style="color:var(--s); font-weight: bold;">● Your Correct Answer</span> &nbsp;|&nbsp; 
+            <span style="color:var(--d); font-weight: bold;">● Your Wrong Answer</span> <br><br>
+            <span style="border:2px dashed #000; padding:2px 6px; background: #fef9c3; font-weight: bold;">● Actual Correct Answer</span>
+        </div>
+        <div class="omr-grid" id="grid-summary"></div>
+        <button class="btn-s" onclick="showScreen('screen-result')">Back to Score Dashboard</button>
+    </div>
+</div>
+
+<script>
+    let db = { name: "", total: 0, marks: 1, neg: 0, userAns: {}, keyAns: {} };
+    let isStudentMode = false;
+
+    // Security Encryptions
+    const encrypt = (s) => btoa(s);
+    const decrypt = (s) => { try { return atob(s); } catch { return ""; } };
+
+    window.onload = () => {
+        const store = JSON.parse(localStorage.getItem('omr_pro_db')) || {};
+        const sel = document.getElementById('load-exam');
+        sel.innerHTML = '<option value="">-- Start New Exam --</option>';
+        Object.keys(store).forEach(k => sel.innerHTML += `<option value="${k}">${k}</option>`);
+        
+        // URL Sync Check
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlKey = urlParams.get('key');
+        if(urlKey) {
+            isStudentMode = true;
+            db.keyAns = parseKey(decrypt(urlKey));
+            document.getElementById('url-status-msg').innerHTML = `<div class="lock-msg" style="background:#dcfce7; color:#166534; border-color:#bbf7d0;">✅ Answer Key Loaded Securely via Link!</div>`;
+            document.getElementById('load-box').classList.add('hidden');
+            document.getElementById('general-instructions').classList.add('hidden');
+        }
+    };
+
+    function startExam() {
+        db.name = document.getElementById('ex-name').value || "Exam Session";
+        db.total = parseInt(document.getElementById('ex-total').value);
+        db.marks = parseFloat(document.getElementById('ex-marks').value);
+        db.neg = parseFloat(document.getElementById('ex-neg').value);
+        
+        // Load existing answers AND Key if not in student mode
+        const store = JSON.parse(localStorage.getItem('omr_pro_db')) || {};
+        if(store[db.name]) {
+            db.userAns = store[db.name].userAns || {};
+            if(!isStudentMode) {
+                db.keyAns = store[db.name].keyAns || {};
+            }
+        }
+        
+        syncFastInputTexts(); // Sync local storage data to input boxes
+        renderGrid('grid-user', 'userAns', false);
+        showScreen('screen-omr');
+        document.getElementById('omr-title-head').innerText = db.name;
+    }
+
+    // Sync input text boxes with db data
+    function syncFastInputTexts() {
+        let uStr = "", kStr = "";
+        for(let i=1; i<=db.total; i++) {
+            uStr += db.userAns[i] || '0';
+            kStr += db.keyAns[i] || '0';
+        }
+        document.getElementById('omr-fast').value = uStr.replace(/0+$/, '');
+        if(!isStudentMode) document.getElementById('key-fast').value = kStr.replace(/0+$/, '');
+        
+        updatePreviewLine('user', uStr.replace(/0+$/, '').split(''));
+        if(!isStudentMode) updatePreviewLine('key', kStr.replace(/0+$/, '').split(''));
+    }
+
+    function renderGrid(containerId, target, readonly) {
+        const grid = document.getElementById(containerId);
+        grid.innerHTML = '';
+        for(let i=1; i<=db.total; i++) {
+            const row = document.createElement('div');
+            row.className = 'q-row';
+            row.innerHTML = `<b style="width: 30px; color:#475569;">${i}.</b>`;
+            const opts = document.createElement('div');
+            opts.className = 'opts';
+            ['A','B','C','D'].forEach(o => {
+                const div = document.createElement('div');
+                div.className = `circle ${db[target][i] === o ? 'active' : ''} ${readonly ? 'readonly' : ''}`;
+                div.innerText = o;
+                if(!readonly) {
+                    div.onclick = () => {
+                        db[target][i] = (db[target][i] === o) ? null : o;
+                        saveData(); 
+                        renderGrid(containerId, target, readonly);
+                        syncFastInputTexts();
+                    };
+                }
+                opts.appendChild(div);
+            });
+            row.appendChild(opts);
+            grid.appendChild(row);
+        }
+    }
+
+    // New renderSummary for Screen 5
+    function renderSummary() {
+        const grid = document.getElementById('grid-summary');
+        grid.innerHTML = '';
+        for(let i=1; i<=db.total; i++) {
+            const u = db.userAns[i], k = db.keyAns[i];
+            const row = document.createElement('div');
+            row.className = `q-row ${u ? (u===k ? 'q-correct' : 'q-wrong') : ''}`;
+            row.innerHTML = `<b style="width: 30px; color:#475569;">${i}.</b>`;
+            const opts = document.createElement('div');
+            opts.className = 'opts';
+            ['A','B','C','D'].forEach(o => {
+                const div = document.createElement('div');
+                div.className = 'circle readonly';
+                div.innerText = o;
+                
+                // Color Logic
+                if(u === o) div.classList.add(u === k ? 's-correct' : 's-wrong');
+                if(k === o && u !== k) div.classList.add('s-master');
+                
+                opts.appendChild(div);
+            });
+            row.appendChild(opts);
+            grid.appendChild(row);
+        }
+        showScreen('screen-summary');
+    }
+
+    function handleFast(type) {
+        if(type === 'key' && isStudentMode) return; 
+
+        const input = document.getElementById(type === 'user' ? 'omr-fast' : 'key-fast');
+        const val = input.value.toUpperCase().split('');
+        const target = type === 'user' ? 'userAns' : 'keyAns';
+
+        val.forEach((c, i) => {
+            const q = i + 1;
+            if(q > db.total) return;
+            if(/[ABCD]/.test(c)) db[target][q] = c;
+            else if(c === ' ' || c === '0') delete db[target][q];
+        });
+        
+        // Clear remaining if backspaced
+        for(let i = val.length + 1; i <= db.total; i++) delete db[target][i];
+
+        updatePreviewLine(type, val);
+        saveData();
+        renderGrid(type === 'user' ? 'grid-user' : 'grid-key', target, (type==='key' && isStudentMode));
+    }
+
+    function updatePreviewLine(type, valArr) {
+        const preview = document.getElementById(type === 'user' ? 'preview-user' : 'preview-key');
+        let txt = valArr.slice(-5).map((c,idx) => `[Q${(valArr.length-valArr.slice(-5).length)+idx+1}: ${c}]`).join(' ');
+        if(valArr.length < db.total) txt += ` <span style="color:red; font-weight:bold;">➔ Q${valArr.length+1}: ?</span>`;
+        else txt += ` <span style="color:green; font-weight:bold;">(All Filled)</span>`;
+        preview.innerHTML = txt;
+    }
+
+    function showEvalOptions() {
+        if(isStudentMode) {
+            document.getElementById('lock-banner').classList.remove('hidden');
+            document.getElementById('key-input-container').classList.add('hidden');
+            document.getElementById('qr-upload-box').classList.add('hidden');
+            renderGrid('grid-key', 'keyAns', true); // True makes it readonly
+        } else {
+            document.getElementById('lock-banner').classList.add('hidden');
+            document.getElementById('key-input-container').classList.remove('hidden');
+            document.getElementById('qr-upload-box').classList.remove('hidden');
+            renderGrid('grid-key', 'keyAns', false);
+        }
+        showScreen('screen-eval');
+    }
+
+    function scanKeyQR(input) {
+        if(isStudentMode) return;
+        const file = input.files[0];
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width; canvas.height = img.height;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+                const code = jsQR(ctx.getImageData(0,0,canvas.width,canvas.height).data, canvas.width, canvas.height);
+                if(code && code.data.startsWith("KEYX:")) {
+                    db.keyAns = parseKey(decrypt(code.data.split(':')[1]));
+                    alert("✅ Master Key Successfully Uploaded!");
+                    saveData();
+                    syncFastInputTexts();
+                    renderGrid('grid-key', 'keyAns', false);
+                } else alert("❌ Invalid QR Code! Please upload a valid Key QR.");
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function parseKey(str) {
+        let obj = {};
+        str.split('').forEach((c, i) => { if(/[ABCD]/.test(c)) obj[i+1] = c; });
+        return obj;
+    }
+
+    function calculateResult() {
+        let c = 0, w = 0, u = 0;
+        // Verify if key exists
+        if(Object.keys(db.keyAns).length === 0 && !confirm("You haven't provided a Master Key. Do you want to calculate anyway?")) {
+            return;
+        }
+
+        for(let i=1; i<=db.total; i++) {
+            const ua = db.userAns[i], ka = db.keyAns[i];
+            if(!ua) u++;
+            else if(ka && ua === ka) c++;
+            else if(ka && ua !== ka) w++;
+            else u++;
+        }
+        
+        const score = (c * db.marks) - (w * db.neg * db.marks);
+        document.getElementById('res-score').innerText = score.toFixed(2);
+        document.getElementById('res-c').innerText = c;
+        document.getElementById('res-w').innerText = w;
+        document.getElementById('res-u').innerText = u;
+
+        // Share generation logic
+        if(isStudentMode) {
+            document.getElementById('share-section').classList.add('hidden');
+        } else {
+            document.getElementById('share-section').classList.remove('hidden');
+            let keyStr = "";
+            for(let i=1; i<=db.total; i++) keyStr += (db.keyAns[i] || '0');
+            const enc = encrypt(keyStr);
+            
+            document.getElementById('qrcode').innerHTML = '';
+            new QRCode(document.getElementById('qrcode'), { text: "KEYX:" + enc, width: 160, height: 160 });
+            
+            // Format URL properly and make it a clickable Anchor tag
+            const fullUrl = `https://erabhishekkumar.github.io/digitalomr.html?key=${enc}`;
+            document.getElementById('share-url').innerHTML = `<a href="${fullUrl}" target="_blank" style="color: #2563eb; text-decoration: underline; font-weight: bold;">${fullUrl}</a>`;
+        }
+        
+        showScreen('screen-result');
+    }
+
+    function saveData() {
+        const store = JSON.parse(localStorage.getItem('omr_pro_db')) || {};
+        store[db.name] = db;
+        localStorage.setItem('omr_pro_db', JSON.stringify(store));
+    }
+
+    function showScreen(id) {
+        ['screen-start', 'screen-omr', 'screen-eval', 'screen-result', 'screen-summary'].forEach(s => document.getElementById(s).classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+        window.scrollTo(0,0);
+    }
+
+    function loadExamSettings() {
+        const name = document.getElementById('load-exam').value;
+        if(!name) {
+            document.getElementById('ex-name').value = '';
+            return;
+        }
+        const data = JSON.parse(localStorage.getItem('omr_pro_db'))[name];
+        document.getElementById('ex-name').value = name;
+        document.getElementById('ex-total').value = data.total;
+        document.getElementById('ex-marks').value = data.marks;
+        document.getElementById('ex-neg').value = data.neg;
+    }
+</script>
+</body>
+</html>
