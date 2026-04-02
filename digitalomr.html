@@ -35,7 +35,7 @@
         .time-badge { font-size: 11px; background: #e2e8f0; color: #475569; padding: 3px 8px; border-radius: 12px; font-family: sans-serif; font-weight: normal; margin-left: auto; }
 
         /* OMR Grid */
-        .omr-grid { column-count: 3; column-gap: 25px; margin-top: 15px; }
+        .omr-grid { column-count: 2; column-gap: 25px; margin-top: 15px; }
         @media (max-width: 768px) { .omr-grid { column-count: 2; } }
         @media (max-width: 480px) { .omr-grid { column-count: 1; } }
         .q-row { display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; break-inside: avoid; border: 1px solid transparent; flex-wrap: wrap; gap: 8px; }
@@ -380,7 +380,7 @@
             row.innerHTML = `<div style="display:flex; align-items:center; gap:5px;"><b style="width: 30px; color:#475569;">${i}.</b></div>`;
             const opts = document.createElement('div');
             opts.className = 'opts';
-            ['A','B','C','D'].forEach(o => {
+            ['A','B','C','D','E'].forEach(o => {
                 const div = document.createElement('div');
                 div.className = `circle ${db[target][i] === o ? 'active' : ''} ${forceReadonly ? 'readonly' : ''}`;
                 div.innerText = o;
@@ -426,7 +426,7 @@
                              
             const opts = document.createElement('div');
             opts.className = 'opts';
-            ['A','B','C','D'].forEach(o => {
+            ['A','B','C','D','E'].forEach(o => {
                 const div = document.createElement('div');
                 div.className = 'circle readonly';
                 div.innerText = o;
@@ -534,7 +534,7 @@
 
     function parseKey(str) {
         let obj = {};
-        str.split('').forEach((c, i) => { if(/[ABCD]/.test(c)) obj[i+1] = c; });
+        str.split('').forEach((c, i) => { if(/[ABCDE]/.test(c)) obj[i+1] = c; });
         return obj;
     }
 
