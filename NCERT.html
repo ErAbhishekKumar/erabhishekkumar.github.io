@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCERT Complete Library</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            background: var(--card-bg);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 600;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb span:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .breadcrumb span.active {
+            color: var(--primary);
+            cursor: default;
+            text-decoration: none;
+        }
+
+        /* Grid Layouts for Buttons/Cards */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .item-btn {
+            background-color: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .item-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .chapter-btn {
+            background-color: var(--card-bg);
+            border: 1px solid #e5e7eb;
+            color: var(--text-dark);
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+            border-left: 5px solid var(--primary);
+        }
+
+        .chapter-btn:hover {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .chapter-btn.special {
+            border-left-color: #f59e0b; /* Yellow for Index/Zip */
+        }
+
+        /* Modal Styles */
+        #pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .external-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            background: #e0e7ff;
+            border-radius: 5px;
+        }
+
+        .fullscreen-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .warning-text {
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 8px 15px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        iframe {
+            width: 100%;
+            flex-grow: 1;
+            border: none;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>📚 NCERT Digital Library</h1>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb" id="breadcrumb">
+            <span class="active" onclick="showClasses()">Home</span>
+        </div>
+
+        <div id="content-area" class="grid-container">
+            </div>
+    </div>
+
+    <div id="pdf-modal">
+        <div class="modal-header">
+            <h2 id="modal-title">Chapter PDF</h2>
+            <div class="modal-actions">
+                <a id="external-link" class="external-link" href="#" target="_blank">📥 Direct Link</a>
+                <button id="fullscreen-btn" class="fullscreen-btn" onclick="toggleFullScreen()">🔲 Full Screen</button>
+                <button class="close-btn" onclick="closeModal()">✖ Close</button>
+            </div>
+        </div>
+        <p class="warning-text">⚠️ If the PDF shows "No Preview", please click the <b>'Direct Link'</b> button above to download or open it in your browser.</p>
+        <iframe id="pdf-frame" src=""></iframe>
+    </div>
+
+    <script>
+        
+
+        const PDF_BASE = "https://ncert.nic.in/textbook/pdf/";
+
+        // State variables to remember where user is
+        let currentClass = null;
+        let currentSubject = null;
+        let currentBook = null;
+
+        // ==========================================================
+        // 2. RENDERING LOGIC (Drill-down System)
+        // ==========================================================
+        // Naya window.onload logic JSON fetch karne ke liye
+window.onload = async () => {
+    try {
+        // Same directory se JSON file load karein
+        const response = await fetch('textbooks_data.json');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        // JSON text ko JavaScript object mein convert karein
+        ncertData = await response.json();
+        
+        // Data aane ke baad classes show karein
+        showClasses(); 
+        
+    } catch (error) {
+        console.error("JSON load karne mein error:", error);
+        document.getElementById('content-area').innerHTML = 
+            '<p style="text-align:center; color:red; font-weight:bold;">⚠️ Error loading data! Ensure textbooks_data.json is in the correct directory and you are running via a web server.</p>';
+    }
+};
+
+        function updateBreadcrumb(level1, level2, level3) {
+            let bc = `<span onclick="showClasses()">🏠 Home</span>`;
+            if (level1) bc += ` > <span onclick="showSubjects('${level1}')">Class ${level1}</span>`;
+            if (level2) bc += ` > <span onclick="showBooks('${level1}', '${level2}')">${level2}</span>`;
+            if (level3) bc += ` > <span class="active">${level3}</span>`;
+            document.getElementById('breadcrumb').innerHTML = bc;
+        }
+
+        // Show all Classes (1, 2, 3...)
+        function showClasses() {
+            currentClass = currentSubject = currentBook = null;
+            updateBreadcrumb();
+            
+            const container = document.getElementById('content-area');
+            container.innerHTML = '';
+            
+            const classes = Object.keys(ncertData.classes).sort((a, b) => parseInt(a) - parseInt(b));
+            
+            classes.forEach(cls => {
+                const btn = document.createElement('button');
+                btn.className = 'item-btn';
+                btn.innerText = `Class ${cls}`;
+                btn.onclick = () => showSubjects(cls);
+                container.appendChild(btn);
+            });
+        }
+
+        // Show all Subjects for a Class
+        function showSubjects(cls) {
+            currentClass = cls;
+            currentSubject = currentBook = null;
+            updateBreadcrumb(cls);
+
+            const container = document.getElementById('content-area');
+            container.innerHTML = '';
+
+            const subjects = Object.keys(ncertData.classes[cls]).sort();
+            
+            subjects.forEach(sub => {
+                const btn = document.createElement('button');
+                btn.className = 'item-btn';
+                btn.innerText = sub;
+                btn.onclick = () => showBooks(cls, sub);
+                container.appendChild(btn);
+            });
+        }
+
+        // Show all Books for a Subject
+        function showBooks(cls, sub) {
+            currentClass = cls;
+            currentSubject = sub;
+            currentBook = null;
+            updateBreadcrumb(cls, sub);
+
+            const container = document.getElementById('content-area');
+            container.innerHTML = '';
+
+            const books = ncertData.classes[cls][sub];
+            
+            books.forEach(book => {
+                const btn = document.createElement('button');
+                btn.className = 'item-btn';
+                btn.innerText = `📖 ${book.title}`;
+                btn.onclick = () => showChapters(book);
+                container.appendChild(btn);
+            });
+        }
+
+        // Parse Link and Show Chapters
+        function showChapters(book) {
+            updateBreadcrumb(currentClass, currentSubject, book.title);
+            
+            const container = document.getElementById('content-area');
+            container.innerHTML = '';
+
+            // Link Parsing Logic (Same as your Python code)
+            // Example: "textbook.php?aemr1=0-9" -> prefix="aemr1", total=9
+            const urlData = book.link.split('?')[1].split('=');
+            const prefix = urlData[0];
+            const numParts = urlData[1].split('-');
+            const totalChapters = parseInt(numParts[1]);
+
+            // 1. Index/Prelims Button
+            const indexUrl = `${PDF_BASE}${prefix}ps.pdf`;
+            container.innerHTML += `
+                <div class="chapter-btn special" onclick="openPdf('${indexUrl}', '${book.title} - Index')">
+                    <span>📑 Prelims / Index</span> <span>▶</span>
+                </div>`;
+
+            // 2. Chapters Loop (1 to totalChapters)
+            for (let i = 1; i <= totalChapters; i++) {
+                // padding zero (e.g. 1 -> 01)
+                const chPadded = String(i).padStart(2, '0');
+                const chUrl = `${PDF_BASE}${prefix}${chPadded}.pdf`;
+                
+                container.innerHTML += `
+                    <div class="chapter-btn" onclick="openPdf('${chUrl}', '${book.title} - Chapter ${i}')">
+                        <span>📄 Chapter ${i}</span> <span>📖 Read</span>
+                    </div>`;
+            }
+
+            // 3. Glossary Button
+            const glossaryUrl = `${PDF_BASE}${prefix}gl.pdf`;
+            container.innerHTML += `
+                <div class="chapter-btn special" onclick="openPdf('${glossaryUrl}', '${book.title} - Glossary')">
+                    <span>🔤 Glossary</span> <span>▶</span>
+                </div>`;
+                
+            // 4. Download Full Book ZIP (Direct Download link, no Modal)
+            const zipUrl = `${PDF_BASE}${prefix}dd.zip`;
+            container.innerHTML += `
+                <a href="${zipUrl}" target="_blank" style="text-decoration:none;">
+                    <div class="chapter-btn special" style="border-left-color: #10b981;">
+                        <span>📦 Download Full Book (ZIP)</span> <span>📥</span>
+                    </div>
+                </a>`;
+        }
+
+        // ==========================================================
+        // 3. MODAL & PDF VIEWER LOGIC (Google Proxy + Fullscreen)
+        // ==========================================================
+        function openPdf(url, title) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('external-link').href = url;
+            
+            // Bypass CORS using Google Docs Proxy
+            const googleViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
+            
+            document.getElementById('pdf-frame').src = googleViewerUrl;
+            document.getElementById('pdf-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            // Exit Fullscreen if active
+            if (document.fullscreenElement || document.webkitFullscreenElement) {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+                document.getElementById('fullscreen-btn').innerText = "🔲 Full Screen";
+            }
+            
+            document.getElementById('pdf-modal').style.display = 'none';
+            document.getElementById('pdf-frame').src = ''; // Stop loading
+        }
+
+        function toggleFullScreen() {
+            const modal = document.getElementById('pdf-modal');
+            const btn = document.getElementById('fullscreen-btn');
+
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                if (modal.requestFullscreen) { modal.requestFullscreen(); }
+                else if (modal.webkitRequestFullscreen) { modal.webkitRequestFullscreen(); }
+                btn.innerText = "🔳 Exit Full Screen";
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+                btn.innerText = "🔲 Full Screen";
+            }
+        }
+    </script>
+</body>
+</html>
