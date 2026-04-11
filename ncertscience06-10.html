@@ -413,6 +413,10 @@
             document.getElementById('pdf-frame').src = googleViewerUrl;
             document.getElementById('pdf-modal').style.display = 'flex';
         }
+        function closeModal() {
+            document.getElementById('pdf-modal').style.display = 'none';
+            document.getElementById('pdf-frame').src = ''; // Stop loading
+        }
     </script>
 </body>
 </html>
