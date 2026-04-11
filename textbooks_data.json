@@ -1,0 +1,2877 @@
+{
+    "classes": {
+        "1": {
+            "English": [
+                {
+                    "title": "Mridang",
+                    "link": "textbook.php?aemr1=0-9"
+                }
+            ],
+            "Mathematics": [
+                {
+                    "title": "Joyful-Mathematics (English)",
+                    "link": "textbook.php?aejm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Hindi)",
+                    "link": "textbook.php?ahjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Marathi)",
+                    "link": "textbook.php?amrjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Sindhi)",
+                    "link": "textbook.php?asijm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Punjabi)",
+                    "link": "textbook.php?apjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Gujarati)",
+                    "link": "textbook.php?agjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Malayalam)",
+                    "link": "textbook.php?ayjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Konkani)",
+                    "link": "textbook.php?akjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Assamese)",
+                    "link": "textbook.php?aajm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Maithili)",
+                    "link": "textbook.php?aijm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Bodo)",
+                    "link": "textbook.php?aojm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Sanskrit)",
+                    "link": "textbook.php?askjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Oriya)",
+                    "link": "textbook.php?aorjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Bengali)",
+                    "link": "textbook.php?abnjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Santhali)",
+                    "link": "textbook.php?asnjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Manipuri)",
+                    "link": "textbook.php?amnjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Urdu)",
+                    "link": "textbook.php?aujm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Nepali)",
+                    "link": "textbook.php?anpjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Telugu)",
+                    "link": "textbook.php?atljm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Kannada)",
+                    "link": "textbook.php?aknjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Tamil)",
+                    "link": "textbook.php?atmjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Dogri)",
+                    "link": "textbook.php?adgjm1=0-13"
+                },
+                {
+                    "title": "Joyful-Mathematics (Kashmiri)",
+                    "link": "textbook.php?aksjm1=0-13"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Sarangi",
+                    "link": "textbook.php?ahsr1=0-19"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Shahnai",
+                    "link": "textbook.php?aush1=0-18"
+                }
+            ]
+        },
+        "2": {
+            "Mathematics": [
+                {
+                    "title": "Joyful-Mathematics (English)",
+                    "link": "textbook.php?bejm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Hindi)",
+                    "link": "textbook.php?bhjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Assamese)",
+                    "link": "textbook.php?basjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Punjabi)",
+                    "link": "textbook.php?bpnjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Gujarati)",
+                    "link": "textbook.php?bgjjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Malayalam)",
+                    "link": "textbook.php?bmljm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Maithli)",
+                    "link": "textbook.php?bmtjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Bodo)",
+                    "link": "textbook.php?bbdjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Marathi)",
+                    "link": "textbook.php?bmrjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Sindhi)",
+                    "link": "textbook.php?bsijm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Bengali)",
+                    "link": "textbook.php?bbnjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Sanskrit)",
+                    "link": "textbook.php?bskjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Nepali)",
+                    "link": "textbook.php?bnpjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Oriya)",
+                    "link": "textbook.php?borjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Manipuri)",
+                    "link": "textbook.php?bmnjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Urdu)",
+                    "link": "textbook.php?bujm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Santhali)",
+                    "link": "textbook.php?bsnjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Konkani)",
+                    "link": "textbook.php?bkojm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Kannada)",
+                    "link": "textbook.php?bknjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Tamil)",
+                    "link": "textbook.php?btmjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Telugu)",
+                    "link": "textbook.php?btljm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Dogri)",
+                    "link": "textbook.php?bdgjm1=0-11"
+                },
+                {
+                    "title": "Joyful-Mathematics (Kashmiri)",
+                    "link": "textbook.php?bksjm1=0-11"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Sarangi",
+                    "link": "textbook.php?bhsr1=0-26"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Mridang",
+                    "link": "textbook.php?bemr1=0-13"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Shahnai",
+                    "link": "textbook.php?bush1=0-19"
+                }
+            ]
+        },
+        "3": {
+            "Mathematics": [
+                {
+                    "title": "Maths Mela",
+                    "link": "textbook.php?cemm1=0-14"
+                },
+                {
+                    "title": "Ganit Mela",
+                    "link": "textbook.php?chmm1=0-14"
+                },
+                {
+                    "title": "Riyazi Mela",
+                    "link": "textbook.php?cumm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Assamese)",
+                    "link": "textbook.php?casmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Bengali)",
+                    "link": "textbook.php?cbnmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Bodo)",
+                    "link": "textbook.php?cbdmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Dogri)",
+                    "link": "textbook.php?cdgmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Gujarati)",
+                    "link": "textbook.php?cgjmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Kannada)",
+                    "link": "textbook.php?cknmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Maithili)",
+                    "link": "textbook.php?cmtmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Malayalam)",
+                    "link": "textbook.php?cmlmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Manipuri)",
+                    "link": "textbook.php?cmnmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Nepali)",
+                    "link": "textbook.php?cnpmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Odia)",
+                    "link": "textbook.php?cormm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Punjabi)",
+                    "link": "textbook.php?cpnmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Santhali)",
+                    "link": "textbook.php?csnmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Tamil)",
+                    "link": "textbook.php?ctmmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Telugu)",
+                    "link": "textbook.php?ctlmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Sanskrit)",
+                    "link": "textbook.php?cskmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Marathi)",
+                    "link": "textbook.php?cmrmm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Konkani)",
+                    "link": "textbook.php?ckomm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Sindhi)",
+                    "link": "textbook.php?csimm1=0-14"
+                },
+                {
+                    "title": "Maths Mela (Kashmiri)",
+                    "link": "textbook.php?cksmm1=0-14"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Veena",
+                    "link": "textbook.php?chve1=0-18"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Sitar",
+                    "link": "textbook.php?cust1=0-19"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Santoor",
+                    "link": "textbook.php?cesa1=0-12"
+                }
+            ],
+            "The World Around Us": [
+                {
+                    "title": "Our Wondrous World",
+                    "link": "textbook.php?ceev1=0-12"
+                },
+                {
+                    "title": "Hamara Adhbhut Sansar",
+                    "link": "textbook.php?chev1=0-12"
+                },
+                {
+                    "title": "Hamari Hairat Angez Duniya",
+                    "link": "textbook.php?cuev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Bengali)",
+                    "link": "textbook.php?cbnev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Odia)",
+                    "link": "textbook.php?corev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Marathi)",
+                    "link": "textbook.php?cmrev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Nepali)",
+                    "link": "textbook.php?cnpev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Telugu)",
+                    "link": "textbook.php?ctlev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Gujrati)",
+                    "link": "textbook.php?cgjev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Manipuri)",
+                    "link": "textbook.php?cmnev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Sanskrit)",
+                    "link": "textbook.php?cskev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Assamese)",
+                    "link": "textbook.php?casev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Bodo)",
+                    "link": "textbook.php?cbdev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Punjabi)",
+                    "link": "textbook.php?cpnev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Malayalam)",
+                    "link": "textbook.php?cmlev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Maithili)",
+                    "link": "textbook.php?cmtev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Dogri)",
+                    "link": "textbook.php?cdgev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Kannada)",
+                    "link": "textbook.php?cknev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Santhali)",
+                    "link": "textbook.php?csnev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Tamil)",
+                    "link": "textbook.php?ctmev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Sindhi)",
+                    "link": "textbook.php?csiev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Kashmiri)",
+                    "link": "textbook.php?cksev1=0-12"
+                },
+                {
+                    "title": "Our Wondrous World (Konkani)",
+                    "link": "textbook.php?ckoev1=0-12"
+                }
+            ],
+            "Arts": [
+                {
+                    "title": "Bansuri - I",
+                    "link": "textbook.php?cebu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Hindi)",
+                    "link": "textbook.php?chbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Urdu)",
+                    "link": "textbook.php?cubu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Bengali)",
+                    "link": "textbook.php?cbnbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Maithili",
+                    "link": "textbook.php?cmtbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Manipuri)",
+                    "link": "textbook.php?cmnbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Marathi)",
+                    "link": "textbook.php?cmrbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Nepali)",
+                    "link": "textbook.php?cnpbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Punjabi)",
+                    "link": "textbook.php?cpnbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Bodo)",
+                    "link": "textbook.php?cbdbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Gujarati)",
+                    "link": "textbook.php?cgjbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Dogri)",
+                    "link": "textbook.php?cdgbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Konkani)",
+                    "link": "textbook.php?ckobu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Santhali)",
+                    "link": "textbook.php?csnbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Tamil)",
+                    "link": "textbook.php?ctmbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Telugu)",
+                    "link": "textbook.php?ctlbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Assamese)",
+                    "link": "textbook.php?casbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Kannada)",
+                    "link": "textbook.php?cknbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Sanskrit)",
+                    "link": "textbook.php?cskbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Malayalam)",
+                    "link": "textbook.php?cmlbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Odia)",
+                    "link": "textbook.php?corbu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Sindhi)",
+                    "link": "textbook.php?csibu1=0-20"
+                },
+                {
+                    "title": "Bansuri - I (Kashmiri)",
+                    "link": "textbook.php?cksbu1=0-20"
+                }
+            ],
+            "Physical Education and Well Being": [
+                {
+                    "title": "Khel Yoga",
+                    "link": "textbook.php?ceky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Hindi)",
+                    "link": "textbook.php?chky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Malayalam)",
+                    "link": "textbook.php?cmlky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Bengali)",
+                    "link": "textbook.php?cbnky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Gujarati)",
+                    "link": "textbook.php?cgjky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Kannada)",
+                    "link": "textbook.php?cknky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Konkani)",
+                    "link": "textbook.php?ckoky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Manipuri)",
+                    "link": "textbook.php?cmnky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Nepali)",
+                    "link": "textbook.php?cnpky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Odia)",
+                    "link": "textbook.php?corky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Assamese)",
+                    "link": "textbook.php?casky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Dogri)",
+                    "link": "textbook.php?cdgky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Punjabi)",
+                    "link": "textbook.php?cpnky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Sanskrit)",
+                    "link": "textbook.php?cskky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Santhali)",
+                    "link": "textbook.php?csnky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Tamil)",
+                    "link": "textbook.php?ctmky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Marathi)",
+                    "link": "textbook.php?cmrky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Bodo)",
+                    "link": "textbook.php?cbdky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Telugu)",
+                    "link": "textbook.php?ctlky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Maithili)",
+                    "link": "textbook.php?cmtky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Urdu)",
+                    "link": "textbook.php?cuky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Sindhi)",
+                    "link": "textbook.php?csiky1=0-7"
+                },
+                {
+                    "title": "Khel Yoga (Kashmiri)",
+                    "link": "textbook.php?cksky1=0-7"
+                }
+            ]
+        },
+        "4": {
+            "Mathematics": [
+                {
+                    "title": "Math-Mela",
+                    "link": "textbook.php?demm1=0-14"
+                },
+                {
+                    "title": "Ganit Mela",
+                    "link": "textbook.php?dhmm1=0-14"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Veena",
+                    "link": "textbook.php?dhve1=0-13"
+                }
+            ],
+            "The World Around Us": [
+                {
+                    "title": "Our Wonderous World",
+                    "link": "textbook.php?deev1=0-10"
+                },
+                {
+                    "title": "Hamara Adhbhut Sansar",
+                    "link": "textbook.php?dhev1=0-10"
+                },
+                {
+                    "title": "Hamari Hairatangez Duniya",
+                    "link": "textbook.php?duev1=0-10"
+                },
+                {
+                    "title": "Our Wonderous World (Punjabi)",
+                    "link": "textbook.php?dpev1=0-10"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Santoor",
+                    "link": "textbook.php?desa1=0-12"
+                }
+            ],
+            "Arts": [
+                {
+                    "title": "Bansuri",
+                    "link": "textbook.php?debu1=0-18"
+                },
+                {
+                    "title": "Bansuri - I (Hindi)",
+                    "link": "textbook.php?dhbu1=0-18"
+                },
+                {
+                    "title": "Bansuri - I (Urdu)",
+                    "link": "textbook.php?dubu1=0-18"
+                }
+            ],
+            "Physical Education and Well Being": [
+                {
+                    "title": "Khel Yoga",
+                    "link": "textbook.php?deky1=0-3"
+                },
+                {
+                    "title": "Khel Yoga(Hindi)",
+                    "link": "textbook.php?dhky1=0-3"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Sitaar",
+                    "link": "textbook.php?dust1=0-14"
+                }
+            ]
+        },
+        "5": {
+            "Mathematics": [
+                {
+                    "title": "Math-Mela",
+                    "link": "textbook.php?eemm1=0-15"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Veena",
+                    "link": "textbook.php?ehve1=0-12"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Santoor",
+                    "link": "textbook.php?eesa1=0-10"
+                }
+            ],
+            "The World Around Us": [
+                {
+                    "title": "Our Wonderous World",
+                    "link": "textbook.php?eeev1=0-10"
+                },
+                {
+                    "title": "Hamari Hairatangez Duniya",
+                    "link": "textbook.php?euev1=0-10"
+                }
+            ],
+            "Arts": [
+                {
+                    "title": "Bansuri",
+                    "link": "textbook.php?eebu1=0-19"
+                }
+            ],
+            "Physical Education and Well Being": [
+                {
+                    "title": "Khel Yoga",
+                    "link": "textbook.php?eeky1=0-3"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Sitaar",
+                    "link": "textbook.php?eust1=0-18"
+                }
+            ]
+        },
+        "6": {
+            "Hindi": [
+                {
+                    "title": "Malhar",
+                    "link": "textbook.php?fhml1=0-13"
+                }
+            ],
+            "Vocational Education": [
+                {
+                    "title": "Kaushal Bodh",
+                    "link": "textbook.php?fekb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Hindi)",
+                    "link": "textbook.php?fhkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Bengali)",
+                    "link": "textbook.php?fbnkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Bodo)",
+                    "link": "textbook.php?fbdkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Dogri)",
+                    "link": "textbook.php?fdgkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Konkani)",
+                    "link": "textbook.php?fkokb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Odia)",
+                    "link": "textbook.php?forkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Punjabi)",
+                    "link": "textbook.php?fpnkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Malayalam)",
+                    "link": "textbook.php?fmlkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Kannada)",
+                    "link": "textbook.php?fknkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Manipuri)",
+                    "link": "textbook.php?fmnkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Tamil)",
+                    "link": "textbook.php?ftmkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Gujarati)",
+                    "link": "textbook.php?fgjkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Maithili)",
+                    "link": "textbook.php?fmtkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Assamese)",
+                    "link": "textbook.php?faskb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Nepali)",
+                    "link": "textbook.php?fnpkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Sanskrit)",
+                    "link": "textbook.php?fskkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Kashmiri)",
+                    "link": "textbook.php?fkskb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Marathi)",
+                    "link": "textbook.php?fmrkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Telugu)",
+                    "link": "textbook.php?ftlkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Santhali)",
+                    "link": "textbook.php?fsnkb1=0-6"
+                },
+                {
+                    "title": "Kaushal Bodh (Sindhi)",
+                    "link": "textbook.php?fsikb1=0-6"
+                }
+            ],
+            "Physical Education and Well Being": [
+                {
+                    "title": "Khel Yatra",
+                    "link": "textbook.php?feky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Hindi)",
+                    "link": "textbook.php?fhky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Bengali)",
+                    "link": "textbook.php?fbnky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Punjabi)",
+                    "link": "textbook.php?fpnky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Assamese)",
+                    "link": "textbook.php?fasky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Tamil)",
+                    "link": "textbook.php?ftmky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Nepali)",
+                    "link": "textbook.php?fnpky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Odia)",
+                    "link": "textbook.php?forky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Dogri)",
+                    "link": "textbook.php?fdgky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Telugu)",
+                    "link": "textbook.php?ftlky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Konkani)",
+                    "link": "textbook.php?fkoky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Kannada)",
+                    "link": "textbook.php?fknky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Malayalam)",
+                    "link": "textbook.php?fmlky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Bodo)",
+                    "link": "textbook.php?fbdky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Kashmiri)",
+                    "link": "textbook.php?fksky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Manipuri)",
+                    "link": "textbook.php?fmnky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Marathi)",
+                    "link": "textbook.php?fmrky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Sanskrit)",
+                    "link": "textbook.php?fskky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Santhali)",
+                    "link": "textbook.php?fsnky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Sindhi)",
+                    "link": "textbook.php?fsiky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Maithili)",
+                    "link": "textbook.php?fmtky1=0-5"
+                },
+                {
+                    "title": "Khel Yatra (Gujarati)",
+                    "link": "textbook.php?fgjky1=0-5"
+                },
+                {
+                    "title": "Jismani Taleem aur Tandurusti",
+                    "link": "textbook.php?fukl1=0-5"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Poorvi",
+                    "link": "textbook.php?fepr1=0-5"
+                }
+            ],
+            "Mathematics": [
+                {
+                    "title": "Ganita Prakash",
+                    "link": "textbook.php?fegp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Hindi)",
+                    "link": "textbook.php?fhgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Odia)",
+                    "link": "textbook.php?forgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Bodo)",
+                    "link": "textbook.php?fbdgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Malayalam)",
+                    "link": "textbook.php?fmlgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Punjabi)",
+                    "link": "textbook.php?fpngp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Sanskrit)",
+                    "link": "textbook.php?fskgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Kannada)",
+                    "link": "textbook.php?fkngp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Tamil)",
+                    "link": "textbook.php?ftmgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Marathi)",
+                    "link": "textbook.php?fmrgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Bengali)",
+                    "link": "textbook.php?fbngp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Telugu)",
+                    "link": "textbook.php?ftlgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Maithili)",
+                    "link": "textbook.php?fmtgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Dogri)",
+                    "link": "textbook.php?fdggp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Nepali)",
+                    "link": "textbook.php?fnpgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Urdu)",
+                    "link": "textbook.php?fugp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Assamese)",
+                    "link": "textbook.php?fasgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Gujarati)",
+                    "link": "textbook.php?fgjgp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Manipuri)",
+                    "link": "textbook.php?fmngp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Konkani)",
+                    "link": "textbook.php?fkogp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Santhali)",
+                    "link": "textbook.php?fsngp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Sindhi)",
+                    "link": "textbook.php?fsigp1=0-10"
+                },
+                {
+                    "title": "Ganita Prakash (Kashmiri)",
+                    "link": "textbook.php?fksgp1=0-10"
+                }
+            ],
+            "Social Science": [
+                {
+                    "title": "Exploring Society India and Beyond",
+                    "link": "textbook.php?fees1=0-14"
+                },
+                {
+                    "title": "Samaj Ka Aadhyan: Bharat or uske aage",
+                    "link": "textbook.php?fhes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Kannada)",
+                    "link": "textbook.php?fknes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Kashmiri)",
+                    "link": "textbook.php?fkses1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Odia)",
+                    "link": "textbook.php?fores1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Manipuri)",
+                    "link": "textbook.php?fmnes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Marathi)",
+                    "link": "textbook.php?fmres1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Punjabi)",
+                    "link": "textbook.php?fpnes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Dogri)",
+                    "link": "textbook.php?fdges1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Gujrati)",
+                    "link": "textbook.php?fgjes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Malayalam)",
+                    "link": "textbook.php?fmles1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Sanskrit)",
+                    "link": "textbook.php?fskes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Bengali)",
+                    "link": "textbook.php?fbnes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Bodo)",
+                    "link": "textbook.php?fbdes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Maithili)",
+                    "link": "textbook.php?fmtes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Nepali)",
+                    "link": "textbook.php?fnpes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Tamil)",
+                    "link": "textbook.php?ftmes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Telugu)",
+                    "link": "textbook.php?ftles1=0-14"
+                },
+                {
+                    "title": "Muashre Ki Daryaft Hindustan aur Us Se Aage (Urdu)",
+                    "link": "textbook.php?fues1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Santhali)",
+                    "link": "textbook.php?fsnes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Assamese)",
+                    "link": "textbook.php?fases1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Konkani)",
+                    "link": "textbook.php?fkoes1=0-14"
+                },
+                {
+                    "title": "Exploring Society India and Beyond (Sindhi)",
+                    "link": "textbook.php?fsies1=0-14"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Deepakam",
+                    "link": "textbook.php?fsde1=0-16"
+                }
+            ],
+            "Science": [
+                {
+                    "title": "Curiosity",
+                    "link": "textbook.php?fecu1=0-12"
+                },
+                {
+                    "title": "Jigyasa",
+                    "link": "textbook.php?fhcu1=0-12"
+                },
+                {
+                    "title": "Tajassus",
+                    "link": "textbook.php?fucu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Malayalam)",
+                    "link": "textbook.php?fmlcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Tamil)",
+                    "link": "textbook.php?ftmcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Kannada)",
+                    "link": "textbook.php?fkncu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Maithili)",
+                    "link": "textbook.php?fmtcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Punjabi)",
+                    "link": "textbook.php?fpncu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Bengali)",
+                    "link": "textbook.php?fbncu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Odia)",
+                    "link": "textbook.php?forcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Konkani)",
+                    "link": "textbook.php?fkocu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Manipuri)",
+                    "link": "textbook.php?fmncu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Nepali)",
+                    "link": "textbook.php?fnpcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Sanskrit)",
+                    "link": "textbook.php?fskcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Telugu)",
+                    "link": "textbook.php?ftlcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Assamese)",
+                    "link": "textbook.php?fascu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Marathi)",
+                    "link": "textbook.php?fmrcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Bodo)",
+                    "link": "textbook.php?fbdcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Dogri)",
+                    "link": "textbook.php?fdgcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Gujarati)",
+                    "link": "textbook.php?fgjcu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Santhali)",
+                    "link": "textbook.php?fsncu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Kashmiri)",
+                    "link": "textbook.php?fkscu1=0-12"
+                },
+                {
+                    "title": "Curiosity (Sindhi)",
+                    "link": "textbook.php?fsicu1=0-12"
+                }
+            ],
+            "Arts": [
+                {
+                    "title": "Kriti-I",
+                    "link": "textbook.php?fekr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Hindi)",
+                    "link": "textbook.php?fhkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Bengali)",
+                    "link": "textbook.php?fbnkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Konkani)",
+                    "link": "textbook.php?fkokr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Bodo)",
+                    "link": "textbook.php?fbdkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Maithili)",
+                    "link": "textbook.php?fmtkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Manipuri)",
+                    "link": "textbook.php?fmnkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Assamese)",
+                    "link": "textbook.php?faskr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Dogri)",
+                    "link": "textbook.php?fdgkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Odia)",
+                    "link": "textbook.php?forkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Tamil)",
+                    "link": "textbook.php?ftmkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Gujarati)",
+                    "link": "textbook.php?fgjkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Kannada)",
+                    "link": "textbook.php?fknkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Malayalam)",
+                    "link": "textbook.php?fmlkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Marathi)",
+                    "link": "textbook.php?fmrkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Sanskrit)",
+                    "link": "textbook.php?fskkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Nepali)",
+                    "link": "textbook.php?fnpkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Punjabi)",
+                    "link": "textbook.php?fpnkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Telugu)",
+                    "link": "textbook.php?ftlkr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Kashmiri)",
+                    "link": "textbook.php?fkskr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Sindhi)",
+                    "link": "textbook.php?fsikr1=0-22"
+                },
+                {
+                    "title": "Kriti-I (Santhali)",
+                    "link": "textbook.php?fsnkr1=0-22"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Khayal",
+                    "link": "textbook.php?fuky1=0-14"
+                }
+            ]
+        },
+        "7": {
+            "Mathematics": [
+                {
+                    "title": "Ganita Prakash",
+                    "link": "textbook.php?gegp1=0-8"
+                },
+                {
+                    "title": "Ganita Prakash-II",
+                    "link": "textbook.php?gegp2=0-7"
+                },
+                {
+                    "title": "Ganita Prakash(Hindi)",
+                    "link": "textbook.php?ghgp1=0-8"
+                },
+                {
+                    "title": "Ganita Prakash(Urdu)",
+                    "link": "textbook.php?gugp1=0-8"
+                }
+            ],
+            "Arts": [
+                {
+                    "title": "Kriti",
+                    "link": "textbook.php?gekr1=0-20"
+                },
+                {
+                    "title": "Kriti-I (Hindi)",
+                    "link": "textbook.php?ghkr1=0-22"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Malhar",
+                    "link": "textbook.php?ghml1=0-10"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Deepakam",
+                    "link": "textbook.php?gsde1=0-15"
+                }
+            ],
+            "Science": [
+                {
+                    "title": "Curiosity",
+                    "link": "textbook.php?gecu1=0-12"
+                },
+                {
+                    "title": "Jigyasa",
+                    "link": "textbook.php?ghcu1=0-12"
+                },
+                {
+                    "title": "Tajassus",
+                    "link": "textbook.php?gucu1=0-12"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Poorvi",
+                    "link": "textbook.php?gepr1=0-5"
+                }
+            ],
+            "Social Science": [
+                {
+                    "title": "Exploring Society India and Beyond",
+                    "link": "textbook.php?gees1=0-12"
+                },
+                {
+                    "title": "Samaj Ka Aadhyan: Bharat or uske aage",
+                    "link": "textbook.php?ghes1=0-12"
+                },
+                {
+                    "title": "Exploring Society India and Beyond Part 2",
+                    "link": "textbook.php?gees2=0-8"
+                }
+            ],
+            "Physical Education and Well Being": [
+                {
+                    "title": "Khel Yatra",
+                    "link": "textbook.php?geky1=0-6"
+                },
+                {
+                    "title": "Khel Yatra (Urdu)",
+                    "link": "textbook.php?gukl1=0-6"
+                },
+                {
+                    "title": "Khel Yatra (Hindi)",
+                    "link": "textbook.php?ghky1=0-6"
+                }
+            ],
+            "Vocational Education": [
+                {
+                    "title": "Kaushal Bodh",
+                    "link": "textbook.php?gekb1=0-7"
+                },
+                {
+                    "title": "Kaushal Bodh(Hindi)",
+                    "link": "textbook.php?ghkb1=0-7"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Khayal",
+                    "link": "textbook.php?guky1=0-14"
+                }
+            ]
+        },
+        "8": {
+            "Mathematics": [
+                {
+                    "title": "Ganita Prakash",
+                    "link": "textbook.php?hegp1=0-7"
+                }
+            ],
+            "Arts": [
+                {
+                    "title": "Kriti",
+                    "link": "textbook.php?hekr1=0-19"
+                },
+                {
+                    "title": "Kriti (Urdu)",
+                    "link": "textbook.php?hukr1=0-19"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Malhar",
+                    "link": "textbook.php?hhml1=0-10"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Deepakam",
+                    "link": "textbook.php?hsde1=0-16"
+                }
+            ],
+            "Science": [
+                {
+                    "title": "Curiosity",
+                    "link": "textbook.php?hecu1=0-13"
+                },
+                {
+                    "title": "Jigyasa",
+                    "link": "textbook.php?hhcu1=0-13"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Poorvi",
+                    "link": "textbook.php?hepr1=0-5"
+                }
+            ],
+            "Social Science": [
+                {
+                    "title": "Exploring Society India and Beyond",
+                    "link": "textbook.php?hees1=0-7"
+                }
+            ],
+            "Physical Education and Well Being": [
+                {
+                    "title": "Khel Yatra",
+                    "link": "textbook.php?heky1=0-6"
+                }
+            ],
+            "Vocational Education": [
+                {
+                    "title": "Kaushal Bodh",
+                    "link": "textbook.php?hekb1=0-8"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Khayal",
+                    "link": "textbook.php?huky1=0-21"
+                }
+            ]
+        },
+        "9": {
+            "English": [
+                {
+                    "title": "Beehive",
+                    "link": "textbook.php?iebe1=0-9"
+                },
+                {
+                    "title": "Moments Supplementary Reader",
+                    "link": "textbook.php?iemo1=0-9"
+                },
+                {
+                    "title": "Words and Expressions  1",
+                    "link": "textbook.php?iewe1=0-9"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Kshitij",
+                    "link": "textbook.php?ihks1=0-13"
+                },
+                {
+                    "title": "Sprash",
+                    "link": "textbook.php?ihsp1=0-10"
+                },
+                {
+                    "title": "Kritika",
+                    "link": "textbook.php?ihkr1=0-3"
+                },
+                {
+                    "title": "Sanchayan",
+                    "link": "textbook.php?ihsa1=0-4"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Shemushi Prathmo Bhag",
+                    "link": "textbook.php?ihsh1=0-10"
+                },
+                {
+                    "title": "Vyakaranavithi",
+                    "link": "textbook.php?jhva1=0-12"
+                },
+                {
+                    "title": "Abhyaswaan Bhav",
+                    "link": "textbook.php?isab1=0-12"
+                }
+            ],
+            "Mathematics": [
+                {
+                    "title": "Mathematics",
+                    "link": "textbook.php?iemh1=0-12"
+                },
+                {
+                    "title": "Ganit",
+                    "link": "textbook.php?ihmh1=0-12"
+                },
+                {
+                    "title": "Reyazi (Urdu)",
+                    "link": "textbook.php?iumh1=0-15"
+                }
+            ],
+            "Science": [
+                {
+                    "title": "Science",
+                    "link": "textbook.php?iesc1=0-12"
+                },
+                {
+                    "title": "Vigyan",
+                    "link": "textbook.php?ihsc1=0-12"
+                },
+                {
+                    "title": "Science (Urdu)",
+                    "link": "textbook.php?iusc1=0-15"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Gulzare-e-urdu",
+                    "link": "textbook.php?iugu1=0-19"
+                },
+                {
+                    "title": "Nawa-e-urdu",
+                    "link": "textbook.php?iuna1=0-23"
+                },
+                {
+                    "title": "Jaan Pahechan",
+                    "link": "textbook.php?iujp1=0-22"
+                },
+                {
+                    "title": "Door Pass",
+                    "link": "textbook.php?iudp1=0-20"
+                },
+                {
+                    "title": "Sab Rang",
+                    "link": "textbook.php?iusr1=0-10"
+                },
+                {
+                    "title": "Urdu ki Adabi Asnaf",
+                    "link": "textbook.php?iuau1=0-40"
+                }
+            ],
+            "Social Science": [
+                {
+                    "title": "Democratic Politics",
+                    "link": "textbook.php?iess4=0-5"
+                },
+                {
+                    "title": "Loktantrik Rajniti",
+                    "link": "textbook.php?ihss4=0-5"
+                },
+                {
+                    "title": "Contemporary India",
+                    "link": "textbook.php?iess1=0-6"
+                },
+                {
+                    "title": "Samkalin Bharat",
+                    "link": "textbook.php?ihss1=0-6"
+                },
+                {
+                    "title": "Arthashastra",
+                    "link": "textbook.php?ihss2=0-4"
+                },
+                {
+                    "title": "Economics",
+                    "link": "textbook.php?iess2=0-4"
+                },
+                {
+                    "title": "India and the Contemporary World-I",
+                    "link": "textbook.php?iess3=0-5"
+                },
+                {
+                    "title": "Bharat Aur Samkalin Vishwa-I",
+                    "link": "textbook.php?ihss3=0-5"
+                },
+                {
+                    "title": "Jamhuri Syasat(Urdu)",
+                    "link": "textbook.php?iuss4=0-6"
+                },
+                {
+                    "title": "Hindustan Aur Asri Dunia-I(Urdu)",
+                    "link": "textbook.php?iuhi1=0-5"
+                },
+                {
+                    "title": "Aasri Hindustan (Urdu)",
+                    "link": "textbook.php?iuss1=0-6"
+                },
+                {
+                    "title": "Mashiyat (Urdu)",
+                    "link": "textbook.php?iuss2=0-4"
+                }
+            ],
+            "Environmental Education": [
+                {
+                    "title": "Project Books",
+                    "link": "textbook.php?iepb1=pp-0"
+                }
+            ],
+            "Health and Physical Education": [
+                {
+                    "title": "Health and Physical Education",
+                    "link": "textbook.php?iehp1=0-14"
+                }
+            ],
+            "Vocational": [
+                {
+                    "title": "Cashier",
+                    "link": "textbook.php?ievc1=0-5"
+                },
+                {
+                    "title": "Store Operations Assistant",
+                    "link": "textbook.php?ieva1=0-4"
+                },
+                {
+                    "title": "Solanceous Crop Cultivator",
+                    "link": "textbook.php?ievs1=0-5"
+                },
+                {
+                    "title": "Assistant Beauty Therapist",
+                    "link": "textbook.php?ievt1=0-3"
+                },
+                {
+                    "title": "Animal Health Workers (Agriculture)",
+                    "link": "textbook.php?ievw1=0-4"
+                },
+                {
+                    "title": "Hand Embroiderer (Addawala)",
+                    "link": "textbook.php?ieve1=0-5"
+                },
+                {
+                    "title": "Hand Embroiderer",
+                    "link": "textbook.php?ievh1=0-5"
+                },
+                {
+                    "title": "Plumber General",
+                    "link": "textbook.php?iepg1=0-5"
+                },
+                {
+                    "title": "IT Domestic Data Entry Operator",
+                    "link": "textbook.php?ieeo1=0-5"
+                },
+                {
+                    "title": "Employability Skill",
+                    "link": "textbook.php?iees1=0-5"
+                }
+            ],
+            "ICT": [
+                {
+                    "title": "Information and Communication Technology",
+                    "link": "textbook.php?iict1=0-8"
+                }
+            ]
+        },
+        "10": {
+            "Mathematics": [
+                {
+                    "title": "Mathematics",
+                    "link": "textbook.php?jemh1=0-14"
+                },
+                {
+                    "title": "Ganit",
+                    "link": "textbook.php?jhmh1=0-14"
+                },
+                {
+                    "title": "Riyazi",
+                    "link": "textbook.php?jumh1=0-15"
+                }
+            ],
+            "Science": [
+                {
+                    "title": "Science",
+                    "link": "textbook.php?jesc1=0-13"
+                },
+                {
+                    "title": "Vigyan",
+                    "link": "textbook.php?jhsc1=0-13"
+                },
+                {
+                    "title": "Science(Urdu)",
+                    "link": "textbook.php?jusc1=0-16"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Kshitij-2",
+                    "link": "textbook.php?jhks1=0-12"
+                },
+                {
+                    "title": "Sparsh",
+                    "link": "textbook.php?jhsp1=0-14"
+                },
+                {
+                    "title": "Sanchayan Bhag-2",
+                    "link": "textbook.php?jhsy1=0-3"
+                },
+                {
+                    "title": "Kritika",
+                    "link": "textbook.php?jhkr1=0-3"
+                }
+            ],
+            "English": [
+                {
+                    "title": "First Flight",
+                    "link": "textbook.php?jeff1=0-9"
+                },
+                {
+                    "title": "Foot Prints Without feet Supp. Reader",
+                    "link": "textbook.php?jefp1=0-9"
+                },
+                {
+                    "title": "Words and Expressions  2",
+                    "link": "textbook.php?jewe2=0-9"
+                }
+            ],
+            "Social Science": [
+                {
+                    "title": "Contemporary India",
+                    "link": "textbook.php?jess1=0-7"
+                },
+                {
+                    "title": "Samkalin Bharat",
+                    "link": "textbook.php?jhss1=0-7"
+                },
+                {
+                    "title": "Aasri Hindustan-II",
+                    "link": "textbook.php?juss1=0-7"
+                },
+                {
+                    "title": "Understanding Economic Development",
+                    "link": "textbook.php?jess2=0-5"
+                },
+                {
+                    "title": "Arthik Vikas ki Samajh",
+                    "link": "textbook.php?jhss2=0-5"
+                },
+                {
+                    "title": "Maashi Taraqqui Ki Samajh",
+                    "link": "textbook.php?juss2=0-5"
+                },
+                {
+                    "title": "India and the Contemporary World-II",
+                    "link": "textbook.php?jess3=0-5"
+                },
+                {
+                    "title": "Bharat Aur Samakalin Vishav-2",
+                    "link": "textbook.php?jhss3=0-5"
+                },
+                {
+                    "title": "Hindustan Aur Asri Duniya",
+                    "link": "textbook.php?juss3=0-5"
+                },
+                {
+                    "title": "Democratic Politics",
+                    "link": "textbook.php?jess4=0-5"
+                },
+                {
+                    "title": "Loktantrik Rajniti",
+                    "link": "textbook.php?jhss4=0-5"
+                },
+                {
+                    "title": "Jamhuri Siyasat-II",
+                    "link": "textbook.php?juss4=0-8"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Shemushi",
+                    "link": "textbook.php?jhsk1=0-10"
+                },
+                {
+                    "title": "Vyakaranavithi",
+                    "link": "textbook.php?jhva1=0-12"
+                },
+                {
+                    "title": "Abhyaswaan Bhav-II",
+                    "link": "textbook.php?jsab1=0-14"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Gulzar-e-Urdu",
+                    "link": "textbook.php?juge1=0-12"
+                },
+                {
+                    "title": "Nawa-e-Urdu",
+                    "link": "textbook.php?june1=0-23"
+                },
+                {
+                    "title": "Jaan Pahechan",
+                    "link": "textbook.php?jujp1=0-22"
+                },
+                {
+                    "title": "Door-Paas",
+                    "link": "textbook.php?judp1=0-19"
+                },
+                {
+                    "title": "Sab Rang",
+                    "link": "textbook.php?jusr1=0-9"
+                }
+            ],
+            "Environmental Education": [
+                {
+                    "title": "Project Books",
+                    "link": ""
+                }
+            ],
+            "Health and Physical Education": [
+                {
+                    "title": "Health and Physical Education",
+                    "link": "textbook.php?jehp1=0-13"
+                }
+            ]
+        },
+        "11": {
+            "Sanskrit": [
+                {
+                    "title": "Bhaswati",
+                    "link": "textbook.php?khsk1=0-11"
+                },
+                {
+                    "title": "Shashwati",
+                    "link": "textbook.php?khsk2=0-11"
+                }
+            ],
+            "Accountancy": [
+                {
+                    "title": "Financial Accounting-I",
+                    "link": "textbook.php?keac1=0-7"
+                },
+                {
+                    "title": "Lekhashastra-I",
+                    "link": "textbook.php?khac1=0-7"
+                },
+                {
+                    "title": "Accountancy-II",
+                    "link": "textbook.php?keac2=0-2"
+                },
+                {
+                    "title": "Lekhashastra-II",
+                    "link": "textbook.php?khac2=0-2"
+                },
+                {
+                    "title": "Khatadari-I(Urdu)",
+                    "link": "textbook.php?kuac1=0-8"
+                },
+                {
+                    "title": "Khatadari-II(Urdu)",
+                    "link": "textbook.php?kuac2=0-5"
+                }
+            ],
+            "Business Studies": [
+                {
+                    "title": "Business Studies",
+                    "link": "textbook.php?kebs1=0-11"
+                },
+                {
+                    "title": "Vyavsay Adhyanan",
+                    "link": "textbook.php?khbs1=0-11"
+                },
+                {
+                    "title": "Karobari Mutalah I",
+                    "link": "textbook.php?kubs1=0-11"
+                }
+            ],
+            "Chemistry": [
+                {
+                    "title": "Chemistry Part-I",
+                    "link": "textbook.php?kech1=0-6"
+                },
+                {
+                    "title": "Rasayan Vigyan bhag-I",
+                    "link": "textbook.php?khch1=0-6"
+                },
+                {
+                    "title": "Keemiya I",
+                    "link": "textbook.php?kuch1=0-7"
+                },
+                {
+                    "title": "Chemistry Part II",
+                    "link": "textbook.php?kech2=0-3"
+                },
+                {
+                    "title": "Rasayan Vigyan bhag-II",
+                    "link": "textbook.php?khch2=0-3"
+                },
+                {
+                    "title": "Keemiya II",
+                    "link": "textbook.php?kuch2=0-7"
+                }
+            ],
+            "Mathematics": [
+                {
+                    "title": "Mathematics",
+                    "link": "textbook.php?kemh1=0-14"
+                },
+                {
+                    "title": "Ganit",
+                    "link": "textbook.php?khmh1=0-14"
+                },
+                {
+                    "title": "Riyazi I",
+                    "link": "textbook.php?kumh1=0-16"
+                }
+            ],
+            "Vocational": [
+                {
+                    "title": "Floriculturist- Protected Cultivation",
+                    "link": "textbook.php?kepc1=0-5"
+                },
+                {
+                    "title": "Vision Technician",
+                    "link": "textbook.php?kevt1=0-7"
+                },
+                {
+                    "title": "Floriculturist",
+                    "link": "textbook.php?keoc1=0-6"
+                },
+                {
+                    "title": "General Duty Assistant",
+                    "link": "textbook.php?keda1=0-5"
+                },
+                {
+                    "title": "Dairy Farmer Enterpreneur",
+                    "link": "textbook.php?kedf1=0-4"
+                },
+                {
+                    "title": "Floriculturist",
+                    "link": "textbook.php?kefc1=0-6"
+                }
+            ],
+            "Statistics": [],
+            "Biology": [
+                {
+                    "title": "Biology",
+                    "link": "textbook.php?kebo1=0-19"
+                },
+                {
+                    "title": "Jeev Vigyan",
+                    "link": "textbook.php?khbo1=0-19"
+                },
+                {
+                    "title": "Hayatiyaat",
+                    "link": "textbook.php?kubo1=0-22"
+                }
+            ],
+            "Home Science": [
+                {
+                    "title": "Human Ecology and Family Sciences Part I",
+                    "link": "textbook.php?kehe1=0-7"
+                },
+                {
+                    "title": "Human Ecology and Family Sciences Part II",
+                    "link": "textbook.php?kehe2=0-4"
+                },
+                {
+                    "title": "Manav Paristhitiki evm pariwar vigyan Bhag-I",
+                    "link": "textbook.php?khhe1=0-7"
+                },
+                {
+                    "title": "Manav Paristhitiki evm pariwar vigyan Bhag-II",
+                    "link": "textbook.php?khhe2=0-5"
+                },
+                {
+                    "title": "Insani Mahauliyat aur Uloom e Khandandari-I",
+                    "link": "textbook.php?kuim1=0-10"
+                },
+                {
+                    "title": "Insani Mahauliyat aur Uloom e Khandandari Part-II",
+                    "link": "textbook.php?kuim2=0-9"
+                }
+            ],
+            "Psychology": [
+                {
+                    "title": "Introduction to Psychology",
+                    "link": "textbook.php?kepy1=0-8"
+                },
+                {
+                    "title": "Manovigyan",
+                    "link": "textbook.php?khpy1=0-8"
+                },
+                {
+                    "title": "Nafsiyaat",
+                    "link": "textbook.php?kupy1=0-9"
+                }
+            ],
+            "Economics": [
+                {
+                    "title": "Indian Economic Development",
+                    "link": "textbook.php?keec1=0-8"
+                },
+                {
+                    "title": "Statistics for Economics",
+                    "link": "textbook.php?kest1=0-8"
+                },
+                {
+                    "title": "Sankhyiki",
+                    "link": "textbook.php?khst1=0-8"
+                },
+                {
+                    "title": "Bhartiya Airthryavstha Ka Vikas",
+                    "link": "textbook.php?khec1=0-8"
+                },
+                {
+                    "title": "Hindustan Ki Moaashi Tarraqqi(Urdu)",
+                    "link": "textbook.php?kuec1=0-10"
+                },
+                {
+                    "title": "Shumariyaat Bar-e-Mushiyat(Urdu)",
+                    "link": "textbook.php?kusc1=0-9"
+                }
+            ],
+            "Geography": [
+                {
+                    "title": "Fundamental of Physical Geography",
+                    "link": "textbook.php?kegy2=0-14"
+                },
+                {
+                    "title": "Bhautique Bhugol ke Mool Sidhant",
+                    "link": "textbook.php?khgy2=0-14"
+                },
+                {
+                    "title": "Hindustan Tabi'i Mahaul (Urdu)",
+                    "link": "textbook.php?kugy1=0-7"
+                },
+                {
+                    "title": "Pratical Work in Geography",
+                    "link": "textbook.php?kegy3=0-6"
+                },
+                {
+                    "title": "Bhugol Main Prayogatmak Karya",
+                    "link": "textbook.php?khgy3=0-6"
+                },
+                {
+                    "title": "India Physical Environment",
+                    "link": "textbook.php?kegy1=0-6"
+                },
+                {
+                    "title": "Bhart Bhautik Paryabaran",
+                    "link": "textbook.php?khgy1=0-6"
+                },
+                {
+                    "title": "Jughrafia Mein Aamli Kam (Urdu)",
+                    "link": "textbook.php?kugy3=0-8"
+                },
+                {
+                    "title": "Tabi'i Jughraiya Ka Mubadiyat (Urdu)",
+                    "link": "textbook.php?kugm1=0-16"
+                }
+            ],
+            "Physics": [
+                {
+                    "title": "Physics Part-I",
+                    "link": "textbook.php?keph1=0-7"
+                },
+                {
+                    "title": "Bhautiki-I",
+                    "link": "textbook.php?khph1=0-7"
+                },
+                {
+                    "title": "Tabiyaat-I",
+                    "link": "textbook.php?kuph1=0-8"
+                },
+                {
+                    "title": "Physics Part-II",
+                    "link": "textbook.php?keph2=0-7"
+                },
+                {
+                    "title": "Bhautiki-II",
+                    "link": "textbook.php?khph2=0-7"
+                },
+                {
+                    "title": "Tabiyaat-II",
+                    "link": "textbook.php?kuph2=0-7"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Antra",
+                    "link": "textbook.php?khat1=0-16"
+                },
+                {
+                    "title": "Aroh",
+                    "link": "textbook.php?khar1=0-16"
+                },
+                {
+                    "title": "Vitan",
+                    "link": "textbook.php?khvt1=0-5"
+                },
+                {
+                    "title": "Antral",
+                    "link": "textbook.php?khan1=0-2"
+                }
+            ],
+            "Sociology": [
+                {
+                    "title": "Introducing Sociology",
+                    "link": "textbook.php?kesy1=0-5"
+                },
+                {
+                    "title": "Samaj Shastra Parichay-I",
+                    "link": "textbook.php?khsy1=0-5"
+                },
+                {
+                    "title": "Samajiyaat Ka Tarf",
+                    "link": "textbook.php?kusy1=0-5"
+                },
+                {
+                    "title": "Understanding Society",
+                    "link": "textbook.php?kesy2=0-5"
+                },
+                {
+                    "title": "Samaj ka Bodh",
+                    "link": "textbook.php?khsy2=0-5"
+                },
+                {
+                    "title": "Mutala-e-Muashira",
+                    "link": "textbook.php?kusy2=0-5"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Woven Words",
+                    "link": "textbook.php?keww1=0-27"
+                },
+                {
+                    "title": "Hornbill",
+                    "link": "textbook.php?kehb1=0-14"
+                },
+                {
+                    "title": "Snapshots Suppl.Reader English",
+                    "link": "textbook.php?kesp1=0-5"
+                }
+            ],
+            "Political Science": [
+                {
+                    "title": "Political Theory",
+                    "link": "textbook.php?keps1=0-8"
+                },
+                {
+                    "title": "Raajneeti Sidhant",
+                    "link": "textbook.php?khps1=0-8"
+                },
+                {
+                    "title": "Hindustani Aain aur Kaam",
+                    "link": "textbook.php?kups1=0-10"
+                },
+                {
+                    "title": "India Constitution at Work",
+                    "link": "textbook.php?keps2=0-10"
+                },
+                {
+                    "title": "Bharat ka Samvidhan Sidhant aur Vyavhar",
+                    "link": "textbook.php?khps2=0-10"
+                },
+                {
+                    "title": "Siyasi Nazaria",
+                    "link": "textbook.php?kups2=0-10"
+                }
+            ],
+            "History": [
+                {
+                    "title": "Themes in World History",
+                    "link": "textbook.php?kehs1=0-7"
+                },
+                {
+                    "title": "Vishwa Itihas Ke Kuch Vishay",
+                    "link": "textbook.php?khhs1=0-7"
+                },
+                {
+                    "title": "Tareekh-e-Alam per Mabni Mauzuaat Part I",
+                    "link": "textbook.php?kuta1=0-11"
+                }
+            ],
+            "Heritage Crafts": [
+                {
+                    "title": "Living Craft Traditions of India",
+                    "link": "textbook.php?kehc1=0-10"
+                },
+                {
+                    "title": "Hindustan me Dastkari Ki Riwayat",
+                    "link": "textbook.php?kuhc1=0-10"
+                }
+            ],
+            "Graphics design": [
+                {
+                    "title": "The story of graphic design",
+                    "link": "textbook.php?kegd1=0-8"
+                },
+                {
+                    "title": "graphic design ek kahani",
+                    "link": "textbook.php?khgd1=0-8"
+                }
+            ],
+            "Computers and Communication Technology": [
+                {
+                    "title": "CCT Part-I",
+                    "link": "textbook.php?kect1=0-8"
+                },
+                {
+                    "title": "CCT Part-II",
+                    "link": "textbook.php?kect2=0-6"
+                },
+                {
+                    "title": "Computer aur Sanchar Prodhogiki Part-I",
+                    "link": "textbook.php?khct1=0-8"
+                },
+                {
+                    "title": "Computer aur Sanchar Prodhogiki Part-II",
+                    "link": "textbook.php?khct2=0-6"
+                },
+                {
+                    "title": "Computer Aur Muwaslati Technology I",
+                    "link": "textbook.php?kuct1=0-8"
+                },
+                {
+                    "title": "Computer Aur Muwaslati Technology II",
+                    "link": "textbook.php?kuct2=0-6"
+                }
+            ],
+            "Fine Art": [
+                {
+                    "title": "An Introduction to Indian Art Part-I",
+                    "link": "textbook.php?kefa1=0-8"
+                },
+                {
+                    "title": "Bhartiya Kala ka parichay",
+                    "link": "textbook.php?khfa1=0-8"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Nai Awaz",
+                    "link": "textbook.php?kuna1=0-20"
+                },
+                {
+                    "title": "Dhanak",
+                    "link": "textbook.php?kudh1=0-27"
+                },
+                {
+                    "title": "Gulistan e Adab",
+                    "link": "textbook.php?kuga1=0-22"
+                },
+                {
+                    "title": "Khyabane Urdu",
+                    "link": "textbook.php?kuku1=0-15"
+                }
+            ],
+            "Creative Writing and Translation": [
+                {
+                    "title": "Srijan",
+                    "link": "textbook.php?khsr1=0-4"
+                },
+                {
+                    "title": "Takhleequi Jauhar",
+                    "link": "textbook.php?kucw1=0-4"
+                }
+            ],
+            "Informatics Practices": [
+                {
+                    "title": "Informatics Practices",
+                    "link": "textbook.php?keip1=0-8"
+                }
+            ],
+            "Biotechnology": [
+                {
+                    "title": "Biotechnology",
+                    "link": "textbook.php?kebt1=0-12"
+                }
+            ],
+            "Computer Science": [
+                {
+                    "title": "Computer Science",
+                    "link": "textbook.php?kecs1=0-11"
+                },
+                {
+                    "title": "Computer Science - Urdu",
+                    "link": "textbook.php?kucs1=0-11"
+                }
+            ],
+            "Health and Physical Education": [
+                {
+                    "title": "Health and Physical Education",
+                    "link": "textbook.php?kehp1=0-11"
+                }
+            ],
+            "Knowledge Traditions Practices of India": [
+                {
+                    "title": "Knowledge Traditions Practices of India",
+                    "link": "textbook.php?keks1=0-9"
+                }
+            ],
+            "Sangeet": [
+                {
+                    "title": "Tabla evam Pakhawaj",
+                    "link": "textbook.php?khtp1=0-8"
+                },
+                {
+                    "title": "Hindustani Sangeet Gayan Evam Vadan",
+                    "link": "textbook.php?khgv1=0-10"
+                }
+            ]
+        },
+        "12": {
+            "Accountancy": [
+                {
+                    "title": "Accountancy-I",
+                    "link": "textbook.php?leac1=0-4"
+                },
+                {
+                    "title": "Accountancy Part-II",
+                    "link": "textbook.php?leac2=0-6"
+                },
+                {
+                    "title": "Lekhashastra Part-I",
+                    "link": "textbook.php?lhac1=0-4"
+                },
+                {
+                    "title": "Lekhashastra Part-II",
+                    "link": "textbook.php?lhac2=0-5"
+                },
+                {
+                    "title": "Computerised Accounting System",
+                    "link": "textbook.php?leca1=0-4"
+                },
+                {
+                    "title": "Khatadari-I(Urdu)",
+                    "link": "textbook.php?luac1=0-5"
+                },
+                {
+                    "title": "Khatadari-II(Urdu)",
+                    "link": "textbook.php?luac2=0-6"
+                }
+            ],
+            "Mathematics": [
+                {
+                    "title": "Mathematics Part-I",
+                    "link": "textbook.php?lemh1=0-6"
+                },
+                {
+                    "title": "Mathematics Part-II",
+                    "link": "textbook.php?lemh2=0-7"
+                },
+                {
+                    "title": "Ganit-I",
+                    "link": "textbook.php?lhmh1=0-6"
+                },
+                {
+                    "title": "Ganit-II",
+                    "link": "textbook.php?lhmh2=0-7"
+                },
+                {
+                    "title": "Riyazi-I",
+                    "link": "textbook.php?lumh1=0-6"
+                },
+                {
+                    "title": "Riyazi-II",
+                    "link": "textbook.php?lumh2=0-7"
+                }
+            ],
+            "Physics": [
+                {
+                    "title": "Physics Part-I",
+                    "link": "textbook.php?leph1=0-8"
+                },
+                {
+                    "title": "Physics Part-II",
+                    "link": "textbook.php?leph2=0-6"
+                },
+                {
+                    "title": "Bhautiki-I",
+                    "link": "textbook.php?lhph1=0-8"
+                },
+                {
+                    "title": "Bhautiki-II",
+                    "link": "textbook.php?lhph2=0-6"
+                },
+                {
+                    "title": "Tabiyaat-I",
+                    "link": "textbook.php?luph1=0-8"
+                },
+                {
+                    "title": "Tabiyaat-II",
+                    "link": "textbook.php?luph2=0-6"
+                }
+            ],
+            "Hindi": [
+                {
+                    "title": "Antra",
+                    "link": "textbook.php?lhat1=0-21"
+                },
+                {
+                    "title": "Aroh",
+                    "link": "textbook.php?lhar1=0-15"
+                },
+                {
+                    "title": "Vitan",
+                    "link": "textbook.php?lhvt1=0-3"
+                },
+                {
+                    "title": "Antral Bhag 2",
+                    "link": "textbook.php?lhan1=0-3"
+                }
+            ],
+            "English": [
+                {
+                    "title": "Kaliedoscope",
+                    "link": "textbook.php?lekl1=0-21"
+                },
+                {
+                    "title": "Flamingo",
+                    "link": "textbook.php?lefl1=0-13"
+                },
+                {
+                    "title": "Vistas",
+                    "link": "textbook.php?levt1=0-6"
+                }
+            ],
+            "Biotechnology": [
+                {
+                    "title": "Biotechnology",
+                    "link": "textbook.php?lebt1=0-13"
+                }
+            ],
+            "Biology": [
+                {
+                    "title": "Biology",
+                    "link": "textbook.php?lebo1=0-13"
+                },
+                {
+                    "title": "Jeev Vigyan",
+                    "link": "textbook.php?lhbo1=0-13"
+                },
+                {
+                    "title": "Hayatiyaat",
+                    "link": "textbook.php?lubo1=0-16"
+                }
+            ],
+            "History": [
+                {
+                    "title": "Themes in Indian History-I",
+                    "link": "textbook.php?lehs1=0-4"
+                },
+                {
+                    "title": "Bharatiya Itihas ke kuchh Vishay-I",
+                    "link": "textbook.php?lhhs1=0-4"
+                },
+                {
+                    "title": "Themes in Indian History-II",
+                    "link": "textbook.php?lehs2=0-4"
+                },
+                {
+                    "title": "Bharatiya Itihas ke kuchh Vishay-II",
+                    "link": "textbook.php?lhhs2=0-4"
+                },
+                {
+                    "title": "Themes in Indian History-III",
+                    "link": "textbook.php?lehs3=0-4"
+                },
+                {
+                    "title": "Bharatiya Itihas ke kuchh Vishay-III",
+                    "link": "textbook.php?lhhs3=0-4"
+                },
+                {
+                    "title": "Tareekh-e-Hind ke Mauzuaat-I(Urdu)",
+                    "link": "textbook.php?luth1=0-4"
+                },
+                {
+                    "title": "Tareekh-e-Hind ke Mauzuaat-II(Urdu)",
+                    "link": "textbook.php?luth2=0-4"
+                },
+                {
+                    "title": "Tareekh-e-Hind ke Mauzuaat-III(Urdu)",
+                    "link": "textbook.php?luth3=0-4"
+                }
+            ],
+            "Geography": [
+                {
+                    "title": "Fundamentals of Human Geography",
+                    "link": "textbook.php?legy1=0-8"
+                },
+                {
+                    "title": "Practical Work in Geography Part II",
+                    "link": "textbook.php?legy3=0-4"
+                },
+                {
+                    "title": "Manav Bhugol Ke Mool Sidhant",
+                    "link": "textbook.php?lhgy1=0-8"
+                },
+                {
+                    "title": "Bhugol main peryojnatmak pryogatmak karye",
+                    "link": "textbook.php?lhgy3=0-4"
+                },
+                {
+                    "title": "India -People And Economy",
+                    "link": "textbook.php?legy2=0-9"
+                },
+                {
+                    "title": "Bharat log aur arthvyasastha(Bhugol)",
+                    "link": "textbook.php?lhgy2=0-9"
+                },
+                {
+                    "title": "Insani Jughrafia Ke Buniyadi Usool(Urdu)",
+                    "link": "textbook.php?lufh1=0-10"
+                },
+                {
+                    "title": "Hindustan Awam Aur Maishat(Urdu)",
+                    "link": "textbook.php?lugy1=0-12"
+                },
+                {
+                    "title": "Jughrafia Mein Aamli Kam(Urdu)",
+                    "link": "textbook.php?lugy3=0-6"
+                }
+            ],
+            "Psychology": [
+                {
+                    "title": "Psychology",
+                    "link": "textbook.php?lepy1=0-7"
+                },
+                {
+                    "title": "Manovigyan",
+                    "link": "textbook.php?lhpy1=0-7"
+                },
+                {
+                    "title": "Nafsiat(Urdu)",
+                    "link": "textbook.php?lupy1=0-9"
+                }
+            ],
+            "Sociology": [
+                {
+                    "title": "Indian Society",
+                    "link": "textbook.php?lesy1=0-7"
+                },
+                {
+                    "title": "Bhartiya Samaj",
+                    "link": "textbook.php?lhsy1=0-7"
+                },
+                {
+                    "title": "Social Change and Development in India",
+                    "link": "textbook.php?lesy2=0-8"
+                },
+                {
+                    "title": "Bharat main Samajik Parivartan aur Vikas",
+                    "link": "textbook.php?lhsy2=0-8"
+                },
+                {
+                    "title": "Hindustani Samaj(Urdu)",
+                    "link": "textbook.php?luis1=0-7"
+                },
+                {
+                    "title": "Hindustan Mein Samaji Tabdili Aur Taraqqi(Urdu)",
+                    "link": "textbook.php?lusy2=0-8"
+                }
+            ],
+            "Chemistry": [
+                {
+                    "title": "Chemistry-I",
+                    "link": "textbook.php?lech1=0-5"
+                },
+                {
+                    "title": "Chemistry-II",
+                    "link": "textbook.php?lech2=0-5"
+                },
+                {
+                    "title": "Rasayan vigyan bhag I",
+                    "link": "textbook.php?lhch1=0-5"
+                },
+                {
+                    "title": "Rasayan vigyan bhag II",
+                    "link": "textbook.php?lhch2=0-5"
+                },
+                {
+                    "title": "Keemiya-I",
+                    "link": "textbook.php?luch1=0-9"
+                },
+                {
+                    "title": "Keemiya-II",
+                    "link": "textbook.php?luch2=0-7"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Bhaswati",
+                    "link": "textbook.php?lhsk1=0-10"
+                },
+                {
+                    "title": "Shaswati",
+                    "link": "textbook.php?lhsk2=0-11"
+                }
+            ],
+            "Political Science": [
+                {
+                    "title": "Contemporary World Politics",
+                    "link": "textbook.php?leps1=0-7"
+                },
+                {
+                    "title": "Samkalin Vishwa Rajniti",
+                    "link": "textbook.php?lhps1=0-7"
+                },
+                {
+                    "title": "Politics in India Since Independence",
+                    "link": "textbook.php?leps2=0-8"
+                },
+                {
+                    "title": "Swatantra Bharat Mein Rajniti-II",
+                    "link": "textbook.php?lhps2=0-8"
+                },
+                {
+                    "title": "Aasri Alami Siyasat(Urdu)",
+                    "link": "textbook.php?lups1=0-9"
+                },
+                {
+                    "title": "Azadi Ke Baad Hindustan Ki Siyasat(Urdu)",
+                    "link": "textbook.php?luab1=0-9"
+                }
+            ],
+            "Home Science": [
+                {
+                    "title": "Human Ecology and Family Sciences Part I",
+                    "link": "textbook.php?lehe1=0-7"
+                },
+                {
+                    "title": "Human Ecology and Family Sciences Part II",
+                    "link": "textbook.php?lehe2=0-7"
+                },
+                {
+                    "title": "Manav Paristhitik avam Parivar Vigyan Bhag 1",
+                    "link": "textbook.php?lehh1=0-7"
+                },
+                {
+                    "title": "Manav Paristhitiki avam Parivar Vigyan Bhag 2",
+                    "link": "textbook.php?lehh2=0-7"
+                }
+            ],
+            "Economics": [
+                {
+                    "title": "Introductory Microeconomics",
+                    "link": "textbook.php?leec2=0-5"
+                },
+                {
+                    "title": "Introductory Macroeconomics",
+                    "link": "textbook.php?leec1=0-6"
+                },
+                {
+                    "title": "Vyashthi Arthshasrta",
+                    "link": "textbook.php?lhec2=0-5"
+                },
+                {
+                    "title": "Samashty Arthshastra Ek Parichay",
+                    "link": "textbook.php?lhec1=0-6"
+                },
+                {
+                    "title": "Juzvi Maashiyat ka Taruf(Urdu)",
+                    "link": "textbook.php?lume1=0-6"
+                },
+                {
+                    "title": "Kulli Maashiyat Ka Taruf(Urdu)",
+                    "link": "textbook.php?lume2=0-6"
+                }
+            ],
+            "Business Studies": [
+                {
+                    "title": "Business Studies-I",
+                    "link": "textbook.php?lebs1=0-8"
+                },
+                {
+                    "title": "Vyavasai Adhyan-I",
+                    "link": "textbook.php?lhbs1=0-8"
+                },
+                {
+                    "title": "Business Studies-II",
+                    "link": "textbook.php?lebs2=0-3"
+                },
+                {
+                    "title": "Vyavasai Adhyan-II",
+                    "link": "textbook.php?lhbs2=0-3"
+                },
+                {
+                    "title": "Karobari Uloom I(Urdu)",
+                    "link": "textbook.php?lubs1=0-8"
+                },
+                {
+                    "title": "Karobari Uloom II(Urdu)",
+                    "link": "textbook.php?lubs2=0-4"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Gulistan-e- Adab",
+                    "link": "textbook.php?luga1=0-12"
+                },
+                {
+                    "title": "Khayaban-e-Urdu",
+                    "link": "textbook.php?luku1=0-6"
+                },
+                {
+                    "title": "Nai Awaz",
+                    "link": "textbook.php?luna1=0-16"
+                },
+                {
+                    "title": "Dhanak",
+                    "link": "textbook.php?ludh1=0-12"
+                }
+            ],
+            "Heritage Crafts": [
+                {
+                    "title": "Hindustan me Dastkari Ki Riwayat",
+                    "link": "textbook.php?luhc1=0-9"
+                },
+                {
+                    "title": "Craft Tradition of India",
+                    "link": "textbook.php?lehc1=0-9"
+                },
+                {
+                    "title": "Bharatiya Hastkla Ki Paramparayen",
+                    "link": "textbook.php?lhhc1=0-9"
+                }
+            ],
+            "New Age Graphics Design": [
+                {
+                    "title": "New Age Graphics Design",
+                    "link": "textbook.php?legd1=0-12"
+                }
+            ],
+            "Creative Writing & Translation": [
+                {
+                    "title": "Takhleequi Jauhar",
+                    "link": "textbook.php?lucw1=0-11"
+                },
+                {
+                    "title": "Srijan-II",
+                    "link": "textbook.php?khsr2=0-4"
+                }
+            ],
+            "Fine Art": [
+                {
+                    "title": "An Introduction to Indian Art Part-II",
+                    "link": "textbook.php?lefa1=0-8"
+                },
+                {
+                    "title": "Bhartiya Kala ka Itihaas Bhag 2",
+                    "link": "textbook.php?lhfa1=0-8"
+                }
+            ],
+            "Computer Science": [
+                {
+                    "title": "Computer Science",
+                    "link": "textbook.php?lecs1=0-13"
+                }
+            ],
+            "Informatics Practices": [
+                {
+                    "title": "Informatics Practices",
+                    "link": "textbook.php?leip1=0-7"
+                }
+            ],
+            "Sangeet": [
+                {
+                    "title": "Tabla evam Pakhawaj",
+                    "link": "textbook.php?lstp1=0-7"
+                },
+                {
+                    "title": "Hindustani Sangeet Gayan Evam Vaadan",
+                    "link": "textbook.php?lsgv1=0-9"
+                }
+            ]
+        },
+        "13": {
+            "Hindi": [
+                {
+                    "title": "Abhivyakti Aur Madhyam",
+                    "link": "textbook.php?kham1=0-16"
+                }
+            ],
+            "Sanskrit": [
+                {
+                    "title": "Sanskrit Sahitya parichay",
+                    "link": "textbook.php?klss1=0-12"
+                }
+            ],
+            "Heritage Crafts": [
+                {
+                    "title": "Exploring Craft Tradition of India",
+                    "link": "textbook.php?mehc1=0-10"
+                },
+                {
+                    "title": "Bhartiya Hastkala Parmparaon ki Khoj",
+                    "link": "textbook.php?khhc1=0-10"
+                }
+            ],
+            "Urdu": [
+                {
+                    "title": "Zuban-O-Adab ki Tareekh",
+                    "link": "textbook.php?kuza1=0-23"
+                },
+                {
+                    "title": "Urdu Qwaid aur Insha",
+                    "link": "textbook.php?juuq1=0-24"
+                },
+                {
+                    "title": "Izhar Aur Zara-e-Izhar",
+                    "link": "textbook.php?kuiz1=0-4"
+                }
+            ]
+        },
+        "14": {
+            "Vocational": [
+                {
+                    "title": "Organic Farming",
+                    "link": "textbook.php?geof1=0-5"
+                }
+            ]
+        }
+    }
+}
