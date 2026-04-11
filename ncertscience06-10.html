@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCERT Science Explorer (Class 6-10)</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .theme-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .theme-btn {
+            background-color: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .theme-btn:hover, .theme-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .chapter-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-left: 5px solid var(--primary);
+        }
+
+        .chapter-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .read-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+
+        .read-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Modal Styles */
+        #pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .external-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .external-link:hover {
+            text-decoration: underline;
+        }
+
+        .close-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            flex-grow: 1;
+            border: none;
+            background-color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: var(--text-light);
+            grid-column: 1 / -1;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NCERT Science Explorer (6th - 10th)</h1>
+        <p>विषय (Theme) के अनुसार सिलसिलेवार पढ़ाई करें</p>
+    </header>
+
+    <div class="container">
+        <div class="theme-selector" id="theme-selector">
+            </div>
+
+        <h2 id="current-theme-title" style="text-align: center; margin-bottom: 20px; color: var(--primary);">कृपया ऊपर से कोई विषय चुनें</h2>
+
+        <div class="chapter-grid" id="chapter-grid">
+            </div>
+    </div>
+
+    <div id="pdf-modal">
+        <div class="modal-header">
+            <h2 id="modal-title">Chapter PDF</h2>
+            <div class="modal-actions">
+                <a id="external-link" class="external-link" href="#" target="_blank">📥 Open in New Tab (Direct Download)</a>
+                <button class="close-btn" onclick="closeModal()">✖ Close</button>
+            </div>
+        </div>
+        <iframe id="pdf-frame" src=""></iframe>
+    </div>
+
+    <script>
+        // NCERT URL Prefixes (jesc1 corrected for 10th)
+        const prefixes = {
+            "6th": "fecu1",
+            "7th": "gecu1",
+            "8th": "hecu1",
+            "9th": "iesc1",
+            "10th": "jesc1"
+        };
+
+        // Complete Structured Data based on Themes
+        const themeData = [
+            {
+                id: 1,
+                name: "1. Vigyan ka Parichay (Introduction)",
+                chapters: [
+                    { cls: "6th", ch: 1, title: "The Wonderful World of Science" },
+                    { cls: "7th", ch: 1, title: "The Ever-Evolving World of Science" },
+                    { cls: "8th", ch: 1, title: "Exploring the Investigative World of Science" }
+                ]
+            },
+            {
+                id: 2,
+                name: "2. Padarth aur Rasayan (Matter & Chemistry)",
+                chapters: [
+                    { cls: "6th", ch: 6, title: "Materials Around Us" },
+                    { cls: "6th", ch: 8, title: "A Journey through States of Water" },
+                    { cls: "6th", ch: 9, title: "Methods of Separation in Everyday Life" },
+                    { cls: "7th", ch: 5, title: "Changes Around Us: Physical and Chemical" },
+                    { cls: "8th", ch: 7, title: "Particulate Nature of Matter" },
+                    { cls: "8th", ch: 8, title: "Nature of Matter: Elements, Compounds, and Mixtures" },
+                    { cls: "8th", ch: 9, title: "The Amazing World of Solutes, Solvents, and Solutions" },
+                    { cls: "9th", ch: 1, title: "Matter in Our Surroundings" },
+                    { cls: "9th", ch: 2, title: "Is Matter Around Us Pure?" },
+                    { cls: "9th", ch: 3, title: "Atoms and Molecules" },
+                    { cls: "9th", ch: 4, title: "Structure of the Atom" },
+                    { cls: "10th", ch: 1, title: "Chemical Reactions and Equations" },
+                    { cls: "10th", ch: 4, title: "Carbon and its Compounds" }
+                ]
+            },
+            {
+                id: 3,
+                name: "3. Amla, Kshar aur Dhatu (Acids & Metals)",
+                chapters: [
+                    { cls: "7th", ch: 2, title: "Exploring Substances: Acidic, Basic, and Neutral" },
+                    { cls: "7th", ch: 4, title: "The World of Metals and Non-metals" },
+                    { cls: "10th", ch: 2, title: "Acids, Bases and Salts" },
+                    { cls: "10th", ch: 3, title: "Metals and Non-metals" }
+                ]
+            },
+            {
+                id: 4,
+                name: "4. Jeev Vigyan: Ikai & Poshan (Biology 1)",
+                chapters: [
+                    { cls: "6th", ch: 2, title: "Diversity in the Living World" },
+                    { cls: "6th", ch: 3, title: "Mindful Eating: A Path to a Healthy Body" },
+                    { cls: "6th", ch: 10, title: "Living Creatures: Exploring their Characteristics" },
+                    { cls: "7th", ch: 6, title: "Adolescence: A Stage of Growth and Change" },
+                    { cls: "8th", ch: 2, title: "The Invisible Living World (Microorganisms)" },
+                    { cls: "8th", ch: 3, title: "Health: The Ultimate Treasure" },
+                    { cls: "9th", ch: 5, title: "The Fundamental Unit of Life (Cell)" },
+                    { cls: "9th", ch: 6, title: "Tissues" },
+                    { cls: "9th", ch: 12, title: "Improvement in Food Resources" }
+                ]
+            },
+            {
+                id: 5,
+                name: "5. Jeev Vigyan: Prakram & Janan (Biology 2)",
+                chapters: [
+                    { cls: "7th", ch: 9, title: "Life Processes in Animals" },
+                    { cls: "7th", ch: 10, title: "Life Processes in Plants" },
+                    { cls: "10th", ch: 5, title: "Life Processes" },
+                    { cls: "10th", ch: 6, title: "Control and Coordination" },
+                    { cls: "10th", ch: 7, title: "How do Organisms Reproduce?" },
+                    { cls: "10th", ch: 8, title: "Heredity" }
+                ]
+            },
+            {
+                id: 6,
+                name: "6. Bhautiki: Bal & Urja (Physics 1)",
+                chapters: [
+                    { cls: "6th", ch: 5, title: "Measurement of Length and Motion" },
+                    { cls: "6th", ch: 7, title: "Temperature and its Measurement" },
+                    { cls: "7th", ch: 7, title: "Heat Transfer in Nature" },
+                    { cls: "7th", ch: 8, title: "Measurement of Time and Motion" },
+                    { cls: "8th", ch: 5, title: "Exploring Forces" },
+                    { cls: "8th", ch: 6, title: "Pressure, Winds, Storms, and Cyclones" },
+                    { cls: "9th", ch: 7, title: "Motion" },
+                    { cls: "9th", ch: 8, title: "Force and Laws of Motion" },
+                    { cls: "9th", ch: 9, title: "Gravitation" },
+                    { cls: "9th", ch: 10, title: "Work and Energy" },
+                    { cls: "9th", ch: 11, title: "Sound" }
+                ]
+            },
+            {
+                id: 7,
+                name: "7. Bhautiki: Prakash (Physics 2)",
+                chapters: [
+                    { cls: "7th", ch: 11, title: "Light: Shadows and Reflections" },
+                    { cls: "8th", ch: 10, title: "Light: Mirrors and Lenses" },
+                    { cls: "10th", ch: 9, title: "Light – Reflection and Refraction" },
+                    { cls: "10th", ch: 10, title: "The Human Eye and the Colourful World" }
+                ]
+            },
+            {
+                id: 8,
+                name: "8. Bhautiki: Bijli & Chumbaktav (Physics 3)",
+                chapters: [
+                    { cls: "6th", ch: 4, title: "Exploring Magnets" },
+                    { cls: "7th", ch: 3, title: "Electricity: Circuits and Components" },
+                    { cls: "8th", ch: 4, title: "Electricity: Magnetic and Heating Effects" },
+                    { cls: "10th", ch: 11, title: "Electricity" },
+                    { cls: "10th", ch: 12, title: "Magnetic Effects of Electric Current" }
+                ]
+            },
+            {
+                id: 9,
+                name: "9. Prithvi & Antariksh (Earth & Space)",
+                chapters: [
+                    { cls: "6th", ch: 11, title: "Nature’s Treasures" },
+                    { cls: "6th", ch: 12, title: "Beyond Earth" },
+                    { cls: "7th", ch: 12, title: "Earth, Moon, and the Sun" },
+                    { cls: "8th", ch: 11, title: "Keeping Time with the Skies" },
+                    { cls: "8th", ch: 12, title: "How Nature Works in Harmony" },
+                    { cls: "8th", ch: 13, title: "Our Home: Earth" },
+                    { cls: "10th", ch: 13, title: "Our Environment" }
+                ]
+            }
+        ];
+
+        // Initialization
+        window.onload = () => {
+            renderThemeButtons();
+        };
+
+        // Render top buttons
+        function renderThemeButtons() {
+            const container = document.getElementById('theme-selector');
+            themeData.forEach(theme => {
+                const btn = document.createElement('button');
+                btn.className = 'theme-btn';
+                btn.innerText = theme.name;
+                btn.onclick = () => {
+                    // Remove active class from all
+                    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById('current-theme-title').innerText = theme.name;
+                    renderChapters(theme.chapters);
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        // Render chapter cards
+        function renderChapters(chapters) {
+            const container = document.getElementById('chapter-grid');
+            container.innerHTML = ''; // Clear previous
+
+            if (chapters.length === 0) {
+                container.innerHTML = '<div class="empty-state">No chapters found for this theme.</div>';
+                return;
+            }
+
+            chapters.forEach(chap => {
+                const card = document.createElement('div');
+                card.className = 'chapter-card';
+                
+                // Format chapter number to 2 digits (e.g., 1 -> '01')
+                const chPadded = String(chap.ch).padStart(2, '0');
+                const url = `https://ncert.nic.in/textbook/pdf/${prefixes[chap.cls]}${chPadded}.pdf`;
+
+                card.innerHTML = `
+                    <div>
+                        <span class="tag">Class ${chap.cls} | Ch ${chap.ch}</span>
+                        <h3>${chap.title}</h3>
+                    </div>
+                    <button class="read-btn" onclick="openPdf('${url}', 'Class ${chap.cls} - Chapter ${chap.ch}')">📖 Read PDF</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Modal Logic
+        function openPdf(url, title) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('pdf-frame').src = url;
+            document.getElementById('external-link').href = url;
+            document.getElementById('pdf-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('pdf-modal').style.display = 'none';
+            document.getElementById('pdf-frame').src = ''; // Stop loading
+        }
+    </script>
+</body>
+</html>
