@@ -405,14 +405,13 @@
         // Modal Logic
         function openPdf(url, title) {
             document.getElementById('modal-title').innerText = title;
-            document.getElementById('pdf-frame').src = url;
-            document.getElementById('external-link').href = url;
+            document.getElementById('external-link').href = url; 
+            
+            
+            const googleViewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
+            
+            document.getElementById('pdf-frame').src = googleViewerUrl;
             document.getElementById('pdf-modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('pdf-modal').style.display = 'none';
-            document.getElementById('pdf-frame').src = ''; // Stop loading
         }
     </script>
 </body>
