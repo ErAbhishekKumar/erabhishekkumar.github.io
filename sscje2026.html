@@ -162,9 +162,22 @@ function renderModules(){
 function updateModuleProgress(){DATA.modules.forEach((m,mi)=>{let n=0,d=0;m.topics.forEach(t=>{const b=key(m.name+'|'+t.name);['learn','pyq1','pyq2','rev'].forEach(s=>{d++;if(checked(b+'_'+s))n++;});});const pct=Math.round(n/d*100);document.getElementById('modbar_'+mi).style.width=pct+'%';document.getElementById('modpct_'+mi).textContent=pct+'%';});}
 function escapeHtml(s){return s.replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 function renderNT(){
- const r=document.getElementById('reasoning');r.innerHTML='<h3>General Intelligence & Reasoning</h3>'+reasoning.map((x,i)=>`<div class="week"><div><span class="badge ${x[1]==='P1'?'p1':x[1]==='P2'?'p2':'p3'}">${x[1]}</span></div><div><b>${x[0]}</b><div class="small">${x[2]} h · PYQ-first</div></div><div><label><input type="checkbox" data-key="reason_${i}" ${checked('reason_'+i)?'checked':''}> Done</label></div><div></div></div>`).join('');
+ const container=document.getElementById('nontechnical');
+ if(!container) return;
+
+ const r=document.getElementById('reasoning') || document.createElement('div');
+ r.id='reasoning';
+ r.className='card';
+ r.innerHTML='<h3>General Intelligence & Reasoning</h3>'+reasoning.map((x,i)=>`<div class="week"><div><span class="badge ${x[1]==='P1'?'p1':x[1]==='P2'?'p2':'p3'}">${x[1]}</span></div><div><b>${x[0]}</b><div class="small">${x[2]} h · PYQ-first</div></div><div><label><input type="checkbox" data-key="reason_${i}" ${checked('reason_'+i)?'checked':''}> Done</label></div><div></div></div>`).join('');
  r.querySelectorAll('[data-key]').forEach(el=>el.onchange=()=>setCheck(el.dataset.key,el.checked));
- const g=document.getElementById('ga');g.innerHTML='<h3>General Awareness</h3>'+ga.map((x,i)=>`<div class="week"><div><span class="badge ${x[1]==='P1'?'p1':x[1]==='P2'?'p2':'p3'}">${x[1]}</span></div><div><b>${x[0]}</b><div class="small">${x[2]} h · daily MCQ + revision</div></div><div><label><input type="checkbox" data-key="ga_${i}" ${checked('ga_'+i)?'checked':''}> Done</label></div><div></div></div>`).join('');g.querySelectorAll('[data-key]').forEach(el=>el.onchange=()=>setCheck(el.dataset.key,el.checked));
+ if(!r.parentNode) container.appendChild(r);
+
+ const g=document.getElementById('ga') || document.createElement('div');
+ g.id='ga';
+ g.className='card';
+ g.innerHTML='<h3>General Awareness</h3>'+ga.map((x,i)=>`<div class="week"><div><span class="badge ${x[1]==='P1'?'p1':x[1]==='P2'?'p2':'p3'}">${x[1]}</span></div><div><b>${x[0]}</b><div class="small">${x[2]} h · daily MCQ + revision</div></div><div><label><input type="checkbox" data-key="ga_${i}" ${checked('ga_'+i)?'checked':''}> Done</label></div><div></div></div>`).join('');
+ g.querySelectorAll('[data-key]').forEach(el=>el.onchange=()=>setCheck(el.dataset.key,el.checked));
+ if(!g.parentNode) container.appendChild(g);
 }
 function applyFilters(){const q=document.getElementById('search').value.toLowerCase().trim();const p=document.getElementById('priority').value;const st=document.getElementById('status').value;document.querySelectorAll('[data-module-card]').forEach(card=>{let show=true; if(p!=='all'&&card.dataset.priority!==p)show=false; const m=card.dataset.module.toLowerCase();if(q&&!m.includes(q)&&![...card.querySelectorAll('.task-row[data-text]')].some(r=>r.dataset.text.includes(q)))show=false; if(st!=='all'){const boxes=[...card.querySelectorAll('input[data-topic]')];const done=boxes.filter(b=>b.checked).length; if(st==='todo'&&done>0)show=false; if(st==='partial'&&(done===0||done===boxes.length))show=false;if(st==='done'&&done!==boxes.length)show=false;}card.classList.toggle('hide',!show);});}
 function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ssc_je_civil_2026_progress.json';a.click();URL.revokeObjectURL(a.href)}
@@ -176,7 +189,7 @@ function renderMocks(){const tb=document.querySelector('#mockTable tbody');tb.in
 document.getElementById('search').oninput=applyFilters;document.getElementById('priority').onchange=applyFilters;document.getElementById('status').onchange=applyFilters;
 document.getElementById('examDate').value=state.meta.examDate||'';document.getElementById('examDate').onchange=e=>{state.meta.examDate=e.target.value;save()};
 document.getElementById('errorLog').value=state.meta.errorLog||'';document.getElementById('errorLog').oninput=e=>{state.meta.errorLog=e.target.value;save()};
-document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tabsec').forEach(s=>s.classList.add('hide'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.remove('hide')});
+document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tabsec').forEach(s=>s.classList.add('hide'));btn.classList.add('active');const target=document.getElementById(btn.dataset.tab);if(target)target.classList.remove('hide');if(btn.dataset.tab==='nontechnical')renderNT();});
 document.querySelectorAll('#mocks [data-key]').forEach(el=>{el.checked=checked(el.dataset.key);el.onchange=()=>setCheck(el.dataset.key,el.checked)});
 renderStats();renderWeeks();renderModules();renderNT();renderMocks();
 </script>
