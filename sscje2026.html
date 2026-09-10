@@ -156,7 +156,7 @@ function updateCountdown() {
 document.getElementById('examDate').addEventListener('change', updateCountdown);
 function renderModules(){
  const container=document.getElementById('modules');
- container.innerHTML=DATA.modules.map((m,mi)=>{const rows=m.topics.map((t,ti)=>{const b=key(m.name+'|'+t.name);return `<div class="task-row" data-module="${escapeHtml(m.name)}" data-priority="${m.priority}" data-text="${escapeHtml((m.name+' '+m.official+' '+t.name).toLowerCase())}"><div><b>${escapeHtml(t.name)}</b><div class="small">~${t.hours} h anchor</div></div><div class="check"><label><input type="checkbox" data-topic="${b}_learn" ${checked(b+'_learn')?'checked':''} onchange="setCheck('${b}_learn',this.checked)"><span>Learn</span></label></div><div class="check"><label><input type="checkbox" data-topic="${b}_pyq1" ${checked(b+'_pyq1')?'checked':''} onchange="setCheck('${b}_pyq1',this.checked)"><span>PYQ-1</span></label></div><div class="check"><label><input type="checkbox" data-topic="${b}_pyq2" ${checked(b+'_pyq2')?'checked':''} onchange="setCheck('${b}_pyq2',this.checked)"><span>PYQ-2</span></label></div><div class="check"><label><input type="checkbox" data-topic="${b}_rev" ${checked(b+'_rev')?'checked':''} onchange="setCheck('${b}_rev',this.checked)"><span>Revision</span></label></div><div class="check"><span class="small">${m.priority}</span></div></div>`}).join('');return `<div class="card module" data-module-card="${escapeHtml(m.name)}" data-priority="${m.priority}"><div class="module-head"><div><h3>${mi+1}. ${escapeHtml(m.name)}</h3><div class="small">Official head: ${escapeHtml(m.official)} · Planned ${m.hours} h</div></div><span class="badge ${m.priority==='P1'?'p1':m.priority==='P2'?'p2':'p3'}">${m.priority}</span><div class="small" id="modpct_${mi}">0%</div></div><div class="progress"><i id="modbar_${mi}"></i></div><div class="task-row small" style="border-top:0;font-weight:700"><div>Topic</div><div class="check">Learn</div><div class="check">PYQ-1</div><div class="check">PYQ-2</div><div class="check">Revision</div><div class="check">Pri.</div></div>${rows}</div>`}).join('');
+ container.innerHTML=DATA.modules.map((m,mi)=>{const rows=m.topics.map((t,ti)=>{const b=key(m.name+'|'+t.name);return `<div class="task-row" data-module="${escapeHtml(m.name)}" data-priority="${m.priority}" data-text="${escapeHtml((m.name+' '+m.official+' '+t.name).toLowerCase())}"><div><b>${escapeHtml(t.name)}</b><div class="small">~${t.hours} h anchor</div></div><div class="check"><label><input type="checkbox" data-topic="${b}_learn" ${checked(b+'_learn')?'checked':''} onchange="setCheck('${b}_learn',this.checked)"><span>Learn</span></label></div><div class="check"><label><input type="checkbox" data-topic="${b}_pyq1" ${checked(b+'_pyq1')?'checked':''} onchange="setCheck('${b}_pyq1',this.checked)"><span>PYQ-1</span></label></div><div class="check"><label><input type="checkbox" data-topic="${b}_pyq2" ${checked(b+'_pyq2')?'checked':''} onchange="setCheck('${b}_pyq2',this.checked)"><span>PYQ-2</span></label></div><div class="check"><label><input type="checkbox" data-topic="${b}_rev" ${checked(b+'_rev')?'checked':''} onchange="setCheck('${b}_rev',this.checked)"><span>Revision</span></label></div><div class="check"><span class="small">${m.priority}</span></div></div>`}).join('');return `<div class="card module" data-module="${escapeHtml(m.name)}" data-module-card="${escapeHtml(m.name)}" data-priority="${m.priority}"><div class="module-head"><div><h3>${mi+1}. ${escapeHtml(m.name)}</h3><div class="small">Official head: ${escapeHtml(m.official)} · Planned ${m.hours} h</div></div><span class="badge ${m.priority==='P1'?'p1':m.priority==='P2'?'p2':'p3'}">${m.priority}</span><div class="small" id="modpct_${mi}">0%</div></div><div class="progress"><i id="modbar_${mi}"></i></div><div class="task-row small" style="border-top:0;font-weight:700"><div>Topic</div><div class="check">Learn</div><div class="check">PYQ-1</div><div class="check">PYQ-2</div><div class="check">Revision</div><div class="check">Pri.</div></div>${rows}</div>`}).join('');
  updateModuleProgress(); applyFilters();
 }
 function updateModuleProgress(){DATA.modules.forEach((m,mi)=>{let n=0,d=0;m.topics.forEach(t=>{const b=key(m.name+'|'+t.name);['learn','pyq1','pyq2','rev'].forEach(s=>{d++;if(checked(b+'_'+s))n++;});});const pct=Math.round(n/d*100);document.getElementById('modbar_'+mi).style.width=pct+'%';document.getElementById('modpct_'+mi).textContent=pct+'%';});}
@@ -179,7 +179,25 @@ function renderNT(){
  g.querySelectorAll('[data-key]').forEach(el=>el.onchange=()=>setCheck(el.dataset.key,el.checked));
  if(!g.parentNode) container.appendChild(g);
 }
-function applyFilters(){const q=document.getElementById('search').value.toLowerCase().trim();const p=document.getElementById('priority').value;const st=document.getElementById('status').value;document.querySelectorAll('[data-module-card]').forEach(card=>{let show=true; if(p!=='all'&&card.dataset.priority!==p)show=false; const m=card.dataset.module.toLowerCase();if(q&&!m.includes(q)&&![...card.querySelectorAll('.task-row[data-text]')].some(r=>r.dataset.text.includes(q)))show=false; if(st!=='all'){const boxes=[...card.querySelectorAll('input[data-topic]')];const done=boxes.filter(b=>b.checked).length; if(st==='todo'&&done>0)show=false; if(st==='partial'&&(done===0||done===boxes.length))show=false;if(st==='done'&&done!==boxes.length)show=false;}card.classList.toggle('hide',!show);});}
+function applyFilters(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ const p=document.getElementById('priority').value;
+ const st=document.getElementById('status').value;
+ document.querySelectorAll('[data-module-card]').forEach(card=>{
+  let show=true;
+  if(p!=='all'&&card.dataset.priority!==p)show=false;
+  const m=(card.dataset.module||'').toLowerCase();
+  if(q&&!m.includes(q)&&![...card.querySelectorAll('.task-row[data-text]')].some(r=>((r.dataset.text||'').includes(q))))show=false;
+  if(st!=='all'){
+   const boxes=[...card.querySelectorAll('input[data-topic]')];
+   const done=boxes.filter(b=>b.checked).length;
+   if(st==='todo'&&done>0)show=false;
+   if(st==='partial'&&(done===0||done===boxes.length))show=false;
+   if(st==='done'&&done!==boxes.length)show=false;
+  }
+  card.classList.toggle('hide',!show);
+ });
+}
 function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ssc_je_civil_2026_progress.json';a.click();URL.revokeObjectURL(a.href)}
 function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{state=JSON.parse(r.result);localStorage.setItem(LS,JSON.stringify(state));location.reload()}catch(err){alert('Invalid progress file')}};r.readAsText(f)}
 function resetAll(){if(confirm('Reset all locally saved progress, notes and mock scores?')){localStorage.removeItem(LS);location.reload()}}
