@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>4th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">4th Semester Syllabus</h1>
+                <p class="page-subtitle">CSE (All Specializations)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Computer Organization and Architecture [105401]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Formal Language and Automata Theory [105402]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Design and Analysis of Algorithms [105403]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Database Management System [105404]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Effective Technical Communication [105405]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Computer Networks [105406]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Computer Organization and Architecture Lab [105401P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Design and Analysis of Algorithms Lab [105403P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Database Management System Lab [105404P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Computer Networks Lab [105406P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>NPTEL-I (Open Course) [105407]</td>
+                                <td colspan="3">12 Weeks</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>26</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-105401"
+                        data-type="theory">Computer Organization & Architecture</button><button class="tab-btn"
+                        data-target="subject-105402" data-type="theory">Formal Language and Automata
+                        Theory</button><button class="tab-btn" data-target="subject-105403" data-type="theory">Design
+                        and Analysis of Algorithms</button><button class="tab-btn" data-target="subject-105404"
+                        data-type="theory">Database Management System</button><button class="tab-btn"
+                        data-target="subject-105405" data-type="theory">Effective Technical
+                        Communication</button><button class="tab-btn" data-target="subject-105406"
+                        data-type="theory">Computer Networks</button><button class="tab-btn"
+                        data-target="subject-105407" data-type="theory">NPTEL-I</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-105401P"
+                        data-type="lab">Computer Organization & Architecture Lab</button><button class="tab-btn"
+                        data-target="subject-105403P" data-type="lab">Design and Analysis of Algorithms
+                        Lab</button><button class="tab-btn" data-target="subject-105404P" data-type="lab">Database
+                        Management System Lab</button><button class="tab-btn" data-target="subject-105406P"
+                        data-type="lab">Computer Networks Lab</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-105401" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Computer Organization & Architecture</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Functional blocks of a computer: CPU</li>
+                                <li>Memory</li>
+                                <li>Input-output subsystems</li>
+                                <li>Control unit</li>
+                                <li>Instruction set architecture of a CPU-registers</li>
+                                <li>Instruction execution cycle</li>
+                                <li>RTL interpretation of instructions</li>
+                                <li>Addressing modes</li>
+                                <li>Instruction set</li>
+                                <li>Case study instruction sets of some common CPUs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Data representation: Signed number representation</li>
+                                <li>Fixed and floating point representations</li>
+                                <li>Character representation</li>
+                                <li>Computer arithmetic - Integer addition and subtraction</li>
+                                <li>Ripple carry adder</li>
+                                <li>Carry look-ahead adder</li>
+                                <li>Etc. Multiplication shift-and-add</li>
+                                <li>Booth multiplier</li>
+                                <li>Carry save multiplier</li>
+                                <li>Etc. Division restoring and non-restoring techniques</li>
+                                <li>Floating point arithmetic</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to x86 architecture</li>
+                                <li>CPU control unit design: Hardwired and micro- programmed design approaches</li>
+                                <li>Case study design of a simple hypothetical CPU</li>
+                                <li>Memory system design: Semiconductor memory technologies</li>
+                                <li>Memory organization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Peripheral devices and their characteristics: Input-output subsystems</li>
+                                <li>I/O device interface</li>
+                                <li>I/O transfers-program controlled</li>
+                                <li>Interrupt driven and DMA</li>
+                                <li>Privileged and non- privileged instructions</li>
+                                <li>Software interrupts and exceptions</li>
+                                <li>Programs and processes-role of interrupts in process state transitions</li>
+                                <li>I/O device interfaces SCII</li>
+                                <li>USB</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Pipelining: Basic concepts of pipelining</li>
+                                <li>Throughput and speedup</li>
+                                <li>Pipeline hazards</li>
+                                <li>Parallel Processors: Introduction to parallel processors</li>
+                                <li>Concurrent access to memory and cache coherency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Memory organization: Memory interleaving</li>
+                                <li>Concept of hierarchical memory organization</li>
+                                <li>Cache memory</li>
+                                <li>Cache size vs. Block size</li>
+                                <li>Mapping functions</li>
+                                <li>Replacement algorithms</li>
+                                <li>Write policies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>"Computer Organization and Design: The Hardware/Software Interface", 5th Edition by David A.
+                            Patterson and John L. Hennessy, Elsevier.</li>
+                        <li>"Computer Organization and Embedded Systems", 6th Edition by Carl Hamacher, McGraw Hill
+                            Higher Education.</li>
+                        <li>"Computer Architecture and Organization", 3rd Edition by John P. Hayes, WCB/McGraw-Hill.
+                        </li>
+                        <li>"Computer Organization and Architecture: Designing for Performance", 10th Edition by William
+                            Stallings, Pearson Education.</li>
+                        <li>"Computer System Design and Architecture", 2nd Edition by Vincent P. Heuring and Harry F.
+                            Jordan, Pearson Education.</li>
+                    </ol>
+                </section>
+                <section id="subject-105402" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Formal Language and Automata Theory</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit- 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Alphabet</li>
+                                <li>Languages and grammars</li>
+                                <li>Productions and derivation</li>
+                                <li>Chomsky hierarchy of languages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 2.0: Regular languages and finite automata</strong>
+                            <ul class="unit-topics">
+                                <li>Regular expressions and languages</li>
+                                <li>Deterministic finite automata (DFA) and equivalence with regular expressions</li>
+                                <li>Nondeterministic finite automata (NFA) and equivalence with DFA</li>
+                                <li>Regular grammars and equivalence with finite automata</li>
+                                <li>Properties of regular languages</li>
+                                <li>Pumping lemma for regular languages</li>
+                                <li>Minimization of finite automata</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 3.0: Context-free languages and pushdown automata</strong>
+                            <ul class="unit-topics">
+                                <li>Context-free grammars (CFG) and Context-free languages (CFL)</li>
+                                <li>Chomsky and Greibach normal forms</li>
+                                <li>Nondeterministic pushdown automata (PDA) and equivalence with CFG</li>
+                                <li>Parse trees</li>
+                                <li>Ambiguity in CFG</li>
+                                <li>Pumping lemma for context-free languages</li>
+                                <li>Deterministic pushdown automata</li>
+                                <li>Closure properties of CFLs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 4.0: Context-sensitive languages</strong>
+                            <ul class="unit-topics">
+                                <li>Context-sensitive grammars (CSG) and Context-sensitive languages</li>
+                                <li>Linear bounded automata and equivalence with CSG</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 5.0: Turing machines</strong>
+                            <ul class="unit-topics">
+                                <li>The basic model for Turing machines (TM)</li>
+                                <li>Turing recognizable (Recursively enumerable) and Turing-decidable (recursive)
+                                    languages and their closure properties</li>
+                                <li>Variants of Turing machines</li>
+                                <li>Nondeterministic TMs and equivalence with deterministic TMs</li>
+                                <li>Unrestricted grammars and equivalence with Turing machines</li>
+                                <li>TMs as enumerators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Undecidability</strong>
+                            <ul class="unit-topics">
+                                <li>Church-Turing thesis</li>
+                                <li>Universal Turing machine</li>
+                                <li>The universal and diagonalization languages</li>
+                                <li>Reduction between languages and Rice's theorem</li>
+                                <li>Undecidable problems about languages</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>John E. Hopcroft, Rajeev Motwani and Jeffrey D. Ullman, Introduction to Automata Theory,
+                            Languages, and Computation, Pearson Education Asia.</li>
+                        <li>Harry R. Lewis and Christos H. Papadimitriou, Elements of the Theory of Computation, Pearson
+                            EducationAsia.</li>
+                        <li>Dexter C. Kozen, Automata and Computability, Undergraduate Texts in Computer Science,
+                            Springer.</li>
+                        <li>Michael Sipser, Introduction to the Theory of Computation, PWS Publishing.</li>
+                        <li>John Martin, Introduction to Languages and the Theory of Computation, Tata McGraw Hill.</li>
+                    </ol>
+                </section>
+                <section id="subject-105403" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Design and Analysis of Algorithms</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Characteristics of algorithm</li>
+                                <li>Analysis of algorithm: Asymptotic analysis of complexity bounds best</li>
+                                <li>Average and worst-case behavior</li>
+                                <li>Performance measurements of Algorithm</li>
+                                <li>Time and space trade-offs</li>
+                                <li>Analysis of recursive algorithms through recurrence relations: Substitution method
+                                </li>
+                                <li>Recursion tree method and Masters' theorem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Divide and Conquer paradigm: Binary Search</li>
+                                <li>Quick and Merge sorting techniques</li>
+                                <li>Linear time selection algorithm</li>
+                                <li>Strassen's Matrix Multiplication</li>
+                                <li>Karatsuba Algorithm for fast multiplication etc.</li>
+                                <li>Introduction to Heap: Min and Max Heap</li>
+                                <li>Build Heap</li>
+                                <li>Heap Sort</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Brute-Force</li>
+                                <li>GreedyProgramming</li>
+                                <li>Dynamic Programming</li>
+                                <li>Branch-and-Bound and Backtrackingmethodologies</li>
+                                <li>Greedy paradigm examples of exact optimization solution: Minimum Cost Spanning Tree
+                                </li>
+                                <li>Knapsack problem</li>
+                                <li>Job Sequencing Problem</li>
+                                <li>Huffman Coding</li>
+                                <li>Single source shortest path problem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamic Programming</li>
+                                <li>Difference between dynamic programming and divide and conquer</li>
+                                <li>Applications: Fibonacci Series</li>
+                                <li>Matrix Chain Multiplication</li>
+                                <li>0-1 Knapsack Problem</li>
+                                <li>Longest Common Subsequence</li>
+                                <li>Travelling Salesman Problem</li>
+                                <li>Rod Cutting</li>
+                                <li>Bin Packing</li>
+                                <li>Heuristics characteristics and their application domains</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Graph and Tree Algorithms: Representational issues in graphs</li>
+                                <li>Traversal algorithms: Depth First Search (DFS) and Breadth First Search (BFS)</li>
+                                <li>Shortest path algorithms: Bellman- Ford algorithm</li>
+                                <li>Dijkstra's algorithm & Analysis of Dijkstra's algorithm using heaps</li>
+                                <li>Floyd-Warshall's all pairs shortest path algorithm</li>
+                                <li>Transitive closure</li>
+                                <li>Topological sorting</li>
+                                <li>Network Flow Algorithm</li>
+                                <li>Connected Component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Tractable and Intractable Problems: Computability of Algorithms</li>
+                                <li>Computability classes P</li>
+                                <li>NP</li>
+                                <li>NP-complete and NP-hard</li>
+                                <li>Cook's theorem</li>
+                                <li>Standard NP-complete problems and Reduction techniques</li>
+                                <li>Approximation algorithms</li>
+                                <li>Randomized algorithms</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Algorithms, 4th Edition, Thomas H Cormen, Charles E Lieserson, Ronald L
+                            Rivest and Clifford Stein, MITPress/McGraw-Hill.</li>
+                        <li>Horowitz & Sahani, "Fundamental of Computer Algorithm", Galgotia.</li>
+                        <li>Basse, "Computer Algorithms: Introduction to Design & Analysis", Addision Wesley.</li>
+                        <li>Algorithm Design, 1st Edition, Jon Kleinberg and Éva Tardos, Pearson.</li>
+                        <li>Algorithm Design: Foundations, Analysis, and Internet Examples, Second Edition, Michael T
+                            Goodrich and Roberto Tamassia, Wiley.</li>
+                        <li>Algorithms-A Creative Approach, 3RD Edition, UdiManber, Addison-Wesley, Reading, MA.</li>
+                    </ol>
+                </section>
+                <section id="subject-105404" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Database Management System</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0- Database system architecture</strong>
+                            <ul class="unit-topics">
+                                <li>Data Abstraction</li>
+                                <li>Data Independence</li>
+                                <li>Data Definition Language (DDL)</li>
+                                <li>Data Manipulation Language (DML)</li>
+                                <li>Data models: Entity-relationship model</li>
+                                <li>Network model</li>
+                                <li>Relational and object oriented data models</li>
+                                <li>Integrity constraints</li>
+                                <li>Data manipulation operations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0- Relational query languages</strong>
+                            <ul class="unit-topics">
+                                <li>Relational algebra</li>
+                                <li>Tuple and domain relational calculus</li>
+                                <li>SQL3</li>
+                                <li>DDL and DML constructs</li>
+                                <li>Open source and Commercial DBMS - MYSQL</li>
+                                <li>ORACLE</li>
+                                <li>DB2</li>
+                                <li>SQL server</li>
+                                <li>Relational database design: Domain and data dependency</li>
+                                <li>Armstrong's axioms</li>
+                                <li>Normal forms</li>
+                                <li>Dependency preservation</li>
+                                <li>Lossless design</li>
+                                <li>Query processing and optimization: Evaluation of relational algebra expressions</li>
+                                <li>Query equivalence</li>
+                                <li>Join strategies</li>
+                                <li>Query optimization algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0-Storage strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Indices</li>
+                                <li>B-trees</li>
+                                <li>Hashing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0- Transaction processing</strong>
+                            <ul class="unit-topics">
+                                <li>Concurrency control</li>
+                                <li>ACID property</li>
+                                <li>Serializability of scheduling</li>
+                                <li>Locking and timestamp based schedulers</li>
+                                <li>Multi-version and optimistic Concurrency Control schemes</li>
+                                <li>Database recovery</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0-Database Security</strong>
+                            <ul class="unit-topics">
+                                <li>Authentication</li>
+                                <li>Authorization and access control</li>
+                                <li>DAC</li>
+                                <li>MAC and RBAC models</li>
+                                <li>Intrusion detection</li>
+                                <li>SQL injection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0- Advanced topics</strong>
+                            <ul class="unit-topics">
+                                <li>Object oriented and object relational databases</li>
+                                <li>Logical databases</li>
+                                <li>Web databases</li>
+                                <li>Distributed databases</li>
+                                <li>Data warehousing and data mining</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>"Database System Concepts", 6th Edition by Abraham Silberschatz, Henry F. Korth, S.
+                            Sudarshan, McGraw-Hill.</li>
+                        <li>"Principles of Database and Knowledge - Base Systems", Vol 1 by J. D. Ullman, Computer
+                            Science Press.</li>
+                        <li>"Fundamentals of Database Systems", 5th Edition by R. Elmasri and S. Navathe, Pearson
+                            Education.</li>
+                        <li>"Foundations of Databases", Reprint by Serge Abiteboul, Richard Hull, Victor Vianu,
+                            Addison-Wesley.</li>
+                    </ol>
+                </section>
+                <section id="subject-105405" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Effective Technical Communication</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0- Information Design and Development</strong>
+                            <ul class="unit-topics">
+                                <li>Different kinds of technical documents</li>
+                                <li>Information development life cycle</li>
+                                <li>Organization structures</li>
+                                <li>Factors affecting information and document design</li>
+                                <li>Strategies for organization</li>
+                                <li>Information design and writing for print and for online media</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0- Technical Writing, Grammar and Editing</strong>
+                            <ul class="unit-topics">
+                                <li>Technical writing process</li>
+                                <li>Forms of discourse</li>
+                                <li>Writing drafts and revising</li>
+                                <li>Collaborative writing</li>
+                                <li>Creating indexes</li>
+                                <li>Technical writing style and language</li>
+                                <li>Basics of grammar</li>
+                                <li>Study of advanced grammar</li>
+                                <li>Editing strategies to achieve appropriate technical style</li>
+                                <li>Introduction to advanced technical communication</li>
+                                <li>Usability</li>
+                                <li>Human factors</li>
+                                <li>Managing technical communication projects</li>
+                                <li>Time estimation</li>
+                                <li>Single sourcing</li>
+                                <li>Localization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0-Self-development and Assessment</strong>
+                            <ul class="unit-topics">
+                                <li>Self assessment</li>
+                                <li>Awareness</li>
+                                <li>Perception and Attitudes</li>
+                                <li>Values and belief</li>
+                                <li>Personal goal setting</li>
+                                <li>Career planning</li>
+                                <li>Self-esteem. Managing Time</li>
+                                <li>Personal memory</li>
+                                <li>Rapid reading</li>
+                                <li>Taking notes</li>
+                                <li>Complex problem solving</li>
+                                <li>Creativity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0- Communication</strong>
+                            <ul class="unit-topics">
+                                <li>Public speaking</li>
+                                <li>Group discussion</li>
+                                <li>Oral presentation</li>
+                                <li>Interviews</li>
+                                <li>Graphic presentation</li>
+                                <li>Presentation aids</li>
+                                <li>Personality Development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0-Technical Writing</strong>
+                            <ul class="unit-topics">
+                                <li>Writing reports</li>
+                                <li>Project proposals</li>
+                                <li>Brochures</li>
+                                <li>Newsletters</li>
+                                <li>Technical articles</li>
+                                <li>Manuals</li>
+                                <li>Official notes</li>
+                                <li>Business letters</li>
+                                <li>Memos</li>
+                                <li>Progress reports</li>
+                                <li>Minutes of meetings</li>
+                                <li>Event report</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0- Ethics</strong>
+                            <ul class="unit-topics">
+                                <li>Business ethics</li>
+                                <li>Etiquettes in social and office settings</li>
+                                <li>Email etiquettes</li>
+                                <li>Telephone Etiquettes</li>
+                                <li>Engineering ethics</li>
+                                <li>Managing time</li>
+                                <li>Role and responsibility of engineer</li>
+                                <li>Work culture in jobs</li>
+                                <li>Personal memo</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>David F. Beer and David McMurrey, Guide to writing as an Engineer, John Willey. New York,
+                            2004.</li>
+                        <li>Kulbhushan Kumar, Effective Communication Skills, Khanna Publishing House, 2019.</li>
+                        <li>Diane Hacker, Pocket Style Manual, Bedford Publication, New York, 2003. (ISBN 0312406843).
+                        </li>
+                        <li>Shiv Khera, You Can Win, Macmillan Books, New York, 2003.</li>
+                        <li>Raman Sharma, Technical Communications, Oxford Publication, London, 2004.</li>
+                        <li>Dale Jungk, Applied Writing for Technicians, McGraw Hill, New York, 2004. (ISBN:
+                            07828357-4).</li>
+                        <li>Sharma, R. and Mohan, K. Business Correspondence and Report Writing, TMH New Delhi 2002.
+                        </li>
+                        <li>Xebec, Presentation Book, TMH New Delhi, 2000 (ISBN 0402213).</li>
+                    </ol>
+                </section>
+                <section id="subject-105406" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Computer Networks</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Data Communication and Networking: OSI Reference Model</li>
+                                <li>TCP/IP Protocol Suite</li>
+                                <li>Network Architecture and Physical Topology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Physical Layer: Analog and Digital Signals</li>
+                                <li>Transmission Impairment</li>
+                                <li>Data Rate Limits</li>
+                                <li>Performance Analysis of a Network</li>
+                                <li>Representation and Synchronization of Bits</li>
+                                <li>Analog and Digital Transmission Multiplexing and Spreading Techniques</li>
+                                <li>Guided Transmission Media</li>
+                                <li>Circuit</li>
+                                <li>Packet and Virtual Circuit Switching</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Data Link Layer: Framing</li>
+                                <li>Flow and Error Control (Noiseless and Noisy Channels Protocols)</li>
+                                <li>PointToPoint Protocol</li>
+                                <li>Random Access protocols (Pure/slotted ALOHA, CSMA/CD, CSMA/CA)</li>
+                                <li>Controlled Access Protocol (Bit-Map, Polling and Token Passing)</li>
+                                <li>Channelization (TDMA, FDMA, CDMA)</li>
+                                <li>Physical Addressing and Ethernet</li>
+                                <li>Connecting LANs and Virtual LANs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Network Layer: Internet Protocol version 4 and 6</li>
+                                <li>Address Mapping (ARP, RARP, BOOTP and DHCP)</li>
+                                <li>ICMP and IGMP</li>
+                                <li>Routing Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Transport Layer: UDP</li>
+                                <li>TCP</li>
+                                <li>Congestion Control and QoS</li>
+                                <li>Client-Server Model and Socket Interface</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Application Layer: DNS</li>
+                                <li>Remote Logging</li>
+                                <li>Electronic Mail (SMTP, POP)</li>
+                                <li>FTP</li>
+                                <li>Introduction to WWW and HTTP</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>B. Forouzan, "Data Communication and Network", McGraw-Hill Publications. 4th ed.</li>
+                        <li>A. S. Tanenbaum., "Computer Networks", Pearson Education Asia. 5th ed.</li>
+                        <li>W. Stalling, "Data and Computer Communication", PHI (EEE). 8th ed.</li>
+                        <li>A. L. Garcia and I. Widjaja, "Communication Networks: Fundamental Concepts and Key
+                            Architectures", Tata McGraw-Hill. 2nd ed.</li>
+                        <li>S. Sharma, "A course in Computer Networks", Kataria. 3rd ed.</li>
+                    </ol>
+                </section>
+                <section id="subject-105407" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">NPTEL-I (Open Course)</h2>
+                    <ul>
+                        <li><strong class="unit-title">12 Weeks (3 Credits)</strong>
+                            <ul class="unit-topics">
+                                <li>NPTEL (Open Course) Guidelines: NPTEL (Open Course) should be taken from the course
+                                    other than core subjects of the branch.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-105401P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Computer Organization and Architecture Lab</h2>
+                    <p>Syllabus details for this lab will be provided by the lab faculty (because it is not provided by
+                        BEU in the official syllabus document).</p>
+                </section>
+                <section id="subject-105403P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Design and Analysis of Algorithms Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten Experiments</h3>
+                    <ol>
+                        <li>Sort a given set of elements using the Quick sort method and determine the time required to
+                            sort the elements. Repeat the experiment for different values of n, the number of elements
+                            in the list to be sorted. The elements can be read from a file or can be generated using the
+                            random number generator.</li>
+                        <li>Implement a Merge Sort algorithm to sort a given set of elements and determine the time
+                            required to sort the elements. Repeat the experiment for different values of n, the number
+                            of elements in the list to be sorted.The elements can be read from a file or can be
+                            generated using the random number generator.</li>
+                        <li>Compute the transitive closure of a given directed graph using Warshall's algorithm.</li>
+                        <li>Implement 0/1 Knapsack problem using Dynamic Programming.</li>
+                        <li>From a given vertex in a weighted connected graph, find shortest paths to other vertices
+                            using Dijikstra's algorithm.</li>
+                        <li>Find Minimum Cost Spanning Tree of a given undirected graph using Kruskal's algorithm.</li>
+                        <li>Print all the nodes reachable from a given starting node in a digraph using the BFS method.
+                        </li>
+                        <li>Check whether a given graph is connected or not using the DFS method.</li>
+                        <li>Find a subset of a given set S={s1,s2,.....,sN} of n positive integers whose sum is equal to
+                            a given positive integer d. For example, if S={1,2,5,6,8} and d=9 there are two solutions
+                            {1,2,6} and {1,8}.A suitable message is to be displayed if the given problem instance
+                            doesn't have a solution.</li>
+                        <li>Implement any scheme to find the optimal solution for the Travelling Salesperson problem and
+                            then solve the same problem instance using any approximation algorithm and determine the
+                            error in the approximation.</li>
+                        <li>Find Minimum Cost Spanning Tree of a given undirected graph using Prim's algorithm.</li>
+                        <li>Implement N Queen's problem using Backtracking.</li>
+                    </ol>
+                </section>
+                <section id="subject-105404P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Database Management System Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>Student should decide on a case study and formulate the problem statement.</li>
+                        <li>Conceptual Designing using ER Diagrams (Identifying entities, attributes, keys and
+                            relationships between entities, cardinalities, generalization, specialization etc.) Note:
+                            Student is required to submit a document by drawing ER Diagram to the Lab teacher.</li>
+                        <li>Converting ER Model to Relational Model (Represent entities and relationships in Tabular
+                            form, Represent attributes as columns, identifying keys) Note: Student is required to submit
+                            a document showing the database tables created from ER Model.</li>
+                        <li>Normalization -To remove the redundancies and anomalies in the above relational tables,
+                            Normalize up to Third Normal Form.</li>
+                        <li>Creation of Tables using SQL- Overview of using SQL tool, Data types in SQL, Creating Tables
+                            (along with Primary and Foreign keys), Altering Tables and Dropping Tables.</li>
+                        <li>Practicing DML commands- Insert, Select, Update, Delete.</li>
+                        <li>Practicing Queries using ANY, ALL, IN, EXISTS, NOT EXISTS, UNION, INTERSECT, CONSTRAINTS
+                            etc.</li>
+                        <li>Practicing Sub queries (Nested, Correlated) and Joins (Inner, Outer and Equi).</li>
+                        <li>Practice Queries using COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING, VIEWS Creation and
+                            Dropping.</li>
+                        <li>Practicing on Triggers creation of trigger, Insertion using trigger, Deletion using trigger,
+                            Updating using trigger.</li>
+                    </ol>
+                </section>
+                <section id="subject-105406P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Computer Networks Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten Experiments</h3>
+                    <ol>
+                        <li>Write a report that includes a diagram showing the topology, type of connection devices, and
+                            speed of the wired and wireless LAN in your organization. Also find out the MAC and IP
+                            addresses and the subnet mask of your computer.</li>
+                        <li>Install and run a network diagnosis tool such as TCP dump or Wireshark. Start capturing
+                            packets on an active interface, open a browser and type the address of your favourite search
+                            engine. Wait till the page loads and stop capture. List out the type and number of each type
+                            of packets captured.</li>
+                        <li>Write a program to create a server that listens to port 53 using stream sockets. Write a
+                            simple client program to connect to the server. Send a simple text message "Hello" from the
+                            client to the server and the server to the client and close the connection.</li>
+                        <li>Write a program to create a chat server that listens to port 54 using stream sockets. Write
+                            a simple client program to connect to the server. Send multiple text messages from the
+                            client to the server and vice versa. When either party types "Bye", close the connection.
+                        </li>
+                        <li>Write a program to create a server that listens to port 55 using stream sockets. Write a
+                            simple client program to connect to the server. The client should request for a text file
+                            and the server should return the file before terminating the connection.</li>
+                        <li>Write a program to create a server that listens to port 56 using stream sockets. Write a
+                            simple client program to connect to the server. Run multiple clients that request the server
+                            for binary files. The server should service each client one after the other before
+                            terminating the connection</li>
+                        <li>Write a program to create a server that listens to port 57 using stream sockets. Write a
+                            simple client program to connect to the server. Run multiple clients that request the server
+                            for text files. The server should service all clients concurrently.</li>
+                        <li>Write a program to create a server that listens to port 59 using datagram sockets. Write a
+                            simple client program that requests the server for a binary file. The server should service
+                            multiple clients concurrently and send the requested files in response.</li>
+                        <li>Creation of sample network topologies using CISCO packet tracer.</li>
+                        <li>Creation of a subnet, assignment of addresses and communication within and outside the
+                            subnet.</li>
+                        <li>Error Detection using CRC (Python/Java): Implement the Cyclic Redundancy Check (CRC)
+                            algorithm for error detection in data transmission.</li>
+                        <li>Hamming Code for Error Correction (Python/Java): Implement the Hamming Code algorithm to
+                            detect and correct single-bit errors in transmitted data.</li>
+                        <li>Sliding Window Protocol (Python/Java): Simulate Stop-and-Wait and Go-Back-N ARQ protocols to
+                            demonstrate flow control in a network.</li>
+                        <li>Selective Repeat ARQ (Python/Java): Implement the Selective Repeat ARQ protocol for reliable
+                            data transmission.</li>
+                        <li>CSMA/CD and CSMA/CA Simulation (Python/Java): Simulate Carrier Sense Multiple Access with
+                            Collision Detection (CSMA/CD) and Collision Avoidance (CSMA/CA).</li>
+                        <li>IPv4 and IPv6 Addressing (Python/Java): Implement a program to validate and classify IP
+                            addresses as IPv4 or IPv6.</li>
+                        <li>ARP and RARP Implementation (Python/Java): Simulate Address Resolution Protocol (ARP) and
+                            Reverse Address Resolution Protocol (RARP).</li>
+                        <li>BOOTP and DHCP Simulation (Python/Java): Implement the BOOTP and DHCP mechanisms for dynamic
+                            IP address allocation.</li>
+                        <li>Routing Algorithms (Python/Java): Implement the Distance Vector Routing (DVR) and Link State
+                            Routing (LSR) algorithms.</li>
+                        <li>TCP and UDP Simulation (Python/Java): Implement a client-server model to demonstrate TCP and
+                            UDP socket programming.</li>
+                        <li>Congestion Control using Leaky Bucket Algorithm (Python/Java): Simulate the Leaky Bucket
+                            algorithm for congestion control.</li>
+                        <li>Congestion Control using Token Bucket Algorithm (Python/Java): Implement the Token Bucket
+                            algorithm to regulate network traffic.</li>
+                        <li>FTP and HTTP Simulation (Python/Java): Implement a program to simulate FTP file transfer and
+                            send HTTP GET/POST requests.</li>
+                        <li>DNS Query Resolution (Python/Java): Write a program to perform DNS resolution and retrieve
+                            IP addresses for given domain names.</li>
+                        <li>Email Client Simulation (Python/Java): Implement a basic email client that can send and
+                            receive messages using SMTP and POP3 protocols.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

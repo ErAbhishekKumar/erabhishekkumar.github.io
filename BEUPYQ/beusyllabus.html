@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #2b51a4;
+            --bg-2: #0b2458;
+            --card: #050f26;
+            --card-2: #08193a;
+            --card-bg: rgba(5, 15, 38, 0.75);
+            --text: #ffffff;
+            --muted: #ffffff;
+            --accent: #00eeff;
+            --accent-2: #ffd54a;
+            --chip: #172d5f;
+            --ring: 0 0 0 2px rgba(25, 95, 111, .45), 0 8px 18px rgba(0, 0, 0, .35);
+            --shadow: 0 10px 20px rgba(0, 0, 0, .35);
+            --radius: 16px
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            src: url('fonts/ubuntu-v20-latin-300.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-300.woff') format('woff')
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/ubuntu-v20-latin-regular.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-regular.woff') format('woff')
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 500;
+            src: url('fonts/ubuntu-v20-latin-500.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-500.woff') format('woff')
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 700;
+            src: url('fonts/ubuntu-v20-latin-700.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-700.woff') format('woff')
+        }
+
+        html,
+        body {
+            height: 100%;
+            color: var(--text);
+            font-family: 'Ubuntu', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: #000a1e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Crect fill='%23081b41' width='1000' height='120'/%3E%3Cg fill='none' stroke='%23172d5f' stroke-width='10' stroke-opacity='1'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: 250px 30px
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden
+        }
+
+        body.sidebar-open {
+            overflow: hidden
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .app {
+            position: relative;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            background: linear-gradient(180deg, rgba(0, 42, 133, 0.8), rgba(12, 37, 89, .7));
+            backdrop-filter: blur(7px);
+            border-bottom: 1px solid rgba(129, 173, 255, 0.300)
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px
+        }
+
+        .brand-logo {
+            width: 30px;
+            height: 25px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: var(--ring);
+            background: #000
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .brand-name {
+            font-weight: 700;
+            letter-spacing: .2px
+        }
+
+        .menu-btn {
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, .07));
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 15;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+            transition: background .2s ease
+        }
+
+        .menu-btn span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+            transform-origin: center
+        }
+
+        .menu-btn.is-open span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .menu-btn.is-open span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px)
+        }
+
+        .menu-btn.is-open span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 64px;
+            right: 12px;
+            width: 260px;
+            background: linear-gradient(180deg, rgba(0, 28, 39, 0.9) 0%, rgba(8, 25, 58, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius: var(--radius);
+            transform: translateX(calc(100% + 24px)) scale(0.98);
+            transform-origin: top right;
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+            padding: 16px
+        }
+
+        .sidebar.is-open {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            visibility: visible
+        }
+
+        .sidebar-title {
+            text-align: center;
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 16px;
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .05));
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--text);
+            font-weight: 500;
+            font-size: 16px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            transition: all .2s ease
+        }
+
+        .sidebar-nav a:hover {
+            background: linear-gradient(135deg, rgba(0, 238, 255, .15), rgba(0, 238, 255, .1));
+            color: var(--accent);
+            border-color: rgba(0, 238, 255, .3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .2)
+        }
+
+        .sidebar-nav .icon {
+            width: 22px;
+            height: 22px;
+            color: var(--accent);
+            transition: color .2s ease
+        }
+
+        .sidebar-footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            text-align: center
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 8px
+        }
+
+        .footer-links span {
+            color: rgba(255, 255, 255, 0.4)
+        }
+
+        .privacy-link {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 500;
+            background: linear-gradient(90deg, var(--accent), rgb(81, 255, 162));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .copyright-text {
+            margin: 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .5)
+        }
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease, visibility .3s ease
+        }
+
+        .menu-overlay.is-open {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 7px 7px 0px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column
+        }
+
+        @media (min-width:540px) {
+            .content {
+                max-width: 520px;
+                margin-inline: auto
+            }
+
+            .topbar {
+                padding-inline: 20px;
+                border-radius: 0 0 16px 16px;
+                width: min(520px, 100%);
+                margin: 0 auto
+            }
+        }
+
+        .section {
+            margin-top: 0px;
+            margin-bottom: 12px;
+            background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+            border-radius: var(--radius);
+            padding: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, .3);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate
+        }
+
+        .section-header {
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            text-align: center
+        }
+
+        .section-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: .4px;
+            color: var(--accent);
+            text-transform: uppercase
+        }
+
+        .section h3 {
+            margin: 2px 4px 12px;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: .4px;
+            color: var(--accent);
+            text-transform: uppercase
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px
+        }
+
+        .tile {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .07));
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 10px;
+            padding: 9px;
+            padding-left: 2px;
+            padding-right: 2px;
+            text-align: center;
+            transition: transform .12s ease;
+            position: relative;
+            overflow: hidden
+        }
+
+        .tile:active {
+            transform: scale(.98);
+            background: rgba(199, 217, 255, 0.151);
+            border: 1px solid rgba(204, 255, 138, 0.377)
+        }
+
+        .thumb {
+            width: 100%;
+            max-width: 80%;
+            aspect-ratio: 1 / 1;
+            height: auto;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, .12);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 255, 255, .06)
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .label {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 9px;
+            line-height: 1.2;
+            font-weight: 700
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .tile {
+                transition: none
+            }
+        }
+
+        #contact-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .verified-card-section {
+            border: 1px solid rgba(46, 255, 187, 0.3);
+            text-align: center;
+            padding: 10px 10px;
+            margin-bottom: 0px;
+            background: radial-gradient(circle, rgba(8, 38, 88, 0.5) 0%, transparent 70%), linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%)
+        }
+
+        .verified-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px
+        }
+
+        .verified-title {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 500;
+            color: #00ffaa;
+        }
+
+        .verifiers-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .verifier-card {
+            padding: 5px;
+            padding-bottom: 5px;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.221);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .verifier-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            margin: 0 auto 7px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--accent);
+            background: radial-gradient(circle, rgb(8, 206, 255) 0%, rgb(0, 43, 99) 70%);
+            box-shadow: 0 0 12px rgba(0, 191, 205, 0.4);
+            flex-shrink: 0;
+        }
+
+        .verifier-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .verifier-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            margin-bottom: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: normal;
+        }
+
+        .verifier-info p:nth-of-type(1) {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            font-weight: 500;
+            background: linear-gradient(90deg, var(--accent), #4ae1ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: var(--accent);
+            margin-bottom: 6px;
+            margin-top: 1px;
+            display: inline-block;
+        }
+
+        .verifier-info p:nth-of-type(2) {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0 0 6px;
+            font-weight: 400;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            margin-top: auto;
+            align-self: center;
+        }
+
+        .social-links a {
+            display: inline-block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            color: #fff;
+            opacity: 0.8;
+            background: transparent;
+            border: none;
+            width: auto;
+            height: auto;
+            place-items: initial;
+            border-radius: 0;
+        }
+
+        .social-links a:active {
+            transform: scale(1.2);
+            opacity: 1;
+            border-color: transparent;
+        }
+
+        .social-icon {
+            width: 16px;
+            height: 16px;
+            fill: rgb(255, 255, 255);
+        }
+
+        .social-links a svg[fill="none"] {
+            fill: none;
+            stroke: #fff;
+        }
+
+        .section-loader {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            transition: opacity 0.3s ease
+        }
+
+        .section-content {
+            transition: opacity 0.3s ease;
+            opacity: 1
+        }
+
+        .section-content.content-hidden {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        #my-branch-section {
+            background: linear-gradient(150deg, rgba(0, 38, 41, 0.95) 0%, rgba(0, 24, 77, 0.98) 100%);
+            border: 1px solid rgba(0, 234, 255, 0.388);
+            padding: 0px;
+            margin-bottom: 7px;
+            position: relative;
+            display: block;
+        }
+
+        #my-branch-display {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .my-branch-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 12px;
+            padding: 7px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 238, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .my-branch-item:active {
+            transform: scale(.99);
+            background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+        }
+
+        .my-branch-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .my-branch-item .thumb {
+            width: 65px;
+            height: 65px;
+            max-width: none;
+            margin: 0;
+            border-radius: 10px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .my-branch-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .my-branch-subtitle {
+            font-size: 10px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .my-branch-item .label {
+            font-size: 20px;
+            color: var(--text);
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .my-branch-item .label span {
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 500;
+            display: block;
+        }
+
+        .settings-icon {
+            color: rgba(0, 234, 255, 0.66);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="AbhI Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg">
+                </div>
+                <div class="brand-name">AbhI Syllabus</div>
+            </div>
+        </header>
+        <div id="branch-modal" class="menu-overlay"
+            style="z-index: 100; display: flex; align-items: center; justify-content: center;">
+            <div
+                style="background: var(--card); width: 90%; max-height: 80vh; overflow-y: auto; padding: 15px; border-radius: var(--radius); border: 1px solid rgba(255, 255, 255, 0.448); position: relative;">
+                <h3 style="text-align: center; color: var(--accent); margin-top: 0; margin-bottom: 15px;">Choose Branch
+                </h3>
+                <div id="modal-branch-grid" class="grid"></div>
+                <button id="close-modal-btn"
+                    style="margin-top: 15px; width: 100%; padding: 7px; background: var(--accent); color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: inherit;">Close</button>
+            </div>
+        </div>
+        <main class="content">
+            <section class="section" id="my-branch-section">
+                <div class="section-loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="section-content content-hidden">
+                    <div id="my-branch-display">
+                        <a href="csesyllabus.html" class="my-branch-item" id="active-branch-link">
+                            <div class="my-branch-info">
+                                <div class="thumb">
+                                    <img id="active-branch-img" src="img/branch/cse.png">
+                                </div>
+                                <div class="my-branch-text">
+                                    <div class="my-branch-subtitle">My Branch</div>
+                                    <div class="label" id="active-branch-name">C S E</div>
+                                </div>
+                            </div>
+                            <div class="settings-icon" id="open-branch-modal" title="Change Branch">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="section-content content-hidden">
+                    <h3>Core Branches</h3>
+                    <div class="grid">
+                        <a class="tile" href="csesyllabus.html" id="cse">
+                            <div class="thumb">
+                                <img src="img/branch/cse.png">
+                            </div>
+                            <div class="label">C S E</div>
+                        </a>
+                        <a class="tile" href="civilsyllabus.html" id="civil">
+                            <div class="thumb">
+                                <img src="img/branch/civil.png">
+                            </div>
+                            <div class="label">Civil</div>
+                        </a>
+                        <a class="tile" href="mesyllabus.html" id="me">
+                            <div class="thumb">
+                                <img src="img/branch/me.png">
+                            </div>
+                            <div class="label">Mechanical</div>
+                        </a>
+                        <a class="tile" href="eesyllabus.html" id="ee">
+                            <div class="thumb">
+                                <img src="img/branch/ee.png">
+                            </div>
+                            <div class="label">Electrical</div>
+                        </a>
+                        <a class="tile" href="ecesyllabus.html" id="ece">
+                            <div class="thumb">
+                                <img src="img/branch/ece.png">
+                            </div>
+                            <div class="label">E C E</div>
+                        </a>
+                        <a class="tile" href="eeesyllabus.html" id="eee">
+                            <div class="thumb">
+                                <img src="img/branch/eee.png">
+                            </div>
+                            <div class="label">E E E</div>
+                        </a>
+                        <a class="tile" href="itsyllabus.html" id="it">
+                            <div class="thumb">
+                                <img src="img/branch/it.png">
+                            </div>
+                            <div class="label">Info. Tech.</div>
+                        </a>
+                        <a class="tile" href="miningsyllabus.html" id="mining">
+                            <div class="thumb">
+                                <img src="img/branch/mining.png">
+                            </div>
+                            <div class="label">Mining</div>
+                        </a>
+                        <a class="tile" href="chesyllabus.html" id="che">
+                            <div class="thumb">
+                                <img src="img/branch/che.png">
+                            </div>
+                            <div class="label">Chemical</div>
+                        </a>
+                        <a class="tile" href="bmrsyllabus.html" id="bmr">
+                            <div class="thumb">
+                                <img src="img/branch/bmr.png">
+                            </div>
+                            <div class="label">BioMedical</div>
+                        </a>
+                        <a class="tile" href="foodsyllabus.html" id="food">
+                            <div class="thumb">
+                                <img src="img/branch/food.png">
+                            </div>
+                            <div class="label">Food Procc.</div>
+                        </a>
+
+                        <a class="tile" href="aerosyllabus.html" id="aero">
+                            <div class="thumb">
+                                <img src="img/branch/aero.png">
+                            </div>
+                            <div class="label">Aeronautical</div>
+                        </a>
+                        <a class="tile" href="petrosyllabus.html" id="petro">
+                            <div class="thumb">
+                                <img src="img/branch/petro.png">
+                            </div>
+                            <div class="label">Petrochem.</div>
+                        </a>
+                        <a class="tile" href="foodtechsyllabus.html" id="foodtech">
+                            <div class="thumb">
+                                <img src="img/branch/foodtech.png">
+                            </div>
+                            <div class="label">Food Tech.</div>
+                        </a>
+                        <a class="tile" href="wastesyllabus.html" id="waste">
+                            <div class="thumb">
+                                <img src="img/branch/waste.png">
+                            </div>
+                            <div class="label">Waste Mgmt.</div>
+                        </a>
+                        <a class="tile" href="robosyllabus.html" id="robotics">
+                            <div class="thumb">
+                                <img src="img/branch/robotics.png">
+                            </div>
+                            <div class="label">Robotics</div>
+                        </a>
+                        <a class="tile" href="firesyllabus.html" id="fire">
+                            <div class="thumb">
+                                <img src="img/branch/fire.png">
+                            </div>
+                            <div class="label">Fire Tech.</div>
+                        </a>
+                        <a class="tile" href="mechasyllabus.html" id="mecha">
+                            <div class="thumb">
+                                <img src="img/branch/mecha.png">
+                            </div>
+                            <div class="label">Mechatronics</div>
+                        </a>
+                        <a class="tile" href="3dsyllabus.html" id="3d">
+                            <div class="thumb">
+                                <img src="img/branch/3d.png">
+                            </div>
+                            <div class="label">3D Anim.</div>
+                        </a>
+                        <a class="tile" href="mathsyllabus.html" id="math">
+                            <div class="thumb">
+                                <img src="img/branch/math.png">
+                            </div>
+                            <div class="label">Math & Com.</div>
+                        </a>
+                        <a class="tile" href="smartsyllabus.html" id="smart">
+                            <div class="thumb">
+                                <img src="img/branch/smart.png">
+                            </div>
+                            <div class="label">Mech & Smrt.</div>
+                        </a>
+                        <a class="tile" href="instsyllabus.html" id="inst">
+                            <div class="thumb">
+                                <img src="img/branch/inst.png">
+                            </div>
+                            <div class="label">Electro & Inst.</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="section-content content-hidden">
+                    <h3>Specialization Branches</h3>
+                    <div class="grid">
+                        <a class="tile" href="csesyllabus_ds.html" id="cseds">
+                            <div class="thumb">
+                                <img src="img/branch/cseds.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">Data Science</span></div>
+                        </a>
+                        <a class="tile" href="csesyllabus_aiml.html" id="cseaiml">
+                            <div class="thumb">
+                                <img src="img/branch/cseaiml.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">AI & ML</span></div>
+                        </a>
+                        <a class="tile" href="csesyllabus_ai.html" id="cseai">
+                            <div class="thumb">
+                                <img src="img/branch/cseai.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">AI</span></div>
+                        </a>
+                        <a class="tile" href="csesyllabus_cyber.html" id="csecyber">
+                            <div class="thumb">
+                                <img src="img/branch/csecyber.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">Cyber Security</span></div>
+                        </a>
+                        <a class="tile" href="csesyllabus_iot.html" id="cseiot">
+                            <div class="thumb">
+                                <img src="img/branch/cseiot.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">IoT</span></div>
+                        </a>
+                        <a class="tile" href="csesyllabus_net.html" id="csenet">
+                            <div class="thumb">
+                                <img src="img/branch/csenet.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">Networks</span></div>
+                        </a>
+                        <a class="tile" href="vlsisyllabus.html" id="vlsi">
+                            <div class="thumb">
+                                <img src="img/branch/vlsi.png">
+                            </div>
+                            <div class="label">Electronics<br><span style="color: var(--accent-2);">VLSI Design</span>
+                            </div>
+                        </a>
+                        <a class="tile" href="csesyllabus_icb.html" id="cseicb">
+                            <div class="thumb">
+                                <img src="img/branch/cseicb.png">
+                            </div>
+                            <div class="label">CSE<br><span style="color: var(--accent-2);">IoT, CS, BlkChn</span></div>
+                        </a>
+                        <a class="tile" href="civilsyllabus_ca.html" id="civilca">
+                            <div class="thumb">
+                                <img src="img/branch/civilca.png">
+                            </div>
+                            <div class="label">Civil<br><span style="color: var(--accent-2);">Computer Appl.</span>
+                            </div>
+                        </a>
+                        <a class="tile" href="leathersyllabus.html" id="leather">
+                            <div class="thumb">
+                                <img src="img/branch/leather.png">
+                            </div>
+                            <div class="label">Chemical<br><span style="color: var(--accent-2);">Leather</span>
+                            </div>
+                        </a>
+                        <a class="tile" href="eceactsyllabus.html" id="act">
+                            <div class="thumb">
+                                <img src="img/branch/act.png">
+                            </div>
+                            <div class="label">ECE<br><span style="color: var(--accent-2);">ACT</span></div>
+                        </a>
+                        <a class="tile" href="plasticsyllabus.html" id="plastic">
+                            <div class="thumb">
+                                <img src="img/branch/plastic.png">
+                            </div>
+                            <div class="label">Chemical<br><span style="color: var(--accent-2);">Plast. & Poly.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contact-section">
+                <div class="section-loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="section-content content-hidden">
+                    <div style="padding: 10px; text-align: center;">
+                        <p
+                            style="margin: 0 0 15px; font-size: 15px; color: rgba(255, 255, 255, 0.85); line-height: 1.2;">
+                            If you have any suggestions, feature requests, or find any
+                            errors in the syllabus, please inform us.<br></p><a
+                            href="https://t.me/erabhishekkumar"
+                            style="display: inline-flex; align-items: center; font-size: 15px; padding: 3px 7px; border-radius: 5px; background: linear-gradient(135deg, var(--muted), var(--muted)); opacity: 0.75; color: var(--card-2); font-weight: 700; text-decoration: none; box-shadow: 0 6px 15px rgba(0, 200, 220, .25); transition: all .2s ease;"><span>Report a syllabus issue</span></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const bm = document.getElementById('branch-modal');
+        const mbg = document.getElementById('modal-branch-grid');
+        const cmb = document.getElementById('close-modal-btn');
+        const obm = document.getElementById('open-branch-modal');
+        const abl = document.getElementById('active-branch-link');
+        const abi = document.getElementById('active-branch-img');
+        const abn = document.getElementById('active-branch-name');
+
+        const tiles = document.querySelectorAll('.section:not(#my-branch-section) .tile[id]');
+
+        function updateActiveBranch(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                abl.href = el.href || '#';
+                const img = el.querySelector('img');
+                if (img) abi.src = img.src;
+
+                const label = el.querySelector('.label');
+                if (label) {
+                    if (label.innerHTML.includes('<br>')) {
+                        const parts = label.innerHTML.split('<br>');
+                        abn.innerHTML = `${parts[0].trim()} <span>${parts[1].trim()}</span>`;
+                    } else {
+                        abn.innerText = label.innerText;
+                    }
+                }
+            }
+        }
+
+        function initBranchSelection() {
+            tiles.forEach(t => {
+                const c = t.cloneNode(true);
+                c.removeAttribute('id');
+                c.addEventListener('click', e => {
+                    e.preventDefault();
+                    localStorage.setItem('myBranch', t.id);
+                    updateActiveBranch(t.id);
+                    bm.classList.remove('is-open');
+                });
+                mbg.appendChild(c);
+            });
+
+            const sid = localStorage.getItem('myBranch');
+            if (sid) {
+                updateActiveBranch(sid);
+            }
+        }
+
+        function openModal(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            bm.classList.add('is-open');
+        }
+
+        if (obm) obm.addEventListener('click', openModal);
+        if (cmb) cmb.addEventListener('click', () => bm.classList.remove('is-open'));
+
+        initBranchSelection();
+
+        function initializeApp() {
+            document.querySelectorAll('.tile').forEach(el => {
+                el.addEventListener('click', () => el.animate([{
+                    transform: 'scale(1)'
+                }, {
+                    transform: 'scale(0.97)'
+                }, {
+                    transform: 'scale(1)'
+                }], {
+                    duration: 140,
+                    easing: 'ease-in-out'
+                }));
+            });
+
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach(section => {
+                const loader = section.querySelector('.section-loader');
+                const content = section.querySelector('.section-content');
+
+                if (loader && content) {
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                        }, 300);
+
+                        content.classList.remove('content-hidden');
+                    }, 200);
+                }
+            });
+        }
+
+        if (window.cordova) {
+            document.addEventListener('deviceready', initializeApp, false);
+        } else {
+            document.addEventListener('DOMContentLoaded', initializeApp, false);
+        }
+    </script>
+    <script>
+        (function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('menu-overlay');
+            const body = document.body;
+
+            if (!menuToggle || !sidebar || !overlay) return;
+
+            function toggleMenu() {
+                const isOpen = menuToggle.classList.toggle('is-open');
+                sidebar.classList.toggle('is-open');
+                overlay.classList.toggle('is-open');
+                body.classList.toggle('sidebar-open');
+
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                sidebar.setAttribute('aria-hidden', !isOpen);
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+                    toggleMenu();
+                }
+            });
+        })();
+    </script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

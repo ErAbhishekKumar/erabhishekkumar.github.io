@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Mining Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Underground Metal Mining [113501]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Mine Economics [113502]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Rock Mechanics [113503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Strata Control [113507]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective Course</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Entrepreneurship Development and Start-ups [113505]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Sports, Yoga and Meditation [113506]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Internship -I [113504P]</td>
+                                <td colspan="3">6 Weeks</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Rock Mechanics Lab [113503P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Strata Control Lab [113507P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>23</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-113501"
+                        data-type="theory">Underground Metal Mining</button><button class="tab-btn"
+                        data-target="subject-113502" data-type="theory">Mine Economics</button><button class="tab-btn"
+                        data-target="subject-113503" data-type="theory">Rock Mechanics</button><button class="tab-btn"
+                        data-target="subject-113507" data-type="theory">Strata Control</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Open Elective Course"
+                        data-modal-options='[ {"label": "Design Thinking", "target": "subject-100512", "btn-id": "btn-100512"}, {"label": "Internet of Things", "target": "subject-100513", "btn-id": "btn-100513"}, {"label": "Green Energy Technologies", "target": "subject-100514", "btn-id": "btn-100514"}, {"label": "Optimization Techniques", "target": "subject-100515", "btn-id": "btn-100515"}, {"label": "Non-Destructive Testing", "target": "subject-100516", "btn-id": "btn-100516"}, {"label": "Embedded Systems", "target": "subject-100517", "btn-id": "btn-100517"}, {"label": "Renewable Energy Sources", "target": "subject-100518", "btn-id": "btn-100518"}, {"label": "MATLAB for Engineers", "target": "subject-100519", "btn-id": "btn-100519"}, {"label": "Additive Manufacturing", "target": "subject-100520", "btn-id": "btn-100520"} ]'>
+                        Open Elective Course </button><button class="tab-btn" data-target="subject-113505"
+                        data-type="theory">Entrepreneurship Development</button><button class="tab-btn"
+                        data-target="subject-113506" data-type="theory">Sports, Yoga and Meditation</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-113504P" data-type="lab">Summer
+                        Internship -I</button><button class="tab-btn" data-target="subject-113503P" data-type="lab">Rock
+                        Mechanics Lab</button><button class="tab-btn" data-target="subject-113507P"
+                        data-type="lab">Strata Control Lab</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-113504P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Internship -I</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Course Description</h3>
+                    <p>Summer Internship - I is of a minimum duration of <b>6 weeks</b>. After completion of internship
+                        a detailed report of the internship mentioning the training undertaken along with certificate
+                        should be submitted.</p>
+                </section>
+                <section id="subject-113506" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Internship -I</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Course Description</h3>
+                    <p style="text-align: center;">0 Credits. <br>Play Sports, Do Yoga & Meditation ;) </p>
+                </section>
+                <section id="subject-113501" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Underground Metal Mining [113501]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Underground Metal Mine</strong>
+                            <ul class="unit-topics">
+                                <li>Metals And Its Types</li>
+                                <li>Present Status Of The Indian Metal Mining Industry Scope And Limitations Of It</li>
+                                <li>Terminologies And Choice Of Mode Of Mine Entries To Underground Deposits With Its
+                                    Applicability And Limitations</li>
+                                <li>Mine Developments – Drift, Drivage</li>
+                                <li>Accessories Entries – Raise, Winze, Slot Raise, Ore Pass</li>
+                                <li>Cycle Of Operations – Drilling, Blasting, Mucking And Transportation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Selection of Stoping Method</strong>
+                            <ul class="unit-topics">
+                                <li>Shape And Size, Thickness, Dip And Depth Of The Deposit</li>
+                                <li>Physical And Mechanical Characteristics Of The Ore And The Enclosing Rocks</li>
+                                <li>Presence Of Geological Disturbances</li>
+                                <li>Ore Grade, Its Distribution And Value Of The Product</li>
+                                <li>Degree Of Mechanization And Output</li>
+                                <li>Features Of Selecting A Stoping Method And Its Classifications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Open Stoping and Unsupported Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Open Raising Method, Two And Three Compartment Method</li>
+                                <li>Alimak Raise Climber, Drop Raising, Raise Borers, VCR</li>
+                                <li>Drilling Patterns Used In Underground Metal Mining I.E. Burn Cut, Wedge Cut</li>
+                                <li>Room And Pillar Method</li>
+                                <li>Sublevel Stoping Method</li>
+                                <li>Large Diameter Blast Hole (LDBH) Method</li>
+                                <li>Shrinkage Stoping Method</li>
+                                <li>Its Applicability, Slope Preparation, Unit Operation, Stopping Operations, Merit,
+                                    Demerits, Limitations And Transportation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Supported Stopping Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Cut And Fill Stoping And Square Set Stopping Method</li>
+                                <li>Its Introduction, Applicability, Slope Preparation, Unit Operation, Stopping
+                                    Operations, Merit, Demerits, Limitations And Transportation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Caving Stopping Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Sublevel And Block Caving Methods</li>
+                                <li>Its Introduction, Applicability, Slope Preparation, Unit Operation, Stopping
+                                    Operations, Merit, Demerits, Limitations And Transportation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Mine Closure</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Phase And Planning Guideline Of Mine Closure</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Introductory to Mining Engineering, Howard L. Hartman John Wiley and Sons and Second
+                            Edition, 9780894646133</li>
+                        <li>Underground Mining Methods: Engineering Fundamentals and International Case Studies, W. A.
+                            Hustrulid, William A. Hustrulid, Society for Mining, Metallurgy, and Exploration (SME),
+                            First Edition, 9780873351935</li>
+                        <li>SME Mining Engineering Handbook Volume I and II, Darling, Peter, Society for Mining,
+                            Metallurgy, and Exploration (SME), Third Edition, 9780873352642</li>
+                        <li>Surface and Underground Excavations: Methods, Techniques and Equipment, Ratan Raj Tatiya,
+                            CRC Press / Balkema and Second Edition, 9789058096272</li>
+                    </ol>
+                </section>
+                <section id="subject-113502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Mine Economics [113502]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Economic Importance Of The Mineral Industry</li>
+                                <li>Special Features Of The Mineral Industry</li>
+                                <li>Demand And Supply</li>
+                                <li>State Of The Art Mining Industry</li>
+                                <li>National Mineral Policy</li>
+                                <li>Risk Factors In Mine Investment And Evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Mine Sampling</strong>
+                            <ul class="unit-topics">
+                                <li>Definitions, Purpose And Scope Of Sampling</li>
+                                <li>Sampling Methods And Computations</li>
+                                <li>Errors And Losses In Sampling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Ore Reserve Estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Classifications Of Reserves, Tenor, Grades</li>
+                                <li>Preparations Of Assay Plan</li>
+                                <li>Various Methods Of Ore Reserve Estimation And Problems On Ore Reserves</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Financial Management</strong>
+                            <ul class="unit-topics">
+                                <li>Finance Function And Objectives Of A Firm</li>
+                                <li>Generally Accepted Accounting Principles (GAAP)</li>
+                                <li>Scope Of Financial Management</li>
+                                <li>Sources Of Mine Funds: Shares, Debentures, Fixed Deposit, Sinking Fund, Capital
+                                    Gearing</li>
+                                <li>P & L Account, Balance Sheet</li>
+                                <li>Cost Accounting: Introduction, Need For Cost Accounting, Elements, Factors Affecting
+                                    Operating Cost</li>
+                                <li>Methods Of Estimating The Future Cost</li>
+                                <li>Standard Cost And Forecast</li>
+                                <li>Budget And Budgetary Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Mine Valuation</strong>
+                            <ul class="unit-topics">
+                                <li>Factors Affecting Mine Valuation</li>
+                                <li>Time Value Of Money</li>
+                                <li>Annuity</li>
+                                <li>Redemption Of Capital</li>
+                                <li>NPV</li>
+                                <li>Depletion Allowance</li>
+                                <li>Depreciation</li>
+                                <li>Inflation</li>
+                                <li>Escalation</li>
+                                <li>Rates Of Return</li>
+                                <li>Hoskold's Two Rate Method</li>
+                                <li>Capital And Operating Cost Including Wages, Incentives, Material</li>
+                                <li>Assets, Liabilities, Cash Flows And Discounted Cash Flow</li>
+                                <li>Profitability Index – Their Implication In Mine Economics Evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Project Appraisal</strong>
+                            <ul class="unit-topics">
+                                <li>Methods Of Project Evaluation – Payback, Annual Value, Benefit/Cost Ratio, External
+                                    And Internal Rate Of Return</li>
+                                <li>Evaluation Of Exploratory Mining Areas And Operating Mines</li>
+                                <li>Mine Project Financing, Its Risks And Constraints</li>
+                                <li>Mine Taxation: Critical Impact Of Depreciation, Depletion, Type Of Funding,
+                                    Reserves, Life On Mine Profitability</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>An Introduction to Mineral Economics, K.K. Chatterjee, New Age International Private
+                            Limited, 8122415210</li>
+                        <li>Mineral and Mine Economics, Ramrao T. Deshmukh, Myra Publications, 1986, 19841586</li>
+                        <li>Mine and Mineral Economics, Subhash Ray and Indra Sinha, PHI Learning Private Limited 2016,
+                            9788120351745</li>
+                        <li>Examination and Valuation of Mineral Property Charles Homer Baxter, Roland Dane Parks,
+                            Walter Lucius Whitehead, Franklin Gray Pardee, Addison-Wesley Publishing Company, 1957:
+                            9780201057300</li>
+                        <li>Indian Mineral Year Book Indian Bureau of Mines</li>
+                        <li>Mineral Economics R K Sinha and N L Sharma CBS, Publishers, 2019, 978-8120403314</li>
+                        <li>Mineral Deposit Evaluation: A Practical Approach A.E. Annels Chapman and Hall, 1991,
+                            0412352907</li>
+                        <li>Industrial Engineering and Management O P Khanna Dhanpat Rai Publications (P) Limited, New
+                            Delhi, 2018, 818992835X</li>
+                    </ol>
+                </section>
+                <section id="subject-113503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Rock Mechanics [113503]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Definitions And Terms Used In Rock Mechanics</li>
+                                <li>Present Scope, Importance, Constraints, Development And Application Of The Rock
+                                    Mechanics</li>
+                                <li>Introduction To Stress Analysis</li>
+                                <li>Principles Stress And Strain</li>
+                                <li>Mohr's Circle Of Stress And Circle Of Strain</li>
+                                <li>Stress-Strain Relationship</li>
+                                <li>Differential Equation Of Static Equilibrium</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Physico – Mechanical Properties of Rock</strong>
+                            <ul class="unit-topics">
+                                <li>Physical Properties Of Rock: Density, Porosity, Moisture Content, Degree Of
+                                    Saturation, Permeability, Swell Index, Slake Durability Index, Thermal Conductivity,
+                                    Anisotropy, Electrical Properties And Durability</li>
+                                <li>Mechanical Properties Of Rock: Strength, Deformability, Elasticity, Plasticity And
+                                    Hardness</li>
+                                <li>Preparation Of Test Specimens</li>
+                                <li>Laboratory Determination Compressive, Tensile, Shear Strength, Modulus Of
+                                    Elasticity, Poisson's Ratio And Tri-Axial Strength Of Rock</li>
+                                <li>Mohr's Envelop, In-Situ Strength</li>
+                                <li>Effect Of Geological Parameters On Engineering Properties Of Rock Mass</li>
+                                <li>Time Dependent Properties Of Rock Mass: Creep Deformation And Strength Behaviour,
+                                    Creep Test And Rheological Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stress Analysis Around Openings-I</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Pre-Mining And Induced Stresses</li>
+                                <li>Pressure Arch Theory</li>
+                                <li>Stress Distribution Around The Single Excavation, Circular, Multiple, Pillar, And
+                                    Irregular Shapes</li>
+                                <li>Analytical Approaches: Numerical Models, FEM, BEM, ANSYS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Stress Analysis Around Openings-II</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Stress-Strain Measuring Instruments: Load Cells, Strain Gauges</li>
+                                <li>Convergence Measurement Instruments: Dilatometers, Extensometers, Optical Gauges And
+                                    Compressometers</li>
+                                <li>In-Situ Strength Properties Of Rocks</li>
+                                <li>In-Situ Stress Measurement: Plate Load Test, Cable Jack Test, Borehole Test,
+                                    Dilatometer Test, Hydrofracturing</li>
+                                <li>Monitoring Of Rock Movement Instruments: Instrumented Rock Bolts And Its Merits And
+                                    Demerits</li>
+                                <li>Dynamic Properties Of Rock And Rock Mass</li>
+                                <li>Failure Criteria For Rock And Rock Mass: Theory, Coulomb, Mohrs And Griffith
+                                    Criteria, Empirical Criteria</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Rock Mass Classification</strong>
+                            <ul class="unit-topics">
+                                <li>Classification Systems In Rock Engineering</li>
+                                <li>Classification Of Intact Rocks</li>
+                                <li>Classification Of Rock Masses - Terzaghi's Rock Load, RQD, Rock Structure Rating
+                                    (RSR), Bieniawski's RMR, Barton's Q-System, Laubscher's-MRMR, Hoek's-GSI,
+                                    Palmstrom'sRMi</li>
+                                <li>Recent Developments</li>
+                                <li>Correlations Between Different Classification Systems</li>
+                                <li>Applications Of Rock Mass Classification In Rock Engineering</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Rock Supports</strong>
+                            <ul class="unit-topics">
+                                <li>Theory Of Rock Mass Reinforcement By Rock Bolting, Its Types And Cable Bolting,
+                                    Shotcreting</li>
+                                <li>Mechanism Of Support, Forces And Displacements Associated With Bolting</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books::</h3>
+                    <ol>
+                        <li>Introduction to Rock Mechanics, Richard E. Goodman Wiley India Pvt Ltd. Second Editio,
+                            978-8126525669</li>
+                        <li>Rock Mechanics and Design of Structure in Rock, Leonard Obert and Wilbur I. Duvall, John
+                            Wiley & Sons Inc. 978-0471652359</li>
+                        <li>Introduction to Rock Mechanics, R. Jumikis, Oxford & IBH Publishing Company</li>
+                        <li>Underground Excavations in Rocks E.T. Brown and E. Hoek, Taylor & Francis Group,
+                            9780429178122</li>
+                        <li>Engineering Rock Mechanics- An Introduction to the Principles, John A Hudson and John P
+                            Harrison, Elsevier Science Ltd 978-0080438641</li>
+                        <li>Fundamentals and Applications of Rock Mechanics, A. K. Verma and Debasis Deb PHI Learning
+                            Pvt. Ltd. 978-8120351820</li>
+                        <li>Rock Mechanics: An Introduction, Braja M Das., Sanjay Kumar Shukla, Sivakugan, Nagaratnam,
+                            CRC Press, 9780415809238</li>
+                        <li>Rock Mechanics and Rock Engineering: Volume 1: Fundamentals of Rock Mechanics Ömer Aydan CRC
+                            Press: 9780367822309</li>
+                    </ol>
+                </section>
+                <section id="subject-113507" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Strata Control [113507]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Objectives Of Strata Control</li>
+                                <li>Present Status Of Strata Conditions Of Before And After Mining Of The Indian Mines
+                                </li>
+                                <li>Rock Pressure Due To Narrow And Wide Excavation</li>
+                                <li>Rock Support Interaction</li>
+                                <li>Theories Of Ground Movement</li>
+                                <li>Failure Of Roof And Floor</li>
+                                <li>Rock Burst And Bumps</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Strata Management</strong>
+                            <ul class="unit-topics">
+                                <li>Strata Control And Management Plan</li>
+                                <li>Examination Of Roof, Floor And Working Areas</li>
+                                <li>Instrumentation In Strata Control</li>
+                                <li>Support Load And Design Of Support Loads</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Supports</strong>
+                            <ul class="unit-topics">
+                                <li>Objectives Of Supports In Mines</li>
+                                <li>Applicability</li>
+                                <li>Material Used</li>
+                                <li>Types, Size And Shape And Classification</li>
+                                <li>Friction And Hydraulic Props</li>
+                                <li>Roof Bolting And Stitching</li>
+                                <li>Powered Support Their Principles Of Operation, Classification, Designation,
+                                    Constructional Features And Applications</li>
+                                <li>Withdrawal Of Supports</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Subsidence</strong>
+                            <ul class="unit-topics">
+                                <li>Theories Of Subsidence</li>
+                                <li>Factors Affecting Subsidence And Protective Measures</li>
+                                <li>Cause, Impacts And Mechanics Of Subsidence</li>
+                                <li>Discontinuous And Continuous Subsidence</li>
+                                <li>Subsidence Measurement, Monitoring, Prediction, Control And Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Stowing-I</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Applicability Condition</li>
+                                <li>Classification</li>
+                                <li>Merit, Demerit, Limitations And Precautions</li>
+                                <li>Factors Influencing Of Goaf Stowing</li>
+                                <li>Surface And Underground Arrangements Of Stowing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Stowing-II</strong>
+                            <ul class="unit-topics">
+                                <li>Sand Gathering Methods- Manual, Shovel, Pontoon</li>
+                                <li>Transportation Of Sand</li>
+                                <li>Mixing Chambers</li>
+                                <li>Hydraulic Profile</li>
+                                <li>Face Arrangements</li>
+                                <li>Pneumatic And Hydraulic Stowing, Their Applicability, Merits And Demerits</li>
+                                <li>Paste Back Filling, Their Applicability, Merits And Demerits</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Rock Mechanics and the Design of Structures in Rocks, L. Obert and W.I. Duvall John Willey
+                            and Sons 1966, 0471652350</li>
+                        <li>Strata Mechanics in Coal Mining, M. Jeremic, A A Balkema Publishers, 1985, 9061915562</li>
+                        <li>Advances in Coal Mine Ground Control, Syd S. Peng, Elsevier Science 2017, 9780081012802</li>
+                        <li>Surface and Underground Excavations: Methods, Techniques and Equipment, Ratan Raj Tatiya,
+                            Taylor & Francis, CRC Press 2013, 9780415621199</li>
+                        <li>Underground Excavation in Rock, E. Hoek and E.T. Brown, CRC Press 1980, 9781482288926</li>
+                        <li>Ground Engineering - Principles and Practices for Underground Coal Mining, J.M. Galvin,
+                            Springer International Publishing AG, 3319797190</li>
+                        <li>Strata Control in Deep Mines, J Dubinski and A Kidybinski, A A Balkema Publishers,
+                            9789061911241</li>
+                    </ol>
+                </section>
+                <section id="subject-113505" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Entrepreneurship Development and Start-ups [113505]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Entrepreneurship & Start-ups</strong>
+                            <ul class="unit-topics">
+                                <li>Charms Of Entrepreneurship & Start-ups</li>
+                                <li>Types</li>
+                                <li>Entrepreneurial Motivation</li>
+                                <li>Goal Setting</li>
+                                <li>Traits Of A Successful Entrepreneur</li>
+                                <li>Assessment Of Traits</li>
+                                <li>Developmental Strategies</li>
+                                <li>Planning Of An Enterprise</li>
+                                <li>Start-up Stages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Guidance for Business opportunity</strong>
+                            <ul class="unit-topics">
+                                <li>Business Opportunity Guidance: Sources</li>
+                                <li>Product/Service Selection: Process, Core Competence, Product/Service Life Cycle, New
+                                    Product/Service Development Process, Mortality Curve</li>
+                                <li>Idea Generation And Product Selection</li>
+                                <li>Design Thinking</li>
+                                <li>Creativity Techniques For Development And Modification Of Product And Services</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Sustainable Enterprise/Start-up Plan</strong>
+                            <ul class="unit-topics">
+                                <li>Registration Process For Udyam/Start-up</li>
+                                <li>Types Of Business Organisations: Associated Risk And Liabilities</li>
+                                <li>Sustainable/Green Businesses</li>
+                                <li>Social Entrepreneurship</li>
+                                <li>Process Selection: Technology Life-Cycle, Forms And Cost Of Transformation, Factors
+                                    Affecting Process Selection And Location For An Industry</li>
+                                <li>Marketing Intelligence: Market Survey Questionnaire Design, Sampling, Market Survey,
+                                    Data Analysis</li>
+                                <li>Target Market: Segmentation, Targeting, Positioning</li>
+                                <li>Marketing Mix Strategies</li>
+                                <li>Digital Marketing</li>
+                                <li>B2B Marketing</li>
+                                <li>Risk Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Eco System for Entrepreneurship</strong>
+                            <ul class="unit-topics">
+                                <li>Support Institutions For Entrepreneurship Development (State And National Level),
+                                    MSME, EDII, NESBUD, NSTEDB, KVIC, NABARD, TCO's, BIS, CII, FICCI, Association Of
+                                    Industries, NSIC, CED, BIRAC</li>
+                                <li>Schemes For Entrepreneurs: Central And State</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Schemes for Start-ups</strong>
+                            <ul class="unit-topics">
+                                <li>Schemes For Start-ups: Central And State</li>
+                                <li>Incubation Centres</li>
+                                <li>Accelerators</li>
+                                <li>Bootstrapping</li>
+                                <li>Angel Investors</li>
+                                <li>Venture Capitalist</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Project Planning</strong>
+                            <ul class="unit-topics">
+                                <li>Business Model Canvas (BMC)</li>
+                                <li>Techno Commercial Feasibility Report</li>
+                                <li>Sources Of Finance: Loans, Equity</li>
+                                <li>Pitch Deck</li>
+                                <li>Boot Camp</li>
+                                <li>SIDBI, IDBI</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Un-Boxing Entrepreneurship Your Self Help Guide to Setup a Successful Business, Dubey
+                            Nishith, Vyas Aditya, Soman Annu, Singh Anupam Indira Publishing House ISBN-2023,
+                            978-93-93577-70-2</li>
+                        <li>Entrepreneurship Development Small Business Entrepreneurship, Charantimath, Poornima Pearson
+                            Education India, New Delhi, ISBN: 9788131762264</li>
+                        <li>Entrepreneurship and Small Business Management, Khanka, S.S., John Wiley & Sons</li>
+                    </ol>
+                </section>
+                <section id="subject-100512" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Design Thinking [100512]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Basics of Design Thinking</strong>
+                            <ul class="unit-topics">
+                                <li>Over View Of Design Thinking</li>
+                                <li>Design Thinking Skills</li>
+                                <li>Introduction To The Essential Ideation Techniques</li>
+                                <li>Core Elements Of Design Thinking</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Design Thinking Process</strong>
+                            <ul class="unit-topics">
+                                <li>Stages Of Design Thinking Process (Explain With Examples) – Empathize, Define,
+                                    Ideate, Prototype, Test</li>
+                                <li>Design Thinking Frameworks: "Head, Heart And Hand", "Inspire, Ideate, Implement",
+                                    "Double Diamond"</li>
+                                <li>Mindset For Design Thinking: Innovation Heuristics, Behavior Models, Ask 5 Why /
+                                    5W+H Questions, Overcoming Cognitive Fixedness</li>
+                                <li>Exercises And Case Based Discussions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Design Thinking in IT</strong>
+                            <ul class="unit-topics">
+                                <li>Diagrams And Maps In Design Thinking – Empathy Map, Affinity Diagram, Mind Map,
+                                    Journey Map</li>
+                                <li>Combining Ideas Into Complex Innovation Concepts</li>
+                                <li>Design Thinking To Business Process Modeling</li>
+                                <li>Agile In Virtual Collaboration Environment</li>
+                                <li>Scenario Based Prototyping</li>
+                                <li>Design Thinking Vs Agile Methodology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Design Thinking & Customer Centricity</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Customer Needs: Voice Of Customer, Customer Population, Type Of
+                                    Customer Needs</li>
+                                <li>Gathering Customer Needs, Organizing And Prioritizing Customer Needs</li>
+                                <li>Generating Concepts, Concept Selection</li>
+                                <li>Use Of Design Thinking To Enhance Customer Experience</li>
+                                <li>Parameters Of Product Experience</li>
+                                <li>Alignment Of Customer Expectations With Product Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Innovation</strong>
+                            <ul class="unit-topics">
+                                <li>Innovation</li>
+                                <li>Difference Between Innovation And Creativity</li>
+                                <li>Role Of Creativity And Innovation</li>
+                                <li>Creativity To Innovation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Process of Product Design</strong>
+                            <ul class="unit-topics">
+                                <li>Process Of Product Design: Introduction To Product Design</li>
+                                <li>Product Strategies</li>
+                                <li>Product Value</li>
+                                <li>Product Planning</li>
+                                <li>Product Specifications</li>
+                                <li>Stages Of Product Design</li>
+                                <li>Examples Of Best Product Designs And Functions</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>The Design of Business: Why Design Thinking is the Next Competitive Advantage Roger Martin
+                            Harvard Business Press, 2009, ISBN-10: 1422177807, ISBN-13: 978-1422177808</li>
+                        <li>Design Thinking: Understand–Improve–Apply, Hasso Plattner, Christoph Meinel and Larry Leifer
+                            (eds), Springer Berlin, Heidelberg, 2011, ISBN-13: 978-3-642-13756-3</li>
+                        <li>Strategic Management of Technology and Innovation, Burgelman, Christensen, and Wheelwright
+                            5th ed., McGraw-Hill Education, 2008, ISBN-10: 0073381543, ISBN-13: 978-0073381541</li>
+                        <li>Engineering Design: An Introduction, John R Karsnitz, Stephen O'Brien and John P. Hutchinson
+                            2nd ed., Cengage India Private Limited, 2013. ISBN-10: 8131530744, ISBN-13: 978-8131530740
+                        </li>
+                        <li>Design Thinking for Strategic Innovation: What They Can't Teach You at Business or Design
+                            School Idris Mootee John Wiley & Sons 2014, ISBN-10: 1118620127, ISBN-13: 978-1118620120
+                        </li>
+                        <li>Product Design, Kevin Otto and Kristin Wood, 19th ed., Pearson Education India, 2018,
+                            ISBN-10: 8177588217, ISBN-13: 978-8177588217</li>
+                        <li>Product Design and Development, Karl T. Ulrich, Steven D. Eppinger, Maria C. Yan, 7th Ed.,
+                            McGraw Hill, 2020, ISBN-10: 9390113237, ISBN-13: 978-9390113231</li>
+                    </ol>
+                </section>
+                <section id="subject-100513" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Internet of Things [100513]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Basics Of IoT And Its Building Blocks</li>
+                                <li>Concept Of IR 4.0 And IoT</li>
+                                <li>Structure And Planning Involved For Making An IoT Project</li>
+                                <li>Introducing IoT Platforms</li>
+                                <li>Development Boards Used In IoT Projects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Communication Protocols Used In IoT</li>
+                                <li>Sensors And Actuators</li>
+                                <li>Choosing The Sensors And Develop The Boards Depending On The Requirements</li>
+                                <li>Creating Custom Sensors And Boards (Digital And Analog Electronics Circuits)</li>
+                                <li>Introducing Embedded Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Raspberry Pi</strong>
+                            <ul class="unit-topics">
+                                <li>Introducing Raspberry Pi</li>
+                                <li>Setting Up A Raspberry Pi As Our Customized IoT Server</li>
+                                <li>Introducing ESP Boards ESP8266/ESP32</li>
+                                <li>Embedded C Programming Language</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Arduino</strong>
+                            <ul class="unit-topics">
+                                <li>Arduino IDE</li>
+                                <li>Setting Up Arduino IDE To Program Other Boards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: IoT Web Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Introducing Python Programming</li>
+                                <li>Development Of IoT Web Applications</li>
+                                <li>Flask Framework In Python Programming</li>
+                                <li>HTML, CSS And JavaScript Programming Languages For Creating Interactive GUIs</li>
+                                <li>Introducing APIs And How To Use Them In The Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: IoT Security</strong>
+                            <ul class="unit-topics">
+                                <li>Security Policies</li>
+                                <li>Risk Assessment</li>
+                                <li>Concept Of Cyber-Security</li>
+                                <li>Authentication Techniques Used In Web Applications</li>
+                                <li>Authorization Techniques Used In Web Applications</li>
+                                <li>Security In Cloud Computing</li>
+                                <li>Securing Your Products From Online Attacks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>IoT Fundamentals: Networking Technologies, Protocols, and Use Cases for the Internet of
+                            Things David Hanes, Gonzalo Salgueiro, Patrick Grossetete, Robert Barton, Jerome Henry,
+                            First Edition, Cisco Press, 2017, ISBN-13 978-1587144561</li>
+                        <li>Designing the Internet of Things, Adrian Mcewen, Hakin Cassimally First Edition, Wiley,
+                            2013, ISBN-13 978-1118430620</li>
+                        <li>Internet of Things: Architecture and Design Principles, Raj Kamal First Edition, McGraw Hill
+                            Education, 2017. ISBN-13 97-89390727384</li>
+                        <li>Mastering Internet of Things: Design and Create your own IoT applications using Raspberry Pi
+                            3, Peter Waher, First Edition, Packt Publishing, 2018, ISSBN-13 978-1788397483</li>
+                        <li>IoT Security MadhusankaLiyanage, An Bracken, Pardeep Kumar, Mika Ylianttila, Wiley
+                            Publisher, First Edition, ISBN: 9781119527923</li>
+                    </ol>
+                </section>
+                <section id="subject-100514" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Green Energy Technologies [100514]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Solar Energy Technology (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Solar Energy- History</li>
+                                <li>Sun Light- Properties</li>
+                                <li>Solar Cell Physics</li>
+                                <li>Dark And Illuminate Junctions – Characteristics</li>
+                                <li>PV Cell Architecture And Fabrication</li>
+                                <li>PV Cell- PV Module And Array- Characteristics</li>
+                                <li>Estimation Of Solar Panel Requirement For The Given Application</li>
+                                <li>Tilt Angle Calculation</li>
+                                <li>Algorithm For Maximum Power Point Tracking</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Solar Thermal Energy Technology (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Concentrating And Non-Concentrating Solar Thermal Collectors</li>
+                                <li>Black Bodies And Radiation</li>
+                                <li>Inclined Surfaces And Diffuse Radiation Models</li>
+                                <li>Absorber, Reflection Plates, And Operation</li>
+                                <li>Collector Efficiency</li>
+                                <li>Solar Collector Efficiency Factor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Wind Energy Technology (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Wind Energy, Current Status And Future Prospects In India</li>
+                                <li>Wind Resource Assessment</li>
+                                <li>Wind Turbines: Types And Components Of Horizontal And Vertical Axis Wind Turbines
+                                </li>
+                                <li>Power Extracted From Wind</li>
+                                <li>Betz Limit</li>
+                                <li>Airfoil, Lift And Drag Force – Characteristics</li>
+                                <li>Stand-Alone Systems</li>
+                                <li>Wind Pumps And Small Wind Turbine - Schemes And System Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Fuel Cell (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Operating Principle Of Fuel Cell</li>
+                                <li>Types Of Fuel Cell And Polarization Curves</li>
+                                <li>Low And High Temperature Fuel Cells</li>
+                                <li>Fuel Cell Stacks</li>
+                                <li>Advantage Of Electrochemical Energy Conversion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Hydrogen Energy Technology (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Hydrogen Energy System- Components</li>
+                                <li>Concepts And Working Principles Of Electrolysers</li>
+                                <li>Methodologies Of Hydrogen Energy Extraction Process</li>
+                                <li>Monitoring And Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Ocean Energy Technologies (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Ocean Energy: Introduction And Types</li>
+                                <li>Tidal Energy: General Arrangement, Components And Working Principle</li>
+                                <li>Wave Energy: General Arrangement, Components And Working Principle</li>
+                                <li>Marine Current: General Arrangement, Components And Working Principle</li>
+                                <li>Ocean Thermal Energy Conversion: General Arrangement, Components And Working
+                                    Principle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Solar Photovoltaics: Fundamentals, Technologies and Applications, Chetan Singh Solanki, PHI
+                            Learning Pvt. Ltd., May 2015, ISBN: 8120337603, 9788120337602</li>
+                        <li>Solar Thermal Energy Author: Soteris A. Kalogirou, Editor: Spiros Alexopoulos Springer,
+                            March 2022, ISBN 978-1-0716-1421-1</li>
+                        <li>Wind Power Plants and Project Development Joshua Earnest and Tore Wizelius, Second Edition,
+                            PHI Learning Pvt. Ltd., New Delhi, 2017, ISBN: 9788120351271, 8120351274</li>
+                        <li>Renewable Hydrogen Technologies Edited by: Luis M Gandia, GurutzeArzamedi, Pedro M Dieguez
+                            Energy and Power, Elsevier, 1st Edition - May 3, 2013, ISBN, 044456361X, 9780444563613</li>
+                        <li>Ocean, Tidal, and Wave Energy, Peppas, Lynn Crabtree Pub Co, 2008, ISBN-10. 0778729338</li>
+                    </ol>
+                </section>
+                <section id="subject-100515" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Optimization Techniques [100515]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Optimal Design Problem Formulation</li>
+                                <li>Concept Of Duality</li>
+                                <li>Examples Of Optimization Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Linear Programming Problems</strong>
+                            <ul class="unit-topics">
+                                <li>Linear Programming</li>
+                                <li>Simplex Method And Dual Method</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Single Variable Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Optimality Criteria</li>
+                                <li>Bracketing Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Single Variable Optimization (Direct Search & Gradient
+                                based)</strong>
+                            <ul class="unit-topics">
+                                <li>Direct Search Methods</li>
+                                <li>Gradient Based Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Multivariable Unconstrained Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Optimality Criteria</li>
+                                <li>Direct Search Method</li>
+                                <li>Gradient Based Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Constrained Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Optimality Criteria</li>
+                                <li>Transformation Methods</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Optimization for Engineering Design, Kalyanmoy Deb, 2nd Edition, Prentice Hall of India,
+                            ISBN 9788120346789</li>
+                        <li>Introduction to Optimum Design, J. S. Arora, 4th Edition, Elsevier, ISBN 978-0-12-800806-5
+                        </li>
+                        <li>Engineering Optimization Theory and Practice, Singiresu S Rao, John Wiley & Sons, ISBN:
+                            9781119454717</li>
+                        <li>Linear Programming and Extensions G.B. Dantzig, 3rd ed, Princeton University Press, ISBN:
+                            0691080003</li>
+                        <li>Non-Linear Optimization - Theory and Algorithms L.C.W. Dixon Birkhauser, Boston, ISBN:
+                            9783764330200</li>
+                    </ol>
+                </section>
+                <section id="subject-100516" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Non-Destructive Testing [100516]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction to Non-Destructive Testing</strong>
+                            <ul class="unit-topics">
+                                <li>NDT Versus Mechanical Testing</li>
+                                <li>Overview Of The Non-Destructive Testing Methods For The Detection Of Manufacturing
+                                    Defects As Well As Material Characterization</li>
+                                <li>Various Physical Characteristics Of Materials And Their Applications In NDT</li>
+                                <li>Visual Testing, Types Of VT, Relative Merits And Limitations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Liquid Penetrant Testing</strong>
+                            <ul class="unit-topics">
+                                <li>Liquid Penetrant Testing – Principles</li>
+                                <li>Types And Properties Of Liquid Penetrants</li>
+                                <li>Developers</li>
+                                <li>Testing Procedure</li>
+                                <li>Control And Measurement Of Penetrant Process Variables</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Magnetic Particle Testing (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Magnetic Particle Testing- Theory Of Magnetism</li>
+                                <li>Inspection Materials</li>
+                                <li>Magnetization Methods</li>
+                                <li>Interpretation And Evaluation Of Test Indications</li>
+                                <li>Principles And Methods Of Demagnetization</li>
+                                <li>Residual Magnetism</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Ultrasonic Inspection Method (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Ultrasonic Waves – Principles Of Wave Propagation – Characteristics Of
+                                    Ultrasonic Waves – Attenuation</li>
+                                <li>Principle Of Pulse Echo Method, Through Transmission Method, Resonance Method</li>
+                                <li>Data Presentation A, B And C Scan Displays</li>
+                                <li>Ultrasonic Testing And Evaluation Of Base Material</li>
+                                <li>Ultrasonic Test Indications, Safety And Precautions</li>
+                                <li>Focusing Techniques: Synthetic Aperture Focusing Technique (SAFT), Time Of Flight
+                                    Diffraction (TOFD)</li>
+                                <li>Signal Analysis</li>
+                                <li>Capabilities, Effectiveness And Limitations Of Ultrasonic Testing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Radiography (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Principle, Interaction Of X-Ray With Matter</li>
+                                <li>Imaging, Film And Film Less Techniques</li>
+                                <li>Types And Use Of Filters And Screens</li>
+                                <li>Geometric Factors, Inverse Square, Law</li>
+                                <li>Characteristics Of Films – Graininess, Density, Speed, Contrast, Characteristic
+                                    Curves</li>
+                                <li>Penetrameters, Exposure Charts, Radiographic Equivalence</li>
+                                <li>Applications, Fluoroscopy- Xero-Radiography, Computed Radiography, Computed
+                                    Tomography</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Industrial Applications of Non-Destructive Evaluation (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Span Of NDE Activities Railways, Nuclear, Non-nuclear And Chemical Industries</li>
+                                <li>Aircraft And Aerospace Industries</li>
+                                <li>Automotive Industries</li>
+                                <li>Offshore Gas And Petroleum Projects</li>
+                                <li>Coal Mining Industry</li>
+                                <li>NDE Of Pressure Vessels, Castings, Welded Constructions</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Industrial Ultrasonic Inspection, Rayan Chaplin, Friesen Press, 4th Ed, 2024, ISBN:
+                            978-1-4602-9567-0</li>
+                        <li>Practical Non-Destructive Testing Baldev Raj, T.Jayakumar and M.Thavasimuthu 3rd edition,
+                            Narosa Publishing House, 2014, ISBN 1-85573-600-4</li>
+                        <li>Non-Destructive Testing Techniques Ravi Prakash 1st edition, New Age International
+                            Publishers, 2012, ISBN: 978-1-906574-42</li>
+                        <li>Non-Destructive Test and Evaluation of Materials, J.Prasad and C.G.K. Nair, 2nd Edition.,
+                            McGraw-Hill, 2011, ISBN: 9780070707030</li>
+                    </ol>
+                </section>
+                <section id="subject-100517" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Embedded Systems [100517]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction to Embedded System (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Block Diagram Of Embedded System</li>
+                                <li>Embedded System Vs. General Computing System</li>
+                                <li>Harvard And Von-Neumann Architecture</li>
+                                <li>RISC And CISC Processors</li>
+                                <li>Main Components Of An Embedded System</li>
+                                <li>Important Characteristics Of An Embedded System: Processor Power, Memory, Operating
+                                    System, Reliability, Performance, Power Consumption, Flexibility</li>
+                                <li>Advantages & Disadvantages Of An Embedded System</li>
+                                <li>Application Areas Of An Embedded System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Atmel & PIC Microcontroller IC (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Atmel Microcontroller: Basics Of ATMEL Microcontroller: Pin Diagram And Its
+                                    Functions, Atmel Microcontroller Family</li>
+                                <li>Arduino Microcontroller Board: IDE (Integrated Development Environment), Types Of
+                                    Arduino Board And Its Specifications</li>
+                                <li>PIC Microcontroller: Introduction, Pin Configuration, Architecture, Instruction Set,
+                                    Application</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Programming using Embedded C (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Embedded C</li>
+                                <li>Embedded C & C Language</li>
+                                <li>Embedded C Basic Operators</li>
+                                <li>Instruction Set Of Embedded C: Arithmetic Operations, Logical Operations, Data
+                                    Transfer Operation, Decision Control And Looping</li>
+                                <li>Timer/Counter Programming</li>
+                                <li>Serial Communication Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Communication Standards (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Modes Of Data Communication: Serial & Parallel</li>
+                                <li>Synchronous And Asynchronous Communication</li>
+                                <li>Serial Communication Standards RS 232 And RS485</li>
+                                <li>External Communication Interface: Bluetooth, Wi-Fi, Zigbee, GSM, GPRS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Communication Protocol (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Communication Protocols: UART, SPI, I2C</li>
+                                <li>RTOs (Real Time Operating System): Basics Of RTOs, Types Of RTOs And Characteristics
+                                    Of RTOs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Interfacing I/O Devices (7 hr)</strong>
+                            <ul class="unit-topics">
+                                <li>I/O Interfacing With: Switch(s) And Keypad</li>
+                                <li>LCD And LED Display</li>
+                                <li>OLED And TFT Display</li>
+                                <li>Relay, Interfacing With: ADC And DAC</li>
+                                <li>Stepper Motor DC Motor</li>
+                                <li>Other Sub Systems: Reset Circuit, Oscillator Circuit, Watch Dog Timer</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>The AVR Microcontroller and Embedded Systems: Using Assembly and C Muhammad Ali Mazidi,
+                            Sarmad Naimi, Sepehr Naimi, Pearson, First Edition ISBN-10: 0138003319 ISBN-13:
+                            978-0138003319</li>
+                        <li>Introduction to Embedded Systems Shibu K.V. McGraw Hill Education India Private Limited;
+                            Second edition, ISBN: 978-9339219680</li>
+                        <li>Embedded Systems: Introduction to ARM Cortex-M Microcontrollers, Jonathan W. Valvano,
+                            Cengage Learning, Third Edition, ISBN-10: 1305970665 ISBN-13: 978-1305970667</li>
+                        <li>The 8051 Microcontroller and Embedded System Mazidi, Mohmad Ali; Mazidi, Janice Gelispe;
+                            McKinley, Roline D. Pearson/Prentice Hall, 2nd edition, Delhi, 2008, ISBN: 978-8177589030
+                        </li>
+                        <li>Embedded System Design, Chattopadhyay S. Prentice Hall, India, New Delhi, 2014, ISBN:
+                            978-8120347304</li>
+                        <li>PIC Microcontroller and Embedded System Mazidi, Mohmad Ali; Mazidi, Janice Gelispe;
+                            McKinley, Roline D. Pearson/Prentice Hall, 2nd edition, Delhi, 2008, ISBN: 978-0997925999
+                        </li>
+                        <li>Microcontrollers: Theory and Applications Deshmukh, Ajay, Tata McGraw Hill Pvt. Ltd., New
+                            Delhi, 2011, ISBN: 978-0070585959</li>
+                        <li>Microcontroller Architecture Programming, Interfacing and System Design, Kamal, Raj, Pearson
+                            Education India, Delhi, 2012, ISBN: 978-8131759905</li>
+                    </ol>
+                </section>
+                <section id="subject-100518" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Renewable Energy Sources [100518]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Solar Energy (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Sun As A Source Of Energy</li>
+                                <li>Solar Energy-Importance</li>
+                                <li>Solar Radiation At The Earth's Surface</li>
+                                <li>Measurement Of Solar Radiation-Pyroheliometer, Pyranometer, Sunshine Recorder</li>
+                                <li>Solar Still, Solar Pond</li>
+                                <li>Storage Of Solar Energy For Heating</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Wind Energy (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Factors Influencing Wind</li>
+                                <li>Wind Shear And Turbulence</li>
+                                <li>Wind Speed Monitoring</li>
+                                <li>Site Selection For Wind Turbine</li>
+                                <li>Wind Energy Conversion System (WECS)</li>
+                                <li>Classification Of WECS</li>
+                                <li>WECS-Characteristics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Biomass Energy (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Photosynthesis Process</li>
+                                <li>Biomass Fuels</li>
+                                <li>Biomass Conversion Technologies</li>
+                                <li>Urban Waste To Energy Conversion</li>
+                                <li>Biomass Gasification</li>
+                                <li>Biomass To Ethanol Production</li>
+                                <li>Biomass Electrical Power Generation</li>
+                                <li>Factors Affecting The Biomass Generation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Hydrogen Energy (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts Of Hydrogen Energy</li>
+                                <li>Components Of Hydrogen Energy</li>
+                                <li>Working Principles Of Electrolysers</li>
+                                <li>Hydrogen Energy Extraction, Methodologies</li>
+                                <li>Hydrogen Energy Extraction Process</li>
+                                <li>Monitoring And Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Ocean (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Principle Of Ocean Thermal Energy Conversion: Off Shore And Onshore</li>
+                                <li>Tidal Current, High And Low Tides</li>
+                                <li>Ocean Tidal Energy Conversion Schemes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Geothermal Energy (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Origin And Distribution Of Geothermal Energy</li>
+                                <li>Site Selection For Geothermal Energy</li>
+                                <li>Economic Aspects About Tidal Energy, Conversion Plant</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Solar Photovoltaics: Fundamentals, Technologies and Applications Chetan Singh Solanki PHI
+                            Learning Pvt. Ltd., May 2015 ISBN: 8120337603, 9788120337602</li>
+                        <li>Solar Thermal Energy Author: Soteris A. Kalogirou, Editor: Spiros Alexopoulos Springer,
+                            March 2022 ISBN 978-1-0716-1421-1</li>
+                        <li>Wind Power Plants and Project Development Joshua Earnest and Tore Wizelius, Second Edition,
+                            PHI Learning Pvt. Ltd., New Delhi, 2017 ISBN: 9788120351271, 8120351274</li>
+                        <li>Renewable Hydrogen Technologies Edited by: Luis M Gandia, Gurutze Arzamedi, Pedro M Dieguez
+                            Energy and Power, Elsevier, 1st Edition - May 3, 2013 ISBN, 044456361X, 9780444563613</li>
+                        <li>Ocean, Tidal, and Wave Energy Peppas, Lynn Crabtree Pub Co, 2008 ISBN-10. 0778729338</li>
+                    </ol>
+                </section>
+                <section id="subject-100519" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: MATLAB for Engineers [100519]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction to MATLAB (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>MATLAB, Command Window, Computing With MATLAB</li>
+                                <li>Math Built-In Functions</li>
+                                <li>Variables, Numbers, Operators, Expressions, Input And Output</li>
+                                <li>Vector In MATLAB</li>
+                                <li>Matrices In MATLAB</li>
+                                <li>Arrays In MATLAB</li>
+                                <li>Multi-Dimensional Matrices And Arrays</li>
+                                <li>Array Addressing</li>
+                                <li>Cell Arrays</li>
+                                <li>Structure Arrays</li>
+                                <li>Built In Functions For Analyzing Arrays</li>
+                                <li>Element By Element Operations</li>
+                                <li>Polynomial Operations Using Arrays</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Plots (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Graphs & Plots</li>
+                                <li>Different Type Of Plot Designing</li>
+                                <li>2D & 3D Plots</li>
+                                <li>Scientific Data Based Plots</li>
+                                <li>Plot Editing & Handling</li>
+                                <li>Plotting Images</li>
+                                <li>Plot Commands</li>
+                                <li>Multiple Plots On The Same Page</li>
+                                <li>Line Plots</li>
+                                <li>Mesh And Surface Plots</li>
+                                <li>Plots With Special Graphics</li>
+                                <li>Files And File Management- Import/Export</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 GUI (4 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Graphical User Interface</li>
+                                <li>GUIDE Tool</li>
+                                <li>Interfacing Of MATLAB Script And GUI</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Programming using MATLAB (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Operators And Variables</li>
+                                <li>Operators And Functions</li>
+                                <li>Conditional Statements</li>
+                                <li>Loops</li>
+                                <li>Nested Loops</li>
+                                <li>The Break And Continue Commands</li>
+                                <li>Function File</li>
+                                <li>Debugging Mat Lab Programs</li>
+                                <li>Examples Of Simple User-Defined Functions</li>
+                                <li>Comparison Between Script Files And Function Files</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Mathematical Computing with MATLAB (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Polynomial Addition And Subtraction</li>
+                                <li>Polynomial Multiplication And Division</li>
+                                <li>Formulation Of Polynomial Equation</li>
+                                <li>Polynomial Differentiation And Integration</li>
+                                <li>Polynomial Curve Fitting</li>
+                                <li>Examples, Solving Equation Of One Variable</li>
+                                <li>Finding Minimum Or Maximum Of A Function</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Introduction to MATLAB Toolboxes and Simulink (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Simulink Introduction</li>
+                                <li>Image & Video Processing Toolbox</li>
+                                <li>Fuzzy Logic Toolbox</li>
+                                <li>Neural Network Toolbox</li>
+                                <li>SIMSCAPE</li>
+                                <li>Machine Learning, Artificial Intelligence</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Practical MATLAB applications for engineers, Misza Kalechman, CRC Press Inc, ISBN
+                            978-1-4200-4776-9</li>
+                        <li>Getting started with MATLAB, Rudrapratap, Oxford 28 May 2010, ISBN-10: 9780198069195,
+                            ISBN-13: 978-0198069195</li>
+                        <li>Modelling and simulation using MATLAB-Simulink, Shailendra Jain, Wiley India, 2nd edition
+                            Jan 2015, ISBN-10: 9788126551972, ISBN-13: 978-8126551972</li>
+                        <li>MATLAB 7 William D Paul McGraw-Hill Higher Education, 2nd Edition August, 2004</li>
+                    </ol>
+                </section>
+                <section id="subject-100520" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Additive Manufacturing [100520]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Additive Manufacturing Introduction and Data Preparation
+                                for 3D Printing (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>CAD-CAM And Its Integration</li>
+                                <li>CAD- Part And Surface Modeling</li>
+                                <li>CAD File Formats</li>
+                                <li>Additive V/S Conventional Manufacturing Processes</li>
+                                <li>Process Chain For 3D Printing</li>
+                                <li>Classification Of 3D Printing Processes</li>
+                                <li>Product Design And Prototyping</li>
+                                <li>Reverse Engineering For 3D Printing</li>
+                                <li>3D Scanners And Working</li>
+                                <li>Data Preparation For 3D Printing: STL Interface Specification, STL Data Generation,
+                                    STL Data Manipulation</li>
+                                <li>Advantages And Limitations Of STL File Format</li>
+                                <li>Open Files, Repair Of STL Files</li>
+                                <li>Alternative 3D Printing Interfaces</li>
+                                <li>Part Orientation And Support Generation</li>
+                                <li>Factors Affecting Part Orientation</li>
+                                <li>Various Models For Part Orientation Determination</li>
+                                <li>The Function Of Part Supports</li>
+                                <li>Support Structure Design</li>
+                                <li>Automatic Support Structure Generation</li>
+                                <li>Model Slicing And Contour Data Organization</li>
+                                <li>Direct And Adaptive Slicing: Identification Of Peak Features, Adaptive Layer
+                                    Thickness Determination</li>
+                                <li>Tool Path Generation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 3D Printing Materials (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Various Forms Of 3D Printing Raw Material- Liquid, Solid, Wire, Powder</li>
+                                <li>Polymers, Metals, Non-Metals, Ceramics</li>
+                                <li>Polymers And Their Properties</li>
+                                <li>Powder Preparation And Their Desired Properties</li>
+                                <li>3D Printing Material For FDM, SLA, SLS, Binder Jetting, Material Jetting And Direct
+                                    Energy Deposition 3D Printing Processes</li>
+                                <li>Choosing The Right 3D Printing Material On The Basis Of Performance Requirements And
+                                    Material Properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Solid based 3D Printing Processes (4 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Principle And Working Of Fused Deposition Modeling (FDM) Process</li>
+                                <li>Construction Details And Working Of Established FDM Based 3D Printers For Plastics
+                                    Parts</li>
+                                <li>Producing A Part Using FDM Based 3D Printer</li>
+                                <li>Liquefaction, Solidification And Bonding</li>
+                                <li>Laminated Object Manufacturing Process</li>
+                                <li>Accuracy, Precision And Tolerance In 3D Printing</li>
+                                <li>3D Printer Software-Fusion 360, Solidworks, Onshape, Tinkercad, UltimakerCura,
+                                    MeshLab, Simplyfy 3D, Repetier Host, Slic3r – Use And Operation Of Anyone</li>
+                                <li>Cost Estimation Of FDM 3D Printed Component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Liquid based 3D Printing Processes (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Photo Polymerization</li>
+                                <li>Principle And Working Of Stereo Lithography Apparatus</li>
+                                <li>SLA Based 3D Printing Processes</li>
+                                <li>SLA Based 3D Printing Process Materials</li>
+                                <li>Scanning Techniques</li>
+                                <li>Curing Processes</li>
+                                <li>Cost Estimation Of SLA 3D Printed Component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Powder based 3D Printing Processes (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Powder Fusion Mechanism</li>
+                                <li>Principle And Working Of Selective Laser Sintering (SLS) Process</li>
+                                <li>SLS Based 3D Printers</li>
+                                <li>Laser Engineering Net Shaping Process</li>
+                                <li>Electron Beam Melting</li>
+                                <li>Binder Jet 3D Printing</li>
+                                <li>Materials And Process Parameters For SLS Based 3D Printing Processes</li>
+                                <li>Cost Estimation Of SLS Based 3D Printed Component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Post Processing and Quality (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Need Of Post Processing: Functional And Aesthetic Reasons</li>
+                                <li>Steps Of Post Processing: Cleaning/Support Removal, Fixing, Curing Or Hardening,
+                                    Surface Finishing, Colouring</li>
+                                <li>Cleaning: Support Removal (FDM And Material Jetting), Powder Removal (SLS And Powder
+                                    Bed Fusion), Washing (SLA And Photopolymerisation)</li>
+                                <li>Fixing: Filling, Gluing, Welding</li>
+                                <li>Surface Finishing: Sanding, Polishing, Tumbling, Hydro Dipping, Epoxy Coating,
+                                    Electro Plating, Vapour Smoothing-Acetone Treatment</li>
+                                <li>Colouring, Coating, Priming And Painting</li>
+                                <li>Inspection And Testing: Digital, Visual, Physical</li>
+                                <li>Defects And Their Causes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text / Reference Books:</h3>
+                    <ol>
+                        <li>Additive Manufacturing Technologies: Rapid Prototyping to Direct Digital Manufacturing Lan
+                            Gibson, David W. Rosen, Brent Stucker Springer, 2010, ISBN: 9781493921133</li>
+                        <li>Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling, Rapid Manufacturing
+                            Andreas Gebhardt, Hanser Publisher, 2011, ISBN: 156990507X, 9781569905074</li>
+                        <li>3D Printing and Design, Sabrie Soloman, Khanna Publishing House, Delhi, ISBN: 9789386173768
+                        </li>
+                        <li>3D Printing and Rapid Prototyping- Principles and Applications C.K. Chua, Kah Fai Leong
+                            World Scientific, 2017, ISBN: 9789813146754</li>
+                        <li>Getting Started with 3D Printing: A Hands-on Guide to the Hardware, Software, and Services
+                            Behind the New Manufacturing Revolution, Liza Wallach Kloski, Nick Kloski Make Community,
+                            LLC; 2nd edition, 2021, ISBN: 9781680450200</li>
+                        <li>Laser-Induced Materials and Processes for Rapid Prototyping, L. Lu, J. Fuh, Y.S. Wong Kulwer
+                            Academic Press, 2001, ISBN: 9781461514695</li>
+                    </ol>
+                </section>
+                <section id="subject-113503P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Rock Mechanics Lab [113503P]</h2>
+                    <p><strong>Preform all Experiments</strong></p>
+                    <h3 class="sub-heading lab-heading">Experiments</h3>
+                    <ol>
+                        <li>Preparation Of Rock Samples For Laboratory Tests As Per ISRM Standards</li>
+                        <li>Determination Of RQD And Core Recovery Factor For Borehole Logs</li>
+                        <li>Determination Of Density, Porosity And Void Ratio For A Given Rock Sample</li>
+                        <li>Determination Of UCS, Young's Modulus And Poisson's Ratio Of Prepared Rock Samples</li>
+                        <li>Determination Of Tensile Strength Of The Samples By Brazilian Test</li>
+                        <li>Determination Of Shear Strength Of Given Rock Samples</li>
+                        <li>Prepare A Replica Model To Measure The In-Situ Stress In The Laboratory</li>
+                        <li>Determination Of Rock Mass Classification Of The Given Rock Sample</li>
+                        <li>Determination Of Bond Strength Of The Resin-Grounded Rock Bolt With A Pull-Out Test In The
+                            Laboratory</li>
+                    </ol>
+                </section>
+                <section id="subject-113507P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Strata Control Lab [113507P]</h2>
+                    <p><strong>Preform all Experiments</strong></p>
+                    <h3 class="sub-heading lab-heading">Experiments</h3>
+                    <ol>
+                        <li>Strata Behavior And Strata Control Management Plan Of A Mine</li>
+                        <li>Conventional Support Systems</li>
+                        <li>Constructional Features And Working Of Friction Props</li>
+                        <li>Constructional Features And Working Of Hydraulic Props</li>
+                        <li>Methods To Support Roofs By Cable Bolts And Roof Bolts</li>
+                        <li>Withdrawal Of Supports By Sylvester Prop Withdrawal</li>
+                        <li>Various Instruments Used For Monitoring Strata Behavior In Underground Geo-Structures</li>
+                        <li>Stowing System And Its Necessary Arrangements On The Surface With Its Types</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

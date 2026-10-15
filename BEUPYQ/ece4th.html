@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>4th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">4th Semester Syllabus</h1>
+                <p class="page-subtitle">Electronics & Communication Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Analog Electronics and Integrated Circuits [104401]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Digital Circuits [104402]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Electromagnetic Field Theory [104403]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Analog Communication [104404]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Electronics Materials and Instrumentation [104405]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>NPTEL-I (Open Course) [104406]</td>
+                                <td colspan="3">12 Weeks</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Analog Electronics and Integrated Circuits Lab [104401P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital Circuits Lab [104402P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Analog Communication Lab [104404P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Electronics Materials and Instrumentation Lab [104405P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>23</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-104401"
+                        data-type="theory">Analog Electronics and IC</button><button class="tab-btn"
+                        data-target="subject-104402" data-type="theory">Digital Circuits</button><button class="tab-btn"
+                        data-target="subject-104403" data-type="theory">Electromagnetic Field Theory</button><button
+                        class="tab-btn" data-target="subject-104404" data-type="theory">Analog
+                        Communication</button><button class="tab-btn" data-target="subject-104405"
+                        data-type="theory">Electronics Materials & Instrumentation</button><button class="tab-btn"
+                        data-target="subject-104406" data-type="theory">NPTEL-I</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-104401P" data-type="lab">Analog
+                        Electronics and IC Lab</button><button class="tab-btn" data-target="subject-104402P"
+                        data-type="lab">Digital Circuits Lab</button><button class="tab-btn"
+                        data-target="subject-104404P" data-type="lab">Analog Communication Lab</button><button
+                        class="tab-btn" data-target="subject-104405P" data-type="lab">Electronics Materials & Inst.
+                        Lab</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-104401" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Analog Electronics and Integrated Circuits</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Bipolar Junction Transistor Amplifier Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Small signal operation</li>
+                                <li>Hybrid and re model</li>
+                                <li>Frequency response analysis in different configurations</li>
+                                <li>High frequency analysis of BJT</li>
+                                <li>Miller effect</li>
+                                <li>Analysis of Multistage amplifier</li>
+                                <li>Frequency response of cascaded stages</li>
+                                <li>Cascode amplifier</li>
+                                <li>Darlington amplifier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Field Effect Transistor Amplifier Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Small signal operation</li>
+                                <li>Frequency response analysis in different configurations</li>
+                                <li>High frequency model of the MOSFET</li>
+                                <li>High frequency response of CS and CE amplifiers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Feedback Amplifiers and Oscillators</strong>
+                            <ul class="unit-topics">
+                                <li>Classification and representation of amplifiers</li>
+                                <li>Feedback concept</li>
+                                <li>General Characteristics of negative feedback amplifiers</li>
+                                <li>Properties of feedback amplifier topologies</li>
+                                <li>Oscillators: Sinusoidal oscillators</li>
+                                <li>Barkhausen Criterion</li>
+                                <li>Analysis and design of RC phase shift oscillator</li>
+                                <li>Wien bridge oscillators</li>
+                                <li>Resonant circuit oscillators</li>
+                                <li>General form of oscillator circuit (Hartley & Colpitts)</li>
+                                <li>Crystal oscillators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Power Amplifier</strong>
+                            <ul class="unit-topics">
+                                <li>Series-Fed Class A Amplifier</li>
+                                <li>Transformer coupled Class A Amplifier</li>
+                                <li>Class B amplifier Circuit and Operation</li>
+                                <li>Amplifier Distortion</li>
+                                <li>Push-Pull and Complementary Push-Pull Amplifiers</li>
+                                <li>Power Transistor Heat Sinking</li>
+                                <li>Class C and Class D Amplifier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Operational Amplifier</strong>
+                            <ul class="unit-topics">
+                                <li>Ideal Operational Amplifier characteristics</li>
+                                <li>General operational amplifier stages and internal circuit diagrams of IC 741</li>
+                                <li>DC and AC performance characteristics</li>
+                                <li>Frequency response of OP-Amp</li>
+                                <li>Applications of OP-Amp- Inverting and Non-inverting Amplifier</li>
+                                <li>V to I and I to V converter</li>
+                                <li>Logarithmic amplifier</li>
+                                <li>Antilogarithmic amplifier</li>
+                                <li>Instrumentation amplifier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Application of Op-Amp and Special ICs</strong>
+                            <ul class="unit-topics">
+                                <li>Comparator</li>
+                                <li>Schmitt Trigger</li>
+                                <li>555 Timer</li>
+                                <li>Multivibrators</li>
+                                <li>Precision rectifier</li>
+                                <li>First and Second Order Active Filters</li>
+                                <li>Voltage Controlled Oscillator (IC 566)</li>
+                                <li>Phase Lock Loop (IC 565)</li>
+                                <li>LM 3805</li>
+                                <li>IC8038</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Roy Choudhury. D., Shail Jain, "Linear Integrated Circuits", New Age International
+                            Publications, 4th Edition, 2010.</li>
+                        <li>Sergio Franco, "Design with Operational Amplifiers and Analog Integrated Circuits", 3rd
+                            Edition, Tata McGraw-Hill, 2007.</li>
+                        <li>Integrated devices & circuits by Millman & Halkias.</li>
+                        <li>Electronic Devices & circuit theory by R. Boylestad.</li>
+                        <li>Microelectronics by Sedra and Smith, Oxford University Press</li>
+                    </ol>
+                </section>
+                <section id="subject-104402" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital Circuits</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Number System</strong>
+                            <ul class="unit-topics">
+                                <li>Binary Codes: BCD code</li>
+                                <li>Excess-3 code</li>
+                                <li>Gray-code</li>
+                                <li>Complements: Signed magnitude</li>
+                                <li>R's complement</li>
+                                <li>(r-1)'s complement</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Boolean Laws and Theorems</strong>
+                            <ul class="unit-topics">
+                                <li>Logic Gate: Basic</li>
+                                <li>Universal and Others</li>
+                                <li>Truth TableLogic Functions</li>
+                                <li>Conversion of Logic Functions into truth table and vice versa</li>
+                                <li>SOP and POS forms of Representation</li>
+                                <li>Canonical form</li>
+                                <li>Minterm and maxterms</li>
+                                <li>Simplification of Logic Functions by Theorems and Karnaugh's Map</li>
+                                <li>Don't Care Conditions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Combinational Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Adders: Half Adder</li>
+                                <li>Full Adder</li>
+                                <li>Parallel Adder</li>
+                                <li>Carry Look ahead Adder</li>
+                                <li>Subtractors: Half subtractor</li>
+                                <li>Full subtractor</li>
+                                <li>Multiplexer: 2x1</li>
+                                <li>4x1 and design of 8x1 multiplexer</li>
+                                <li>Demultiplexer</li>
+                                <li>Decoder</li>
+                                <li>Encoder and comparator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Sequential Circuit</strong>
+                            <ul class="unit-topics">
+                                <li>Latches</li>
+                                <li>Flip-Flops SR</li>
+                                <li>JK</li>
+                                <li>D and T Flip Flop</li>
+                                <li>Race around Condition</li>
+                                <li>Master-Slave flip flop</li>
+                                <li>Shift Registers</li>
+                                <li>Counters- Synchronous and Asynchronous: Design of Ripple Counter</li>
+                                <li>Finite state machines</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Data Converter</strong>
+                            <ul class="unit-topics">
+                                <li>Digital to Analog Converter</li>
+                                <li>Binary-Weighted Resistors DAC</li>
+                                <li>R-2R Ladder DAC</li>
+                                <li>Analog to digital converters</li>
+                                <li>Counter types ADC</li>
+                                <li>Successive Approximation ADC</li>
+                                <li>Dual Slope ADC</li>
+                                <li>Flash ADC</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Logic Families & Semiconductor Memories</strong>
+                            <ul class="unit-topics">
+                                <li>Characteristics of Digital ICs: Propagation delay</li>
+                                <li>Power dissipation</li>
+                                <li>Figure of Merit</li>
+                                <li>Fan-out</li>
+                                <li>Noise immunity</li>
+                                <li>Wired-logic capability</li>
+                                <li>Transistor-Transistor Logic</li>
+                                <li>Emitter-Coupled Logic</li>
+                                <li>MOS Logic</li>
+                                <li>CMOS Logic</li>
+                                <li>Transmission Gate</li>
+                                <li>Comparison between logic families RAM</li>
+                                <li>ROM</li>
+                                <li>PLA</li>
+                                <li>PAL</li>
+                                <li>Circuit Implementation using ROM</li>
+                                <li>PLA and PAL</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>M. Morris Mano and M. D. Ciletti, "Digital Design", Pearson Education.</li>
+                        <li>David J. Comer, "Digital Logic & State Machine Design", Oxford University Press.</li>
+                        <li>RP Jain, "Modern Digital Electronics", Tata McGraw Hill Publication.</li>
+                        <li>A Anand Kumar Fundamental of digital circuits PHI 4th edition</li>
+                    </ol>
+                </section>
+                <section id="subject-104403" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electromagnetic Field Theory</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Vector Calculus and Coordinate System</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Vector Algebra</li>
+                                <li>Coordinate Systems (rectangular, cylindrical, and spherical) and Transformation</li>
+                                <li>Vector calculus-differentiation</li>
+                                <li>Partial differentiation</li>
+                                <li>Integration</li>
+                                <li>Vector operator del</li>
+                                <li>Gradient</li>
+                                <li>Divergence</li>
+                                <li>And curl</li>
+                                <li>Integral theorems of vectors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Electrostatics</strong>
+                            <ul class="unit-topics">
+                                <li>Coulomb's law</li>
+                                <li>Gauss's law and its applications</li>
+                                <li>Electric field intensity</li>
+                                <li>Electrical field due to point charges</li>
+                                <li>Line</li>
+                                <li>Surface and Volume charge distributions</li>
+                                <li>Absolute Electric potential</li>
+                                <li>Potential difference</li>
+                                <li>Calculation of potential differences for different configurations</li>
+                                <li>Poisson's and Laplace's equation</li>
+                                <li>Applications (solution for some simple cases)</li>
+                                <li>Capacitance</li>
+                                <li>Electrostatic energy</li>
+                                <li>Conductor properties and Uniqueness Theorem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Magnetostatics</strong>
+                            <ul class="unit-topics">
+                                <li>Biot-Savart law</li>
+                                <li>Ampere's circuital law</li>
+                                <li>Magnetic flux and magnetic flux density</li>
+                                <li>Energy stored in magnetic field</li>
+                                <li>Ampere's force law</li>
+                                <li>Magnetic vector potential</li>
+                                <li>Analogy between electric and magnetic field</li>
+                                <li>Maxwell's equations in differential and integral form</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Maxwell's Equations and Time-Varying Field</strong>
+                            <ul class="unit-topics">
+                                <li>Faraday's law</li>
+                                <li>Transformer and motional EMF</li>
+                                <li>Displacement current</li>
+                                <li>Maxwell's equations in time static and time varying field</li>
+                                <li>Time harmonic field</li>
+                                <li>Dielectric and Magnetic boundary condition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Electromagnetic Wave Propagation in Different
+                                Media</strong>
+                            <ul class="unit-topics">
+                                <li>Uniform Plane Wave Propagation</li>
+                                <li>Wave Propagation in Free Space</li>
+                                <li>Dielectric and Conductor</li>
+                                <li>Skin Effect</li>
+                                <li>Wave Polarization</li>
+                                <li>Plane of incidence</li>
+                                <li>Reflection of Plane wave (at normal and oblique) for conductor and dielectric</li>
+                                <li>Surface Impedance</li>
+                                <li>Poynting Vector: Poynting Theorem</li>
+                                <li>Instantaneous</li>
+                                <li>Average and Complex Poynting Vector</li>
+                                <li>Power Loss in Plane Conductor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Transmission Lines</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Concept of distributed elements</li>
+                                <li>Equations of voltage and current</li>
+                                <li>Standing waves and Reflection Coefficient</li>
+                                <li>Lossless and low-loss transmission lines</li>
+                                <li>Power transfer on a transmission line</li>
+                                <li>Transmission line calculations with the help of Smith chart</li>
+                                <li>Applications of transmission line</li>
+                                <li>Impedance matching using transmission lines</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Matthew N.O. Sadiku: "Elements of Engineering Electromagnetics" Oxford University Press.
+                        </li>
+                        <li>Engineering Electromagnetics by William Hayt, TATA McGraw-Hill.</li>
+                        <li>Narayana Rao, N: "Elements of Engineering Electromagnetics", Pearson Education.</li>
+                        <li>Electromagnetics, JD Kraus, McGraw-Hill.</li>
+                    </ol>
+                </section>
+                <section id="subject-104404" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Analog Communication</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Communication Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basic components of communication systems</li>
+                                <li>Types of communication: Analog vs. Digital</li>
+                                <li>Bandwidth requirements and frequency spectrum and Modulation and its necessity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Amplitude Modulation (AM) Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of amplitude modulation</li>
+                                <li>AM</li>
+                                <li>DSB-SC</li>
+                                <li>SSB</li>
+                                <li>And VSB modulation techniques</li>
+                                <li>Generation and detection of AM and DSB</li>
+                                <li>AM waveforms and frequency spectrum</li>
+                                <li>Modulation index and power relations and AM transmitters and receivers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Angle Modulation</strong>
+                            <ul class="unit-topics">
+                                <li>FM and PM</li>
+                                <li>Transmission FM spectra</li>
+                                <li>Carson 's rule</li>
+                                <li>Narrow band</li>
+                                <li>And wide band FM Generation of FM by Direct Methods</li>
+                                <li>Indirect Generation of FM</li>
+                                <li>The Armstrong Method</li>
+                                <li>Direct Methods of Frequency Demodulation</li>
+                                <li>Slope Detector</li>
+                                <li>Foster Seely or Phase Discriminator</li>
+                                <li>Indirect methods of FM Demodulation</li>
+                                <li>FM Detector using PLL</li>
+                                <li>Comparison of FM and PM</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Receivers</strong>
+                            <ul class="unit-topics">
+                                <li>Tuned Radio Frequency (TRF) Receiver</li>
+                                <li>Basic Elements of AM Super-heterodyne receiver</li>
+                                <li>RF Amplifiers Characteristics Sensitivity</li>
+                                <li>Selectivity</li>
+                                <li>Image Frequency Rejection</li>
+                                <li>Mixers Tracking and Alignment</li>
+                                <li>Local Oscillator</li>
+                                <li>IF Amplifier</li>
+                                <li>AGC</li>
+                                <li>AM Receiver using Transistors Communication Receiver</li>
+                                <li>FM Receiver</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Noise in Communication Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Types of noise: thermal</li>
+                                <li>Shot</li>
+                                <li>And flicker noise</li>
+                                <li>Signal-to-noise ratio (SNR) and its impact on system performance</li>
+                                <li>Noise figure and noise temperature and Noise in AM and FM systems Pre emphasis and
+                                    de-emphasis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Pulse Modulation Technique</strong>
+                            <ul class="unit-topics">
+                                <li>Pulse Modulation techniques - Sampling Process</li>
+                                <li>PAM</li>
+                                <li>PWM and PPM concepts</li>
+                                <li>Methods of generation and detection</li>
+                                <li>Noise performance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Electronic communication systems by George Kennedy.</li>
+                        <li>Principle of communication systems by Taub and schilling.</li>
+                        <li>B. P. Lathi and Z. Ding, "Modern Digital and Analog Communication Systems", 4th Ed., Oxford
+                            University Press, 2009.</li>
+                        <li>J. G. Proakis, and M. Salehi, 'Fundamentals of Communication Systems', Fifteenth Impression,
+                            Pearson Education Inc., India, 2013.</li>
+                    </ol>
+                </section>
+                <section id="subject-104405" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electronics Materials and Instrumentation</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Electronic Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Atomic structure and bonding in materials</li>
+                                <li>Crystal structure of materials</li>
+                                <li>Crystal systems</li>
+                                <li>Unit cells and space lattices</li>
+                                <li>Determination of structures of simple crystals by X-ray diffraction</li>
+                                <li>Miller indices of planes and directions</li>
+                                <li>Packing geometry in Metallic</li>
+                                <li>Ionic and Covalent solids</li>
+                                <li>Concept of amorphous</li>
+                                <li>Single and polycrystalline structures and their effect on properties of materials
+                                </li>
+                                <li>Insulator</li>
+                                <li>Semiconductor</li>
+                                <li>And conductor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Electronic Material Properties</strong>
+                            <ul class="unit-topics">
+                                <li>Polarization</li>
+                                <li>Dielectric constant at low frequency & high frequency</li>
+                                <li>Dielectric loss</li>
+                                <li>Piezoelectricity & Ferroelectricity</li>
+                                <li>Origin of magnetism in metallic and ceramic materials</li>
+                                <li>Para magnetism</li>
+                                <li>Diamagnetism</li>
+                                <li>Antiferromagnetism</li>
+                                <li>Ferromagnetism</li>
+                                <li>Ferrimagnetism</li>
+                                <li>Magnetic hysteresis</li>
+                                <li>Influence of temperature on magnetic behavior</li>
+                                <li>Domains and Hysteresis</li>
+                                <li>Superconductors</li>
+                                <li>Meissner effect</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Measurement and Error</strong>
+                            <ul class="unit-topics">
+                                <li>Sensitivity</li>
+                                <li>Resolution</li>
+                                <li>Accuracy and Precision</li>
+                                <li>Absolute and Relative types of errors</li>
+                                <li>Statistical analysis</li>
+                                <li>Probability of Limiting errors</li>
+                                <li>Linearity</li>
+                                <li>Instruments: Current and Resistance in instruments</li>
+                                <li>Analog and Digital Multimeters</li>
+                                <li>Measurement of time and Frequency - Digital Frequency Meter and applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Impedance Measurement</strong>
+                            <ul class="unit-topics">
+                                <li>Kelvin Bridge</li>
+                                <li>Megger</li>
+                                <li>Maxwell</li>
+                                <li>Hay and Sheering Bridges</li>
+                                <li>Q-meter</li>
+                                <li>Noise and Interference reduction techniques in Measurement Systems</li>
+                                <li>Wave Analyzer</li>
+                                <li>Spectrum Analyzer</li>
+                                <li>FFT Analyzer</li>
+                                <li>Oscilloscopes: Pulse Measurements</li>
+                                <li>Delayed Time Base</li>
+                                <li>Analog Storage</li>
+                                <li>Sampling and Digital Storage Oscilloscopes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Transducers</strong>
+                            <ul class="unit-topics">
+                                <li>Classification and selection of Transducers</li>
+                                <li>Introduction to Strain</li>
+                                <li>Load</li>
+                                <li>Force</li>
+                                <li>Displacement</li>
+                                <li>Velocity</li>
+                                <li>Acceleration</li>
+                                <li>Pressure and Temperature Measurements</li>
+                                <li>Introduction to Smart sensors and MEMS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Introduction to Data Acquisition Systems (DAS)</strong>
+                            <ul class="unit-topics">
+                                <li>Block Diagram</li>
+                                <li>Specifications and various components of DAS</li>
+                                <li>Applications of DAS in various fields</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Bell DA, "Electronic Instrumentation and Measurements," Prentice Hall2.</li>
+                        <li>Sawhney A.K., "Electrical and Electronic Measurements and Instrumentation," Dhanpat Rai and
+                            Sons.</li>
+                        <li>"Solid State Physics", by Kittel, McGraw Hill.</li>
+                        <li>"Principles of Electric Engineering Materials & Devices", by S.O. Kasp, Mc- Graw Hill.</li>
+                        <li>"Structure & properties of materials (VOL VI), Electronic Properties", by Robert M. Rose,
+                            Lawrence A. Shepherd & John Wulf, Wiley Eastern Ltd.</li>
+                    </ol>
+                </section>
+                <section id="subject-104406" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">NPTEL-I (Open Course)</h2>
+                    <ul>
+                        <li><strong class="unit-title">NPTEL (Open Course) Guidelines:</strong>
+                            <ul class="unit-topics">
+                                <li>NPTEL (Open Course) should be taken from the course other than core subjects of the
+                                    branch.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-104401P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Analog Electronics and Integrated Circuits Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>Study of single stage RC coupled amplifier. Its frequency response and effect of emitter
+                            bypass capacitor.</li>
+                        <li>(a) Design of a first order RC Low Pass filter circuit & observing its frequency response
+                            and time response.<br>
+                            (b) Design of a first order RC high pass filter circuit & observing its frequency response
+                            and time response.</li>
+                        <li>Study of class B push-pull amplifier</li>
+                        <li>Study inverting amplifier, non-inverting amplifier and voltage follower using op amp IC741.
+                        </li>
+                        <li>(a) To measure slew rate of Op-Amp, (b) To measure full-power & unity gain bandwidth of
+                            Op-Amp</li>
+                        <li>Application to Op-Amp (a) adder, (b) subtractor, (c) integrator and differentiator using
+                            op-amp IC741and observe output waveform for different input waveform.</li>
+                        <li>To study the performance of instrumentation amplifier using op-amp IC741.</li>
+                        <li>To study RC phase-shift oscillators using op-amp IC741.</li>
+                        <li>To study the Wien-bridge oscillators using op-amp IC741.</li>
+                        <li>To study Schmitt trigger circuits using op-amp IC741</li>
+                    </ol>
+                </section>
+                <section id="subject-104402P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital Circuits Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>To Implement Logic Gates NAND, AND, NOR, EX-OR, EX-NOR - Construct and test the fundamental
+                            logic gates using digital ICs and verify their truth tables by applying various input
+                            combinations.</li>
+                        <li>To Construct the Basic Gates Using Universal Gates - Design and implement AND, OR, and NOT
+                            gates using only NAND and NOR gates and validate their functionality with truth table
+                            verification.</li>
+                        <li>To Verify the Truth Table of Half Adder and Full Adder - Implement half adder and full adder
+                            circuits using logic gates, observe their outputs for different binary inputs, and confirm
+                            their addition properties.</li>
+                        <li>To Verify the Truth Table of Half and Full Subtractor - Construct and test the half
+                            subtractor and full subtractor circuits, analyze their outputs for various input conditions,
+                            and verify their correctness against theoretical truth tables.</li>
+                        <li>To Convert Binary Numbers to Gray-Number Codes and Vice Versa - Develop and test a
+                            combinational circuit that converts binary numbers to gray code and vice versa, ensuring
+                            correctness through truth table validation.</li>
+                        <li>To Verify the Truth Table of Multiplexer Using IC & Demultiplexer Using IC and Design Full
+                            Adder & Full Subtractor Using Multiplexer - Demonstrate the working of multiplexer and
+                            demultiplexer ICs, verify their functionality with truth tables, and use multiplexers to
+                            design a full adder and full subtractor.</li>
+                        <li>To Convert a Given Octal Input to the Binary Output and to Study the LED Display Using
+                            7-Segment Decoder/Driver - Implement a logic circuit that converts octal numbers to binary
+                            and analyze the working of the decoder by displaying outputs on a 7-segment display.</li>
+                        <li>Truth Table Verification of Flip-Flops: (a) JK Master-Slave, (b) D-Type, (c) T-Type -
+                            Construct and test different types of flip-flops, observe their state changes for various
+                            input conditions, and verify their characteristic equations.</li>
+                        <li>Design and Testing of Ring Counter/Johnson Counter - Design, implement, and analyze the
+                            working of ring and Johnson counters, verify their sequence of outputs, and compare them
+                            with theoretical predictions.</li>
+                        <li>Realize the following shift registers using IC7474/IC 7495.<br>
+                            (a) SISO<br>
+                            (b) SIPO<br>
+                            (c) PISO<br>
+                            (d) PIPO</li>
+                    </ol>
+                </section>
+                <section id="subject-104404P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Analog Communication Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>To study the function of Amplitude Modulation & Demodulation (under modulation, perfect
+                            modulation & over modulation) and calculate the modulation index.</li>
+                        <li>To study the working of the Balanced Modulator and demodulator.</li>
+                        <li>To generate SSB using phase method and detection of SSB signal using Synchronous detector.
+                        </li>
+                        <li>To study the process of frequency modulation and demodulation and calculate the depth of
+                            modulation by varying the modulating voltage.</li>
+                        <li>To verify the spectrum of AM and FM signals using spectrum analyzer.</li>
+                        <li>To study the frequency response of Pre-Emphasis and De-Emphasis circuits.</li>
+                        <li>To study the frequency division multiplexing and De multiplexing Techniques.</li>
+                        <li>To study the Pulse amplitude modulation & demodulation Techniques.</li>
+                        <li>To study the Pulse Width Modulation (PWM) and Demodulation Techniques.</li>
+                        <li>To study the generation Pulse Position Modulation (PPM) and Demodulation.</li>
+                    </ol>
+                </section>
+                <section id="subject-104405P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Electronics Materials and Instrumentation Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten Experiments</h3>
+                    <ol>
+                        <li>Measurement of the Hall voltage developed across the sample material and estimation of the
+                            Hall coefficient.</li>
+                        <li>Calculate the carrier concentration of the sample material (n-type and p-type
+                            semiconductor).</li>
+                        <li>Characteristics of LDR, Photodiode, and Phototransistor.</li>
+                        <li>Study the phenomena of magnetic hysteresis of a material.</li>
+                        <li>Calculate the retentivity, coercivity, and saturation magnetization of a material.</li>
+                        <li>Measurement of the resistivity of a semiconductor at room temperature.</li>
+                        <li>Verification of the temperature coefficient of resistance of a semiconductor and metal.</li>
+                        <li>Measurement of an unknown Inductance of medium-Q coil using Maxwell Bridge.</li>
+                        <li>Measurement of Frequency using Wein's Bridge.</li>
+                        <li>Measurement of R, L, & C using RLC Bridge.</li>
+                        <li>Measurement of Displacement using LVDT.</li>
+                        <li>Measurement of Pressure using Strain Gauge.</li>
+                        <li>Measurement of Temperature using RTD, Thermistor and Thermocouple.</li>
+                        <li>Perform actuations using the Pneumatic Actuator Trainer.</li>
+                        <li>Calibration of pressure instruments using dead weight pressure gauge tester.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

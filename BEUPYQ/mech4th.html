@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>4th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">4th Semester Syllabus</h1>
+                <p class="page-subtitle">Mechanical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Applied Thermodynamics [102401]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Fluid Mechanics and Hydraulic Machines [102402]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Strength of Material [102403]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Kinematics of Machine [102404]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Project Management [102405]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>NPTEL-I (Open course) [102406]</td>
+                                <td colspan="3">12 Weeks</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Fluid Mechanics and Hydraulic Machines Lab [102402P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Strength of Material Lab [102403P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Kinematics of Machine Lab [102404P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>24</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-102401" data-type="theory">Applied Thermodynamics</button>
+                    <button class="tab-btn" data-target="subject-102402" data-type="theory">Fluid Mechanics</button>
+                    <button class="tab-btn" data-target="subject-102403" data-type="theory">Strength of Material</button>
+                    <button class="tab-btn" data-target="subject-102404" data-type="theory">Kinematics of Machine</button>
+                    <button class="tab-btn" data-target="subject-102405" data-type="theory">Project Management</button>
+                    <button class="tab-btn" data-target="subject-102406" data-type="theory">NPTEL-I</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-102402P" data-type="lab">Fluid Mechanics Lab</button>
+                    <button class="tab-btn" data-target="subject-102403P" data-type="lab">Strength of Material Lab</button>
+                    <button class="tab-btn" data-target="subject-102404P" data-type="lab">Kinematics of Machine Lab</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-102401" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Applied Thermodynamics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to solid, liquid and gaseous fuels</li>
+                                <li>Stoichiometry</li>
+                                <li>Exhaust gas analysis</li>
+                                <li>First law analysis of combustion reactions</li>
+                                <li>Heat calculations using enthalpy tables</li>
+                                <li>Adiabatic flame temperature</li>
+                                <li>Chemical equilibrium and equilibrium composition calculations using free energy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Thermodynamic cycles: Air standard Otto, Diesel and Dual Cycles</li>
+                                <li>Air standard Brayton cycle</li>
+                                <li>Effect of reheat, regeneration and intercooling</li>
+                                <li>Combined gas and vapor power cycles</li>
+                                <li>Vapor power cycles Rankine cycle with superheat, reheat and regeneration</li>
+                                <li>Exergy analysis</li>
+                                <li>Supercritical and ultra-super-critical Rankine cycle</li>
+                                <li>Gas power cycles</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Refrigeration System: Simple Vapor compression refrigeration cycle and Vapor Absorption Cycle</li>
+                                <li>Refrigerants and their properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Reciprocating compressors</li>
+                                <li>Staging of reciprocating compressors</li>
+                                <li>Optimal stage pressure ratio</li>
+                                <li>Effect of intercooling</li>
+                                <li>Minimum work for multistage reciprocating compressors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Analysis of steam turbines</li>
+                                <li>Velocity and pressure compounding of steam turbines</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of compressible flow</li>
+                                <li>Stagnation properties</li>
+                                <li>Isentropic flow of a perfect gas through a nozzle</li>
+                                <li>Choked flow</li>
+                                <li>Subsonic and supersonic flows</li>
+                                <li>Normal shocks</li>
+                                <li>Use of ideal gas tables for isentropic flow and normal shock flow</li>
+                                <li>Flow of steam and refrigerant through nozzle</li>
+                                <li>Super saturation compressible flow in diffusers</li>
+                                <li>Efficiency of nozzle and diffuser</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Sonntag, R. E, Borgnakke, C. and Van Wylen, G. J., 2003, 6th Edition, Fundamentals of Thermodynamics, John Wiley and Sons.</li>
+                        <li>Jones, J. B. and Duggan, R. E., 1996, Engineering Thermodynamics, Prentice-Hall of India.</li>
+                        <li>Moran, M. J. and Shapiro, H. N., 1999, Fundamentals of Engineering Thermodynamics, John Wiley and Sons.</li>
+                        <li>Nag, P.K, 1995, Engineering Thermodynamics, Tata McGraw-Hill Publishing Co. Ltd.</li>
+                    </ol>
+                </section>
+                <section id="subject-102402" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Fluid Mechanics & Hydraulic Machines</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Properties of Fluid</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of fluid</li>
+                                <li>Newton's law of viscosity</li>
+                                <li>Units and dimensions</li>
+                                <li>Physical properties of fluids</li>
+                                <li>Control volume</li>
+                                <li>Continuity equation and momentum equation</li>
+                                <li>Incompressible flow</li>
+                                <li>Bernoulli's equation and its applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Dimensional Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Dimensionally homogeneous equations</li>
+                                <li>Buckingham Pi Theorem</li>
+                                <li>Calculation of dimensionless parameters</li>
+                                <li>Similitude and complete similarity</li>
+                                <li>Model scales</li>
+                                <li>Basic boundary layer theory and analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Fluid Kinematics</strong>
+                            <ul class="unit-topics">
+                                <li>Different approaches</li>
+                                <li>Reynolds transport theorem</li>
+                                <li>Flow visualization</li>
+                                <li>Types of flow</li>
+                                <li>Strain rate, stream line, streak line, path lines and stream tubes</li>
+                                <li>Continuity equation in Cartesian coordinates in 3D forms</li>
+                                <li>Velocity and acceleration of fluid particles</li>
+                                <li>Velocity potential function and stream function</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Momentum Equation</strong>
+                            <ul class="unit-topics">
+                                <li>Momentum equation</li>
+                                <li>Nervier Stoke equation</li>
+                                <li>Development of Euler's equation</li>
+                                <li>Bernoulli's equation and application</li>
+                                <li>Steady and unsteady flow through orifice</li>
+                                <li>Orifice placed in pipe</li>
+                                <li>Venturimeter</li>
+                                <li>Flow over triangular and rectangular notches</li>
+                                <li>Pitot tube</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Laminar and Turbulent Flow</strong>
+                            <ul class="unit-topics">
+                                <li>Viscous/Laminar flow</li>
+                                <li>Plane Poiseuille flow and Coutte flow</li>
+                                <li>Laminar flow through circular pipes</li>
+                                <li>Loss of head and power absorbed in viscous flow</li>
+                                <li>Turbulent flow - Reynolds experiment</li>
+                                <li>Frictional losses in pipe flow</li>
+                                <li>Shear stress in turbulent flow</li>
+                                <li>Major and minor losses (Darcy's and Chezy's equation)</li>
+                                <li>Flow through siphon pipes</li>
+                                <li>Branching pipes and equivalent pipe</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Rotodynamic Machines & Hydraulic Turbines</strong>
+                            <ul class="unit-topics">
+                                <li>Euler's equation</li>
+                                <li>Theory of Rotodynamic machines</li>
+                                <li>Various efficiencies</li>
+                                <li>Velocity components at entry and exit of the rotor</li>
+                                <li>Velocity triangles</li>
+                                <li>Centrifugal pumps - working principle, work done by the impeller and performance curves</li>
+                                <li>Cavitation in pumps</li>
+                                <li>Reciprocating pump working principle</li>
+                                <li>Classification of water turbines</li>
+                                <li>Heads and efficiencies</li>
+                                <li>Velocity triangles</li>
+                                <li>Axial, radial and mixed flow turbines</li>
+                                <li>Pelton wheel, Francis turbine and Kaplan turbines - working and design principles</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>S.S. Rattan, Fluid Mechanics & Hydraulic Machines, Khanna Book Publishing, 2019.</li>
+                        <li>P.J. Pritchard, A.T. McDonald and R.W. Fox, "Introduction to Fluid Mechanics," Wiley India, 2012.</li>
+                        <li>F.M. White, "Fluid Mechanics," Tata McGraw Hill, 2011.</li>
+                        <li>S. K. Som, G. Biswas and S. Chakraborty, "Introduction to Fluid Mechanics and Fluid Machines," Tata McGraw Hill, 2017.</li>
+                        <li>R. K. Bansal, "A Textbook of Fluid Mechanics and Hydraulic Machines," Laxmi Publication, 2005.</li>
+                        <li>Mechanics of Fluids, Shames, McGraw Hill Book Co., New Delhi, 1988.</li>
+                    </ol>
+                </section>
+                <section id="subject-102403" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Strength of Materials</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Deformation in solids</li>
+                                <li>Hooke's law</li>
+                                <li>Stress and strain</li>
+                                <li>Tension, compression and shear stresses</li>
+                                <li>Elastic constants and their relations</li>
+                                <li>Volumetric, linear and shear strains</li>
+                                <li>Principal stresses and principal planes</li>
+                                <li>Mohr's circle</li>
+                                <li>Theories of failure</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Beams and types transverse loading on beams</li>
+                                <li>Shear force and bend moment diagrams</li>
+                                <li>Types of beam supports</li>
+                                <li>Simply supported and over-hanging beams</li>
+                                <li>Cantilevers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Theory of bending of beams</li>
+                                <li>Bending stress distribution and neutral axis</li>
+                                <li>Shear stress distribution</li>
+                                <li>Point and distributed loads</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Moment of inertia about an axis and polar moment of inertia</li>
+                                <li>Deflection of a beam using double integration method</li>
+                                <li>Computation of slopes and deflection in beams</li>
+                                <li>Maxwell's reciprocal theorems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Torsion</li>
+                                <li>Stresses and deformation in circular and hollow shafts</li>
+                                <li>Stepped shafts</li>
+                                <li>Deflection of shafts fixed at both ends</li>
+                                <li>Stresses and deflection of helical springs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Axial and hoop stresses in cylinders subjected to internal pressure</li>
+                                <li>Deformation of thick and thin cylinders</li>
+                                <li>Deformation in spherical shells subjected to internal pressure</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Egor P.Popov, Engineering Mechanics of Solids, Prentice Hall of India, New Delhi, 2001.</li>
+                        <li>R.Subramanian, Strength of Materials, Oxford University Press, 2007.</li>
+                        <li>Ferdinand P.Been, Russel Johnson Jr. and John J.Dewole, Mechanics of Materials, Tata McGraw Hill Publishing Co. Ltd., New Delhi, 2005.</li>
+                    </ol>
+                </section>
+                <section id="subject-102404" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Kinematics of Machine</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Mechanisms</strong>
+                            <ul class="unit-topics">
+                                <li>Definition and types of joints</li>
+                                <li>Lower and higher pairs</li>
+                                <li>Classification of mechanisms based on function and constraints</li>
+                                <li>Common mechanisms such as slider crank and 4-bar mechanisms and their inversions</li>
+                                <li>Quick return mechanism</li>
+                                <li>Straight line generators</li>
+                                <li>Rocker mechanisms</li>
+                                <li>Universal joints</li>
+                                <li>Steering mechanisms, etc.</li>
+                                <li>Basic Kinematic Concepts and Definitions</li>
+                                <li>Degree of freedom and Grübler's formula</li>
+                                <li>Grashof's rule and rotatability limits</li>
+                                <li>Mechanical advantage</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Geometric Design of Mechanisms</strong>
+                            <ul class="unit-topics">
+                                <li>Kinematic Analysis of Simple Mechanisms Displacement</li>
+                                <li>Velocity, and acceleration analysis</li>
+                                <li>Velocity analysis using instantaneous centers</li>
+                                <li>Position, velocity and acceleration analysis using loop closure equations</li>
+                                <li>Coincident points</li>
+                                <li>Coriolis component of acceleration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Belt, Rope and Chain drives & Brakes</strong>
+                            <ul class="unit-topics">
+                                <li>Types of belt drives</li>
+                                <li>Velocity ratio, Slip, Creep, Length of belt</li>
+                                <li>Power transmitted</li>
+                                <li>Ratio of tensions</li>
+                                <li>Angle of contact</li>
+                                <li>Centrifugal tension, Maximum tension, Initial tension</li>
+                                <li>V belt drive, Ratio of Tensions in V belt and Rope drives</li>
+                                <li>Kinematics of chain drive</li>
+                                <li>Classifications of chains, Chain length</li>
+                                <li>Types of brakes, Block brake, Band brake, Band and Block brake</li>
+                                <li>Internal expanding brake</li>
+                                <li>Condition of self-locking</li>
+                                <li>Power transmitted and Heat generated</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Gears & Gear Train</strong>
+                            <ul class="unit-topics">
+                                <li>Gear terminology</li>
+                                <li>Involute and Cycloidal gear profiles</li>
+                                <li>Gear parameters</li>
+                                <li>Fundamental law of gearing and conjugate action</li>
+                                <li>Spur gear contact ratio and interference/undercutting</li>
+                                <li>Analysis of simple, compound, reverted and epicyclic gear train with problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Balancing of rotating masses</strong>
+                            <ul class="unit-topics">
+                                <li>Balancing of rotating masses in the same plane by a single revolving mass</li>
+                                <li>Balancing of several rotating masses in the same plane</li>
+                                <li>Balancing of several rotating masses in different planes by two revolving masses in suitable planes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Governors</strong>
+                            <ul class="unit-topics">
+                                <li>Watt, Porter, Proel & Hartnell Governors</li>
+                                <li>Effect of friction</li>
+                                <li>Controlling force</li>
+                                <li>Governor effort and power</li>
+                                <li>Sensitivity and isochronisms</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Thomas Bevan, "Theory of Machines," CBS Publishers & Distributors, 2005.</li>
+                        <li>W. L. Cleghorn, "Mechanisms of Machines," Oxford University Press, 2005.</li>
+                        <li>R. L. Norton, "Kinematics and Dynamics of Machinery," Tata McGraw Hill, 2009.</li>
+                        <li>A. Ghosh and A.K. Mallick, "Theory of Mechanisms and Machines," Affiliated East-West Pvt. Ltd, New Delhi, 1988.</li>
+                    </ol>
+                </section>
+                <section id="subject-102405" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Project Management</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of project Management: concept</li>
+                                <li>Project Environment</li>
+                                <li>Types of Projects</li>
+                                <li>Project life Cycle</li>
+                                <li>Project proposals</li>
+                                <li>Monitoring project program</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Project appraisal and project selection</li>
+                                <li>Identification of investment opportunities</li>
+                                <li>Source of new project ideas</li>
+                                <li>Preliminary screening of projects</li>
+                                <li>Feasibility studies and reports</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Market feasibility: Market survey</li>
+                                <li>Categories of Market survey</li>
+                                <li>Steps involved in conducting market survey</li>
+                                <li>Demand forecasting techniques</li>
+                                <li>Sales projections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Technical feasibility: Production technology</li>
+                                <li>Materials and inputs</li>
+                                <li>Plant capacity</li>
+                                <li>Site selection</li>
+                                <li>Plant layout</li>
+                                <li>Site preparation</li>
+                                <li>Managerial Feasibility</li>
+                                <li>Project organization and responsibilities</li>
+                                <li>Development of program evaluation & Review Technique (PERT)</li>
+                                <li>Benefits of PERT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Capital Investment Financial Analysis: capital Expenditure criteria and Investment strategies</li>
+                                <li>Appraisal Techniques (Non DCF and DCF)</li>
+                                <li>Risk analysis</li>
+                                <li>Cost of project and means of financing</li>
+                                <li>Estimation of cash flows</li>
+                                <li>Estimation of Capital costs and operating costs</li>
+                                <li>Forecasting income</li>
+                                <li>Preparation of detailed financial projections</li>
+                                <li>Breakeven point</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Project Management: Project implementation and review</li>
+                                <li>Project planning</li>
+                                <li>Project control</li>
+                                <li>Human aspects of project management</li>
+                                <li>Prerequisites for successful project implementation</li>
+                                <li>Project review</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Gido: Effective Project Management, 2e, Thomson, 2007.</li>
+                        <li>Prasanna odelin, "Projects, Planning, Analysis, Selection, Financing, Implementation and Review", TataMcGraw Hill Company Pvt. Ltd, New Delhi 1998.</li>
+                        <li>Damodaran, "Corporate Finance", Johy Wiley Publications.</li>
+                        <li>Erhardt & Brigham, "Principles of Corporate Finance", Thomson 2006.</li>
+                        <li>Singh M.K, "Project Evaluation and Management".</li>
+                        <li>Prasad 1.1.K, "Principles and Practice of Cost accounting", B. Pahwa, IIPS, Project Financing.</li>
+                        <li>Clifford F. Gray, Erik V. Larson, "Project Management, the Managerial Emphasis", McGraw Hill 2000.</li>
+                    </ol>
+                </section>
+                <section id="subject-102406" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">NPTEL-I (Open Course)</h2>
+                    <h3 class="sub-heading theory-heading">12 Weeks (3 Credits)</h3>
+                    <p><strong>NPTEL (Open Course) Guidelines:</strong> NPTEL (Open Course) should be taken from the course other than core subjects of the branch.</p>
+                </section>
+                <section id="subject-102402P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Fluid Mechanics & Hydraulic Machines Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten experiments</h3>
+                    <ol>
+                        <li>Determination of density & viscosity of oil.</li>
+                        <li>To determine the meta-centric height of a floating body.</li>
+                        <li>Measurement of Coefficient of Discharge of given Orifice and Venturimeter</li>
+                        <li>To determine the coefficient of discharge of Notch (V and Rectangular types)</li>
+                        <li>To determine the friction factor for the pipes.</li>
+                        <li>To verify the Bernoulli's Theorem.</li>
+                        <li>To find critical Reynolds number for a pipe flow.</li>
+                        <li>To determine the minor losses due to sudden enlargement, sudden contraction and bends.</li>
+                        <li>To show the velocity and pressure variation with radius in a free and forced vortex.</li>
+                        <li>Performance on hydraulic turbines:<br>
+                            a. Pelton wheel<br>
+                            b. Francis turbine<br>
+                            c. Kaplan turbine.
+                        </li>
+                        <li>Performance on hydraulic pumps:<br>
+                            a. Single stage and multi stage centrifugal pumps.<br>
+                            b. Reciprocating pump.<br>
+                            c. Performance test of a two stage reciprocating air compressor.<br>
+                            d. Performance test on an air blower.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-102403P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Strength of Materials Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten experiments</h3>
+                    <ol>
+                        <li>Hooke's Law.</li>
+                        <li>Hardness Test: Rockwell, Brinell, Vicker.</li>
+                        <li>Izod & Charpy Impact Test.</li>
+                        <li>Bending Test.</li>
+                        <li>Torsion Test.</li>
+                        <li>Shear test.</li>
+                        <li>Compressive strength test.</li>
+                        <li>Fatigue Test.</li>
+                        <li>Verification of Maxwell's reciprocal theorem.</li>
+                        <li>Continuous beam deflection test.</li>
+                        <li>Strain Measurement.</li>
+                    </ol>
+                </section>
+                <section id="subject-102404P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Kinematics of Machine Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all experiments</h3>
+                    <ol>
+                        <li>To study various types of Links, Pairs, Chain and Mechanism.</li>
+                        <li>To study inversion of Four Bar Mechanism.</li>
+                        <li>To plot slider displacement, velocity and acceleration against crank rotation for single slider crank mechanism.</li>
+                        <li>To find coefficient of friction between belt and pulley.</li>
+                        <li>To generate spur gear involutes tooth profile using simulated gear shaping process.</li>
+                        <li>To study various types of gears- Helical, cross helical worm and bevel gear.</li>
+                        <li>Estimation of Velocity ratios of simple, compound, epicyclic and differential gear trains.</li>
+                        <li>To fabricate the innovative models based on inversions, Gear trains, etc.</li>
+                        <li>To perform the experiment of Balancing of rotating parts and find the unbalanced couple and forces.</li>
+                        <li>To Perform Experiment on Watt, Porter, Proell and Hartnell Governors and prepare Performance Characteristic Curves also analyze Stability & Sensitivity.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

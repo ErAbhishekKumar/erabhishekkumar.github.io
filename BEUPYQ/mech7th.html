@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Mechanical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Induction Program [100701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Internal Combustion Engines [102701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective- II [1027xx]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective III [1027xx]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- IV [1027xx]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Internal Combustion Engines LAB [102701L]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td><strong>1.5</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-I [100709]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-III [100702]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>16</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>27.5</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100701"
+                        data-type="theory">Induction Program</button><button class="tab-btn"
+                        data-target="subject-102701" data-type="theory">Internal Combustion Engines</button><button
+                        class="tab-btn" data-target="subject-1027xx-OE2" data-type="theory">Open Elective-
+                        II</button><button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective - III"
+                        data-modal-options='[ {"label": "Refrigeration & Air Conditioning", "target": "subject-102702", "btn-id": "btn-102702"}, {"label": "Computer Aided Design", "target": "subject-102703", "btn-id": "btn-102703"}, {"label": "Finite Element Analysis", "target": "subject-102704", "btn-id": "btn-102704"}, {"label": "Automobile Engineering", "target": "subject-102705", "btn-id": "btn-102705"}, {"label": "Operations Research", "target": "subject-102706", "btn-id": "btn-102706"} ]'>
+                        Program Elective - III </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective - IV"
+                        data-modal-options='[ {"label": "Refrigeration & Air Conditioning", "target": "subject-102702", "btn-id": "btn-102702"}, {"label": "Computer Aided Design", "target": "subject-102703", "btn-id": "btn-102703"}, {"label": "Finite Element Analysis", "target": "subject-102704", "btn-id": "btn-102704"}, {"label": "Automobile Engineering", "target": "subject-102705", "btn-id": "btn-102705"}, {"label": "Operations Research", "target": "subject-102706", "btn-id": "btn-102706"} ]'>
+                        Program Elective - IV </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-102701L"
+                        data-type="lab">Internal Combustion Engines LAB</button><button class="tab-btn"
+                        data-target="subject-100709" data-type="lab">Project-I</button><button class="tab-btn"
+                        data-target="subject-100702" data-type="lab">Summer Entrepreneurship-III</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-100701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Induction Program [100701]</h2>
+                    <p>Induction program (mandatory) - 3 weeks duration. Induction program for students to be offered
+                        right at the start of the first year.</p>
+                    <ul class="unit-topics">
+                        <li>Physical Activity</li>
+                        <li>Creative Arts</li>
+                        <li>Universal Human Values</li>
+                        <li>Literary Proficiency Modules</li>
+                        <li>Lectures by Eminent People</li>
+                        <li>Visits to local Areas</li>
+                        <li>Familiarization to Dept./Branch & Innovations</li>
+                    </ul>
+                </section>
+                <section id="subject-102701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Internal Combustion Engines [102701]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>&rarr; To familiarize with the terminology associated with IC engines.</p>
+                    <p>&rarr; To understand the basics of IC engines.</p>
+                    <p>&rarr; To understand combustion, and various parameters and variables affecting it in various
+                        types of IC engines.</p>
+                    <p>&rarr; To learn about various systems used in IC engines and the type of IC engine required for
+                        various applications.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Basics of IC Engines, Engine components and
+                                classification</strong>
+                            <ul class="unit-topics">
+                                <li>Two Strokes, Four Stroke (Si And Ci) Engines</li>
+                                <li>Engines Parts</li>
+                                <li>Engines Working Principle And Valve Timing Diagram</li>
+                                <li>Ideal Cycles And Fuel-air Cycles</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Engine performance-test</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose And Types</li>
+                                <li>Measurement Of Power</li>
+                                <li>Engine System & Performance Parameters Evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Combustion in SI and CI engines</strong>
+                            <ul class="unit-topics">
+                                <li>Stages Of Combustion In Si Engines</li>
+                                <li>Abnormal Combustion And Knocking In Si Engines</li>
+                                <li>Factors Affecting Knocking</li>
+                                <li>Effects Of Knocking</li>
+                                <li>Control Of Knocking</li>
+                                <li>Combustion Chambers For Si Engines</li>
+                                <li>Stages Of Combustion In Ci Engines</li>
+                                <li>Detonation In C.i. Engines</li>
+                                <li>Factors Affecting Detonation</li>
+                                <li>Controlling Detonation</li>
+                                <li>Combustion Chamber For Si And Ci Engine</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Fuel supply systems in SI and CI engines</strong>
+                            <ul class="unit-topics">
+                                <li>Carburetors</li>
+                                <li>Port Fuel Injection</li>
+                                <li>Direct Injection And Common Rail Injection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Ignition system, Lubrication system and Cooling
+                                system</strong>
+                            <ul class="unit-topics">
+                                <li>Battery And Magneto Ignition System</li>
+                                <li>Spark Plug</li>
+                                <li>Firing Order</li>
+                                <li>Quality, Quantity & Hit And Miss Governing</li>
+                                <li>Lubrication Of Engine Components</li>
+                                <li>Lubrication System Wet Sump And Dry Sump</li>
+                                <li>Crankcase Ventilation</li>
+                                <li>Types Of Cooling Systems Liquid And Air Cooled</li>
+                                <li>Comparison Of Liquid And Air Cooled Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Measurement and Testing of IC engines</strong>
+                            <ul class="unit-topics">
+                                <li>Measurement Of Indicated Power, Brake Power, Fuel Consumption And Emission</li>
+                                <li>Measurement Of Friction Power By Willan's Line Method And Morse Test</li>
+                                <li>Calculation Of Brake Thermal Efficiency, Brake Power And Brake Specific Fuel
+                                    Consumption Of Ic Engines</li>
+                                <li>Variable Compression Ratio Engines</li>
+                                <li>Heat Balance Sheet Of Ic Engines</li>
+                                <li>Engine Emission And Their Control: Air Pollution Due To Ic Engines</li>
+                                <li>Constituent And Types Of Emission Hc, Co And Nox Emission</li>
+                                <li>Catalytic Converter</li>
+                                <li>Advanced Ic Engine Concepts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7</strong>
+                            <ul class="unit-topics">
+                                <li>Super Charging</li>
+                                <li>Engine Lubrication And Cooling</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Obert E. F, "Internal Combustion Engines and Air Pollution", Harper and Row Publication Inc.
+                            NY, 1973.</li>
+                        <li>Heisler H, "Advanced Engine Technology", Edward Arnold, 1995.</li>
+                        <li>Heywood J. B, "Internal Combustion Engine Fundamentals", McGraw Hill Book Co. NY, 1989.</li>
+                        <li>Heldt P. M, "High Speed Combustion Engines", Oxford & IBH publishing Co. India, 1985.</li>
+                        <li>Stockel MW, Stockel T S and Johanson C, "Auto Fundamentals", The Goodheart, Wilcox Co. Inc.,
+                            Illinois, 1996.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Students who have done this course will have a good idea of the basics of IC engines and how
+                        different parameters influence the operational characteristics of IC Engines.</p>
+                </section>
+                <section id="subject-102701L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Internal Combustion Engines LAB [102701L]</h2>
+                    <p>Laboratory:</p>
+                    <ul class="unit-topics">
+                        <li>To Study The Cross-sectional View Of I.c. Engine</li>
+                        <li>Determination Of The Calorific Value Of A Given Fuel And Its Flash & Fire Points</li>
+                        <li>To Study The Actual Valve Timing Diagram Of A 4-stroke Engine</li>
+                        <li>To Prepare The Heat Balance Sheet By Conducting A Performance Test On A Single Cylinder
+                            4-stroke Diesel Engine</li>
+                        <li>To Prepare The Heat Balance Sheet By Conducting A Performance Test On A Single Cylinder
+                            4-stroke Petrol Engine</li>
+                        <li>Performance Evaluation Of Multi Cylinder Diesel Engine</li>
+                        <li>Conduct The Morse Test On A Multi Cylinder Petrol Engine And Find Out The Friction Power
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-1027xx-OE2" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective- II [1027xx]</h2>
+                    <p>This is a placeholder for Open Elective- II. The specific subject and syllabus will be as per the
+                        course chosen by the student from the options provided by the university.</p>
+                </section>
+                <section id="subject-100709" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-I [100709]</h2>
+                    <p>Details for Project-I will be provided by the department. This component carries 6 credits.</p>
+                </section>
+                <section id="subject-100702" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-III [100702]</h2>
+                    <p>Details for Summer Entrepreneurship-III will be provided by the department. This component
+                        carries 8 credits.</p>
+                </section>
+                <section id="subject-102702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Refrigeration and Air Conditioning [102702]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>&rarr; To familiarize with the terminology associated with refrigeration systems and air
+                        conditioning.</p>
+                    <p>&rarr; To understand basic refrigeration processes.</p>
+                    <p>&rarr; To understand the basics of psychometric and practice of applied psychometrics.</p>
+                    <p>&rarr; To acquire the skills required to model, analyze and design different refrigeration as
+                        well as air conditioning processes and components.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Air refrigeration system</strong>
+                            <ul class="unit-topics">
+                                <li>Refrigeration Machine</li>
+                                <li>Heat Pump</li>
+                                <li>Coefficient Of Performance</li>
+                                <li>Ideal Refrigeration Cycle</li>
+                                <li>Bell Coleman, Refrigeration Cycle</li>
+                                <li>Open And Closed Systems</li>
+                                <li>Application Of Air Refrigeration In Air-crafts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Various compression systems</strong>
+                            <ul class="unit-topics">
+                                <li>Simple Vapour Compression Refrigeration Cycle</li>
+                                <li>Merits And Refrigerants Demerits Of This System Over Air Refrigeration System</li>
+                                <li>Factors Affecting The Performance Of A Vapour Compression Refrigeration System</li>
+                                <li>Subcooling And Superheating Of Vapour</li>
+                                <li>Wet And Dry Compression</li>
+                                <li>Multistage Vapour Compression System</li>
+                                <li>Intercooler</li>
+                                <li>Flash Chamber</li>
+                                <li>Accumulator And Heat Exchanger</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Vapour absorption system</strong>
+                            <ul class="unit-topics">
+                                <li>Simple And Modified Vapour Absorption Refrigeration System</li>
+                                <li>Electrolux Refrigerator</li>
+                                <li>Cop Of Heat Operated Refrigeration System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Special refrigeration system</strong>
+                            <ul class="unit-topics">
+                                <li>Absorption</li>
+                                <li>Cascade</li>
+                                <li>Vortex</li>
+                                <li>Thermoelectric And Steam Jet Refrigeration System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Refrigerants</strong>
+                            <ul class="unit-topics">
+                                <li>Classification And Nomenclature Of Refrigerants</li>
+                                <li>Primary And Secondary Refrigerants</li>
+                                <li>Properties Of Some Common Refrigerants</li>
+                                <li>Physical, Chemical And Thermodynamics Properties</li>
+                                <li>Selection Of Refrigerants</li>
+                                <li>Leakage Of Refrigerants And Methods Of Detection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Psychometry</strong>
+                            <ul class="unit-topics">
+                                <li>Properties Of Air Vapour Mixture</li>
+                                <li>Wet Bulb, Dew Point & Dry Bulb Temperatures</li>
+                                <li>Humidity</li>
+                                <li>Specific Humidity</li>
+                                <li>Humidity Ratio</li>
+                                <li>Degree Of Saturation</li>
+                                <li>Relative Humidity</li>
+                                <li>Total Heat Psychometric Relation</li>
+                                <li>Psychrometric Charts And Its Uses</li>
+                                <li>Psychrometric Processes</li>
+                                <li>Evaporative Cooling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Air conditioning</strong>
+                            <ul class="unit-topics">
+                                <li>General Principle And Requirement For Comfort And Air Conditioning</li>
+                                <li>Thermodynamics Of Human Body</li>
+                                <li>Estimation Of Heating And Cooling Loads</li>
+                                <li>Capacity Of Cooling Coils</li>
+                                <li>Humidification And Dehumidification Unit And Conditioner</li>
+                                <li>Central Air Conditioner</li>
+                                <li>Year Around Air Condition</li>
+                                <li>Humidity And Temperature Control</li>
+                                <li>Industrial Application Of Air Conditioning System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 8: Concept of enthalpy potential</strong>
+                            <ul class="unit-topics">
+                                <li>Air Washers</li>
+                                <li>Cooling Towers</li>
+                                <li>Evaporative Condensers</li>
+                                <li>Cooling And Dehumidifying Coils</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Gosney, W.B, Principles of Refrigeration, Cambridge University Press, 1982.</li>
+                        <li>Stoecker, W.F. and Jones, J.W., Refrigeration and Air conditioning, Tata McGraw Hill, 1986.
+                        </li>
+                        <li>Arora, C.P., Refrigeration and Air conditioning, Tata McGraw Hill, 2nd Edition, 2000.</li>
+                        <li>Kuehn, T.H., Ramsey, J.W. and Threlkeld, J.L., Thermal Environmental Engineering, 3rd
+                            Edition, Prentice Hall, 1998.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>A student who has done the course will have a good understanding of the working principles of
+                        refrigeration and air-conditioning systems.</p>
+                    <p><strong>Note:</strong> Refrigeration Data Books are permitted for examination.</p>
+                </section>
+                <section id="subject-102702L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Refrigeration and Air Conditioning Lab [102702L]</h2>
+                    <p>Practical:</p>
+                    <ul class="unit-topics">
+                        <li>Determination Of The Cop Of A Vapour Compression System</li>
+                        <li>Determination Of The Cop Of Vapour Absorption Apparatus</li>
+                        <li>Determination Of The Cop Of A Heat Pump</li>
+                        <li>To Find The Performance Parameter Of The Cooling Tower</li>
+                        <li>To Study Various Components Of A Room Air Conditioner And Determine Its Performance For
+                            Different Psychometric Conditions</li>
+                        <li>Determination Of Cop Of An Electrolux Refrigerator</li>
+                        <li>To Study The Compressor And Throttling Valve Used In The Refrigerator</li>
+                    </ul>
+                </section>
+                <section id="subject-102703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computer Aided Design [102703]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>To provide an overview of how computers can be utilized in mechanical component design.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Fundamentals of Computer Graphics</strong>
+                            <ul class="unit-topics">
+                                <li>Product Cycle</li>
+                                <li>Sequential And Concurrent Engineering</li>
+                                <li>Computer Aided Design</li>
+                                <li>Cad System Architecture</li>
+                                <li>Computer Graphics</li>
+                                <li>Coordinate Systems</li>
+                                <li>2d And 3d Transformations</li>
+                                <li>Viewing Transformation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Geometric Modeling</strong>
+                            <ul class="unit-topics">
+                                <li>Representation Of Curves</li>
+                                <li>Hermite Curves</li>
+                                <li>Bezier Curves</li>
+                                <li>B-spline Curves</li>
+                                <li>Rational Curves</li>
+                                <li>Techniques Of Surface Modelling</li>
+                                <li>Surface Patch</li>
+                                <li>Coons And Bicubic Patches</li>
+                                <li>Bezier And B-spline Surfaces</li>
+                                <li>Solid Modelling Techniques</li>
+                                <li>Csg And B-rep</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Visual realism</strong>
+                            <ul class="unit-topics">
+                                <li>Hidden Line-surface-solid Removal Algorithms</li>
+                                <li>Shading</li>
+                                <li>Colouring</li>
+                                <li>Computer Animation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Assembly of parts and CAD standards</strong>
+                            <ul class="unit-topics">
+                                <li>Assembly Modelling</li>
+                                <li>Interferences Of Positions And Orientation</li>
+                                <li>Tolerance Analysis</li>
+                                <li>Mass Property Calculations</li>
+                                <li>Mechanism Simulation And Interference Checking</li>
+                                <li>Cad Standards Graphical Kernel System (Gks)</li>
+                                <li>Standards For Exchange Images</li>
+                                <li>Open Graphics Library (Opengl)</li>
+                                <li>Data Exchange Standards Iges, Step, Cals Etc</li>
+                                <li>Communication Standards</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Ibrahim Zeid, Mastering CAD CAM, Tata McGraw Hill Publishing Co.2007.</li>
+                        <li>C. McMahon and J. Browne, CAD/CAM Principles, II edition, Pearson Education, 1999.</li>
+                        <li>W. M. Neumann and R.F. Sproul, Principles of Computer Graphics, McGraw Hill, 1989.</li>
+                        <li>D. Hearn and M.P. Baker, Computer Graphics, Prentice Hall Inc., 1992.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Upon completion of this course, the students can use computer and CAD software for modelling
+                        mechanical components.</p>
+                </section>
+                <section id="subject-102703L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Computer Aided Design Lab [102703L]</h2>
+                    <p>Practical:</p>
+                    <ul class="unit-topics">
+                        <li>Initiating The Graphics Package; Setting The Paper Size, Space; Setting The Limits, Units;
+                            Use Of Snap And Grid Commands</li>
+                        <li>Drawing Of Primitives (Line, Arc, Circle, Ellipse, Triangle Etc.)</li>
+                        <li>Drawing A Flange</li>
+                        <li>Drawing A Bushing Assembly</li>
+                        <li>Dimensioning The Drawing And Adding Text</li>
+                        <li>Setting The Layers And Application Of Layers</li>
+                        <li>Isometric And Orthographic Projections</li>
+                        <li>Viewing In Three Dimensions</li>
+                        <li>Removal Of Hidden Lines Shading And Rendering</li>
+                    </ul>
+                </section>
+                <section id="subject-102704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Finite Element Analysis [102704]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>&rarr; To illustrate the principle of mathematical modeling of engineering problems.</p>
+                    <p>&rarr; To introduce the basics and application of the Finite Element Method.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1</strong>
+                            <ul class="unit-topics">
+                                <li>Historical Background</li>
+                                <li>Mathematical Modeling Of Field Problems In Engineering</li>
+                                <li>Governing Equations</li>
+                                <li>Discrete And Continuous Models</li>
+                                <li>Boundary And Initial Value Problems</li>
+                                <li>Weighted Residual Methods</li>
+                                <li>Variational Formulation Of Boundary Value Problems</li>
+                                <li>Ritz Technique</li>
+                                <li>Basic Concept Of Finite Element Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2</strong>
+                            <ul class="unit-topics">
+                                <li>One Dimensional Second Order Equation</li>
+                                <li>Discretization</li>
+                                <li>Linear And Higher Order Elements</li>
+                                <li>Derivation Of Shape Functions</li>
+                                <li>Stiffness Matrix And Force Vectors</li>
+                                <li>Assembly Of Elemental Matrices</li>
+                                <li>Solution Of Problems From Solid Mechanics And Heat Transfer</li>
+                                <li>Longitudinal Vibration And Mode Shapes</li>
+                                <li>Fourth Order Beam Equation</li>
+                                <li>Transverse Deflections And Natural Frequencies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3</strong>
+                            <ul class="unit-topics">
+                                <li>Two Dimensional Equations</li>
+                                <li>Variational Formulation</li>
+                                <li>Finite Element Formulation</li>
+                                <li>Triangular Elements Shape Functions</li>
+                                <li>Elemental Matrices And Rhs Vectors</li>
+                                <li>Application To Thermal Problems</li>
+                                <li>Torsion Of Non-circular Shafts</li>
+                                <li>Quadrilateral And Higher Order Elements</li>
+                                <li>Plane Stresses And Plane Strain Problems</li>
+                                <li>Body Forces And Thermal Loads</li>
+                                <li>Plate And Shell Elements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4</strong>
+                            <ul class="unit-topics">
+                                <li>Natural Coordinate Systems</li>
+                                <li>Isoparametric Elements And Shape Functions</li>
+                                <li>Numerical Integration And Application To Plane Stress Problems</li>
+                                <li>Matrix Solution Techniques</li>
+                                <li>Solution Of Dynamic Problems</li>
+                                <li>Introduction To Fe Software</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Reddy J.N., An Introduction to Finite Element Method, 3 rd ed., Tata McGraw Hill, 2005.</li>
+                        <li>Seshu P., Text Book of Finite Element Analysis, Prentice Hall, New Delhi, 2007.</li>
+                        <li>Rao S.S., The Finite Element Method in Engineering, 3 rd ed., Butterworth Heinemann, 2004.
+                        </li>
+                        <li>Chandrupatla & Belegundu, Introduction to Finite Elements in Engineering, 3 rd edPrentice
+                            Hall, 1990.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Upon completion of the course, students will understand the FEM formulation and its application
+                        to simple structural and thermal problems.</p>
+                </section>
+                <section id="subject-102704L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Finite Element Analysis Lab [102704L]</h2>
+                    <p>Practical:</p>
+                    <p>Use these software for experiments: ANSYS, SIMULIA, ABAQUS, MATLAB etc.</p>
+                    <ul class="unit-topics">
+                        <li>Force And Stress Analysis Using Link Elements In Trusses, Cables Etc</li>
+                        <li>Stress And Deflection Analysis In Beams With Different Support Conditions</li>
+                        <li>Stress Analysis Of Flat Plates And Simple Shells</li>
+                        <li>Stress Analysis Of Axi-symmetric Components</li>
+                        <li>Thermal Stress And Heat Transfer Analysis Of Plate</li>
+                        <li>Thermal Stress Analysis Of Cylindrical Shells</li>
+                        <li>Vibration Analysis Of Spring-mass Systems</li>
+                        <li>Model Analysis Of Beams</li>
+                    </ul>
+                </section>
+                <section id="subject-102705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Automobile Engineering [102705]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>To understand the construction and working principle of various parts of an automobile.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Automobiles</li>
+                                <li>Vehicle Construction And Layouts</li>
+                                <li>Car Body Style</li>
+                                <li>Chassis, Frame And Body</li>
+                                <li>Vehicle Aerodynamics</li>
+                                <li>Ic Engines-components, Function And Materials</li>
+                                <li>Variable Valve Timing (Vvt)</li>
+                                <li>Front Engine Front Wheel Drive</li>
+                                <li>Front Engine Rear Wheel Drive</li>
+                                <li>Four Wheel Drive</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Engine auxiliary systems</strong>
+                            <ul class="unit-topics">
+                                <li>Electronic Injection For Si And Ci Engines</li>
+                                <li>Unit Injector System</li>
+                                <li>Rotary Distributor Type And Common Rail Direct Injection System</li>
+                                <li>Transistor Based Coil Ignition & Capacitive Discharge Ignition Systems</li>
+                                <li>Turbo Chargers (Wgt, Vgt)</li>
+                                <li>Engine Emission Control By 3-way Catalytic Converter System</li>
+                                <li>Emission Norms (Euro & Bs)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Transmission systems</strong>
+                            <ul class="unit-topics">
+                                <li>Clutch Types</li>
+                                <li>Cone Clutch</li>
+                                <li>Single Plate, Multi Plate, Diaphragm Spring & Centrifugal Clutch</li>
+                                <li>Electromagnetic Clutch & Construction</li>
+                                <li>Gear Boxes Manual And Automatic Gear Shift Mechanisms</li>
+                                <li>Overdrive Principles</li>
+                                <li>Transfer Box</li>
+                                <li>Transaxles</li>
+                                <li>Flywheel</li>
+                                <li>Torque Converter</li>
+                                <li>Propeller Shaft</li>
+                                <li>Slip Joints</li>
+                                <li>Universal Joints</li>
+                                <li>Differential And Rear Axle</li>
+                                <li>Hotchkiss Drive And Torque Tube Drive</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Steering and Suspension</strong>
+                            <ul class="unit-topics">
+                                <li>Steering Geometry And Types Of Steering Gear Box</li>
+                                <li>Power Steering</li>
+                                <li>Types Of Front Axle</li>
+                                <li>Types Of Suspension Systems</li>
+                                <li>Constructional Details & Characteristics Of Leaf Spring</li>
+                                <li>Pneumatic And Hydraulic Braking Systems</li>
+                                <li>Anti Lock Braking System (Abs)</li>
+                                <li>Electronic Brake Force Distribution (Ebd) And Traction Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Axles and Alignment</strong>
+                            <ul class="unit-topics">
+                                <li>Caster</li>
+                                <li>Camber</li>
+                                <li>King Pin Inclination Toe In Toe Out</li>
+                                <li>Full Floating, Three Quarter Floating & Semi Floating Rear Axles</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Alternative energy sources</strong>
+                            <ul class="unit-topics">
+                                <li>Natural Gas</li>
+                                <li>Lpg</li>
+                                <li>Biodiesel</li>
+                                <li>Bio-ethanol</li>
+                                <li>Gasohol And Hydrogen Fuels In Automobiles</li>
+                                <li>Modifications Needed</li>
+                                <li>Performance, Combustion & Emission Characteristics Of Alternative Fuels In Si And Ci
+                                    Engines</li>
+                                <li>Electric And Hybrid Vehicles</li>
+                                <li>Application Of Fuel Cells</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Kirpal Singh, Automobile Engineering, 7 th ed., Standard Publishers, New Delhi, 1997.</li>
+                        <li>Jain K.K. and Asthana R.B., Automobile Engineering, Tata McGraw Hill, New Delhi, 2002.</li>
+                        <li>Heitner J., Automotive Mechanics, 2nd ed., East-West Press, 1999.</li>
+                        <li>Heisler H., Advanced Engine Technology, SAE International Publ., USA, 1998.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Upon completion of this course, students will understand the function of each automobile
+                        component and also have a clear idea about the overall vehicle performance.</p>
+                </section>
+                <section id="subject-102705L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Automobile Engineering Lab [102705L]</h2>
+                    <p>Practical:</p>
+                    <ul class="unit-topics">
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Automotive Clutches</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Automotive Transmission Systems</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Automotive Drivelines & Differentials</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Multi-cylinder: Diesel And Petrol Engines</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Fuels Supply Systems</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Engine Cooling & Lubricating Systems</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Automotive Suspension Systems</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Automotive Steering Systems</li>
+                        <li>To Study And Prepare A Report On The Constructional Details, Working Principles And
+                            Operation Of The Automotive Brake Systems</li>
+                    </ul>
+                </section>
+                <section id="subject-102706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Operations Research [102706]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>To understand the methodology and applications of Operations Research in decision-making
+                        processes.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Features of Operations Research (OR)</li>
+                                <li>Methodology of OR</li>
+                                <li>Scopes and Objectives of OR models in OR</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Inventory and Linear Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Inventory classification</li>
+                                <li>Different cost associated to Inventory</li>
+                                <li>Economic order quantity</li>
+                                <li>Inventory models with deterministic demands</li>
+                                <li>ABC analysis</li>
+                                <li>Introduction and assumptions of LPP</li>
+                                <li>Mathematical formulation of LPP</li>
+                                <li>Graphical Method</li>
+                                <li>Simplex Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Transportation and Assignment Problems</strong>
+                            <ul class="unit-topics">
+                                <li>Transportation Problems: Introduction</li>
+                                <li>Northwest Corner Method</li>
+                                <li>Least Cost Method</li>
+                                <li>Vogel's Approximation Method</li>
+                                <li>Test for Optimality</li>
+                                <li>Assignment Problems: Introduction</li>
+                                <li>Hungarian Assignment Method</li>
+                                <li>Unbalanced Assignment Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Sequencing and Network Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Sequencing: Introduction</li>
+                                <li>Formulation of Sequencing Problem</li>
+                                <li>Johnson's Rule</li>
+                                <li>Network Analysis: Introduction</li>
+                                <li>PERT and CPM</li>
+                                <li>Time-Cost Trade-off (Project Crashing)</li>
+                                <li>Resource Leveling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Dynamic Programming and Simulation</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamic Programming: Introduction</li>
+                                <li>Deterministic Dynamic Programming</li>
+                                <li>Probabilistic Dynamic Programming</li>
+                                <li>Simulation: Introduction</li>
+                                <li>Monte Carlo Simulation</li>
+                                <li>Simulation of Inventory and Queuing System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Queuing and Replacement Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Queuing Theory: Introduction</li>
+                                <li>General Structure of Queuing System</li>
+                                <li>Operating Characteristics of Queuing System</li>
+                                <li>Queuing Models</li>
+                                <li>Replacement Theory: Introduction</li>
+                                <li>Replacement Policies: Gradually Deteriorating Equipment</li>
+                                <li>Items that Fail Suddenly</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Operations Research: An Introduction by Hamdy A. Taha</li>
+                        <li>Introduction to Operations Research by Frederick S. Hillier and Gerald J. Lieberman</li>
+                        <li>Operations Research by S. D. Sharma</li>
+                        <li>Operations Research: Theory and Applications by J. K. Sharma</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Upon completion of this course, students will be able to apply various Operations Research
+                        techniques for optimization and decision-making in engineering and management problems.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

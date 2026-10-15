@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester VLSI Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">VLSI Design &amp; Technology</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>VLSI Fabrication Technology [159601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Embedded System [159602]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Advanced Computer Architecture [159603]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Digital system design using Verilog [159604]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1596XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective Course-I [1006XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Embedded System Lab [159602P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital system design using Verilog Lab [159604P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL-II [100604P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>21</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-159601" data-type="theory">VLSI Fabrication
+                        Technology</button>
+                    <button class="tab-btn" data-target="subject-159602" data-type="theory">Embedded System</button>
+                    <button class="tab-btn" data-target="subject-159603" data-type="theory">Advanced Computer
+                        Architecture</button>
+                    <button class="tab-btn" data-target="subject-159604" data-type="theory">Digital system design using
+                        Verilog</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective-I"
+                        data-modal-options='[{"label":"Low Power VLSI Design [159605]","target":"subject-159605","btn-id":"btn-159605"},{"label":"VLSI Testing &amp; Verification [159606]","target":"subject-159606","btn-id":"btn-159606"},{"label":"Biomedical Instrumentation [159607]","target":"subject-159607","btn-id":"btn-159607"}]'>Program
+                        Elective-I</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective Course-I"
+                        data-modal-options='[{"label":"Psychology at the Workplace [100623]","target":"subject-100623","btn-id":"btn-100623"},{"label":"Cloud Computing [110725]","target":"subject-110725","btn-id":"btn-110725"},{"label":"Project Management [100624]","target":"subject-100624","btn-id":"btn-100624"},{"label":"Database Management Systems [119601]","target":"subject-119601","btn-id":"btn-119601"}]'>Open
+                        Elective Course-I</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-159602P" data-type="lab">Embedded System Lab</button>
+                    <button class="tab-btn" data-target="subject-159604P" data-type="lab">Digital system design using
+                        Verilog Lab</button>
+                    <button class="tab-btn" data-target="subject-100604P" data-type="lab">NPTEL-II</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+
+                <!-- VLSI Fabrication Technology -->
+                <section id="subject-159601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">VLSI Fabrication Technology [159601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamental Considerations for IC Processing</li>
+                                <li>NMOS IC Technology</li>
+                                <li>CMOS IC Technology</li>
+                                <li>MOS Memory IC Technology</li>
+                                <li>IC Fabrication</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Crystal Growth and Wafer Preparation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Electronic Grade Silicon</li>
+                                <li>Czochralski Crystal Growing</li>
+                                <li>Silicon Shaping</li>
+                                <li>Processing Considerations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Epitaxy and Oxidation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Epitaxy</li>
+                                <li>Vapor Phase Epitaxy</li>
+                                <li>Molecular Beam Epitaxy</li>
+                                <li>Silicon on Insulators</li>
+                                <li>Epitaxial Evaluation</li>
+                                <li>Introduction to Oxidation</li>
+                                <li>Growth Mechanism and Kinematics</li>
+                                <li>Thin Oxides</li>
+                                <li>Oxidation Techniques and Systems</li>
+                                <li>Oxidation of Polysilicon</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Lithography</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Optical Lithography</li>
+                                <li>Electron Lithography</li>
+                                <li>Ion Lithography</li>
+                                <li>Plasma Properties</li>
+                                <li>Feature Size Control and Anisotropic Etch Mechanism</li>
+                                <li>Reactive Plasma Etching Techniques and Equipment</li>
+                                <li>Specific Etch Process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Dielectric and Polysilicon Film Deposition I</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Deposition Process</li>
+                                <li>Polysilicon</li>
+                                <li>Silicon Dioxide</li>
+                                <li>Automatic Diffusion Mechanism</li>
+                                <li>Measurement Techniques</li>
+                                <li>Range Theory</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Dielectric and Polysilicon Film Deposition II</strong>
+                            <ul class="unit-topics">
+                                <li>Metalization</li>
+                                <li>Metalization Applications</li>
+                                <li>Metalization Choices</li>
+                                <li>Patterning</li>
+                                <li>Metalization Problems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S.M.Sze "VLSI Technology", McGraw Hill Companies Inc. (2nd Edition)</li>
+                        <li>C.Y. Chang and S.M.Sze (Ed), "ULSI Technology", McGraw Hill Companies Inc.</li>
+                        <li>Stephena, Campbell, "The Science and Engineering of Microelectronic Fabrication", Second
+                            Edition, Oxford University Press.</li>
+                        <li>James D.Plummer, Michael D.Deal, "Silicon VLSI Technology"</li>
+                    </ol>
+                </section>
+
+                <!-- Embedded System -->
+                <section id="subject-159602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Embedded System [159602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Embedded Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Embedded Systems Overview</li>
+                                <li>Characteristics of Embedded Computing Applications</li>
+                                <li>Design Challenges</li>
+                                <li>Common Design Metrics</li>
+                                <li>Embedded Systems Design Flow</li>
+                                <li>Processor Technology</li>
+                                <li>IC Technology</li>
+                                <li>Trade-Offs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Specification Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>State Charts</li>
+                                <li>Modeling Hierarchy</li>
+                                <li>Specification Description Language (SDL)</li>
+                                <li>Petri Nets</li>
+                                <li>Embedded Systems Modeling with Petri Nets</li>
+                                <li>Unified Modeling Language (UML)</li>
+                                <li>Activity Diagram</li>
+                                <li>Class Diagram</li>
+                                <li>Component Diagram</li>
+                                <li>Use-Case Diagram</li>
+                                <li>Sequence Diagram</li>
+                                <li>UML Specification Examples</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Introduction to ARM Processors</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to ARM Processors</li>
+                                <li>Evolution of ARM Processors</li>
+                                <li>Pipeline Organization</li>
+                                <li>ARM Processor Cores and CPU Cores</li>
+                                <li>Introduction to ARM Cortex-M Processors</li>
+                                <li>ARM Cortex-M4 Processor's Architecture</li>
+                                <li>Programmer's Model</li>
+                                <li>Special Registers</li>
+                                <li>Operation Modes</li>
+                                <li>Memory Map</li>
+                                <li>Memory Access Attributes</li>
+                                <li>Overview of Interrupts and Exceptions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: ARM Cortex-M4 Programming I</strong>
+                            <ul class="unit-topics">
+                                <li>Assembly Basics</li>
+                                <li>Instruction Set</li>
+                                <li>Data Transfer</li>
+                                <li>Data Processing</li>
+                                <li>Conditional and Branch Instructions</li>
+                                <li>Barrier and Saturation Operations</li>
+                                <li>Cortex-M4-Specific Instructions</li>
+                                <li>Thumb-2 Instructions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: ARM Cortex-M4 Programming II</strong>
+                            <ul class="unit-topics">
+                                <li>Keil Microcontroller Development Kit for ARM</li>
+                                <li>Typical Program Compilation Flow</li>
+                                <li>Sample Arithmetic and Logical Assembly Language Programs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Embedded Systems Interfacing</strong>
+                            <ul class="unit-topics">
+                                <li>Serial Peripheral Interface (SPI)</li>
+                                <li>Inter-Integrated Circuit (I2C)</li>
+                                <li>RS-232</li>
+                                <li>Universal Serial Bus (USB)</li>
+                                <li>CAN</li>
+                                <li>IrDA</li>
+                                <li>Bluetooth</li>
+                                <li>PCI and AMBA Bus Protocols</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Shibu K V, "Introduction to Embedded Systems", Tata McGraw Hill Education</li>
+                        <li>Andrew N Sloss, Dominic System and Chris Wright, "ARM System Developers Guide", Elsevier,
+                            Morgan Kaufman publisher, 1st Edition, 2008.</li>
+                    </ol>
+                </section>
+
+                <!-- Advanced Computer Architecture -->
+                <section id="subject-159603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Advanced Computer Architecture [159603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to High Performance Computing</strong>
+                            <ul class="unit-topics">
+                                <li>RISC Philosophy and Overview of Pipelined Architecture</li>
+                                <li>Performance Evaluation of Pipelined Architecture</li>
+                                <li>Limitations of Scalar Pipelines</li>
+                                <li>Instruction Level Parallelism</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Superscalar Architecture</strong>
+                            <ul class="unit-topics">
+                                <li>Instruction Flow Optimization</li>
+                                <li>Handling Branches</li>
+                                <li>Advanced Optimization in Instruction Flow</li>
+                                <li>Register Flow Techniques: Register Renaming and Out of Order Execution</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Advanced Data Flow Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Instruction Reuse and Value Prediction</li>
+                                <li>Memory Data Flow</li>
+                                <li>Advanced Memory Data Flow Architectures</li>
+                                <li>Performance Evaluation of Superscalar Architectures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Multi-Threading and SMT Architectures</strong>
+                            <ul class="unit-topics">
+                                <li>Multi-Threading</li>
+                                <li>Simultaneous Multithreaded (SMT) Architectures</li>
+                                <li>SMT Architecture: Choices</li>
+                                <li>SMT Performance on Various Designs</li>
+                                <li>SMT Architecture: OS Impact and Adaptive Architectures</li>
+                                <li>Multi Scalar Architecture</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Multi-Core Architectures I</strong>
+                            <ul class="unit-topics">
+                                <li>Multi-Core Interconnect - NOC</li>
+                                <li>Network-on-Chip</li>
+                                <li>Cache Coherence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Multi-Core Architectures II</strong>
+                            <ul class="unit-topics">
+                                <li>Cache Consistency Model</li>
+                                <li>Dynamic Core Architectures</li>
+                                <li>GPGPU Architecture</li>
+                                <li>CPU-GPU Integration</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>J.L. Hennessy, and D.A. Patterson, Computer Architecture: A quantitative approach, Fifth
+                            Edition, Morgan Kaufman Publication, 2012.</li>
+                        <li>J.P. Shen and M.H. Lipasti, Modern Processor Design, MC Graw Hill, Crowfordsville, 2005.
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Digital system design using Verilog -->
+                <section id="subject-159604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital system design using Verilog [159604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Binary Codes and Boolean Expressions</strong>
+                            <ul class="unit-topics">
+                                <li>Binary Codes - Weighted and Non-Weighted</li>
+                                <li>Binary Arithmetic Conversion Algorithms</li>
+                                <li>Canonical and Standard Boolean Expressions</li>
+                                <li>Truth Tables</li>
+                                <li>K-Map Reduction</li>
+                                <li>Don't Care Conditions</li>
+                                <li>Adders / Subtractors</li>
+                                <li>Carry Look-Ahead Adder</li>
+                                <li>Code Conversion Algorithms</li>
+                                <li>Design of Code Converters</li>
+                                <li>Equivalence Functions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Combinational Logic Design</strong>
+                            <ul class="unit-topics">
+                                <li>Binary/Decimal Parallel Adder/Subtractor for Signed Numbers</li>
+                                <li>Magnitude Comparator</li>
+                                <li>Decoders / Encoders</li>
+                                <li>Multiplexers / Demultiplexers</li>
+                                <li>Boolean Function Implementation Using Multiplexers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sequential Logic</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Latch</li>
+                                <li>Flip-Flops (SR, D, JK, T and Master-Slave)</li>
+                                <li>Triggering of Flip-Flops</li>
+                                <li>Counters - Design Procedure</li>
+                                <li>Ripple Counters</li>
+                                <li>BCD and Binary Counters</li>
+                                <li>Synchronous Counters</li>
+                                <li>Registers</li>
+                                <li>Shift Registers</li>
+                                <li>Registers with Parallel Load</li>
+                                <li>Reduction of State and Flow Tables</li>
+                                <li>Race-Free State Assignment</li>
+                                <li>Hazards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Introduction to VLSI Design and Verilog
+                                Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to VLSI Design</li>
+                                <li>Basic Gate Design</li>
+                                <li>Digital VLSI Design</li>
+                                <li>Design of General Boolean Circuits Using CMOS Gates</li>
+                                <li>Verilog Concepts - Basic Concepts</li>
+                                <li>Modules &amp; Ports &amp; Functions</li>
+                                <li>Useful Modeling Techniques</li>
+                                <li>Timing and Delays</li>
+                                <li>User Defined Primitives</li>
+                                <li>Modeling Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Advanced Verilog Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Synthesis Concepts</li>
+                                <li>Inferring Latches and Flip-Flops</li>
+                                <li>Modeling Techniques for Efficient Circuit Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Design of High-Speed Arithmetic Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Parallelism</li>
+                                <li>Pipelined Wallace Tree Multipliers</li>
+                                <li>Systolic Algorithms</li>
+                                <li>Systolic Matrix Multiplication</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Morris Mano and Michael D. Ciletti, "Digital Design", 5th edition, Prentice Hall of India,
+                            2012</li>
+                        <li>Samir Palnitkar, "Verilog HDL", 2nd Edition, Pearson Education, 2003</li>
+                    </ol>
+                </section>
+
+                <!-- Program Elective: Low Power VLSI Design -->
+                <section id="subject-159605" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Low Power VLSI Design [159605]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Low Power CMOS VLSI Design</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Sources of Power Dissipation</li>
+                                <li>Static Power Dissipation</li>
+                                <li>Active Power Dissipation</li>
+                                <li>Circuit Techniques for Low Power Design</li>
+                                <li>Introduction to Circuit Techniques for Low Power</li>
+                                <li>Designing for Low Power</li>
+                                <li>Circuit Techniques for Leakage Power Reduction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Low-Power Design Approaches</strong>
+                            <ul class="unit-topics">
+                                <li>Low-Power Design through Voltage Scaling</li>
+                                <li>VTCMOS Circuits</li>
+                                <li>MTCMOS Circuits</li>
+                                <li>Architectural Level Approach - Pipelining and Parallel Processing Approaches</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Low Voltage Low Power Adders</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Standard Adder Cells</li>
+                                <li>CMOS Adder's Architectures</li>
+                                <li>Low Voltage Low Power Design Techniques</li>
+                                <li>Current Mode Adders</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Low Voltage Low Power Multipliers</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Overview of Multiplication</li>
+                                <li>Types of Multiplier Architectures</li>
+                                <li>Braun Multiplier</li>
+                                <li>Baugh-Wooley Multiplier</li>
+                                <li>Booth Multiplier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Low-Voltage Low-Power Memories I</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of ROM</li>
+                                <li>Low-Power ROM Technology</li>
+                                <li>Future Trend and Development of ROMs</li>
+                                <li>Basics of SRAM</li>
+                                <li>Memory Cell</li>
+                                <li>Precharge and Equalization Circuit</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Low-Voltage Low-Power Memories II</strong>
+                            <ul class="unit-topics">
+                                <li>Low Power SRAM Technologies</li>
+                                <li>Basics of DRAM</li>
+                                <li>Self-Refresh Circuit</li>
+                                <li>Future Trend and Development of DRAM</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Kiat Seng Yeo, Kaushik Roy (2012), Low Voltage, Low Power VLSI Subsystems, TATA McGraw-Hill
+                        </li>
+                        <li>Sung-Mo Kang, Yusuf Leblebici, CMOS Digital Integrated Circuits – Analysis and Design, TMH,
+                            2011.</li>
+                    </ol>
+                </section>
+
+                <!-- Program Elective: VLSI Testing & Verification -->
+                <section id="subject-159606" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">VLSI Testing &amp; Verification [159606]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to VLSI Testing</strong>
+                            <ul class="unit-topics">
+                                <li>Importance of Testing</li>
+                                <li>Challenges in VLSI Testing</li>
+                                <li>Levels of Abstractions in VLSI Testing</li>
+                                <li>Functional vs. Structural Approach to Testing</li>
+                                <li>Complexity of the Testing Problem</li>
+                                <li>Controllability and Observability</li>
+                                <li>Generating Test for a Single Stuck at Fault in Combinational Logic</li>
+                                <li>D-Algorithm</li>
+                                <li>FAN and PODEM Algorithms</li>
+                                <li>Test Optimization and Fault Coverage</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Design for Testability (DFT)</strong>
+                            <ul class="unit-topics">
+                                <li>Testability Analysis</li>
+                                <li>Scan Cell Design</li>
+                                <li>Scan Architectures</li>
+                                <li>Scan Design Rules</li>
+                                <li>Scan Design Flow</li>
+                                <li>Special Purpose Scan Designs</li>
+                                <li>Logic and Fault Simulation</li>
+                                <li>Fault Detection</li>
+                                <li>Adhoc and Structured Approaches to DFT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Built-in Self-Test (BIST)</strong>
+                            <ul class="unit-topics">
+                                <li>Random Test Generation</li>
+                                <li>Boolean Difference</li>
+                                <li>ATPG Algorithms for Combinational Circuits</li>
+                                <li>Sequential ATPG</li>
+                                <li>Untestable Faults</li>
+                                <li>IDDQ Testing</li>
+                                <li>The LFSRs and Their Use in Random Test Generation and Response Compression
+                                    (including MISRs)</li>
+                                <li>Design Rules</li>
+                                <li>Exhaustive Testing</li>
+                                <li>Pseudo-Random Testing</li>
+                                <li>Pseudo-Exhaustive Testing</li>
+                                <li>Output Response Analysis</li>
+                                <li>Logic BIST Architectures</li>
+                                <li>Test Compression: Test Stimulus Compression, Test Response Compaction, Architectures
+                                    for Test Compression</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Boundary Scan and Advanced Testing</strong>
+                            <ul class="unit-topics">
+                                <li>IEEE Standards for Digital Boundary Scan</li>
+                                <li>Embedded Core Test Standards</li>
+                                <li>Analog and Mixed Signal Testing</li>
+                                <li>Delay Testing</li>
+                                <li>Physical Failures</li>
+                                <li>Soft Errors</li>
+                                <li>Reliability</li>
+                                <li>FPGA Testing</li>
+                                <li>MEMS Testing</li>
+                                <li>RF Testing</li>
+                                <li>High Speed I/O Testing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Verification Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Importance of Verification</li>
+                                <li>Verification Plan</li>
+                                <li>Verification Flow</li>
+                                <li>Levels of Verification</li>
+                                <li>Verification Methods and Languages</li>
+                                <li>Introduction to Hardware Verification Methodologies</li>
+                                <li>Verifications Based on Simulation, Analytical and Formal Approaches</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Functional, Timing and Formal Verification</strong>
+                            <ul class="unit-topics">
+                                <li>Functional Verification</li>
+                                <li>Timing Verification</li>
+                                <li>Formal Verification</li>
+                                <li>Basics of Equivalence Checking and Model Checking</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Parag K. Lala, An Introduction to Logic Circuit Testing, Morgan &amp; Claypool Publishers
+                        </li>
+                        <li>Thomas Kropf, Introduction to Formal Hardware Verification, Springer</li>
+                    </ol>
+                </section>
+
+                <!-- Program Elective: Biomedical Instrumentation -->
+                <section id="subject-159607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Biomedical Instrumentation [159607]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Cell Structure and Physiological Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Cell and Its Structure</li>
+                                <li>Resting and Action Potential</li>
+                                <li>Nervous System: Functional Organization of the Nervous System</li>
+                                <li>Structure of Nervous System</li>
+                                <li>Neurons</li>
+                                <li>Synapse</li>
+                                <li>Transmitters and Neural Communication</li>
+                                <li>Cardiovascular System</li>
+                                <li>Respiratory System</li>
+                                <li>Basic Components of a Biomedical System</li>
+                                <li>Transducers</li>
+                                <li>Selection Criteria</li>
+                                <li>Piezoelectric and Ultrasonic Transducers</li>
+                                <li>Temperature Measurements - Fiber Optic Temperature Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Electro-Physiological Measurements Electrodes and
+                                Amplifiers</strong>
+                            <ul class="unit-topics">
+                                <li>Limb Electrodes</li>
+                                <li>Floating Electrodes</li>
+                                <li>Pre-Gelled Disposable Electrodes</li>
+                                <li>Micro, Needle and Surface Electrodes</li>
+                                <li>Preamplifiers</li>
+                                <li>Differential Amplifiers</li>
+                                <li>Chopper Amplifiers</li>
+                                <li>Isolation Amplifier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Electro-Physiological Measurements and Safety</strong>
+                            <ul class="unit-topics">
+                                <li>ECG</li>
+                                <li>EEG</li>
+                                <li>EMG</li>
+                                <li>ERG</li>
+                                <li>Lead Systems and Recording Methods</li>
+                                <li>Typical Waveforms</li>
+                                <li>Electrical Safety in Medical Environment: Shock Hazards</li>
+                                <li>Leakage Current</li>
+                                <li>Instruments for Checking Safety Parameters of Biomedical Equipment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Non-Electrical Parameter Measurements</strong>
+                            <ul class="unit-topics">
+                                <li>Measurement of Blood Pressure</li>
+                                <li>Cardiac Output</li>
+                                <li>Heart Rate</li>
+                                <li>Heart Sound</li>
+                                <li>Pulmonary Function Measurements</li>
+                                <li>Spirometer</li>
+                                <li>Photo Plethysmography</li>
+                                <li>Body Plethysmography</li>
+                                <li>Blood Gas Analyzers: pH of Blood</li>
+                                <li>Measurement of Blood pCO2</li>
+                                <li>Measurement of Blood pO2</li>
+                                <li>Finger-Tip Oximeter</li>
+                                <li>ESR</li>
+                                <li>GSR Measurements</li>
+                                <li>Standard HL7</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Medical Imaging and Biotelemetry</strong>
+                            <ul class="unit-topics">
+                                <li>Radiographic and Fluoroscopic Techniques</li>
+                                <li>X Rays</li>
+                                <li>Computer Tomography</li>
+                                <li>Mammography</li>
+                                <li>MRI</li>
+                                <li>fMRI</li>
+                                <li>Ultrasonography</li>
+                                <li>Endoscopy</li>
+                                <li>Thermography</li>
+                                <li>Different Types of Biotelemetry Systems and Patient Monitoring</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Assisting and Therapeutic Equipments</strong>
+                            <ul class="unit-topics">
+                                <li>Pacemakers</li>
+                                <li>Defibrillators</li>
+                                <li>Ventilators</li>
+                                <li>Nerve and Muscle Stimulators</li>
+                                <li>Diathermy</li>
+                                <li>Heart Lung Machine</li>
+                                <li>Audio Meters</li>
+                                <li>Dialyzers</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>R.S.Khandpur, 'Hand Book of Bio-Medical instrumentation', Tata McGrawHill Publishing Co
+                            Ltd., 2003.</li>
+                        <li>Leslie Cromwell, Fred J.Weibell, Erich A.Pfeiffer, 'Bio-Medical Instrumentation and
+                            Measurements', II edition, Pearson Education, 2002 / PHI.</li>
+                        <li>J.Webster, 'Medical Instrumentation', John Wiley &amp; Sons, 1995.</li>
+                        <li>L.A. Geddes and L.E.Baker, 'Principles of Applied Bio-Medical Instrumentation', John Wiley
+                            &amp; Sons, 1975</li>
+                    </ol>
+                </section>
+
+                <!-- Open Elective: Psychology at the Workplace -->
+                <section id="subject-100623" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Psychology at the Workplace [100623]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Workplace Psychology</strong>
+                            <ul class="unit-topics">
+                                <li>Foundations: Definition, History, and the Role of the Industrial/Organizational
+                                    Psychologist</li>
+                                <li>Research Methods: Scientific Approach</li>
+                                <li>Data Collection (Surveys, Observation, Experiments)</li>
+                                <li>Ethical Issues in the Workplace</li>
+                                <li>Job Analysis: Techniques, Methods, and the Significance of Job Descriptions and
+                                    Specifications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Employee Attitudes and Work Behavior</strong>
+                            <ul class="unit-topics">
+                                <li>Job Satisfaction: Models, Measurement, and Consequences of
+                                    Satisfaction/Dissatisfaction</li>
+                                <li>Organizational Citizenship Behavior (OCB): Going Above and Beyond, and Its Impact on
+                                    Company Success</li>
+                                <li>Work Motivation: Key Theories including Maslow's Hierarchy, Herzberg's
+                                    Motivation-Hygiene Theory, and Self-Determination Theory (SDT) Applied to People
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: The Psychology of Leadership and Management</strong>
+                            <ul class="unit-topics">
+                                <li>Theories of Leadership: Trait Theories</li>
+                                <li>Behavioural Theories (including Blake &amp; Mouton's Managerial Grid)</li>
+                                <li>Contingency Approaches</li>
+                                <li>Power and Politics: Types of Power</li>
+                                <li>Organizational Politics and Impression Management</li>
+                                <li>Decision-Making: The Role of Emotional Intelligence in Leadership and Group
+                                    Decision-Making Dynamics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Group Dynamics and Organizational Culture</strong>
+                            <ul class="unit-topics">
+                                <li>Group Behaviour: Nature, Types, and Group Development Models</li>
+                                <li>Organizational Culture: Understanding Toxic vs. Healthy Work Climates</li>
+                                <li>Communication: Communication Processes, Barriers, and Improving Workplace
+                                    Interactions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Employee Well-being and Mental Health</strong>
+                            <ul class="unit-topics">
+                                <li>Occupational Stress: Causes, Consequences, and Stress Models</li>
+                                <li>Burnout &amp; Work-Life Balance: Symptoms, Causes, and Interventions</li>
+                                <li>Psychological Safety: Fostering a Supportive, Inclusive, and Diverse Work
+                                    Environment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Personnel Selection and Assessment</strong>
+                            <ul class="unit-topics">
+                                <li>Psychological Testing: Principles of Psychological Testing, Reliability, and
+                                    Validity</li>
+                                <li>Performance Appraisal: Methods of Evaluating Performance, and Avoiding Cognitive
+                                    Biases in Evaluations</li>
+                                <li>Training &amp; Development: Identifying Training Needs, Program Design, and
+                                    Evaluating Training Effectiveness</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Work in the 21st Century: An Introduction to Industrial and Organizational Psychology by
+                            Jeffrey M. Conte and Frank J. Landy.</li>
+                        <li>Psychology Applied to Work by Paul M. Muchinsky.</li>
+                        <li>Organizational Culture and Leadership by Edgar H. Schein (a classic on workplace culture).
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Open Elective: Cloud Computing -->
+                <section id="subject-110725" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Cloud Computing [110725]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basics of Cloud Computing</strong>
+                            <ul class="unit-topics">
+                                <li>Overview: Roots of Cloud Computing</li>
+                                <li>Grid Computing vs. Cluster Computing</li>
+                                <li>Cloud Architecture: NIST Definition</li>
+                                <li>Cloud Deployment Models (Public, Private, Hybrid, Community)</li>
+                                <li>Service Models: Introduction to IaaS, PaaS, and SaaS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Virtualization Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Virtual Machines (VMs)</li>
+                                <li>Hypervisors (Type 1 and Type 2)</li>
+                                <li>Resource Pooling</li>
+                                <li>Types: Full Virtualization</li>
+                                <li>Para-Virtualization</li>
+                                <li>Hardware-Assisted Virtualization</li>
+                                <li>Virtualization Management: CPU, Memory, and I/O Virtualization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Cloud Platforms &amp; Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Major Providers: Overview of Amazon Web Services (AWS)</li>
+                                <li>Google Cloud Platform (GCP)</li>
+                                <li>Microsoft Azure</li>
+                                <li>Cloud Services: Elastic Compute</li>
+                                <li>Storage Systems (BLOB, Object Storage)</li>
+                                <li>Networking</li>
+                                <li>Cloud APIs: RESTful Web Services and Programming for the Cloud Environment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Cloud Security &amp; Governance I</strong>
+                            <ul class="unit-topics">
+                                <li>Security Risks: Data Integrity</li>
+                                <li>Virtualization Vulnerabilities</li>
+                                <li>Identity Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Cloud Security &amp; Governance II</strong>
+                            <ul class="unit-topics">
+                                <li>Privacy &amp; Compliance: Security Architecture</li>
+                                <li>Data Protection in Transit and at Rest</li>
+                                <li>Service Level Agreements (SLAs): Metric Definitions and Billing Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Cloud Concepts &amp; Interoperability</strong>
+                            <ul class="unit-topics">
+                                <li>Modern Technologies: Serverless Computing</li>
+                                <li>Containers (Docker, Kubernetes)</li>
+                                <li>Microservices</li>
+                                <li>Interoperability: Open Standards</li>
+                                <li>Mobile Cloud Computing</li>
+                                <li>Disaster Recovery</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Cloud Computing: Principles and Paradigms by Rajkumar Buyya, James Broberg, and Andrzej M.
+                            Goscinski (Wiley India.)</li>
+                        <li>Mastering Cloud Computing: Foundations and Applications Programming by Rajkumar Buyya,
+                            Christian Vecchiola, and S. Thamarai Selvi (McGraw Hill)</li>
+                        <li>Cloud Computing: A Practical Approach by Anthony T. Velte, Toby J. Velte, and Robert
+                            Elsenpeter (McGraw Hill)</li>
+                    </ol>
+                </section>
+
+                <!-- Open Elective: Project Management -->
+                <section id="subject-100624" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Project Management [100624]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Project Planning &amp; Evaluation</strong>
+                            <ul class="unit-topics">
+                                <li>Project Initiation: Definition, Characteristics, and Lifecycle of a Project</li>
+                                <li>Project Evaluation: Cost-Benefit Analysis</li>
+                                <li>Strategic Portfolio Alignment</li>
+                                <li>Selecting the Right Project (Financial/Scoring Models)</li>
+                                <li>Planning Process: Project Charters</li>
+                                <li>Scope Definition</li>
+                                <li>Statement of Work</li>
+                                <li>Baseline Plans</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Software Estimation &amp; Risk Management</strong>
+                            <ul class="unit-topics">
+                                <li>Estimation Techniques: Function Point Analysis (FPA)</li>
+                                <li>Lines of Code (LOC)</li>
+                                <li>The COCOMO II Model</li>
+                                <li>Process Models: Understanding Agile Methodologies</li>
+                                <li>Scrum</li>
+                                <li>Traditional Iterative/Waterfall Models</li>
+                                <li>Risk Management: Risk Identification</li>
+                                <li>Risk Planning</li>
+                                <li>Risk Analysis</li>
+                                <li>Risk Management Strategies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Activity Planning</strong>
+                            <ul class="unit-topics">
+                                <li>Network Planning: Objectives and Building the Project Network</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Scheduling Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Gantt Charts</li>
+                                <li>Program Evaluation and Review Technique (PERT)</li>
+                                <li>Critical Path Method (CPM)</li>
+                                <li>Resource Allocation: Resource Scheduling</li>
+                                <li>Resource Levelling</li>
+                                <li>Schedule Crashing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Project Monitoring, Tracking &amp; Control</strong>
+                            <ul class="unit-topics">
+                                <li>Monitoring Progress: Creating Frameworks for Controlling and Visualizing Progress
+                                </li>
+                                <li>Earned Value Analysis (EVA): Calculating Schedule Variance (SV)</li>
+                                <li>Cost Variance (CV)</li>
+                                <li>Performance Indices</li>
+                                <li>Change Control &amp; Contracts: Managing Scope Changes</li>
+                                <li>Contract Types</li>
+                                <li>Software Configuration Management (SCM)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Team Management &amp; Organizational Behavior</strong>
+                            <ul class="unit-topics">
+                                <li>Staffing &amp; Teams: Organizational Structures (Line-of-Business, Matrix)</li>
+                                <li>Managing Virtual/Dispersed Teams</li>
+                                <li>Human Factors: Motivation Theories (Oldham-Hackman Model)</li>
+                                <li>Leadership</li>
+                                <li>Communication Plans</li>
+                                <li>Decision-Making</li>
+                                <li>Quality Standards: Introduction to Total Quality Management (TQM)</li>
+                                <li>Six Sigma</li>
+                                <li>ISO Standards</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Project Management: A Systems Approach to Planning, Scheduling, and Controlling by Harold
+                            Kerzner | Wiley</li>
+                        <li>Projects: Planning, Analysis, Selection, Implementation and Review by Prasanna Chandra
+                            McGraw Hill</li>
+                        <li>Construction Project Management by K.K. Chitkara | McGraw Hill</li>
+                        <li>Software Project Management by Bob Hughes, Mike Cotterell, and Rajib Mall McGraw Hill</li>
+                    </ol>
+                </section>
+
+                <!-- Open Elective: Database Management Systems -->
+                <section id="subject-119601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Database Management Systems [119601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction &amp; Data Modeling</strong>
+                            <ul class="unit-topics">
+                                <li>Database Concepts: File System vs. DBMS</li>
+                                <li>Advantages of DBMS</li>
+                                <li>Data Abstraction</li>
+                                <li>Data Independence</li>
+                                <li>Architectures: Three-Schema Architecture</li>
+                                <li>Components of a DBMS</li>
+                                <li>Client-Server Structures</li>
+                                <li>Entity-Relationship (E-R) Model: Entities</li>
+                                <li>Attributes</li>
+                                <li>Relationships</li>
+                                <li>Weak Entity Sets</li>
+                                <li>E-R Diagram Notations</li>
+                                <li>Extended E-R Features: Specialization</li>
+                                <li>Generalization</li>
+                                <li>Aggregation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Relational Model &amp; Query Languages</strong>
+                            <ul class="unit-topics">
+                                <li>Relational Algebra: Selection</li>
+                                <li>Projection</li>
+                                <li>Rename</li>
+                                <li>Set Operations</li>
+                                <li>Various Types of Joins (Inner, Outer, Theta, Natural)</li>
+                                <li>Relational Calculus: Tuple Relational Calculus (TRC)</li>
+                                <li>Domain Relational Calculus (DRC)</li>
+                                <li>SQL Fundamentals: Data Definition (DDL) and Data Manipulation (DML) Commands</li>
+                                <li>Constraints</li>
+                                <li>Schema Definitions</li>
+                                <li>Advanced SQL: Aggregate Functions</li>
+                                <li>Nested Subqueries</li>
+                                <li>Views</li>
+                                <li>Triggers</li>
+                                <li>Assertions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Database Design &amp; Normalization</strong>
+                            <ul class="unit-topics">
+                                <li>Relational Database Design: Pitfalls in Relational Database Design (e.g., Anomalies)
+                                </li>
+                                <li>Dependencies: Functional Dependencies</li>
+                                <li>Armstrong's Axioms</li>
+                                <li>Attribute Closure</li>
+                                <li>Canonical Cover</li>
+                                <li>Normal Forms: 1NF</li>
+                                <li>2NF</li>
+                                <li>3NF</li>
+                                <li>Boyce-Codd Normal Form (BCNF)</li>
+                                <li>4NF</li>
+                                <li>5NF</li>
+                                <li>Decompositions: Lossless-Join Decomposition</li>
+                                <li>Dependency-Preserving Decomposition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Transaction Processing &amp; Concurrency</strong>
+                            <ul class="unit-topics">
+                                <li>Transaction Concepts: ACID Properties</li>
+                                <li>Transaction States</li>
+                                <li>Concurrent Execution</li>
+                                <li>Serializability: Conflict Serializability</li>
+                                <li>View Serializability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Concurrency Control and Recovery</strong>
+                            <ul class="unit-topics">
+                                <li>Concurrency Control: Lock-Based Protocols</li>
+                                <li>Two-Phase Locking (2PL)</li>
+                                <li>Timestamp-Based Protocols</li>
+                                <li>Deadlock Handling</li>
+                                <li>Recovery Systems: Log-Based Recovery</li>
+                                <li>Shadow Paging</li>
+                                <li>ARIES Recovery Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Storage &amp; Indexing</strong>
+                            <ul class="unit-topics">
+                                <li>File Organization: Heap Files</li>
+                                <li>Sequential Files</li>
+                                <li>Hashing Techniques</li>
+                                <li>Indexing Structures: Primary, Secondary, and Clustering Indices</li>
+                                <li>Tree-Based Indexing: B-Trees</li>
+                                <li>B+ Trees</li>
+                                <li>Query Processing &amp; Optimization: Overview of Relational Query Evaluation and
+                                    Cost Estimation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Database System Concepts by Abraham Silberschatz, Henry F. Korth, and S. Sudarshan.</li>
+                        <li>Database Management Systems by Raghu Ramakrishnan and Johannes Gehrke. (Highly recommended
+                            for SQL, query optimization, and transaction)</li>
+                        <li>Fundamentals of Database Systems by Ramez Elmasri and Shamkant B. Navathe</li>
+                        <li>An Introduction to Database Systems by C. J. Date. (Great for relational calculus and deep
+                            theoretical concepts).</li>
+                    </ol>
+                </section>
+
+                <!-- Embedded System Lab -->
+                <section id="subject-159602P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Embedded System Lab [159602P]</h2>
+                    <p>Perform all experiments</p>
+                    <h3 class="sub-heading lab-heading">List of Experiments:</h3>
+                    <ul class="unit-topics">
+                        <li>Study of ARM evaluation system</li>
+                        <li>Interfacing ADC and DAC</li>
+                        <li>Interfacing LED and PWM</li>
+                        <li>Interfacing real time clock and serial port</li>
+                        <li>Interfacing keyboard and LCD</li>
+                        <li>Interfacing EPROM and interrupt</li>
+                        <li>Interrupt performance characteristics of ARM and FPGA</li>
+                        <li>Flashing of LEDs</li>
+                        <li>Interfacing stepper motor and temperature sensor</li>
+                        <li>Implementing zigbee protocol with ARM</li>
+                    </ul>
+                </section>
+
+                <!-- Digital system design using Verilog Lab -->
+                <section id="subject-159604P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital system design using Verilog Lab [159604P]</h2>
+                    <p>Perform all experiments</p>
+                    <h3 class="sub-heading lab-heading">List of Experiments:</h3>
+                    <ul class="unit-topics">
+                        <li>Write Verilog code to realize all the logic gates</li>
+                        <li>Write a Verilog program for the following combinational designs: a. 2 to 4 decoder b. 8 to 3
+                            (encoder without priority &amp; with priority) c. 8 to 1 multiplexer d. 4 bit binary to gray
+                            converter e. Multiplexer, de-multiplexer, comparator</li>
+                        <li>Write a VHDL and Verilog code to describe the functions of a Full Adder using three modeling
+                            styles</li>
+                        <li>Develop the Verilog code for the following flip-flops: SR, D, JK and T</li>
+                        <li>Design a 4 bit binary, BCD counters (Synchronous reset and Asynchronous reset) and "any
+                            sequence" counters, using Verilog code</li>
+                        <li>Write HDL code to display messages on an alpha numeric LCD display</li>
+                        <li>Write HDL code to interface Hex key pad and display the key code on seven segment display
+                        </li>
+                        <li>Write HDL code to control speed, direction of DC and Stepper motor</li>
+                        <li>Write HDL code to accept Analog signal, Temperature sensor and display the data on LCD or
+                            Seven segment display</li>
+                        <li>Write HDL code to generate different waveforms (Sine, Square, Triangle, Ramp etc.) using DAC
+                            - change the frequency</li>
+                        <li>Write HDL code to simulate Elevator operation</li>
+                    </ul>
+                </section>
+
+                <!-- NPTEL-II -->
+                <section id="subject-100604P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL-II [100604P]</h2>
+                    <p>Details for NPTEL-II Lab will be provided by the department</p>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+
+    <script src="syllabus.js"></script>
+        <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

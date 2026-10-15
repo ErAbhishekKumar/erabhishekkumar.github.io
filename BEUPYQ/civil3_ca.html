@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>3rd Semester Syllabus – Civil Engineering with CA</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">3rd Semester Syllabus</h1>
+                <p class="page-subtitle">Civil Engineering with Computer Application</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Solid Mechanics [119301]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Engineering Mathematics-III (PDE, Prob/Stat) [119302]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Geo Informatics [119303]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Fluid Mechanics [119304]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Machine Learning [119305]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Materials, Testing & Evaluation [119306]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Universal Human Values [119307]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Indian Knowledge System [119308]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Fluid Mechanics Lab [119304P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Machine Learning Lab [119305P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Materials Testing & Evaluation Lab [119306P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Internship-I [119309]</td>
+                                <td colspan="3">2 Weeks</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>26</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-119301" data-type="theory">Solid Mechanics</button>
+                    <button class="tab-btn" data-target="subject-119302" data-type="theory">Engg Maths-III</button>
+                    <button class="tab-btn" data-target="subject-119303" data-type="theory">Geo Informatics</button>
+                    <button class="tab-btn" data-target="subject-119304" data-type="theory">Fluid Mechanics</button>
+                    <button class="tab-btn" data-target="subject-119305" data-type="theory">Machine Learning</button>
+                    <button class="tab-btn" data-target="subject-119306" data-type="theory">Materials, Testing &
+                        Eval</button>
+                    <button class="tab-btn" data-target="subject-119307" data-type="theory">Universal Human
+                        Values</button>
+                    <button class="tab-btn" data-target="subject-119308" data-type="theory">Indian Knowledge
+                        System</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab / Practical Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-119304P" data-type="lab">Fluid Mechanics Lab</button>
+                    <button class="tab-btn" data-target="subject-119305P" data-type="lab">Machine Learning Lab</button>
+                    <button class="tab-btn" data-target="subject-119306P" data-type="lab">Materials Testing Lab</button>
+                    <button class="tab-btn" data-target="subject-119309" data-type="lab">Internship-I</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <!-- Solid Mechanics 119301 -->
+                <section id="subject-119301" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Solid Mechanics [119301]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Simple Stresses and Strains</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of stress and strain</li>
+                                <li>St. Venant's principle</li>
+                                <li>Stress and strain diagram</li>
+                                <li>Elasticity and plasticity</li>
+                                <li>Types of stresses and strains</li>
+                                <li>Hooke's law</li>
+                                <li>Stress - strain diagram for mild steel</li>
+                                <li>Working stress</li>
+                                <li>Factor of safety</li>
+                                <li>Lateral strain, Poisson's ratio and volumetric strain</li>
+                                <li>Elastic moduli and the relationship between them</li>
+                                <li>Bars of varying section</li>
+                                <li>Composite bars</li>
+                                <li>Temperature stresses</li>
+                                <li>Strain Energy - Resilience</li>
+                                <li>Gradual, sudden, impact and shock loadings</li>
+                                <li>Simple applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Compound Stresses and Strains</strong>
+                            <ul class="unit-topics">
+                                <li>Two dimensional system</li>
+                                <li>Stress at a point on a plane</li>
+                                <li>Principal stresses and principal planes</li>
+                                <li>Mohr circle of stress</li>
+                                <li>Ellipse of stress and their applications</li>
+                                <li>Two dimensional stress-strain system</li>
+                                <li>Principal strains and principal axis of strain</li>
+                                <li>Circle of strain and ellipse of strain</li>
+                                <li>Relationship between elastic constants</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Bending moment and Shear Force Diagrams</strong>
+                            <ul class="unit-topics">
+                                <li>Bending moment (BM) and shear force (SF) diagrams</li>
+                                <li>BM and SF diagrams for cantilevers simply supported and fixed beams with or without
+                                    overhangs</li>
+                                <li>Calculation of maximum BM and SF and the point of contra flexure under concentrated
+                                    loads</li>
+                                <li>Uniformly distributed loads over the whole span or part of span</li>
+                                <li>Combination of concentrated loads (two or three) and uniformly distributed loads
+                                </li>
+                                <li>Uniformly varying loads</li>
+                                <li>Application of moments</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Flexural Stresses</strong>
+                            <ul class="unit-topics">
+                                <li>Theory of simple bending - Assumptions</li>
+                                <li>Derivation of bending equation: M/I = f/y = E/R</li>
+                                <li>Neutral axis</li>
+                                <li>Determination of bending stresses</li>
+                                <li>Section modulus of rectangular and circular sections (Solid and Hollow)</li>
+                                <li>I,T, Angle and Channel sections</li>
+                                <li>Design of simple beam sections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Shear Stresses and Slope/Deflection</strong>
+                            <ul class="unit-topics">
+                                <li>Derivation of shear stress formula</li>
+                                <li>Shear stress distribution across various beam sections like rectangular, circular,
+                                    triangular, I, T, angle sections</li>
+                                <li>Slope and deflection - Relationship between moment, slope and deflection</li>
+                                <li>Moment area method</li>
+                                <li>Macaulay's method</li>
+                                <li>Use of these methods to calculate slope and deflection for determinant beams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Torsion and Thin Cylinders/Spheres</strong>
+                            <ul class="unit-topics">
+                                <li>Derivation of torsion equation and its assumptions</li>
+                                <li>Applications of the equation to hollow and solid circular shafts</li>
+                                <li>Torsional rigidity</li>
+                                <li>Combined torsion and bending of circular shafts</li>
+                                <li>Principal stress and maximum shear stresses under combined loading of bending and
+                                    torsion</li>
+                                <li>Analysis of close-coiled-helical springs</li>
+                                <li>Thin Cylinders and Spheres - Derivation of formulae</li>
+                                <li>Calculations of hoop stress, longitudinal stress in a cylinder, and sphere subjected
+                                    to internal pressures</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Timoshenko, S. and Young, D. H., "Elements of Strength of Materials", DVNC, New York, USA.
+                        </li>
+                        <li>Kazmi, S. M. A., "Solid Mechanics" TMH, Delhi, India.</li>
+                        <li>Hibberler, R. C. Mechanics of Materials. 6th ed. East Rutherford, NJ: Pearson Prentice Hall,
+                            2004.</li>
+                        <li>Crandall, S. H., N. C. Dahl, and T. J. Lardner. An Introduction to the Mechanics of Solids.
+                            2nd ed. New York, NY: McGraw Hill, 1979.</li>
+                        <li>Laboratory Manual of Testing Materials - William Kendrick Hall</li>
+                        <li>Mechanics of Materials - Ferdinand P. Beer, E. Russel Johnston Jr., John T. DEwolf - TMH
+                            2002.</li>
+                        <li>Strength of Materials by R. Subramanian, Oxford University Press, New Delhi.</li>
+                    </ol>
+                </section>
+                <!-- Engineering Mathematics-III 119302 -->
+                <section id="subject-119302" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Engineering Mathematics-III (PDE, Prob/Stat) [119302]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of Partial Differential Equations</li>
+                                <li>First order partial differential equations</li>
+                                <li>Solutions of first order linear PDEs</li>
+                                <li>Solution to homogenous and non-homogenous linear partial differential equations of
+                                    second order by complimentary function and particular integral method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Second-order linear equations and their classification</li>
+                                <li>Initial and boundary conditions</li>
+                                <li>D'Alembert's solution of the wave equation</li>
+                                <li>Duhamel's principle for one dimensional wave equation</li>
+                                <li>Heat diffusion and vibration problems</li>
+                                <li>Separation of variables method to simple problems in Cartesian coordinates</li>
+                                <li>The Laplacian in plane, cylindrical and spherical polar coordinates</li>
+                                <li>Solutions with Bessel functions and Legendre functions</li>
+                                <li>One dimensional diffusion equation and its solution by separation of variables</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Probability spaces, conditional probability, independence</li>
+                                <li>Discrete random variables</li>
+                                <li>Independent random variables</li>
+                                <li>The multinomial distribution</li>
+                                <li>Poisson approximation to the binomial distribution</li>
+                                <li>Infinite sequences of Bernoulli trials</li>
+                                <li>Sums of independent random variables</li>
+                                <li>Expectation of Discrete Random Variables</li>
+                                <li>Moments, Variance of a sum, Correlation coefficient</li>
+                                <li>Chebyshev's Inequality</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Continuous random variables and their properties</li>
+                                <li>Distribution functions and densities</li>
+                                <li>Normal, exponential and gamma densities</li>
+                                <li>Bivariate distributions and their properties</li>
+                                <li>Distribution of sums and quotients</li>
+                                <li>Conditional densities, Bayes' rule</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Statistics</li>
+                                <li>Measures of Central tendency: Moments, skewness and Kurtosis</li>
+                                <li>Probability distributions: Binomial, Poisson and Normal</li>
+                                <li>Evaluation of statistical parameters for these three distributions</li>
+                                <li>Correlation and regression - Rank correlation</li>
+                                <li>Curve fitting by the method of least squares- fitting of straight lines, second
+                                    degree parabolas and more general curves</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Test of significance: Large sample test for single proportion, difference of
+                                    proportions</li>
+                                <li>Tests for single mean, difference of means, and difference of standard deviations
+                                </li>
+                                <li>Test for ratio of variances - Chi-square test for goodness of fit and independence
+                                    of attributes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Erwin Kreyszig, Advanced Engineering Mathematics, 9thEdition, John Wiley & Sons, 2006.</li>
+                        <li>N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications.</li>
+                        <li>P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book
+                            Stall.</li>
+                        <li>S. Ross, A First Course in Probability, 6th Ed., Pearson Education India,2002.</li>
+                    </ol>
+                </section>
+                <!-- Geo Informatics 119303 -->
+                <section id="subject-119303" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Geo Informatics [119303]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Fundamentals of GIS</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Data models (raster/vector)</li>
+                                <li>Spatial analysis</li>
+                                <li>Geodatabases</li>
+                                <li>Topology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Remote Sensing Principles & Applications</strong>
+                            <ul class="unit-topics">
+                                <li>EM spectrum</li>
+                                <li>Sensors</li>
+                                <li>Platforms</li>
+                                <li>Image processing</li>
+                                <li>Classification</li>
+                                <li>Corrections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Cartography and Map Projections</strong>
+                            <ul class="unit-topics">
+                                <li>Map design</li>
+                                <li>Types of maps</li>
+                                <li>Coordinate systems</li>
+                                <li>Datums</li>
+                                <li>Digital mapping</li>
+                                <li>Visualization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 GNSS (GPS) & Surveying</strong>
+                            <ul class="unit-topics">
+                                <li>GPS, GLONASS, Galileo</li>
+                                <li>Data collection methods</li>
+                                <li>Accuracy, error sources</li>
+                                <li>Modern surveying techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Geospatial Programming & Databases</strong>
+                            <ul class="unit-topics">
+                                <li>Python programming (ArcPy)</li>
+                                <li>Spatial SQL</li>
+                                <li>Database management systems</li>
+                                <li>Automation</li>
+                                <li>Web GIS basics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Case studies in urban planning</li>
+                                <li>Disaster management</li>
+                                <li>Agriculture</li>
+                                <li>Forestry</li>
+                                <li>EIA</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Longley, P. A., Goodchild, M. F., Maguire, D. J., & Rhind, D. W. (Geographic Information
+                            Systems and Science). John Wiley & Sons.</li>
+                        <li>Lillesand, T. M., Kiefer, R. W., & Chipman, J. W. (Remote Sensing and Image Interpretation).
+                            John Wiley & Sons.</li>
+                        <li>Robinson, A. H., Morrison, J. L., Muehrcke, P. C., Kimerling, A. J., & Guptill, S. C.
+                            (Elements of Cartography). John Wiley & Sons.</li>
+                    </ol>
+                </section>
+                <!-- Fluid Mechanics 119304 (theory) – detailed content missing in document -->
+                <section id="subject-119304" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Fluid Mechanics [119304]</h2>
+                    <p><em>Detailed syllabus content is not available in the provided document.</em></p>
+                </section>
+                <!-- Machine Learning 119305 -->
+                <section id="subject-119305" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Machine Learning [119305]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 Python Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamental Data Types in Python</li>
+                                <li>Looping and Decision-making constructs</li>
+                                <li>Functions</li>
+                                <li>Classes</li>
+                                <li>File handling</li>
+                                <li>Database access</li>
+                                <li>Output formatting</li>
+                                <li>Modules</li>
+                                <li>Statistics module</li>
+                                <li>Numpy</li>
+                                <li>Introduction to popular machine learning libraries Tensor Flow & Keras</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 Unsupervised Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Clustering</li>
+                                <li>K-means</li>
+                                <li>GMM & EM Algorithm</li>
+                                <li>Eigen values and Eigen vectors</li>
+                                <li>PCA - unsupervised dimensionality reduction technique</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 Supervised Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Classification: KNN, Bayes, Decision Tree</li>
+                                <li>SVM: soft and hard margin, kernel trick</li>
+                                <li>LDA - supervised dimensionality reduction technique</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 Ensemble and Reinforcement Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Bagging, Random Forest and Boosting</li>
+                                <li>Q-learning and SARSA algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 Neural Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Perceptron model</li>
+                                <li>Learning rules and activation functions</li>
+                                <li>Multi-layer feed forward</li>
+                                <li>Back-propagation</li>
+                                <li>Introduction to feed-back networks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Machine Learning. Tom Mitchell, McGraw-Hill.</li>
+                        <li>Machine learning: an algorithmic perspective. Marsland, Stephen. Chapman and Hall/CRC, 2011.
+                        </li>
+                        <li>Introduction to artificial neural systems. Zurada, Jacek M. Vol. 8. St. Paul: West
+                            publishing company, 1992.</li>
+                        <li>A Tutorial on Support Vector Machines for Pattern Recognition. Christopher Burges, Data
+                            Mining and Knowledge Discovery, 1998</li>
+                    </ol>
+                </section>
+                <!-- Materials, Testing & Evaluation 119306 -->
+                <section id="subject-119306" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Materials, Testing & Evaluation [119306]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction to Engineering Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Cements</li>
+                                <li>M-Sand</li>
+                                <li>Concrete (plain, reinforced and steel fibre/ glass fibre- reinforced, light- weight
+                                    concrete, High Performance Concrete, Polymer Concrete)</li>
+                                <li>Ceramics</li>
+                                <li>Refractories</li>
+                                <li>Bitumen and asphaltic materials</li>
+                                <li>Timbers</li>
+                                <li>Glass and Plastics</li>
+                                <li>Structural Steel and other Metals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Paints, Varnishes and Advanced Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Paints and Varnishes</li>
+                                <li>Acoustical material and geo-textiles</li>
+                                <li>Rubber and asbestos</li>
+                                <li>Laminates and adhesives</li>
+                                <li>Graphene</li>
+                                <li>Carbon composites and other engineering materials including properties and uses</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Introduction to Material Testing</strong>
+                            <ul class="unit-topics">
+                                <li>What is “Material Engineering”?</li>
+                                <li>Mechanical behavior and mechanical characteristics</li>
+                                <li>Elasticity – principle and characteristics</li>
+                                <li>Plastic deformation of metals</li>
+                                <li>Tensile test – standards for different material (brittle, quasi-brittle, elastic and
+                                    so on)</li>
+                                <li>True stress – strain interpretation of tensile test</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Hardness, Fracture, Creep</strong>
+                            <ul class="unit-topics">
+                                <li>Hardness tests</li>
+                                <li>Bending and torsion test</li>
+                                <li>Strength of ceramic</li>
+                                <li>Internal friction, creep – fundamentals and characteristics</li>
+                                <li>Brittle fracture of steel – temperature transition approach</li>
+                                <li>Background of fracture mechanics</li>
+                                <li>Discussion of fracture toughness testing – different materials</li>
+                                <li>Concept of fatigue of materials</li>
+                                <li>Structural integrity assessment procedure and fracture mechanics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Standard Testing & Evaluation Procedures</strong>
+                            <ul class="unit-topics">
+                                <li>Laboratory for mechanical testing</li>
+                                <li>Discussion about mechanical testing</li>
+                                <li>Naming systems for various irons, steels and nonferrous metals</li>
+                                <li>Discussion about elastic deformation</li>
+                                <li>Plastic deformation</li>
+                                <li>Impact test and transition temperatures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Fracture Mechanics, Fatigue, Creep</strong>
+                            <ul class="unit-topics">
+                                <li>Fracture mechanics – background</li>
+                                <li>Fracture toughness – different materials</li>
+                                <li>Fatigue of material</li>
+                                <li>Creep</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Chudley, R., Greeno (2006), 'Building Construction Handbook' (6th ed.),R. Butterworth-
+                            Heinemann.</li>
+                        <li>Khanna, S.K., Justo, C.E.G and Veeraragavan, A, ' Highway Materials and Pavement Testing',
+                            Nem Chand& Bros, Fifth Edition.</li>
+                        <li>Various related updated & recent standards of BIS, IRC, ASTM, RILEM, AASHTO, etc.
+                            corresponding to materials used for Civil Engineering applications.</li>
+                        <li>Kyriakos Komvopoulos (2011), Mechanical Testing of Engineering Materials, Cognella.</li>
+                        <li>E.N. Dowling (1993), Mechanical Behaviour of Materials,Prentice Hall International Edition
+                        </li>
+                        <li>American Society for Testing and Materials (ASTM), Annual Book of ASTM Standards (post
+                            2000).</li>
+                        <li>Related papers published in international journals.</li>
+                    </ol>
+                </section>
+                <!-- Universal Human Values 119307 -->
+                <section id="subject-119307" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Universal Human Values [119307]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction to Value Education</strong>
+                            <ul class="unit-topics">
+                                <li>Right Understanding, Relationship and Physical Facility (Holistic Development and
+                                    the Role of Education)</li>
+                                <li>Understanding Value Education Sharing about Oneself</li>
+                                <li>Self-exploration as the Process for Value Education</li>
+                                <li>Continuous Happiness and Prosperity – the Basic Human Aspirations</li>
+                                <li>Exploring Human Consciousness</li>
+                                <li>Happiness and Prosperity – Current Scenario</li>
+                                <li>Method to Fulfill the Basic Human Aspirations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Harmony in the Human Being</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Human being as the Co-existence of the Self and the Body</li>
+                                <li>Distinguishing between the Needs of the Self and the Body</li>
+                                <li>The Body as an Instrument of the Self</li>
+                                <li>Understanding Harmony in the Self</li>
+                                <li>Harmony of the Self with the Body</li>
+                                <li>Programme to ensure self-regulation and Health</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Harmony in the Family and Society</strong>
+                            <ul class="unit-topics">
+                                <li>Harmony in the Family - the Basic Unit of Human Interaction</li>
+                                <li>Trust - the Foundational Value in Relationship</li>
+                                <li>Respect - as the Right Evaluation</li>
+                                <li>Other Feelings</li>
+                                <li>Justice in Human- to- Human Relationship</li>
+                                <li>Understanding Harmony in the Society</li>
+                                <li>Vision for the Universal Human Order</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Harmony in the Nature/Existence</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Harmony in the Nature</li>
+                                <li>Interconnectedness, self- regulation and Mutual Fulfilment among the Four Orders of
+                                    Nature</li>
+                                <li>Realizing Existence as Co- existence at All Levels</li>
+                                <li>The Holistic Perception of Harmony in Existence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Implications of the Holistic Understanding - a Look at
+                                Professional</strong>
+                            <ul class="unit-topics">
+                                <li>Natural Acceptance of Human Values</li>
+                                <li>Definitiveness of (Ethical) Human Conduct</li>
+                                <li>A Basis for Humanistic Education</li>
+                                <li>Humanistic Constitution and Universal Human Order</li>
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies, Production Systems and Management Models- Typical Case
+                                    Studies</li>
+                                <li>Strategies for Transition towards Value- based Life and Profession</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Professional Ethics and Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies, Production Systems and Management Models- Typical Case
+                                    Studies</li>
+                                <li>Strategies for Transition towards Value- based Life and Profession</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>A Foundation Course in Human Values and Professional Ethics, R R Gaur, R Asthana, G P
+                            Bagaria, 2nd Revised Edition, Excel Books, New Delhi, 2019. ISBN 978-93-8703447.</li>
+                        <li>JeevanVidya: EkParichaya, A Nagaraj, JeevanVidyaPrakashan, Amarkantak, 1999.</li>
+                        <li>Human Values, A.N. Tripathi, New Age Intl. Publishers, New Delhi, 2004.</li>
+                        <li>The Story of Stuff (Book).</li>
+                        <li>The Story of My Experiments with Truth - by Mohandas Karamchand Gandhi.</li>
+                        <li>Small is Beautiful - E. F Schumacher.</li>
+                        <li>Slow is Beautiful - Cecile Andrews.</li>
+                        <li>Economy of Permanence - J C Kumarappa.</li>
+                        <li>Bharat Mein Angreji Raj - Pandit Sunderlal.</li>
+                    </ol>
+                </section>
+                <!-- Indian Knowledge System 119308 -->
+                <section id="subject-119308" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Indian Knowledge System [119308]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0 Introduction to Indian Knowledge Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of IKS</li>
+                                <li>Organization of IKS</li>
+                                <li>Conception and constitution of knowledge in indian tradition</li>
+                                <li>The oral tradition</li>
+                                <li>Models and Strategies of IKS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0 Overview of IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>The vedas as the basis of IKS</li>
+                                <li>Overview of all the six vedāṅgas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0 Relevance in Current Technical Education System
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Arthashastra (Indian economics and political systems)</li>
+                                <li>Ganita and Jyotisha (Indian mathematics, astronomy and geometry)</li>
+                                <li>Rasayana (Indian chemical Sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0 Relevance in Current Technical Education System
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Ayurveda (Indian Biological Sciences / Diet & Nutrition)</li>
+                                <li>Jyotish Vidya (observational astronomy and calendar systems)</li>
+                                <li>Prakriti Vidya (Indian system of terrestrial/ material sciences/ecology and
+                                    atmospheric sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0 Relevance in Current Technical Education System
+                                III</strong>
+                            <ul class="unit-topics">
+                                <li>Vastu Vidya (Indian system of aesthetics- iconography and built- environment
+                                    /architecture)</li>
+                                <li>Nyaya Shastra (Indian systems of social ethics, logic and law)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0 Advanced IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>Shilpa and Natya Shastra (Indian classical arts: performing and fine arts)</li>
+                                <li>Sankhya and Yoga Darshna (Indian psychology, yoga and consciousness studies)</li>
+                                <li>Vrikshayurveda (plant science/sustainable agriculture/food preservation methods)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Introduction to Indian Knowledge System: Concepts and Applications, Archak, K.B. (2012).,
+                            Kaveri Books, New Delhi, ISBN-13:978-9391818203</li>
+                        <li>Introduction To Indian Knowledge System: Concepts and Applications, Mahadevan, B. Bhat,
+                            VinayakRajat, NagendraPavana R.N., PHI, ISBN: 9789391818203.</li>
+                        <li>Glimpse into Kautilya's Arthashastra Ramachandrudu P. (2010), Sanskrit Academy, Hyderabad,
+                            ISBN:9788380171074.</li>
+                        <li>"Introduction" in Studies in Epics and Puranas, (Eds.), KM Munshi and N ChandrashekaraAiyer
+                            BhartiyaVidyaBhavan.</li>
+                    </ol>
+                </section>
+                <!-- Fluid Mechanics Lab 119304P -->
+                <section id="subject-119304P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Fluid Mechanics Lab [119304P]</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>Measurement of viscosity</li>
+                        <li>Study of Pressure Measuring Devices</li>
+                        <li>Stability of Floating Body</li>
+                        <li>Hydrostatics Force on Flat Surfaces/Curved Surfaces</li>
+                        <li>Verification of Bernoulli's Theorem</li>
+                        <li>Ventrimeter</li>
+                        <li>Orifice meter</li>
+                        <li>Impacts of jets</li>
+                        <li>Flow Visualisation -Ideal Flow</li>
+                        <li>Length of establishment of flow</li>
+                        <li>Velocity distribution in pipes</li>
+                        <li>Laminar Flow</li>
+                    </ol>
+                </section>
+                <!-- Machine Learning Lab 119305P -->
+                <section id="subject-119305P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Machine Learning Lab [119305P]</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>Implementation of Python Basic Libraries such as Statistics, Math, Numpy and Scipy</li>
+                        <li>Implementation of Python Libraries for ML application such as Pandas and Matplotlib</li>
+                        <li>Creation and Loading different datasets in Python</li>
+                        <li>Write a python program to compute Mean, Median, Mode, Variance, Standard Deviation using
+                            Datasets</li>
+                        <li>Write a Python program to implement Simple Linear Regression and plot the graph</li>
+                        <li>Implementation of Multiple Linear Regression for House Price Prediction using sklearn</li>
+                        <li>Implementation of Logistic Regression for iris using sklearn</li>
+                        <li>Implementation of random forest algorithm</li>
+                        <li>Implementation of naive bayes classifier algorithm and plot the graph</li>
+                        <li>Implementation of SVM classification and plot the graph</li>
+                        <li>Implementation of PCA</li>
+                        <li>Implementation of LDA</li>
+                        <li>Implementation of k-means clustering</li>
+                        <li>Implementation of hierarchical clustering</li>
+                    </ol>
+                </section>
+                <!-- Materials Testing & Evaluation Lab 119306P -->
+                <section id="subject-119306P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Materials Testing & Evaluation Lab [119306P]</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>Gradation of coarse and fine aggregates</li>
+                        <li>Different corresponding tests and need/application of these tests in design and quality
+                            control</li>
+                        <li>Tensile Strength of materials & concrete composites</li>
+                        <li>Compressive strength test on aggregates</li>
+                        <li>Tension I - Elastic Behaviour of metals & materials</li>
+                        <li>Tension II - Failure of Common Materials</li>
+                        <li>Concrete I - Early Age Properties</li>
+                        <li>Concrete II - Compression and Indirect Tension</li>
+                        <li>Compression - Directionality</li>
+                        <li>Consolidation and Strength Tests</li>
+                        <li>Tension III - Heat Treatment</li>
+                        <li>Torsion test</li>
+                        <li>Hardness tests (Brinnel's and Rockwell)</li>
+                        <li>Tests on closely coiled and open coiled springs</li>
+                        <li>Theories of Failure and Corroboration with Experiments</li>
+                        <li>Concrete Mix Design as per BIS</li>
+                    </ol>
+                </section>
+                <!-- Internship I 119309 -->
+                <section id="subject-119309" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Internship – I [119309]</h2>
+                    <h3 class="sub-heading lab-heading">Internship I Guidelines</h3>
+                    <p>Internship I is of a minimum duration of two weeks which can be completed in an
+                        Industry/Institute in consultation with concerned Engineering College/Institute. After
+                        completion of internship a detailed report of the internship mentioning the training undertaken
+                        along with certificate should be submitted.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

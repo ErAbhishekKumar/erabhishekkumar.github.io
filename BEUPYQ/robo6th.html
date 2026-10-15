@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Robotics &amp; Automation Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Artificial Intelligence for Robotics [162601]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Flexible Manufacturing Systems [162602]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Robotics Programming [162603]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Professional Elective-I [1626XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-II [1006XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Artificial Intelligence for Robotics Lab [162601P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Flexible Manufacturing Systems Lab [162602P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Robotics Programming Lab [162603P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL-II [162604P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>22</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-162601" data-type="theory">Artificial Intelligence for
+                        Robotics</button>
+                    <button class="tab-btn" data-target="subject-162602" data-type="theory">Flexible Manufacturing
+                        Systems</button>
+                    <button class="tab-btn" data-target="subject-162603" data-type="theory">Robotics
+                        Programming</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Professional Elective-I"
+                        data-modal-options='[{"label": "Humanoid Robots", "target": "subject-162605", "btn-id": "btn-162605"}, {"label": "Drone Technology and Application", "target": "subject-162606", "btn-id": "btn-162606"}, {"label": "Swarm Intelligence in Robotics", "target": "subject-162607", "btn-id": "btn-162607"}, {"label": "Additive Manufacturing &amp; Rapid Prototyping", "target": "subject-162608", "btn-id": "btn-162608"}]'>
+                        Professional Elective-I </button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective-II"
+                        data-modal-options='[{"label": "Project Management", "target": "subject-162609", "btn-id": "btn-162609"}, {"label": "Environmental Science and Sustainability", "target": "subject-162610", "btn-id": "btn-162610"}, {"label": "Supply Chain Management", "target": "subject-162611", "btn-id": "btn-162611"}]'>
+                        Open Elective-II </button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-162601P" data-type="lab">AI for Robotics Lab</button>
+                    <button class="tab-btn" data-target="subject-162602P" data-type="lab">FMS Lab</button>
+                    <button class="tab-btn" data-target="subject-162603P" data-type="lab">Robotics Programming
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-162604P" data-type="lab">NPTEL-II</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-162601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Artificial Intelligence for Robotics [162601]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Artificial Intelligent
+                                Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Goals of AI in Manufacturing</li>
+                                <li>Tools for AI Such as Search Algorithm</li>
+                                <li>Mathematical Optimization</li>
+                                <li>Evolutionary Computation</li>
+                                <li>Fuzzy Logic</li>
+                                <li>Probabilistic Methods for Uncertain Reasoning Such as Bayesian Network</li>
+                                <li>Hidden Markov Model</li>
+                                <li>Kalman Filter</li>
+                                <li>Decision Theory and Utility Theory</li>
+                                <li>Statistical Learning Methods</li>
+                                <li>Support Vector Machines</li>
+                                <li>Neural Networks</li>
+                                <li>Expert Systems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Handling Uncertainty and Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Non-Monotonic Reasoning</li>
+                                <li>Probabilistic Reasoning</li>
+                                <li>Use of Certainty Factors</li>
+                                <li>Fuzzy Logic</li>
+                                <li>Concept of Learning</li>
+                                <li>Learning Automation</li>
+                                <li>Genetic Algorithm</li>
+                                <li>Learning by Inductions</li>
+                                <li>Neural Network</li>
+                                <li>Unsupervised Learning - K-Means Clustering</li>
+                                <li>Boltzmann Machine</li>
+                                <li>Supervised Learning - Classification Algorithms</li>
+                                <li>Support Vector Machine</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Search Algorithms in AI</strong>
+                            <ul class="unit-topics">
+                                <li>Algorithms for Uninformed and Informed Search</li>
+                                <li>Heuristics Search: Hill Climbing</li>
+                                <li>Branch and Bound</li>
+                                <li>Best First Search</li>
+                                <li>Metaheuristics: Simulated Annealing</li>
+                                <li>Tabu Search</li>
+                                <li>Ant Colony Optimization</li>
+                                <li>Real Coded Genetic Algorithm</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Machine Vision in Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Machine Vision Algorithms</li>
+                                <li>Imaging Based Automatic Sorting and Inspection</li>
+                                <li>Image Processing</li>
+                                <li>Imaging-Based Robot Guidance</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Intelligent Robotic Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Applications of Intelligent Systems for Mobile Robot Motion Planning</li>
+                                <li>Path Planning Robot Control in Dynamic Environments</li>
+                                <li>Task Based Hybrid Closure Grasping Optimization for Autonomous Robot Hand</li>
+                                <li>Accurate Motion Control of Fast Mobile Robots</li>
+                                <li>Obstacle Avoidance</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Artificial Intelligence in Flexible Automation</strong>
+                            <ul class="unit-topics">
+                                <li>Applications of Various Intelligent Systems for FMS Functional Segmentation Schemes
+                                    Including Control</li>
+                                <li>Real Time Scheduling</li>
+                                <li>Tool Management</li>
+                                <li>Process Planning</li>
+                                <li>Route Optimization for AS/RS Systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Steger, Carsten, Markus Ulrich, Christian Wiedemann. Machine Vision Algorithms and
+                            Applications (2nd ed.). Wiley.</li>
+                        <li>Mikell P Groover, Automation, Production System and Computer Integrated Manufacturing,
+                            Prentice Hall, Publications.</li>
+                        <li>Bhattacharya S., Artificial Intelligence, Laxmi Publications, Ltd.</li>
+                        <li>Chopra Rajiv, Artificial Intelligence, S. Chand Publishing.</li>
+                        <li>Pawar P. J., Evolutionary Computations for Manufacturing, Studium Press.</li>
+                        <li>Ramesh Jain, Rangachar Kasturi, Brian G. Schunck, Machine Vision, McGraw-Hill, Inc.</li>
+                    </ol>
+                </section>
+                <section id="subject-162602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Flexible Manufacturing Systems [162602]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: FMS Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Limitations with Conventional Manufacturing</li>
+                                <li>Need for FMS Introduction</li>
+                                <li>General Layout and Configuration of FMS</li>
+                                <li>Advantage and Limitations of FMS</li>
+                                <li>Area of Application of a FMS in Industry</li>
+                                <li>Various Hardware and Software Required for an FMS</li>
+                                <li>Scope of Computer-Aided Technologies in Modern Manufacturing</li>
+                                <li>Computer-Aided Design (CAD)</li>
+                                <li>Computer-Aided Manufacturing (CAM)</li>
+                                <li>Computer-Aided Engineering (CAE)</li>
+                                <li>Computer Integrated Manufacturing (CIM)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Cellular Manufacturing</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction and Classifications of Cell</li>
+                                <li>Unattended Machining</li>
+                                <li>Cellular versus Flexible Manufacturing</li>
+                                <li>Group Technology: Introduction</li>
+                                <li>Definition of Group Technology</li>
+                                <li>Reasons for Adopting Group Technology</li>
+                                <li>Benefits of Group Technology Affecting Many Areas of a Company</li>
+                                <li>Obstacles to Application of GT</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Numerical Control (NC) and CNC Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of Numerical Control (NC) and Computer Numerical Control (CNC) Systems
+                                </li>
+                                <li>Evolution of NC and CNC Systems</li>
+                                <li>Current Status and Impact on Modern Design and Manufacturing</li>
+                                <li>NC Part Programming Using Manual G- and M-Codes</li>
+                                <li>APT Language Programming</li>
+                                <li>Integration of CAD/CAM Data into NC Programming Workflows</li>
+                                <li>Toolpath Generation</li>
+                                <li>Post-Processing for CNC Machine Operation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Automated Material Movement and Storage System</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to AGV and Their Principle of Working</li>
+                                <li>Types of AGV</li>
+                                <li>Advantages and Limitations of AGV</li>
+                                <li>General AGV Guide Path</li>
+                                <li>Robots in Material Movement</li>
+                                <li>Benefits of Using Industrial Robots</li>
+                                <li>Basic Components and Benefits of Automated Storage and Retrieval Systems</li>
+                                <li>Conveyors and Pallet Flotation System</li>
+                                <li>Queuing Carrousels and Automatic Work Changers</li>
+                                <li>Coolant and Chip Disposal and Recovery System</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Robotics in Manufacturing Systems-I</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of Industrial Robotics</li>
+                                <li>Structure of Industrial Robots</li>
+                                <li>Configurations of Industrial Robots</li>
+                                <li>Specifications of Industrial Robots</li>
+                                <li>Operations of Industrial Robots</li>
+                                <li>Types of Robot Sensors</li>
+                                <li>Actuators and End-Effectors</li>
+                                <li>Robot Programming Methods</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Robotics in Manufacturing Systems-II</strong>
+                            <ul class="unit-topics">
+                                <li>Applications of Robotics in Material Handling</li>
+                                <li>Assembly Operations</li>
+                                <li>Welding Applications</li>
+                                <li>Inspection Operations</li>
+                                <li>Role of Robotics in Flexible and Automated Manufacturing Systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Mikell.P.Groover "Automation, Production Systems and Computer Integrated Manufacturing",
+                            Prentice Hall of India, 2008.</li>
+                        <li>Radhakrishnan P, Subramanyan S.and Raju V., "CAD/CAM/CIM", 2nd Edition, New Age
+                            International (P) Ltd, New Delhi, 2000.</li>
+                        <li>H. K. Shivanand, M. M. Benal, Flexible Manufacturing System, V. Koti, New Age Pub.</li>
+                        <li>Automation, Production Systems and Computer Integrated Manufacturing, Groover M.P, Prentice
+                            Hall of India.</li>
+                        <li>CAD/CAM, Groover M.P, Zimmers E.W, Prentice Hall of India.</li>
+                    </ol>
+                </section>
+                <section id="subject-162603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Robotics Programming [162603]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Robot Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Robot Programming - Introduction and Types</li>
+                                <li>Flex Pendant</li>
+                                <li>Lead Through Programming</li>
+                                <li>Coordinate Systems of Robot</li>
+                                <li>Robot Controller - Major Components and Functions</li>
+                                <li>Wrist Mechanism</li>
+                                <li>Interpolation</li>
+                                <li>Interlock Commands</li>
+                                <li>Operating Mode of Robot</li>
+                                <li>Jogging - Types</li>
+                                <li>Robot Specifications</li>
+                                <li>Motion Commands</li>
+                                <li>End Effectors and Sensors Commands</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: VAL Language</strong>
+                            <ul class="unit-topics">
+                                <li>Robot Languages - Classifications and Structures</li>
+                                <li>VAL Language Commands - Motion Control</li>
+                                <li>Hand Control</li>
+                                <li>Program Control</li>
+                                <li>Pick and Place Applications Using VAL</li>
+                                <li>Palletizing Applications Using VAL</li>
+                                <li>Robot Welding Application Using VAL Program</li>
+                                <li>WAIT, SIGNAL and DELAY Commands for Communications</li>
+                                <li>Simple Applications Using VAL</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: VAL-II</strong>
+                            <ul class="unit-topics">
+                                <li>VAL-II Programming - Basic Commands and Applications</li>
+                                <li>Simple Problems Using Conditional Statements</li>
+                                <li>Simple Pick and Place Applications</li>
+                                <li>Production Rate Calculations Using Robot</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: RAPID Language</strong>
+                            <ul class="unit-topics">
+                                <li>RAPID Language Basic Commands</li>
+                                <li>Motion Instructions</li>
+                                <li>Pick and Place Operation Using Industrial Robot - Manual Mode</li>
+                                <li>Automatic Mode</li>
+                                <li>Subroutine Command-Based Programming</li>
+                                <li>Move Master Command Language - Introduction and Syntax</li>
+                                <li>Simple Problems Using Move Master</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: AML Language</strong>
+                            <ul class="unit-topics">
+                                <li>AML Language - General Description</li>
+                                <li>Elements and Functions of AML</li>
+                                <li>Statements, Constants and Variables</li>
+                                <li>Program Control Statements</li>
+                                <li>Operating Systems Commands</li>
+                                <li>Motion Commands</li>
+                                <li>Sensor Commands</li>
+                                <li>Data Processing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Practical Study of Virtual Robot</strong>
+                            <ul class="unit-topics">
+                                <li>Robot Cycle Time Analysis</li>
+                                <li>Multiple Robot and Machine Interference</li>
+                                <li>Process Chart and Simple Problems</li>
+                                <li>Virtual Robotics - Robot Studio Online Software</li>
+                                <li>Jogging, Components and Work Planning</li>
+                                <li>Program Modules</li>
+                                <li>Input and Output Signals</li>
+                                <li>Singularities and Collision Detection</li>
+                                <li>Repeatability Measurement of Robot</li>
+                                <li>Robot Economics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. R.Deb, Robotics technology and flexible automation, Tata McGraw Hill publishing
+                            companylimited, 1994.</li>
+                        <li>Mikell. P. Groover, Industrial Robotics Technology, Programming and Applications, McGraw
+                            HillCo, 1995.</li>
+                        <li>Robotics Lab manual, 2007.</li>
+                    </ol>
+                </section>
+                <section id="subject-162605" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Elective: Humanoid Robots [162605]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Humanoid Robots</strong>
+                            <ul class="unit-topics">
+                                <li>Historical Development of Humanoid Robots</li>
+                                <li>Trends in Humanoid Robots</li>
+                                <li>Design - Human Likeness</li>
+                                <li>Humanoid Robot Design</li>
+                                <li>Human Friendly Humanoid Robot Design</li>
+                                <li>Characteristics of Humanoid Robots</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Kinematics of Humanoid Robots</strong>
+                            <ul class="unit-topics">
+                                <li>Coordinate Transformations</li>
+                                <li>Characteristics of Rotational Motion</li>
+                                <li>Robot Data Structure and Programming</li>
+                                <li>Kinematics of a Humanoid Robot - Forward and Inverse Kinematics</li>
+                                <li>Numerical Solution to Inverse Kinematics</li>
+                                <li>Inverse Kinematics with Singularity Robustness</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Dynamics of Humanoid Robots</strong>
+                            <ul class="unit-topics">
+                                <li>Angular Momentum and Inertia Tensor of Rigid Body</li>
+                                <li>Zero Moment Point - Measurement</li>
+                                <li>2D and 3D Analysis of ZMP</li>
+                                <li>Derivation and Calculation of ZMP</li>
+                                <li>3D Walking Pattern Generation</li>
+                                <li>ZMP Based Walking Pattern Generation</li>
+                                <li>Dynamic Simulation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Humanoid Robots and Neuroscience</strong>
+                            <ul class="unit-topics">
+                                <li>Humanoid Robotics Perspective to Neuroscience</li>
+                                <li>Emulating the Neuro-Mechanisms with Humanoid Robots</li>
+                                <li>Foveal Vision for Humanoid Robots</li>
+                                <li>Humanoid Locomotion and the Brain</li>
+                                <li>Cognitive Humanoid Robots</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Co-Operative Object Manipulation and Control</strong>
+                            <ul class="unit-topics">
+                                <li>Multi-Fingered Grasping</li>
+                                <li>Multi-Arm Object Manipulation Control</li>
+                                <li>Co-Operation Between Multiple Humanoids</li>
+                                <li>Leader Follower Type Co-Operative Object Manipulation</li>
+                                <li>Symmetry Type Co-Operative Object Manipulation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Humanoid Robots' Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Search and Rescue Humanoid Robots</li>
+                                <li>Service Humanoids</li>
+                                <li>Sports Humanoids</li>
+                                <li>AI Humanoid Robots</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Shuuji Kajita, Hirohisa Hirukawa, Kensuke Harada, Kazuhito Yokoi, Introduction to Humanoid
+                            Robotics, Springer.</li>
+                        <li>Gordon Cheng, Humanoid Robotics and Neuroscience: Science, Engineering and Society, CRC
+                            Press.</li>
+                        <li>Nenchev D. N., Konno a., Tsujita T, Humanoid robots- Modeling and Control' Butterworth
+                            Heinemann Publishing.</li>
+                        <li>S. L. Hamilton, Humanoid Robots, Abdo Publishing, ISBN: 9781532171437.</li>
+                    </ol>
+                </section>
+                <section id="subject-162606" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Elective: Drone Technology and Application [162606]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Flight Dynamics of Aerial Vehicles</strong>
+                            <ul class="unit-topics">
+                                <li>Definitions of Drone, UAV, RPA</li>
+                                <li>Quad Copters - Basic Components and Categories</li>
+                                <li>Principles of Flight</li>
+                                <li>Flight Maneuvers</li>
+                                <li>Airframes - Materials and Different Frame Shapes</li>
+                                <li>Building Airframes</li>
+                                <li>Flight Dynamics</li>
+                                <li>Applications and Future Potential</li>
+                                <li>Comparison with Other Aerial Vehicles</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Hardware Anatomy of Drone</strong>
+                            <ul class="unit-topics">
+                                <li>Power Train - Propellers and Motors</li>
+                                <li>Total Lift</li>
+                                <li>Electronic Speed Controllers</li>
+                                <li>Flight Battery</li>
+                                <li>Radio Transmitter and Receiver</li>
+                                <li>Flight Controller</li>
+                                <li>GPS, Compass and Camera</li>
+                                <li>Assembling for Quad Copter - Connectors</li>
+                                <li>Mounting of Propellers and Powering Up</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Introduction to Flight Simulator and DGCA Rules and
+                                Regulation</strong>
+                            <ul class="unit-topics">
+                                <li>Flight Simulator - Computer-Based Software</li>
+                                <li>Basic Operating Features of Simulator</li>
+                                <li>Selecting Different Aircrafts and Aerodromes</li>
+                                <li>Demo Flight</li>
+                                <li>Pre-Flight Checks and Start-Up</li>
+                                <li>Preparation Cum Coordination for Flight</li>
+                                <li>Approach for Landing</li>
+                                <li>DGCA Regulations - Category of RPA</li>
+                                <li>Air Regulations of Drones</li>
+                                <li>Requirement for Drone Equipment</li>
+                                <li>Acquisition of RPAS</li>
+                                <li>Eligibility to Become Drone Pilot</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Drone Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Creating Flight Plans and Missions Using GPS and Other Navigation Systems</li>
+                                <li>Autonomous Flight Modes (Waypoints, Follow-Me, etc.)</li>
+                                <li>Programming Languages for Drone Control (Python, C++)</li>
+                                <li>Perform Programming and Configure the Flight Control Board (FCB)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Drone Equipment Maintenance</strong>
+                            <ul class="unit-topics">
+                                <li>Maintenance of Drone - Storage, Safe Place, Free from Dirt</li>
+                                <li>Cleaning and Fire Hazard Precautions</li>
+                                <li>Precautions for Storing Drone Batteries</li>
+                                <li>Maintenance of Drone Batteries - Storage and Balance Charge</li>
+                                <li>Discharge and Transportation</li>
+                                <li>Balance Connectors and Power Connectors</li>
+                                <li>Connectors Classification XT and AS</li>
+                                <li>Lipo Battery Puffed and Cell Layout</li>
+                                <li>RPAS Maintenance</li>
+                                <li>Unmanned Aircraft System Traffic Management (UTM)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Real World Applications and Case Studies</strong>
+                            <ul class="unit-topics">
+                                <li>Beneficial Drones</li>
+                                <li>Aerial Photography</li>
+                                <li>Mapping and Surveying</li>
+                                <li>Precision Agriculture</li>
+                                <li>Search and Rescue</li>
+                                <li>Infrastructure Inspection and Conservation</li>
+                                <li>Case Studies - Agriculture Weed Classification</li>
+                                <li>Microdrone Surveillances</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Reg Austin "Unmanned Aircraft Systems UAV design, development and deployment", Wiley, 2010.
+                        </li>
+                        <li>Robert C. Nelson, Flight Stability and Automatic Control, McGraw-Hill, Inc, 1998.</li>
+                        <li>Kimon P. Valavanis, "Advances in Unmanned Aerial Vehicles: State of the Art and the Road to
+                            Autonomy", Springer, 2007.</li>
+                    </ol>
+                </section>
+                <section id="subject-162607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Elective: Swarm Intelligence in Robotics [162607]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Swarm Intelligence</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Philosophy of Swarm Intelligence</li>
+                                <li>Need of Swarm Intelligence</li>
+                                <li>Traditional Approach vs. Swarm Intelligence</li>
+                                <li>Models of Swarm Behaviour</li>
+                                <li>Introduction to Swarm Intelligence Methods - Particle Swarm Optimization</li>
+                                <li>Ant Colony Optimization</li>
+                                <li>Artificial Bee Colony</li>
+                                <li>Shuffled Frog Leaping Algorithm</li>
+                                <li>Firefly Algorithm</li>
+                                <li>Applications of Swarm Intelligence to Robotics Systems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Particle Swarm Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to PSO</li>
+                                <li>Mechanism of Working of Particle Swarm Optimization Algorithm</li>
+                                <li>Parameter Selection</li>
+                                <li>Convergence Criteria</li>
+                                <li>Adaptive Mechanisms</li>
+                                <li>Variants of PSO Algorithm</li>
+                                <li>Hybridization of PSO</li>
+                                <li>Performance of Algorithm - Convergence Rate and Accuracy</li>
+                                <li>Termination Criteria</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Ant Colony Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to ACO</li>
+                                <li>Mechanism of Working of Ant Colony Optimization Algorithm</li>
+                                <li>Collective Intelligence</li>
+                                <li>Parameter Selection</li>
+                                <li>Convergence of ACO</li>
+                                <li>Elitist Ant System</li>
+                                <li>Rank Based Ant Systems</li>
+                                <li>Recursive Ant Colony Optimization</li>
+                                <li>Applications to Combinatorial Optimization Problems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Artificial Bee Colony Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Artificial Bee Colony Meta-Heuristic - Initialization</li>
+                                <li>Employed Bees</li>
+                                <li>Onlooker Bees</li>
+                                <li>Scout Bees</li>
+                                <li>Honey Foraging Behaviour</li>
+                                <li>Global Guided ABC Algorithm</li>
+                                <li>Hybrid Guided Artificial Bee Colony (HGABC) Algorithm</li>
+                                <li>Hybridized Artificial Bee Colony with Simulated Annealing</li>
+                                <li>Genetic Algorithm with ABC</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Other Techniques Based on Swarm Intelligence</strong>
+                            <ul class="unit-topics">
+                                <li>Shuffled Frog Leaping</li>
+                                <li>Cat Swarm Optimization</li>
+                                <li>Bat Algorithm</li>
+                                <li>Glowworm Swarm Optimization</li>
+                                <li>Fish School Algorithm</li>
+                                <li>Firefly Algorithm</li>
+                                <li>Teaching-Learning Based Optimization</li>
+                                <li>Lion Algorithm</li>
+                                <li>Civilized Swarm Optimization</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Applications of Swarm Intelligence in Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Swarm Intelligence in Robot Path Planning</li>
+                                <li>Trajectory Generation</li>
+                                <li>Inverse Kinematics and Dynamics</li>
+                                <li>Robotic Controller Design</li>
+                                <li>Robot Clustering</li>
+                                <li>Robot Sorting</li>
+                                <li>Robot Collaboration</li>
+                                <li>Obstacle Avoidance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aboul Ella Hassanien, Eid Emary, 'Swarm Intelligence: Principles, Advances, and
+                            Applications', CRC Press.</li>
+                        <li>Christian Blum, Daniel Merkle, Swarm Intelligence: Introduction and Applications, Springer.
+                        </li>
+                        <li>Pawar P. J., 'Evolutionary Computations for Manufacturing', Studium Press.</li>
+                    </ol>
+                </section>
+                <section id="subject-162608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Elective: Additive Manufacturing &amp; Rapid Prototyping
+                        [162608]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Rapid Prototyping</strong>
+                            <ul class="unit-topics">
+                                <li>Prototyping Fundamentals</li>
+                                <li>Historical Development of Rapid Prototyping</li>
+                                <li>Advantages and Limitations of Rapid Prototyping</li>
+                                <li>Commonly Used Terms</li>
+                                <li>Classification of RP Process</li>
+                                <li>AM Process Chain - Conceptualization, CAD</li>
+                                <li>Conversion to STL</li>
+                                <li>Transfer to AM</li>
+                                <li>STL File Manipulation</li>
+                                <li>Machine Setup, Build, Removal and Clean Up</li>
+                                <li>Post Processing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Liquid-Based and Solid Based Rapid Prototyping</strong>
+                            <ul class="unit-topics">
+                                <li>Liquid-Based Rapid Prototyping Systems - Stereo Lithography Apparatus (SLA)</li>
+                                <li>Solid Ground Curing (SGC)</li>
+                                <li>Models and Specifications, Process, Working Principle and Applications of SLA and
+                                    SGC</li>
+                                <li>Solid Based Rapid Prototyping Systems - Laminated Object Manufacturing (LOM)</li>
+                                <li>Fused Deposition Modelling (FDM)</li>
+                                <li>Models and Specifications, Process, Working Principle and Applications of LOM and
+                                    FDM</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Powder Based Rapid Prototyping</strong>
+                            <ul class="unit-topics">
+                                <li>Powder Bed Fusion AM Processes - Selective Laser Sintering (SLS)</li>
+                                <li>Materials for SLS</li>
+                                <li>Indirect and Direct SLS</li>
+                                <li>Powder Fusion Mechanism and Powder Handling</li>
+                                <li>Process Modelling of SLS</li>
+                                <li>SLS Metal and Ceramic Part Creation</li>
+                                <li>Post Processing, Post Curing, Surface Deviation and Accuracy</li>
+                                <li>Electron Beam Melting (EBM)</li>
+                                <li>Process Benefits and Drawbacks of EBM</li>
+                                <li>Applications of Powder Bed Fusion Processes</li>
+                                <li>Post Processing of AM Parts</li>
+                                <li>Laser Engineered Net Shaping (LENS)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Design for Additive Manufacturing</strong>
+                            <ul class="unit-topics">
+                                <li>Design Tools for AM</li>
+                                <li>Part Orientation</li>
+                                <li>Removal of Supports</li>
+                                <li>Hollowing Out Parts</li>
+                                <li>Inclusion of Undercuts and Other Manufacturing Constraining Features</li>
+                                <li>Interlocking Features</li>
+                                <li>Reduction of Part Count in an Assembly</li>
+                                <li>Identification of Markings/Numbers</li>
+                                <li>Guidelines for Process Selection - Introduction</li>
+                                <li>Selection Methods for a Part</li>
+                                <li>Challenges of Selection</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: AM Data Formatting and Data Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Rapid Prototyping Data Formats - STL Format</li>
+                                <li>STL File Problems</li>
+                                <li>Consequence of Building Valid and Invalid Tessellated Models</li>
+                                <li>STL File Repairs - Generic Solution</li>
+                                <li>Other Translators and Newly Proposed Formats</li>
+                                <li>Rapid Prototyping Software's - Magics, Mimics, Solid View</li>
+                                <li>View Expert, 3D View, Velocity 2, Rhino</li>
+                                <li>STL View 3 Data Expert and 3D Doctor</li>
+                                <li>AM Data Processing - Part Orientation and Support Structure Generation</li>
+                                <li>Model Slicing and Contour Data Organization</li>
+                                <li>Direct and Adaptive Slicing</li>
+                                <li>Hatching Strategies and Tool Path Generation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: AM Materials and Applications</strong>
+                            <ul class="unit-topics">
+                                <li>3D Printing Materials - Properties, Characteristics and Application of ABS</li>
+                                <li>PLA, PVA, HDPE, PET, PETG</li>
+                                <li>Types of Composites Materials - Properties, Characteristics and Application</li>
+                                <li>N6, N12, ABS Carbon Fiber</li>
+                                <li>RP Applications - Material Relationship</li>
+                                <li>Application in Design, Engineering, Analysis and Planning</li>
+                                <li>Aerospace Industry, Automotive Industry</li>
+                                <li>Jewellery Industry, Coin Industry</li>
+                                <li>GIS Application, Arts and Architecture</li>
+                                <li>RP Medical and Bioengineering Applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Ali K. Kamrani, Emand Abouel Nasr, "Rapid Prototyping: Theory and Practice", Springer.</li>
+                        <li>Anupam Saxena, Birendra Sahay, "Computer Aided Engineering Design", Springer, 2005.</li>
+                        <li>Patri K. Venuvinod and Weiyin Ma, "Rapid Prototyping: Laser-based and Other Technologies",
+                            Springer, 2004.</li>
+                        <li>Chua Chee Kai, Leong Kah Fai, "3D Printing and Additive Manufacturing: Principles &amp;
+                            Applications", 4th Edition, World Scientific, 2015.</li>
+                        <li>Rafiq Noorani, Rapid Prototyping: Principles and Applications in Manufacturing, John Wiley
+                            &amp; Sons, 2006.</li>
+                        <li>Khanna Editorial, "3D Printing and Design", Khanna Publishing House, Delhi.</li>
+                    </ol>
+                </section>
+                <section id="subject-162609" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Project Management [162609]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Project Management</strong>
+                            <ul class="unit-topics">
+                                <li>Characteristics of a Project</li>
+                                <li>Types of Projects</li>
+                                <li>Project Management Body of Knowledge (PMBOK)</li>
+                                <li>Role of Project Manager and His Qualities</li>
+                                <li>Project Organization and Benefits</li>
+                                <li>Idea Generation</li>
+                                <li>Needs of Society</li>
+                                <li>Import Substitution</li>
+                                <li>Project Lifecycle</li>
+                                <li>Project Charter</li>
+                                <li>Project Sponsor</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Project Planning</strong>
+                            <ul class="unit-topics">
+                                <li>Customer Needs</li>
+                                <li>Stakeholder Concept</li>
+                                <li>Project Scope</li>
+                                <li>Feasibility Study and Report</li>
+                                <li>Baseline Plan</li>
+                                <li>SWOT Analysis</li>
+                                <li>Project Organization Structure and Hierarchy</li>
+                                <li>Project Teams</li>
+                                <li>Formation, Attitude and Aptitude</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Project Structure and Scheduling</strong>
+                            <ul class="unit-topics">
+                                <li>Project Selection Methods</li>
+                                <li>Breakeven Analysis</li>
+                                <li>DCF Methods</li>
+                                <li>Project Implementation</li>
+                                <li>Estimation, Cost, Price and Value</li>
+                                <li>Scheduling - Bar Charts</li>
+                                <li>Network Diagrams - PERT and CPM</li>
+                                <li>Schedule Crashing</li>
+                                <li>Introduction to Risk Management</li>
+                                <li>Probability in Project Management</li>
+                                <li>Decision Trees</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Procurement and Quality Management</strong>
+                            <ul class="unit-topics">
+                                <li>Vendor Selection Methods</li>
+                                <li>JIT and Supply Chains</li>
+                                <li>Quality, Quality Circles, Quality Control and Quality Assurance</li>
+                                <li>Cause and Effect Analysis</li>
+                                <li>ISO and Concepts of Total Quality Management</li>
+                                <li>Six Sigma</li>
+                                <li>Resource Planning and Allocation</li>
+                                <li>Availability and Constraints of Resources</li>
+                                <li>Resource Levelling and Crashing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Project Control and Evaluation</strong>
+                            <ul class="unit-topics">
+                                <li>Project Scope and Change Request</li>
+                                <li>Control of Schedule, Resources, Cost and Quality</li>
+                                <li>Project Communications - Channels, Means and Meetings</li>
+                                <li>Project Reports</li>
+                                <li>Project Audits</li>
+                                <li>Project Evaluation</li>
+                                <li>Project Close-Out Reports and Guidelines</li>
+                                <li>Audit Reports</li>
+                                <li>Maintenance and Shutdown Projects</li>
+                                <li>Plant Turn-Around and Replacement Analysis</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Project Site and International Projects</strong>
+                            <ul class="unit-topics">
+                                <li>Contour Maps and Sitemaps</li>
+                                <li>Plant Layout</li>
+                                <li>Suitability of Project Site</li>
+                                <li>Preparation of Site</li>
+                                <li>Selection and Leasing of Construction Equipment</li>
+                                <li>Special Considerations in Selection and Location of Projects</li>
+                                <li>Safety, Health, Human and Environment Factors</li>
+                                <li>Project Finance</li>
+                                <li>International Projects, Joint Ventures and Collaborations</li>
+                                <li>Impact of Culture</li>
+                                <li>Implementation and Handing Over of Projects</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>C F Gray, E W Larson, "Project Management-The Managerial Process", Tata Mcgraw-Hill
+                            Publishing Co Ltd.</li>
+                        <li>J Meredith, Samuel J. Mantel Jr. "Project Management- A Managerial Approach", John Wiley and
+                            Sons.</li>
+                        <li>J M Nicholas "Project Management For Business And Technology" Prentice Hall of India Pvt
+                            Ltd.</li>
+                        <li>J P Lewis "Project Planning, Scheduling And Control" Tata Mcgraw-Hill Publishing Co Ltd.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-162610" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Environmental Science and Sustainability [162610]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Multidisciplinary Nature of Environmental
+                                Studies</strong>
+                            <ul class="unit-topics">
+                                <li>Multidisciplinary Nature of Environmental Studies</li>
+                                <li>Renewable and Non-Renewable Natural Resources</li>
+                                <li>Overexploitation and Conservation of Forest Resources</li>
+                                <li>Water Resources</li>
+                                <li>Food Resources</li>
+                                <li>Energy Resources</li>
+                                <li>Mineral and Land Resources</li>
+                                <li>Concept of Sustainability and Sustainable Development</li>
+                                <li>Concept of Three R's (Reduce, Reuse, and Recycle)</li>
+                                <li>Concept of Zero Waste</li>
+                                <li>Need for Environmental Education</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Ecosystem and Biogeochemical Cycles</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of Ecosystem</li>
+                                <li>Components, Structure and Function of an Eco-System</li>
+                                <li>Forest Ecosystem and Desert Ecosystem</li>
+                                <li>Food Chain and Food Web</li>
+                                <li>Ecological Pyramids</li>
+                                <li>Biogeochemical Cycles - Carbon Cycle</li>
+                                <li>Nitrogen Cycle</li>
+                                <li>Phosphorous Cycle</li>
+                                <li>Ecosystem Services (Example Forest)</li>
+                                <li>Threats to Ecosystems</li>
+                                <li>Conservation of Ecosystems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Biodiversity and Its Conservation</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of Biodiversity</li>
+                                <li>Hot Spots of Biodiversity</li>
+                                <li>India as a Mega Diversity Nation</li>
+                                <li>Threats to Biodiversity</li>
+                                <li>Value of Biodiversity</li>
+                                <li>Economic Valuation of Biodiversity</li>
+                                <li>Red Data Base and Red Data Book</li>
+                                <li>International Union for Conservation of Nature (IUCN)</li>
+                                <li>Red List of Threatened Species</li>
+                                <li>Conservation of Biodiversity</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Pollution and Waste Management</strong>
+                            <ul class="unit-topics">
+                                <li>Pollution of Air</li>
+                                <li>Acid Rain</li>
+                                <li>Global Warming and Climate Change</li>
+                                <li>Ozone Layer Depletion</li>
+                                <li>Water Pollution</li>
+                                <li>Soil Pollution</li>
+                                <li>Industrial and Urban Solid Wastes</li>
+                                <li>Hospital Wastes</li>
+                                <li>Hazardous Waste</li>
+                                <li>Collection and Segregation of Solid Wastes</li>
+                                <li>Household Disposal Methods for Degradable Solid Wastes</li>
+                                <li>Commercial Water Purification Devices for Households</li>
+                                <li>Plastic Pollution and Microplastics</li>
+                                <li>Environmental and Health Effects of Microplastics</li>
+                                <li>E-Waste</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Sustainability and Environmental Management</strong>
+                            <ul class="unit-topics">
+                                <li>Ecological Footprints</li>
+                                <li>Carbon Footprint and Water Footprint</li>
+                                <li>Linear and Circular Resource Management</li>
+                                <li>System Thinking</li>
+                                <li>Industrial Ecosystems</li>
+                                <li>Environmental Impact Assessment (EIA)</li>
+                                <li>Environment Management Plan (EMP)</li>
+                                <li>Green Technology, Green Business and Green Accounting</li>
+                                <li>Green Buildings</li>
+                                <li>Eco-Labeling</li>
+                                <li>Sustainable (Green) Cities</li>
+                                <li>Role of Individuals in the Up Keeping of Environment</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Green Technology and Environmental Ethics</strong>
+                            <ul class="unit-topics">
+                                <li>Green Technology and Green Business</li>
+                                <li>Green Manufacturing and Green Accounting</li>
+                                <li>Green Buildings and Eco-Labeling</li>
+                                <li>Sustainable (Green) Cities</li>
+                                <li>Renewable Energy for Sustainable Development</li>
+                                <li>Environmental Ethics</li>
+                                <li>Role of Individuals in Environmental Conservation</li>
+                                <li>Community Participation</li>
+                                <li>Corporate Social Responsibility (CSR)</li>
+                                <li>Case Studies on Sustainable Environmental Practices</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Bala Krishnamoorthy - Environmental Management: Text and Cases - PHI.</li>
+                        <li>Jacob Thomas - Environmental management: Text and Cases - Pearson.</li>
+                        <li>Rajagopalan R. - Environmental Studies: From crisis to cure - Oxford University Press.</li>
+                        <li>Palanisamy P. N., Manikandan P., Geetha A., Manjula Ran – Environmental Science – Pearson
+                            Education.</li>
+                    </ol>
+                </section>
+                <section id="subject-162611" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Supply Chain Management [162611]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Supply Chain Management</strong>
+                            <ul class="unit-topics">
+                                <li>Supply Chain - Concept, Need and Evolution</li>
+                                <li>Approaches, Phases and Processes of Supply Chain</li>
+                                <li>Drivers and Obstacles in Supply Chain</li>
+                                <li>Supply Chain Strategies - Strategic Fit and Scope</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Demand and Supply in Supply Chain Management</strong>
+                            <ul class="unit-topics">
+                                <li>Planning Demand and Supply in SCM</li>
+                                <li>Demand Forecasting</li>
+                                <li>Aggregate Planning</li>
+                                <li>Managing Predictable Variability</li>
+                                <li>Customer Service in SCM</li>
+                                <li>Integration of Technology in SCM (IT)</li>
+                                <li>E-Business in Supply Chain</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Inventory Planning and Managing Inventory</strong>
+                            <ul class="unit-topics">
+                                <li>Inventory Planning and Managing Inventory in SCM</li>
+                                <li>Benefits of Inventory Planning</li>
+                                <li>Factors Affecting Inventory Approaches</li>
+                                <li>Methods to Manage Inventory</li>
+                                <li>Inventory Control - Inventory Audits and Cycle Counts</li>
+                                <li>Challenges in Inventory Management</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Sourcing and Logistics Management</strong>
+                            <ul class="unit-topics">
+                                <li>Purchasing and Sourcing Decisions in SCM</li>
+                                <li>Transportation, Logistics and Warehousing</li>
+                                <li>Containersation and Packaging</li>
+                                <li>Outsourcing in Supply Chain</li>
+                                <li>Logistics Management - Types of Logistic Activities</li>
+                                <li>Importance of Logistics Management</li>
+                                <li>Integrated Logistics and Its Support</li>
+                                <li>Determinants of Designing Logistical System</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Designing Supply Chain Network</strong>
+                            <ul class="unit-topics">
+                                <li>Distribution Network Design</li>
+                                <li>Supply Chain Performance Measurement and Control</li>
+                                <li>Benchmarking in Supply Chain</li>
+                                <li>Gap Analysis</li>
+                                <li>Balanced Scorecard for Supply Chain Management</li>
+                                <li>Supply Chain Cost Analysis</li>
+                                <li>Performance Improvement in Supply Chain</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Recent Trends in Supply Chain Management</strong>
+                            <ul class="unit-topics">
+                                <li>Supply Chain Visibility and Digital Transformation</li>
+                                <li>Risk Factors and Supply Chain Resilience</li>
+                                <li>Global Value Chains Under Disruption</li>
+                                <li>Outsourcing Supply Chain Operations</li>
+                                <li>Co-Makership in Supply Chain</li>
+                                <li>Role of E-Commerce in Supply Chain Management</li>
+                                <li>Green Supply Chain Management</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Sunil Chopra and Peter Meindi, SCM-Strategy, Planning &amp; Operation, 6th Edition, Pearson
+                            Publishers.</li>
+                        <li>Rahul V Attekar, SCM-Concepts &amp; Cases, 2ndEdition, PHI, 2017.</li>
+                        <li>Mohanty RP, &amp;Deshmukh SG, Essentials of SCM, 1st Edition, Jaico Publishers.</li>
+                        <li>Agarwal DK, Logistics &amp; Supply Chain Management, 1st Edition, MacMillan India.</li>
+                    </ol>
+                </section>
+                <section id="subject-162601P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Artificial Intelligence for Robotics Lab [162601P]</h2>
+                    <p><strong>Perform all Experiments</strong></p>
+                    <ul class="unit-topics">
+                        <li>Write a program in C/MATLAB/Python to design and implement a fuzzy logic controller for an
+                            autonomous mobile robot.</li>
+                        <li>Develop programs in C/MATLAB/Python to solve inverse kinematics or optimization problems
+                            using Genetic Algorithm (GA) and Simulated Annealing (SA).</li>
+                        <li>Write a program to solve the Travelling Salesman Problem (TSP) using the Ant Colony
+                            Optimization algorithm.</li>
+                        <li>Implement supervised (Support Vector Machine/Decision Tree) and unsupervised (K Means
+                            Clustering) learning algorithms for robotic applications.</li>
+                        <li>Design and implement a rule-based expert system using Visual Prolog/Prolog for
+                            decision-making in robotics or manufacturing.</li>
+                        <li>Perform image acquisition, preprocessing, edge detection, object recognition, and vision
+                            based robot guidance using MATLAB/OpenCV.</li>
+                        <li>Develop and simulate robot path planning and obstacle avoidance using A* or any suitable AI
+                            algorithm in MATLAB/Python/ROS.</li>
+                        <li>Solving real time planning and scheduling problems using software like Witness/Pro mode.
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-162602P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Flexible Manufacturing Systems Lab [162602P]</h2>
+                    <p><strong>Perform all Experiments</strong></p>
+                    <ul class="unit-topics">
+                        <li>Construction of model of cellular manufacturing system and performance evaluation using any
+                            software package.</li>
+                        <li>Programming on CNC Lathe.</li>
+                        <li>Programming on CNC Milling.</li>
+                        <li>Robot programming for integrated process application.</li>
+                        <li>3D printing of a part.</li>
+                        <li>Programming for line/color follower AGV.</li>
+                    </ul>
+                </section>
+                <section id="subject-162603P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Robotics Programming Lab [162603P]</h2>
+                    <p><strong>Perform all Experiments</strong></p>
+                    <ul class="unit-topics">
+                        <li>Programming using the teach pendant method.</li>
+                        <li>Programming on VAL Language.</li>
+                        <li>Programming the robot for path following operation using any robot.</li>
+                        <li>Programming the robot for palletizing operation using any robot.</li>
+                        <li>Programming the robot for pick and place operation using any robot.</li>
+                        <li>Robot Programming for Colour identification/shape identification/path tracking.</li>
+                        <li>Industrial visit and its report on industrial applications of robots.</li>
+                    </ul>
+                </section>
+                <section id="subject-162604P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL-II [162604P]</h2>
+                    <p>Details for NPTEL-II will be provided by the department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+        <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

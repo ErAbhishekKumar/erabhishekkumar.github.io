@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus - Biomedical &amp; Robotics Engineering</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Biomedical &amp; Robotics Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Robotic Programming and Software Development [117601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Bio MEMS [117602]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Signal Conditioning and Data Acquisition System [117603]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Employability Skills (Non-Credit) [117604]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1176XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-II [1006XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Robotic Programming and Software Development Lab [117601P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Signal Conditioning and Data Acquisition System Lab [117603P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Courses-I Lab [117605P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>19</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top:0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-117601"
+                        data-type="theory">Robotic Programming</button><button class="tab-btn"
+                        data-target="subject-117602" data-type="theory">Bio MEMS</button><button class="tab-btn"
+                        data-target="subject-117603" data-type="theory">Signal Conditioning &amp; DAQ</button><button
+                        class="tab-btn" data-target="subject-117604" data-type="theory">Employability
+                        Skills</button><button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective-I"
+                        data-modal-options='[{"label":"Radiological Equipment","target":"subject-117606","btn-id":"btn-117606"},{"label":"Mobile Robotics and Autonomous Systems","target":"subject-117607","btn-id":"btn-117607"},{"label":"Mechatronics","target":"subject-117608","btn-id":"btn-117608"}]'>
+                        Program Elective-I </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective-II"
+                        data-modal-options='[{"label":"Basic of AI","target":"subject-100615","btn-id":"btn-100615"},{"label":"Electrical and Hybrid Vehicles","target":"subject-100616","btn-id":"btn-100616"},{"label":"Industrial Automation","target":"subject-100617","btn-id":"btn-100617"},{"label":"Basic of ML","target":"subject-100618","btn-id":"btn-100618"},{"label":"AR VR Technology","target":"subject-100619","btn-id":"btn-100619"},{"label":"Micro Electro Mechanical System (MEMS) Technology","target":"subject-100620","btn-id":"btn-100620"},{"label":"Electronic Product Design &amp; Packaging","target":"subject-100621","btn-id":"btn-100621"},{"label":"3D Printing and Design","target":"subject-100622","btn-id":"btn-100622"}]'>
+                        Open Elective-II </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top:20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-117601P" data-type="lab">Robotic
+                        Programming Lab</button><button class="tab-btn" data-target="subject-117603P"
+                        data-type="lab">Signal Conditioning Lab</button><button class="tab-btn"
+                        data-target="subject-117605P" data-type="lab">NPTEL Courses-I Lab</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-117601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Robotic Programming and Software Development [117601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Robot Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Types</li>
+                                <li>Flex Pendant</li>
+                                <li>Lead Through Programming</li>
+                                <li>Coordinate Systems Of Robot</li>
+                                <li>Robot Controller</li>
+                                <li>Major Components</li>
+                                <li>Functions</li>
+                                <li>Wrist Mechanism</li>
+                                <li>Interpolation</li>
+                                <li>Interlock Commands</li>
+                                <li>Operating Mode Of Robot</li>
+                                <li>Jogging</li>
+                                <li>Types</li>
+                                <li>Robot Specifications</li>
+                                <li>Motion Commands</li>
+                                <li>End Effectors And Sensors Commands</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Basics of Robot Operating System (ROS)</strong>
+                            <ul class="unit-topics">
+                                <li>Basics Of Linux And Its General Commands</li>
+                                <li>Installation Of ROS</li>
+                                <li>Introduction To ROS Architecture</li>
+                                <li>General Linux Commands For ROS</li>
+                                <li>ROS Nodes</li>
+                                <li>ROS Topics</li>
+                                <li>ROS File System</li>
+                                <li>Catkin Workspace</li>
+                                <li>Custom Message Types</li>
+                                <li>ROS Services</li>
+                                <li>ROS Actions</li>
+                                <li>ROS Launch Files</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Robot Languages-VAL I &amp; II</strong>
+                            <ul class="unit-topics">
+                                <li>Classifications</li>
+                                <li>Structures</li>
+                                <li>VAL Language Commands</li>
+                                <li>Motion Control</li>
+                                <li>Hand Control</li>
+                                <li>Program Control</li>
+                                <li>Industrial Applications</li>
+                                <li>Using VAL-I Commands</li>
+                                <li>VAL-II Programming</li>
+                                <li>Basic Commands</li>
+                                <li>Problem Using Conditional Statements</li>
+                                <li>Industrial Applications Using VAL-II Commands</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Robot Languages-RAPID &amp; AML</strong>
+                            <ul class="unit-topics">
+                                <li>RAPID Code Basic Commands</li>
+                                <li>Types Of Instructions</li>
+                                <li>Types Of Modes Of Operation</li>
+                                <li>Routine &amp; Subroutine Command Debugging</li>
+                                <li>Syntax</li>
+                                <li>Developing Routine For Simple And Frequent Operations Of Industrial Robot</li>
+                                <li>AML Language</li>
+                                <li>General Description</li>
+                                <li>Elements And Functions</li>
+                                <li>Statements</li>
+                                <li>Constants And Variables</li>
+                                <li>Program Control</li>
+                                <li>Operating Systems</li>
+                                <li>Motion</li>
+                                <li>Sensor Commands</li>
+                                <li>Data Processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Autonomous Navigation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Sensors (Lidar, Camera, Etc.)</li>
+                                <li>Mapping Concepts</li>
+                                <li>Localization &amp; Its Concepts</li>
+                                <li>Path Planning Techniques &amp; Different Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Soft Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Soft Robotics</li>
+                                <li>Robotic Process Automation (RPA)</li>
+                                <li>Computer Vision</li>
+                                <li>AR &amp; VR In Robotics</li>
+                                <li>Virtual Robotics</li>
+                                <li>Robot Studio Online Software</li>
+                                <li>Singularities</li>
+                                <li>Collision Detection</li>
+                                <li>Repeatability Measurement Of Robot</li>
+                                <li>Robot Economics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Robot Operating System Cookbook, Kumar Bipin, Packt Publishing, 2018 ISBN 13:
+                            978-1783987443.</li>
+                        <li>Robot Operating System for Absolute Beginners, Lentin Joseph, Aleena Johny, APress; 2nd ed.
+                            Edition, 2022 ISBN-13: 978-1484277492.</li>
+                        <li>Programming Robots with ROS: A Practical Introduction to the Robot Operating System, Morgan
+                            Quigley, Brian Gerkey, and William D. Smart, Shroff/O'Reilly, 2016 ISBN-13: 978-9352132799.
+                        </li>
+                        <li>Industrial Robotics- Technology, Programming, and Applications, Mikell Groover, McGraw-Hill
+                            Education / Asia, 1995 ISBN-13: 978-0071004428.</li>
+                        <li>Robotics Technology and Flexible Automation, S. R. Deb and Sankha Deb, McGraw Hill
+                            Education, 2017 ISBN-13: 978-0070077911.</li>
+                    </ol>
+                </section>
+                <section id="subject-117602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Bio MEMS [117602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: MEMS Overview</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To MEMS</li>
+                                <li>History Of MEMS Development</li>
+                                <li>Sensors And Actuators</li>
+                                <li>Salient Features And Branches Of MEMS Technology</li>
+                                <li>Introduction And Overview Of Microfabrication Methods</li>
+                                <li>Photolithography</li>
+                                <li>Thin File Deposition</li>
+                                <li>Etching And Microelectronic Fabrication Flow</li>
+                                <li>Case Studies Of MEMS Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Fundamentals of Microfluidic Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Motivation And Introduction To Microfluidic Channel</li>
+                                <li>Types Of Microfluidic Channels And Their Working Principle</li>
+                                <li>Biocompatible Polymers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Fabrication Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Lithography Techniques</li>
+                                <li>X Ray And Ultraviolet For SU 8</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Microfluidic Integration and Lab-on Chip
+                                Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Micro Total Analysis Systems (&mu;TAS)</li>
+                                <li>Lab On Chip (LoC) Applications</li>
+                                <li>Microfluidic Strategies For LoC And Fabrication Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Microfluidic Actuation Systems: Micropumps and
+                                Valves</strong>
+                            <ul class="unit-topics">
+                                <li>Micropumps For Microfluidic And LoC Applications</li>
+                                <li>Auxiliary Supporting Systems</li>
+                                <li>Micropumps And Valves</li>
+                                <li>Design</li>
+                                <li>Fabrication</li>
+                                <li>Working Principles Of Micropumps And Valves</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: BioMEMS and Microscale Techniques for Biomedical
+                                Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Microfabricated Sample Extraction And Concentration</li>
+                                <li>BioMEMS In Cell Manipulation</li>
+                                <li>Case Studies Of BioMEMS Devices</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Bio-MEMS: Technologies and Applications, Wanjun Wang, Steven A. Soper CRC Press; 1st edition
+                            (15 December 2006), ISBN-13: 978-0849335327.</li>
+                        <li>Foundation of MEMS, Chang Liu Pearson Education (1 January 2011) ISBN-13: 9788131764756.
+                        </li>
+                        <li>Microsystem Design, Stephen D. Senturia, Springer; 1st ed. 2000. Corr. 2nd printing 2004
+                            edition, ISBN: 978-0792372462.</li>
+                        <li>Microsensors, MEMS and Smart devices, Julian W.Gardner, Vijay K Varadhan, John Wiley &amp;
+                            sons, 2001. ISBN-978-0471861096.</li>
+                    </ol>
+                </section>
+                <section id="subject-117603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Signal Conditioning and Data Acquisition System [117603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Data Acquisition And Signal Conditioning</li>
+                                <li>Overview</li>
+                                <li>Single And Multichannel DAQ</li>
+                                <li>Block Diagram And Working</li>
+                                <li>ADCs And DACs</li>
+                                <li>Working</li>
+                                <li>Block Diagram Of The DAQ</li>
+                                <li>Simple Applications Like Temperature Reading</li>
+                                <li>Systems</li>
+                                <li>Motor Speed Control</li>
+                                <li>Heart Rate Monitoring Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Signal Conditioning Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Signal Conditioning</li>
+                                <li>Amplification</li>
+                                <li>Isolation</li>
+                                <li>Filtering</li>
+                                <li>Linearization</li>
+                                <li>Classes Of Signal Conditioning</li>
+                                <li>Plug-In Board Signal Conditioning</li>
+                                <li>Direct Connect Modular</li>
+                                <li>Two-Wire Transmitters</li>
+                                <li>Distributed I/O</li>
+                                <li>Digital Transmitters</li>
+                                <li>Field Wiring And Signal Measurement Signal Sources</li>
+                                <li>Sources And Types Of Noise</li>
+                                <li>Minimizing Noise Cable Shielding And Shield Earthing</li>
+                                <li>Grounding Cable Shields</li>
+                                <li>Shielded And Twisted-Pair Cable</li>
+                                <li>Review Of Nyquist Sampling Theorem</li>
+                                <li>Need For Prefiltering (First And Second Order Filters)</li>
+                                <li>Digital Quantities</li>
+                                <li>Data Conversions And DACs</li>
+                                <li>ADCs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Embedded Microcontrollers-PIC18F/Others</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Architecture</li>
+                                <li>Assembly And C Language Programming</li>
+                                <li>Timers And Counters</li>
+                                <li>ADC DAC And Related Examples</li>
+                                <li>SPI</li>
+                                <li>I2C And Related Examples</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: DAQ Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Microcontroller DAQ Systems</li>
+                                <li>Types Of Hardware Communication For DAQ</li>
+                                <li>SPI</li>
+                                <li>I2C</li>
+                                <li>USB</li>
+                                <li>USART And UART</li>
+                                <li>Hardware Communication Interface Programming To Connect Data Loggers (RS-232
+                                    Interface, RS-485 Interface, Ethernet Interface, USB Interface)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Data Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Data Processing Steps</li>
+                                <li>Data Processing Techniques</li>
+                                <li>Data Storage Devices</li>
+                                <li>Microcontroller Programming For Data Storage</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Data Retrieving And Plotting Techniques</li>
+                                <li>Data Analysis Techniques</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A course in Electrical &amp; Electronic Measurements &amp; Instrumentation, A K Sawhney,
+                            Dhampat Rai Publications, 19th edition, 2011. (Module-5).</li>
+                        <li>Sensors and Actuators: Engineering System Instrumentation, Clarence W. de Silva, CRC Press;
+                            2nd edition (28 July 2015) ISBN 978-1466506817.</li>
+                        <li>Data Acquisition Techniques Using PCs, Howard Austerlitz, Academic Press.</li>
+                    </ol>
+                </section>
+                <section id="subject-117604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Employability Skills (Non-Credit) [117604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Goal Setting</strong>
+                            <ul class="unit-topics">
+                                <li>Career Planning</li>
+                                <li>SWOT</li>
+                                <li>Resume Using Internet Formats</li>
+                                <li>Showcase Portfolios</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Goal Setting- II</strong>
+                            <ul class="unit-topics">
+                                <li>Personal Grooming</li>
+                                <li>Self-Introduction</li>
+                                <li>Website Development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Capacity Development I</strong>
+                            <ul class="unit-topics">
+                                <li>Interview Skills</li>
+                                <li>Group Discussion - Do's &amp; Don'ts</li>
+                                <li>Leadership</li>
+                                <li>Teamwork</li>
+                                <li>How To Interrupt</li>
+                                <li>Synthesis And Analysis Of Topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Capacity Development II</strong>
+                            <ul class="unit-topics">
+                                <li>Social Media For Personal Enrichment</li>
+                                <li>Body Language</li>
+                                <li>Self-Management</li>
+                                <li>Emotional Intelligence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Utilising Potential I</strong>
+                            <ul class="unit-topics">
+                                <li>Social Networking</li>
+                                <li>Social Engagements</li>
+                                <li>Volunteering</li>
+                                <li>Collaboration &amp; Team-Work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Utilising Potential II</strong>
+                            <ul class="unit-topics">
+                                <li>QC-Tools</li>
+                                <li>Check Sheets</li>
+                                <li>Fishbone Diagram</li>
+                                <li>Histogram</li>
+                                <li>Pareto Chart</li>
+                                <li>Control-Chart</li>
+                                <li>Scatter Diagram</li>
+                                <li>Stratification</li>
+                                <li>Lean Manufacturing</li>
+                                <li>Kanban</li>
+                                <li>Kaizen</li>
+                                <li>Five S</li>
+                                <li>Poka-Yoke</li>
+                                <li>Quality Circle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Employability Skills Skills for Employability, Dr. M. Sen Gupta, Innovation Publication Pvt
+                            Ltd, 2020 ISBN: 978-81-933819-1-5.</li>
+                        <li>Employability Skills, Dr. Nishith Rajaram Dubey, Anupam Singh, Indra Publishing House, 2023
+                            ISBN - 978-93-93577-68-9.</li>
+                        <li>Organizational Behavior, A. K. Chitale, Rajendra Prasad Mohanty and Dr Nishith Dubey, PHI
+                            Learning Pvt Ltd ISBN 978-81-203-4696-3.</li>
+                        <li>Managerial Skills, Dr Nishith Dubey &amp; Prof Gitanjali Shrivastava, Shiva Prakashan,
+                            Indore, India, 2010, ISBN 81-7677-100-7.</li>
+                        <li>Body Language, Allan Pease, Pease International PTY. Ltd Australia.</li>
+                        <li>Production and Operations Management Goods &amp; Services approach, Dr S.V Deshmukh, Dr A.
+                            K. Chitale and Dr Nishith Dubey, Archers &amp; Elevators publishing house, Bangalore, ISBN
+                            9789386501197.</li>
+                        <li>Emotional Intelligence, Daniel Goleman, Word Press.Com, 9789382563792.</li>
+                        <li>How to win friends and influence people, Dale Carnegie, Srishti Publishers &amp;
+                            Distributors, Delhi, India.</li>
+                    </ol>
+                </section>
+                <section id="subject-117606" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Radiological Equipment [117606]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Science Behind Radiological Equipment</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction And Types Of Radiation (X-Rays, Gamma Rays, Etc.)</li>
+                                <li>Interaction Of Radiation With Matter (Photoelectric Effect, Compton Scattering,
+                                    Etc.)</li>
+                                <li>Radiation Dose Measurement (Gray, Sievert)</li>
+                                <li>Radiation Safety Principles (ALARA: As Low As Reasonably Achievable) And AERB, FDA,
+                                    ICRP Guidelines</li>
+                                <li>Shielding Materials And Techniques</li>
+                                <li>X-Ray Tubes</li>
+                                <li>Detectors And Imaging Sensors</li>
+                                <li>Power Supplies And Control Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Operation and Analysis of Various Imaging
+                                Equipment</strong>
+                            <ul class="unit-topics">
+                                <li>Principles Of X-Ray Generation And Detection</li>
+                                <li>Applications In Diagnostics (Chest X-Rays, Bone Imaging)</li>
+                                <li>Principles Of CT Scanning And 3D Reconstruction</li>
+                                <li>Applications In Oncology, Cardiology, And Neurology</li>
+                                <li>Principles Of Magnetism And Nuclear Magnetic Resonance (NMR)</li>
+                                <li>Applications In Soft Tissue Imaging</li>
+                                <li>Principles Of Sound Waves And Transducer Technology</li>
+                                <li>Applications In Obstetrics, Cardiology, And Abdominal Imaging</li>
+                                <li>Nuclear Medicine</li>
+                                <li>Principles Of PET And SPECT Imaging</li>
+                                <li>Image Reconstruction Algorithms</li>
+                                <li>Noise Reduction And Enhancement Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Integrate AI and Robotics into Radiological Systems
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>AI In Radiology</li>
+                                <li>Basics Of Machine Learning And Deep Learning</li>
+                                <li>AI Applications In Image Analysis - Tumor Detection, Fracture Identification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Integrate AI and Robotics into Radiological Systems
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Robotics In Radiology</li>
+                                <li>Robotic Assisted Surgeries And Biopsies</li>
+                                <li>Robotics In Radiation Therapy - Cyber Knife, Gamma Knife</li>
+                                <li>Integration Of Radiological Systems With Hospital Networks</li>
+                                <li>Remote Diagnostics And Tele-Radiology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Maintenance and Troubleshooting of Radiological
+                                Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Design Principles Of Equipment</li>
+                                <li>System Architecture And Component Selection</li>
+                                <li>Techniques For Ensuring Image Quality</li>
+                                <li>Calibration Of Imaging Systems</li>
+                                <li>Common Issues In Radiological Equipment</li>
+                                <li>Preventive Maintenance Strategies</li>
+                                <li>IEC, AERB, FDA Standards For Radiological Devices</li>
+                                <li>Documentation And Certification Processes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advancements in Radiological Technology</strong>
+                            <ul class="unit-topics">
+                                <li>3D And 4D Imaging Techniques</li>
+                                <li>Dual Energy CT And Spectral Imaging</li>
+                                <li>PET-MRI</li>
+                                <li>SPECT-CT</li>
+                                <li>Nanotechnology In Radiology</li>
+                                <li>Radiation-Free Imaging Technologies</li>
+                                <li>AI For Personalized Medicine</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Robot Operating System Cookbook, Kumar Bipin, Packt Publishing, 2018 ISBN 13:
+                            978-1783987443.</li>
+                        <li>Robot Operating System for Absolute Beginners, Lentin Joseph, Aleena Johny, APress; 2nd ed.
+                            Edition, 2022 ISBN-13: 978-1484277492.</li>
+                        <li>Programming Robots with ROS: A Practical Introduction to the Robot Operating System, Morgan
+                            Quigley, Brian Gerkey, and William D. Smart, Shroff/O'Reilly, 2016 ISBN-13: 978-9352132799.
+                        </li>
+                        <li>Industrial Robotics- Technology, Programming, and Applications, Mikell Groover, McGraw-Hill
+                            Education / Asia, 1995 ISBN-13: 978-0071004428.</li>
+                        <li>Robotics Technology and Flexible Automation, S. R. Deb and Sankha Deb, McGraw Hill
+                            Education, 2017 ISBN-13: 978-0070077911.</li>
+                    </ol>
+                </section>
+                <section id="subject-117607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Mobile Robotics and Autonomous Systems [117607]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Mobile Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Mobile Robotics</li>
+                                <li>Robot Locomotion</li>
+                                <li>Types Of Locomotion</li>
+                                <li>Key Issues In Locomotion</li>
+                                <li>Live Reckoning</li>
+                                <li>Mobile Robotics Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Robot Navigation &amp; Motion Control</strong>
+                            <ul class="unit-topics">
+                                <li>Navigation Philosophies</li>
+                                <li>Holonomic And Non-Holonomic Constraints</li>
+                                <li>Collision Avoidance</li>
+                                <li>Path Planning For Navigation</li>
+                                <li>Motion Control (Open Loop And Feedback Control)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Perception and Control</strong>
+                            <ul class="unit-topics">
+                                <li>Sensors For Mobile Robots</li>
+                                <li>Classification</li>
+                                <li>Performance And Uncertainty In Sensors</li>
+                                <li>Wheel Sensor</li>
+                                <li>Heading Sensor</li>
+                                <li>Accelerometers</li>
+                                <li>Inertial Measurement</li>
+                                <li>Motion Sensor</li>
+                                <li>Range Sensors</li>
+                                <li>Vision Sensor</li>
+                                <li>Basics Of Computer Vision And Image Processing</li>
+                                <li>Image To Perception</li>
+                                <li>Perception To Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Localization and Mapping</strong>
+                            <ul class="unit-topics">
+                                <li>Control Localization And Decomposition Techniques</li>
+                                <li>Localization Problem And Challenges</li>
+                                <li>Map Representation</li>
+                                <li>Probabilistic Map-Based Localization</li>
+                                <li>Simultaneous Localization And Mapping (SLAM)</li>
+                                <li>Autonomous Map Building</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Planning of Autonomous Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Path Planning Algorithms Overview</li>
+                                <li>A-Star</li>
+                                <li>Dijkstra</li>
+                                <li>Voronoi Diagrams</li>
+                                <li>Probabilistic Roadmaps (PRM)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Navigation of Autonomous Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Rapidly Exploring Random Trees (RRT)</li>
+                                <li>Markov Decision Processes (MDP)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Mobile Robotics, Alonzo Kelly, Cambridge University Press, 1st Edition, 2013; ISBN-13:
+                            978-1107031159.</li>
+                        <li>Introduction to Autonomous Mobile Robots, Roland Siegwart, MIT Press, 2nd Edition, 2011 ISBN
+                            13: 978-0262015356.</li>
+                        <li>Designing Autonomous Mobile Robots, John M. Holland, Newnes Publisher, 2004 ISBN-13:
+                            978-0750676830.</li>
+                        <li>Programming Robots with ROS: A Practical Introduction to the Robot Operating System, Morgan
+                            Quigley, Brian Gerkey, and William D. Smart, Shroff/O'Reilly, 2016 ISBN-13: 978-9352132799.
+                        </li>
+                        <li>Industrial Robotics- Technology, Programming, and Applications, Mikell Groover, McGraw-Hill
+                            Education / Asia, 1995 ISBN-13: 978-0071004428.</li>
+                    </ol>
+                </section>
+                <section id="subject-117608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Mechatronics [117608]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Fundamentals of Mechatronics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Mechatronics System</li>
+                                <li>Basic Building Blocks Of Mechatronic Systems</li>
+                                <li>Key Elements Mechatronics System</li>
+                                <li>Mechatronics Design Process</li>
+                                <li>Types Of Design</li>
+                                <li>Traditional And Mechatronics Designs</li>
+                                <li>Advanced Approaches In Mechatronics</li>
+                                <li>Mechatronics In Home, Office And Industry Automation</li>
+                                <li>Scope Of Mechatronics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Basic System Models &amp; Modelling</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Model Categories</li>
+                                <li>Model Development</li>
+                                <li>Structural Modelling</li>
+                                <li>Physical Modelling</li>
+                                <li>Experimental Modelling</li>
+                                <li>Model Verification</li>
+                                <li>Model Validation</li>
+                                <li>Model Simplification</li>
+                                <li>Mathematical Models</li>
+                                <li>Mechanical System Building Blocks</li>
+                                <li>Electrical System Building Blocks</li>
+                                <li>Fluid Power System Building Blocks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensors and Actuators</strong>
+                            <ul class="unit-topics">
+                                <li>Sensor Measurement</li>
+                                <li>Classification Of Sensors</li>
+                                <li>Sensor Application In Medicine</li>
+                                <li>Sensor-Static &amp; Dynamic Characteristics</li>
+                                <li>Sensor Types- Displacement, Position, Proximity, Velocity, Motion, Force,
+                                    Acceleration, Torque, Fluid Pressure, Liquid Flow, Liquid Level, Temperature And
+                                    Light Sensors</li>
+                                <li>Transducers</li>
+                                <li>Types Of Transducers</li>
+                                <li>Selection Criteria Of Sensors &amp; Actuators For Mechatronic Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Actuation Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Principles And Elements Actuating Systems</li>
+                                <li>Hydraulic And Pneumatic Actuating Systems</li>
+                                <li>Mechanical Actuating Systems And Electrical Actuating Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Data Acquisition Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Analog To Digital And Digital To Analog Conversions</li>
+                                <li>Digital Signal Processing - Data Flow In DSPs</li>
+                                <li>Block Diagrams</li>
+                                <li>Typical Layouts</li>
+                                <li>Interfacing Motor Drives</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Design of Mechatronics Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Industrial Robotic Arm For Manufacturing</li>
+                                <li>Electronic Stability Control (ESC) System</li>
+                                <li>Robotic-Assisted Surgery</li>
+                                <li>Wearable Health Monitoring Systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Mechatronics: Electronic Control Systems in Mechanical and Electrical Engineering, W.
+                            Bolton, Pearson Education, 2023, ISBN-10: 8177582844.</li>
+                        <li>Mechatronics System Design, Devdas Shetty, Richard A. Kolk, Cengage Learning, 2011 ISBN-10:
+                            8131501191.</li>
+                        <li>Mechatronic Systems Modeling and simulation, Georg Pelz, John wiley and sons Ltd, 2003.</li>
+                        <li>Mechatronics, Robert H. Bishop, CRC Press Inc, 2005, ISBN-10: 0849363586.</li>
+                        <li>Mechatronics A Foundation Course, DE SILVA, Taylor and Francis, 2010, ISBN-10:
+                            9781138569553.</li>
+                    </ol>
+                </section>
+                <section id="subject-100615" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Basic of AI [100615]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to AI &amp; Searching Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Artificial Intelligence</li>
+                                <li>Types Of AI And Intelligent Agents</li>
+                                <li>Breadth-First Search</li>
+                                <li>Depth-First Search</li>
+                                <li>Hill Climbing And Its Variations</li>
+                                <li>Heuristic Search Techniques</li>
+                                <li>Best-First Search</li>
+                                <li>A* Algorithm</li>
+                                <li>Constraint Satisfaction Problem</li>
+                                <li>Means-End Analysis</li>
+                                <li>Introduction To Game Playing</li>
+                                <li>Min-Max And Alpha-Beta Pruning Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Knowledge Representation</strong>
+                            <ul class="unit-topics">
+                                <li>Propositional Logic</li>
+                                <li>First-Order Predicate Logic</li>
+                                <li>Resolution Principle</li>
+                                <li>Unification</li>
+                                <li>Semantic Nets</li>
+                                <li>Conceptual Dependencies</li>
+                                <li>Frames</li>
+                                <li>Scripts And Production Rules</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Understanding Natural Languages I</strong>
+                            <ul class="unit-topics">
+                                <li>Components And Steps Of Communication</li>
+                                <li>The Contrast Between Formal And Natural Languages In The Context Of Grammar</li>
+                                <li>Chomsky Hierarchy Of Grammars</li>
+                                <li>Parsing And Semantics</li>
+                                <li>Parsing Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Understanding Natural Languages II</strong>
+                            <ul class="unit-topics">
+                                <li>Context-Free And Transformational Grammar</li>
+                                <li>Recursive And Augmented Transition Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AI in Decision Making</strong>
+                            <ul class="unit-topics">
+                                <li>Utility Theory</li>
+                                <li>Utility Functions</li>
+                                <li>Decision Networks</li>
+                                <li>Sequential Decision Problems</li>
+                                <li>Partially Observable Markov Decision Process (MDPs)</li>
+                                <li>Game Theory</li>
+                                <li>AI Solutions For Real-Time Problems Using ML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: AI in Reinforcement Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Passive Reinforcement Learning (RL) And Active RL</li>
+                                <li>Generalization In RL</li>
+                                <li>Policy Search</li>
+                                <li>Deep Reinforcement Learning</li>
+                                <li>AI Solutions For Real-Time Problems Using RL</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Artificial Intelligence: A Modern Approach S. Russell and P. Norvig, Prentice Hall, Third
+                            Edition, 2015, ISBN-13: 978-0-13-604259-4, ISBN-10: 0-13-604259-7.</li>
+                        <li>Introduction to Artificial Intelligence &amp; Expert Systems, Patterson Pearson, 1st ed.
+                            2015, ISBN-10: 9332551944, ISBN-13: 978-8120307773.</li>
+                        <li>Intelligent Planning: A decomposition and abstraction-based approach Yang, Q, Springer
+                            Verlag, Berlin Heidelberg, 1997. ISBN-10: 354061901, ISBN-13: 978-3540619017.</li>
+                    </ol>
+                </section>
+                <section id="subject-100616" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Electrical and Hybrid Vehicles [100616]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Conventional Vehicles</li>
+                                <li>Basics Of Vehicle Performance</li>
+                                <li>Vehicle Power Source Characterization</li>
+                                <li>Transmission Characteristics</li>
+                                <li>Mathematical Models To Describe Vehicle Performance</li>
+                                <li>Introduction To Hybrid Electric Vehicles</li>
+                                <li>History Of Hybrid And Electric Vehicles</li>
+                                <li>Social And Environmental Importance Of Hybrid And Electric Vehicles</li>
+                                <li>Impact Of Modern Drive-Trains On Energy Supplies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hybrid Electric Drive-trains</strong>
+                            <ul class="unit-topics">
+                                <li>Hybrid Electric Drive-Trains</li>
+                                <li>Basic Concept Of Hybrid Traction</li>
+                                <li>Introduction To Various Hybrid Drive-Train Topologies</li>
+                                <li>Power Flow Control In Hybrid Drive-Train Topologies</li>
+                                <li>Fuel Efficiency Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Electric Trains</strong>
+                            <ul class="unit-topics">
+                                <li>Electric Drive-Trains</li>
+                                <li>Basic Concept Of Electric Traction</li>
+                                <li>Introduction To Various Electric Drive-Train Topologies</li>
+                                <li>Power Flow Control In Electric Drive-Train Topologies</li>
+                                <li>Fuel Efficiency Analysis</li>
+                                <li>Electric Propulsion Unit</li>
+                                <li>Introduction To Electric Components Used In Hybrid And Electric Vehicles</li>
+                                <li>Configuration And Control Of DC Motor Drives</li>
+                                <li>Configuration And Control Of Induction Motor Drives</li>
+                                <li>Configuration And Control Of Permanent Magnet Motor Drives</li>
+                                <li>Configuration And Control Of Switch Reluctance Motor Drives</li>
+                                <li>Drive System Efficiency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Energy Storage</strong>
+                            <ul class="unit-topics">
+                                <li>Energy Storage</li>
+                                <li>Introduction To Energy Storage Requirements In Hybrid And Electric Vehicles</li>
+                                <li>Battery Based Energy Storage And Its Analysis</li>
+                                <li>Fuel Cell Based Energy Storage And Its Analysis</li>
+                                <li>Super Capacitor Based Energy Storage And Its Analysis</li>
+                                <li>Flywheel Based Energy Storage And Its Analysis</li>
+                                <li>Hybridization Of Different Energy Storage Devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Sizing the drive system</strong>
+                            <ul class="unit-topics">
+                                <li>Sizing The Drive System</li>
+                                <li>Matching The Electric Machine And The Internal Combustion Engine (ICE)</li>
+                                <li>Sizing The Propulsion Motor</li>
+                                <li>Sizing The Power Electronics</li>
+                                <li>Selecting The Energy Storage Technology</li>
+                                <li>Communications</li>
+                                <li>Supporting Subsystems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Energy Management Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Energy Management Strategies</li>
+                                <li>Introduction To Energy Management Strategies Used In Hybrid And Electric Vehicles
+                                </li>
+                                <li>Classification Of Different Energy Management Strategies</li>
+                                <li>Comparison Of Different Energy Management Strategies</li>
+                                <li>Implementation Issues Of Energy Management Strategies</li>
+                                <li>Case Studies</li>
+                                <li>Design Of A Hybrid Electric Vehicle (HEV)</li>
+                                <li>Design Of A Battery Electric Vehicle (BEV)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>C. Mi, M. A. Masrur and D. W. Gao, "Hybrid Electric Vehicles: Principles and Applications
+                            with Practical Perspectives", John Wiley &amp; Sons, 2011.</li>
+                        <li>S. Onori, L. Serrao and G. Rizzoni, "Hybrid Electric Vehicles: Energy Management
+                            Strategies", Springer, 2016.</li>
+                        <li>M. Ehsani, Y. Gao, S. E. Gay and A. Emadi, "Modern Electric, Hybrid Electric, and Fuel Cell
+                            Vehicles: Fundamentals, Theory, and Design", CRC Press, 2004.</li>
+                        <li>T. Denton, "Electric and Hybrid Vehicles", Routledge, 2016.</li>
+                    </ol>
+                </section>
+                <section id="subject-100617" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Industrial Automation [100617]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Industrial Automation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Industry 4.0 And Its Components</li>
+                                <li>Need Of Automation In Industries</li>
+                                <li>Principles And Strategies Of Automation</li>
+                                <li>Factory Automation</li>
+                                <li>Process Automation</li>
+                                <li>Basic Elements Of An Automated System</li>
+                                <li>Structure Of Industrial Automation</li>
+                                <li>Advanced Automation Functions</li>
+                                <li>Levels Of Automations</li>
+                                <li>Industrial Control Systems- Process And Discrete System</li>
+                                <li>Types Of Automation System</li>
+                                <li>Fixed</li>
+                                <li>Programmable</li>
+                                <li>Flexible</li>
+                                <li>Integrated Automation And Its Application</li>
+                                <li>Different Systems Used For Industrial Automation</li>
+                                <li>PLC</li>
+                                <li>HMI</li>
+                                <li>SCADA</li>
+                                <li>DCS</li>
+                                <li>Drives</li>
+                                <li>Introduction To Internet Of Things (IoT) And Industrial Internet Of Things (IIOT)
+                                    And Its Application In Automation</li>
+                                <li>Role Of Robots In Automation And Its Components</li>
+                                <li>Fundamentals Of Automated Production Lines Or Transfer Lines And Its Applications
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Sensors and Input Field Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Analog Input Devices Electromagnetic Relays</li>
+                                <li>Contactors</li>
+                                <li>Motor Starters</li>
+                                <li>Manually Operated Switches Toggle Switch</li>
+                                <li>Pushbutton Switch</li>
+                                <li>Knife Switch And Selector Switches</li>
+                                <li>Mechanically Operated Switches Limit Switch</li>
+                                <li>Temperature Switch (Thermostat)</li>
+                                <li>Pressure Switch</li>
+                                <li>Level Switch And Their Symbols</li>
+                                <li>Discrete/Digital Input Devices</li>
+                                <li>Construction And Working Of Sensors</li>
+                                <li>Proximity Sensors- Inductive</li>
+                                <li>Capacitive</li>
+                                <li>Optical And Ultrasonic</li>
+                                <li>Advanced Sensors- Construction And Working Of Temperature Sensors- Thermistor</li>
+                                <li>Thermocouple And Resistance Temperature Detector (RTD)</li>
+                                <li>Liquid Level Sensor - Capacitive And Ultrasonic</li>
+                                <li>Force - Strain/Weight Sensors</li>
+                                <li>Flow Sensors - Turbine Flow Sensor</li>
+                                <li>Pressure Sensors- Linear Variable Differential Transformer (LVDT)</li>
+                                <li>Inclination Sensor - Inclinometer</li>
+                                <li>Acceleration Sensor- Accelerometer</li>
+                                <li>Angular And Linear Position Sensor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Actuators and Output Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Actuators</li>
+                                <li>Classification Of Actuators</li>
+                                <li>Mechanical Actuators - Translational And Rotational Motion</li>
+                                <li>Kinematic Chains</li>
+                                <li>Cams</li>
+                                <li>Gears</li>
+                                <li>Belt And Chain Drives</li>
+                                <li>Bearings</li>
+                                <li>Hydraulic And Pneumatic Actuators Linear And Rotary Actuators</li>
+                                <li>Single And Double Acting Cylinder</li>
+                                <li>Directional</li>
+                                <li>Process And Pressure Control Valves</li>
+                                <li>Electrical Actuators</li>
+                                <li>Electromechanical Actuators</li>
+                                <li>Construction</li>
+                                <li>Working And Application Of Stepper Motors</li>
+                                <li>AC/DC Servo Motors</li>
+                                <li>BLDC Motor (Very Brief)</li>
+                                <li>Electrohydraulic Actuators- Solenoid Valve</li>
+                                <li>Thermal Actuators And Magnetic Actuators</li>
+                                <li>Selection Of Actuators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Other output Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Other Output Devices- Indicators</li>
+                                <li>Alarms Pilot Lights</li>
+                                <li>Buzzers</li>
+                                <li>Valves</li>
+                                <li>Motor Starters</li>
+                                <li>Horns And Alarms</li>
+                                <li>Stack Lights Control Relays</li>
+                                <li>Pumps And Fans</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Control System</strong>
+                            <ul class="unit-topics">
+                                <li>Open And Closed Loop System</li>
+                                <li>Their Transfer Function</li>
+                                <li>First Order And Second Order System And Their Output Response And Parameters</li>
+                                <li>Types Of Control - On-Off</li>
+                                <li>Feed Forward</li>
+                                <li>Open Loop And Closed Loop Control And Transfer Function</li>
+                                <li>Controllers In Closed Loop Control</li>
+                                <li>Proportional Controller (P Controller)</li>
+                                <li>Integral Controller (I Controller)</li>
+                                <li>Derivative Controller (D-Controller)</li>
+                                <li>P-I Controller</li>
+                                <li>P-D Controller</li>
+                                <li>PID Controller</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: SCADA &amp; DCS</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Need</li>
+                                <li>Benefits And Typical Applications Of SCADA And DCS</li>
+                                <li>SCADA Architecture - Remote Terminal Units (RTUs)</li>
+                                <li>Master Terminal Units</li>
+                                <li>Various SCADA Editors</li>
+                                <li>Communication Protocols For SCADA</li>
+                                <li>Comparison Of SCADA With DCS</li>
+                                <li>Interfacing SCADA System With PLC Typical Connection Diagram</li>
+                                <li>Object Linking And Embedding For Process Control (OPC) Architecture</li>
+                                <li>Creating SCADA Screen HMI For Simple Object</li>
+                                <li>Steps For Linking SCADA Object (Defining Tags And Items, Creating Trends Etc.,) With
+                                    PLC Ladder Program Using OPC</li>
+                                <li>Configuring Simple Applications Using SCADA</li>
+                                <li>Traffic Light Control</li>
+                                <li>Water Distribution</li>
+                                <li>Pipeline Control</li>
+                                <li>Power Generation</li>
+                                <li>Transmission And Distribution Etc.</li>
+                                <li>Procedure To Maintain The SCADA Based PLC System</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Industrial Automation with SCADA: Concepts, Communications and Security, K S Manoj Notion
+                            Press; 1st edition, 2019, ISBN-13: 978-1684668281.</li>
+                        <li>Introduction to Industrial Automation, Stamatos Manesis, George Nikolakopoulos, CRC Press,
+                            1st edition, 2020, ISBN 9780367571832.</li>
+                        <li>Industrial Automation Using PLC SCADA &amp; DCS, R.G. Jamkar, Global Education Limited,
+                            2018, ISBN-13: 978-8193579954.</li>
+                        <li>Industrial automation and Process control, Stensenon Jon, PHI Learning, New Delhi, 2003,
+                            ISBN: 9780130618900.</li>
+                        <li>Control System, Nagrath &amp; Gopal, New Age International Pvt Ltd, ISBN: 9789386070111.
+                        </li>
+                        <li>Industrial automation and Process control, Stensenon Jon PHI Learning, New Delhi, 2003,
+                            ISBN: 9780130618900.</li>
+                        <li>Programmable Logic Controller, Jadhav, V. R., Khanna publishers, New Delhi, 2017, ISBN:
+                            9788174092281.</li>
+                        <li>Programmable Logic Controllers and Industrial Automation - An introduction, Mitra,
+                            Madhuchandra; Sengupta, Samarjit Penram International Publication, 2015, ISBN:
+                            9788187972174.</li>
+                        <li>Supervisory Control and Data Acquisition, Boyar, S. A., ISA Publication, USA, ISBN:
+                            978-1936007097.</li>
+                        <li>Practical SCADA for industry Bailey David; Wright Edwin Newnes (an imprint of Elsevier), UK
+                            2003, ISBN: 0750658053.</li>
+                    </ol>
+                </section>
+                <section id="subject-100618" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Basic of ML [100618]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Machine Learning and
+                                Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Machine Learning</li>
+                                <li>Supervised Learning</li>
+                                <li>Unsupervised Learning And Reinforcement Learning</li>
+                                <li>Machine Learning Basics</li>
+                                <li>Capacity</li>
+                                <li>Over Fitting And Under Fitting</li>
+                                <li>Hyperparameters And Validation Sets</li>
+                                <li>Bias &amp; Variance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Bayesian Concepts and Decision Trees</strong>
+                            <ul class="unit-topics">
+                                <li>Bayes Theorem</li>
+                                <li>Concept Learning Maximum Likelihood Classifier</li>
+                                <li>Bayesian Belief Networks</li>
+                                <li>Decision-Trees</li>
+                                <li>Univariate And Multivariate Decision Tree</li>
+                                <li>Network Equivalent Of Decision Trees</li>
+                                <li>Overfitting And Evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Instant-Based Learning and Support Vector
+                                Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Logistic Regression</li>
+                                <li>Support Vector Machine (SVM)</li>
+                                <li>Kernel Function And Kernel SVM</li>
+                                <li>Instant-Based Learning</li>
+                                <li>K-Nearest Neighbour</li>
+                                <li>Locally Weighted Regression</li>
+                                <li>Radial Basis Functions</li>
+                                <li>Case Based Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Clustering</strong>
+                            <ul class="unit-topics">
+                                <li>Clustering</li>
+                                <li>K-Means</li>
+                                <li>Adaptive Hierarchical Clustering</li>
+                                <li>Gaussian Mixture Model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Neural Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Neural Network</li>
+                                <li>Perception</li>
+                                <li>Multilayer Network</li>
+                                <li>Back Propagation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Applications and Case Studies of Machine
+                                Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Applications Of Machine Learning (Case Studies)</li>
+                                <li>Business Analytics</li>
+                                <li>Natural Language Processing</li>
+                                <li>Computer Vision</li>
+                                <li>Internet Of Things</li>
+                                <li>Bio-Informatics Etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Machine Learning, Tom M. Mitchell, McGraw-Hill Education (India) Private Limited, 2013, ISBN
+                            0070428077.</li>
+                        <li>Foundations of Machine Learning, Mohri, M., Rostamizadeh, A., and Talwalkar, A. The MIT
+                            Press, 2012, ISBN 78-0-262-01825-8.</li>
+                        <li>Fundamentals of Machine Learning, Dr. M. Gopal, McGraw Hill Education (India), ISBN:
+                            978-9353161837.</li>
+                        <li>Machine Learning: Principles and Algorithms, P. K. Pattanayak, Universities Press (India)
+                            ISBN: 978-9386235513.</li>
+                    </ol>
+                </section>
+                <section id="subject-100619" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: AR VR Technology [100619]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Immersive Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Immersive Technologies</li>
+                                <li>Augmented Reality (AR)</li>
+                                <li>Virtual Reality (VR)</li>
+                                <li>Mixed Reality (MR) And Extended Reality (XR)</li>
+                                <li>Applications In Education</li>
+                                <li>Healthcare</li>
+                                <li>Entertainment And Industry</li>
+                                <li>Key Differences Between AR, VR, MR And XR</li>
+                                <li>Challenges And Future Trends</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hardware and Software Requirements</strong>
+                            <ul class="unit-topics">
+                                <li>AR/VR Headsets And Displays (E.g., Oculus, HoloLens, Etc.)</li>
+                                <li>Sensors</li>
+                                <li>Motion</li>
+                                <li>Depth And Tracking Systems</li>
+                                <li>Input Devices</li>
+                                <li>Controllers</li>
+                                <li>Gloves And Mobile Devices</li>
+                                <li>System Specifications Of Central Processing Unit (CPU)</li>
+                                <li>Graphical Processing Unit (GPU)</li>
+                                <li>Random Access Memory (RAM)</li>
+                                <li>Graphics Card And Storage Considerations</li>
+                                <li>AR/VR Development Platforms (Overview)</li>
+                                <li>Unity</li>
+                                <li>Unreal Engine</li>
+                                <li>SDKs And APIs For AR</li>
+                                <li>VR</li>
+                                <li>Vuforia</li>
+                                <li>ARKit</li>
+                                <li>ARCore</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Unity Software</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Unity Software And Its Features</li>
+                                <li>System Requirements For Unity Installation</li>
+                                <li>Unity's Interface And Basic Functionalities</li>
+                                <li>Assets And Its Types</li>
+                                <li>Sources Of 2D And 3D Assets</li>
+                                <li>Windows In Unity</li>
+                                <li>Game Objects And Their Types</li>
+                                <li>Rigid Bodies And Colliders</li>
+                                <li>Physics-Based Interactions</li>
+                                <li>Software Development Kit (SDK)- Vuforia</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Augmented Reality (AR)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles Of AR And Its Working Mechanisms</li>
+                                <li>AR Image And Object Recognition Techniques</li>
+                                <li>Location-Based And Marker-Based AR</li>
+                                <li>Introduction To Various AR Web-Based Applications</li>
+                                <li>AR Design On Blippar Or Similar Platforms</li>
+                                <li>Testing And Publishing AR Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AR Design and Development</strong>
+                            <ul class="unit-topics">
+                                <li>Anchor And Detecting Objects In AR</li>
+                                <li>Development Of AR Application Marker-Based And Marker Less In Unity</li>
+                                <li>Deployment Of AR App On Android/iOS Devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Virtual Reality (VR)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles And Technical Requirements Of Virtual Reality</li>
+                                <li>Types Of VR Systems</li>
+                                <li>Non-Immersive</li>
+                                <li>Semi-Immersive And Fully Immersive</li>
+                                <li>Key Elements Of Immersive VR Experience</li>
+                                <li>Levels Of Immersion In VR Environment</li>
+                                <li>360-Degree Media</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Learning Path - Complete VR &amp; AR Development with Unity, Jesse Glover &amp; J. Linowes,
+                            Packt Publishers Ltd., ISBN-10: 1838648186, ISBN-13: 978-1838648183.</li>
+                        <li>Mastering AR Development with Unity, Indika Wijesooriya, BPB.</li>
+                        <li>3D Game Development with Unity, Franz Lanzinger, CRC Press, ISBN-10: 0367349183, ISBN-13:
+                            978-0367349189.</li>
+                        <li>AR with Unity; AR Foundation - A Practical Guide, Jonathan Linowes, Packt Publishers Ltd.,
+                            ISBN: 978-1-83898-259-1.</li>
+                    </ol>
+                </section>
+                <section id="subject-100620" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Micro Electro Mechanical System (MEMS) Technology [100620]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Mems and Microfabrication</strong>
+                            <ul class="unit-topics">
+                                <li>History Of MEMS Development</li>
+                                <li>Characteristics Of MEMS</li>
+                                <li>Miniaturization</li>
+                                <li>Microelectronics Integration</li>
+                                <li>Mass Fabrication With Precision</li>
+                                <li>Micro Fabrication</li>
+                                <li>Microelectronics Fabrication Process</li>
+                                <li>Silicon Based MEMS Processes</li>
+                                <li>New Material And Fabrication Processing</li>
+                                <li>Points Of Consideration For Processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Electrical and Mechanical Properties of Mems
+                                Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Conductivity Of Semiconductors</li>
+                                <li>Crystal Plane And Orientation</li>
+                                <li>Stress And Stain</li>
+                                <li>Definition</li>
+                                <li>Relationship Between Tensile Stress And Stain</li>
+                                <li>Mechanical Properties Of Silicon And Thin Films</li>
+                                <li>Flexural Beam Bending Analysis Under Single Loading Condition</li>
+                                <li>Types Of Beam</li>
+                                <li>Deflection Of Beam</li>
+                                <li>Longitudinal Stain Under Pure Bending</li>
+                                <li>Spring Constant</li>
+                                <li>Tensional Deflection</li>
+                                <li>Intrinsic Stress</li>
+                                <li>Resonance And Quality Factor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensing and Actuation</strong>
+                            <ul class="unit-topics">
+                                <li>Electrostatic Sensing And Actuation</li>
+                                <li>Parallel Plate Capacitor</li>
+                                <li>Application- Inertial Sensor</li>
+                                <li>Pressure Sensor And Tactile Sensor</li>
+                                <li>Parallel Plate Actuator And Comb Drive</li>
+                                <li>Thermal Sensing And Actuations</li>
+                                <li>Thermal Sensors</li>
+                                <li>Thermal Actuators</li>
+                                <li>Application- Inertial</li>
+                                <li>Flow And Infrared Sensors</li>
+                                <li>Piezoresistive Sensors</li>
+                                <li>Piezoresistive Sensor Material</li>
+                                <li>Stress In Flexural Cantilever And Membrane- Application- Inertial</li>
+                                <li>Pressure</li>
+                                <li>Flow And Tactile Sensor</li>
+                                <li>Piezoelectric Sensing And Actuation</li>
+                                <li>Piezoelectric Material Properties- Quartz- PZT- PVDF - ZnO</li>
+                                <li>Application- Inertial</li>
+                                <li>Acoustic</li>
+                                <li>Tactile</li>
+                                <li>Flow- Surface Elastic Waves</li>
+                                <li>Magnetic Actuation</li>
+                                <li>Micro Magnetic Actuation Principle</li>
+                                <li>Deposition Of Magnetic Materials</li>
+                                <li>Design And Fabrication Of Magnetic Coil</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Bulk and Surface Micromachining</strong>
+                            <ul class="unit-topics">
+                                <li>Anisotropic Wet Etching</li>
+                                <li>Dry Etching Of Silicon</li>
+                                <li>Deep Reactive Ion Etching (DRIE)</li>
+                                <li>Isotropic Wet Etching</li>
+                                <li>Basic Surface Micromachining Process</li>
+                                <li>Structural And Sacrificial Material</li>
+                                <li>Stiction And Anti Stiction Methods</li>
+                                <li>Foundry Process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Polymer Mems</strong>
+                            <ul class="unit-topics">
+                                <li>Polymers In MEMS</li>
+                                <li>Polymide- SU-8</li>
+                                <li>Liquid Crystal Polymer (LCP)</li>
+                                <li>PDMS</li>
+                                <li>PMMA</li>
+                                <li>Parylene</li>
+                                <li>Fluorocarbon</li>
+                                <li>Application- Acceleration</li>
+                                <li>Pressure</li>
+                                <li>Flow And Tactile Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Optical Mems</strong>
+                            <ul class="unit-topics">
+                                <li>Optical MEMS</li>
+                                <li>Refraction</li>
+                                <li>Diffraction</li>
+                                <li>MOEMS Components</li>
+                                <li>Digital Mirror Display (DMD)</li>
+                                <li>Grating Light Valve (GLV)</li>
+                                <li>Optical Scanners</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Foundations of MEMS, Chang Liu, Pearson International Edition, 2006, ISBN-978-0132497367.
+                        </li>
+                        <li>RF MEMS Theory, Design and Technology, Gaberiel M. Rebiz, John Wiley &amp; Sons, 2003,
+                            ISBN-978-0471201694.</li>
+                        <li>Introduction to nanotechnology, Charles P. Poole, Frank J. Owens, John Wiley &amp; sons,
+                            2003, ISBN-13: 978-0471079354.</li>
+                        <li>Microsensors, MEMS and Smart devices, Julian W. Gardner, Vijay K Varadhan, John Wiley &amp;
+                            sons, 2001, ISBN-978-0471861096.</li>
+                    </ol>
+                </section>
+                <section id="subject-100621" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Electronic Product Design &amp; Packaging [100621]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Essentials of Electronic Product Design &amp;
+                                Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Electronic Product Design</li>
+                                <li>Electronic Packaging Fundamentals</li>
+                                <li>Printed Circuit Board (PCB) Design And Fabrication</li>
+                                <li>Thermal</li>
+                                <li>Mechanical And EMI/EMC Considerations</li>
+                                <li>Prototyping</li>
+                                <li>Testing And Reliability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Design Aspects of Semiconductor Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Semiconductor Packaging Types</li>
+                                <li>Dual In-Line Package (DIP)</li>
+                                <li>QFP</li>
+                                <li>BGA</li>
+                                <li>CSP And 3D ICs</li>
+                                <li>Wire Bonding</li>
+                                <li>Flip-Chip And Through-Silicon Vias (TSVs)</li>
+                                <li>Trends In Package Miniaturization And Integration</li>
+                                <li>Thermal And Mechanical Design Considerations</li>
+                                <li>Heat Dissipation In Semiconductor Packages</li>
+                                <li>Stress And Strain Due To Thermal Cycling</li>
+                                <li>Package Warpage And Delamination Issues</li>
+                                <li>Electrical Design Aspects</li>
+                                <li>Signal Integrity And Power Integrity</li>
+                                <li>Parasitics</li>
+                                <li>Resistance</li>
+                                <li>Capacitance And Inductance</li>
+                                <li>High-Speed Design Challenges And Mitigation Techniques</li>
+                                <li>Materials And Substrate Technologies</li>
+                                <li>Die Attach Materials</li>
+                                <li>Encapsulants And Underfills</li>
+                                <li>Organic Vs Ceramic Substrates</li>
+                                <li>Reliability And Compatibility Of Packaging Materials</li>
+                                <li>Packaging Process Flow And Testing</li>
+                                <li>Wafer-Level Packaging And Assembly Steps</li>
+                                <li>Burn-In</li>
+                                <li>Electrical And Reliability Testing</li>
+                                <li>Design For Testability (DFT) In Semiconductor Packaging</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Dicing &amp; Inspection</strong>
+                            <ul class="unit-topics">
+                                <li>Wafer Dicing Techniques</li>
+                                <li>Mechanical Sawing (Blade Dicing)</li>
+                                <li>Laser Dicing And Stealth Dicing</li>
+                                <li>Plasma Dicing (Dry Etching Methods)</li>
+                                <li>Comparison Of Dicing Methods Based On Precision</li>
+                                <li>Cost And Material Type</li>
+                                <li>Dicing Process Parameters And Optimization</li>
+                                <li>Cut Depth</li>
+                                <li>Kerf Width And Feed Rate</li>
+                                <li>Cooling And Lubrication During Dicing</li>
+                                <li>Minimizing Chipping</li>
+                                <li>Cracking And Contamination</li>
+                                <li>Wafer Mounting And Handling</li>
+                                <li>Use Of Dicing Tapes And Frames</li>
+                                <li>Wafer Alignment And Chucking</li>
+                                <li>ESD Precautions And Cleanroom Requirements</li>
+                                <li>Post-Dicing Cleaning And Debris Removal</li>
+                                <li>Cleaning Techniques (Wet, Dry, CO<sub>2</sub> Snow)</li>
+                                <li>Particle Contamination Control</li>
+                                <li>Inspection For Surface Damage Or Residues</li>
+                                <li>Wafer Inspection And Defect Analysis</li>
+                                <li>Visual And Automated Optical Inspection (AOI)</li>
+                                <li>Surface And Edge Defect Detection</li>
+                                <li>Use Of SEM</li>
+                                <li>X-Ray And Infrared Imaging For Deeper Inspection</li>
+                                <li>Yield Analysis And Defect Classification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Conventional Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Conventional Packaging Types</li>
+                                <li>Dual In-Line Package (DIP)</li>
+                                <li>Surface Mount Device (SMD)</li>
+                                <li>Chip-On-Board (COB) And Leadframe-Based Packaging</li>
+                                <li>Through-Hole Vs. Surface-Mount Technologies</li>
+                                <li>Materials Used In Conventional Packaging</li>
+                                <li>Encapsulants And Molding Compounds</li>
+                                <li>Leadframe Materials (E.g., Copper, Brass, And Alloys)</li>
+                                <li>Substrate Materials</li>
+                                <li>Epoxy</li>
+                                <li>Ceramic And Organic Laminates</li>
+                                <li>Packaging Assembly Processes</li>
+                                <li>Die Attach Methods</li>
+                                <li>Eutectic Bonding</li>
+                                <li>Adhesive Bonding</li>
+                                <li>Wire Bonding Techniques</li>
+                                <li>Gold</li>
+                                <li>Aluminum And Copper Wire</li>
+                                <li>Molding And Encapsulation Processes</li>
+                                <li>Electrical And Thermal Design In Conventional Packaging</li>
+                                <li>Signal Integrity In Conventional Packages</li>
+                                <li>Heat Dissipation And Thermal Management Strategies</li>
+                                <li>Thermal Cycling And Reliability Considerations</li>
+                                <li>Testing And Reliability Of Conventional Packages</li>
+                                <li>Standard Testing Methods</li>
+                                <li>Electrical</li>
+                                <li>Thermal And Mechanical Tests</li>
+                                <li>Reliability Testing</li>
+                                <li>Accelerated Life Testing (ALT)</li>
+                                <li>Burn-In Tests</li>
+                                <li>Failure Analysis Techniques</li>
+                                <li>Decapsulation</li>
+                                <li>Cross-Sectioning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Bonding and Sealing</strong>
+                            <ul class="unit-topics">
+                                <li>Bonding Techniques In Semiconductor Packaging</li>
+                                <li>Wire Bonding (Gold, Aluminum, Copper)</li>
+                                <li>Flip-Chip Bonding And Solder Bumping</li>
+                                <li>Adhesive Bonding And Thermo-Compression Bonding</li>
+                                <li>Laser And Ultrasonic Bonding Methods</li>
+                                <li>Sealing Methods In Semiconductor Packaging</li>
+                                <li>Molding And Encapsulation Processes</li>
+                                <li>Hermetic Sealing And Its Importance For High-Reliability Applications</li>
+                                <li>Use Of Sealing Materials</li>
+                                <li>Epoxy</li>
+                                <li>Silicone And Elastomers</li>
+                                <li>Advanced Sealing Techniques For 3D And Wafer-Level Packaging</li>
+                                <li>Reliability And Testing In Bonding And Sealing</li>
+                                <li>Mechanical And Thermal Stress Testing In Bonded And Sealed Packages</li>
+                                <li>Failure Analysis Methods</li>
+                                <li>Decapsulation</li>
+                                <li>Cross-Sectioning And SEM Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Advanced Packaging Technologies</li>
+                                <li>System-In-Package (SiP) And Package-On-Package (PoP) Technologies</li>
+                                <li>3D Integrated Circuits (3D ICs) And Through-Silicon Vias (TSVs)</li>
+                                <li>Wafer-Level Packaging (WLP) And Fan-Out Wafer-Level Packaging (FOWLP)</li>
+                                <li>Hybrid And Multi-Chip Module (MCM) Integration</li>
+                                <li>Thermal And Electrical Considerations In Advanced Packaging</li>
+                                <li>Thermal Management Techniques In Advanced Packaging (Heat Sinks, Thermal Vias)</li>
+                                <li>Electrical Performance Challenges</li>
+                                <li>Signal Integrity And Power Delivery In High-Density Packages</li>
+                                <li>Power Dissipation And Interconnect Strategies In 3D Packaging</li>
+                                <li>Reliability Testing Standards For Advanced Packaging (E.g., JEDEC, MIL-STD)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Electronic Packaging and Interconnection Handbook, Charles Harper, ISBN-13: 978-0071430487,
+                            McGraw-Hill Professional, Edition: 4, Publication Date: 16 November 2004.</li>
+                        <li>"Electronic Product Design" A.E. Ward and J.A.S. Angus Chapman and Hall, ISBN:
+                            0-412-63200-4, 1996.</li>
+                        <li>Electronic Product Design, S.D. Mehta, S Chand Publishing ISBN: 9788121936156, 2011.</li>
+                        <li>Semiconductor Packaging Material Interaction and reliability, Chen, Andrea &amp; Lo, Randy
+                            Hsiao-Yu, ISBN-13: 978-1439862056, CRC Press, 10 October 2011.</li>
+                        <li>Semiconductor Device Packaging, John H. Lau, Springer, ISBN-10: 9811613753, ISBN-13:
+                            978-9811613753.</li>
+                        <li>Microelectronics Packaging Handbook - Part 1, Part 2, Part 3, R. R. Tumalla, Springer US,
+                            ISBN-13: 978-0412084416.</li>
+                        <li>Advanced Electronics Packaging, Richard K. Ulrich Wiley-IEEE Press, ISBN-13: 978-0471466093.
+                        </li>
+                        <li>Integrated Circuit Packaging, Assembly and Interconnection, William J. Greig, Springer,
+                            ISBN-13: 978-0387281537.</li>
+                        <li>3D IC Integration and Packaging, John H Lau, McGraw-Hill Education, ISBN-13: 978-0071848060.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-100622" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: 3D Printing and Design [100622]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Additive Manufacturing Introduction and CAD-CAM for 3D
+                                Printing</strong>
+                            <ul class="unit-topics">
+                                <li>Additive V/S Conventional Manufacturing Processes</li>
+                                <li>Classification Of 3D Printing Processes</li>
+                                <li>Working Principle Of Various 3D Printing Processes- Fused Deposition Modeling (FDM)
+                                </li>
+                                <li>Stereo Lithography (SLA)</li>
+                                <li>Selective Laser Sintering (SLS)</li>
+                                <li>Binder Jetting</li>
+                                <li>Material Jetting</li>
+                                <li>Direct Energy Deposition And Laminate Object Manufacturing</li>
+                                <li>Additive Manufacturing Application Domains</li>
+                                <li>Aerospace</li>
+                                <li>Electronics</li>
+                                <li>Health Care</li>
+                                <li>Defense</li>
+                                <li>Automotive</li>
+                                <li>Construction</li>
+                                <li>Food Processing</li>
+                                <li>Machine Tools</li>
+                                <li>Product Design And Prototyping</li>
+                                <li>Reverse Engineering For 3D Printing</li>
+                                <li>CAD-CAM And Its Integration</li>
+                                <li>CAD-Part And Surface Modeling</li>
+                                <li>CAD File Formats</li>
+                                <li>Process Chain For 3D Printing</li>
+                                <li>STL Interface Specification</li>
+                                <li>STL Data Generation</li>
+                                <li>STL Data Manipulation</li>
+                                <li>Advantages And Limitations Of STL File Format</li>
+                                <li>Open Files</li>
+                                <li>Repair Of STL Files</li>
+                                <li>Alternative 3D Printing Interfaces</li>
+                                <li>Part Orientation And Support Generation</li>
+                                <li>Factors Affecting Part Orientation</li>
+                                <li>Various Models For Part Orientation Determination</li>
+                                <li>The Function Of Part Supports</li>
+                                <li>Support Structure Design</li>
+                                <li>Automatic Support Structure Generation</li>
+                                <li>Model Slicing And Contour Data Organization</li>
+                                <li>Direct And Adaptive Slicing</li>
+                                <li>Identification Of Peak Features</li>
+                                <li>Adaptive Layer Thickness Determination</li>
+                                <li>Tool Path Generation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: 3D Printing Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Various Forms Of 3D Printing Raw Material- Liquid</li>
+                                <li>Solid</li>
+                                <li>Wire</li>
+                                <li>Powder</li>
+                                <li>Popular FDM</li>
+                                <li>SLA</li>
+                                <li>SLS</li>
+                                <li>Binder Jetting</li>
+                                <li>Material Jetting And Direct Energy Deposition 3D Printing Materials</li>
+                                <li>Polymers</li>
+                                <li>Metals</li>
+                                <li>Non-Metals</li>
+                                <li>Ceramics</li>
+                                <li>Polymers And Their Properties</li>
+                                <li>Powder Preparation And Their Desired Properties</li>
+                                <li>Choosing The Right 3D Printing Material On The Basis Of Performance Requirements And
+                                    Material Properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Solid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Principle And Working Of Fused Deposition Modeling (FDM) Process</li>
+                                <li>Construction Details And Working Of Established FDM Based 3D Printers For Plastics
+                                    Parts</li>
+                                <li>3D Printer Software- Fusion 360</li>
+                                <li>Solidworks</li>
+                                <li>Onshape</li>
+                                <li>Tinkercad</li>
+                                <li>UltimakerCura</li>
+                                <li>MeshLab</li>
+                                <li>Simplyfy 3D</li>
+                                <li>Repetier Host</li>
+                                <li>Slic3r</li>
+                                <li>Etc. - Use And Operation Of Anyone</li>
+                                <li>3D Scanners And Working</li>
+                                <li>Producing A Part Using FDM Based 3D Printer</li>
+                                <li>Liquefaction</li>
+                                <li>Solidification And Bonding</li>
+                                <li>Laminated Object Manufacturing Process</li>
+                                <li>Cost Estimation Of FDM 3D Printed Component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Liquid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Photo Polymerization</li>
+                                <li>Principle And Working Of Stereo Lithography Apparatus</li>
+                                <li>SLA Based 3D Printing Processes</li>
+                                <li>SLA Based 3D Printing Process Materials</li>
+                                <li>Scanning Techniques</li>
+                                <li>Curing Processes</li>
+                                <li>Cost Estimation Of SLA 3D Printed Component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Powder based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Powder Fusion Mechanism</li>
+                                <li>Principle And Working Of Selective Laser Sintering (SLS) Process</li>
+                                <li>SLS Based 3D Printers</li>
+                                <li>Laser Engineering Net Shaping Process</li>
+                                <li>Electron Beam Melting</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Fundamentals and Applications of Additive Manufacturing, Sharad K. Pradhan, Ankit Nayak,
+                            Surendra Singh Thakur, Vishal Francis, Aniket Nagargojc CRC Press, Taylor &amp; Francis,
+                            ISBN 9781032898049.</li>
+                        <li>Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling, Rapid Manufacturing
+                            Andreas Gebhardt, Hanser Publisher, 2011, ISBN: 156990507X, 9781569905074.</li>
+                        <li>3D Printing and Design, Sabrie Soloman, Khanna Publishing House, Delhi, ISBN: 9789386173768.
+                        </li>
+                        <li>3D Printing and Rapid Prototyping- Principles and Applications, C.K. Chua, Kah Fai Leong
+                            World Scientific, 2017, ISBN: 9789813146754.</li>
+                        <li>Getting Started with 3D Printing: A Hands-on Guide to the Hardware, Software, and Services
+                            Behind the New Manufacturing Revolution, Liza Wallach Kloski, Nick Kloski Make Community,
+                            LLC; 2nd edition, 2021, ISBN: 9781680450200.</li>
+                    </ol>
+                </section>
+                <section id="subject-117601P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Robotic Programming and Software Development Lab [117601P]</h2>
+                    <p>Perform all experiments from the following list:</p>
+                    <ul class="unit-topics">
+                        <li>Programming Using Teach Pendant Method</li>
+                        <li>Interfacing ROS And Arduino/Others</li>
+                        <li>Programming Mobile Robot Navigation Using C++ Or Python</li>
+                        <li>Sensor Interfacing Using ROS</li>
+                        <li>Programming On VAL Language</li>
+                        <li>Programming On RAPID Language</li>
+                        <li>Programming On AML Language</li>
+                        <li>Programming The Robot For Pick And Place Operation Using Any Robot</li>
+                        <li>Robot Programming For Colour Identification/Shape Identification/Path Tracking</li>
+                        <li>Simulating A Custom Robot With Teleoperation Using Open Source Software</li>
+                    </ul>
+                </section>
+                <section id="subject-117603P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Signal Conditioning and Data Acquisition System Lab [117603P]</h2>
+                    <p>List of Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Design And Implementation Of An 8-Bit ADC Using PIC/Other Microcontroller</li>
+                        <li>Design And Implementation Of An 8-Bit DAC Using PIC/Other Microcontroller</li>
+                        <li>Working Of A Low-Pass, High Pass And Bass Filters Using PIC/ Or Any Other IC</li>
+                        <li>Working Of A 555 Timer Circuit With Any Specific Application</li>
+                        <li>Working Of A 555 Circuit With Any Counter Application</li>
+                        <li>Simulation/Design Of The Sample And Hold Circuit With Standard Simulation Tools</li>
+                        <li>Design And Simulation Of SPI Protocol Using PIC/Any Other Microcontroller</li>
+                        <li>Design And Simulation Of I2C Protocol Using PIC/Any Other Microcontroller</li>
+                        <li>Design Of A Standard Data Logging System Using PIC/Any Other Microcontroller Using Any
+                            Sensor</li>
+                        <li>Simulation Of Data Analysis Techniques With Standard Tools/Software</li>
+                    </ul>
+                </section>
+                <section id="subject-117605P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Courses-I Lab [117605P]</h2>
+                    <p>Details for NPTEL Courses-I Lab will be provided by the department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+        <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>8th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3);
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">8th Semester Syllabus</h1>
+                <p class="page-subtitle">Computer Science & Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Open Elective- III</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective- IV</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- IV</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- V</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project- II</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>18</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective- III"
+                        data-modal-options='[ {"label": "VLSI System Design", "target": "subject-OEC-CS-801", "btn-id": "btn-OEC-CS-801"}, {"label": "Embedded Systems", "target": "subject-OEC-CS-802", "btn-id": "btn-OEC-CS-802"}, {"label": "Digital Signal Processing", "target": "subject-OEC-CS-803", "btn-id": "btn-OEC-CS-803"}, {"label": "High Performance Computing", "target": "subject-OEC-CS-804", "btn-id": "btn-OEC-CS-804"}, {"label": "Introduction to Communication Systems", "target": "subject-OEC-CS-805", "btn-id": "btn-OEC-CS-805"}, {"label": "Ad-Hoc and Sensor Networks", "target": "subject-OEC-CS-806", "btn-id": "btn-OEC-CS-806"} ]'>
+                        Open Elective- III </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective- IV"
+                        data-modal-options='[ {"label": "VLSI System Design", "target": "subject-OEC-CS-801", "btn-id": "btn-OEC-CS-801"}, {"label": "Embedded Systems", "target": "subject-OEC-CS-802", "btn-id": "btn-OEC-CS-802"}, {"label": "Digital Signal Processing", "target": "subject-OEC-CS-803", "btn-id": "btn-OEC-CS-803"}, {"label": "High Performance Computing", "target": "subject-OEC-CS-804", "btn-id": "btn-OEC-CS-804"}, {"label": "Introduction to Communication Systems", "target": "subject-OEC-CS-805", "btn-id": "btn-OEC-CS-805"}, {"label": "Ad-Hoc and Sensor Networks", "target": "subject-OEC-CS-806", "btn-id": "btn-OEC-CS-806"} ]'>
+                        Open Elective- IV </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- IV"
+                        data-modal-options='[ {"label": "Data Mining", "target": "subject-PEC-CS-801", "btn-id": "btn-PEC-CS-801"}, {"label": "Computational Number Theory", "target": "subject-PEC-CS-802", "btn-id": "btn-PEC-CS-802"}, {"label": "Advanced Operating Systems", "target": "subject-PEC-CS-803", "btn-id": "btn-PEC-CS-803"}, {"label": "Genetic Algorithm", "target": "subject-PEC-CS-804", "btn-id": "btn-PEC-CS-804"}, {"label": "Cloud Computing", "target": "subject-PEC-CS-805", "btn-id": "btn-PEC-CS-805"}, {"label": "Quantum Computing", "target": "subject-PEC-CS-806", "btn-id": "btn-PEC-CS-806"}, {"label": "Transaction Processing Systems", "target": "subject-PEC-CS-807", "btn-id": "btn-PEC-CS-807"}, {"label": "Pattern Recognition", "target": "subject-PEC-CS-808", "btn-id": "btn-PEC-CS-808"}, {"label": "Deep Learning", "target": "subject-PEC-CS-809", "btn-id": "btn-PEC-CS-809"}, {"label": "Computational Geometry", "target": "subject-PEC-CS-810", "btn-id": "btn-PEC-CS-810"}, {"label": "Big Data Analytics", "target": "subject-PEC-CS-811", "btn-id": "btn-PEC-CS-811"}, {"label": "Real Time Systems", "target": "subject-PEC-CS-812", "btn-id": "btn-PEC-CS-812"}, {"label": "Block Chain", "target": "subject-PEC-CS-813", "btn-id": "btn-PEC-CS-813"}, {"label": "Optimization Techniques", "target": "subject-PEC-CS-814", "btn-id": "btn-PEC-CS-814"}, {"label": "Information Retrieval", "target": "subject-PEC-CS-815", "btn-id": "btn-PEC-CS-815"}, {"label": "Bitcoin and Crypto Currencies", "target": "subject-PEC-CS-816", "btn-id": "btn-PEC-CS-816"} ]'>
+                        Program Elective- IV </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- V"
+                        data-modal-options='[ {"label": "Data Mining", "target": "subject-PEC-CS-801", "btn-id": "btn-PEC-CS-801"}, {"label": "Computational Number Theory", "target": "subject-PEC-CS-802", "btn-id": "btn-PEC-CS-802"}, {"label": "Advanced Operating Systems", "target": "subject-PEC-CS-803", "btn-id": "btn-PEC-CS-803"}, {"label": "Genetic Algorithm", "target": "subject-PEC-CS-804", "btn-id": "btn-PEC-CS-804"}, {"label": "Cloud Computing", "target": "subject-PEC-CS-805", "btn-id": "btn-PEC-CS-805"}, {"label": "Quantum Computing", "target": "subject-PEC-CS-806", "btn-id": "btn-PEC-CS-806"}, {"label": "Transaction Processing Systems", "target": "subject-PEC-CS-807", "btn-id": "btn-PEC-CS-807"}, {"label": "Pattern Recognition", "target": "subject-PEC-CS-808", "btn-id": "btn-PEC-CS-808"}, {"label": "Deep Learning", "target": "subject-PEC-CS-809", "btn-id": "btn-PEC-CS-809"}, {"label": "Computational Geometry", "target": "subject-PEC-CS-810", "btn-id": "btn-PEC-CS-810"}, {"label": "Big Data Analytics", "target": "subject-PEC-CS-811", "btn-id": "btn-PEC-CS-811"}, {"label": "Real Time Systems", "target": "subject-PEC-CS-812", "btn-id": "btn-PEC-CS-812"}, {"label": "Block Chain", "target": "subject-PEC-CS-813", "btn-id": "btn-PEC-CS-813"}, {"label": "Optimization Techniques", "target": "subject-PEC-CS-814", "btn-id": "btn-PEC-CS-814"}, {"label": "Information Retrieval", "target": "subject-PEC-CS-815", "btn-id": "btn-PEC-CS-815"}, {"label": "Bitcoin and Crypto Currencies", "target": "subject-PEC-CS-816", "btn-id": "btn-PEC-CS-816"} ]'>
+                        Program Elective- V </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-Project-II"
+                        data-type="lab">Project- II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-Project-II" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project- II</h2>
+                    <p>Details for Project-II will be provided by the department. This component carries 6 credits.</p>
+                </section>
+                <section id="subject-OEC-CS-801" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: VLSI System Design [OEC CS 801]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lectures 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To VLSI Design</li>
+                                <li>Moore's Law</li>
+                                <li>Scale Of Integration</li>
+                                <li>Types Of VLSI Chips</li>
+                                <li>Design Principles (Digital VLSI)</li>
+                                <li>Design Domains (Y-Chart)</li>
+                                <li>Challenges Of VLSI Design- Power</li>
+                                <li>Timing Area</li>
+                                <li>Noise</li>
+                                <li>Testability Reliability</li>
+                                <li>Yield</li>
+                                <li>CAD Tools For VLSI Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lectures 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To VLSI Technology</li>
+                                <li>VLSI Technology - An Overview</li>
+                                <li>Wafer Processing</li>
+                                <li>Oxidation</li>
+                                <li>Epitaxial Deposition</li>
+                                <li>Ion-implantation And Diffusion</li>
+                                <li>The Silicon Gate Process</li>
+                                <li>Basic CMOS Technology</li>
+                                <li>Basic N-well CMOS Process</li>
+                                <li>P-well CMOS Process</li>
+                                <li>Twin Tub Process</li>
+                                <li>Silicon On Insulator</li>
+                                <li>CMOS Process Enhancement-interconnect</li>
+                                <li>Circuit Elements</li>
+                                <li>3-D CMOS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lectures 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Analysis Of CMOS Logic Circuits</li>
+                                <li>MOSFET As Switch</li>
+                                <li>Recapitulation Of MOS</li>
+                                <li>CMOS Inverter</li>
+                                <li>CMOS Logic Circuits</li>
+                                <li>NAND Gate And NOR Gate</li>
+                                <li>Complex Logic Circuits</li>
+                                <li>Pass Transistor Logic</li>
+                                <li>CMOS Transmission Gate</li>
+                                <li>CMOS Full Adder</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lectures 4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Advanced Techniques In CMOS Logic Circuit</li>
+                                <li>Pseudo NMOS</li>
+                                <li>Tri-state</li>
+                                <li>Clocked CMOS</li>
+                                <li>Dynamic CMOS Logic</li>
+                                <li>Domino</li>
+                                <li>NORA</li>
+                                <li>Zipper</li>
+                                <li>Etc</li>
+                                <li>Dual Rail Logic Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lectures 2 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Memories</li>
+                                <li>Static RAM</li>
+                                <li>SRAM Arrays</li>
+                                <li>Dynamic RAMS</li>
+                                <li>ROM Arrays</li>
+                                <li>Logic Arrays</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Timing Issues In VLSI System Design</li>
+                                <li>Timing Classification</li>
+                                <li>Synchronous Timing Basics</li>
+                                <li>Skew And Jitter</li>
+                                <li>Latch Based Clocking</li>
+                                <li>Self-timed Circuit Design</li>
+                                <li>Self-timed Logic</li>
+                                <li>Completion Signal Generation</li>
+                                <li>Self-timed Signaling-synchronizers And Arbiters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: (Lectures 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Verilog Hardware Description Language</li>
+                                <li>Overview Of Digital Design With Verilog HDL</li>
+                                <li>Hierarchical Modeling Concepts</li>
+                                <li>Modules And Port Definitions</li>
+                                <li>Gate Level Modeling</li>
+                                <li>Data Flow Modeling</li>
+                                <li>Behavioral Modeling</li>
+                                <li>Task & Functions</li>
+                                <li>Test Bench</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Neil H. E. Weste and Kamran Eshraghian, "Principles of CMOS VLSI Design", 2nd edition,
+                            Pearson Education Asia, 2000.</li>
+                        <li>John P. Uyemura, "Introduction to VLSI Circuits and Systems", John Wiley and Sons, Inc.,
+                            2002.</li>
+                        <li>Samir Palnitkar, "Verilog HDL", 2nd Edition, Pearson Education, 2004.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Eugene D. Fabricius, "Introduction to VLSI Design", TMH International Editions, 1990.</li>
+                        <li>Bhasker J., "A Verilog HDL Primer", 2nd Edition, B. S. Publications, 2001.</li>
+                        <li>Pucknell, "Basic VLSI Design", Prentice Hall of India Publication, 1995.</li>
+                        <li>Wayne Wolf, "Modern VLSI Design System on chip", Pearson Education, 2002</li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-802" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Embedded Systems [OEC CS 802]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Embedded Computing</li>
+                                <li>Introduction</li>
+                                <li>Complex Systems And Microprocessors</li>
+                                <li>The Embedded System Design Process</li>
+                                <li>Formalization For System Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Instruction Sets CPUs</li>
+                                <li>Instruction And Preliminaries ARM And SHARC Processors</li>
+                                <li>Programming I/O CPU Performance And Power Consumption</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>The Embedded Computing Platform And Program Design</li>
+                                <li>Introduction</li>
+                                <li>The CPU Bus</li>
+                                <li>Component Interfacing</li>
+                                <li>Designing With Microprocessors</li>
+                                <li>Development And Debugging</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Program Design And Analysis</li>
+                                <li>Introduction Program Design</li>
+                                <li>Assembly</li>
+                                <li>Linking</li>
+                                <li>Basic Compilation Techniques</li>
+                                <li>Analysis Optimization Of Executive Time</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Book:</h3>
+                    <ol>
+                        <li>Wayner Wolf., "Computers as components - Principle of Embedded Computing System Design",
+                            Morgan Kaufmann/ Hercourt India Pvt. Ltd.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Raj Kamal - Embedded Systems, TMH, New Delhi 2004.</li>
+                        <li>F. Vahid& T. givargis- Embedded system Design, John wiley, India Edition, 2005.</li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-803" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Digital Signal Processing [OEC CS 803]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Characterization And Classification Of Signals</li>
+                                <li>Typical Signal Processing Operations</li>
+                                <li>Review Of Discrete-time Signal And System Analysis</li>
+                                <li>Advantages And Typical Applications Of DSP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Sampling And Quantization</li>
+                                <li>Sampling And Discrete-time Processing Of Continuous Time Signals</li>
+                                <li>Sampling Of Low-pass And Band-pass Signals</li>
+                                <li>Uniform And Non-uniform Quantization</li>
+                                <li>Lloyd-Max Algorithm</li>
+                                <li>Log-companding</li>
+                                <li>A-law</li>
+                                <li>μ-law</li>
+                                <li>Adaptive Quantization And Prediction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Orthogonal Transforms</li>
+                                <li>Properties And Applications Of DFT</li>
+                                <li>Implementing Linear Time Invariant Systems Using DFT</li>
+                                <li>Circular Convolution</li>
+                                <li>Linear Convolution Using DFT</li>
+                                <li>Fast Fourier Transform</li>
+                                <li>FFT Algorithms</li>
+                                <li>Decimation In Time</li>
+                                <li>Decimation In Frequency</li>
+                                <li>Goertzel Algorithm</li>
+                                <li>Application Of Transform In Speech</li>
+                                <li>Audio</li>
+                                <li>Image And Video Coding</li>
+                                <li>Karhunen-Loeve Transform</li>
+                                <li>DCT</li>
+                                <li>JPEG And MPEG Coding Standards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Filter Design Techniques</li>
+                                <li>IIR And FIR Filters</li>
+                                <li>Filter Design Specifications</li>
+                                <li>Design Of Digital IIR Filters</li>
+                                <li>Impulse Invariant</li>
+                                <li>Bilinear Transformation Techniques For Butterworth And Chebyshev Filters</li>
+                                <li>Design Of FIR Filters</li>
+                                <li>Windowing</li>
+                                <li>Frequency Sampling Filter Design</li>
+                                <li>Optimum Approximations Of FIR Filters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Multi-rate Signal Processing</li>
+                                <li>Fundamentals Of Multirate Systems</li>
+                                <li>Decimation And Interpolation</li>
+                                <li>Application Of Multirate DSP In Sampling Rate Conversion</li>
+                                <li>Filter Banks</li>
+                                <li>Polyphase Structures</li>
+                                <li>Quadrature-mirror Filter Bank</li>
+                                <li>Wavelet Transform And Its Relation To Multi-rate Filter Banks</li>
+                                <li>Applications To Speech And Audio Coding</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lecture 4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Concept Of Adaptive Digital Signal Processing</li>
+                                <li>Adaptive Wiener Filter And LMS Algorithm</li>
+                                <li>Applications Of Adaptive Filtering To Echo Cancellation And Equalization</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Digital Signal Processing-A Computer Based Approach, Mitra, S.K.,</li>
+                        <li>Discrete Time Signal Processing, Oppenheim, A.V. and Schafer, R.W. with Buck, J.R</li>
+                        <li>Digital Signal Processing: A Practical Approach, Ifeachor, E.C. and Jervis, B.W</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Multirate Systems and Filter Banks, Vaidyanathan, P.P.</li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-804" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: High Performance Computing [OEC CS 804]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Parallel Computing</li>
+                                <li>Parallel Processing Terminology</li>
+                                <li>Pipelining Vs Data Parallelism</li>
+                                <li>Control Parallelism</li>
+                                <li>Scalability</li>
+                                <li>Control Parallel Approach</li>
+                                <li>Data Parallel Approach</li>
+                                <li>Data Parallel Approach With I/O Parallel Reduction</li>
+                                <li>Prefix Sums</li>
+                                <li>List Ranking</li>
+                                <li>Preorder Tree Traversal</li>
+                                <li>Merging Two Sorted Lists</li>
+                                <li>Graph Coloring</li>
+                                <li>Reducing The Number Of Processors</li>
+                                <li>Problems Defying Fast Solutions On PRAMS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Thread And Process Level Parallel Architectures</li>
+                                <li>MIMD</li>
+                                <li>Multi-threaded Architectures</li>
+                                <li>Distributed And Shared Memory MIMD Architectures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamic Interconnection Networks</li>
+                                <li>Mapping And Scheduling</li>
+                                <li>Mapping Data To Processors On Processor Arrays And Multicomputers</li>
+                                <li>Dynamic Load Balancing On Multicomputers</li>
+                                <li>Static Scheduling On UMA Multiprocessors</li>
+                                <li>Deadlock</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lectures 12 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Parallel Programming And Parallel Algorithms</li>
+                                <li>Programming Models</li>
+                                <li>Parallel Programming On Multiprocessors And Multicomputers</li>
+                                <li>Parallel Algorithm Structure</li>
+                                <li>Analyzing Parallel Algorithm</li>
+                                <li>Elementary Parallel Algorithms</li>
+                                <li>Matrix Algorithms</li>
+                                <li>Sorting</li>
+                                <li>Graph Algorithms</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Book:</h3>
+                    <ol>
+                        <li>Quinn, Parallel computing - theory and practice, Tata McGraw Hill.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Selim G. Akl, The Design and Analysis of Parallel Algorithms, PH International</li>
+                        <li>Ghosh, Moona and Gupta, Foundations of parallel processing, Narosa</li>
+                        <li>Mehdi R. Zargham, Computer Architectures single and parallel systems, PHI. publishing.</li>
+                        <li>Ed. Afonso Ferreira and Jose' D. P. Rolin, Parallel Algorithms for irregular problems -
+                            State of the art, Kluwer Academic Publishers.</li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-805" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Introduction to Communication Systems [OEC CS 805]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Communication Model</li>
+                                <li>Transmission Line</li>
+                                <li>Data Communication Concepts</li>
+                                <li>Data Transmission</li>
+                                <li>Parallel Transmission</li>
+                                <li>Serial Transmission</li>
+                                <li>Asynchronous Transmission</li>
+                                <li>Synchronous Transmission</li>
+                                <li>Data Encoding</li>
+                                <li>Non-Return To Zero (NRZ)</li>
+                                <li>Return To Zero (RZ)</li>
+                                <li>Modern Concept</li>
+                                <li>Modern Operation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lectures 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Signal Processing Operations In Digital Communication</li>
+                                <li>Analog Pulse Modulation</li>
+                                <li>Sampling Theorem For Base-band And Pass-band Signals</li>
+                                <li>Quadrature Sampling Of Band Pass Signal Reconstruction Of Message From Its Samples
+                                </li>
+                                <li>Signal Distortion In Sampling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Pulse Amplitude Modulation</li>
+                                <li>Modulation Generation And Demodulation</li>
+                                <li>PAM/TDM System</li>
+                                <li>Digital Pulse Modulation</li>
+                                <li>Quantization</li>
+                                <li>PCM</li>
+                                <li>DPCM</li>
+                                <li>Delta Modulation</li>
+                                <li>Adaptive Delta Modulation-Design Of Typical Systems And Performance Analysis</li>
+                                <li>Signal Space Concepts</li>
+                                <li>Geometric Structure Of The Signal Space</li>
+                                <li>Vector Representation</li>
+                                <li>Distance</li>
+                                <li>Norm And Inner Product</li>
+                                <li>Orthogonality</li>
+                                <li>Gram-Schmidt Orthogonalization Procedure</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Filtering And Receivers</li>
+                                <li>Matched Filter Receiver</li>
+                                <li>Inter Symbol Interference</li>
+                                <li>Pulse Shaping</li>
+                                <li>Nyquist Criterion For Zero ISI</li>
+                                <li>Eye Diagram</li>
+                                <li>Equalizer</li>
+                                <li>Scrambling And Descrambling</li>
+                                <li>Review Of Gaussian Random Process</li>
+                                <li>Optimum Threshold Detection</li>
+                                <li>Optimum Receiver For AWGN Channel</li>
+                                <li>Matched Filter And Correlation Receivers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Decision Procedure</li>
+                                <li>Maximum Aposteriori Probability Detector</li>
+                                <li>Maximum Likelihood Detector</li>
+                                <li>Error Probability Performance Of Binary Signaling</li>
+                                <li>Digital Band Pass Modulation Schemes</li>
+                                <li>ASK</li>
+                                <li>FSK</li>
+                                <li>PSK</li>
+                                <li>MSK</li>
+                                <li>Digital M-ary Modulation Schemes</li>
+                                <li>Signal Space Representation</li>
+                                <li>Error In Communication</li>
+                                <li>Detection Of Signals In Gaussian Noise</li>
+                                <li>Coherent & Non-coherent Detection</li>
+                                <li>Differential Modulation Schemes</li>
+                                <li>Error Performance Of Binary And M-ary Modulation Schemes</li>
+                                <li>Probability Of Error Of Binary DPSK</li>
+                                <li>Performance Of M-ary Signaling Schemes In AWGN Channels</li>
+                                <li>Power Spectra Of Digitally Modulated Signals</li>
+                                <li>Performance Comparison Of Digital Modulation Schemes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Digital Communications, Simon Haykin John Wiley & Sons, Indian edition</li>
+                        <li>Modern Digital and Analog Communication Systems, fourth edition by B.P. Lathi and Zhi Ding,
+                            Oxford University Press</li>
+                        <li>Introduction to data communications and networking, Behrouz Forouzan</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Fundamentals of Communication Systems by J Proakis and M Salehi</li>
+                        <li>Signals and Systems, second edition, by A. Oppenheim and A. Willsky</li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-806" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Ad-Hoc and Sensor Networks [OEC CS 806]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives:</h3>
+                    <p>&rarr; Understand The Design Issues In Ad Hoc And Sensor Networks</p>
+                    <p>&rarr; Learn The Different Types Of MAC Protocols</p>
+                    <p>&rarr; Be Familiar With Different Types Of Ad-hoc Routing Protocols</p>
+                    <p>&rarr; Be Expose To The TCP Issues In Ad-hoc Networks</p>
+                    <p>&rarr; Learn The Architecture And Protocols Of Wireless Sensor Networks</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals Of Wireless Communication Technology</li>
+                                <li>The Electromagnetic Spectrum</li>
+                                <li>Radio Propagation Mechanisms</li>
+                                <li>Characteristics Of The Wireless Channel</li>
+                                <li>Mobile Ad-hoc Networks (MANETS) And Wireless Sensor Networks (WSNs)</li>
+                                <li>Concepts And Architectures</li>
+                                <li>Applications Of Ad-hoc And Sensor Networks</li>
+                                <li>Design Challenges In Ad-hoc And Sensor Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Mac Protocols for Ad-hoc Wireless Networks (Lectures 8
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Issues In Designing A MAC Protocol</li>
+                                <li>Classification Of MAC Protocols</li>
+                                <li>Contention Based Protocols</li>
+                                <li>Contention Based Protocols With Reservation Mechanisms</li>
+                                <li>Contention Based Protocols With Scheduling Mechanisms</li>
+                                <li>Multi Channel MAC</li>
+                                <li>IEEE 802.11</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Routing Protocols and Transport Layer in Ad-hoc
+                                Networks (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Issues In Designing A Routing And Transport Layer Protocol For Ad hoc Networks</li>
+                                <li>Proactive Routing</li>
+                                <li>Reactive Routing (on-demand)</li>
+                                <li>Hybrid Routing</li>
+                                <li>Classification Of Transport Layer Solutions</li>
+                                <li>TCP Over Ad hoc Wireless Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Wireless Sensor Networks (WSNs) And MAC Protocols
+                                (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Single Node Architecture</li>
+                                <li>Hardware And Software Components Of A Sensor Node</li>
+                                <li>WSN Network Architecture</li>
+                                <li>Typical Network Architectures</li>
+                                <li>Data Relaying And Aggregation Strategies</li>
+                                <li>MAC Layer Protocols</li>
+                                <li>Self-organizing</li>
+                                <li>Hybrid TDMA/FDMA And CSMA Based MAC</li>
+                                <li>IEEE 802.15.4</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Security in Ad Hoc and Sensor Networks (Lectures 8
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Security Attacks</li>
+                                <li>Key Distribution And Management</li>
+                                <li>Intrusion Detection</li>
+                                <li>Software Based Anti-tamper Techniques</li>
+                                <li>Water Marking Techniques</li>
+                                <li>Defense Against Routing Attacks</li>
+                                <li>Secure Ad hoc Routing Protocols</li>
+                                <li>Broadcast Authentication WSN Protocols</li>
+                                <li>TESLA</li>
+                                <li>Biba</li>
+                                <li>Sensor Network Security Protocols</li>
+                                <li>SPINS</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Book:</h3>
+                    <ol>
+                        <li>C. Siva Ram Murthy and B.S.Manoj, "Ad Hoc Wireless Networks - Architectures and Protocols",
+                            Pearson Education, 2006.</li>
+                        <li>Holger Karl and Andreas Willig, "Protocols and Architectures for Wireless Sensor Networks",
+                            Wiley, 2005</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">References Book:</h3>
+                    <ol>
+                        <li>Carlos De Morais Cordeiro, Dharma Prakash Agrawal "Ad Hoc & Sensor Networks: Theory and
+                            Applications", World Scientific Publishing Company, 2006.</li>
+                        <li>Feng Zhao and Leonides Guibas, "Wireless Sensor Networks", Elsevier Publication - 2002.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p><strong>Upon completion of the course, the student should be able to:</strong></p>
+                    <p>&rarr; Identify Different Issues In Wireless Ad Hoc And Sensor Networks</p>
+                    <p>&rarr; Analyze Protocols Developed For Ad Hoc And Sensor Networks</p>
+                    <p>&rarr; Identify And Understand Security Issues In Ad Hoc And Sensor Networks</p>
+                </section>
+                <section id="subject-PEC-CS-801" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Data Mining [PEC CS 801]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Data Warehousing And Business Analysis</li>
+                                <li>Data Warehousing Components</li>
+                                <li>Building A Data warehouse</li>
+                                <li>Data Warehouse Architecture</li>
+                                <li>DBMS Schemas For Decision Support</li>
+                                <li>Data Extraction</li>
+                                <li>Cleanup</li>
+                                <li>Transformation Tools</li>
+                                <li>Metadata</li>
+                                <li>Reporting</li>
+                                <li>Query Tools And Applications</li>
+                                <li>Online Analytical Processing (OLAP)</li>
+                                <li>OLAP And Multidimensional Data Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Data Mining</li>
+                                <li>Data Mining Functionalities</li>
+                                <li>Data Preprocessing</li>
+                                <li>Data Cleaning</li>
+                                <li>Data Integration And Transformation</li>
+                                <li>Data Reduction</li>
+                                <li>Data Discretization And Concept Hierarchy Generation</li>
+                                <li>Architecture Of A Typical Data Mining Systems</li>
+                                <li>Classification Of Data Mining Systems</li>
+                                <li>Association Rule Mining</li>
+                                <li>Efficient And Scalable Frequent Item set Mining Methods</li>
+                                <li>Mining Various Kinds Of Association Rules</li>
+                                <li>Association Mining To Correlation Analysis</li>
+                                <li>Constraint-Based Association Mining</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Classification And Prediction</li>
+                                <li>Issues Regarding Classification And Prediction</li>
+                                <li>Classification By Decision Tree Introduction</li>
+                                <li>Bayesian Classification</li>
+                                <li>Rule Based Classification</li>
+                                <li>Classification By Back propagation</li>
+                                <li>Support Vector Machines</li>
+                                <li>Associative Classification</li>
+                                <li>Lazy Learners</li>
+                                <li>Other Classification Methods</li>
+                                <li>Prediction</li>
+                                <li>Accuracy And Error Measures</li>
+                                <li>Evaluating The Accuracy Of A Classifier Or Predictor</li>
+                                <li>Ensemble Methods</li>
+                                <li>Model Section</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Cluster Analysis</li>
+                                <li>Types Of Data In Cluster Analysis</li>
+                                <li>A Categorization Of Major Clustering Methods</li>
+                                <li>Partitioning Methods</li>
+                                <li>Hierarchical Methods</li>
+                                <li>Density-Based Methods</li>
+                                <li>Grid-Based Methods</li>
+                                <li>Model-Based Clustering Methods</li>
+                                <li>Clustering High-Dimensional Data</li>
+                                <li>Constraint-Based Cluster Analysis</li>
+                                <li>Outlier Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Mining Object</li>
+                                <li>Spatial</li>
+                                <li>Multimedia</li>
+                                <li>Text And Web Data</li>
+                                <li>Multidimensional Analysis And Descriptive Mining Of Complex Data Objects</li>
+                                <li>Spatial Data Mining</li>
+                                <li>Multimedia Data Mining</li>
+                                <li>Text Mining</li>
+                                <li>Mining The World Wide Web</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Book</h3>
+                    <ol>
+                        <li>Jiawei Han, Micheline Kamber and Jian Pei, "Data Mining Concepts and Techniques", Third
+                            Edition, Elsevier, 2011.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books</h3>
+                    <ol>
+                        <li>Alex Berson and Stephen J. Smith "Data Warehousing, Data Mining &OLAP", Tata McGraw-Hill
+                            Edition, Tenth Reprint 2007.</li>
+                        <li>P. Soman, ShyamDiwakar and V. Ajay "Insight into Data mining Theory and Practice", Easter
+                            Economy Edition, Prentice Hall of India, 2006.</li>
+                        <li>K. Gupta "Introduction to Data Mining with Case Studies", Easter Economy Edition, Prentice
+                            Hall of India, 2006.</li>
+                        <li>Pang-Ning Tan, Michael Steinbach and Vipin Kumar "Introduction to Data Mining", Pearson
+                            Education, 2007.</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-802" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computational Number Theory [PEC CS 802]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Algorithms For Integer Arithmetic</li>
+                                <li>Divisibility</li>
+                                <li>GCD Computation</li>
+                                <li>Euclid's Algorithm</li>
+                                <li>Extended Euclid's Algorithm</li>
+                                <li>Modular Arithmetic</li>
+                                <li>Modular Exponentiation</li>
+                                <li>Montgomery Arithmetic</li>
+                                <li>Congruence</li>
+                                <li>Chinese Remainder Theorem</li>
+                                <li>Hensel Lifting</li>
+                                <li>Orders And Primitive Roots</li>
+                                <li>Quadratic Residues</li>
+                                <li>Integer And Modular Square Roots</li>
+                                <li>Prime Number Theorem</li>
+                                <li>Continued Fractions And Rational Approximations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Representation Of Finite Fields</li>
+                                <li>Prime And Extension Fields</li>
+                                <li>Representation Of Extension Fields</li>
+                                <li>Polynomial Basis</li>
+                                <li>Primitive Elements</li>
+                                <li>Normal Basis</li>
+                                <li>Optimal Normal Basis</li>
+                                <li>Irreducible Polynomials</li>
+                                <li>Algorithms For Polynomials</li>
+                                <li>Root-finding And Factorization</li>
+                                <li>Lenstra-Lenstra-Lovasz Algorithm</li>
+                                <li>Polynomials Over Finite Fields</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Elliptic Curves</li>
+                                <li>The Elliptic Curve Group</li>
+                                <li>Elliptic Curves Over Finite Fields</li>
+                                <li>Schoof's Point Counting Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Primality Testing Algorithms</li>
+                                <li>Fermat Test</li>
+                                <li>Miller-Rabin Test</li>
+                                <li>Solovay-Strassen Test</li>
+                                <li>AKS Test</li>
+                                <li>Integer Factoring Algorithms</li>
+                                <li>Trial Division</li>
+                                <li>Pollard Rho Method</li>
+                                <li>P-1 Method</li>
+                                <li>CFRAC Method</li>
+                                <li>Quadratic Sieve Method</li>
+                                <li>Elliptic Curve Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Computing Discrete Logarithms Over Finite Fields</li>
+                                <li>Baby-step-giant-step Method</li>
+                                <li>Pollard Rho Method</li>
+                                <li>Pohlig-Hellman Method</li>
+                                <li>Index Calculus Methods</li>
+                                <li>Linear Sieve Method</li>
+                                <li>Coppersmith's Algorithm</li>
+                                <li>Applications</li>
+                                <li>Algebraic Coding Theory</li>
+                                <li>Cryptography</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Shoup, A computational introduction to number theory and algebra, Cambridge University
+                            Press.</li>
+                        <li>Mignotte, Mathematics for computer algebra, Springer-Verlag.</li>
+                        <li>Niven, H. S. Zuckerman and H. L. Montgomery, An introduction to the theory of numbers, John
+                            Wiley.</li>
+                        <li>von zur Gathen and J. Gerhard, Modern computer algebra, Cambridge University Press.</li>
+                        <li>Lidl and H. Niederreiter, Introduction to finite fields and their applications, Cambridge
+                            University Press.</li>
+                        <li>J. Menezes, editor, Applications of finite fields, Kluwer Academic Publishers.</li>
+                        <li>H. Silverman and J. Tate, Rational points on elliptic curves, Springer International
+                            Edition.</li>
+                        <li>R. Hankerson, A. J. Menezes and S. A. Vanstone, Guide to elliptic curve cryptography,
+                            Springer-Verlag.</li>
+                        <li>Das and C. E. Veni Madhavan, Public-key cryptography: Theory and practice, Pearson Education
+                            Asia.</li>
+                        <li>Cohen, A course in computational algebraic number theory, Springer-Verlag.</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-803" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Advanced Operating Systems [PEC CS 803]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>The Objective Of This Course Is To Impart Necessary And Practical Knowledge To Identify And Solve
+                        Problems In Distributed, Multiprocessor And Database Operating Systems</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Advance Operating System</li>
+                                <li>Comparative Study Of OS</li>
+                                <li>LINUX</li>
+                                <li>Linux File System + Measurements</li>
+                                <li>The Log Structured File System</li>
+                                <li>Server Less Network File Systems</li>
+                                <li>The Coda File System</li>
+                                <li>AFS</li>
+                                <li>Virtual Memory</li>
+                                <li>Stack/ Buffer Overflow</li>
+                                <li>Address Space Layout Randomization (ASLR) User-Level Virtual Memory</li>
+                                <li>Global Network Scheduling</li>
+                                <li>Network Optimization</li>
+                                <li>Extensible Operating Systems</li>
+                                <li>Issues Of Security In OS</li>
+                                <li>Cryptographic File Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed Operating Systems</li>
+                                <li>System Architecture Types</li>
+                                <li>Issues In Distributed Operating Systems</li>
+                                <li>Naming</li>
+                                <li>Scalability</li>
+                                <li>Security</li>
+                                <li>Client-Server Model</li>
+                                <li>Process Synchronization</li>
+                                <li>Global Knowledge</li>
+                                <li>Etc</li>
+                                <li>RPC</li>
+                                <li>Message Passing</li>
+                                <li>Absence Of Global Lock</li>
+                                <li>Absence Of Shared Memory</li>
+                                <li>Lamport's Logical Clock</li>
+                                <li>Chandy Lamport's Algorithm</li>
+                                <li>Termination Detection</li>
+                                <li>Distributed Mutual Exclusion</li>
+                                <li>Non Token Based Algorithms</li>
+                                <li>Ricart Agarwala Algorithm</li>
+                                <li>Lamport's Algorithm</li>
+                                <li>Generalized Non-Token Based Algorithm</li>
+                                <li>Comparative Performance Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Synchronization</li>
+                                <li>Clock Synchronization</li>
+                                <li>Event Ordering</li>
+                                <li>Mutual Exclusion</li>
+                                <li>Deadlock</li>
+                                <li>Election Algorithms</li>
+                                <li>Desirable Features Of Good Global Scheduling Algorithms</li>
+                                <li>Task Assignment Approach</li>
+                                <li>Load Balancing Approach</li>
+                                <li>Load Sharing Approach</li>
+                                <li>Process Management</li>
+                                <li>Process Migration</li>
+                                <li>Threads Distributed Deadlock Detection</li>
+                                <li>Centralized/Distributed/ Hierarchical Control</li>
+                                <li>Path Pushing Algorithm</li>
+                                <li>Edge-Chasing Algorithm</li>
+                                <li>Ho-Ramamoorthy Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Resource Management In Distributed Systems</li>
+                                <li>Distributed File Systems</li>
+                                <li>Mounting</li>
+                                <li>Caching</li>
+                                <li>Bulk Data Transfer</li>
+                                <li>Design Issues</li>
+                                <li>Cache Consistency</li>
+                                <li>Scalability</li>
+                                <li>Log Structured File systems</li>
+                                <li>Distributed Shared Memory</li>
+                                <li>Central-Server Algorithm</li>
+                                <li>Full-Replication Algorithm</li>
+                                <li>Etc</li>
+                                <li>Coherence Protocols</li>
+                                <li>Granularity</li>
+                                <li>Page Replacement</li>
+                                <li>Distributed Scheduling</li>
+                                <li>Load</li>
+                                <li>Classification</li>
+                                <li>Load Balancing And Load Sharing</li>
+                                <li>Policies For Transfer</li>
+                                <li>Selection</li>
+                                <li>Location</li>
+                                <li>Information</li>
+                                <li>Stability</li>
+                                <li>Load Balancing Algorithms</li>
+                                <li>Load Sharing Case Studies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Fault Tolerance</li>
+                                <li>Recovery</li>
+                                <li>Protection And Security</li>
+                                <li>Atomic Actions And Commit</li>
+                                <li>Commit Protocols</li>
+                                <li>Voting Protocols</li>
+                                <li>Dynamic Voting</li>
+                                <li>Classification Of Failures</li>
+                                <li>Backward And Forward Error Recovery</li>
+                                <li>Synchronous/Asynchronous Checkpoints And Recovery</li>
+                                <li>Recovery In Concurrent Systems</li>
+                                <li>Access Matrix Model</li>
+                                <li>Advanced Models Of Protection</li>
+                                <li>Cryptography</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Multiprocessor And Database Operating Systems</li>
+                                <li>Tightly And Loosely Coupled Systems</li>
+                                <li>Interconnect Networks</li>
+                                <li>Caching</li>
+                                <li>Hypercube Architectures</li>
+                                <li>Threads</li>
+                                <li>Process Synchronization In MP Systems</li>
+                                <li>Process Scheduling In MP Systems</li>
+                                <li>Requirements Of Database OS</li>
+                                <li>Transactions</li>
+                                <li>Conflicts</li>
+                                <li>Serializability Theory</li>
+                                <li>Distributed Database Systems</li>
+                                <li>Concurrency Control Algorithms</li>
+                                <li>Lock Based Algorithms</li>
+                                <li>Timestamp Based Algorithms</li>
+                                <li>2PL</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Virtualization</li>
+                                <li>Introduction</li>
+                                <li>Simulation</li>
+                                <li>Emulation</li>
+                                <li>Para-Virtualization</li>
+                                <li>Full virtualization</li>
+                                <li>X86 Virtualization</li>
+                                <li>Privileged Instructions</li>
+                                <li>Control Sensitive Instructions</li>
+                                <li>Trap And Emulate</li>
+                                <li>Binary Translation</li>
+                                <li>X86 Hardware Virtualization Vmxon/vmxoff</li>
+                                <li>Vmentry</li>
+                                <li>Vm Exit</li>
+                                <li>Intel VTd</li>
+                                <li>VMCS</li>
+                                <li>Shadow Page Tables</li>
+                                <li>EPT/NPT</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested books:</h3>
+                    <ol>
+                        <li>Pradeep K. Sinha, "Distributed Operating Systems: Concepts and Design", Wiley.</li>
+                        <li>Andrew S. Tanenbaum, "Distributed Operating Systems", Pearson.</li>
+                        <li>Mukesh Singhal & Niranjan Shivaratri, "Advanced Concepts in Operating Systems", McGraw Hill
+                            Education.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes</h3>
+                    <p><strong>Students should be able to:</strong></p>
+                    <p>&rarr; Identify And Solve Problems In Distributed, Multiprocessor And Database Operating Systems
+                    </p>
+                    <p>&rarr; Explain The Architectural Features And Solutions For Implementing Various Virtualization
+                        Features In Operating Systems</p>
+                    <p>&rarr; Solve Synchronization Problems Involving Distributed And Virtualized Environments</p>
+                </section>
+                <section id="subject-PEC-CS-804" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Genetic Algorithm [PEC CS 804]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Genetic Algorithm</li>
+                                <li>Genetic Algorithms</li>
+                                <li>Traditional And Search Methods And Their Differences</li>
+                                <li>A Simple Genetic Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Genetic Algorithms Revisited</li>
+                                <li>The Fundamental Theorem</li>
+                                <li>Schema Processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Two & K-Armed Bandit Problem</li>
+                                <li>Hypothesis</li>
+                                <li>Schemata And Revisited</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Computer Implementation Of A Genetic Algorithm</li>
+                                <li>Data Structures</li>
+                                <li>Reproduction</li>
+                                <li>Crossover And Mutation</li>
+                                <li>A Time To Reproduce</li>
+                                <li>A Time To Cross</li>
+                                <li>How Well Does It Work</li>
+                                <li>Mapping Objective Functions To Fitness Form</li>
+                                <li>Fitness Scaling</li>
+                                <li>Coding</li>
+                                <li>A Multiparameter Mapped</li>
+                                <li>Fixed-Point Coding</li>
+                                <li>Discretization</li>
+                                <li>Constraints</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Applications Of Genetic Algorithms</li>
+                                <li>The Rise Of Genetic Algorithms</li>
+                                <li>Genetic Algorithm Applications Of Historical Interest</li>
+                                <li>De Jong And Function Optimization</li>
+                                <li>Improvements In Basic Technique</li>
+                                <li>Current Applications Of Genetic Algorithms</li>
+                                <li>Genetics-Based Machine Learning</li>
+                                <li>Whence It Came</li>
+                                <li>What Is Classifier System</li>
+                                <li>Rule And Message</li>
+                                <li>Genetic Algorithm</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>D.E. Goldberg -Genetic Algorithms in Search Optimization and Machine Learning, Pearson
+                            Education, New Delhi, 2005.</li>
+                        <li>M. D. Vose - The Simple Genetic Algorithm, PHI, New Delhi, 2004</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-805" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Cloud Computing [PEC CS 805]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objective:</h3>
+                    <p>This Course Will Cover The Study Of Various Cloud Services, Deployment Model, Resource
+                        Provisioning And Scheduling Algorithms Involved In Better Implementing The Cloud-based Systems
+                    </p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Distributed Computing And Enabling Technologies</li>
+                                <li>Cloud Fundamentals</li>
+                                <li>Cloud Definition</li>
+                                <li>Evolution</li>
+                                <li>Architecture</li>
+                                <li>Applications</li>
+                                <li>Deployment Models</li>
+                                <li>Service Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Virtualization</li>
+                                <li>Issues With Virtualization</li>
+                                <li>Virtualization Technologies And Architectures</li>
+                                <li>Internals Of Virtual Machine Monitors/hypervisors</li>
+                                <li>Virtualization Of Data Centers</li>
+                                <li>Issues With Multitenancy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Implementation</li>
+                                <li>Study Of Cloud Computing Systems Like Amazon EC2 And S3</li>
+                                <li>Google App Engine</li>
+                                <li>Microsoft Azure</li>
+                                <li>Build Private/Hybrid Cloud Using Open Source Tools</li>
+                                <li>SLA Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 12 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Resource Management</li>
+                                <li>Cloud Resource Provisioning Plan (advance Reservation</li>
+                                <li>On Demand Plan</li>
+                                <li>Spot Instances)</li>
+                                <li>Various Scheduling And Load Balancing Techniques To Improve QoS Parameters</li>
+                                <li>Resource Optimization Algorithms</li>
+                                <li>Task Migration And VM Migration Technique</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Security</li>
+                                <li>Vulnerability Issues And Security Threats</li>
+                                <li>Application-level Security</li>
+                                <li>Data Level Security</li>
+                                <li>Virtual Machine Level Security</li>
+                                <li>Infrastructure Security</li>
+                                <li>Multi-tenancy Issues</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Advances</li>
+                                <li>Green Cloud</li>
+                                <li>Mobile Cloud Computing</li>
+                                <li>Fog Computing</li>
+                                <li>Internet Of Things</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>Cloud Computing Principles and Paradigms, Rajkumar Buyya, James Broberg, Andrzej Goscinski,
+                            Wiley Publishers 2011</li>
+                        <li>Cloud Computing Bible, Barrie Sosinsky, Wiley Publishers 2010</li>
+                        <li>Mastering Cloud computing, Rajkumar Buyya, Christian Vacchiola, S Thamarai Selvi, McGraw
+                            Hill 2013</li>
+                        <li>Cloud Security and Privacy: An Enterprise Perspective on Risks and Compliance, Tim Mather,
+                            Subra Kumaraswamy, Shahed Latif, O'Reilly 2010</li>
+                        <li>Cloud Computing by Shailendra Singh 2018</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course outcomes:</h3>
+                    <p>&rarr; Articulate The Main Concepts, Key Technologies, Strengths, And Limitations Of Cloud
+                        Computing And The Possible Applications For State-of-the-art Cloud Computing</p>
+                    <p>&rarr; Identify The Architecture And Infrastructure Of Cloud Computing, Including SaaS, Paas,
+                        laas, Public Cloud, Private Cloud, Hybrid Cloud, Etc</p>
+                    <p>&rarr; Identify Problems, And Explain, Analyze, And Evaluate Various Cloud Computing Solutions
+                    </p>
+                    <p>&rarr; Provide The Appropriate Cloud Computing Solutions And Recommendations According To The
+                        Applications Used</p>
+                    <p>&rarr; Attempt To Generate New Ideas And Innovations In Cloud Computing</p>
+                </section>
+                <section id="subject-PEC-CS-806" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Quantum Computing [PEC CS 806]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objective of the Course:</h3>
+                    <p>The Objective Of This Course Is To Impart Necessary Knowledge To The Learner So That He/she Can
+                        Develop And Implement Algorithm And Write Programs Using These Algorithm</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lectures 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Quantum Computing</li>
+                                <li>Motivation For Studying Quantum Computing</li>
+                                <li>Major Players In The Industry (IBM, Microsoft, Rigetti, D-Wave Etc)</li>
+                                <li>Origin Of Quantum Computing</li>
+                                <li>Overview Of Major Concepts In Quantum Computing</li>
+                                <li>Qubits And Multi-qubits States</li>
+                                <li>Bra-ket Notation</li>
+                                <li>Bloch Sphere Representation</li>
+                                <li>Quantum Superposition</li>
+                                <li>Quantum Entanglement</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lectures 9 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Math Foundation For Quantum Computing</li>
+                                <li>Matrix Algebra</li>
+                                <li>Basis Vectors And Orthogonality</li>
+                                <li>Inner Product And Hilbert Spaces</li>
+                                <li>Matrices And Tensors</li>
+                                <li>Unitary Operators And Projectors</li>
+                                <li>Dirac Notation</li>
+                                <li>Eigen Values And Eigen Vectors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Building Blocks For Quantum Program</li>
+                                <li>Architecture Of A Quantum Computing Platform</li>
+                                <li>Details Of Q-bit System Of Information Representation</li>
+                                <li>Block Sphere</li>
+                                <li>Multi-qubits States</li>
+                                <li>Quantum Superposition Of Qubits (valid And Invalid Superposition)</li>
+                                <li>Quantum Entanglement</li>
+                                <li>Useful States From Quantum Algorithmic Perceptive E.g. Bell State</li>
+                                <li>Operation On Qubits</li>
+                                <li>Measuring And Transforming Using Gates</li>
+                                <li>Quantum Logic Gates And Circuit</li>
+                                <li>Pauli</li>
+                                <li>Hadamard</li>
+                                <li>Phase Shift</li>
+                                <li>Controlled Gates</li>
+                                <li>Ising</li>
+                                <li>Deutsch</li>
+                                <li>Swap Etc</li>
+                                <li>Programming Model For A Quantum Computing Program</li>
+                                <li>Steps Performed On Classical Computer</li>
+                                <li>Steps Performed On Quantum Computer</li>
+                                <li>Moving Data Between Bits And Qubits</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lectures 18 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Quantum Algorithms</li>
+                                <li>Basic Techniques Exploited By Quantum Algorithms</li>
+                                <li>Amplitude Amplification</li>
+                                <li>Quantum Fourier Transform</li>
+                                <li>Phase Kick-back</li>
+                                <li>Quantum Phase Estimation</li>
+                                <li>Quantum Walks</li>
+                                <li>Major Algorithms</li>
+                                <li>Shor's Algorithm</li>
+                                <li>Grover's Algorithm</li>
+                                <li>Deutsch's Algorithm</li>
+                                <li>Deutsch - Jozsa Algorithm</li>
+                                <li>OSS Toolkits For Implementing Quantum Program</li>
+                                <li>IBM Quantum Experience</li>
+                                <li>Microsoft Q</li>
+                                <li>Rigetti PyQuil (QPU/QVM)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">List of Suggested Books:</h3>
+                    <ol>
+                        <li>Michael A. Nielsen, "Quantum Computation and Quantum Information", Cambridge University
+                            Press.</li>
+                        <li>David McMahon, "Quantum Computing Explained", Wiley</li>
+                        <li>IBM Experience: https://quantumexperience.ng, bluemix.net</li>
+                        <li>Microsoft Quantum Development Kit https://www.microsoft.com/en-us/quantum/development-kit
+                        </li>
+                        <li>Forest SDK PyQuil: https://pyquil.readthedocs.io/en/stable/</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p><strong>At the end of this course, the students will be able to:</strong></p>
+                    <p>&rarr; Explain The Working Of A Quantum Computing Program, Its Architecture And Program Model</p>
+                    <p>&rarr; Develop Quantum Logic Gate Circuits</p>
+                    <p>&rarr; Develop Quantum Algorithm</p>
+                    <p>&rarr; Program Quantum Algorithm On Major Toolkits</p>
+                </section>
+                <section id="subject-PEC-CS-807" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Transaction Processing Systems [PEC CS 807]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Consistency</li>
+                                <li>Atomicity</li>
+                                <li>Durability</li>
+                                <li>Isolation</li>
+                                <li>Flat Transactions</li>
+                                <li>Providing Structure Within A Transaction</li>
+                                <li>Structuring An Application As Multiple Transactions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Schedules And Schedule Equivalence</li>
+                                <li>Recoverability</li>
+                                <li>Cascaded Aborts And Strictness</li>
+                                <li>Models For Concurrency Control</li>
+                                <li>A Strategy For Immediate-Update Pessimistic Concurrency Controls</li>
+                                <li>Design Of An Immediate-Update Pessimistic Concurrency Control</li>
+                                <li>Objects And Semantic Commutativity</li>
+                                <li>Atomicity</li>
+                                <li>Recoverability And Compensating Operations</li>
+                                <li>Locking And SQL Isolation Levels</li>
+                                <li>Granular Locking</li>
+                                <li>Intention Locks And Index Locks</li>
+                                <li>Tuning Transactions</li>
+                                <li>Multi version Concurrency Controls</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Crash</li>
+                                <li>Abort And Media Failure</li>
+                                <li>Immediate-Update Systems And Write-Ahead Logs</li>
+                                <li>Recovery In Deferred-Update Systems</li>
+                                <li>Recovery From Media Failure</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Transaction Processing In A Centralized System</li>
+                                <li>Transaction Processing In A Distributed System</li>
+                                <li>Global Atomicity And The Transaction Manager</li>
+                                <li>Remote Procedure Call</li>
+                                <li>Pear-to-Pear Communication</li>
+                                <li>Event Communication</li>
+                                <li>Storage Architectures</li>
+                                <li>Transaction Processing On The Internet</li>
+                                <li>Implementing The ACID Properties</li>
+                                <li>Distributed Deadlock</li>
+                                <li>Global Serialization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Authentication</li>
+                                <li>Authorization And Encryption</li>
+                                <li>Digital Signatures</li>
+                                <li>Key Distribution And Authentication</li>
+                                <li>Authorization</li>
+                                <li>Authenticated RPC</li>
+                                <li>Electronic Commerce</li>
+                                <li>Certificates</li>
+                                <li>Passport</li>
+                                <li>SSO</li>
+                                <li>SET Protocol</li>
+                                <li>Dual Signatures</li>
+                                <li>Goods Atomicity</li>
+                                <li>Certified Delivery</li>
+                                <li>Escrow</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books</h3>
+                    <ol>
+                        <li>Michael Kifer, Arthur Bernstein and Philip M. Lewis, "Database Systems: An
+                            Application-Oriented Approach", Addison Wesley, 2006</li>
+                        <li>Philip A. Bernstein and Eric Newcomer, "Principles of Transaction Processing", 2nd Edition,
+                            Morgan Kaufmann Publishers, Elsevier, 2009</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-808" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Pattern Recognition [PEC CS 808]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Importance Of Pattern Recognition</li>
+                                <li>Features</li>
+                                <li>Feature Vectors</li>
+                                <li>Classifiers</li>
+                                <li>Supervised Versus Unsupervised Pattern Recognition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Bayes Decision Theory</li>
+                                <li>Discriminant Functions And Services O The Normal Distribution</li>
+                                <li>Bayesian Classification</li>
+                                <li>Estimating Probability Density Functions</li>
+                                <li>Nearest Neighbour Rules Bayesian Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Linear And Nonlinear Classifiers</li>
+                                <li>The Perceptron Algorithm</li>
+                                <li>Least-Squares Methods</li>
+                                <li>Nonlinear Classifiers</li>
+                                <li>Multilayer Perceptron's</li>
+                                <li>Back Propagation Algorithm</li>
+                                <li>Decision Trees</li>
+                                <li>Combinations Of Classifiers</li>
+                                <li>Boosting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Feature Selection</li>
+                                <li>Data Pre-processing</li>
+                                <li>ROC Curves</li>
+                                <li>Class Separability Measures</li>
+                                <li>Feature Subset Selection</li>
+                                <li>Bayesian Information Criterion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Dimensionality Reduction</li>
+                                <li>Basis Vectors</li>
+                                <li>Singular Value Decomposition</li>
+                                <li>Independent Component Analysis</li>
+                                <li>Kernel PCA</li>
+                                <li>Wavelets</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Additional Features And Template Matching</li>
+                                <li>Texture</li>
+                                <li>Shape And Size Characterization</li>
+                                <li>Fractals</li>
+                                <li>Features For Audio</li>
+                                <li>Template Matching Using Dynamic Time Warping And Edit Distance</li>
+                                <li>Context Dependent Classification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Clustering</li>
+                                <li>Sequential Algorithms</li>
+                                <li>Hierarchical Algorithms</li>
+                                <li>Functional Optimization-Based Clustering Graph Clustering</li>
+                                <li>Learning Clustering</li>
+                                <li>Clustering High Dimensional Data</li>
+                                <li>Subspace Clustering</li>
+                                <li>Cluster Validity Measure</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Pattern recognition, Sergios Theodoridis</li>
+                        <li>Pattern classification, second edition, duda, hart and stork, wiley</li>
+                        <li>Pattern recognition, Sergios Theodoridis Konstanti Nos Koutrou M Bas</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Statistical Pattern Recognition, Fukunaga Academic Press</li>
+                        <li>Pattern Recognition and Machine learning, C. M. Bishop, Springer</li>
+                        <li>Statistical Methods in Bioinformatics, Ewens & Grant, Springer</li>
+                        <li>The Elements of Statistical Learning, Hastie, Tibshirani, Friedman, Springer</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-809" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Deep Learning [PEC CS 809]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course:</h3>
+                    <p>This Course Will Provide A Basic Understanding Of Deep Learning And Their Applications To Solve
+                        Real World Problems. Open Source Tools Will Be Used To Demonstrate Different Applications</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction (Lecture 4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Brief Introduction Of Big Data Problem</li>
+                                <li>Overview Of Linear Algebra</li>
+                                <li>Probability</li>
+                                <li>Numerical Computation</li>
+                                <li>Basics Of Machine learning/Feature Engineering</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Basics of Neural networks (Lecture 4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Neural Networks</li>
+                                <li>Tools For Deep Learning Network</li>
+                                <li>Shallow Vs Deep Network</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Feed forward Networks (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Multilayer Perceptron</li>
+                                <li>Gradient</li>
+                                <li>Loss Function</li>
+                                <li>Gradient Descent</li>
+                                <li>Stochastic Gradient Descent (SDD)</li>
+                                <li>Backpropagation Algorithm</li>
+                                <li>Empirical Risk Minimization</li>
+                                <li>Regularization</li>
+                                <li>Gradient Based Learning</li>
+                                <li>Cost Function</li>
+                                <li>Learning Rate</li>
+                                <li>Soft Max</li>
+                                <li>Sigmoid Function</li>
+                                <li>Hidden Unit</li>
+                                <li>ReLU</li>
+                                <li>Logistic Sigmoid</li>
+                                <li>Hyperbolic Tangent Architecture Design</li>
+                                <li>Heuristics For Faster Training</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unsupervised learning (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Deep Belief Network</li>
+                                <li>Deep Boltzmann Machine (DBM)</li>
+                                <li>Factor Analysis</li>
+                                <li>Auto-encoders (standard, Sparse, Denoising, Contractive, Etc)</li>
+                                <li>Variational Auto-encoders</li>
+                                <li>Adversarial Generative Networks</li>
+                                <li>Auto-encoder</li>
+                                <li>Regularization Optimization For Training Deep Model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Advanced topics (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Convolutional Neural Network (CNN)</li>
+                                <li>Architectures</li>
+                                <li>Convolution/pooling Layers</li>
+                                <li>Recurrent Neural Network (RNN)/ Sequence Modeling</li>
+                                <li>Long Short Term Memory Networks (LSTM)</li>
+                                <li>GRU</li>
+                                <li>Encoder Decoder Architectures Reinforcement Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Practical applications (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Application Of Deep Learning To Computer Vision</li>
+                                <li>Speech Recognition</li>
+                                <li>Natural Language Processing</li>
+                                <li>Etc</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested books:</h3>
+                    <ol>
+                        <li>Ian Goodfellow, Yoshua Bengio and Aaron Courville, "Deep Learning", Book in preparation for
+                            MIT Press, 2016.</li>
+                        <li>Jerome H. Friedman, Robert Tibshirani, and Trevor Hastie, "The elements of statistical
+                            learning", Springer Series in Statistics, 2009.</li>
+                        <li>Charu C Aggarwal, "Neural Networks and Deep Learning", Springer.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes</h3>
+                    <p>&rarr; Identify The Deep Learning Algorithms Which Are More Appropriate For Various Types Of
+                        Learning Tasks In Various Domains</p>
+                    <p>&rarr; Implement Deep Learning Algorithms And Solve Real-world Problems</p>
+                </section>
+                <section id="subject-PEC-CS-810" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computational Geometry [PEC CS 810]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objective:</h3>
+                    <p>To Introduce Geometric Algorithms And To Give An Exposure To Algorithms And Data Structures For
+                        Geometric Problems</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Polygon Triangulation</li>
+                                <li>Triangulation Theory</li>
+                                <li>Area Of Polygon</li>
+                                <li>Segment Intersection</li>
+                                <li>Segment-triangle Intersection</li>
+                                <li>Polygon Partitioning</li>
+                                <li>Monotone Partitioning</li>
+                                <li>Trapezoidalization</li>
+                                <li>Partition Into Monotone Mountains</li>
+                                <li>Linear-Time Triangulation</li>
+                                <li>Convex Partitioning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Convex Hulls In Two Dimensions</li>
+                                <li>Definitions Of Convexity And Convex Hulls</li>
+                                <li>Naive Algorithms For Extreme Points</li>
+                                <li>Gift Wrapping</li>
+                                <li>QuickHull</li>
+                                <li>Graham's Algorithm</li>
+                                <li>Lower Bound</li>
+                                <li>Incremental Algorithm</li>
+                                <li>Divide And Conquer</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Convex Hulls In Three Dimensions</li>
+                                <li>Polyhedra And Data Structures</li>
+                                <li>Gift Wrapping</li>
+                                <li>Preparata-Hong Algorithm</li>
+                                <li>Incremental Algorithm</li>
+                                <li>Randomized Incremental Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Voronoi Diagrams</li>
+                                <li>Definitions And Basic Properties</li>
+                                <li>Delaunay Triangulations</li>
+                                <li>Algorithms</li>
+                                <li>Applications In Detail</li>
+                                <li>Medial Axis</li>
+                                <li>Connection To Convex Hulls</li>
+                                <li>Connection To Arrangements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Arrangements</li>
+                                <li>Combinatorics Of Arrangements</li>
+                                <li>Incremental Algorithm</li>
+                                <li>Three And Higher Dimensions</li>
+                                <li>Duality</li>
+                                <li>Higher-Order Voronoi</li>
+                                <li>Diagrams</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Search And Intersection</li>
+                                <li>Segment-Segment Intersection</li>
+                                <li>Segment- Triangle Intersection</li>
+                                <li>Point In Polygon</li>
+                                <li>Point In Polyhedron</li>
+                                <li>Intersection Of Convex Polygons</li>
+                                <li>Intersection Of Segments</li>
+                                <li>Intersection Of Nonconvex Polygons</li>
+                                <li>Extreme Point Of Convex Polygon</li>
+                                <li>Extremal Polytope</li>
+                                <li>Queries</li>
+                                <li>Planar Point Location</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: (Lecture 5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Motion Planning</li>
+                                <li>Shortest Paths</li>
+                                <li>Moving A Disk</li>
+                                <li>Translating A Convex Polygon</li>
+                                <li>Moving A Ladder</li>
+                                <li>Robot Arm Motion</li>
+                                <li>Separability</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>M. de Berg, M van Kreveld, M. Overmars, O. Schwarzkopf, Computational Geometry: Algorithms
+                            and Applications (2nd Edition), Springer - Verlag 2000</li>
+                        <li>O'Rourke, Computational Geometry in C, 2nd ed., Cambridge Univ. Press, 1998.</li>
+                        <li>Casselman, Mathematical Illustrations: A Manual of Geometry and PostScript,
+                            Springer-Verlag,. (http://www.math.ubc.ca/~cass/graphics/manual) 2005</li>
+                        <li>Mulmuley, Computational Geometry: An Introduction Through Randomized Algorithms, Prentice
+                            Hall. 1994</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcome:</h3>
+                    <p><strong>Upon successful completion of this course, students will be able to:</strong></p>
+                    <p>&rarr; Analyze Randomized Algorithms For Small Domain Problems</p>
+                    <p>&rarr; Use Line-point Duality To Develop Efficient Algorithms</p>
+                    <p>&rarr; Apply Geometric Techniques To Real-world Problems In Graphics</p>
+                    <p>&rarr; Solve Linear Programs Geometrically</p>
+                </section>
+                <section id="subject-PEC-CS-811" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Big Data Analytics [PEC CS 811]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Course Objectives:</h3>
+                    <p>&rarr; To Understand The Competitive Advantages Of Big Data Analytics</p>
+                    <p>&rarr; To Understand The Big Data Frameworks</p>
+                    <p>&rarr; To Learn Data Analysis Methods</p>
+                    <p>&rarr; To Learn Stream Computing</p>
+                    <p>&rarr; To Gain Knowledge On Hadoop Related Tools Such As HBase, Cassandra, Pig, And Hive For Big
+                        Data Analytics</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Big Data</li>
+                                <li>Definition</li>
+                                <li>Characteristic Features</li>
+                                <li>Big Data Applications</li>
+                                <li>Big Data Vs Traditional Data</li>
+                                <li>Risks Of Big Data</li>
+                                <li>Structure Of Big Data</li>
+                                <li>Challenges Of Conventional Systems</li>
+                                <li>Web Data</li>
+                                <li>Evolution Of Analytic Scalability</li>
+                                <li>Evolution Of Analytic Processes</li>
+                                <li>Tools And Methods</li>
+                                <li>Analysis Vs Reporting</li>
+                                <li>Modern Data Analytic Tools</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 9 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>HADOOP Framework</li>
+                                <li>Distributed File Systems</li>
+                                <li>Large-Scale File System</li>
+                                <li>Organization</li>
+                                <li>HDFS Concepts</li>
+                                <li>Map Reduce Execution</li>
+                                <li>Algorithms Using Map Reduce</li>
+                                <li>Matrix-Vector Multiplication</li>
+                                <li>Hadoop YARN</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Data Analysis</li>
+                                <li>Statistical Methods</li>
+                                <li>Regression Modelling</li>
+                                <li>Multivariate Analysis</li>
+                                <li>Classification</li>
+                                <li>SVM & Kernel Methods</li>
+                                <li>Rule Mining</li>
+                                <li>Cluster Analysis</li>
+                                <li>Types Of Data In Cluster Analysis</li>
+                                <li>Partitioning Methods</li>
+                                <li>Hierarchical Methods</li>
+                                <li>Density Based Methods</li>
+                                <li>Grid Based Methods</li>
+                                <li>Model Based Clustering Methods</li>
+                                <li>Clustering High Dimensional Data</li>
+                                <li>Predictive Analytics</li>
+                                <li>Data Analysis Using R</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Mining Data Streams</li>
+                                <li>Streams</li>
+                                <li>Concepts</li>
+                                <li>Stream Data Model And Architecture</li>
+                                <li>Sampling Data In A Stream</li>
+                                <li>Mining Data Streams And Mining Time-series Data</li>
+                                <li>Real Time Analytics Platform (RTAP) Applications</li>
+                                <li>Case Studies</li>
+                                <li>Real Time Sentiment Analysis</li>
+                                <li>Stock Market Predictions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 9 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Big Data Frameworks</li>
+                                <li>Introduction To NoSQL</li>
+                                <li>Aggregate Data Models</li>
+                                <li>Hbase</li>
+                                <li>Data Model And Implementations</li>
+                                <li>Hbase Clients</li>
+                                <li>Examples</li>
+                                <li>Cassandra</li>
+                                <li>Data Model</li>
+                                <li>Examples</li>
+                                <li>Cassandra Clients</li>
+                                <li>Hadoop Integration</li>
+                                <li>Pig</li>
+                                <li>Grunt</li>
+                                <li>Pig Data Model</li>
+                                <li>Pig Latin</li>
+                                <li>Developing And Testing Pig Latin Scripts</li>
+                                <li>Hive</li>
+                                <li>Data Types And File Formats</li>
+                                <li>HiveQL Data Definition</li>
+                                <li>HiveQL Data Manipulation</li>
+                                <li>HiveQL Queries</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p><strong>At the end of this course, the students will be able to:</strong></p>
+                    <p>&rarr; Understand How To Leverage The Insights From Big Data Analytics</p>
+                    <p>&rarr; Analyze Data By Utilizing Various Statistical And Data Mining Approaches</p>
+                    <p>&rarr; Perform Analytics On Real-time Streaming Data</p>
+                    <p>&rarr; Understand The Various NoSql Alternative Database Models</p>
+                    <h3 class="sub-heading theory-heading">Suggested Reference Books:</h3>
+                    <ol>
+                        <li>Bill Franks, -Taming the Big Data Tidal Wave: Finding Opportunities in Huge Data Streams
+                            with Advanced Analytics | |, Wiley and SAS Business Series, 2012.</li>
+                        <li>David Loshin, "Big Data Analytics: From Strategic Planning to Enterprise Integration with
+                            Tools, Techniques, NoSQL, and Graph", 2013.</li>
+                        <li>Michael Berthold, David J. Hand, -Intelligent Data Analysis | |, Springer, Second Edition,
+                            2007.</li>
+                        <li>Michael Minelli, Michelle Chambers, and Ambiga Dhiraj, "Big Data, Big Analytics: Emerging
+                            Business Intelligence and Analytic Trends for Today's Businesses", Wiley, 2013.</li>
+                        <li>J. Sadalage and M. Fowler, "NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot
+                            Persistence", Addison-Wesley Professional, 2012.</li>
+                        <li>Richard Cotton, "Learning R - A Step-by-step Function Guide to Data Analysis,, O'Reilly
+                            Media, 2013.</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-812" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Real Time Systems [PEC CS 812]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Hard Vs. Soft Real Time Systems</li>
+                                <li>A Reference Model Of Real Time System</li>
+                                <li>Real-time Scheduling</li>
+                                <li>Clock Driven Approach</li>
+                                <li>Weighted Round-robin Approach</li>
+                                <li>Priority Driven Approach</li>
+                                <li>Dynamic Vs. Static System</li>
+                                <li>Effective Release Times And Deadlines</li>
+                                <li>EDF And LST Algorithm</li>
+                                <li>Optimality And Non-Optimality Of The EDF And LST Algorithms</li>
+                                <li>Off Line Vs. Online Scheduling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Clock-Driven Scheduling</li>
+                                <li>Static</li>
+                                <li>Time-Driven Scheduler</li>
+                                <li>General Structure Of Cyclic Schedules</li>
+                                <li>Cyclic Executives</li>
+                                <li>Improving The Average Response Time Of Aperiodic Jobs</li>
+                                <li>Scheduling Sporadic Jobs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Priority Driven Scheduling Of Periodic Tasks</li>
+                                <li>Fixe-priority Vs. Dynamic Priority Algorithms</li>
+                                <li>Maximum Schedulable Utilization</li>
+                                <li>Optimality Of The RM And DM Algorithms</li>
+                                <li>A Schedulability Test For Fixed-priority Tasks With Short Response Times</li>
+                                <li>Sufficient Schedulability Conditions For The RM And DM Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Scheduling Aperiodic And Sporadic Jobs In Priority-Driven Systems</li>
+                                <li>Assumptions And Approaches</li>
+                                <li>Deferrable Servers</li>
+                                <li>Sporadic Servers</li>
+                                <li>Constant Utilization</li>
+                                <li>Total Bandwidth And Weighted Fair-Queueing Servers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Resources And Resource Access Control</li>
+                                <li>Resource Contention</li>
+                                <li>Resource Access Control</li>
+                                <li>Non-preemptive Critical Section</li>
+                                <li>Basic Priority-Inheritance Protocol</li>
+                                <li>Basic Priority Ceiling Protocol</li>
+                                <li>Stack Based</li>
+                                <li>Priority-ceiling Protocol</li>
+                                <li>Preemption Ceiling Protocol</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: (Lecture 5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Multiprocessor Scheduling</li>
+                                <li>Resource Access Control</li>
+                                <li>Synchronization</li>
+                                <li>Model Of Multiprocessor & Distributed Systems</li>
+                                <li>Task Assignment</li>
+                                <li>Multiprocessor Priority-ceiling Protocol</li>
+                                <li>Elements Of Scheduling Algorithms For End-to-End Periodic Tasks</li>
+                                <li>IPS Protocols</li>
+                                <li>PM Protocols</li>
+                                <li>MPM Protocol</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>Real-Time system by Jane W. S. Liu, Pearson Education</li>
+                        <li>Real-Time Systems by C. M. Krishna and K. G. Shin, McGraw Hill</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcome:</h3>
+                    <p><strong>After learning this subject, students will learn various types of Real Time Systems,
+                            Periodic and Aperiodic tasks, different types of scheduling algorithms in RTS(Clock Driven,
+                            Priority Driven), Priority Driven Scheduling Of Periodic Tasks, Priority Driven Scheduling
+                            of Aperiodic and Sporadic Jobs, Different protocols for resource access controls, Scheduling
+                            approach in multiprocessor Real Time Systems etc.</strong></p>
+                </section>
+                <section id="subject-PEC-CS-813" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Block Chain [PEC CS 813]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objective of the Course:</h3>
+                    <p>To Provide Conceptual Understanding Of How Block Chain Technology Can Be Used To Innovate And
+                        Improve Business Processes. The Course Covers The Technological Underpinning Of Block Chain
+                        Operations</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lectures 6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Overview Of Block Chain</li>
+                                <li>Public Ledgers</li>
+                                <li>Bitcoin</li>
+                                <li>Smart Contracts</li>
+                                <li>Block In A Block Chain</li>
+                                <li>Transactions</li>
+                                <li>Distributed Consensus</li>
+                                <li>Public Vs Private Block Chain</li>
+                                <li>Understanding Crypto Currency To Block Chain</li>
+                                <li>Permissioned Model Of Block Chain</li>
+                                <li>Overview Of Security Aspects Of Block Chain Basic Crypto Primitives</li>
+                                <li>Cryptographic Hash Function</li>
+                                <li>Properties Of A Hash Function</li>
+                                <li>Hash Pointer And Merkle Tree</li>
+                                <li>Digital Signature</li>
+                                <li>Public Key Cryptography</li>
+                                <li>A Basic Cryptocurrency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Block Chain With Crypto Currency</li>
+                                <li>Bitcoin And Block Chain</li>
+                                <li>Creation Of Coins</li>
+                                <li>Payments And Double Spending</li>
+                                <li>Bitcoin Scripts</li>
+                                <li>Bitcoin P2P Network</li>
+                                <li>Transaction In Bitcoin Network</li>
+                                <li>Block Mining</li>
+                                <li>Block Propagation And Block Relay</li>
+                                <li>Working With Consensus In Bitcoin</li>
+                                <li>Distributed Consensus In Open Environments</li>
+                                <li>Consensus In A Bitcoin Network</li>
+                                <li>Proof Of Work (PoW)</li>
+                                <li>Basic Introduction</li>
+                                <li>Hashcash PoW</li>
+                                <li>Bitcoin PoW</li>
+                                <li>Attacks On Pow And The Monopoly Problem</li>
+                                <li>Proof Of Stake</li>
+                                <li>Proof Of Burn And Proof Of Elapsed Time</li>
+                                <li>The Life Of A Bitcoin Miner</li>
+                                <li>Mining Difficulty</li>
+                                <li>Mining Pool</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lectures 12 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Block Chain For Enterprises</li>
+                                <li>Permissioned Block Chain</li>
+                                <li>Permissioned Model And Use Cases</li>
+                                <li>Design Issues For Permissioned Block Chains</li>
+                                <li>Execute Contracts</li>
+                                <li>State Machine Replication</li>
+                                <li>Overview Of Consensus Models For Permissioned Block Chain</li>
+                                <li>Distributed Consensus In Closed Environment</li>
+                                <li>Paxos</li>
+                                <li>RAFT Consensus</li>
+                                <li>Byzantine General Problem</li>
+                                <li>Byzantine Fault Tolerant System</li>
+                                <li>Lamport-Shostak-Pease BFT Algorithm</li>
+                                <li>BFT Over Asynchronous Systems</li>
+                                <li>Enterprise Application Of Block Chain</li>
+                                <li>Cross Border Payments</li>
+                                <li>Know Your Customer (KYC)</li>
+                                <li>Food Security</li>
+                                <li>Mortgage Over Block Chain</li>
+                                <li>Block Chain Enabled Trade</li>
+                                <li>We Trade Trade Finance Network</li>
+                                <li>Supply Chain Financing</li>
+                                <li>Identity On Block Chain</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lectures 12 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Block Chain Application Development</li>
+                                <li>Hyperledger Fabric</li>
+                                <li>Architecture</li>
+                                <li>Identities And Policies</li>
+                                <li>Membership And Access Control</li>
+                                <li>Channels</li>
+                                <li>Transaction Validation</li>
+                                <li>Writing Smart Contract Using Hyperledger Fabric</li>
+                                <li>Writing Smart Contract Using Ethereum</li>
+                                <li>Overview Of Ripple And Corda</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">List of Suggested Books:</h3>
+                    <ol>
+                        <li>Melanie Swan, "Block Chain: Blueprint for a New Economy", O'Reilly, 2015</li>
+                        <li>Josh Thompsons, "Block Chain: The Block Chain for Beginners- Guide to Block Chain Technology
+                            and Leveraging Block Chain Programming"</li>
+                        <li>Daniel Drescher, "Block Chain Basics", Apress; 1st edition, 2017</li>
+                        <li>Anshul Kaushik, "Block Chain and Crypto Currencies", Khanna Publishing House, Delhi.</li>
+                        <li>Imran Bashir, "Mastering Block Chain: Distributed Ledger Technology, Decentralization and
+                            Smart Contracts Explained", Packt Publishing</li>
+                        <li>Ritesh Modi, "Solidity Programming Essentials: A Beginner's Guide to Build Smart Contracts
+                            for Ethereum and Block Chain", Packt Publishing</li>
+                        <li>Salman Baset, Luc Desrosiers, Nitin Gaur, Petr Novotny, Anthony O'Dowd, Venkatraman
+                            Ramakrishna, "Hands-On Block Chain with Hyperledger: Building Decentralized Applications
+                            with Hyperledger Fabric and Composer", Import, 2018</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p><strong>At the end of this course, the students will be able to:</strong></p>
+                    <p>&rarr; Understand Block Chain Technology</p>
+                    <p>&rarr; Develop Block Chain Based Solutions And Write Smart Contract Using Hyperledger Fabric And
+                        Ethereum Frameworks</p>
+                    <p>&rarr; Build And Deploy Block Chain Application For On Premise And Cloud Based Architecture</p>
+                    <p>&rarr; Integrate Ideas From Various Domains And Implement Them Using Block Chain Technology In
+                        Different Perspectives</p>
+                </section>
+                <section id="subject-PEC-CS-814" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Optimization Techniques [PEC CS 814]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>To Introduce Optimization Techniques Using Both Linear And Non-linear Programming</p>
+                    <p>After An Adequate Introduction To Linear Algebra And Probability Theory And Optimization
+                        Techniques Students Will Learn To Frame Engineering Minima Maxima Problems In The Framework Of
+                        Optimization Problems</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1:(Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Optimization Techniques</li>
+                                <li>Model Formulation</li>
+                                <li>Models</li>
+                                <li>General L.R Formulation</li>
+                                <li>Simplex Techniques</li>
+                                <li>Sensitivity Analysis</li>
+                                <li>Inventory Control Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2:(Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Formulation Of A LPP</li>
+                                <li>Graphical Solution Revised Simplex Method</li>
+                                <li>Duality Theory</li>
+                                <li>Dual Simplex Method</li>
+                                <li>Sensitivity Analysis</li>
+                                <li>Parametric Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3:</strong>
+                            <ul class="unit-topics">
+                                <li>T Flow Problem</li>
+                                <li>Max Flow Problem</li>
+                                <li>CPM/PERT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4:(Lectures 7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Scheduling And Sequencing</li>
+                                <li>Single Server And Multiple Server Models</li>
+                                <li>Deterministic Inventory Models</li>
+                                <li>Probabilistic Inventory Control Models</li>
+                                <li>Geometric Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5:(Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Competitive Models</li>
+                                <li>Single And Multi-channel Problems</li>
+                                <li>Sequencing Models</li>
+                                <li>Dynamic Programming</li>
+                                <li>Flow In Networks</li>
+                                <li>Elementary Graph Theory</li>
+                                <li>Game Theory Simulation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>H.A. Taha, Operations Research, An Introduction, PHI, 2008</li>
+                        <li>H.M. Wagner, Principles of Operations Research, PHI, Delhi, 1982</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Suggested Reference Books:</h3>
+                    <ol>
+                        <li>J.C. Pant, Introduction to Optimisation: Operations Research, Jain Brothers, Delhi, 2008
+                        </li>
+                        <li>Hitler Libermann Operations Research: McGraw Hill Pub. 2009</li>
+                        <li>Pannerselvam, Operations Research: Prentice Hall of India 2010</li>
+                        <li>Harvey M Wagner, Principles of Operations Research: Prentice Hall of India 2010</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p><strong>After completion of course:</strong></p>
+                    <p>&rarr; Students Should Able To Apply The Dynamic Programming To Solve Problems Of Discreet And
+                        Continuous Variables</p>
+                    <p>&rarr; Students Should Able To Apply The Concept Of Non-linear Programming</p>
+                    <p>&rarr; Students Should Able To Carry Out Sensitivity Analysis</p>
+                    <p>&rarr; Student Should Able To Model The Real World Problem And Simulate It</p>
+                </section>
+                <section id="subject-PEC-CS-815" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Information Retrieval [PEC CS 815]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objective of the Course:</h3>
+                    <p>To Introduce Students To Information Retrieval Systems And To Study Theoretical Aspects As Well
+                        As Implementation Issues Of Classical And Modern Retrieval Problems. Discuss Mechanisms Of Web
+                        Search Along With The Details Of Ranking Algorithms. Introduce Basic Concepts Of Text
+                        Categorization And Recommender Systems</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lectures 12 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Information Retrieval</li>
+                                <li>Goals And History Of IR</li>
+                                <li>The Impact Of The Web On IR</li>
+                                <li>Unstructured And Semi-structured Text</li>
+                                <li>Basic IR Models Inverted Index And Boolean Queries</li>
+                                <li>Boolean And Vector-space Retrieval Models</li>
+                                <li>Ranked Retrieval</li>
+                                <li>Text-similarity Metrics</li>
+                                <li>TF-IDF (term Frequency/inverse Document Frequency) Weighting</li>
+                                <li>Cosine Similarity</li>
+                                <li>Basic Tokenizing</li>
+                                <li>Indexing</li>
+                                <li>Implementation Of Vector-Space Retrieval</li>
+                                <li>Simple Tokenizing</li>
+                                <li>Stop-word Removal</li>
+                                <li>Stemming</li>
+                                <li>Inverted Indices</li>
+                                <li>Efficient Processing With Sparse Vectors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lectures 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Experimental Evaluation Of IR</li>
+                                <li>Performance Metrics</li>
+                                <li>Recall</li>
+                                <li>Precision</li>
+                                <li>F-measure</li>
+                                <li>Query Operations</li>
+                                <li>Relevance Feedback</li>
+                                <li>Query Expansion</li>
+                                <li>Query Languages</li>
+                                <li>Text Representation</li>
+                                <li>Word Statistics</li>
+                                <li>Porter Stemmer</li>
+                                <li>Index Term Selection</li>
+                                <li>Using Thesauri</li>
+                                <li>Metadata And Markup Languages (SGML, HTML, XML)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Web Search</li>
+                                <li>Introduction</li>
+                                <li>Spidering</li>
+                                <li>Interfaces</li>
+                                <li>Link Analysis Text Categorization</li>
+                                <li>Categorization Algorithms</li>
+                                <li>Language-Model Based Retrieval</li>
+                                <li>Text Clustering</li>
+                                <li>Applications To Web Search And Information Organization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lectures 10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Recommender Systems</li>
+                                <li>Collaborative Filtering And Content-based Recommendation Of Documents And Products
+                                </li>
+                                <li>Information Extraction And Integration</li>
+                                <li>Extracting Data From Text</li>
+                                <li>Semantic Web</li>
+                                <li>Collecting And Integrating Specialized Information On The Web</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">List of Suggested Books:</h3>
+                    <ol>
+                        <li>Manning, Raghavan and Schutze, "Introduction to Information Retrieval", Cambridge University
+                            Press.</li>
+                        <li>Baeza-Yates and Ribeiro-Neto, "Modern Information Retrieval", Addison Wesley.</li>
+                    </ol>
+                </section>
+                <section id="subject-PEC-CS-816" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Bitcoin and Crypto Currencies [PEC CS 816]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Cryptography</li>
+                                <li>Cryptographic Hash Functions</li>
+                                <li>SHA-256</li>
+                                <li>Hash Pointers And Data Structures</li>
+                                <li>Merkle Tree</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Signatures</li>
+                                <li>Elliptic Curve Group</li>
+                                <li>Elliptic Curve Digital Signature Algorithm (ECDSA)</li>
+                                <li>Public Keys As Identities</li>
+                                <li>A Simple Crypto Currency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Centralization Vs. Decentralization</li>
+                                <li>Distributed Consensus</li>
+                                <li>Consensus Without Identity Using A Block Chain</li>
+                                <li>Incentives And Proof Of Work</li>
+                                <li>Bitcoin Transactions</li>
+                                <li>Bitcoin Scripts</li>
+                                <li>Applications Of Bitcoin Scripts</li>
+                                <li>Bitcoin Blocks</li>
+                                <li>The Bitcoin Network</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Simple Local Storage</li>
+                                <li>Hot And Cold Storage</li>
+                                <li>Splitting And Sharing Keys</li>
+                                <li>Online Wallets And Exchanges</li>
+                                <li>Payment Services</li>
+                                <li>Transaction Fees</li>
+                                <li>Currency Exchange Markets</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: (Lecture 8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Bitcoin Mining</li>
+                                <li>Mining Pools</li>
+                                <li>Mining Incentives And Strategies</li>
+                                <li>Bitcoin And Anonymity</li>
+                                <li>Anonymity Basics</li>
+                                <li>Mixing</li>
+                                <li>Zerocoin And Zerocash</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Book:</h3>
+                    <ol>
+                        <li>Arvind Narayanan, Joseph Bonneau, Edward Felten, Andrew Miller and Steven Goldfeder, Bitcoin
+                            and Cryptocurrency Technologies, 2016.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

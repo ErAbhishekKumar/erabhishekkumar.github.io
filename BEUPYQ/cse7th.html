@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Computer Science & Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Biology for Engineers [100708]</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective- I</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective- II</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- III</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Induction Program [100701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project- I</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship- III</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>16</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Professional Elective Lab- II</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>27</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100708"
+                        data-type="theory">Biology for Engineers</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Open Elective- I"
+                        data-modal-options='[ {"label": "Soft Skills and Interpersonal Communication", "target": "subject-OEC-CS-701", "btn-id": "btn-OEC-CS-701"}, {"label": "History of Science and Technology", "target": "subject-OEC-CS-702", "btn-id": "btn-OEC-CS-702"}, {"label": "Economic Policies in India", "target": "subject-OEC-CS-703", "btn-id": "btn-OEC-CS-703"}, {"label": "Cyber Law and Ethics", "target": "subject-OEC-CS-704", "btn-id": "btn-OEC-CS-704"}, {"label": "Cyber Security", "target": "subject-OEC-CS-705", "btn-id": "btn-OEC-CS-705"}, {"label": "Virtual Reality", "target": "subject-OEC-CS-706", "btn-id": "btn-OEC-CS-706"}, {"label": "3D Printing and Design", "target": "subject-OEC-CS-707", "btn-id": "btn-OEC-CS-707"}, {"label": "Simulation and Modelling", "target": "subject-OEC-CS-708", "btn-id": "btn-OEC-CS-708"} ]'>
+                        Open Elective- I </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective- II"
+                        data-modal-options='[ {"label": "Soft Skills and Interpersonal Communication", "target": "subject-OEC-CS-701", "btn-id": "btn-OEC-CS-701"}, {"label": "History of Science and Technology", "target": "subject-OEC-CS-702", "btn-id": "btn-OEC-CS-702"}, {"label": "Economic Policies in India", "target": "subject-OEC-CS-703", "btn-id": "btn-OEC-CS-703"}, {"label": "Cyber Law and Ethics", "target": "subject-OEC-CS-704", "btn-id": "btn-OEC-CS-704"}, {"label": "Cyber Security", "target": "subject-OEC-CS-705", "btn-id": "btn-OEC-CS-705"}, {"label": "Virtual Reality", "target": "subject-OEC-CS-706", "btn-id": "btn-OEC-CS-706"}, {"label": "3D Printing and Design", "target": "subject-OEC-CS-707", "btn-id": "btn-OEC-CS-707"}, {"label": "Simulation and Modelling", "target": "subject-OEC-CS-708", "btn-id": "btn-OEC-CS-708"} ]'>
+                        Open Elective- II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- III"
+                        data-modal-options='[ {"label": "Data Science", "target": "subject-105701", "btn-id": "btn-105701"}, {"label": "Computational Complexity", "target": "subject-105702", "btn-id": "btn-105702"}, {"label": "Advanced Computer Architecture", "target": "subject-105703", "btn-id": "btn-105703"}, {"label": "Theory of Computation", "target": "subject-105704", "btn-id": "btn-105704"}, {"label": "Internet of Things", "target": "subject-105705", "btn-id": "btn-105705"}, {"label": "Natural Language Processing", "target": "subject-105706", "btn-id": "btn-105706"}, {"label": "E-Commerce and ERP", "target": "subject-105707", "btn-id": "btn-105707"}, {"label": "Robotics and Robot Application", "target": "subject-105708", "btn-id": "btn-105708"} ]'>
+                        Program Elective- III </button><button class="tab-btn" data-target="subject-100701"
+                        data-type="theory">Induction Program</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-Project-I"
+                        data-type="lab">Project- I</button><button class="tab-btn"
+                        data-target="subject-Summer-Entrepreneurship-III" data-type="lab">Summer Entrepreneurship-
+                        III</button><button class="tab-btn" data-modal-trigger="elective-modal" data-type="lab"
+                        data-modal-title="Professional Elective Lab- II"
+                        data-modal-options='[ {"label": "Advance Networking (Cisco)", "target": "subject-100710", "btn-id": "btn-100710"}, {"label": "Python as tool for Machine learning", "target": "subject-100711", "btn-id": "btn-100711"}, {"label": "Working on R", "target": "subject-100712", "btn-id": "btn-100712"}, {"label": "Image Processing Lab", "target": "subject-100713", "btn-id": "btn-100713"}, {"label": "Advance AI Laboratory", "target": "subject-100714", "btn-id": "btn-100714"} ]'>
+                        Professional Elective Lab- II </button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-100708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Biology for Engineers [100708]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>To Convey That Biology Is As Important A Scientific Discipline As Mathematics,
+                                    Physics And Chemistry</li>
+                                <li>Bring Out The Fundamental Differences Between Science And Engineering By Drawing A
+                                    Comparison Between Eye And Camera, Bird Flying And Aircraft</li>
+                                <li>Mention The Most Exciting Aspect Of Biology As An Independent Scientific Discipline
+                                </li>
+                                <li>Why Do We Need To Study Biology</li>
+                                <li>Discuss How Biological Observations Of The 18th Century Lead To Major Discoveries
+                                </li>
+                                <li>Examples From Brownian Motion And The Origin Of Thermodynamics By Referring To The
+                                    Original Observation Of Robert Brown And Julius Mayor</li>
+                                <li>These Examples Will Highlight The Fundamental Importance Of Observations In Any
+                                    Scientific Inquiry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Classification</strong>
+                            <ul class="unit-topics">
+                                <li>To Convey That Classification Per Se Is Not What Biology Is All About</li>
+                                <li>The Underlying Criterion, Such As Morphological, Biochemical Or Ecological, Can Be
+                                    Highlighted</li>
+                                <li>Hierarchy Of Life Forms At Phenomenological Level</li>
+                                <li>A Common Thread Weaves This Hierarchy Classification</li>
+                                <li>Discuss Classification Based On (a) Cellularity Unicellular Or Multicellular (b)
+                                    Ultrastructure Prokaryotes Or Eukaryotes</li>
+                                <li>Energy And Carbon Utilisation Autotrophs, Heterotrophs, Lithotrophs</li>
+                                <li>Ammonia Excretion Ammonotelic, Uricotelic, Ureotelic</li>
+                                <li>Habitat Aquatic Or Terrestrial</li>
+                                <li>Molecular Taxonomy Three Major Kingdoms Of Life</li>
+                                <li>A Given Organism Can Come Under Different Categories Based On Classification</li>
+                                <li>Model Organisms For The Study Of Biology Come From Different Groups</li>
+                                <li>E.coli, S.cerevisiae, D. Melanogaster, C. Elegance, A. Thaliana, M. Musculus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Genetics</strong>
+                            <ul class="unit-topics">
+                                <li>To Convey That Genetics Is To Biology What Newton's Laws Are To Physical Sciences
+                                </li>
+                                <li>Mendel's Laws</li>
+                                <li>Concept Of Segregation And Independent Assortment</li>
+                                <li>Concept Of Allele</li>
+                                <li>Gene Mapping</li>
+                                <li>Gene Interaction</li>
+                                <li>Epistasis</li>
+                                <li>Meiosis And Mitosis Are Taught As A Part Of Genetics</li>
+                                <li>Emphasis To Be Given Not To The Mechanics Of Cell Division Nor The Phases But How
+                                    Genetic Material Passed From Parent To Offspring</li>
+                                <li>Concepts Of Recessiveness And Dominance</li>
+                                <li>Concept Of Mapping Of Phenotype To Genes</li>
+                                <li>Discuss About The Single Gene Disorders In Humans</li>
+                                <li>Discuss The Concept Of Complementation Using Human Genetics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Biomolecules</strong>
+                            <ul class="unit-topics">
+                                <li>To Convey That All Forms Of Life Have The Same Building Blocks And Yet The
+                                    Manifestations Are As Diverse As One Can Imagine</li>
+                                <li>Molecules Of Life</li>
+                                <li>In This Context Discuss Monomeric Units And Polymeric Structures</li>
+                                <li>Discuss About Sugars, Starch And Cellulose</li>
+                                <li>Amino Acids And Proteins</li>
+                                <li>Nucleotides And DNA/RNA</li>
+                                <li>Two Carbon Units And Lipids</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Enzymes</strong>
+                            <ul class="unit-topics">
+                                <li>To Convey That Without Catalysis Life Would Not Have Existed On Earth</li>
+                                <li>Enzymology</li>
+                                <li>How To Monitor Enzyme Catalysed Reactions</li>
+                                <li>How Does An Enzyme Catalyse Reactions</li>
+                                <li>Enzyme Classification</li>
+                                <li>Mechanism Of Enzyme Action</li>
+                                <li>Discuss At Least Two Examples</li>
+                                <li>Enzyme Kinetics And Kinetic Parameters</li>
+                                <li>Why Should We Know These Parameters To Understand Biology</li>
+                                <li>RNA Catalysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Information Transfer</strong>
+                            <ul class="unit-topics">
+                                <li>The Molecular Basis Of Coding And Decoding Genetic Information Is The Universal
+                                    Molecular Basis Of Information Transfer</li>
+                                <li>DNA As A Genetic Material</li>
+                                <li>Hierarchy Of DNA Structure From Single Stranded To Double Helix To Nucleosomes</li>
+                                <li>Concept Of Genetic Code</li>
+                                <li>Universality And Degeneracy Of Genetic Code</li>
+                                <li>Define Genes In Terms Of Complementation And Recombination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Macromolecular analysis</strong>
+                            <ul class="unit-topics">
+                                <li>How To Analyse Biological Processes At The Reductionist Level</li>
+                                <li>Proteins Structure And Function</li>
+                                <li>Hierarchy In Protein Structure</li>
+                                <li>Primary Secondary, Tertiary And Quaternary Structure</li>
+                                <li>Proteins As Enzymes, Transporters, Receptors And Structural Elements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 8: Metabolism</strong>
+                            <ul class="unit-topics">
+                                <li>The Fundamental Principles Of Energy Transactions Are The Same In The Physical And
+                                    Biological World</li>
+                                <li>Thermodynamics As Applied To Biological Systems</li>
+                                <li>Exothermic And Endothermic Versus Endergonic And Exergonic Reactions</li>
+                                <li>Concept Of Keqand Its Relation To Standard Free Energy</li>
+                                <li>Spontaneity</li>
+                                <li>ATP As An Energy Currency</li>
+                                <li>This Should Include The Breakdown Of Glucose To CO2 + H20 (Glycolysis And Krebs
+                                    Cycle) And Synthesis Of Glucose From CO2 And H20 (Photosynthesis)</li>
+                                <li>Energy Yielding And Energy Consuming Reactions</li>
+                                <li>Concept Of Energy Charge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 9: Microbiology</strong>
+                            <ul class="unit-topics">
+                                <li>Concept Of Single Celled Organisms</li>
+                                <li>Concept Of Species And Strains</li>
+                                <li>Identification And Classification Of Microorganisms</li>
+                                <li>Microscopy</li>
+                                <li>Ecological Aspects Of Single Celled Organisms</li>
+                                <li>Sterilization And Media Compositions</li>
+                                <li>Growth Kinetics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Reference Books:</h3>
+                    <ol>
+                        <li>Biology: A global approach: Campbell, N. A.; Reece, J. B.; Urry, Lisa; Cain, M, L.;
+                            Wasserman, S. A.; Minorsky, P. V.; Jackson, R. B. Pearson Education Ltd</li>
+                        <li>Outlines of Biochemistry, Conn, E.E; Stumpf, P.K; Bruening, G; Doi, R.H. John Wiley and Sons
+                        </li>
+                        <li>Principles of Biochemistry (V Edition), By Nelson, D. L.; and Cox, M. M.W.H. Freeman and
+                            Company</li>
+                        <li>Molecular Genetics (Second edition), Stent, G. S.; and Calendar, R. W.H. Freeman and
+                            company, Distributed by Satish Kumar Jain for CBS Publisher</li>
+                        <li>Microbiology, Prescott, L.M.J.P. Harley and C.A. Klein 1995. 2nd edition Wm, C. Brown
+                            Publishers</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>&rarr; Describe How Biological Observations Of The 18th Century Lead To Major Discoveries</p>
+                    <p>&rarr; Convey That Classification Per Se Is Not What Biology Is All About But Highlight The
+                        Underlying Criteria, Such As Morphological, Biochemical And Ecological</p>
+                    <p>&rarr; Highlight The Concepts Of Recessiveness And Dominance During The Passage Of Genetic
+                        Material From Parent To Offspring</p>
+                    <p>&rarr; Convey That All Forms Of Life Have The Same Building Blocks And Yet The Manifestations Are
+                        As Diverse As One Can Imagine</p>
+                    <p>&rarr; Classify Enzymes And Distinguish Between Different Mechanisms Of Enzyme Action</p>
+                    <p>&rarr; Identify DNA As A Genetic Material In The Molecular Basis Of Information Transfer</p>
+                    <p>&rarr; Analyse Biological Processes At The Reductionist Level</p>
+                    <p>&rarr; Apply Thermodynamic Principles To Biological Systems</p>
+                    <p>&rarr; Identify And Classify Microorganisms</p>
+                </section>
+                <section id="subject-100701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Induction Program [100701]</h2>
+                    <p>Induction program (mandatory) - 3 weeks duration. Induction program for students to be offered
+                        right at the start of the first year.</p>
+                    <ul class="unit-topics">
+                        <li>Physical Activity</li>
+                        <li>Creative Arts</li>
+                        <li>Universal Human Values</li>
+                        <li>Literary</li>
+                        <li>Proficiency Modules</li>
+                        <li>Lectures by Eminent People</li>
+                        <li>Visits to local Areas</li>
+                        <li>Familiarization to Dept./Branch & Innovations</li>
+                    </ul>
+                </section>
+                <section id="subject-Project-I" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project- I</h2>
+                    <p>Details for Project-I will be provided by the department. This component carries 6 credits.</p>
+                </section>
+                <section id="subject-Summer-Entrepreneurship-III" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship- III</h2>
+                    <p>Details for Summer Entrepreneurship-III will be provided by the department. This component
+                        carries 8 credits.</p>
+                </section>
+                <section id="subject-OEC-CS-701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Soft Skills and Interpersonal Communication [OEC CS 701]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Self-Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Swot Analysis</li>
+                                <li>Who Am I, Attributes</li>
+                                <li>Importance Of Self Confidence, Self Esteem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Creativity</strong>
+                            <ul class="unit-topics">
+                                <li>Out Of Box Thinking</li>
+                                <li>Lateral Thinking</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Attitude and Motivation</strong>
+                            <ul class="unit-topics">
+                                <li>Factors Influencing Attitude</li>
+                                <li>Challenges And Lessons From Attitude</li>
+                                <li>Etiquette</li>
+                                <li>Factors Of Motivation</li>
+                                <li>Self-Talk</li>
+                                <li>Intrinsic & Extrinsic Motivators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Goal Setting and Time Management</strong>
+                            <ul class="unit-topics">
+                                <li>Wish List</li>
+                                <li>Smart Goals</li>
+                                <li>Blueprint For Success</li>
+                                <li>Short Term, Long Term, Lifetime Goals</li>
+                                <li>Value Of Time</li>
+                                <li>Diagnosing Time Management</li>
+                                <li>Weekly Planner</li>
+                                <li>To Do List</li>
+                                <li>Prioritizing Work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Interpersonal Skills</strong>
+                            <ul class="unit-topics">
+                                <li>Gratitude Understanding The Relationship Between Leadership Networking & Team Work
+                                </li>
+                                <li>Assessing Interpersonal Skills Situation Description Of Interpersonal Skill</li>
+                                <li>Team Work Necessity Of Team Work Personally, Socially And Educationally</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Book:</h3>
+                    <ol>
+                        <li>Soft Skills, 2015, Career Development Centre, Green Pearl Publications.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference:</h3>
+                    <ol>
+                        <li>Covey Sean, Seven Habits of Highly Effective Teens, New York, Fireside Publishers, 1998.
+                        </li>
+                        <li>Carnegie Dale, How to Win Friends and Influence People, New York: Simon & Schuster, 1998.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: History of Science and Technology [OEC CS 702]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Concepts and Perspectives</strong>
+                            <ul class="unit-topics">
+                                <li>Meaning Of History Objectivity, Determinism, Relativism, Causation, Generalization
+                                    In History</li>
+                                <li>Moral Judgment In History Extent Of Subjectivity, Contrast With Physical Sciences,
+                                    Interpretation And Speculation, Causation Versus Evidence, Concept Of Historical
+                                    Inevitability, Historical Positivism</li>
+                                <li>Science And Technology-Meaning, Scope And Importance</li>
+                                <li>Interaction Of Science, Technology & Society</li>
+                                <li>Sources Of History On Science And Technology In India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Historiography of Science and Technology in
+                                India</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To The Works Of D.D. Kosambi, Dharmpal, Debiprasad Chattopadhyay,
+                                    Rehman, S. Irfan Habib, Deepak Kumar, Dhruv Raina, And Others</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Science and Technology in Ancient India</strong>
+                            <ul class="unit-topics">
+                                <li>Technology In Pre-historic Period Beginning Of Agriculture And Its Impact On
+                                    Technology</li>
+                                <li>Science And Technology During Vedic And Later Vedic Times</li>
+                                <li>Science And Technology From 1st Century AD To C-1200</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Science and Technology in Medieval India</strong>
+                            <ul class="unit-topics">
+                                <li>Legacy Of Technology In Medieval India</li>
+                                <li>Interactions With Arabs Development In Medical Knowledge</li>
+                                <li>Interaction Between Unani And Ayurveda And Alchemy</li>
+                                <li>Astronomy And Mathematics: Interaction With Arabic Sciences</li>
+                                <li>Science And Technology On The Eve Of British Conquest</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Science and Technology in Colonial India</strong>
+                            <ul class="unit-topics">
+                                <li>Science And The Empire</li>
+                                <li>Indian Response To Western Science</li>
+                                <li>Growth Of Techno-scientific Institutions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Science and Technology in a Post-Independent
+                                India</strong>
+                            <ul class="unit-topics">
+                                <li>Science, Technology And Development Discourse</li>
+                                <li>Shaping Of The Science And Technology Policy</li>
+                                <li>Developments In The Field Of Science And Technology</li>
+                                <li>Science And Technology In Globalizing India</li>
+                                <li>Social Implications Of New Technologies Like The Information Technology And
+                                    Biotechnology</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-OEC-CS-703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Economic Policies in India [OEC CS 703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Framework of Indian Economy</strong>
+                            <ul class="unit-topics">
+                                <li>National Income Trends And Structure Of National Income</li>
+                                <li>Demographic Features And Indicators Of Economic Growth</li>
+                                <li>Development Rural-Urban Migration And Issues Related To Urbanization</li>
+                                <li>Poverty Debate And Inequality, Nature, Policy And Implications</li>
+                                <li>Unemployment-Nature, Central And State Government's Policies, Policy Implications
+                                </li>
+                                <li>Employment Trends In Organized And Unorganized Sector</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Development Strategies in India</strong>
+                            <ul class="unit-topics">
+                                <li>Agricultural Pricing, Marketing And Financing Of Primary Sector</li>
+                                <li>Economic Reforms Rationale Of Economic Reforms</li>
+                                <li>Liberalization, Privatization And Globalization Of The Economy</li>
+                                <li>Changing Structure Of India's Foreign Trade</li>
+                                <li>Role Of Public Sector Redefining The Role Of Public Sector</li>
+                                <li>Government Policy Towards Public Sector</li>
+                                <li>Problems Associated With Privatization</li>
+                                <li>Issues Regarding Deregulation-Disinvestment And Future Of Economic Reforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: The Economic Policy and Infrastructure
+                                Development</strong>
+                            <ul class="unit-topics">
+                                <li>Energy And Transport</li>
+                                <li>Social Infrastructure Education, Health And Gender Related Issues</li>
+                                <li>Social Inclusion</li>
+                                <li>Issues And Policies In Financing Infrastructure Development</li>
+                                <li>Indian Financial System Issues Of Financial Inclusion</li>
+                                <li>Financial Sector Reforms-review Of Monetary Policy Of R.B.I</li>
+                                <li>Capital Market In India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: The Economic Policy and Industrial Sector</strong>
+                            <ul class="unit-topics">
+                                <li>Industrial Sector In Pre-reforms Period</li>
+                                <li>Growth And Pattern Of Industrialization</li>
+                                <li>Industrial Sector In Post-reform Period Growth And Pattern Of Micro, Small, Medium
+                                    Enterprises</li>
+                                <li>Problems Of India's Industrial Exports</li>
+                                <li>Labor Market Issues In Labor Market Reforms And Approaches To Employment Generation
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Dhingra, Ishwar C. [2006],'Indian Economy,' Sultan Chand and Sons, New Delhi.</li>
+                        <li>Datt, Ruddar and Sundaram, K.P.M. [Latest edition] ,'Indian Economy,' S. Chand and Co, New
+                            Delhi.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Brahmananda, P.R. and V.A. Panchmukhi. [2001], Ed. 'Development Experience in Indian
+                            Economy, Inter-state Perspective,' Bookwell, New Delhi.</li>
+                        <li>Gupta,S.P. [1989],'Planning and Development in India: A Critique,' Allied Publishers Private
+                            Limited, New Delhi.</li>
+                        <li>Bhagwati, Jagdish. [2004],'In Defense of Globalization,' Oxford University Press, U.K.</li>
+                    </ol>
+                </section>
+                <section id="subject-OEC-CS-704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Cyber Law and Ethics [OEC CS 704]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>&rarr; Discuss The Structure Of The Legal System And How It Enforces Laws Governing The Internet
+                    </p>
+                    <p>&rarr; Evaluate The Ethical Responsibilities Of Internet Users, Service Providers, And Content
+                        Providers</p>
+                    <p>&rarr; Examine The Constitutional Considerations Concerning Free Speech And Content Controls In
+                        Cyberspace</p>
+                    <p>&rarr; Investigate A Security Breach And The Legally Required Responses To A Breach</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Computers And Its Impact In Society</li>
+                                <li>Overview Of Computer And Web Technology</li>
+                                <li>The Internet And Online Resources</li>
+                                <li>Security Of Information</li>
+                                <li>Introduction To Ethical Theory And Its Application To The Internet</li>
+                                <li>Definition Of Cyber Security</li>
+                                <li>Search Engines, E - mails And WWW</li>
+                                <li>E - commerce & M - commerce System Security</li>
+                                <li>Government Regulation Of The Internet</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Cyber Crimes & Legal Framework</strong>
+                            <ul class="unit-topics">
+                                <li>Distinction Between Cyber Crime And Conventional Crime</li>
+                                <li>Cyber Criminals And Their Objectives</li>
+                                <li>Kinds Of Cyber Crime: Hacking, Digital Forgery, Cyber Stalking/Harassment, Identity
+                                    Theft & Fraud, Cyber Terrorism, Cyber Defamation, Computer Vandalism Etc</li>
+                                <li>Cyber Crimes Against Individuals, Institution And State</li>
+                                <li>Issues In Data And Software Privacy</li>
+                                <li>Cyber Forensics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Introduction to Indian Cyber Law</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of General Laws And Procedures In India</li>
+                                <li>Different Offences Under IT Act</li>
+                                <li>Overview Of Information Technology Act, 2000 And Information Technology (Amendment)
+                                    Act, 2008</li>
+                                <li>National Cyber Security Policy 2013</li>
+                                <li>Offences In Cyber Space Under The Indian Penal Code, 1860</li>
+                                <li>Intellectual Property Issues In Cyberspace</li>
+                                <li>Interface With Copyright Law</li>
+                                <li>Interface With Patent Law</li>
+                                <li>Trademarks & Domain Names Related Issues</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Constitutional & Human Rights Issues in
+                                Cyberspace</strong>
+                            <ul class="unit-topics">
+                                <li>Freedom Of Speech And Expression In Cyberspace</li>
+                                <li>Right To Access Cyberspace</li>
+                                <li>Access To Internet</li>
+                                <li>Right To Privacy</li>
+                                <li>Right To Data Protection</li>
+                                <li>Issues With Cybercrime Using Social Networking Sites</li>
+                                <li>Electronic Commerce</li>
+                                <li>Digital Signatures Technical And Legal Issues</li>
+                                <li>Electronic Contracts</li>
+                                <li>Law Relating To Hardware And Software Layout & Design</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Jonathan Rosenoer, "Cyberlaw: the Law of the Internet" Springer-Verlag New York Inc.</li>
+                        <li>Pavan Duggal, "Cyber Law - An exhaustive section wise Commentary on the Information
+                            Technology Act along with Rules, Regulations, Policies, Notifications etc.", Universal Law
+                            Publishing.</li>
+                        <li>Deborah E. Bouchoux, "Intellectual Property: The Law Of Trademarks, Copyrights, Patents, And
+                            Trade Secrets", Cengage Learning.</li>
+                        <li>M. K. Bhandari, "Law Relating to Intellectual Property Rights", Central Law Publications.
+                        </li>
+                        <li>Vivek Sood, "Cyber Law Simplified", McGraw Hill Education.</li>
+                        <li>Prashant Mali, "Cyber Law & Cyber Crimes Simplified", Cyber Infomedia.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course outcomes:</h3>
+                    <p>&rarr; After The Completion Of Course, Students Are Able To Demonstrate A Critical Understanding
+                        Of The Cyber Law And Cyber-crime With Respect To IT Act</p>
+                </section>
+                <section id="subject-OEC-CS-705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Cyber Security [OEC CS 705]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>The Course Has Been Designed To Give Students An Extensive Overview Of Cyber Security Issues,
+                        Tools And Techniques That Are Critical In Solving Problems In Cyber Security Domains. The Course
+                        Aims At Providing Students With Concepts Of Computer Security, Cryptography, Digital Money,
+                        Secure Protocols, Detection And Other Security Techniques. The Course Will Help Students To
+                        Gauge Understanding In Essential Techniques In Protecting Information Systems, IT
+                        Infrastructure, Analysing And Monitoring Potential Threats And Attacks, Devising Security
+                        Architecture And Implementing Security Solutions. The Students Will Also Have A Wider
+                        Perspective To Information Security From National Security Perspective From Both Technology And
+                        Legal Perspective.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Cyber Security Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Essential Terminologies: Cia, Risks, Breaches, Threats, Attacks, Exploits</li>
+                                <li>Information Gathering (Social Engineering, Foot Printing & Scanning)</li>
+                                <li>Open Source/ Free/ Trial Tools: Nmap, Zenmap, Port Scanners, Network Scanners</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Cryptography and Cryptanalysis</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Cryptography</li>
+                                <li>Symmetric Key Cryptography</li>
+                                <li>Asymmetric Key Cryptography</li>
+                                <li>Message Authentication</li>
+                                <li>Digital Signatures</li>
+                                <li>Applications Of Cryptography</li>
+                                <li>Overview Of Firewalls Types Of Firewalls</li>
+                                <li>User Management</li>
+                                <li>VPN Security</li>
+                                <li>Security Protocols Security At The Application Layer PGP And S/MIME</li>
+                                <li>Security At Transport Layer SSL And TLS</li>
+                                <li>Security At Network Layer IPSec</li>
+                                <li>Open Source/ Free/ Trial Tools: Implementation Of Cryptographic Techniques, OpenSSL,
+                                    Hash Values Calculations MD5, SHA1, SHA256, SHA 512, Steganography (Stools)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Infrastructure and Network Security</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To System Security</li>
+                                <li>Server Security</li>
+                                <li>OS Security</li>
+                                <li>Physical Security</li>
+                                <li>Introduction To Networks</li>
+                                <li>Network Packet Sniffing</li>
+                                <li>Network Design Simulation</li>
+                                <li>DOS/ DDOS Attacks</li>
+                                <li>Asset Management And Audits</li>
+                                <li>Vulnerabilities And Attacks</li>
+                                <li>Intrusion Detection And Prevention Techniques</li>
+                                <li>Host Based Intrusion Prevention Systems</li>
+                                <li>Security Information Management</li>
+                                <li>Network Session Analysis</li>
+                                <li>System Integrity Validation</li>
+                                <li>Open Source/ Free/ Trial Tools: DOS Attacks, DDOS Attacks, Wireshark, Cain & Abel,
+                                    Iptables/ Windows Firewall, Snort, Suricata, Fail2ban</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Cyber Security Vulnerabilities & SafeGuards</strong>
+                            <ul class="unit-topics">
+                                <li>Internet Security</li>
+                                <li>Cloud Computing & Security</li>
+                                <li>Social Network Sites Security</li>
+                                <li>Cyber Security Vulnerabilities Overview</li>
+                                <li>Vulnerabilities In Software</li>
+                                <li>System Administration</li>
+                                <li>Complex Network Architectures</li>
+                                <li>Open Access To Organizational Data</li>
+                                <li>Weak Authentication</li>
+                                <li>Authorization</li>
+                                <li>Unprotected Broadband Communications</li>
+                                <li>Poor Cyber Security Awareness</li>
+                                <li>Cyber Security Safeguards Overview</li>
+                                <li>Access Control</li>
+                                <li>IT Audit</li>
+                                <li>Authentication</li>
+                                <li>Open Web Application Security Project (OWASP)</li>
+                                <li>Web Site Audit And Vulnerabilities Assessment</li>
+                                <li>Open Source/ Free/ Trial Tools: WinAudit, Zap Proxy (OWASP), Burp Suite, DWMA Kit
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Malware</strong>
+                            <ul class="unit-topics">
+                                <li>Explanation Of Malware</li>
+                                <li>Types Of Malware: Virus, Worms, Trojans, Rootkits, Robots, Adware's, Spywares,
+                                    Ransom Wares, Zombies Etc</li>
+                                <li>OS Hardening (Process Management, Memory Management, Task Management, Windows
+                                    Registry/ Services Another Configuration)</li>
+                                <li>Malware Analysis</li>
+                                <li>Open Source/ Free/ Trial Tools: Antivirus Protection, Anti Spywares, System Tuning
+                                    Tools, Anti Phishing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Security in Evolving Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Biometrics</li>
+                                <li>Mobile Computing And Hardening On Android And iOS</li>
+                                <li>IOT Security</li>
+                                <li>Web Server Configuration And Security</li>
+                                <li>Introduction, Basic Security For HTTP Applications And Services</li>
+                                <li>Basic Security For Web Services Like SOAP, REST Etc</li>
+                                <li>Identity Management And Web Services</li>
+                                <li>Authorization Patterns</li>
+                                <li>Security Considerations</li>
+                                <li>Challenges</li>
+                                <li>Open Source/ Free/ Trial Tools: Adb For Android, Xcode For iOS, Implementation Of
+                                    REST/ SOAP Web Services And Security Implementations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Cyber Laws and Forensics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Cyber Security Regulations</li>
+                                <li>Roles Of International Law, The State And Private Sector In Cyberspace</li>
+                                <li>Cyber Security Standards</li>
+                                <li>The INDIAN Cyberspace</li>
+                                <li>National Cyber Security Policy 2013</li>
+                                <li>Introduction To Cyber Forensics</li>
+                                <li>Need Of Cyber Forensics</li>
+                                <li>Cyber Evidence</li>
+                                <li>Documentation And Management Of Crime Sense</li>
+                                <li>Image Capturing And Its Importance</li>
+                                <li>Partial Volume Image</li>
+                                <li>Web Attack Investigations</li>
+                                <li>Denial Of Service Investigations</li>
+                                <li>Internet Crime Investigations</li>
+                                <li>Internet Forensics</li>
+                                <li>Steps For Investigating Internet Crime</li>
+                                <li>Email Crime Investigations</li>
+                                <li>Open Source/ Free/ Trial Tools: Case Studies Related To Cyber Law, Common Forensic
+                                    Tools Like Dd, Md5sum, Shalsum, Ram Dump Analysis, USB Device</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>William Stallings, "Cryptography and Network Security", Pearson Education/PHI, 2006.</li>
+                        <li>V.K. Jain, "Cryptography and Network Security", Khanna Publishing House.</li>
+                        <li>Gupta Sarika, "Information and Cyber Security", Khanna Publishing House, Delhi.</li>
+                        <li>Atul Kahate, "Cryptography and Network Security", McGraw Hill.</li>
+                        <li>V.K. Pachghare, "Cryptography and Information Security", PHI Learning</li>
+                        <li>Nina Godbole, "Information System Security", Wiley</li>
+                        <li>Bothra Harsh, "Hacking", Khanna Publishing House, Delhi.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p><strong>After completion of this course, the students should be able to:</strong></p>
+                    <p>&rarr; Understand, Appreciate, Employ, Design And Implement Appropriate Security Technologies And
+                        Policies To Protect Computers And Digital Information</p>
+                    <p>&rarr; Identify & Evaluate Information Security Threats And Vulnerabilities In Information
+                        Systems And Apply Security Measures To Real Time Scenarios</p>
+                    <p>&rarr; Identify Common Trade-offs And Compromises That Are Made In The Design And Development
+                        Process Of Information Systems</p>
+                    <p>&rarr; Demonstrate The Use Of Standards And Cyber Laws To Enhance Information Security In The
+                        Development Process And Infrastructure Protection</p>
+                </section>
+                <section id="subject-OEC-CS-706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Virtual Reality [OEC CS 706]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>The Objective Of This Course Is To Provide A Detailed Understanding Of The Concepts Of Virtual
+                        Reality And Its Applications</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to Virtual Reality</strong>
+                            <ul class="unit-topics">
+                                <li>Virtual Reality And Virtual Environment: Introduction</li>
+                                <li>Computer Graphics</li>
+                                <li>Real Time Computer Graphics</li>
+                                <li>Flight Simulation</li>
+                                <li>Virtual Environment Requirement</li>
+                                <li>Benefits Of Virtual Reality</li>
+                                <li>Historical Development Of VR</li>
+                                <li>Scientific Landmark</li>
+                                <li>3D Computer Graphics: Introduction</li>
+                                <li>The Virtual World Space</li>
+                                <li>Positioning The Virtual Observer</li>
+                                <li>The Perspective Projection</li>
+                                <li>Human Vision</li>
+                                <li>Stereo Perspective Projection</li>
+                                <li>3D Clipping</li>
+                                <li>Colour Theory</li>
+                                <li>Simple 3D Modelling</li>
+                                <li>Illumination Models</li>
+                                <li>Reflection Models</li>
+                                <li>Shading Algorithms</li>
+                                <li>Radioisity</li>
+                                <li>Hidden Surface Removal</li>
+                                <li>Realism-Stereographic Image</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Geometric Modelling and Generic VR system</strong>
+                            <ul class="unit-topics">
+                                <li>Geometric Modelling: Introduction</li>
+                                <li>From 2D To 3D</li>
+                                <li>3D Space Curves</li>
+                                <li>3D Boundary Representation</li>
+                                <li>Geometrical Transformations: Introduction</li>
+                                <li>Frames Of Reference</li>
+                                <li>Modelling Transformations</li>
+                                <li>Instances</li>
+                                <li>Picking</li>
+                                <li>Flying</li>
+                                <li>Scaling The VE</li>
+                                <li>Collision Detection</li>
+                                <li>Generic VR System: Introduction</li>
+                                <li>Virtual Environment</li>
+                                <li>Computer Environment</li>
+                                <li>VR Technology</li>
+                                <li>Model Of Interaction</li>
+                                <li>VR Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Virtual Environment and Physical Simulation</strong>
+                            <ul class="unit-topics">
+                                <li>Animating The Virtual Environment: Introduction</li>
+                                <li>The Dynamics Of Numbers</li>
+                                <li>Linear And Nonlinear Interpolation</li>
+                                <li>The Animation Of Objects</li>
+                                <li>Linear And Non-linear Translation</li>
+                                <li>Shape & Object In Betweening</li>
+                                <li>Free From Deformation</li>
+                                <li>Particle System</li>
+                                <li>Physical Simulation: Introduction</li>
+                                <li>Objects Falling In A Gravitational Field</li>
+                                <li>Rotating Wheels</li>
+                                <li>Elastic Collisions</li>
+                                <li>Projectiles</li>
+                                <li>Simple Pendulum</li>
+                                <li>Springs</li>
+                                <li>Flight Dynamics Of An Aircraft</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: VR Hardware and Software</strong>
+                            <ul class="unit-topics">
+                                <li>Human Factors: Introduction</li>
+                                <li>The Eye</li>
+                                <li>The Ear</li>
+                                <li>The Somatic Senses</li>
+                                <li>VR Hardware: Introduction</li>
+                                <li>Sensor Hardware</li>
+                                <li>Head-coupled Displays</li>
+                                <li>Acoustic Hardware</li>
+                                <li>Integrated VR Systems</li>
+                                <li>VR Software: Introduction</li>
+                                <li>Modelling Virtual World</li>
+                                <li>Physical Simulation</li>
+                                <li>VR Toolkits</li>
+                                <li>Introduction To VRML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: VR Applications and The Future</strong>
+                            <ul class="unit-topics">
+                                <li>VR Applications: Introduction</li>
+                                <li>Engineering</li>
+                                <li>Entertainment</li>
+                                <li>Science</li>
+                                <li>Training</li>
+                                <li>The Future: Virtual Environment</li>
+                                <li>Modes Of Interaction</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>John Vince, "Virtual Reality Systems", Pearson Education Asia, 2007.</li>
+                        <li>Anand R., "Augmented and Virtual Reality", Khanna Publishing House, Delhi.</li>
+                        <li>Adams, "Visualizations of Virtual Reality", Tata McGraw Hill, 2000.</li>
+                        <li>Grigore C. Burdea, Philippe Coiffet, "Virtual Reality Technology", Wiley Inter Science, 2 nd
+                            Edition, 2006.</li>
+                        <li>William R. Sherman, Alan B. Craig, "Understanding Virtual Reality: Interface, Application
+                            and Design", Morgan Kaufmann, 2008.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p><strong>At the end of the course, the students will be able to:</strong></p>
+                    <p>&rarr; Understand Geometric Modelling And Virtual Environment</p>
+                    <p>&rarr; Study About Virtual Hardware And Software</p>
+                    <p>&rarr; Develop Virtual Reality Applications</p>
+                </section>
+                <section id="subject-OEC-CS-707" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: 3D Printing and Design [OEC CS 707]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>The Course Is Designed To Impart Knowledge And Skills Related To 3D Printing Technologies,
+                        Selection Of Material And Equipment And Develop A Product Using This Technique In An Industry
+                        4.0 Environment</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: 3D Printing (Additive Manufacturing)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Process</li>
+                                <li>Classification</li>
+                                <li>Advantages</li>
+                                <li>Additive V/s Conventional Manufacturing Processes</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: CAD for Additive Manufacturing</strong>
+                            <ul class="unit-topics">
+                                <li>CAD Data Formats</li>
+                                <li>Data Translation</li>
+                                <li>Data Loss</li>
+                                <li>STL Format</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Additive Manufacturing Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Stereo Lithography</li>
+                                <li>LOM</li>
+                                <li>FDM</li>
+                                <li>SLS</li>
+                                <li>SLM</li>
+                                <li>Binder Jet Technology</li>
+                                <li>Process, Process Parameter, Process Selection For Various Applications</li>
+                                <li>Additive Manufacturing Application Domains: Aerospace, Electronics, Health Care,
+                                    Defence, Automotive, Construction, Food Processing, Machine Tools</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Polymers</li>
+                                <li>Metals</li>
+                                <li>Non-Metals</li>
+                                <li>Ceramics</li>
+                                <li>Various Forms Of Raw Material Liquid, Solid, Wire, Powder</li>
+                                <li>Powder Preparation And Their Desired Properties</li>
+                                <li>Polymers And Their Properties</li>
+                                <li>Support Materials</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Additive Manufacturing Equipment</strong>
+                            <ul class="unit-topics">
+                                <li>Process Equipment Design And Process Parameters</li>
+                                <li>Governing Bonding Mechanism</li>
+                                <li>Common Faults And Troubleshooting</li>
+                                <li>Process Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Post Processing and Product Quality</strong>
+                            <ul class="unit-topics">
+                                <li>Post Processing Requirement And Techniques</li>
+                                <li>Product Quality: Inspection And Testing</li>
+                                <li>Defects And Their Causes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>Lan Gibson, David W. Rosen and Brent Stucker, "Additive Manufacturing Technologies: Rapid
+                            Prototyping to Direct Digital Manufacturing", Springer, 2010.</li>
+                        <li>Andreas Gebhardt, "Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling,
+                            Rapid Manufacturing", Hanser Publisher, 2011.</li>
+                        <li>Khanna Editorial, "3D Printing and Design", Khanna Publishing House, Delhi.</li>
+                        <li>CK Chua, Kah Fai Leong, "3D Printing and Rapid Prototyping- Principles and Applications",
+                            World Scientific, 2017.</li>
+                        <li>J.D. Majumdar and I. Manna, "Laser-Assisted Fabrication of Materials", Springer Series in
+                            Material Science, 2013.</li>
+                        <li>L. Lu, J. Fuh and Y.S. Wong, "Laser-Induced Materials and Processes for Rapid Prototyping",
+                            Kluwer Academic Press, 2001.</li>
+                        <li>Zhiqiang Fan And Frank Liou, "Numerical Modelling of the Additive Manufacturing (AM)
+                            Processes of Titanium Alloy", InTech, 2012.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p><strong>After completion of this course, the students will be able to:</strong></p>
+                    <p>&rarr; Develop CAD Models For 3D Printing</p>
+                    <p>&rarr; Import And Export CAD Data And Generate .stl File</p>
+                    <p>&rarr; Select A Specific Material For The Given Application</p>
+                    <p>&rarr; Select A 3D Printing Process For An Application</p>
+                    <p>&rarr; Produce A Product Using 3D Printing Or Additive Manufacturing (AM)</p>
+                </section>
+                <section id="subject-OEC-CS-708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Simulation and Modelling [OEC CS 708]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>System, Environment, Input And Output Variables</li>
+                                <li>State Variables</li>
+                                <li>Static And Dynamic Systems</li>
+                                <li>Hierarchy Of Knowledge About A System And Modelling Strategy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Physical Modelling</strong>
+                            <ul class="unit-topics">
+                                <li>Dimensions Analysis</li>
+                                <li>Dimensionless Grouping Of Input And Output Variables To Find Empirical Relations
+                                </li>
+                                <li>Similarity Criteria And Their Application To Physical Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Modeling of System with Known Structure</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Conservation Laws And The Governing Equation For Heat, Mass And Momentum
+                                    Transfer</li>
+                                <li>Deterministic Model (a) Distributed Parameter Models In Terms Of Partial
+                                    Identification And Their Solutions And (b) Lumped Parameter Models In Terms Of
+                                    Differential And Difference Equations</li>
+                                <li>State Space Model</li>
+                                <li>Transfer Functions Block Diagram And Sub Systems</li>
+                                <li>Stability Of Transfer Functions</li>
+                                <li>Modelling For Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Optimizations and Design of Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Summary Of Gradient Based Techniques</li>
+                                <li>Nontraditional Optimizations Techniques (i) Genetic Algorithm (GA) Coding, GA
+                                    Operations Elitism, Application Using MATLAB</li>
+                                <li>(ii) Simulated Annealing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Neural Network Modelling of Systems only with
+                                Input-output Database</strong>
+                            <ul class="unit-topics">
+                                <li>Neurons</li>
+                                <li>Architecture Of Neural Networks</li>
+                                <li>Knowledge Representation</li>
+                                <li>Learning Algorithm</li>
+                                <li>Multilayer Feed Forward Network And Its Back Propagation Learning Algorithm</li>
+                                <li>Application To Complex Engineering Systems And Strategy For Optimum Output</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Modelling Based on Expert Knowledge</strong>
+                            <ul class="unit-topics">
+                                <li>Fuzzy Sets</li>
+                                <li>Membership Functions</li>
+                                <li>Fuzzy Inference Systems</li>
+                                <li>Expert Knowledge And Fuzzy Models</li>
+                                <li>Design Of Fuzzy Controllers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Simulation of Engineering Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Monte-Carlo Simulation</li>
+                                <li>Simulation Of Continuous And Discrete Processes With Suitable Examples From
+                                    Engineering Problems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Theory of modeling and simulation, Zeigler B. P. Praehofer. H. and Kim I.G.</li>
+                        <li>System Simulation: the Art and Science, Shannon, R. E.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Modern control Engineering, Ogata K</li>
+                        <li>Neuro-Fuzzy and Soft Computing, Jang J.S.R. sun C.T and Mizutani E</li>
+                    </ol>
+                </section>
+                <section id="subject-105701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Data Science [105701]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>The Objective Of This Course Is To Impart Necessary Knowledge Of The Mathematical Foundations
+                        Needed For Data Science And Develop Programming Skills Required To Build Data Science
+                        Applications</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to Data Science</strong>
+                            <ul class="unit-topics">
+                                <li>Concept Of Data Science</li>
+                                <li>Traits Of Big Data</li>
+                                <li>Web Scraping</li>
+                                <li>Analysis Vs Reporting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Introduction to Programming Tools for Data
+                                Science</strong>
+                            <ul class="unit-topics">
+                                <li>Toolkits Using Python: Matplotlib, NumPy, Scikit-learn, NLTK</li>
+                                <li>Visualizing Data: Bar Charts, Line Charts, Scatterplots</li>
+                                <li>Working With Data: Reading Files, Scraping The Web, Using APIs (Example: Using The
+                                    Twitter APIs)</li>
+                                <li>Cleaning And Munging</li>
+                                <li>Manipulating Data</li>
+                                <li>Rescaling</li>
+                                <li>Dimensionality Reduction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Mathematical Foundations</strong>
+                            <ul class="unit-topics">
+                                <li>Linear Algebra: Vectors, Matrices</li>
+                                <li>Statistics: Describing A Single Set Of Data, Correlation, Simpson's Paradox,
+                                    Correlation And Causation</li>
+                                <li>Probability: Dependence And Independence, Conditional Probability, Bayes's Theorem,
+                                    Random Variables, Continuous Distributions, The Normal Distribution, The Central
+                                    Limit Theorem</li>
+                                <li>Hypothesis And Inference: Statistical Hypothesis Testing, Confidence Intervals, P
+                                    Hacking, Bayesian Inference</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Machine Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Machine Learning Concepts Over Fitting And Train/test Splits</li>
+                                <li>Types Of Machine Learning Supervised, Unsupervised, Reinforced Learning</li>
+                                <li>Introduction To Bayes Theorem</li>
+                                <li>Linear Regression Model Assumptions</li>
+                                <li>Regularization (Lasso, Ridge, Elastic Net)</li>
+                                <li>Classification And Regression Algorithms Naive Bayes, K-Nearest Neighbors, Logistic
+                                    Regression, Support Vector Machines (SVM), Decision Trees, And Random Forest</li>
+                                <li>Classification Errors</li>
+                                <li>Analysis Of Time Series Linear Systems Analysis, Nonlinear Dynamics, Rule Induction,
+                                    Neural Networks Learning And Generalization</li>
+                                <li>Overview Of Deep Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Case Studies of Data Science Application</strong>
+                            <ul class="unit-topics">
+                                <li>Weather Forecasting</li>
+                                <li>Stock Market Prediction</li>
+                                <li>Object Recognition</li>
+                                <li>Real Time Sentiment Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: List of Practicals</strong>
+                            <ul class="unit-topics">
+                                <li>Write A Programme In Python To Predict The Class Of The Flower Based On Available
+                                    Attributes</li>
+                                <li>Write A Programme In Python To Predict If A Loan Will Get Approved Or Not</li>
+                                <li>Write A Programme In Python To Predict The Traffic On A New Mode Of Transport</li>
+                                <li>Write A Programme In Python To Predict The Class Of User</li>
+                                <li>Write A Programme In Python To Identify The Tweets Which Are Hate Tweets And Which
+                                    Are Not</li>
+                                <li>Write A Programme In Python To Predict The Age Of The Actors</li>
+                                <li>Mini Project To Predict The Time Taken To Solve A Problem Given The Current Status
+                                    Of The User</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Joel Grus, "Data Science from Scratch: First Principles with Python", O'Reilly Media</li>
+                        <li>Aurélien Géron, "Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts,
+                            Tools, and Techniques to Build Intelligent Systems", 1st Edition, O'Reilly Media</li>
+                        <li>Jain V.K., "Data Sciences", Khanna Publishing House, Delhi.</li>
+                        <li>Jain V.K., "Big Data and Hadoop", Khanna Publishing House, Delhi.</li>
+                        <li>Jeeva Jose, "Machine Learning", Khanna Publishing House, Delhi.</li>
+                        <li>Chopra Rajiv, "Machine Learning", Khanna Publishing House, Delhi.</li>
+                        <li>Ian Goodfellow, Yoshua Bengio and Aaron Courville, "Deep Learning", MIT Press
+                            http://www.deeplearningbook.org</li>
+                        <li>Jiawei Han and Jian Pei, "Data Mining Concepts and Techniques", Third Edition, Morgan
+                            Kaufmann Publishers</li>
+                    </ol>
+                </section>
+                <section id="subject-105702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computational Complexity [105702]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1</strong>
+                            <ul class="unit-topics">
+                                <li>Models Of Computation</li>
+                                <li>Resources (Time And Space)</li>
+                                <li>Algorithms</li>
+                                <li>Computability</li>
+                                <li>Complexity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2</strong>
+                            <ul class="unit-topics">
+                                <li>Complexity Classes</li>
+                                <li>P/NP/PSPACE</li>
+                                <li>Reductions</li>
+                                <li>Hardness</li>
+                                <li>Completeness</li>
+                                <li>Hierarchy</li>
+                                <li>Relationships Between Complexity Classes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3</strong>
+                            <ul class="unit-topics">
+                                <li>Randomized Computation And Complexity</li>
+                                <li>Logical Characterizations</li>
+                                <li>Incompleteness</li>
+                                <li>Approximability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4</strong>
+                            <ul class="unit-topics">
+                                <li>Circuit Complexity</li>
+                                <li>Lower Bounds</li>
+                                <li>Parallel Computation And Complexity</li>
+                                <li>Counting Problems</li>
+                                <li>Interactive Proofs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5</strong>
+                            <ul class="unit-topics">
+                                <li>Probabilistically Checkable Proofs</li>
+                                <li>Communication Complexity</li>
+                                <li>Quantum Computation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Christos H. Papadimitriou Combinatorial Optimization: Algorithms and Complexity,
+                            Prentice-Hall.</li>
+                        <li>Sanjeev Arora and Boaz Barak, Complexity Theory: A Modern Approach, Cambridge University
+                            Press</li>
+                        <li>Steven Homer, Alan L. Selman, Computability and Complexity Theory, Springer</li>
+                    </ol>
+                </section>
+                <section id="subject-105703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Advanced Computer Architecture [105703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1</strong>
+                            <ul class="unit-topics">
+                                <li>Classes Of Computers</li>
+                                <li>Trends In Technology</li>
+                                <li>Power And Costs</li>
+                                <li>Dependability</li>
+                                <li>Quantitative Principles Of Computer Design</li>
+                                <li>Introduction To Computing Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2</strong>
+                            <ul class="unit-topics">
+                                <li>Principles Of Scalable Performance</li>
+                                <li>Performance Metrics And Measures</li>
+                                <li>Speedup Performance Laws</li>
+                                <li>Advanced Processor Technology</li>
+                                <li>Super Scalar And VLIM Processors</li>
+                                <li>Verified Memory</li>
+                                <li>Cache Memory Organizations</li>
+                                <li>Shared Memory Organizations</li>
+                                <li>Memory Hierarchy</li>
+                                <li>Cache Performance</li>
+                                <li>Protection And Examples Of Virtual Memory</li>
+                                <li>Cache Coherence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3</strong>
+                            <ul class="unit-topics">
+                                <li>Pipeline And Superscalar Techniques</li>
+                                <li>Linear Pipeline Processors</li>
+                                <li>Reservation And Latency Analysis</li>
+                                <li>Collision Free Scheduling</li>
+                                <li>Pipeline Schedule Optimization</li>
+                                <li>Instruction Pipeline Design</li>
+                                <li>Arithmetic Pipeline Design</li>
+                                <li>Super Scalar And Super Pipeline Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4</strong>
+                            <ul class="unit-topics">
+                                <li>Multiprocessors And Multicomputers</li>
+                                <li>Brief Overview Of SIMD, MIMD, Vector Architectures And Multicore Architectures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5</strong>
+                            <ul class="unit-topics">
+                                <li>Elementary Theory About Dependence Analysis</li>
+                                <li>Techniques For Extraction Of Parallelism</li>
+                                <li>Branch Prediction</li>
+                                <li>Dynamic Scheduling</li>
+                                <li>Multiple Issues And Speculation</li>
+                                <li>Limits On Instruction Level Parallelism</li>
+                                <li>Thread Level Parallelism</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Computer Architecture: A Quantitative Approach : Hennessy and Patterson : Morgan Kaufmann
+                        </li>
+                        <li>Advanced Computer Architecture, Kai Hwang , McGraw Hill</li>
+                        <li>Advanced Computer Architectures: A design space approach, Sima D, Fountain T. and Kacsuk P,
+                            Pearson Education</li>
+                    </ol>
+                </section>
+                <section id="subject-105704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Theory of Computation [105704]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Logic</strong>
+                            <ul class="unit-topics">
+                                <li>First-order Predicate Calculus Syntax, Semantics, Validity And Satisfiability</li>
+                                <li>Decision Problems In Logic</li>
+                                <li>Quantified Boolean Formulas And Their Relation With The Polynomial Hierarchy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Computability theory</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Turing Machines</li>
+                                <li>Some Other Computing Models And Formalisms, Their Equivalence With Turing Machines
+                                </li>
+                                <li>Undecidability</li>
+                                <li>Post Correspondence Problem</li>
+                                <li>Turing Computability</li>
+                                <li>Primitive Recursive Functions</li>
+                                <li>Cantor And Goedel Numbering</li>
+                                <li>Ackermann Function</li>
+                                <li>Mu-recursive Functions</li>
+                                <li>Recursiveness Of Ackermann And Turing Computable Functions</li>
+                                <li>Lambda Calculus</li>
+                                <li>Term Rewriting</li>
+                                <li>Oracle Machines And The Arithmetic Hierarchy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Complexity theory</strong>
+                            <ul class="unit-topics">
+                                <li>Time- And Space-bounded Turing Machines</li>
+                                <li>Reduction And Complete Problems</li>
+                                <li>Oracle Machines And The Polynomial Hierarchy</li>
+                                <li>Randomized Computation</li>
+                                <li>Parallel Computation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Michael Sipser, Introduction to the Theory of Computation, PWS Publishing.</li>
+                        <li>Fred C. Hennie. Introduction to Computability. Addison-Wesley.</li>
+                        <li>Bernard M. Moret, The Theory of Computation, Pearson Education Asia.</li>
+                        <li>Christos H. Papadimitriou, Computational Complexity, Addison-Wesley Longman.</li>
+                        <li>Dexter C. Kozen, Automata and Computability, Undergraduate Texts in Computer Science,
+                            Springer.</li>
+                        <li>John Martin, Introduction to Languages and The Theory of Computation, Tata McGraw Hill.</li>
+                        <li>John E. Hopcroft, Rajeev Motwani and Jeffrey D. Ullman, Introduction to Automata Theory,
+                            Languages, and Computation, Pearson Education Asia.</li>
+                    </ol>
+                </section>
+                <section id="subject-105705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Internet of Things [105705]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the Course</h3>
+                    <p>The Objective Of This Course Is To Impart Necessary And Practical Knowledge Of Components Of
+                        Internet Of Things And Develop Skills Required To Build Real-life IoT Based Projects</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Architectural Overview</li>
+                                <li>Design Principles And Needed Capabilities</li>
+                                <li>IoT Applications</li>
+                                <li>Sensing</li>
+                                <li>Actuation</li>
+                                <li>Basics Of Networking</li>
+                                <li>M2M And IoT Technology Fundamentals Devices And Gateways</li>
+                                <li>Data Management</li>
+                                <li>Business Processes In IoT</li>
+                                <li>Everything As A Service (XaaS)</li>
+                                <li>Role Of Cloud In IoT</li>
+                                <li>Security Aspects In IoT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Elements of IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Hardware Components Computing (Arduino, Raspberry Pi), Communication, Sensing,
+                                    Actuation, I/O Interfaces</li>
+                                <li>Software Components Programming API's (using Python/Node.js/Arduino) For
+                                    Communication</li>
+                                <li>Protocols MQTT, ZigBee, Bluetooth, CoAP, UDP, TCP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: IoT Application Development</strong>
+                            <ul class="unit-topics">
+                                <li>Solution Framework For IoT Applications Implementation Of Device Integration</li>
+                                <li>Data Acquisition And Integration</li>
+                                <li>Device Data Storage Unstructured Data Storage On Cloud/local Server</li>
+                                <li>Authentication, Authorization Of Devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: IoT Case Studies</strong>
+                            <ul class="unit-topics">
+                                <li>IoT Case Studies And Mini Projects Based On Industrial Automation</li>
+                                <li>Transportation</li>
+                                <li>Agriculture</li>
+                                <li>Healthcare</li>
+                                <li>Home Automation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>Vijay Madisetti, Arshdeep Bahga, Internet of Things, "A Hands on Approach", University Press
+                        </li>
+                        <li>Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, "Introduction to Internet of Things: A
+                            practical Approach", ETI Labs</li>
+                        <li>Pethuru Raj and Anupama C. Raman, "The Internet of Things: Enabling Technologies, Platforms,
+                            and Use Cases", CRC Press</li>
+                        <li>Jeeva Jose, "Internet of Things", Khanna Publishing House, Delhi</li>
+                        <li>Adrian McEwen, "Designing the Internet of Things", Wiley</li>
+                        <li>Raj Kamal, "Internet of Things: Architecture and Design", McGraw Hill</li>
+                        <li>Cuno Pfister, "Getting Started with the Internet of Things", O Reilly Media</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p>&rarr; Understand Internet Of Things And Its Hardware And Software Components</p>
+                    <p>&rarr; Interface I/O Devices, Sensors & Communication Modules</p>
+                    <p>&rarr; Remotely Monitor Data And Control Devices</p>
+                    <p>&rarr; Develop Real Life IoT Based Projects</p>
+                </section>
+                <section id="subject-105706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Natural Language Processing [105706]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Sound</strong>
+                            <ul class="unit-topics">
+                                <li>Biology Of Speech Processing</li>
+                                <li>Place And Manner Of Articulation</li>
+                                <li>Word Boundary Detection</li>
+                                <li>Argmax Based Computations</li>
+                                <li>HMM And Speech Recognition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Words and Word Forms</strong>
+                            <ul class="unit-topics">
+                                <li>Morphology Fundamentals</li>
+                                <li>Morphological Diversity Of Indian Languages</li>
+                                <li>Morphology Paradigms</li>
+                                <li>Finite State Machine Based Morphology</li>
+                                <li>Automatic Morphology Learning</li>
+                                <li>Shallow Parsing</li>
+                                <li>Named Entities</li>
+                                <li>Maximum Entropy Models</li>
+                                <li>Random Fields</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Structures</strong>
+                            <ul class="unit-topics">
+                                <li>Theories Of Parsing</li>
+                                <li>Parsing Algorithms</li>
+                                <li>Robust And Scalable Parsing On Noisy Text As In Web Documents</li>
+                                <li>Hybrid Of Rule Based And Probabilistic Parsing</li>
+                                <li>Scope Ambiguity And Attachment Ambiguity Resolution</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Meaning</strong>
+                            <ul class="unit-topics">
+                                <li>Lexical Knowledge Networks</li>
+                                <li>Wordnet Theory</li>
+                                <li>Indian Language Wordnets And Multilingual Dictionaries</li>
+                                <li>Semantic Roles</li>
+                                <li>Word Sense Disambiguation</li>
+                                <li>WSD And Multilinguality</li>
+                                <li>Metaphors</li>
+                                <li>Coreferences</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Web 2.0 Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Sentiment Analysis</li>
+                                <li>Text Entailment</li>
+                                <li>Robust And Scalable Machine Translation</li>
+                                <li>Question Answering In Multilingual Setting</li>
+                                <li>Cross Lingual Information Retrieval (CLIR)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>Jurafsky, Dan and Martin, James, "Speech and Language Processing", 2nd Edition, Prentice
+                            Hall, 2008</li>
+                        <li>Manning, Christopher and Heinrich, Schutze, "Foundations of Statistical Natural Language
+                            Processing", MIT Press, 1999</li>
+                        <li>Allen James, "Natural Language Understanding", 2nd edition, Benjamin Cumming, 1995</li>
+                        <li>Charniack, Eugene, "Statistical Language Learning", MIT Press, 1993</li>
+                    </ol>
+                </section>
+                <section id="subject-105707" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: E-Commerce and ERP [105707]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to E- Commerce</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution Of E-commerce</li>
+                                <li>Advantage And Disadvantage Of E Commerce</li>
+                                <li>Roadmap Of E-Commerce In India</li>
+                                <li>Business Models Of E-Commerce: Model Based On Transaction Party: B2B, B2C, C2B, C2C
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: E marketing</strong>
+                            <ul class="unit-topics">
+                                <li>The Scope Of E-Marketing</li>
+                                <li>Identifying Web Presence Goals</li>
+                                <li>Uniqueness Of The Web</li>
+                                <li>Meeting The Need Of Website Visitors</li>
+                                <li>Website Design Issues: Factors That Make People Return To Your Site</li>
+                                <li>Strategies For Website Development</li>
+                                <li>Site Adhesion: Content, Format And Access: Maintaining A Website</li>
+                                <li>E Advertising</li>
+                                <li>E-Branding</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: E-Payment System and E Security</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Payment Requirement</li>
+                                <li>Digital Token Based E-Payment System</li>
+                                <li>Electronic Cash</li>
+                                <li>Smart Card And Electronics Payment System: Credit And Debit Card</li>
+                                <li>Virtual Currency</li>
+                                <li>Digital Wallet</li>
+                                <li>Risk Of Electronics Payment System</li>
+                                <li>Digital Signature</li>
+                                <li>E Security: Security On The Internet: Network And Website Security Risk:
+                                    Denial-of-Service Attack, Viruses, Unauthorized Access To Computer Network</li>
+                                <li>Security Standards: Firewall, Cryptography, Key Management, Password Systems,
+                                    Digital Certificates, Digital Signatures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Enterprise Resource Planning (ERP)</strong>
+                            <ul class="unit-topics">
+                                <li>Introductory Concepts</li>
+                                <li>Advantages & Disadvantages Of ERP</li>
+                                <li>ERP And Related Technologies Business Process Reengineering, Data Warehousing, Data
+                                    Mining, Supply Chain Management</li>
+                                <li>ERP Implementation: ERP Implementation Life Cycle Implementation Methodology</li>
+                                <li>Hidden Costs</li>
+                                <li>Organizing Implementation Contracts With Vendors, Consultants And Users</li>
+                                <li>Project Management And Monitoring</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: ERP Business Modules</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Basic Modules Of ERP System</li>
+                                <li>Business Modules In An ERP Package Finance Manufacturing Human Resource Plant
+                                    Maintenance Materials Management Quality Management Sales And Distribution</li>
+                                <li>Case Study: Recent Business Issues On E-Commerce Perspective</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Alexis Leon, "ERP Demystified", Tata McGraw Hill.</li>
+                        <li>E-Commerce An Indian Perspective by P.T.Joseph, PHI</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Reference Books:</h3>
+                    <ol>
+                        <li>K.K. Bajaj, D. Nag "E-Commerce", 2nd Edition, McGraw-Hill Education, New Delhi.</li>
+                        <li>Bhaskar Bharat, "Electronic Commerce-Technology and Application", McGraw-Hill Education, New
+                            Delhi.</li>
+                        <li>Mary Sumner, "Enterprise Resource Planning", 2005, PHI Learning India Pvt. Ltd. /Pearson
+                            Education, New Delhi.</li>
+                        <li>Chan, "E-Commerce Fundamentals and Applications", Wiley India, New Delhi.</li>
+                        <li>Vinod Kumar Garg and N.K .Venkata Krishnan, "Enterprise Resource Planning concepts and
+                            Planning", Prentice Hall, 1998.</li>
+                    </ol>
+                </section>
+                <section id="subject-105708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Robotics and Robot Application [105708]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objective of the Course</h3>
+                    <p>The Objective Of This Course Is To Impart Knowledge About Industrial Robots For Their Control And
+                        Design</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Types And Components Of A Robot</li>
+                                <li>Classification Of Robots</li>
+                                <li>Closed-loop And Open Loop Control Systems</li>
+                                <li>Kinematics Systems</li>
+                                <li>Definition Of Mechanisms And Manipulators</li>
+                                <li>Social Issues And Safety</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Robot Kinematics and Dynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Kinematic Modelling: Translation And Rotation Representation</li>
+                                <li>Coordinate Transformation</li>
+                                <li>DH Parameters</li>
+                                <li>Jacobian</li>
+                                <li>Singularity</li>
+                                <li>Statics</li>
+                                <li>Dynamic Modelling: Equations Of Motion: Euler-Lagrange Formulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Sensors and Vision System</strong>
+                            <ul class="unit-topics">
+                                <li>Sensor: Contact And Proximity, Position, Velocity, Force, Tactile Etc</li>
+                                <li>Introduction To Cameras</li>
+                                <li>Camera Calibration</li>
+                                <li>Geometry Of Image Formation</li>
+                                <li>Euclidean / Similarity / Affine / Projective Transformations</li>
+                                <li>Vision Applications In Robotics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Robot Control and Actuation Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basics Of Control: Transfer Functions</li>
+                                <li>Control Laws: P, PD, PID</li>
+                                <li>Non-linear And Advanced Controls</li>
+                                <li>Robot Actuation Systems: Actuators: Electric, Hydraulic And Pneumatic</li>
+                                <li>Transmission: Gears, Timing Belts And Bearings</li>
+                                <li>Parameters For Selection Of Actuators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Control Hardware and Interfacing</strong>
+                            <ul class="unit-topics">
+                                <li>Embedded Systems: Architecture And Integration With Sensors, Actuators, Components
+                                </li>
+                                <li>Programming For Robot Applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Books:</h3>
+                    <ol>
+                        <li>Saha, S. K., "Introduction to Robotics, 2nd Edition, McGraw-Hill Higher Education, New
+                            Delhi, 2014.</li>
+                        <li>Ghosal, A., "Robotics", Oxford, New Delhi, 2006.</li>
+                        <li>Niku Saeed B., "Introduction to Robotics: Analysis, Systems, Applications", PHI, New Delhi.
+                        </li>
+                        <li>Mittal R.K. and Nagrath I.J., "Robotics and Control", Tata McGraw Hill.</li>
+                        <li>Mukherjee S., "Robotics and Automation", Khanna Publishing House, Delhi.</li>
+                        <li>Craig, J.J., "Introduction to Robotics: Mechanics and Control", Pearson, New Delhi, 2009
+                        </li>
+                        <li>Mark W. Spong, Seth Hutchinson, and M. Vidyasagar, "Robot Modelling and Control", John Wiley
+                            and Sons Inc, 2005</li>
+                        <li>Steve Heath, "Embedded System Design", 2nd Edition, Newnes, Burlington, 2003</li>
+                        <li>Merzouki R., Samantaray A.K., Pathak P.M. and Bouamama B. Ould, "Intelligent Mechatronic
+                            System: Modeling, Control and Diagnosis", Springer.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Learning Outcomes:</h3>
+                    <p>&rarr; Perform Kinematic And Dynamic Analyses With Simulation</p>
+                    <p>&rarr; Design Control Laws For A Robot</p>
+                    <p>&rarr; Integrate Mechanical And Electrical Hardware For A Real Prototype Of A Robotic Device</p>
+                    <p>&rarr; Select A Robotic System For A Given Application</p>
+                </section>
+                <section id="subject-100710" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Professional Elective Lab: Advance Networking (Cisco) [100710]</h2>
+                    <p>Details for this lab will be provided by the department. This component carries 1 credit.</p>
+                </section>
+                <section id="subject-100711" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Professional Elective Lab: Python as tool for Machine learning [100711]</h2>
+                    <p>Details for this lab will be provided by the department. This component carries 1 credit.</p>
+                </section>
+                <section id="subject-100712" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Professional Elective Lab: Working on R [100712]</h2>
+                    <p>Details for this lab will be provided by the department. This component carries 1 credit.</p>
+                </section>
+                <section id="subject-100713" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Professional Elective Lab: Image Processing Lab [100713]</h2>
+                    <p>Details for this lab will be provided by the department. This component carries 1 credit.</p>
+                </section>
+                <section id="subject-100714" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Professional Elective Lab: Advance AI Laboratory [100714]</h2>
+                    <p>Details for this lab will be provided by the department. This component carries 1 credit.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

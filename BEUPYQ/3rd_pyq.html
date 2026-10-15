@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *; img-src * data: content:;">
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>PYQs</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="pyq.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <div class="app" role="application" aria-label="Abhi PYQ - Previous Year Papers">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+            <button id="must-read-trigger" aria-label="Must Read Info"
+                style="background: transparent; border: none; color: rgb(255, 200, 0); margin-left: auto; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 5px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                    </path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </button>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">3rd Year PYQs</h1>
+                <p class="page-subtitle">For All Branches</p>
+            </div>
+            <section class="info-card" id="filter-card" style="position: relative;">
+                <h3
+                    style="font-size: 1em; color: var(--accent-2); margin-top: 0; margin-bottom: 16px; text-align: center;">
+                    CHOOSE SUBJECT</h3>
+                <div class="filter-tabs" id="subject-selector">
+                    <button class="filter-btn" data-subject="analog">
+                        <span class="paper-sn">01.</span>
+                        <span class="subject-name">Analog Circuits</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="anacom">
+                        <span class="paper-sn">02.</span>
+                        <span class="subject-name">Analog Communication</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="ath">
+                        <span class="paper-sn">03.</span>
+                        <span class="subject-name">Applied Thermodynamics</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="be">
+                        <span class="paper-sn">04.</span>
+                        <span class="subject-name">Basic Electronics</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="bio">
+                        <span class="paper-sn">05.</span>
+                        <span class="subject-name">Biology</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="impact">
+                        <span class="paper-sn">06.</span>
+                        <span class="subject-name">Civil Engineering - Societal & Global Impact</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="coa">
+                        <span class="paper-sn">07.</span>
+                        <span class="subject-name">Computer Organization & Architecture</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="dsa">
+                        <span class="paper-sn">08.</span>
+                        <span class="subject-name">Data Structure and Algorithms</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="daa">
+                        <span class="paper-sn">09.</span>
+                        <span class="subject-name">Design and Analysis of Algorithms</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="digc">
+                        <span class="paper-sn">10.</span>
+                        <span class="subject-name">Digital Circuits</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="de">
+                        <span class="paper-sn">11.</span>
+                        <span class="subject-name">Digital Electronics</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="disaster">
+                        <span class="paper-sn">12.</span>
+                        <span class="subject-name">Disaster Preparedness & Planning</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="discrete">
+                        <span class="paper-sn">13.</span>
+                        <span class="subject-name">Discrete Mathematics</span>
+                        <span class="paper-count">7</span>
+                    </button>
+                    <button class="filter-btn" data-subject="eca">
+                        <span class="paper-sn">14.</span>
+                        <span class="subject-name">Electrical Circuit Analysis</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="emachines1">
+                        <span class="paper-sn">15.</span>
+                        <span class="subject-name">Electrical Machine-I</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="emachines2">
+                        <span class="paper-sn">16.</span>
+                        <span class="subject-name">Electrical Machines - II</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="emft">
+                        <span class="paper-sn">17.</span>
+                        <span class="subject-name">Electromagnetic Field Theory</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="emth">
+                        <span class="paper-sn">18.</span>
+                        <span class="subject-name">Electromagnetic Theory</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="geology">
+                        <span class="paper-sn">19.</span>
+                        <span class="subject-name">Engineering Geology</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="math3">
+                        <span class="paper-sn">20.</span>
+                        <span class="subject-name">Engineering Mathematics - III</span>
+                        <span class="paper-count">6</span>
+                    </button>
+                    <button class="filter-btn" data-subject="em">
+                        <span class="paper-sn">21.</span>
+                        <span class="subject-name">Engineering Mechanics</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="fluid">
+                        <span class="paper-sn">22.</span>
+                        <span class="subject-name">Fluid Mechanics</span>
+                        <span class="paper-count">7</span>
+                    </button>
+                    <button class="filter-btn" data-subject="human">
+                        <span class="paper-sn">23.</span>
+                        <span class="subject-name">Human Resource Development and Organizational Behaviour</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="instrumentation">
+                        <span class="paper-sn">24.</span>
+                        <span class="subject-name">Instrumentation & Control</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mats">
+                        <span class="paper-sn">25.</span>
+                        <span class="subject-name">Material Science and Engineering</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mte">
+                        <span class="paper-sn">26.</span>
+                        <span class="subject-name">Materials, Testing & Evaluation</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mech">
+                        <span class="paper-sn">27.</span>
+                        <span class="subject-name">Mechanical Engineering</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="micro">
+                        <span class="paper-sn">28.</span>
+                        <span class="subject-name">Microprocessors</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="network">
+                        <span class="paper-sn">29.</span>
+                        <span class="subject-name">Network Theory</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cpp">
+                        <span class="paper-sn">30.</span>
+                        <span class="subject-name">Object Oriented Programming using C++</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="java">
+                        <span class="paper-sn">31.</span>
+                        <span class="subject-name">OOPs (JAVA) / Java Programming Language</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="os">
+                        <span class="paper-sn">32.</span>
+                        <span class="subject-name">Operating System</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="semi">
+                        <span class="paper-sn">33.</span>
+                        <span class="subject-name">Semiconductor Physics and Devices</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="signals">
+                        <span class="paper-sn">34.</span>
+                        <span class="subject-name">Signals and Systems</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="solid">
+                        <span class="paper-sn">35.</span>
+                        <span class="subject-name">Solid Mechanics</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="som">
+                        <span class="paper-sn">36.</span>
+                        <span class="subject-name">Strength of Materials</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="structure">
+                        <span class="paper-sn">37.</span>
+                        <span class="subject-name">Structural Analysis</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="survey">
+                        <span class="paper-sn">38.</span>
+                        <span class="subject-name">Surveying and Geomatics</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="thermo">
+                        <span class="paper-sn">39.</span>
+                        <span class="subject-name">Thermodynamics</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="adcom">
+                        <span class="paper-sn">40.</span>
+                        <span class="subject-name">Analog & Digital Communication System</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cons">
+                        <span class="paper-sn">41.</span>
+                        <span class="subject-name">Analysis and Design of Concrete Structure</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="ai">
+                        <span class="paper-sn">42.</span>
+                        <span class="subject-name">Artificial Intelligence</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="automan">
+                        <span class="paper-sn">43.</span>
+                        <span class="subject-name">Automation in Manufacturing</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cd">
+                        <span class="paper-sn">44.</span>
+                        <span class="subject-name">Compiler Design</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cn">
+                        <span class="paper-sn">45.</span>
+                        <span class="subject-name">Computer Networks</span>
+                        <span class="paper-count">6</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cns">
+                        <span class="paper-sn">46.</span>
+                        <span class="subject-name">Computer Networks and Security</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cem">
+                        <span class="paper-sn">47.</span>
+                        <span class="subject-name">Construction Engineering & Management</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="cs">
+                        <span class="paper-sn">48.</span>
+                        <span class="subject-name">Control Systems</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="dbms">
+                        <span class="paper-sn">49.</span>
+                        <span class="subject-name">Database Management Systems</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="dome">
+                        <span class="paper-sn">50.</span>
+                        <span class="subject-name">Design of Machine Elements</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="doss">
+                        <span class="paper-sn">51.</span>
+                        <span class="subject-name">Design of Steel Structure</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="digicom">
+                        <span class="paper-sn">52.</span>
+                        <span class="subject-name">Digital Communication</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="dsp">
+                        <span class="paper-sn">53.</span>
+                        <span class="subject-name">Digital Signal Processing</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="dom">
+                        <span class="paper-sn">54.</span>
+                        <span class="subject-name">Dynamics of Machinery</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="eim">
+                        <span class="paper-sn">55.</span>
+                        <span class="subject-name">Electronics Instruments And Measurement</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="env1">
+                        <span class="paper-sn">56.</span>
+                        <span class="subject-name">Environmental Engineering -I</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="env2">
+                        <span class="paper-sn">57.</span>
+                        <span class="subject-name">Environmental Engineering-II</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="flmach">
+                        <span class="paper-sn">58.</span>
+                        <span class="subject-name">Fluid Machinery</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="formal">
+                        <span class="paper-sn">59.</span>
+                        <span class="subject-name">Formal Language & Automata Theory</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="geotech1">
+                        <span class="paper-sn">60.</span>
+                        <span class="subject-name">Geotechnical Engineering -I</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="geotech2">
+                        <span class="paper-sn">61.</span>
+                        <span class="subject-name">Geotechnical Engineering-II</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="heat">
+                        <span class="paper-sn">62.</span>
+                        <span class="subject-name">Heat Transfer</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="hydraulic">
+                        <span class="paper-sn">63.</span>
+                        <span class="subject-name">Hydraulic Engineering</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="hydro">
+                        <span class="paper-sn">64.</span>
+                        <span class="subject-name">Hydrology & Water Resources Engineering</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="kom">
+                        <span class="paper-sn">65.</span>
+                        <span class="subject-name">Kinematics of Machinery</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="lint">
+                        <span class="paper-sn">66.</span>
+                        <span class="subject-name">Linear Integrated Circuits and Applications</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="ml">
+                        <span class="paper-sn">67.</span>
+                        <span class="subject-name">Machine Learning</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mantech">
+                        <span class="paper-sn">68.</span>
+                        <span class="subject-name">Manufacturing Technology</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mains">
+                        <span class="paper-sn">69.</span>
+                        <span class="subject-name">Measurements and Instrumentation</span>
+                        <span class="paper-count">2</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mom">
+                        <span class="paper-sn">70.</span>
+                        <span class="subject-name">Mechanics of Materials</span>
+                        <span class="paper-count">4</span>
+                    </button>
+                    <button class="filter-btn" data-subject="mam">
+                        <span class="paper-sn">71.</span>
+                        <span class="subject-name">Microprocessors and Microcontrollers</span>
+                        <span class="paper-count">1</span>
+                    </button>
+                    <button class="filter-btn" data-subject="pe">
+                        <span class="paper-sn">72.</span>
+                        <span class="subject-name">Power Electronics</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="power1">
+                        <span class="paper-sn">73.</span>
+                        <span class="subject-name">Power Systems - I</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="power2">
+                        <span class="paper-sn">74.</span>
+                        <span class="subject-name">Power Systems – II</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="psd">
+                        <span class="paper-sn">75.</span>
+                        <span class="subject-name">Professional Skill Development</span>
+                        <span class="paper-count">3</span>
+                    </button>
+                    <button class="filter-btn" data-subject="se">
+                        <span class="paper-sn">76.</span>
+                        <span class="subject-name">Software Engineering</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                    <button class="filter-btn" data-subject="trans">
+                        <span class="paper-sn">77.</span>
+                        <span class="subject-name">Transportation Engineering</span>
+                        <span class="paper-count">5</span>
+                    </button>
+                </div>
+                <div style="text-align: center; margin-bottom: 0; margin-top: 10px;">
+                    <span
+                        style="font-size: 0.75em; color: var(--accent); border-bottom: 1px dashed; padding-bottom: 2px;">
+                        <a href="https://t.me/erabhishekkumar">help us & your juniors.<br>please send us missing
+                            question
+                            papers.</a>
+                    </span>
+                </div>
+            </section>
+            <div id="papers-placeholder"></div>
+        </main>
+    </div>
+
+    <div id="info-modal" class="custom-modal hidden">
+        <div class="custom-modal-overlay"></div>
+
+        <div class="custom-modal-content">
+            <button id="close-modal-btn" class="close-modal">&times;</button>
+
+            <div class="modal-header-section">
+                <div class="modal-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="#ff4b4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                        </path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
+                <h3 class="modal-title">Important Note</h3>
+                <p class="modal-desc">
+                    Internet may be required for viewing complex mathematical expressions / formulae.
+                </p>
+            </div>
+
+            <div class="modal-legend-section">
+                <div class="legend-title">Question Frequency Guide</div>
+
+                <p class="legend-subtitle">
+                    The number of stars indicates exactly how many times a question (or a similar question) has appeared
+                    in recent years.
+                </p>
+
+                <div class="similarity-rule">
+                    <div class="rule-text">
+                        <p>
+                            <strong>Repetition Logic:</strong> Across all available papers of same subject, Questions
+                            are considered repeated if their text
+                            (including options, if any) matches <strong>60% or more</strong>.
+                        </p>
+                        <p class="logic-note" style="margin-top: 7px;">
+                            <span style="color: var(--accent-2); font-weight: bold;">Why not 100% match?</span> Exact
+                            match logic often fails in semester exams due to
+                            different numerical values or minor logic manipulations.<br>This matching threshold (60%+)
+                            ensures we
+                            capture
+                            all conceptually similar questions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="star-rules-grid">
+                    <div class="star-rule">
+                        <span class="star-visual rule-1">no stars</span>
+                        <span class="star-meaning">Asked 1 time</span>
+                    </div>
+
+                    <div class="star-rule">
+                        <span class="star-visual rule-2">★★</span>
+                        <span class="star-meaning">Asked 2 times</span>
+                    </div>
+
+                    <div class="star-rule">
+                        <span class="star-visual rule-3">★★★</span>
+                        <span class="star-meaning">Asked 3 times</span>
+                    </div>
+
+                    <div class="star-rule">
+                        <span class="star-visual rule-4">★★★★</span>
+                        <span class="star-meaning">Asked 4 times</span>
+                    </div>
+
+                    <div class="star-rule">
+                        <span class="star-visual rule-5">★★★★★</span>
+                        <span class="star-meaning">Asked 5 times</span>
+                    </div>
+
+                    <div class="star-rule">
+                        <span class="star-visual rule-6">★★★★★</span>
+                        <span class="star-meaning">Asked 5+ times</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    <script src="js/logic.js"></script>
+    <script src="js/qp1.js"></script>
+    <script src="js/qp2.js"></script>
+    <script src="js/qp3.js"></script>
+    <script src="js/qp4.js"></script>
+    <script>
+        setTimeout(() => {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) {
+                overlay.classList.add('hidden');
+            }
+        }, 500); 
+    </script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

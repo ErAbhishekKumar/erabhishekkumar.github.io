@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus - Civil Engineering with CA</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Civil Engineering with Computer Applications</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Database Management System [119601]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Design of Steel Structure [119602]</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Engineering Economics, Estimation &amp; Costing [119603]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Artificial Intelligence [119604]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Environmental Engineering-II [119605]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Geotechnical Engineering-II [119606]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1196XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Courses-2 Lab [119607]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>20</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-119601"
+                        data-type="theory">Database Management System</button><button class="tab-btn"
+                        data-target="subject-119602" data-type="theory">Design of Steel Structure</button><button
+                        class="tab-btn" data-target="subject-119603" data-type="theory">Engineering
+                        Economics</button><button class="tab-btn" data-target="subject-119604"
+                        data-type="theory">Artificial Intelligence</button><button class="tab-btn"
+                        data-target="subject-119605" data-type="theory">Environmental Engineering-II</button><button
+                        class="tab-btn" data-target="subject-119606" data-type="theory">Geotechnical
+                        Engineering-II</button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective-I"
+                        data-modal-options='[ {"label": "Energy Science &amp; Engineering [119608]", "target": "subject-119608", "btn-id": "btn-119608"}, {"label": "Construction Productivity [119609]", "target": "subject-119609", "btn-id": "btn-119609"}, {"label": "Environmental Systems [119610]", "target": "subject-119610", "btn-id": "btn-119610"}, {"label": "Design of Hydraulic Structures / Irrigation Engineering [119611]", "target": "subject-119611", "btn-id": "btn-119611"}, {"label": "Reliability Analysis of Structures [119612]", "target": "subject-119612", "btn-id": "btn-119612"}, {"label": "Concrete Materials [119613]", "target": "subject-119613", "btn-id": "btn-119613"}, {"label": "Structural Analysis – I [119614]", "target": "subject-119614", "btn-id": "btn-119614"}, {"label": "Soil Mechanics – I [119615]", "target": "subject-119615", "btn-id": "btn-119615"}, {"label": "Transportation Economics [119616]", "target": "subject-119616", "btn-id": "btn-119616"}, {"label": "Infrastructure Planning and Management [119617]", "target": "subject-119617", "btn-id": "btn-119617"}, {"label": "Repairs &amp; Rehabilitation of Structures [119618]", "target": "subject-119618", "btn-id": "btn-119618"}, {"label": "Airport Planning and Design [119619]", "target": "subject-119619", "btn-id": "btn-119619"}, {"label": "High Speed Rail Engineering [119620]", "target": "subject-119620", "btn-id": "btn-119620"} ]'>
+                        Program Elective-I </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-119607" data-type="lab">NPTEL
+                        Courses-2 Lab</button></div>
+            </section>
+            <div id="syllabus-content"><!-- Core theory subjects -->
+                <section id="subject-119601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Database Management System [119601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Database system architecture</strong>
+                            <ul class="unit-topics">
+                                <li>Data Abstraction</li>
+                                <li>Data Independence</li>
+                                <li>Data Definition Language (DDL)</li>
+                                <li>Data Manipulation Language (DML)</li>
+                                <li>Data models: Entity-relationship model</li>
+                                <li>Network model</li>
+                                <li>Relational and object oriented data models</li>
+                                <li>Integrity constraints</li>
+                                <li>Data manipulation operations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Relational query languages</strong>
+                            <ul class="unit-topics">
+                                <li>Relational algebra</li>
+                                <li>Tuple and domain relational calculus</li>
+                                <li>SQL3</li>
+                                <li>DDL and DML constructs</li>
+                                <li>Open source and Commercial DBMS - MYSQL, ORACLE, DB2, SQL server</li>
+                                <li>Relational database design: Domain and data dependency</li>
+                                <li>Armstrong's axioms</li>
+                                <li>Normal forms</li>
+                                <li>Dependency preservation</li>
+                                <li>Lossless design</li>
+                                <li>Query processing and optimization: Evaluation of relational algebra expressions</li>
+                                <li>Query equivalence</li>
+                                <li>Join strategies</li>
+                                <li>Query optimization algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Storage strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Indices</li>
+                                <li>B- trees</li>
+                                <li>Hashing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Transaction processing</strong>
+                            <ul class="unit-topics">
+                                <li>Concurrency control</li>
+                                <li>ACID property</li>
+                                <li>Serializability of scheduling</li>
+                                <li>Locking and timestamp based schedulers</li>
+                                <li>Multi- version and optimistic Concurrency Control schemes</li>
+                                <li>Database recovery</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Database Security</strong>
+                            <ul class="unit-topics">
+                                <li>Authentication</li>
+                                <li>Authorization and access control</li>
+                                <li>DAC, MAC and RBAC models</li>
+                                <li>Intrusion detection</li>
+                                <li>SQL injection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced topics</strong>
+                            <ul class="unit-topics">
+                                <li>Object oriented and object relational databases</li>
+                                <li>Logical databases</li>
+                                <li>Web databases</li>
+                                <li>Distributed databases</li>
+                                <li>Data warehousing and data mining</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Database System Concepts", 6th Edition by Abraham Silberschatz, Henry F. Korth, S.
+                            Sudarshan, McGraw-Hill.</li>
+                        <li>"Principles of Database and Knowledge - Base Systems", Vol 1 by J. D. Ullman, Computer
+                            Science Press.</li>
+                        <li>"Fundamentals of Database Systems", 5th Edition by R. Elmasri and S. Navathe, Pearson
+                            Education</li>
+                        <li>"Foundations of Databases", Reprint by Serge Abiteboul, Richard Hull, Victor Vianu, Addison
+                            -Wesley.</li>
+                    </ol>
+                </section>
+                <section id="subject-119602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Design of Steel Structure [119602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Steel structures</li>
+                                <li>Material properties</li>
+                                <li>Limit states and design philosophies</li>
+                                <li>Analysis and design methods</li>
+                                <li>Loads, partial safety factors and load combinations</li>
+                                <li>Analysis of roof for wind loads</li>
+                                <li>Codes and standards</li>
+                                <li>Section Classification: Plastic, compact, semi- compact, and slender sections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Connections</strong>
+                            <ul class="unit-topics">
+                                <li>Structural fasteners - Rivets, bolts and welds</li>
+                                <li>Strength under combined stresses</li>
+                                <li>Bolted and Welded Connections - Simple and Eccentric and Column bases</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Tension members</strong>
+                            <ul class="unit-topics">
+                                <li>Design based on net section including shear lag effects and block shear</li>
+                                <li>Lug angles</li>
+                                <li>Compression members</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Design for flexural and flexural- torsional
+                                buckling</strong>
+                            <ul class="unit-topics">
+                                <li>Effective length factor: Sway and Nonsway frames</li>
+                                <li>Local buckling</li>
+                                <li>Built- up columns - Battens and lacings</li>
+                                <li>Laterally Supported and Unsupported Beams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Design strength using shear- moment
+                                interaction</strong>
+                            <ul class="unit-topics">
+                                <li>Built- up beams</li>
+                                <li>Shear buckling strength</li>
+                                <li>Plate girders and design of stiffeners</li>
+                                <li>Lateral torsional buckling</li>
+                                <li>Effect of restraints and effective length</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Beam- Columns</strong>
+                            <ul class="unit-topics">
+                                <li>Effect of axial load on flexure behaviour</li>
+                                <li>P- M interaction and moment amplification</li>
+                                <li>Flexural torsional buckling and Bi- axial bending</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Mc Cormac, J.C., Nelson, J.K. Jr., Structural Steel Design. 3rd edition. Prentice Hall,
+                            N.J., 2003.</li>
+                        <li>Galambos, T.V., Lin, F.J., Johnston, B.G., Basic Steel Design with LRFD, Prentice Hall, 1996
+                        </li>
+                        <li>Segui, W. T., LRFD Steel Design, 2nd Ed., PWS Publishing, Boston.</li>
+                        <li>Salmon, C.G. and Johnson, J.E., Steel Structures: Design and Behavior, 3rd Edition, Harper &
+                            Row, Publishers, New York, 1990.</li>
+                        <li>Related Codes of Practice of BIS</li>
+                        <li>NBC, National Building Code, BIS (2017).</li>
+                        <li>ASCE, Minimum Design Loads for Buildings and Other Structures, ASCE 7-02, American Society
+                            of Civil Engineers, Virginia, 2002.</li>
+                        <li>Subramanian, N. (2010). Steel Structures: Design and Practice, Oxford University Press.</li>
+                        <li>Duggal, S.K. (2014). Limit State Design of Steel Structures, McGraw Hill.</li>
+                    </ol>
+                </section>
+                <section id="subject-119603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Engineering Economics, Estimation &amp; Costing [119603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basic Principles and Methodology of Economics</strong>
+                            <ul class="unit-topics">
+                                <li>Demand/Supply - elasticity - Government Policies and Application</li>
+                                <li>Theory of the Firm and Market Structure</li>
+                                <li>Basic Macro- economic Concepts (including GDP/GNP/NI/Disposable Income) and
+                                    Identities for both closed and open economies</li>
+                                <li>Aggregate demand and Supply (IS/LM)</li>
+                                <li>Price Indices (WPI/CPI)</li>
+                                <li>Interest rates</li>
+                                <li>Direct and Indirect Taxes</li>
+                                <li>Public Sector Economics - Welfare, Externalities, Labour Market</li>
+                                <li>Components of Monetary and Financial System</li>
+                                <li>Central Bank - Monetary Aggregates; Commercial Banks & their functions; Capital and
+                                    Debt Markets</li>
+                                <li>Monetary and Fiscal Policy Tools & their impact on the economy - Inflation and
+                                    Phillips Curve</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Elements of Business/Managerial Economics and forms of
+                                organizations</strong>
+                            <ul class="unit-topics">
+                                <li>Cost & Cost Control - Techniques, Types of Costs, Lifecycle costs, Budgets, Break
+                                    even Analysis, Capital Budgeting</li>
+                                <li>Application of Linear Programming</li>
+                                <li>Investment Analysis - NPV, ROI, IRR, Payback Period, Depreciation</li>
+                                <li>Time value of money (present and future worth of cash flows)</li>
+                                <li>Business Forecasting - Elementary techniques</li>
+                                <li>Statements - Cash flow, Financial</li>
+                                <li>Case Study Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Indian economy</strong>
+                            <ul class="unit-topics">
+                                <li>Brief overview of post- independence period - plans</li>
+                                <li>Post reform Growth, Structure of productive activity</li>
+                                <li>Issues of Inclusion - Sectors, States/Regions, Groups of people (M/F), Urbanization
+                                </li>
+                                <li>Employment- Informal, Organized, Unorganized, Public, Private</li>
+                                <li>Challenges and Policy Debates in Monetary, Fiscal, Social, External sectors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Estimation / Measurements for various items</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to the process of Estimation</li>
+                                <li>Use of relevant Indian Standard Specifications for the same, taking out quantities
+                                    from the given requirements of the work, comparison of different alternatives</li>
+                                <li>Bar bending schedules</li>
+                                <li>Mass haul Diagrams</li>
+                                <li>Estimating Earthwork and Foundations</li>
+                                <li>Estimating Concrete and Masonry, Finishes, Interiors, MEP works</li>
+                                <li>BIM and quantity take- offs</li>
+                                <li>Adding equipment costs; labour costs; rate analysis</li>
+                                <li>Material survey- Thumb rules for computation of materials requirement for different
+                                    materials for buildings, percentage breakup of the cost, cost sensitive index,
+                                    market survey of basic materials</li>
+                                <li>Use of Computers in quantity surveying</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Specifications</strong>
+                            <ul class="unit-topics">
+                                <li>Types, requirements and importance</li>
+                                <li>Detailed specifications for buildings, roads, minor bridges and industrial
+                                    structures</li>
+                                <li>Rate analysis- Purpose, importance and necessity of the same, factors affecting,
+                                    task work, daily output from different equipment/ productivity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Tender</strong>
+                            <ul class="unit-topics">
+                                <li>Preparation of tender documents, importance of inviting tenders</li>
+                                <li>Contract types, relative merits, prequalification</li>
+                                <li>General and special conditions, termination of contracts, extra work and Changes,
+                                    penalty and liquidated charges</li>
+                                <li>Settlement of disputes, R.A. Bill & Final Bill, Payment of advance, insurance,
+                                    claims, price variation, etc.</li>
+                                <li>Preparing Bids- Bid Price buildup: Material, Labour, Equipment costs, Risks, Direct
+                                    & Indirect Overheads, Profits</li>
+                                <li>Bid conditions, alternative specifications; Alternative Bids</li>
+                                <li>Bid process management</li>
+                                <li>Introduction to Acts pertaining to- Minimum wages, Workman's compensation, Contracts
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Mankiw Gregory N. (2002), Principles of Economics, Thompson Asia.</li>
+                        <li>V. Mote, S. Paul, G. Gupta(2004), Managerial Economics, Tata McGraw Hill.</li>
+                        <li>Misra, S.K. and Puri (2009), Indian Economy, Himalaya.</li>
+                        <li>Pareek Saroj (2003), Textbook of Business Economics, Sunrise Publishers.</li>
+                        <li>M Chakravarty, Estimating, Costing Specifications & Valuation.</li>
+                        <li>Joy P K, Handbook of Construction Management, Macmillan.</li>
+                        <li>B.S. Patil, Building & Engineering Contracts.</li>
+                        <li>Relevant Indian Standard Specifications.</li>
+                        <li>World Bank Approved Contract Documents.</li>
+                        <li>FIDIC Contract Conditions.</li>
+                        <li>Acts Related to Minimum Wages, Workmen's Compensation, Contract, and Arbitration.</li>
+                        <li>Typical PWD Rate Analysis documents.</li>
+                        <li>UBS Publishers & Distributors, Estimating and Costing in Civil Engineering: Theory and
+                            Practice including Specification and Valuations,2016.</li>
+                        <li>Dutta, B.N., Estimating and Costing in Civil Engineering (Theory & Practice), UBS
+                            Publishers, 2016.</li>
+                    </ol>
+                </section>
+                <section id="subject-119604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Artificial Intelligence [119604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Overview</li>
+                                <li>Turing test</li>
+                                <li>Intelligent agents</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Problem Solving</strong>
+                            <ul class="unit-topics">
+                                <li>Solving Problems by Searching: Uninformed search - Depth First Search, Breadth First
+                                    Search, DFID</li>
+                                <li>Heuristic search - Generate and Test, Best First Search, Beam Search, Hill Climbing,
+                                    A*</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Problem reduction search</strong>
+                            <ul class="unit-topics">
+                                <li>AND/OR Graphs, AO*</li>
+                                <li>Constraint satisfaction</li>
+                                <li>Means- ends analysis</li>
+                                <li>Stochastic search methods - Simulated Annealing, Particle Swarm Optimization</li>
+                                <li>Game Playing - Minimax algorithm, Alpha- beta pruning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Knowledge and Reasoning</strong>
+                            <ul class="unit-topics">
+                                <li>Building a knowledge base - Propositional logic, first order logic</li>
+                                <li>Inference in first order logic</li>
+                                <li>Resolution - refutation proofs</li>
+                                <li>Theorem Proving in First Order Logic</li>
+                                <li>Planning, partial order planning</li>
+                                <li>Uncertain Knowledge and Reasoning, Probabilities</li>
+                                <li>Bayesian Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of different forms of learning: unsupervised, supervised, semi- supervised
+                                </li>
+                                <li>K- means clustering algorithm</li>
+                                <li>Decision Trees</li>
+                                <li>Neural Networks</li>
+                                <li>Deep Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced topics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Computer Vision</li>
+                                <li>Natural Language Processing</li>
+                                <li>Expert Systems</li>
+                                <li>Robotics</li>
+                                <li>Genetic Algorithm</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. Russell and P. Norvig, "Artificial Intelligence: A Modern Approach," Prentice Hall</li>
+                        <li>E. Rich, K. Knight and S. B. Nair, "Artificial Intelligence," TMH.</li>
+                        <li>C. Bishop, "Pattern Recognition and Machine Learning," Springer</li>
+                        <li>D. W. Patterson, "Introduction to artificial intelligence and expert systems," Prentice Hall
+                        </li>
+                        <li>A. C. Staugaard, Jr., "Robotics and AI: An Introduction to Applied Machine Intelligence,"
+                            Prentice Hall</li>
+                        <li>I. Bratko, "Prolog Programming for Artificial Intelligence," Addison-Wesley</li>
+                        <li>S. O. Haykin, "Neural Networks and Learning Machines," Prentice Hall</li>
+                        <li>D. Jurafsky and J. H. Martin, "Speech and Language Processing," Prentice Hall.</li>
+                    </ol>
+                </section>
+                <section id="subject-119605" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Environmental Engineering-II [119605]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Sewage- Domestic and Storm water</strong>
+                            <ul class="unit-topics">
+                                <li>Quantity of Sewage, Sewage flow variations</li>
+                                <li>Conveyance of sewage- Sewers, shapes design parameters, operation and maintenance of
+                                    sewers, Sewage pumping</li>
+                                <li>Sewerage, Sewer appurtenances, Design of sewerage systems</li>
+                                <li>Small bore systems</li>
+                                <li>Storm Water- Quantification and design of Storm water</li>
+                                <li>Sewage and Sullage, Pollution due to improper disposal of sewage</li>
+                                <li>National River cleaning plans</li>
+                                <li>Wastewater treatment, aerobic and anaerobic treatment systems, suspended and
+                                    attached growth systems</li>
+                                <li>Recycling of sewage - quality requirements for various purposes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Solid waste management</strong>
+                            <ul class="unit-topics">
+                                <li>Municipal solid waste, Composition and various chemical and physical parameters of
+                                    MSW</li>
+                                <li>MSW management: Collection, transport, treatment and disposal of MSW</li>
+                                <li>Special MSW: waste from commercial establishments and other urban areas, solid waste
+                                    from construction activities, biomedical wastes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Effects of solid waste on environment</strong>
+                            <ul class="unit-topics">
+                                <li>Effects on air, soil, water surface and ground health hazards</li>
+                                <li>Disposal of solid waste- segregation, reduction at source, recovery and recycle</li>
+                                <li>Disposal methods- Integrated solid waste management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Hazardous waste</strong>
+                            <ul class="unit-topics">
+                                <li>Types and nature of hazardous waste as per the HW Schedules of regulating
+                                    authorities</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Government authorities and their roles</strong>
+                            <ul class="unit-topics">
+                                <li>In water supply, sewerage disposal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Solid waste management and monitoring/control of
+                                environmental pollution</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Introduction to Environmental Engineering and Science by Gilbert Masters, Prentice Hall, New
+                            Jersey.</li>
+                        <li>Introduction to Environmental Engineering by P. Aarne Vesilind, Susan M. Morgan,
+                            Thompson/Brooks/Cole; Second Edition 2008.</li>
+                        <li>Peavy, H.s, Rowe, D.R, Tchobanoglous, G. Environmental Engineering, Mc- Graw Hill
+                            International Editions, New York 1985.</li>
+                        <li>MetCalf and Eddy. Wastewater Engineering, Treatment, Disposal and Reuse, Tata McGraw- Hill,
+                            New Delhi.</li>
+                        <li>Manual on Water Supply and Treatment. Ministry of Urban Development, New Delhi.</li>
+                        <li>Plumbing Engineering. Theory, Design and Practice, S.M. Patil, 1999</li>
+                        <li>Integrated Solid Waste Management, Tchobanoglous, Theissen & Vigil. McGraw Hill Publication
+                        </li>
+                        <li>Manual on Sewerage and Sewage Treatment Systems, Part A, B and C. Central Public Health and
+                            Environmental Engineering Organization, Ministry of Urban Development.</li>
+                    </ol>
+                </section>
+                <section id="subject-119606" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Geotechnical Engineering-II [119606]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Consolidation of Soil</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, comparison between compaction and consolidation</li>
+                                <li>Initial, primary & secondary consolidation</li>
+                                <li>Spring analogy for primary consolidation</li>
+                                <li>Interpretation of consolidation test results</li>
+                                <li>Terzaghi's theory of consolidation</li>
+                                <li>Final settlement of soil deposits</li>
+                                <li>Computation of consolidation settlement and secondary consolidation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Shear Strength</strong>
+                            <ul class="unit-topics">
+                                <li>Mohr circle and its characteristics, principal planes</li>
+                                <li>Relation between major and minor principal stresses</li>
+                                <li>Mohr- Coulomb theory</li>
+                                <li>Types of shear tests: direct shear test, merits of direct shear test</li>
+                                <li>Triaxial compression tests, test behaviour of UU, CU and CD tests</li>
+                                <li>Pore- pressure measurement, computation of effective shear strength parameters</li>
+                                <li>Unconfined compression test, vane shear test</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stability of Slopes</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, types of slopes and their failure mechanisms</li>
+                                <li>Factor of safety</li>
+                                <li>Analysis of finite and infinite slopes, wedge failure Swedish circle method</li>
+                                <li>Friction circle method</li>
+                                <li>Stability numbers and charts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Soil Exploration</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, methods of site exploration and soil investigation</li>
+                                <li>Geophysical and advance soil exploration methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Methods of boring, soil samplers, sampling
+                                procedures</strong>
+                            <ul class="unit-topics">
+                                <li>Trail pits, borings, penetrometer tests</li>
+                                <li>Analysis of borehole logs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Application of soil mechanics</strong>
+                            <ul class="unit-topics">
+                                <li>To determine earth pressures, analysis of retaining walls, cuts & excavations and
+                                    sheet piles</li>
+                                <li>Stability of slopes, instrumentation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Soil Mechanics by Craig R.F., Chapman & Hall</li>
+                        <li>Fundamentals of Soil Engineering by Taylor, John Wiley & Sons</li>
+                        <li>An Introduction to Geotechnical Engineering, by Holtz R.D. and Kovacs, W.D., Prentice Hall,
+                            NJ</li>
+                        <li>Principles of Geotechnical Engineering, by Braja M. Das, Cengage Learning</li>
+                        <li>Principles of Foundation Engineering, by Braja M. Das, Cengage Learning</li>
+                        <li>Essentials of Soil Mechanics and Foundations: Basic Geotechnics by David F. McCarthy</li>
+                        <li>Soil Mechanics in Engineering Practice by Karl Terzaghi, Ralph B. Peck, and Gholamreza
+                            Mesri.</li>
+                        <li>Geotechnical Engineering: Principles and Practices of Soil Mechanics and Foundation
+                            Engineering (Civil and Environmental Engineering) by V.N.S. Murthy.</li>
+                    </ol>
+                </section><!-- Lab subject -->
+                <section id="subject-119607" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Courses-2 Lab [119607]</h2>
+                    <p>Details for NPTEL Courses-2 Lab will be provided by the department. Typically, students complete
+                        a mini-project or online course with lab component as per NPTEL guidelines.</p>
+                </section><!-- Elective subjects (hidden by default, shown when selected) -->
+                <section id="subject-119608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Energy Science &amp; Engineering [119608]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Energy Science</strong>
+                            <ul class="unit-topics">
+                                <li>Scientific principles and historical interpretation to place energy use in the
+                                    context of pressing societal, environmental and climate issues</li>
+                                <li>Introduction to energy systems and resources</li>
+                                <li>Introduction to Energy, sustainability & the environment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Energy Sources</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of energy systems, sources, transformations, efficiency, and storage</li>
+                                <li>Fossil fuels (coal, oil, oil- bearing shale and sands, coal gasification) - past,
+                                    present & future</li>
+                                <li>Remedies & alternatives for fossil fuels - biomass, wind, solar, nuclear, wave,
+                                    tidal and hydrogen</li>
+                                <li>Sustainability and environmental trade- offs of different energy systems</li>
+                                <li>Possibilities for energy storage or regeneration (Ex. Pumped storage hydro power
+                                    projects, superconductor- based energy storages, high efficiency batteries)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Energy & Environment</strong>
+                            <ul class="unit-topics">
+                                <li>Energy efficiency and conservation</li>
+                                <li>Introduction to clean energy technologies and its importance in sustainable
+                                    development</li>
+                                <li>Carbon footprint, energy consumption and sustainability</li>
+                                <li>Introduction to the economics of energy</li>
+                                <li>How the economic system determines production and consumption; linkages between
+                                    economic and environmental outcomes</li>
+                                <li>How future energy use can be influenced by economic, environmental, trade, and
+                                    research policy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Civil Engineering Projects connected with the Energy
+                                Sources</strong>
+                            <ul class="unit-topics">
+                                <li>Coal mining technologies, oil exploration offshore platforms</li>
+                                <li>Underground and under- sea oil pipelines</li>
+                                <li>Solar chimney project</li>
+                                <li>Wave energy caissons, coastal installations for tidal power</li>
+                                <li>Wind mill towers</li>
+                                <li>Hydro power stations above- ground and underground along with associated dams,
+                                    tunnels, penstocks, etc.</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Nuclear reactor containment buildings and associated
+                                buildings</strong>
+                            <ul class="unit-topics">
+                                <li>Design and construction constraints and testing procedures for reactor containment
+                                    buildings</li>
+                                <li>Spent Nuclear fuel storage and disposal systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Engineering for Energy conservation</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of Green Building and Green Architecture</li>
+                                <li>Green building concepts (Green building encompasses everything from the choice of
+                                    building materials to where a building is located, how it is designed and operated)
+                                </li>
+                                <li>LEED ratings</li>
+                                <li>Identification of energy related enterprises that represent the breath of the
+                                    industry and prioritizing these as candidates</li>
+                                <li>Embodied energy analysis and use as a tool for measuring sustainability</li>
+                                <li>Energy Audit of Facilities and optimization of energy consumption</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Boyle, Godfrey (2004), Renewable Energy (2nd edition). Oxford University Press</li>
+                        <li>Boyle, Godfrey, Bob Everett, and Janet Ramage (Eds.) (2004), Energy Systems and
+                            Sustainability: Power for a Sustainable Future. Oxford University Press</li>
+                        <li>Schaeffer, John (2007), Real Goods Solar Living Sourcebook: The Complete Guide to Renewable
+                            Energy Technologies and Sustainable Living, Gaiam.</li>
+                        <li>Jean-Philippe; Zaccour, Georges (Eds.), (2005), Energy and Environment Set: Mathematics of
+                            Decision Making, Loulou, Richard; Waab, XVIII,</li>
+                        <li>Ristinen, Robert A. Kraushaar, Jack J. A.Kraushaar, Jack P. Ristinen, Robert A. (2006)
+                            Energy and the Environment, 2nd Edition, John Wiley</li>
+                        <li>UNDP (2000), Energy and the Challenge of Sustainability, World Energy assessment.</li>
+                        <li>E H Thorndike (1976), Energy & Environment: A Primer for Scientists and Engineers,
+                            Addison-Wesley Publishing Company.</li>
+                    </ol>
+                </section>
+                <section id="subject-119609" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Construction Productivity [119609]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Definition of Productivity</strong>
+                            <ul class="unit-topics">
+                                <li>Impact of productivities on construction duration and costs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Measuring productivities of construction equipment,
+                                Staff and Labour</strong>
+                            <ul class="unit-topics">
+                                <li>Typical benchmarks for the same</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Productivity analysis from Daily Progress
+                                Reports</strong>
+                            <ul class="unit-topics">
+                                <li>Lean Construction concepts of Value Adding activities, Non- Value Adding Activities
+                                    and Non- Value Adding but Necessary Activities</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Productivity measurements by special Lean Construction-
+                                oriented field methods</strong>
+                            <ul class="unit-topics">
+                                <li>Work Sampling, Takt time analysis, Foreman Delay Surveys</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Productivity improvement measures</strong>
+                            <ul class="unit-topics">
+                                <li>Value Stream Mapping, LocationBased management Systems, 5S, good Housekeeping, etc.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Use of specialist software such as Vico for
+                                productivity studies</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Adrian, James J.; Measuring and Improving Construction Productivity, 4th edition Stipes
+                            Publishing, 2004 ISPB 1-58874-357-8.</li>
+                        <li>Halpin, D.W. and R.W. Woodhead. 1976. Design of Construction and Process Operations. New
+                            York: John Wiley and Sons.</li>
+                        <li>Halpin, D.W. 1990. Micro CYCLONE User's Manual. Division of Construction Engineering and
+                            Management, Purdue University, West Lafayette, Indiana.</li>
+                        <li>Halpin, D.W. and L.S. Riggs. 1992. Planning anti Analysis of Construction Operations.</li>
+                    </ol>
+                </section>
+                <section id="subject-119610" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Environmental Systems [119610]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to the concepts and applications of
+                                environmental systems analysis</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Application of mathematical programming and
+                                modeling</strong>
+                            <ul class="unit-topics">
+                                <li>To the design, planning and management of engineered environmental systems, regional
+                                    environmental systems, and environmental policy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Economic analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Including benefit- cost analysis and management strategies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Concepts of tradeoff, non- inferior sets, single and
+                                multi- objective optimization</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Practical application to case studies</strong>
+                            <ul class="unit-topics">
+                                <li>To convey an understanding of the complexity of actual design practice</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Practical application to case studies</strong>
+                            <ul class="unit-topics">
+                                <li>To convey an understanding of data collection challenges of actual design practice
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Benny Joseph (2005), Environmental Studies, New Delhi, Tata McGraw Hill Publishing co. Ltd.
+                        </li>
+                        <li>Erach Bharucha (2005), Textbook of Environmental Studies for Undergraduate Courses,
+                            Hyderabad, Universities Press.</li>
+                    </ol>
+                </section>
+                <section id="subject-119611" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Design of Hydraulic Structures / Irrigation Engineering
+                        [119611]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: DESIGN & MAINTENANCE OF CANALS</strong>
+                            <ul class="unit-topics">
+                                <li>Design of canal based on tractive force approach</li>
+                                <li>Maintenance of unlined channels (Based on IS 4839 - 1979 part - I)</li>
+                                <li>Maintenance of lined channels (Based on IS 4339 - 1979 part - II)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Design of Canal Outlets, Canal Headworks</strong>
+                            <ul class="unit-topics">
+                                <li>Selection of site for storage & diversion head works - Weir or Barrages - Divide
+                                    wall, Scouring sluice or under sluices, fish ladder</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: DAMS</strong>
+                            <ul class="unit-topics">
+                                <li>Gravity dams, earth & rock fill dams, buttress dams & arch dams</li>
+                                <li>Spillways & outlet works</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Canal Regulation Works</strong>
+                            <ul class="unit-topics">
+                                <li>Head Regulator, Distributary head regulator, Cross regulators - Necessity of channel
+                                    falls, types of falls & design of vertical drop fall/Sharda type falls</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Cross - Drainage Works</strong>
+                            <ul class="unit-topics">
+                                <li>Types of C - D works: Aqueducts, siphon Aqueducts, Super passages, Siphon Super
+                                    passages, level crossings, Inlet & Outlet</li>
+                                <li>Fluming of channels & design of channel transitions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: An introduction to river basis development</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Fundamental of Irrigation Engineering by Bharat Singh, Nemchand Bros., Roorkee, Uttarakhand.
+                        </li>
+                        <li>Irrigation & Water Power Engineering by Punima B.C., Pande Lal B.B., Laxmi Publication Pvt.
+                            Ltd. New Delhi.</li>
+                        <li>Water Resource Engineering by Garg S.K., Khanna Publishers, New Delhi.</li>
+                        <li>Water Power Engineering by Dandekar MM/ Sharma KN, Vikash Publishing Pvt. Ltd</li>
+                        <li>Water Resources Engineering by R.K. Linsley & J.L.H. Paulhus, McGraw Hill.</li>
+                        <li>Hydroelectric Handbooks by W.P. Creager & J.D. Justin, John Wiley & Sons.</li>
+                    </ol>
+                </section>
+                <section id="subject-119612" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Reliability Analysis of Structures [119612]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Role of reliability in civil engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Historical background, random events, random variables, model uncertainty</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Common probabilistic models</strong>
+                            <ul class="unit-topics">
+                                <li>Important statistical parameters and their estimations, normal, lognormal, extreme
+                                    value distribution</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Fundamental concept of structural reliability</strong>
+                            <ul class="unit-topics">
+                                <li>Derivation of stress- strength interface equation, graphical representation, Cornel
+                                    reliability index, reliability and failure probability computations for simple
+                                    linear functions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Second moment concepts</strong>
+                            <ul class="unit-topics">
+                                <li>First order second moment theory, Hasofer- Lind transformation, Linear and non-
+                                    linear limit state functions, Solution schemes, geometric interpretation of solution
+                                    scheme, Rackwitz- Fiessler transformation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: First order reliability method</strong>
+                            <ul class="unit-topics">
+                                <li>Stochastic models for material strength and loads</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Reliability assessment of structural component and
+                                simple civil engineering structures</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Papoulis A. Probability, Random Variables and Stochastic Processes, McGraw-Hill, New York,
+                            USA, 1991.</li>
+                        <li>Ayyub B M, McCuen R H. Probability, Statistics and Reliability for Engineers and Scientists,
+                            Chapman & Hall, Florida, USA, 2000.</li>
+                        <li>Ranganathan R. Structural Reliability Analysis & Design. Jaico Publishing House, Mumbai,
+                            India, 1999.</li>
+                        <li>Melchers R E. Structural Reliability: Analysis and Prediction, John Wiley, Chichester, 1999.
+                        </li>
+                        <li>Ang A H S & Tang W H. Probability Concepts in Engineering Planning and Design, Vol II, John
+                            Wiley, New York, 1984.</li>
+                        <li>Madsen H O, Krenk S and Lind N C. Methods of Structural Safety, Prentice-Hall, Inc,
+                            Englewood Cliffs, USA, 1986.</li>
+                        <li>Choi S K, Grandhi R V and Canfield R A. Reliability Based Structural Design, SpringerVerlag,
+                            London, UK, 2007.</li>
+                        <li>Haldar A & Mahadevan S. Reliability Assessment Using Stochastic Finite Element Analysis,
+                            John-Wiley & Sons Inc., New York, USA, 2000.</li>
+                    </ol>
+                </section>
+                <section id="subject-119613" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Concrete Materials [119613]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Examines the influence of constituent materials
+                                (cements, aggregates and admixtures) on the properties of fresh and hardened
+                                concrete</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Recycled aggregates recovered from construction and
+                                demolition wastes; M- Sand; Light- weight aggregates</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Use of Fly Ash in concrete; Fibre- reinforced concrete
+                                with various types of metallic and nonmetallic fibres</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Various types of concrete such as Self Compacting
+                                Concrete, High Performance Concrete, etc.; mix design; handling and placement of
+                                concrete</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Effect of revibration of concrete</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Behavior of concrete under various types of loading and
+                                environment; test methods</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/ Reference Books:</h3>
+                    <ol>
+                        <li>Advanced R.C.Design by Krishna Raju. 2005.</li>
+                        <li>Limit State Design by A.K. Jain. 1990.</li>
+                        <li>Reinforced Concrete Structures by Park and Pauley. 1975.</li>
+                        <li>Reinforced Concrete Structural Elements – Behaviour Analysis and Design by Purushothaman.
+                            1984.</li>
+                        <li>Concrete Technology by M.S. Shetty. 2006.</li>
+                    </ol>
+                </section>
+                <section id="subject-119614" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Structural Analysis – I [119614]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basic introductory concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Structural systems, elements, joints, stability, equilibrium, compatibility,
+                                    indeterminacy, types of loading</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Force- displacement relation, free- body diagrams;
+                                analysis of forces in statically determinate structures</strong>
+                            <ul class="unit-topics">
+                                <li>Trusses (including compound and complex trusses), beams and frames (including
+                                    internal hinges), cables and three hinged</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stability of Walled Structures</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Influence lines for beams and trusses under moving
+                                loads; Criteria for maxima</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Work and energy principles</strong>
+                            <ul class="unit-topics">
+                                <li>Principle of virtual work, potential energy and Clastingliano's theorems,
+                                    complementary energy theorems, reciprocal theorems and Mueller Breslau's principle
+                                    with applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: In statically determinate structures: Unit (dummy) load
+                                and energy methods, moment area and conjugate beam methods, Williot- Mohr diagrams.
+                                Introduction to Matrix Methods for determinate structures: Flexibility & Stiffness
+                                Methods</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Elementary Structural Analysis by Norris, Wilbur and Utku, McGraw Hill.</li>
+                        <li>Basic Structural Analysis by C.S. Reddy, Tata McGraw Hill.</li>
+                        <li>Intermediate Structural Analysis by C.K.Wang, McGraw Hill.</li>
+                        <li>Theory of Structures – Volumes 1 and 2 by S. P. Gupta and G. S. Pandit, Tata McGraw Hill.
+                        </li>
+                        <li>Structural Analysis by L.S.Negi & R.S.Jangid, Tata McGraw Hill.</li>
+                        <li>Application of Graphics in Engg. by L.B.Roy, Standard Pub. and Dist., Delhi.</li>
+                        <li>Structural Analysis Vol 1 by Bhavikatti Vikash ,Publishing House Pvt. Ltd.</li>
+                    </ol>
+                </section>
+                <section id="subject-119615" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Soil Mechanics – I [119615]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction, Origin and Classification of
+                                soils</strong>
+                            <ul class="unit-topics">
+                                <li>Soil weight volume relationships, Index properties of soil, soil structures and Clay
+                                    Minerals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Effective stress principle</strong>
+                            <ul class="unit-topics">
+                                <li>Surface tension and capillarity, Permeability of soils, Darcy's law, test for
+                                    determination of permeability, engineering use of permeability. Factors affecting
+                                    permeability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Seepage analysis, flow nets, flow through dams</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Effective stress distribution in soils under
+                                hydrodynamic conditions. Quick sand, Piping, Prevention of piping failures.
+                                Compressibility and Consolidation</strong>
+                            <ul class="unit-topics">
+                                <li>Consolidation Process- Spring analogy, Definition, measurement of consolidations-
+                                    Determination of void ratio at various load increments, Terzaghi's theory of one
+                                    dimensional consolidation, Determination of Coefficient of consolidation, Analysis
+                                    of consolidation data</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Vertical stress below applied load in soils
+                                (Boussinesq, Westergaard, and graphical solutions)</strong>
+                            <ul class="unit-topics">
+                                <li>One and two- dimensional cases</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Compaction characteristics, water content - dry unit
+                                weight relationships, OMC, max, Dry unit weight field compaction control. Soil
+                                stabilization</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A Text Book of Soil Mechanics and Foundation Engineering by V.N.S. Murthy, Saikripa
+                            Technical consultants, Bangalore.</li>
+                        <li>Geotechnical Engineering by S. K. Gulati et. al., TMH Publication Co. Ltd., New Delhi.</li>
+                        <li>Basic and applied Soil Mechanics by Gopal Ranjan and A. S. R. Rao, Wiley Eastern Ltd., New
+                            Delhi.</li>
+                        <li>Soil Mechanics and Foundation Engineering by K. R. Arora, Standard Pub. and Dist.,</li>
+                        <li>Soil Mechanics in Engineering Practice by Terzaghi and Pech, John Wiley and Sons Inc New
+                            York.</li>
+                        <li>Soil Mechanics by Lamb and Whitman, Wiley Eastern Pvt. Ltd., New Delhi.</li>
+                        <li>Fundamentals of Soil Mechanics by Taylor, John Wiley and Sons Inc New Delhi.</li>
+                    </ol>
+                </section>
+                <section id="subject-119616" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Transportation Economics [119616]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introductory Concepts in Transportation Decision
+                                Making</strong>
+                            <ul class="unit-topics">
+                                <li>Overall transportation project development, budgeting, financial planning, the
+                                    process of transportation project development, models associated with transportation
+                                    impact evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Transportation costs</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of transportation costs, transportation agency costs, transportation
+                                    user costs, general structure and behavior of cost functions and road pricing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Estimating Transportation Demand and Supply</strong>
+                            <ul class="unit-topics">
+                                <li>Supply equilibration, dynamics of transportation demand and supply, elasticity of
+                                    travel demand and supply, classification of elasticity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Vehicle operating costs</strong>
+                            <ul class="unit-topics">
+                                <li>Fuel costs - Maintenance and spares, Depreciation - Crew costs - Value of travel
+                                    time savings - Accident costs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Economics of traffic congestion - Pricing policy;
+                                Economic analysis of projects</strong>
+                            <ul class="unit-topics">
+                                <li>Methods of evaluation - Cost- benefit ratio, first year rate of return, net present
+                                    value, and internal- rate of return methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Indirect costs and benefits of transport projects;
+                                Financing of road projects</strong>
+                            <ul class="unit-topics">
+                                <li>Methods - Private Public Partnership (PPP) - Toll collection - Economic viability of
+                                    Design- Build- Operate- Transfer Schemes - Risk Analysis - Value for Money analysis
+                                    - Case Studies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Highway investment in Developing countries - Thomas Telford Ltd., Institute of Civil
+                            Engineers, 3rdEdition, 1983.</li>
+                        <li>Winfrey R, "Economic Analysis for Highways", International Text Book Co., Pennsylvania,
+                            1969.</li>
+                        <li>Dickey, J.W., "Road Project Appraisal for Developing countries", John Wiley and Sons. 4th
+                            Edition, 1984.</li>
+                        <li>Ian Heggie, "Transport Engineering Economics", McGraw, 3rdEdition, 1972.</li>
+                        <li>Road User Cost Study - Final Report - Central Road Research Institute, New Delhi.</li>
+                    </ol>
+                </section>
+                <section id="subject-119617" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Infrastructure Planning and Management [119617]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of basic terminologies, role of infrastructure in economic development,
+                                    types of infrastructure, measurement of infrastructure capacity, bases for
+                                    quantification of demand and supply of various types of infrastructure, Indian
+                                    scenario in respect of adequacy and quality</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Infrastructure Planning</strong>
+                            <ul class="unit-topics">
+                                <li>Goals and objectives of infrastructure planning; Identification and quantification
+                                    of the casual factors influence the demand for infrastructure; review and
+                                    application of techniques to estimate supply and demand for infrastructure</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Use of econometric, social and land use indicators and
+                                models</strong>
+                            <ul class="unit-topics">
+                                <li>To forecast the demand and level of service of infrastructure and its impact on land
+                                    use; critical review of the relevant forecasting techniques; infrastructure planning
+                                    to identify and prioritize preferred areas for development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Integration of strategic planning for infrastructure at
+                                urban, regional and national levels; case studies in infrastructure planning</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Infrastructure Management</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts, Common aspects of urban and rural infrastructure management systems;
+                                    pavement and bridge management systems, Integrated infrastructure management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Case studies; Emerging trends in
+                                infrastructure</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Public- Private Sector Participation in infrastructure projects,
+                                    Understanding stakeholders' concerns, regulatory framework, risk management in
+                                    infrastructure projects, public policy for infrastructure Sectoral Overview:
+                                    Highways, railways, waterways, airports, urban and rural infrastructure: roads,
+                                    housing, water supply, sanitation - case study examples</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Goodman AS, Hastak M (2006). Infrastructure Planning Handbook: Planning, Engineering, and
+                            Economics. McGraw Hill/ASCE Press. Chapter 1</li>
+                        <li>World Bank (2012). Transformation through Infrastructure. Selected pages handed out in
+                            class.</li>
+                        <li>World Bank (2006). Infrastructure at the Crossroads: Lessons from 20 Years of World Bank
+                            Experience. Land</li>
+                        <li>ULI and Ernst & Young (2013) Infrastructure 2013: Global Priorities, Global Insights, The
+                            Urban Institute, http://www.uli.org/infrastructure- global-infrastructure-priorities/
+                            Washington DC. Available free: initiative/infrastructure-2013-explores.</li>
+                        <li>Lee (2009) New Delhi Water and Power. Harvard Kennedy School of Government Case Program
+                            #1891.</li>
+                    </ol>
+                </section>
+                <section id="subject-119618" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Repairs &amp; Rehabilitation of Structures [119618]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Maintenance and Repair Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Maintenance, Repair and Rehabilitation, Facets of Maintenance, importance of
+                                    Maintenance, Various aspects of Inspection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Assessment procedure for evaluating a damaged
+                                structure, causes of deterioration</strong>
+                            <ul class="unit-topics">
+                                <li>Strength and Durability Of Concrete- Quality assurance for concrete - Strength,
+                                    Durability and Thermal properties, of concrete - Cracks, different types causes -
+                                    Effects due to climate, temperature, Sustained elevated temperature, Corrosion -
+                                    Effects of cover thickness</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Special Concretes</strong>
+                            <ul class="unit-topics">
+                                <li>Polymer concrete, Sulphur infiltrated concrete, Fibre reinforced concrete, High
+                                    strength concrete, High performance concrete, Vacuum concrete, Self- compacting
+                                    concrete, Geopolymer concrete, Reactive powder concrete, Concrete made with
+                                    industrial wastes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Techniques for Repair and Protection Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Non- destructive Testing Techniques, Epoxy injection, Shoring, Underpinning,
+                                    Corrosion protection techniques - Corrosion inhibitors, Corrosion resistant steels,
+                                    Coatings to reinforcement, cathodic protection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Repair, Rehabilitation and Retrofitting of
+                                Structures</strong>
+                            <ul class="unit-topics">
+                                <li>Evaluation of root causes; Underpinning & shoring; some simple systems of
+                                    rehabilitation of structures; Guniting, shotcreting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Non Destructive testing systems; Use of external
+                                plates, carbon fibre wrapping and carbon composites in repairs</strong>
+                            <ul class="unit-topics">
+                                <li>Strengthening of Structural elements, Repair of structures distressed due to
+                                    corrosion, fire, Leakage, earthquake - Demolition Techniques - Engineered demolition
+                                    methods - Case studies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Repair and protection of concrete structures by Noel P.Mailvaganam, CRC Press, 1991.</li>
+                        <li>Concrete repair and maintenance Illustrated by Peter.H.Emmons, Galgotia publications Pvt.
+                            Ltd., 2001.</li>
+                        <li>"Earthquake resistant design of structures" by Pankaj agarwal, Manish shrikande, PHI, 2006.
+                        </li>
+                        <li>Failures and repair of concrete structures by S.Champion, John Wiley and Sons, 1961.</li>
+                        <li>Diagnosis and treatment of structures in distress by R.N.Raikar Published by R & D Centre of
+                            Structural Designers and Consultants Pvt.Ltd, Mumbai.</li>
+                        <li>Handbook on repair and rehabilitation of RCC buildings, CPWD, Government of India.</li>
+                        <li>Handbook on seismic retrofit of buildings, A. Chakrabarti et.al., Narosa Publishing House,
+                            2010.</li>
+                    </ol>
+                </section>
+                <section id="subject-119619" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Airport Planning and Design [119619]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Aircraft characteristics related to airport
+                                design</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Airport configuration</strong>
+                            <ul class="unit-topics">
+                                <li>Runway configurations, relation of terminal area to runway orientation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Geometric Design of the airfield - ICAO and FAA design
+                                standards</strong>
+                            <ul class="unit-topics">
+                                <li>Runways, taxiways</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Holding aprons and aprons</strong>
+                            <ul class="unit-topics">
+                                <li>Planning and design of the terminal area- apron - gate system, size and number of
+                                    gates</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Aircraft parking configurations, the passenger terminal
+                                system</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Airport lighting and marking</strong>
+                            <ul class="unit-topics">
+                                <li>Air traffic control, airport planning and air travel demand forecasting; Structural
+                                    design of airfield pavements</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Khanna S.K., Arora M.G., Jain S.S., "Airport Planning & Design", 1st Edition, Nem chand
+                            Bros. Roorkee, 2009.</li>
+                        <li>Robert Horonjeff, Francis McKelvey, William Sproule and SethYoung, "Planning and Design of
+                            Airports" 5th Edition, 2010.</li>
+                        <li>Alexander T. Wells, Ed. D & Seth, B. Young, "Airport Planning and Management", 5th Edition,
+                            2008.</li>
+                        <li>Heronjeff, R, McKelvey, F.X, "Planning & Design of Airports", 2nd Edition, McGraw Hill Book
+                            Co, 1994.</li>
+                        <li>Norman J. Ashford, Saleh Mumayiz and Paul H. Wright, "Planning, Design and Development of
+                            21st Century Airports", 4th Edition, John Wiley & Sons, 2011.</li>
+                        <li>Subramian K.P., "Highway, Railway, Airport and Harbour Engineering", 1st Edition, Scitech
+                            Publications Private Limited, 2013.</li>
+                    </ol>
+                </section>
+                <section id="subject-119620" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: High Speed Rail Engineering [119620]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Development, engineering, design and construction of
+                                high- speed rail (HSR) passenger transport systems</strong>
+                            <ul class="unit-topics">
+                                <li>Particular emphasis on the unique engineering elements of HSR technology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Key elements of HSR systems</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Key elements of HSR subsystems including: core systems
+                                (trains, power, signal, communication and control)</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Track system and civil infrastructure (earthwork,
+                                bridges, viaducts and tunnels)</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Basic design and construction of HSR stations</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Basic design and construction of rolling stock
+                                maintenance facilities</strong>
+                            <ul class="unit-topics"></ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Rangwala. S.C, "Railway Engineering", 27rd Edition, Charoatar Publishing House Pvt. Ltd,
+                            2017.</li>
+                        <li>Chandola, S.P. "Railway Engineering - A Text book of Transportation Engineering", S. Chand &
+                            Co. Ltd. 2016.</li>
+                        <li>Satish Chandra, Agarwal M. M, "Railway Engineering", 2nd Edition, Oxford University Press,
+                            2013.</li>
+                        <li>Saxena S.C and Arora S.P, "Railway Engineering", Dhanpat Rai Publications, 8th Edition,
+                            2017.</li>
+                        <li>Mundrey J.S, "Railway Track Engineering", McGraw Hill Publications, 4th Edition, 2010.</li>
+                        <li>RajatRastogi, "Transportation Engineering-II", NPTEL Videos.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

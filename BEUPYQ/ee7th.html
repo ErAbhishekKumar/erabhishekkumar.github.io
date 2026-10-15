@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Electrical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Human Values & Ethics [103702]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective- I</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective- II</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Power System Protection [103701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- IV</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project- I [100709P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Seminar [100706P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship- III [100702P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>16</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>27</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-103702" data-type="theory">Human
+                        Values & Ethics</button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective- I"
+                        data-modal-options='[ {"label": "Power Plant Engineering", "target": "subject-103712", "btn-id": "btn-103712"}, {"label": "Electrical Materials", "target": "subject-103715", "btn-id": "btn-103715"}, {"label": "Digital Signal Processing", "target": "subject-103703", "btn-id": "btn-103703"}, {"label": "Electromagnetic Waves", "target": "subject-103704", "btn-id": "btn-103704"}, {"label": "Computational Electromagnetics", "target": "subject-103705", "btn-id": "btn-103705"} ]'>
+                        Open Elective- I </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective- II"
+                        data-modal-options='[ {"label": "Power Plant Engineering", "target": "subject-103712", "btn-id": "btn-103712"}, {"label": "Electrical Materials", "target": "subject-103715", "btn-id": "btn-103715"}, {"label": "Digital Signal Processing", "target": "subject-103703", "btn-id": "btn-103703"}, {"label": "Electromagnetic Waves", "target": "subject-103704", "btn-id": "btn-103704"}, {"label": "Computational Electromagnetics", "target": "subject-103705", "btn-id": "btn-103705"} ]'>
+                        Open Elective- II </button><button class="tab-btn" data-target="subject-103701"
+                        data-type="theory">Power System Protection</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective- IV"
+                        data-modal-options='[ {"label": "Power Plant Engineering", "target": "subject-103712", "btn-id": "btn-103712"}, {"label": "Electrical Materials", "target": "subject-103715", "btn-id": "btn-103715"}, {"label": "Digital Signal Processing", "target": "subject-103703", "btn-id": "btn-103703"}, {"label": "Electromagnetic Waves", "target": "subject-103704", "btn-id": "btn-103704"}, {"label": "Computational Electromagnetics", "target": "subject-103705", "btn-id": "btn-103705"} ]'>
+                        Program Elective- IV </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-Project-I"
+                        data-type="lab">Project- I</button><button class="tab-btn" data-target="subject-Seminar"
+                        data-type="lab">Seminar</button><button class="tab-btn"
+                        data-target="subject-Summer-Entrepreneurship-III" data-type="lab">Summer Entrepreneurship-
+                        III</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-103702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Human Values & Ethics [103702]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module I : HUMAN VALUES</strong>
+                            <ul class="unit-topics">
+                                <li>Morals, Values and Ethics</li>
+                                <li>Integrity</li>
+                                <li>Work Ethic</li>
+                                <li>Service Learning</li>
+                                <li>Civic Virtue</li>
+                                <li>Respect for others</li>
+                                <li>Living Peacefully</li>
+                                <li>Caring</li>
+                                <li>Sharing</li>
+                                <li>Honesty</li>
+                                <li>Courage</li>
+                                <li>Valuing time</li>
+                                <li>Co-operation</li>
+                                <li>Commitment</li>
+                                <li>Empathy</li>
+                                <li>Self-confidence</li>
+                                <li>Character</li>
+                                <li>Spirituality</li>
+                                <li>The role of engineers in modern society</li>
+                                <li>Social expectations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module II : ENGINEERING ETHICS</strong>
+                            <ul class="unit-topics">
+                                <li>Sense of 'Engineering Ethics'</li>
+                                <li>Variety of moral issues</li>
+                                <li>Types of inquiry</li>
+                                <li>Moral dilemmas</li>
+                                <li>Moral autonomy</li>
+                                <li>Kohlberg's theory</li>
+                                <li>Gilligan's theory</li>
+                                <li>Consensus and Controversy</li>
+                                <li>Models of Professional Roles & Professionalism</li>
+                                <li>Theories about right action</li>
+                                <li>Self-interest</li>
+                                <li>Customs and religion</li>
+                                <li>Uses of ethical theories</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module III : ENGINEERING AS SOCIAL EXPERIMENTATION</strong>
+                            <ul class="unit-topics">
+                                <li>Engineering as experimentation</li>
+                                <li>Engineers as responsible experimenters</li>
+                                <li>Research ethics</li>
+                                <li>Codes of ethics</li>
+                                <li>Industrial Standard</li>
+                                <li>Balanced outlook on law</li>
+                                <li>The challenger case study</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module IV : SAFETY, RESPONSIBILITIES AND RIGHTS</strong>
+                            <ul class="unit-topics">
+                                <li>Safety and risk</li>
+                                <li>Assessment of safety and risk</li>
+                                <li>Risk benefit analysis and reducing risk</li>
+                                <li>Govt. Regulator's approach to risks</li>
+                                <li>The three mile island and Chernobyl case studies & Bhopal</li>
+                                <li>Threat of Nuclear Power</li>
+                                <li>Depletion of ozone</li>
+                                <li>Greenhouse effects</li>
+                                <li>Collegiality and loyalty</li>
+                                <li>Respect for authority</li>
+                                <li>Collective bargaining</li>
+                                <li>Confidentiality</li>
+                                <li>Conflicts of interest</li>
+                                <li>Occupational crime</li>
+                                <li>Professional rights</li>
+                                <li>Employees' rights</li>
+                                <li>Intellectual Property Rights (IPR)</li>
+                                <li>Discrimination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module V : GLOBAL ISSUES</strong>
+                            <ul class="unit-topics">
+                                <li>Multinational corporations</li>
+                                <li>Business ethics</li>
+                                <li>Environmental ethics</li>
+                                <li>Computer ethics</li>
+                                <li>Role in Technological Development</li>
+                                <li>Weapons development</li>
+                                <li>Engineers as managers</li>
+                                <li>Consulting engineers</li>
+                                <li>Engineers as expert witnesses and advisors</li>
+                                <li>Honesty</li>
+                                <li>Leadership</li>
+                                <li>Sample code of conduct ethics like ASME, ASCE, IEEE, Institution of Engineers
+                                    (India), Indian Institute of Materials Management, Institution of Electronics and
+                                    Telecommunication Engineers (IETE), India, etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Course Outcome:</h3>
+                    <p>At the end of this course, students will demonstrate the ability to:</p>
+                    <p>&rarr; Identify the core values that shape the ethical behavior of an engineer.</p>
+                    <p>&rarr; To create awareness on professional ethics and Human Values.</p>
+                    <p>&rarr; To appreciate the rights of others.</p>
+                    <h3 class="sub-heading theory-heading">Text / References:</h3>
+                    <ol>
+                        <li>Mika Martin and Roland Seinger, 'Ethics in Engineering', Pearson Education/Prentice Hall,
+                            New York 1996.</li>
+                        <li>Govindarajan M., Natarajan S., Senthil Kumar V. S., 'Engineering Ethics' Prentice Hall of
+                            India, New Delhi, 2004.</li>
+                        <li>Charles D. Fleddermann, 'Ethics in Engineering', Pearson Education/Prentice Hall, New
+                            Jersey, 2004 (Indian Reprint).</li>
+                        <li>Charles E. Harris, Michael S. Protohard and Michael J. Rabins, 'Engineering Ethics – Concept
+                            and Cases', Wadsworth Thompson Learning, United States, 2000 (Indian Reprint now available).
+                        </li>
+                        <li>'Concepts and Cases', Thompson Learning (2000).</li>
+                        <li>John R. Boatright, 'Ethics and Conduct of Business', Pearson Education, New Delhi, 2003.
+                        </li>
+                        <li>Edmund G. Seebauer and Robert L. Barry, 'Fundamentals of Ethics for Scientists and
+                            Engineers', Oxford University Press, Oxford, 2001.</li>
+                    </ol>
+                </section>
+                <section id="subject-103701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Power System Protection [103701]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction and Components of a Protection System (4
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of Power System Protection</li>
+                                <li>Relays</li>
+                                <li>Instrument transformers</li>
+                                <li>Circuit Breakers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Faults and Over-Current Protection (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of Fault Analysis</li>
+                                <li>Sequence Networks</li>
+                                <li>Introduction to Overcurrent Protection and overcurrent relay co-ordination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Equipment Protection Schemes (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Directional, Distance, Differential protection</li>
+                                <li>Transformer and Generator protection</li>
+                                <li>Bus bar Protection</li>
+                                <li>Bus Bar arrangement schemes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Digital Protection (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Computer-aided protection</li>
+                                <li>Fourier analysis and estimation of Phasors from DFT</li>
+                                <li>Sampling, aliasing issues</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Modeling and Simulation of Protection Schemes (8
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>CT/PT modeling and standards</li>
+                                <li>Simulation of transients using Electro-Magnetic Transients (EMT) programs</li>
+                                <li>Relay Testing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: System Protection (4 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Effect of Power Swings on Distance Relaying</li>
+                                <li>System Protection Schemes</li>
+                                <li>Under-frequency, under-voltage and df/dt relays</li>
+                                <li>Out-of-step protection</li>
+                                <li>Synchro-phasors, Phasor Measurement Units and Wide-Area Measurement Systems (WAMS)
+                                </li>
+                                <li>Application of WAMS for improving protection systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>At the end of this course, students will demonstrate the ability to:</p>
+                    <p>&rarr; Understand the different components of a protection system.</p>
+                    <p>&rarr; Evaluate fault current due to different types of fault in a network.</p>
+                    <p>&rarr; Understand the protection schemes for different power system components.</p>
+                    <p>&rarr; Understand the basic principles of digital protection.</p>
+                    <p>&rarr; Understand system protection schemes, and the use of wide-area measurements.</p>
+                    <h3 class="sub-heading theory-heading">Text/References</h3>
+                    <ol>
+                        <li>J. L. Blackburn, "Protective Relaying: Principles and Applications", Marcel Dekker, New
+                            York, 1987.</li>
+                        <li>Y. G. Paithankar and S. R. Bhide, "Fundamentals of power system protection", Prentice Hall,
+                            India, 2010.</li>
+                        <li>A. G. Phadke and J. S. Thorp, "Computer Relaying for Power Systems", John Wiley & Sons,
+                            1988.</li>
+                        <li>A. G. Phadke and J. S. Thorp, "Synchronized Phasor Measurements and their Applications",
+                            Springer, 2008.</li>
+                        <li>D. Reimert, "Protective Relaying for Power Generation Systems", Taylor and Francis, 2006.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-Project-I" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project- I [100709P]</h2>
+                    <p>Details for Project-I will be provided by the department. This component carries 6 credits.</p>
+                </section>
+                <section id="subject-Seminar" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Seminar [100706P]</h2>
+                    <p>Details for Seminar will be provided by the department. This component carries 1 credit.</p>
+                </section>
+                <section id="subject-Summer-Entrepreneurship-III" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship- III [100702P]</h2>
+                    <p>Details for Summer Entrepreneurship-III will be provided by the department. This component
+                        carries 8 credits.</p>
+                </section>
+                <section id="subject-103708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Electronic Devices [103708]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103710" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Embedded Systems [103710]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103712" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Power Plant Engineering [103712]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Coal-based thermal power plants (8 lectures)</strong>
+                            <ul class="unit-topics">
+                                <li>Coal based thermal power plants</li>
+                                <li>Basic Rankine cycle and its modifications</li>
+                                <li>Layout of modern coal power plant</li>
+                                <li>Super critical boilers</li>
+                                <li>FBC boilers</li>
+                                <li>Turbines</li>
+                                <li>Condensers</li>
+                                <li>Steam and heating rates</li>
+                                <li>Sub systems of thermal power plants</li>
+                                <li>Fuel and ash handling</li>
+                                <li>Draught system</li>
+                                <li>Feed water treatment</li>
+                                <li>Binary cycles and cogeneration systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Gas turbine and combined cycle power plants (4
+                                lectures)</strong>
+                            <ul class="unit-topics">
+                                <li>Gas turbine and combined cycle power plants</li>
+                                <li>Brayton cycle analysis and optimization</li>
+                                <li>Components of gas turbine power plants</li>
+                                <li>Combined cycle power plants</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Nuclear power plants (8 lectures)</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of nuclear energy conversion</li>
+                                <li>Layout and subsystems of nuclear power plants</li>
+                                <li>Boiling Water Reactor (BWR)</li>
+                                <li>Pressurized Water Reactor (PWR)</li>
+                                <li>CANDU Reactor</li>
+                                <li>Pressurized Heavy Water Reactor (PHWR)</li>
+                                <li>Fast Breeder Reactors (FBR)</li>
+                                <li>Gas cooled and liquid metal cooled reactors</li>
+                                <li>Safety measures for nuclear power plants</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Hydroelectric and renewable energy power plants (8
+                                lectures)</strong>
+                            <ul class="unit-topics">
+                                <li>Hydroelectric power plants</li>
+                                <li>Hydrological cycle</li>
+                                <li>Rainfall & run-off measurement & plotting of various curves for estimating stream
+                                    flow</li>
+                                <li>Site selection, classification</li>
+                                <li>Comparison with other types of power plant</li>
+                                <li>Typical layout and components</li>
+                                <li>Principles of wind, tidal, solar PV and solar thermal, geothermal, biogas and fuel
+                                    cell power systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Energy, economic and environmental issues (6
+                                lectures)</strong>
+                            <ul class="unit-topics">
+                                <li>Energy, economic and environmental issues</li>
+                                <li>Power tariffs</li>
+                                <li>Load distribution parameters, load curve</li>
+                                <li>Capital and operating cost of different power plants</li>
+                                <li>Pollution control technologies including waste disposal options for coal and nuclear
+                                    plants</li>
+                                <li>Geothermal power plants, Ocean thermal electric conversion, M.H.D power generation
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Objectives:</h3>
+                    <p>&rarr; To provide an overview of power plants and the associated energy conversion issues</p>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>&rarr; Upon completion of the course, the students can understand the principles of operation for
+                        different power plants and their economics.</p>
+                    <h3 class="sub-heading theory-heading">Text Books:</h3>
+                    <ol>
+                        <li>Power Plant Engineering, 5th Edition, Laxmi Publications(P) Ltd</li>
+                        <li>Nag P.K., Power Plant Engineering, 3rd ed., Tata McGraw Hill, 2008.</li>
+                        <li>El Wakil M.M., Power Plant Technology, Tata McGraw Hill, 2010.</li>
+                        <li>Elliot T.C., Chen K and Swanekamp R.C., Power Plant Engineering, 2nd ed., McGraw Hill, 1998.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-103714" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Automobile Engineering [103714]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103716" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Big Data Analysis [103716]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103709" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Data Structures and Algorithms [103709]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103711" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: VLSI Circuits [103711]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103713" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Thermal and Fluid Engineering [103713]</h2>
+                    <p>Detailed syllabus not provided in the document.</p>
+                </section>
+                <section id="subject-103715" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Electrical Materials [103715]</h2>
+                    <ul>
+                        <li><strong class="unit-title">MODULE 1 ELECTRICAL ENGINEERING MATERIALS (6H)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Electrical Engineering Materials</li>
+                                <li>Classification of materials</li>
+                                <li>Material of importance-carbonated beverages container</li>
+                                <li>Advanced Materials</li>
+                                <li>Modern Material need</li>
+                                <li>Atomic Structure and Interatomic Bonding</li>
+                                <li>Bonding forces and energies</li>
+                                <li>Secondary bonding and van-der-waals bonding</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">MODULE II THE STRUCTURE OF CRYSTALLINE SOLIDS (8H)</strong>
+                            <ul class="unit-topics">
+                                <li>The structure of crystalline solids</li>
+                                <li>Crystallographic points, directions and planes</li>
+                                <li>X-Ray diffraction</li>
+                                <li>Determination of crystalline structure</li>
+                                <li>Imperfections and defects in solids</li>
+                                <li>Diffusion mechanisms</li>
+                                <li>Steady state diffusion</li>
+                                <li>Diffusion in semiconducting materials</li>
+                                <li>Material of importance- Aluminum for integrated circuit interconnects</li>
+                                <li>Mechanical properties of material, stress strain behavior</li>
+                                <li>Structure and properties of ceramics</li>
+                                <li>Crystal ceramics</li>
+                                <li>Silicate ceramics</li>
+                                <li>Material of importance- carbon nanotubes</li>
+                                <li>Imperfections in ceramics</li>
+                                <li>Application and processing of ceramics</li>
+                                <li>Glass ceramics, refractories, abrasives, cements</li>
+                                <li>Materials of importance - piezoelectric ceramics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">MODULE III INSULATING PROPERTIES OF MATERIAL (8H)</strong>
+                            <ul class="unit-topics">
+                                <li>Insulating materials; General Properties</li>
+                                <li>Electrical Properties: Volume resistivity, surface resistance, dielectric loss,
+                                    dielectric strength (breakdown voltage) dielectric constant</li>
+                                <li>Thermal conductivity</li>
+                                <li>Electro-thermal breakdown in solid dielectrics</li>
+                                <li>Insulating Materials and their applications:</li>
+                                <li>Plastics, Definition and classification</li>
+                                <li>Thermosetting materials: Phenol-formaldehyde resins (i.e. Bakelite) amino resins
+                                    (urea formaldehyde and Malamine-formaldehyde), epoxy resins – their important
+                                    properties and applications</li>
+                                <li>Thermo-plastic materials: Polyvinyl chloride (PVC), polyethelene, silicons, their
+                                    important properties and applications</li>
+                                <li>Bitumen - Mineral and insulating oil for transformers switchgear capacitors, high
+                                    voltage insulated cables</li>
+                                <li>Insulating varnishes for coating and impregnation - Enamels for winding wires</li>
+                                <li>Glass fiber sleeves, SF6 their properties and applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">MODULE IV- ELECTRICAL PROPERTIES OF MATERIALS (6H)</strong>
+                            <ul class="unit-topics">
+                                <li>Electrical conduction , electronic and ionic conduction</li>
+                                <li>Energy band structures in solids</li>
+                                <li>Conduction in terms of band and atomic bonding models</li>
+                                <li>Electron mobility</li>
+                                <li>Electrical resistivity of metals</li>
+                                <li>Materials of importance—aluminum electrical wires</li>
+                                <li>Semi conductivity, intrinsic semi conduction, extrinsic semi conduction</li>
+                                <li>Carrier mobility, semiconductor devices</li>
+                                <li>Electrical properties of polymers dielectric behavior</li>
+                                <li>Capacitance, field vectors and polarization</li>
+                                <li>Types of polarization, frequency dependence of the dielectric constant</li>
+                                <li>Dielectric materials, ferroelectricity, piezoelectricity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">MODULE V- OPTICAL AND MAGNETIC PROPERTIES OF MATERIALS (10
+                                H)</strong>
+                            <ul class="unit-topics">
+                                <li>Optical properties, basic concepts</li>
+                                <li>Electromagnetic radiation</li>
+                                <li>Light interactions with solids atomic and electronic interactions</li>
+                                <li>Optical properties of metals</li>
+                                <li>Optical properties of nonmetals</li>
+                                <li>Refraction, reflection, absorption, transmission</li>
+                                <li>Applications of optical phenomena</li>
+                                <li>Luminescence, Materials of importance—light-emitting diodes</li>
+                                <li>Photoconductivity, lasers, optical fibers in communications</li>
+                                <li>Diamagnetism and Paramagnetism</li>
+                                <li>Ferromagnetism, Antiferromagnetism and Ferrimagnetism</li>
+                                <li>The Influence of Temperature on Magnetic Behavior</li>
+                                <li>Domains and Hysteresis</li>
+                                <li>Magnetic Anisotropy</li>
+                                <li>Soft Magnetic Materials</li>
+                                <li>Materials of Importance—An Iron–Silicon Alloy That Is Used in Transformer Cores</li>
+                                <li>Hard Magnetic Materials, Magnetic Storage</li>
+                                <li>Superconductivity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">MODULE VI SUPERCONDUCTIVITY (6H)</strong>
+                            <ul class="unit-topics">
+                                <li>Properties of superconductors</li>
+                                <li>London equations</li>
+                                <li>Quantum explanation of superconductivity</li>
+                                <li>Applications of superconductors</li>
+                                <li>Nanomaterials: Introduction to nanotechnology</li>
+                                <li>Nanowire and Nanotube</li>
+                                <li>Carbon nanotubes, Single wall carbon nanotubes, Multiwall carbon nanotubes</li>
+                                <li>Fabrications, Properties and applications</li>
+                                <li>Economic, Environmental, and Societal Issues in Materials Science and Engineering
+                                </li>
+                                <li>Introduction, economic considerations, component design, materials, manufacturing
+                                    techniques</li>
+                                <li>Environmental and societal considerations, recycling issues in materials science and
+                                    engineering</li>
+                                <li>Materials of importance—biodegradable and bio renewable polymers/ plastics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-103703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Digital Signal Processing [103703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Discrete-time signals and systems (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Discrete time signals and systems: Sequences</li>
+                                <li>Representation of signals on orthogonal basis</li>
+                                <li>Representation of discrete systems using difference equations</li>
+                                <li>Sampling and reconstruction of signals aliasing</li>
+                                <li>Sampling theorem and Nyquist rate</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Z-transform (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>z-Transform, Region of Convergence</li>
+                                <li>Analysis of Linear Shift Invariant systems using ztransform</li>
+                                <li>Properties of z-transform for causal signals</li>
+                                <li>Interpretation of stability in z-domain</li>
+                                <li>Inverse z- transforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Discrete Fourier Transform (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Frequency Domain Analysis</li>
+                                <li>Discrete Fourier Transform (DFT)</li>
+                                <li>Properties of DFT</li>
+                                <li>Convolution of signals</li>
+                                <li>Fast Fourier Transform Algorithm</li>
+                                <li>Parseval's Identity</li>
+                                <li>Implementation of Discrete Time Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Design of Digital filters (12 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Design of FIR Digital filters: Window method, Park-McClellan's method</li>
+                                <li>Design of IIR Digital Filters: Butterworth, Chebyshev and Elliptic Approximations
+                                </li>
+                                <li>Low-pass, Band-pass, Band-stop and High-pass filters</li>
+                                <li>Effect of finite register length in FIR filter design</li>
+                                <li>Parametric and non-parametric spectral estimation</li>
+                                <li>Introduction to multi-rate signal processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Applications of Digital Signal Processing (6
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Correlation Functions and Power Spectra</li>
+                                <li>Stationary Processes</li>
+                                <li>Optimal filtering using ARMA Model</li>
+                                <li>Linear Mean-Square Estimation</li>
+                                <li>Wiener Filter</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>At the end of this course, students will demonstrate the ability to:</p>
+                    <p>&rarr; Represent signals mathematically in continuous and discrete-time, and in the frequency
+                        domain.</p>
+                    <p>&rarr; Analyse discrete-time systems using Z-transform.</p>
+                    <p>&rarr; Understand the Discrete-Fourier Transform (DFT) and the FFT algorithms.</p>
+                    <p>&rarr; Design digital filters for various applications.</p>
+                    <p>&rarr; Apply digital signal processing for the analysis of real-life signals.</p>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. K. Mitra, "Digital Signal Processing: A computer based approach", McGraw Hill, 2011.</li>
+                        <li>A.V. Oppenheim and R. W. Schafer, "Discrete Time Signal Processing", Prentice Hall, 1989.
+                        </li>
+                        <li>J. G. Proakis and D.G. Manolakis, "Digital Signal Processing: Principles, Algorithms And
+                            Applications", Prentice Hall, 1997.</li>
+                        <li>L. R. Rabiner and B. Gold, "Theory and Application of Digital Signal Processing", Prentice
+                            Hall, 1992.</li>
+                        <li>J. R. Johnson, "Introduction to Digital Signal Processing", Prentice Hall, 1992.</li>
+                        <li>D. J. DeFatta, J. G. Lucas and W. S. Hodgkiss, "Digital Signal Processing", John Wiley &
+                            Sons, 1988.</li>
+                    </ol>
+                </section>
+                <section id="subject-103704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Electromagnetic Waves [103704]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Transmission Lines (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, Concept of distributed elements</li>
+                                <li>Equations of voltage and current</li>
+                                <li>Standing waves and impedance transformation</li>
+                                <li>Lossless and low-loss transmission lines</li>
+                                <li>Power transfer on a transmission line</li>
+                                <li>Analysis of transmission line in terms of admittances</li>
+                                <li>Transmission line calculations with the help of Smith chart</li>
+                                <li>Applications of transmission line</li>
+                                <li>Impedance matching using transmission lines</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Maxwell's Equations (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Basic quantities of Electromagnetics</li>
+                                <li>Basic laws of Electromagnetics: Gauss's law, Ampere's Circuital law, Faraday's law
+                                    of Electromagnetic induction</li>
+                                <li>Maxwell's equations</li>
+                                <li>Surface charge and surface current</li>
+                                <li>Boundary conditions at media interface</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Uniform Plane Wave (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Homogeneous unbound medium</li>
+                                <li>Wave equation for time harmonic fields</li>
+                                <li>Solution of the wave equation</li>
+                                <li>Uniform plane wave</li>
+                                <li>Wave polarization</li>
+                                <li>Wave propagation in conducting medium</li>
+                                <li>Phase velocity of a wave</li>
+                                <li>Power flow and Poynting vector</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Plane Waves at Media Interface (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Plane wave in arbitrary direction</li>
+                                <li>Plane wave at dielectric interface</li>
+                                <li>Reflection and refraction of waves at dielectric interface</li>
+                                <li>Total internal reflection</li>
+                                <li>Wave polarization at media interface</li>
+                                <li>Brewster angle</li>
+                                <li>Fields and power flow at media interface</li>
+                                <li>Lossy media interface</li>
+                                <li>Reflection from conducting boundary</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Waveguides (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Parallel plane waveguide: Transverse Electric (TE) mode, transverse Magnetic(TM)
+                                    mode</li>
+                                <li>Cut-off frequency, Phase velocity and dispersion</li>
+                                <li>Transverse Electromagnetic (TEM) mode</li>
+                                <li>Analysis of waveguide-general approach</li>
+                                <li>Rectangular waveguides</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Antennas (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Radiation parameters of antenna</li>
+                                <li>Potential functions</li>
+                                <li>Solution for potential functions</li>
+                                <li>Radiations from Hertz dipole</li>
+                                <li>Near field, Far field</li>
+                                <li>Total power radiated by dipole</li>
+                                <li>Radiation resistance and radiation pattern of Hertz dipole</li>
+                                <li>Hertz dipole in receiving mode</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>At the end of this course, students will demonstrate the ability to:</p>
+                    <p>&rarr; Analyse transmission lines and estimate voltage and current at any point on transmission
+                        line for different load conditions.</p>
+                    <p>&rarr; Provide solution to real life plane wave problems for various boundary conditions.</p>
+                    <p>&rarr; Analyse the field equations for the wave propagation in special cases such as lossy and
+                        low loss dielectric media.</p>
+                    <p>&rarr; Visualize TE and TM mode patterns of field distributions in a rectangular wave-guide.</p>
+                    <p>&rarr; Understand and analyse radiation by antennas.</p>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>R. K. Shevgaonkar, "Electromagnetic Waves", Tata McGraw Hill, 2005.</li>
+                        <li>D. K. Cheng, "Field and Wave Electromagnetics", Addison-Wesley, 1989.</li>
+                        <li>M. N.O. Sadiku, "Elements of Electromagnetics", Oxford University Press, 2007.</li>
+                        <li>C. A. Balanis, "Advanced Engineering Electromagnetics", John Wiley & Sons, 2012.</li>
+                        <li>C. A. Balanis, "Antenna Theory: Analysis and Design", John Wiley & Sons, 2005.</li>
+                    </ol>
+                </section>
+                <section id="subject-103705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computational Electromagnetics [103705]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Conventional design methodology</li>
+                                <li>Computer aided design aspects – Advantages</li>
+                                <li>Review of basic fundamentals of Electrostatics and Electromagnetics</li>
+                                <li>Development of Helmholtz equation</li>
+                                <li>Energy transformer vectors- Poynting and Slepian</li>
+                                <li>Magnetic Diffusion-transients and time-harmonic</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Analytical Methods (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Analytical methods of solving field equations</li>
+                                <li>Method of separation of variables</li>
+                                <li>Roth's method</li>
+                                <li>Integral methods- Green's function</li>
+                                <li>Method of images</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Finite Difference Method (FDM) (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Finite Difference schemes</li>
+                                <li>Treatment of irregular boundaries</li>
+                                <li>Accuracy and stability of FD solutions</li>
+                                <li>Finite-Difference Time-Domain (FDTD) method- Uniqueness and convergence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Finite Element Method (FEM) (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of FEM</li>
+                                <li>Variational and Galerkin Methods</li>
+                                <li>Shape functions</li>
+                                <li>Lower and higher order elements</li>
+                                <li>Vector elements</li>
+                                <li>2D and 3D finite elements</li>
+                                <li>Efficient finite element computations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Special Topics (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Background of experimental methods-electrolytic tank, R-C network solution, Field
+                                    plotting (graphical method)</li>
+                                <li>Hybrid methods</li>
+                                <li>Coupled circuit - field computations</li>
+                                <li>Electromagnetic - thermal and electromagnetic - structural coupled computations</li>
+                                <li>Solution of equations</li>
+                                <li>Method of moments</li>
+                                <li>Poisson's fields</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Applications (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Low frequency electrical devices</li>
+                                <li>Static / time-harmonic / transient problems in transformers, rotating machines,
+                                    actuators</li>
+                                <li>CAD packages</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>At the end of this course, students will demonstrate the ability to:</p>
+                    <p>&rarr; Understand the basic concepts of electromagnetics.</p>
+                    <p>&rarr; Understand computational techniques for computing fields.</p>
+                    <p>&rarr; Apply the techniques to simple real-life problems.</p>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>P. P. Silvester and R. L. Ferrari, "Finite Element for Electrical Engineers", Cambridge
+                            University press, 1996.</li>
+                        <li>M. N. O. Sadiku, "Numerical Techniques in Electromagnetics", CRC press, 2001.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

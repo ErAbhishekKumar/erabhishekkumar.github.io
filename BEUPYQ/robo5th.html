@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo">
+                </div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Robotics and Automation</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle">
+                    <span> Credits Table </span>
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Dynamics of Machinery [162501]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Mechatronics, Robotics & Control [162502]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Instrumentation & Sensors [162503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-I [1005XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Professional Practice, Law & Ethics [162504]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Dynamics of Machinery Lab [162501P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Mechatronics, Robotics & Control Lab [162502P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Instrumentation & Sensors Lab [162503P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Internship-II [162505P]</td>
+                                <td colspan="3">6 Weeks</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>21</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-162501" data-type="theory">Dynamics of
+                        Machinery</button>
+                    <button class="tab-btn" data-target="subject-162502" data-type="theory">Mechatronics, Robotics &
+                        Control</button>
+                    <button class="tab-btn" data-target="subject-162503" data-type="theory">Instrumentation &
+                        Sensors</button>
+                    <button class="tab-btn" data-target="subject-162504" data-type="theory">Professional Practice, Law &
+                        Ethics</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective-I"
+                        data-modal-options='[ {"label": "Principle of Entrepreneurship", "target": "subject-100521", "btn-id": "btn-100521"}, {"label": "Internet of Things", "target": "subject-100522", "btn-id": "btn-100522"}, {"label": "Green Energy Technologies", "target": "subject-100523", "btn-id": "btn-100523"}, {"label": "Sales and Marketing", "target": "subject-100524", "btn-id": "btn-100524"} ]'>
+                        Open Elective-I </button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-162501P" data-type="lab">Dynamics of Machinery
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-162502P" data-type="lab">Mechatronics, Robotics &
+                        Control Lab</button>
+                    <button class="tab-btn" data-target="subject-162503P" data-type="lab">Instrumentation & Sensors
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-162505P" data-type="lab">Internship-II</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-162501" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Dynamics of Machinery [162501]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Force analysis of mechanism</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamics of plane motion of a rigid body</li>
+                                <li>Dynamically equivalent two mass system</li>
+                                <li>Correction torque</li>
+                                <li>Forced in mechanism and machines</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Turning moment diagram</strong>
+                            <ul class="unit-topics">
+                                <li>Fluctuations of crankshaft speed and energy in a direct acting engine mechanism</li>
+                                <li>Flywheels</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Cams</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of cams and followers</li>
+                                <li>Types of followers and retardation</li>
+                                <li>Cam profile and generation of concentric and offset radial cam profiles by graphical
+                                    method</li>
+                                <li>Cams with specified contours tangent Cam with roller follower</li>
+                                <li>Circular arc Cam with flat follower</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Analysis of gyroscopic motion</strong>
+                            <ul class="unit-topics">
+                                <li>Principle of gyroscope</li>
+                                <li>Gyroscopic couple and gyroscopic reaction couple</li>
+                                <li>Gyroscopic effects on the movement of ships</li>
+                                <li>Aeroplanes</li>
+                                <li>Two wheeled and four wheeled vehicles</li>
+                                <li>Gyrostabilizers</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Effects of inertia of reciprocating masses on engine
+                                frame</strong>
+                            <ul class="unit-topics">
+                                <li>Unbalanced primary and secondary forces and couples</li>
+                                <li>Balancing of primary and secondary forces</li>
+                                <li>Partial balancing of locomotives</li>
+                                <li>Balancing of multicylinder in line and radial engines</li>
+                                <li>Direct and reverse cranks methods for balancing of radial engines</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Mechanical vibrations</strong>
+                            <ul class="unit-topics">
+                                <li>Basic concepts degree of freedom</li>
+                                <li>Types of damping and viscous damping</li>
+                                <li>Natural free</li>
+                                <li>Damped free and damped forced vibrations of a single degree of freedom spring mass
+                                    system</li>
+                                <li>Reciprocating and rotating unbalance</li>
+                                <li>Vibration isolation and transmissibility</li>
+                                <li>Whirling of shaft</li>
+                                <li>Elementary treatment of two degree of freedom systems torsional vibrations of single
+                                    rotor and two rotor systems</li>
+                                <li>Transverse vibration of simply supported beam energy method</li>
+                                <li>Rayleigh's and Dunkerley method</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Theory of Machines / S.S Ratan/ Mc. Graw Hill Publ.</li>
+                        <li>Mechanism and machine theory by Ashok G. Ambedkar, PHI Publications.</li>
+                        <li>Mechanism and Machine Theory / JS Rao and RV Dukkipati / New Age.</li>
+                        <li>Theory of Machines / Shiegly/MGH</li>
+                        <li>Theory of Machines / Thomas Bevan / CBS Publishers</li>
+                        <li>Theory of machines / Khurmi / S. Chand.</li>
+                    </ol>
+                </section>
+                <section id="subject-162502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Mechatronics, Robotics and Control [162502]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Electro-mechanical systems</li>
+                                <li>Typical applications</li>
+                                <li>Examples automobiles</li>
+                                <li>Home appliances</li>
+                                <li>Medical instruments</li>
+                                <li>Etc.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Transduction principles</li>
+                                <li>Sensitivity</li>
+                                <li>Accuracy</li>
+                                <li>Range</li>
+                                <li>Resolution</li>
+                                <li>Noise sources</li>
+                                <li>Sensors for common engineering measurements proximity</li>
+                                <li>Force</li>
+                                <li>Velocity</li>
+                                <li>Temperature</li>
+                                <li>Etc.</li>
+                                <li>Signal processing and conditioning</li>
+                                <li>Selection of sensors</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Actuators</strong>
+                            <ul class="unit-topics">
+                                <li>Pneumatic and hydraulic actuators</li>
+                                <li>Electric motors including DC</li>
+                                <li>AC</li>
+                                <li>BLDC</li>
+                                <li>Servo and stepper motors</li>
+                                <li>Solenoids and relays</li>
+                                <li>Active materials piezoelectric and shape memory alloys</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Machine Controls</strong>
+                            <ul class="unit-topics">
+                                <li>Microprocessors and their architecture</li>
+                                <li>Memory and peripheral interfacing</li>
+                                <li>Programming</li>
+                                <li>Microcontrollers</li>
+                                <li>Programmable Logic Controllers</li>
+                                <li>PLC principle and operation</li>
+                                <li>Analog and digital input/output Unit-s</li>
+                                <li>Memory Unit-</li>
+                                <li>Timers</li>
+                                <li>Internal relays</li>
+                                <li>Counters and data handling</li>
+                                <li>Industrial automation systems</li>
+                                <li>Basic PLC programming</li>
+                                <li>Industry kits (Arduino, Raspberry Pi, Etc.)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Robot configurations: serial and parallel</li>
+                                <li>Denavit-Hartenberg parameters</li>
+                                <li>Manipulators kinematics</li>
+                                <li>Rotation matrix</li>
+                                <li>Homogenous transformation matrix</li>
+                                <li>Direct and inverse Kinematics for robot position and orientation</li>
+                                <li>Workspace estimation and path planning</li>
+                                <li>Robot vision</li>
+                                <li>Motion tracking</li>
+                                <li>Robot programming and control</li>
+                                <li>Industrial robots - Pick and place robots</li>
+                                <li>Sorting</li>
+                                <li>Assembly</li>
+                                <li>Welding</li>
+                                <li>Inspection</li>
+                                <li>Etc.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Control Theory and Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basic control concepts</li>
+                                <li>Feedback</li>
+                                <li>Open and closed loop control</li>
+                                <li>Concept of block diagrams</li>
+                                <li>P</li>
+                                <li>PI and PID controllers</li>
+                                <li>Tuning the gain of controllers</li>
+                                <li>System models</li>
+                                <li>Transfer functions</li>
+                                <li>System response</li>
+                                <li>Frequency response</li>
+                                <li>Root Locus method and Bode plots</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Computational Tools</strong>
+                            <ul class="unit-topics">
+                                <li>Demonstration and projects using simulation software (e.g., MATLAB, Scilab, ROBODK)
+                                    for control systems and robotics.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>W. Bolton, "Mechatronics," Addison Wesley Longman, 2010.</li>
+                        <li>J. J. Craig, Introduction to Robotics Mechanics and Control, Addison Wesley, 1999.</li>
+                        <li>G.K. McMillan, "Process/Industrial Instruments and Controls Handbook," McGraw-Hill, 1999.
+                        </li>
+                        <li>S. Mukherjee, "Essentials of Robotics Process Automation", Khanna Book Publishing, 2021.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-162503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Instrumentation & Sensors [162503]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Measurement Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Significance of measurement</li>
+                                <li>Block diagram of measurement system</li>
+                                <li>Methods of measurements</li>
+                                <li>Elements and their functions of measurement systems</li>
+                                <li>And applications</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Characteristics of measurement systems-static and
+                                dynamic</strong>
+                            <ul class="unit-topics">
+                                <li>Static characteristics- accuracy</li>
+                                <li>Precision</li>
+                                <li>Sensitivity</li>
+                                <li>Reproducibility</li>
+                                <li>Drift</li>
+                                <li>Static error</li>
+                                <li>Dead zone</li>
+                                <li>Linearity</li>
+                                <li>Resolution</li>
+                                <li>Hysteresis</li>
+                                <li>Loading effects</li>
+                                <li>Dynamic characteristics- Speed of response</li>
+                                <li>Measuring lag</li>
+                                <li>Fidelity</li>
+                                <li>Dynamic error</li>
+                                <li>Calibration</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Errors in Measurement and their Statistical
+                                Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Types of Error- Gross</li>
+                                <li>Systematic (Instrumental, Environmental, Observational error)</li>
+                                <li>And random error</li>
+                                <li>Statistical treatment of data measurement tests</li>
+                                <li>Histogram</li>
+                                <li>Arithmetic mean</li>
+                                <li>Dispersion measurement</li>
+                                <li>Range</li>
+                                <li>Deviation</li>
+                                <li>Average deviation</li>
+                                <li>Standard deviation</li>
+                                <li>Variance</li>
+                                <li>Noise</li>
+                                <li>Signal to noise ratio</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Thermal Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Temperature sensors</li>
+                                <li>Thermo-resistive sensors- Resistance Temperature Detectors</li>
+                                <li>Thermistor</li>
+                                <li>Thermoelectric sensors- Thermocouple</li>
+                                <li>Electric Sensors- Capacitive position</li>
+                                <li>Proximity</li>
+                                <li>And displacement sensors</li>
+                                <li>LVDT</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Force, Pressure, Humidity, and Moisture
+                                Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Force sensor- Strain gauge</li>
+                                <li>Semiconductor strain gauge</li>
+                                <li>Strain gauge accelerometers</li>
+                                <li>Pressure sensors- Mechanical pressure sensors</li>
+                                <li>Piezoresistive pressure sensor</li>
+                                <li>Capacitive pressure sensor</li>
+                                <li>Resistive humidity sensor</li>
+                                <li>Capacitive moisture sensors</li>
+                                <li>Thermal conduction moisture sensors</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: MEMS and Smart sensors and Actuators</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>MEMS sensors</li>
+                                <li>MEMS actuators</li>
+                                <li>Applications</li>
+                                <li>Nano sensors and actuators</li>
+                                <li>Smart sensors and actuators</li>
+                                <li>Light dependent resistor</li>
+                                <li>Wireless sensors and actuators and issues associated with their use</li>
+                                <li>RFIDs and embedded sensors</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A.K. Sawhney: "A Course in Electrical and Electronic Measurements and Instrumentation", 18th
+                            Edition, Dhanpat Rai Publications, 2001.</li>
+                        <li>Nathan Ida, "Sensors, Actuators and Their Interfaces, A multidisciplinary introduction", 2nd
+                            Edition, IET Publication.</li>
+                        <li>Subhash Chanda Mukhopadhyay, "Intelligent Sensing, Instrumentation and Measurements,"
+                            Springern Publication.</li>
+                        <li>Sanjay N. Talbar, Akhilesh R. Upadhyay, Instrumentation and Measurement, Dhanpat Rai
+                            Publishing Company. Third Edition 2004.</li>
+                        <li>Process Control Instrumentation Technology, Curtis D. Johnson, PHI</li>
+                        <li>A Hands-On Course in Sensors Using the Arduino and Raspberry Pi, Volker Zeimann, CRC Pres
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-162504" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Practice, Law & Ethics [162504]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Professional Practice</strong>
+                            <ul class="unit-topics">
+                                <li>Respective roles of various stakeholders: Government (constituting regulatory bodies
+                                    and standardization organizations, prescribing norms to ensure safety of the
+                                    citizens)</li>
+                                <li>Standardization Bodies (ex. BIS, IRC) (formulating standards of practice)</li>
+                                <li>Professional bodies (ex. Institution of Engineers (India), Indian Roads Congress,
+                                    IIA/ COA, ECI, Local Bodies/ Planning Authorities) (certifying professionals and
+                                    offering platforms for interaction)</li>
+                                <li>Clients/ owners (role governed by contracts)</li>
+                                <li>Developers (role governed by regulations such as RERA)</li>
+                                <li>Consultants (role governed by bodies such as CEAI)</li>
+                                <li>Contractors (role governed by contracts and regulatory Acts and Standards)</li>
+                                <li>Manufacturers/Vendors/ Service agencies (role governed by contracts and regulatory
+                                    Acts and Standards)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Professional Ethics</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of Ethics</li>
+                                <li>Professional Ethics</li>
+                                <li>Business Ethics</li>
+                                <li>Corporate Ethics</li>
+                                <li>Engineering Ethics</li>
+                                <li>Personal Ethics</li>
+                                <li>Code of Ethics as defined in the website of Institution of Engineers (India)</li>
+                                <li>Profession</li>
+                                <li>Professionalism</li>
+                                <li>Professional Responsibility</li>
+                                <li>Professional Ethics</li>
+                                <li>Conflict of Interest</li>
+                                <li>Gift Vs Bribery</li>
+                                <li>Environmental breaches</li>
+                                <li>Negligence</li>
+                                <li>Deficiencies in state-of-the-art</li>
+                                <li>Vigil Mechanism</li>
+                                <li>Whistleblowing</li>
+                                <li>Protected disclosures</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: General Principles of Contracts Management</strong>
+                            <ul class="unit-topics">
+                                <li>Indian Contract Act, 1972 and amendments covering General principles of contracting
+                                </li>
+                                <li>Contract Formation & Law</li>
+                                <li>Privacy of contract</li>
+                                <li>Various types of contract and their features</li>
+                                <li>Valid & Voidable Contracts</li>
+                                <li>Prime and sub- contracts</li>
+                                <li>Joint Ventures & Consortium</li>
+                                <li>Complex contract terminology</li>
+                                <li>Tenders</li>
+                                <li>Request For Proposals</li>
+                                <li>Bids & Proposals</li>
+                                <li>Bid Evaluation</li>
+                                <li>Contract Conditions & Specifications</li>
+                                <li>Critical "Red Flag" conditions</li>
+                                <li>Contract award & Notice To Proceed</li>
+                                <li>Variations & Changes in Contracts</li>
+                                <li>Differing site conditions</li>
+                                <li>Cost escalation</li>
+                                <li>Delays</li>
+                                <li>Suspensions & Terminations</li>
+                                <li>Time extensions & Force Majeure</li>
+                                <li>Delay Analysis</li>
+                                <li>Liquidated damages & Penalties</li>
+                                <li>Insurance & Taxation</li>
+                                <li>Performance and Excusable Non-performance</li>
+                                <li>Contract documentation</li>
+                                <li>Contract Notices</li>
+                                <li>Wrong practices in contracting (Bid shopping, Bid fixing, Cartels)</li>
+                                <li>Reverse auction</li>
+                                <li>Case Studies</li>
+                                <li>Build-Own-Operate & variations</li>
+                                <li>Public- Private Partnerships</li>
+                                <li>International Commercial Terms</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Arbitration, Conciliation and ADR (Alternative Dispute
+                                Resolution) system</strong>
+                            <ul class="unit-topics">
+                                <li>Arbitration meaning</li>
+                                <li>Scope and types - distinction between laws of 1940 and 1996</li>
+                                <li>UNCITRAL model law Arbitration and expert determination</li>
+                                <li>Extent of judicial intervention</li>
+                                <li>International commercial arbitration</li>
+                                <li>Arbitration agreements - essential and kinds</li>
+                                <li>Validity</li>
+                                <li>Reference and interim measures by court</li>
+                                <li>Arbitration tribunal appointment</li>
+                                <li>Challenge</li>
+                                <li>Jurisdiction of arbitral tribunal</li>
+                                <li>Powers</li>
+                                <li>Grounds of challenge</li>
+                                <li>Procedure and court assistance</li>
+                                <li>Award including Form and content</li>
+                                <li>Grounds for setting aside an award</li>
+                                <li>Enforcement</li>
+                                <li>Appeal and Revision</li>
+                                <li>Enforcement of foreign awards New York and Geneva Convention Awards</li>
+                                <li>Distinction between conciliation</li>
+                                <li>Negotiation</li>
+                                <li>Mediation and arbitration</li>
+                                <li>Confidentiality</li>
+                                <li>Resort to judicial proceedings</li>
+                                <li>Costs</li>
+                                <li>Dispute Resolution Boards</li>
+                                <li>Lok Adalats</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Engagement of Labour and Labour & other
+                                construction-related Laws</strong>
+                            <ul class="unit-topics">
+                                <li>Role of Labour in Civil Engineering</li>
+                                <li>Methods of engaging labour- on rolls</li>
+                                <li>Labour sub-contract</li>
+                                <li>Piece rate work</li>
+                                <li>Industrial Disputes Act, 1947</li>
+                                <li>Collective bargaining</li>
+                                <li>Industrial Employment ( Standing Orders) Act, 1946</li>
+                                <li>Workmen's Compensation Act, 1923</li>
+                                <li>Building & Other Construction Workers (regulation of employment and conditions of
+                                    service) Act (1996) and Rules (1998)</li>
+                                <li>RERA Act 2017</li>
+                                <li>NBC 2017</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Law relating to Intellectual property</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction - meaning of intellectual property</li>
+                                <li>Main forms of IP</li>
+                                <li>Copyright</li>
+                                <li>Trademarks</li>
+                                <li>Patents and Designs</li>
+                                <li>Secrets</li>
+                                <li>Law relating to Copyright in India including Historical evolution of Copy Rights
+                                    Act, 1957</li>
+                                <li>Meaning of copyright computer programs</li>
+                                <li>Ownership of copyrights and assignment</li>
+                                <li>Criteria of infringement</li>
+                                <li>Piracy in Internet - Remedies and procedures in India</li>
+                                <li>Law relating to Patents under Patents Act, 1970 including Concept and historical
+                                    perspective of patents law in India</li>
+                                <li>Patentable inventions with special reference to biotechnology products</li>
+                                <li>Patent protection for computer programs</li>
+                                <li>Process of obtaining patent application</li>
+                                <li>Examination</li>
+                                <li>Opposition and sealing of patents</li>
+                                <li>Patent cooperation treaty and grounds for opposition</li>
+                                <li>Rights and obligations of patentee</li>
+                                <li>Duration of patents law and policy considerations</li>
+                                <li>Infringement and related remedies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>B.S. Patil, Legal Aspects of Building and Engineering Contracts, 1974.</li>
+                        <li>The National Building Code, BIS, 2017</li>
+                        <li>RERA Act, 2017</li>
+                        <li>Meena Rao (2006), Fundamental concepts in Law of Contract, 3rd Edn. Professional Offset</li>
+                        <li>Neelima Chandiramani (2000), The Law of Contract: An Outline, 2nd Edn. Avinash Publications
+                            Mumbai</li>
+                        <li>Avtarsingh (2002), Law of Contract, Eastern Book Co.</li>
+                        <li>Dutt (1994), Indian Contract Act, Eastern Law House</li>
+                        <li>Anson W.R. (1979), Law of Contract, Oxford University Press</li>
+                        <li>Kwatra G.K. (2005), The Arbitration & Conciliation of Law in India with case law on UNCITRAL
+                            Model Law on Arbitration, Indian Council of Arbitration</li>
+                        <li>Wadhera (2004), Intellectual Property Rights, Universal Law Publishing Co.</li>
+                        <li>T. Ramappa (2010), Intellectual Property Rights Law in India, Asia Law House</li>
+                        <li>Bare text (2005), Right to Information Act</li>
+                        <li>O.P. Malhotra, Law of Industrial Disputes, N.M. Tripathi Publishers</li>
+                        <li>K.M. Desai (1946), The Industrial Employment (Standing Orders) Act</li>
+                        <li>Rustamji R.F., Introduction to the Law of Industrial Disputes, Asia Publishing House</li>
+                        <li>Vee, Charles & Skitmore, Martin (2003) Professional Ethics in the Construction Industry,
+                            Engineering Construction and Architectural management, Vol.10, Iss2,pp 117-127, MCB UP Ltd
+                        </li>
+                        <li>American Society of Civil Engineers (2011) ASCE Code of Ethics - Principles Study and
+                            Application</li>
+                        <li>Ethics in Engineering- M.W.Martin& R.Schinzinger, McGraw-Hill</li>
+                        <li>Engineering Ethics, National Institute for Engineering Ethics, USA</li>
+                    </ol>
+                </section>
+                <section id="subject-162501P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Dynamics of Machinery Lab [162501P]</h2>
+                    <p>Perform all experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Determination of inertia forces</li>
+                        <li>Piston effort</li>
+                        <li>And turning moment for a given crank speed</li>
+                        <li>Experimental/graphical evaluation of correction torque for uniform speed operation</li>
+                        <li>Construction of turning moment diagram and calculation of flywheel energy fluctuations</li>
+                        <li>Determination of moment of inertia of a flywheel and coefficient of fluctuation of speed
+                        </li>
+                        <li>Construction of cam profiles for different follower motions (SHM, Uniform velocity, Uniform
+                            acceleration)</li>
+                        <li>Graphical construction of cams with specified contours (roller follower, Flat-faced
+                            follower)</li>
+                        <li>Determination of gyroscopic couple and verification of gyroscopic principles</li>
+                        <li>Static and dynamic balancing of rotating masses using balancing apparatus</li>
+                        <li>Study of primary and secondary unbalanced forces in single-cylinder or multi- cylinder
+                            engines</li>
+                        <li>Determination of natural frequency</li>
+                        <li>Damping factor</li>
+                        <li>And transmissibility for free and forced vibrations</li>
+                    </ul>
+                </section>
+                <section id="subject-162502P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Mechatronics, Robotics & Control Lab [162502P]</h2>
+                    <p>Perform any 10 Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Assembly language programming of 8085: Addition, Subtraction, Multiplication, Division,
+                            Sorting, Code Conversion</li>
+                        <li>Stepper motor interface</li>
+                        <li>Traffic light interface</li>
+                        <li>Speed control of DC motor</li>
+                        <li>Study of various types of transducers</li>
+                        <li>Study of hydraulic</li>
+                        <li>Pneumatic</li>
+                        <li>And electro-pneumatic circuits</li>
+                        <li>Modelling and analysis basic hydraulic</li>
+                        <li>Pneumatic</li>
+                        <li>And electrical circuits using software</li>
+                        <li>Study of PLC and its applications</li>
+                        <li>Study of image processing</li>
+                        <li>Robot Programming and Path Planning</li>
+                        <li>Microcontroller Programming Using Arduino / Similar Kits</li>
+                        <li>Robot Kinematics Experiment</li>
+                        <li>Control System Analysis and PID Control</li>
+                        <li>Characteristics and Calibration of Sensors</li>
+                    </ul>
+                </section>
+                <section id="subject-162503P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Instrumentation & Sensors Lab [162503P]</h2>
+                    <p>Perform any 10 Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Study of Generalized Measurement System</li>
+                        <li>Calibration of Measuring Instruments</li>
+                        <li>Evaluation of Static Characteristics of Sensors</li>
+                        <li>Dynamic Response of First-Order Measurement System</li>
+                        <li>Error Analysis and Statistical Treatment of Measurement Data</li>
+                        <li>Measurement of Temperature Using RTD</li>
+                        <li>Measurement of Temperature Using Thermistor</li>
+                        <li>Measurement of Temperature Using Thermocouple</li>
+                        <li>Displacement Measurement Using LVDT</li>
+                        <li>Measurement of Force Using Strain Gauge</li>
+                        <li>Measurement of Pressure Using Piezoresistive Sensor</li>
+                        <li>Measurement of Humidity Using Resistive / Capacitive Sensor</li>
+                        <li>Study of MEMS Sensors and Actuators</li>
+                        <li>Study of Smart Sensors and Wireless Sensor Systems</li>
+                    </ul>
+                </section>
+                <section id="subject-162505P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Internship-II [162505P]</h2>
+                    <p>Internship details to be provided by the department (6 Weeks).</p>
+                </section>
+                <section id="subject-100521" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Principle of Entrepreneurship [100521]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Entrepreneurship</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of Entrepreneur Entrepreneurial Traits</li>
+                                <li>Entrepreneur vs Manager</li>
+                                <li>Creating and starting the venture: sources of new ideas</li>
+                                <li>Method of generating ideas</li>
+                                <li>Creative problem solving - writing business plan</li>
+                                <li>Evaluating business plans</li>
+                                <li>Launching formalities</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Generating and Evaluating New Venture Ideas</strong>
+                            <ul class="unit-topics">
+                                <li>Sources of New Ideas</li>
+                                <li>Identifying market needs</li>
+                                <li>Technological advancements</li>
+                                <li>Emerging trends</li>
+                                <li>Methods of Generating Ideas: Brainstorming</li>
+                                <li>Mind mapping</li>
+                                <li>SWOT analysis</li>
+                                <li>Design thinking</li>
+                                <li>Creative Problem Solving: Techniques for overcoming challenges and developing
+                                    innovative solutions</li>
+                                <li>Opportunity Evaluation: Market analysis</li>
+                                <li>Competitive analysis</li>
+                                <li>Feasibility studies</li>
+                                <li>Writing a Business Plan: Purpose</li>
+                                <li>Structure</li>
+                                <li>Key sections (executive summary, market analysis, financial projections, management
+                                    team)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Financing and managing the new ventures</strong>
+                            <ul class="unit-topics">
+                                <li>Sources of capital</li>
+                                <li>Record keeping</li>
+                                <li>Recruitment</li>
+                                <li>Motivating and leading teams</li>
+                                <li>Financial controls</li>
+                                <li>Marketing and sales controls</li>
+                                <li>E commerce and Entrepreneurship</li>
+                                <li>Internet advertising - new venture expansion strategies and issues</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Industrial Financial Support</strong>
+                            <ul class="unit-topics">
+                                <li>Schemes and functions of directorate of industries</li>
+                                <li>District industries center (DICs) Industrial development corporation (IDC)</li>
+                                <li>State Financial corporation (SFCs)</li>
+                                <li>Small scale industries development corporation (SSIDCs) Khadi and village industries
+                                    commission (KVIC) Technical Consultancy organization (TCO)</li>
+                                <li>Small industries service institute (SISI)</li>
+                                <li>National small industries corporation (NSIC)</li>
+                                <li>Small industries development bank of India (SIDBI)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Production and marketing management</strong>
+                            <ul class="unit-topics">
+                                <li>Thrust areas of production management</li>
+                                <li>Selection of production techniques</li>
+                                <li>Plant utilization and maintenance</li>
+                                <li>Designing the work place</li>
+                                <li>Inventory control</li>
+                                <li>Material handling and quality control</li>
+                                <li>Marketing functions</li>
+                                <li>Market segmentation market research and channels of distribution</li>
+                                <li>Sales promotion and product pricing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Labour legislation</strong>
+                            <ul class="unit-topics">
+                                <li>Salient provision of health</li>
+                                <li>Safety</li>
+                                <li>And welfare under Indian Factories Act</li>
+                                <li>Industrial dispute act</li>
+                                <li>Employees state insurance act</li>
+                                <li>Workmen's compensation act and payment of bonus act</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Robert Hisrich, & Michael Peters: Entrepreneurship, TMH, 2009.</li>
+                        <li>Dollinger: Entrepreneurship, Pearson, 2009.</li>
+                        <li>Vasant Desai, Dynamics of Entrepreneurial Management, Himalaya Publishing House, 2009.</li>
+                        <li>Harvard Business Review on Entrepreneurship, HBR Paper Back.</li>
+                        <li>Robert J. Calvin: Entrepreneurial Management, TMH, 2009.</li>
+                        <li>Gurmeet Naroola: The entrepreneurial Connection, TMH, 2009.</li>
+                        <li>Bolton & Thompson: Entrepreneurs-Talent, Temperament and Techniques, Butterworth Heinemann,
+                            2009.</li>
+                        <li>Agarwal: Indian Economy, Wishwa Prakashan 2009.</li>
+                        <li>Dutt & Sundaram: Indian Economy, S. Chand, 2009.</li>
+                        <li>B D Singh.: Industrial Relations & Labour Laws, Excel, 2009.</li>
+                        <li>Aruna Kaulgud: Entrepreneurship Management by, Vikas publishing house, 2009.</li>
+                    </ol>
+                </section>
+                <section id="subject-100522" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Internet of Things [100522]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of IoT and its building blocks</li>
+                                <li>Concept of IR 4.0 and IoT</li>
+                                <li>Structure and planning involved for making an IoT project</li>
+                                <li>Introducing IoT platforms</li>
+                                <li>Development boards used in IoT Projects</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Communication protocols used in IoT</li>
+                                <li>Sensors and Actuators</li>
+                                <li>Choosing the sensors and develop the boards depending on the requirements</li>
+                                <li>Creating custom sensors and boards (digital and analog electronics circuits)</li>
+                                <li>Introducing Embedded Systems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Raspberry Pi</strong>
+                            <ul class="unit-topics">
+                                <li>Introducing Raspberry pi</li>
+                                <li>Setting up a Raspberry pi as our customized IoT server</li>
+                                <li>Introducing ESP boards ESP8266/ESP32</li>
+                                <li>Embedded C programming language</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Arduino</strong>
+                            <ul class="unit-topics">
+                                <li>Arduino IDE</li>
+                                <li>Setting up Arduino IDE to program other boards</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: IoT Web Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Introducing Python Programming</li>
+                                <li>Development of IoT web applications</li>
+                                <li>Flask framework in Python programming</li>
+                                <li>HTML</li>
+                                <li>CSS and JavaScript programming languages for creating interactive GUIs</li>
+                                <li>Introducing APIs and how to use them in the applications</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: IoT Security</strong>
+                            <ul class="unit-topics">
+                                <li>Security policies</li>
+                                <li>Risk assessment</li>
+                                <li>Concept of Cyber-security</li>
+                                <li>Authentication techniques used in web applications</li>
+                                <li>Authorization techniques used in web applications</li>
+                                <li>Security in cloud computing</li>
+                                <li>Securing your products from online attacks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>IoT Fundamentals: Networking Technologies, Protocols, and Use Cases for the Internet of
+                            Things David Hanes, Gonzalo Salgueiro, Patrick Grossetete, Robert Barton, Jerome Henry,
+                            First Edition, Cisco Press, 2017, ISBN-13 978-1587144561.</li>
+                        <li>Designing the Internet of Things, Adrian Mcewen, Hakin Cassimally First Edition, Wiley,
+                            2013, ISBN-13 978-1118430620.</li>
+                        <li>Internet of Things: Architecture and Design Principles, Raj Kamal First Edition, McGraw Hill
+                            Education, 2017. ISBN-13 97-89390727384.</li>
+                        <li>Mastering Internet of Things: Design and create your own IoT applications using Raspberry Pi
+                            3, Peter Waher, First Edition, Packt Publishing, 2018, ISSBN-13 978- 1788397483.</li>
+                        <li>IoT Security Madhusanka Liyanage, An Braeken, Pardeep Kumar, Mika Ylianttila, Wiley
+                            Publisher, First Edition, ISBN: 9781119527923.</li>
+                    </ol>
+                </section>
+                <section id="subject-100523" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Green Energy Technologies [100523]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Solar Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Solar energy- history</li>
+                                <li>Sun light- properties</li>
+                                <li>Solar cell physics</li>
+                                <li>Dark and illuminate junctions characteristics</li>
+                                <li>PV cell architecture and fabrication</li>
+                                <li>PV cell- PV Unit- and Array- characteristics</li>
+                                <li>Estimation of solar panel requirement for the given application</li>
+                                <li>Tilt angle calculation</li>
+                                <li>Algorithm for maximum power point tracking</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Solar Thermal Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Concentrating and non- Concentrating Solar thermal Collectors</li>
+                                <li>Black bodies and radiation</li>
+                                <li>Inclined surfaces and diffuse radiation Models</li>
+                                <li>Absorber</li>
+                                <li>Reflection plates</li>
+                                <li>And operation</li>
+                                <li>Collector Efficiency</li>
+                                <li>Solar collector efficiency Factor</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Wind Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Wind energy</li>
+                                <li>Current status and future prospects in India</li>
+                                <li>Wind resource assessment</li>
+                                <li>Wind Turbines: types and components of horizontal and vertical axis wind turbines
+                                </li>
+                                <li>Power extracted from wind</li>
+                                <li>Betz limit</li>
+                                <li>Airfoil</li>
+                                <li>Lift and drag force-characteristics</li>
+                                <li>Stand-alone systems</li>
+                                <li>Wind pumps and small wind turbine - schemes and system design</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Fuel Cell</strong>
+                            <ul class="unit-topics">
+                                <li>Operating principle of fuel cell</li>
+                                <li>Types of fuel cell and polarization curves</li>
+                                <li>Low and high temperature fuel cells</li>
+                                <li>Fuel cell stacks</li>
+                                <li>Advantage of electrochemical energy Conversion</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Hydrogen Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Hydrogen energy System- components</li>
+                                <li>Concepts and working principles of electrolysers</li>
+                                <li>Methodologies of hydrogen energy extraction process</li>
+                                <li>Monitoring</li>
+                                <li>And control</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Ocean Energy Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>Ocean Energy: Introduction and types</li>
+                                <li>Tidal Energy: General Arrangement</li>
+                                <li>Components and working principle</li>
+                                <li>Wave Energy: General Arrangement</li>
+                                <li>Components and working principle</li>
+                                <li>Marine Current: General Arrangement</li>
+                                <li>Components and working principle</li>
+                                <li>Ocean Thermal Energy Conversion: General Arrangement</li>
+                                <li>Components and working principle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Solar Photovoltaics: Fundamentals, Technologies and Applications, Chetan singh solanki, PHI
+                            Learning Pvt. Ltd., May 2015, ISBN: 8120337603, 9788120337602.</li>
+                        <li>Solar Thermal Energy Author: Soteris A. Kalogirou, Editor: Spiros Alexopoulos Springer,
+                            March 2022, ISBN 978-1-0716-1421-1.</li>
+                        <li>Wind Power Plants and Project Development Joshua Earnest and Tore Wizelius, Second Edition,
+                            PHI Learning Pvt. Ltd., New Delhi, 2017, ISBN: 9788120351271, 8120351274.</li>
+                        <li>Renewable Hydrogen Technologies Edited by: Luis M Gandia, GurutzeArzamedi, Pedro M Dieguez
+                            Energy and Power, Elseveir, 1st Edition May 3, 2013, ISBN, 044456361X, 9780444563613.</li>
+                        <li>Ocean, Tidal, and Wave Energy, Peppas, Lynn Crabtree Pub Co, 2008, ISBN-10. 0778729338.</li>
+                    </ol>
+                </section>
+                <section id="subject-100524" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Sales and Marketing [100524]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Sales and Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>What is Marketing? Definition</li>
+                                <li>Importance</li>
+                                <li>And evolution of marketing concepts</li>
+                                <li>What is Sales? Definition</li>
+                                <li>Role of sales in a business</li>
+                                <li>And the relationship between sales and marketing</li>
+                                <li>Marketing Mix (4Ps): Product</li>
+                                <li>Price</li>
+                                <li>Place (Distribution)</li>
+                                <li>And Promotion</li>
+                                <li>Consumer Behavior: Understanding consumer motivations</li>
+                                <li>Buying decisions</li>
+                                <li>And factors influencing purchasing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Market Analysis and Strategy</strong>
+                            <ul class="unit-topics">
+                                <li>Market Segmentation</li>
+                                <li>Targeting</li>
+                                <li>And Positioning (STP): Identifying target markets</li>
+                                <li>Developing positioning strategies</li>
+                                <li>Market Research: Understanding the purpose of market research</li>
+                                <li>Types of research methods</li>
+                                <li>And data analysis</li>
+                                <li>Competitive Analysis: Identifying competitors</li>
+                                <li>Analyzing their strengths and weaknesses</li>
+                                <li>And developing competitive strategies</li>
+                                <li>Strategic Marketing Planning: Developing marketing plans</li>
+                                <li>Setting objectives</li>
+                                <li>And measuring performance</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Sales Management and Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Sales Processes and Strategies: Understanding different sales strategies</li>
+                                <li>Lead generation</li>
+                                <li>And sales techniques</li>
+                                <li>Sales Force Management: Recruiting</li>
+                                <li>Training</li>
+                                <li>Motivating</li>
+                                <li>And managing sales personnel</li>
+                                <li>Customer Relationship Management (CRM): Understanding the importance of CRM</li>
+                                <li>Managing customer interactions</li>
+                                <li>And building strong relationships</li>
+                                <li>Sales Communication and Negotiation: Developing effective communication skills</li>
+                                <li>Negotiation techniques</li>
+                                <li>And closing sales</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Marketing Communication and Promotion</strong>
+                            <ul class="unit-topics">
+                                <li>Advertising: Understanding different advertising media</li>
+                                <li>Campaign planning</li>
+                                <li>And media buying</li>
+                                <li>Sales Promotion: Understanding different types of sales promotions</li>
+                                <li>Couponing</li>
+                                <li>And loyalty programs</li>
+                                <li>Public Relations (PR): Building positive relationships with the public</li>
+                                <li>Media relations</li>
+                                <li>And crisis communication</li>
+                                <li>Digital Marketing: Understanding online marketing channels</li>
+                                <li>Social media marketing</li>
+                                <li>SEO</li>
+                                <li>And email marketing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Product and Brand Management</strong>
+                            <ul class="unit-topics">
+                                <li>Developing and managing product lines</li>
+                                <li>Branding strategies</li>
+                                <li>And brand equity</li>
+                                <li>Pricing Strategies: Understanding different pricing methods</li>
+                                <li>Pricing objectives</li>
+                                <li>And pricing policies</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Distribution Channels</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding different distribution channels</li>
+                                <li>Logistics</li>
+                                <li>And supply chain management</li>
+                                <li>Ethics in Sales and Marketing: Understanding ethical issues in sales and marketing
+                                </li>
+                                <li>And responsible marketing practices</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>K.S. Chandrasekar, MARKETING MANAGEMENT TEXT AND CASES, Tata McGraw-Hill Publication, New
+                            Delhi. 2010</li>
+                        <li>Govindarajan, MARKETING MANAGEMENT CONCEPTS, CASES, CHHALLENGES AND TRENDS, Prentice Hall of
+                            India, New DelhI. 2009</li>
+                        <li>Philip Kotler, MARKETING MANAGEMENT- ANALYSIS PLANNING AND CONTROL, Prentice Hall of India,
+                            New Delhi,</li>
+                        <li>Ramaswamy. V S & Namakumari. S, MARKETING MANAGEMENT-PLANNING IMPLEMENTATION AND CONTROL,
+                            Macmillan Business Books, New Delihi, 2002,</li>
+                        <li>Balaram Dogra & Karminder Ghuman, RURAL MARKETING: CONCEPT & CASES, Tata McGraw-Hill
+                            Publishing Company, New Delhi, 2008</li>
+                        <li>Ravi Shanker, SERVICES MARKETING: THE INDIAN PERSPECTIVE, Excel Books, New Delhi, 2008</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

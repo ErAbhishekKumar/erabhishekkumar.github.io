@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>4th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">4th Semester Syllabus</h1>
+                <p class="page-subtitle">Electrical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Digital Electronics [103401]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Signals and Systems [103402]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Electrical Machine-II [103403]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Electromagnetic Field Theory [103404]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Control System [103405]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Environmental Science [103406]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital Electronics Lab [103401P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Electrical Machine-II Lab [103403P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Control System Lab [103405P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>NPTEL-I (Open Course) [103407]</td>
+                                <td colspan="3">12 weeks</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>26</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-103401"
+                        data-type="theory">Digital Electronics</button><button class="tab-btn"
+                        data-target="subject-103402" data-type="theory">Signals and Systems</button><button
+                        class="tab-btn" data-target="subject-103403" data-type="theory">Electrical
+                        Machine-II</button><button class="tab-btn" data-target="subject-103404"
+                        data-type="theory">Electromagnetic Field Theory</button><button class="tab-btn"
+                        data-target="subject-103405" data-type="theory">Control System</button><button class="tab-btn"
+                        data-target="subject-103406" data-type="theory">Environmental Science</button><button class="tab-btn"
+                        data-target="subject-103407" data-type="theory">NPTEL-I (Open Course)</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-103401P" data-type="lab">Digital
+                        Electronics Lab</button><button class="tab-btn" data-target="subject-103403P"
+                        data-type="lab">Electrical Machine-II Lab</button><button class="tab-btn"
+                        data-target="subject-103405P" data-type="lab">Control System Lab</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-103401" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital Electronics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Fundamentals of Digital Systems and logic
+                                families</strong>
+                            <ul class="unit-topics">
+                                <li>Digital signals</li>
+                                <li>Digital circuits</li>
+                                <li>AND</li>
+                                <li>OR</li>
+                                <li>NOT</li>
+                                <li>NAND</li>
+                                <li>NOR and Exclusive OR operations</li>
+                                <li>Boolean algebra</li>
+                                <li>Number systems-binary</li>
+                                <li>Signed binary</li>
+                                <li>Octal</li>
+                                <li>Hexadecimal number</li>
+                                <li>Binary arithmetic</li>
+                                <li>One's and two's complements arithmetic</li>
+                                <li>Codes</li>
+                                <li>Error detecting and correcting codes</li>
+                                <li>Characteristics of digital ICs</li>
+                                <li>Examples of IC gates</li>
+                                <li>Digital logic families</li>
+                                <li>TTL</li>
+                                <li>Schottky TTL and CMOS logic</li>
+                                <li>Interfacing CMOS and TTL</li>
+                                <li>Tri-state logic</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Combinational Digital Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Standard representation for logic functions</li>
+                                <li>K-map representation</li>
+                                <li>Simplification of logic functions using K-map</li>
+                                <li>Minimization of logical functions</li>
+                                <li>Don't care conditions</li>
+                                <li>Multiplexer</li>
+                                <li>De-Multiplexer/Decoders</li>
+                                <li>Adders</li>
+                                <li>Sub tractors</li>
+                                <li>BCD arithmetic</li>
+                                <li>Carry look ahead adder</li>
+                                <li>Serial adder</li>
+                                <li>ALU</li>
+                                <li>Elementary ALU design</li>
+                                <li>Popular MSI chips</li>
+                                <li>Digital comparator</li>
+                                <li>Parity checker/generator</li>
+                                <li>Code converters</li>
+                                <li>Priority encoders</li>
+                                <li>Decoders/drivers for display devices</li>
+                                <li>Quine-Mc cluskey method of function realization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Sequential circuits and systems</strong>
+                            <ul class="unit-topics">
+                                <li>A 1-bit memory</li>
+                                <li>The circuit properties of Bistable latch</li>
+                                <li>The clocked SR flip flop</li>
+                                <li>J- K</li>
+                                <li>T and D types flip flops</li>
+                                <li>Applications of flip flops</li>
+                                <li>Shift registers</li>
+                                <li>Applications of shift registers</li>
+                                <li>Serial to parallel converter</li>
+                                <li>Parallel to serial converter</li>
+                                <li>Ring counter</li>
+                                <li>Sequence generator</li>
+                                <li>Ripple (Asynchronous) counters</li>
+                                <li>Synchronous counters</li>
+                                <li>Counters design using flip flops</li>
+                                <li>Special counter ICs</li>
+                                <li>Asynchronous sequential counters</li>
+                                <li>Applications of counters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: A/D and D/A Converters</strong>
+                            <ul class="unit-topics">
+                                <li>Digital to analog converters: weighted resistor/converter</li>
+                                <li>R-2R Ladder D/A converter</li>
+                                <li>Specifications for D/A converters</li>
+                                <li>Examples of D/A converter ICs</li>
+                                <li>Sample and hold circuit</li>
+                                <li>Analog to digital converters: quantization and encoding</li>
+                                <li>Parallel comparator A/D converter</li>
+                                <li>Successive approximation A/D converter</li>
+                                <li>Counting A/D converter</li>
+                                <li>Dual slope A/D converter</li>
+                                <li>A/D converter using voltage to frequency and voltage to time conversion</li>
+                                <li>Specifications of A/D converters</li>
+                                <li>Example of A/D converter ICs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Semiconductor memories and Programmable logic
+                                devices</strong>
+                            <ul class="unit-topics">
+                                <li>Memory organization and operation</li>
+                                <li>Expanding memory size</li>
+                                <li>Classification and characteristics of memories</li>
+                                <li>Sequential memory</li>
+                                <li>Read only memory (ROM)</li>
+                                <li>Read and write memory(RAM)</li>
+                                <li>Content addressable memory (CAM)</li>
+                                <li>Charge de coupled device memory (CCD)</li>
+                                <li>Commonly used memory chips</li>
+                                <li>ROM as a PLD</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Programmable logic array</li>
+                                <li>Programmable array logic</li>
+                                <li>Complex Programmable logic devices (CPLDS)</li>
+                                <li>Field Programmable Gate Array (FPGA)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>R. P. Jain, "Modern Digital Electronics", McGraw Hill Education, 2009.</li>
+                        <li>M. M. Mano, "Digital logic and Computer design", Pearson Education India, 2016.</li>
+                        <li>A. Kumar, "Fundamentals of Digital Circuits", Prentice Hall India, 2016.</li>
+                    </ol>
+                </section>
+                <section id="subject-103402" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Signals and Systems</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Signals and Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Signals and systems as seen in everyday life</li>
+                                <li>And in various branches of engineering and science</li>
+                                <li>Signal properties: periodicity</li>
+                                <li>Absolute integrability</li>
+                                <li>Determinism and stochastic character</li>
+                                <li>Some special signals of importance: the unit step</li>
+                                <li>The unit impulse</li>
+                                <li>The sinusoid</li>
+                                <li>The complex exponential</li>
+                                <li>Some special time-limited signals; continuous and discrete time signals</li>
+                                <li>Continuous and discrete amplitude signals</li>
+                                <li>System properties: linearity: additivity and homogeneity</li>
+                                <li>Shift-invariance</li>
+                                <li>Causality</li>
+                                <li>Stability</li>
+                                <li>Realizability</li>
+                                <li>Examples</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Behavior of continuous and discrete-time LTI
+                                systems</strong>
+                            <ul class="unit-topics">
+                                <li>Impulse response and step response</li>
+                                <li>Convolution</li>
+                                <li>Input-output behavior with aperiodic convergent inputs</li>
+                                <li>Cascade interconnections</li>
+                                <li>Characterization of causality and stability of LTI systems</li>
+                                <li>System representation through differential equations and difference equations</li>
+                                <li>State space representation of systems</li>
+                                <li>State-Space analysis</li>
+                                <li>Multi-input multi-output representation</li>
+                                <li>State Transition Matrix and its Role</li>
+                                <li>Periodic inputs to an LTI system</li>
+                                <li>The notion of a frequency response and its relation to the impulse response</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Fourier series and Fourier Transform</strong>
+                            <ul class="unit-topics">
+                                <li>Fourier series representation of periodic signals</li>
+                                <li>Waveform Symmetries</li>
+                                <li>Calculation of Fourier Coefficients</li>
+                                <li>Fourier Transform</li>
+                                <li>Convolution/multiplication and their effect in the frequency domain</li>
+                                <li>Magnitude and phase response</li>
+                                <li>Fourier domain duality</li>
+                                <li>The Discrete-Time Fourier Transform (DTFT) and the Discrete Fourier Transform (DFT)
+                                </li>
+                                <li>Parseval's Theorem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Laplace Transform</strong>
+                            <ul class="unit-topics">
+                                <li>Review of the Laplace Transform for continuous time signals and systems</li>
+                                <li>System functions</li>
+                                <li>Poles and zeros of system functions and signals</li>
+                                <li>Laplace domain analysis</li>
+                                <li>Solution to differential equations and system behavior</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Sampling and Reconstruction</strong>
+                            <ul class="unit-topics">
+                                <li>The Sampling theorem and its implications</li>
+                                <li>Spectra of sampled signals</li>
+                                <li>Reconstruction: ideal interpolator</li>
+                                <li>Zero-order hold</li>
+                                <li>First-order hold</li>
+                                <li>Aliasing and its effects</li>
+                                <li>Relation between continuous and discrete time systems</li>
+                                <li>Introduction to the applications of signal and system theory: modulation for
+                                    communication</li>
+                                <li>Filtering</li>
+                                <li>Feedback control systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Z-Transform</strong>
+                            <ul class="unit-topics">
+                                <li>The Z-Transform for discrete time signals and systems</li>
+                                <li>System functions</li>
+                                <li>Poles and zeros of systems and sequences</li>
+                                <li>Region of convergence</li>
+                                <li>Z-domain analysis; Unilateral Laplace transform</li>
+                                <li>Difference equations</li>
+                                <li>System representations: direct</li>
+                                <li>Cascade</li>
+                                <li>Parallel forms</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>A. V. Oppenheim, A. S. Willsky and S. H. Nawab, "Signals and systems", Prentice Hall India,
+                            1997.</li>
+                        <li>J. G. Proakis and D. G. Manolakis, "Digital Signal Processing: Principles, Algorithms, and
+                            Applications", Pearson, 2006.</li>
+                        <li>H. P. Hsu, "Signals and systems", Schaum's series, McGraw Hill Education, 2010.</li>
+                        <li>S. Haykin and B. V. Veen, "Signals and Systems", John Wiley and Sons, 2007.</li>
+                        <li>A. V. Oppenheim and R. W. Schafer, "Discrete-Time Signal Processing", Prentice Hall, 2009.
+                        </li>
+                        <li>M. J. Robert "Fundamentals of Signals and Systems", McGraw Hill Education, 2007.</li>
+                        <li>B. P. Lathi, "Linear Systems and Signals", Oxford University Press, 2009.</li>
+                    </ol>
+                </section>
+                <section id="subject-103403" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electrical Machine-II</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Fundamentals of AC machine windings</strong>
+                            <ul class="unit-topics">
+                                <li>Physical arrangement of windings in stator and cylindrical rotor; slots for
+                                    windings; single-turn coil - active portion and overhang; full-pitch coils</li>
+                                <li>Concentrated winding</li>
+                                <li>Distributed winding</li>
+                                <li>Winding axis</li>
+                                <li>3D visualization of the above winding types</li>
+                                <li>Air-gap MMF distribution with fixed current through winding-concentrated and
+                                    distributed</li>
+                                <li>Sinusoidally distributed winding</li>
+                                <li>Winding distribution factor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Pulsating and revolving magnetic fields</strong>
+                            <ul class="unit-topics">
+                                <li>Constant magnetic field</li>
+                                <li>Pulsating magnetic field - alternating current in windings with spatial displacement
+                                </li>
+                                <li>Magnetic field produced by a single winding - fixed current and alternating current
+                                    Pulsating fields produced by spatially displaced windings</li>
+                                <li>Windings spatially shifted by 90 degrees</li>
+                                <li>Addition of pulsating magnetic fields</li>
+                                <li>Three windings spatially shifted by 120 degrees (carrying three-phase balanced
+                                    currents)</li>
+                                <li>Revolving magnetic field</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Induction Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Construction</li>
+                                <li>Types (squirrel cage and slip-ring)</li>
+                                <li>Torque Slip Characteristics</li>
+                                <li>Starting and Maximum Torque. Equivalent circuit. Phasor Diagram</li>
+                                <li>Losses and Efficiency</li>
+                                <li>Effect of parameter variation on torque speed characteristics (variation of rotor
+                                    and stator resistances</li>
+                                <li>Stator voltage</li>
+                                <li>Frequency)</li>
+                                <li>Methods of starting</li>
+                                <li>Braking and speed control for induction motors. Generator operation.
+                                    Self-excitation. Doubly-Fed Induction Machines; Linear Induction Machine</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Single-phase AC motors</strong>
+                            <ul class="unit-topics">
+                                <li>Single-phase induction motor: Constructional features</li>
+                                <li>Double revolving field theory</li>
+                                <li>Equivalent circuit</li>
+                                <li>Determination of parameters. Split-phase starting methods and applications;
+                                    Universal Series Motor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Synchronous machines</strong>
+                            <ul class="unit-topics">
+                                <li>Constructional features</li>
+                                <li>Cylindrical rotor synchronous machine - generated EMF</li>
+                                <li>Equivalent circuit and phasor diagram</li>
+                                <li>Armature reaction</li>
+                                <li>Synchronous impedance</li>
+                                <li>Voltage regulation</li>
+                                <li>Operating characteristics of synchronous machines</li>
+                                <li>V-curves. Salient pole machine - two reaction theory</li>
+                                <li>Analysis of phasor diagram</li>
+                                <li>Power angle characteristics</li>
+                                <li>Parallel operation of alternators - synchronization and load division; starting and
+                                    speed control of synchronous motors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Special Electric Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Reluctance Machines: Synchronous reluctance</li>
+                                <li>Stepper motors</li>
+                                <li>And switched reluctance machines</li>
+                                <li>Principles of operation and models for operating characteristics</li>
+                                <li>Steady-state and dynamic performance. PM machines: Basic analysis of magnetic
+                                    circuit with permanent magnets</li>
+                                <li>Steady-state and dynamic performance of PM synchronous machines</li>
+                                <li>And Brushless DC machines</li>
+                                <li>Servo Motors: Working principle and applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>E. Fitzgerald and C. Kingsley, "Electric Machinery", McGraw Hill Education, 2013.</li>
+                        <li>M. G. Say, "Performance and design of AC machines", CBS Publishers, 2002.</li>
+                        <li>P. S. Bimbhra, "Electrical Machinery", Khanna Publishers, 2011.</li>
+                        <li>I.J. Nagrath and D. P. Kothari, "Electric Machines", McGraw Hill Education, 2010.</li>
+                        <li>A.S. Langsdorf, "Alternating current machines", McGraw Hill Education, 1984.</li>
+                        <li>P. C. Sen, "Principles of Electric Machines and Power Electronics", John Wiley & Sons, 2007.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-103404" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electromagnetic Field Theory</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Review of Vector Calculus</strong>
+                            <ul class="unit-topics">
+                                <li>Vector algebra: addition</li>
+                                <li>Subtraction</li>
+                                <li>Components of vectors</li>
+                                <li>Scalar and vector multiplications</li>
+                                <li>Triple products</li>
+                                <li>Three orthogonal coordinate systems (rectangular</li>
+                                <li>Cylindrical</li>
+                                <li>And spherical)</li>
+                                <li>Vector calculus- differentiation</li>
+                                <li>Partial differentiation</li>
+                                <li>Integration</li>
+                                <li>Vector operator del</li>
+                                <li>Gradient</li>
+                                <li>Divergence</li>
+                                <li>And curl; integral theorems of vectors</li>
+                                <li>Conversion of a vector from one coordinate system to another</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Static Electric Field</strong>
+                            <ul class="unit-topics">
+                                <li>Coulomb's law</li>
+                                <li>Electric field intensity</li>
+                                <li>Electrical field due to point charges. Line</li>
+                                <li>Surface</li>
+                                <li>And Volume charge distributions</li>
+                                <li>Gauss' law and its applications. Absolute Electric potential</li>
+                                <li>Potential difference</li>
+                                <li>Calculation of potential differences for different configurations</li>
+                                <li>Electric dipole</li>
+                                <li>Electrostatic Energy</li>
+                                <li>And Energy density</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Conductors, Dielectrics, and Capacitance</strong>
+                            <ul class="unit-topics">
+                                <li>Current and current density</li>
+                                <li>Ohm's Law in Point form</li>
+                                <li>Continuity of current</li>
+                                <li>Boundary conditions of perfect dielectric materials</li>
+                                <li>Permittivity of dielectric materials</li>
+                                <li>Capacitance</li>
+                                <li>Capacitance of a two-wire line</li>
+                                <li>Poisson's equation</li>
+                                <li>Laplace's equation</li>
+                                <li>Solution of Laplace and Poisson's equation</li>
+                                <li>Application of Laplace's and Poisson's equations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Static Magnetic Fields & Time Varying Fields</strong>
+                            <ul class="unit-topics">
+                                <li>Static Magnetic Field: Biot-Savart Law</li>
+                                <li>Ampere Law</li>
+                                <li>Magnetic flux and magnetic flux density</li>
+                                <li>Scalar and Vector Magnetic potentials</li>
+                                <li>Steady magnetic fields produced by current-carrying conductors Time Varying Field:
+                                    Faraday's law for Electromagnetic induction</li>
+                                <li>Displacement current</li>
+                                <li>Point form of Maxwell's equation</li>
+                                <li>Integral form of Maxwell's equations</li>
+                                <li>Motional Electromotive forces</li>
+                                <li>Boundary Conditions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Magnetic Forces, Materials, and Inductance</strong>
+                            <ul class="unit-topics">
+                                <li>Force on a moving charge</li>
+                                <li>Force on a differential current element</li>
+                                <li>Force between differential current elements</li>
+                                <li>Nature of magnetic materials</li>
+                                <li>Magnetization and permeability</li>
+                                <li>Magnetic boundary conditions</li>
+                                <li>Magnetic circuits</li>
+                                <li>Inductances and mutual inductances</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Electromagnetic Waves</strong>
+                            <ul class="unit-topics">
+                                <li>Derivation of Wave Equation</li>
+                                <li>Uniform Plane Waves</li>
+                                <li>Maxwell's equation in Phasor form</li>
+                                <li>Wave equation in Phasor form</li>
+                                <li>Plane waves in free space and in a homogenous material</li>
+                                <li>Wave equation for a conducting medium</li>
+                                <li>Plane waves in lossy dielectrics</li>
+                                <li>Propagation in good conductors</li>
+                                <li>Skin effect. Poynting theorem</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>W. Hayt, & J. A. Buck, Engineering Electromagnetics, 6th Edition, Tata McGraw-Hill, 2015
+                        </li>
+                        <li>M. N. O. Sadiku, Principles of Electromagnetics, 6th edition, Oxford University Press, 2015
+                        </li>
+                        <li>David K. Cheng (1989), Fields and Waves Electromagnetics, 2nd edition, Pearson Education
+                        </li>
+                        <li>A. Pramanik, "Electromagnetism - Theory and applications", PHI Learning Pvt. Ltd, New Delhi,
+                            2009.</li>
+                        <li>E.G. Cullwick, "The Fundamentals of Electromagnetism", Cambridge University Press, 1966</li>
+                    </ol>
+                </section>
+                <section id="subject-103405" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Control System</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to control problem</strong>
+                            <ul class="unit-topics">
+                                <li>Industrial Control examples. Mathematical models of physical systems. Control
+                                    hardware and their models. Transfer function models of linear time-invariant systems
+                                </li>
+                                <li>Feedback Control: Open-Loop and Closed-loop systems. Benefits of Feedback. Block
+                                    diagram algebra</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Time Response Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Standard test signals. Time response of first and second order systems for standard
+                                    test inputs</li>
+                                <li>Application of initial and final value theorem. Design specifications for
+                                    second-order systems based on the time- response. Concept of Stability</li>
+                                <li>Routh-Hurwitz Criteria. Relative Stability analysis. Root-Locus technique.
+                                    Construction of Root-loci</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Frequency-response analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Relationship between time and frequency response</li>
+                                <li>Polar plots</li>
+                                <li>Bode plots. Nyquist stability criterion</li>
+                                <li>Relative stability using Nyquist criterion - gain and phase margin. Closed-loop
+                                    frequency response</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Introduction to Controller Design</strong>
+                            <ul class="unit-topics">
+                                <li>Stability</li>
+                                <li>Steady-state accuracy</li>
+                                <li>Transient accuracy</li>
+                                <li>Disturbance rejection</li>
+                                <li>Insensitivity and robustness of control systems. Root-loci method of feedback
+                                    controller design</li>
+                                <li>Design specifications in frequency-domain. Frequency-domain methods of design.
+                                    Application of Proportional</li>
+                                <li>Integral and Derivative Controllers</li>
+                                <li>Lead and Lag compensation in designs</li>
+                                <li>Analog and Digital implementation of controllers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: State variable Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of state variables. State space model. Diagonalization of State Matrix.
+                                    Solution of state equations. Eigenvalues and Stability Analysis</li>
+                                <li>Concept of controllability and observability. Pole-placement by state feedback.
+                                    Discrete-time systems. Difference Equations. State-space models of linear
+                                    discrete-time systems</li>
+                                <li>Stability of linear discrete-time systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Introduction to Optimal Control and Nonlinear
+                                Control</strong>
+                            <ul class="unit-topics">
+                                <li>Performance Indices. Regulator problem</li>
+                                <li>Tracking Problem. Nonlinear system-Basic concepts and analysis</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>M. Gopal, "Control Systems: Principles and Design", McGraw Hill Education, 1997.</li>
+                        <li>B. C. Kuo, "Automatic Control System", Prentice Hall, 1995.</li>
+                        <li>K.Ogata, "Modern Control Engineering", Prentice Hall, 1991.</li>
+                        <li>I.J Nagrath and M. Gopal, "Control Systems Engineering", New Age International, 2009.</li>
+                    </ol>
+                </section>
+                <section id="subject-103406" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Environmental Science</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Ecosystem</strong>
+                            <ul class="unit-topics">
+                                <li>Structure of ecosystem</li>
+                                <li>Biotic & Abiotic components</li>
+                                <li>Food chain and food web</li>
+                                <li>Aquatic (Lentic and Lotic) and terrestrial ecosystem</li>
+                                <li>Carbon</li>
+                                <li>Nitrogen</li>
+                                <li>Sulphur</li>
+                                <li>Phosphorus cycle</li>
+                                <li>Global warming -Causes</li>
+                                <li>Effects</li>
+                                <li>Process</li>
+                                <li>Green House Effect</li>
+                                <li>Ozone depletion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Air Pollution</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of pollution and pollutant</li>
+                                <li>Natural and manmade sources of air pollution (Refrigerants</li>
+                                <li>I.C.</li>
+                                <li>Boiler)</li>
+                                <li>Air Pollutants: Types</li>
+                                <li>Particulate Pollutants: Effects and control (Bag filter</li>
+                                <li>Cyclone separator</li>
+                                <li>Electrostatic Precipitator)</li>
+                                <li>Gaseous Pollution Control: Absorber</li>
+                                <li>Catalytic Converter</li>
+                                <li>Effects of air pollution due to Refrigerants</li>
+                                <li>I.C.</li>
+                                <li>Boiler</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Noise Pollution</strong>
+                            <ul class="unit-topics">
+                                <li>Noise pollution: sources of pollution</li>
+                                <li>Measurement of pollution level</li>
+                                <li>Effects of Noise pollution</li>
+                                <li>Noise pollution (Regulation and Control) Rules</li>
+                                <li>2000</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Water and Soil Pollution</strong>
+                            <ul class="unit-topics">
+                                <li>Sources of water pollution</li>
+                                <li>Types of water pollutants</li>
+                                <li>Characteristics of water pollutants Turbidity</li>
+                                <li>PH</li>
+                                <li>Total suspended solids</li>
+                                <li>Total solids BOD and COD: Definition</li>
+                                <li>Calculation</li>
+                                <li>Waste Water Treatment: Primary methods: sedimentation</li>
+                                <li>Froth floatation</li>
+                                <li>Secondary methods: Activated sludge treatment</li>
+                                <li>Trickling filter</li>
+                                <li>Bioreactor</li>
+                                <li>Tertiary Method: Membrane separation technology</li>
+                                <li>RO (reverse osmosis)</li>
+                                <li>Causes</li>
+                                <li>Effects and Preventive measures of Soil Pollution: Causes-Excessive use of
+                                    Fertilisers</li>
+                                <li>Pesticides and Insecticides</li>
+                                <li>Irrigation</li>
+                                <li>E-Waste</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Renewable sources of Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Solar Energy: Basics of Solar energy. Flat plate collector (Liquid & Air). Theory of
+                                    flat plate collector</li>
+                                <li>Importance of coating. Advanced collector. Solar pond. Solar water heater</li>
+                                <li>Solar dryer. Solar stills</li>
+                                <li>Biomass: Overview of biomass as energy source. Thermal characteristics of biomass as
+                                    fuel</li>
+                                <li>Anaerobic digestion. Biogas production mechanism</li>
+                                <li>Utilisation and storage of biogas</li>
+                                <li>Wind energy: Current status and future prospects of wind energy. Wind energy in
+                                    India</li>
+                                <li>Environmental benefits and problem of wind energy</li>
+                                <li>New Energy Sources: Need of new sources. Different types new energy sources</li>
+                                <li>Applications of (Hydrogen energy</li>
+                                <li>Ocean energy resources</li>
+                                <li>Tidal energy conversion.) Concept</li>
+                                <li>Origin and power plants of geothermal energy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Solid Waste Management, ISO 14000 & Environmental
+                                Management</strong>
+                            <ul class="unit-topics">
+                                <li>Solid waste generation- Sources and characteristics of: Municipal solid waste</li>
+                                <li>E- waste</li>
+                                <li>Biomedical waste</li>
+                                <li>Metallic wastes and Non-Metallic wastes (lubricants</li>
+                                <li>Plastics</li>
+                                <li>Rubber) from industries</li>
+                                <li>Collection and disposal: MSW (3R</li>
+                                <li>Principles</li>
+                                <li>Energy recovery</li>
+                                <li>Sanitary landfill)</li>
+                                <li>Hazardous waste</li>
+                                <li>Air quality act 2004</li>
+                                <li>Air pollution control act 1981 and water pollution and control act1996</li>
+                                <li>Structure and role of Central and state pollution control board</li>
+                                <li>Concept of Carbon Credit</li>
+                                <li>Carbon Footprint</li>
+                                <li>Environmental management in fabrication industry</li>
+                                <li>ISO14000: Implementation in industries</li>
+                                <li>Benefits</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>S.C. Sharma & M.P. Poonia, Environmental Studies, Khanna Publishing House.</li>
+                        <li>S.C. Sharma & M.P. Poonia, Environmental Engineering, Khanna Publishing House, New Delhi.
+                        </li>
+                        <li>C.N. R. Rao, Understanding Chemistry, Universities Press (India) Pvt. Ltd., 2011.</li>
+                        <li>Arceivala, Soli Asolekar, Shyam, Waste Water Treatment for Pollution Control and</li>
+                        <li>Reuse, Mc-Graw Hill Education India Pvt. Ltd., New York, 2007, ISBN:978-07-062099-</li>
+                        <li>Nazaroff, William, Cohen, Lisa, Environmental Engineering Science, Willy, New York, 2000,
+                            ISBN 10: 0471144940.</li>
+                        <li>O.P. Gupta, Elements of Environmental Pollution Control, Khanna Publishing House, New Delhi
+                        </li>
+                        <li>Rao, C. S., Environmental Pollution Control and Engineering, New Age International
+                            Publication, 2007, ISBN: 81-224-1835-Χ.</li>
+                        <li>Rao, M. N.Rao, H.V.N, Air Pollution, Tata Mc-Graw Hill Publication, New delhi, 1988, ISBN:
+                            0-07-451871-8.</li>
+                        <li>Frank Kreith, Jan F Kreider, Principles of Solar Engineering, McGraw-Hill, New York; 1978,
+                            ISBN: 9780070354760.</li>
+                        <li>Aldo Vieira, Da Rosa, Fundamentals of renewable energy processes, Academic Press Oxford, UK;
+                            2013. ISBN: 9780123978257.</li>
+                        <li>Patvardhan, A.D, Industrial Solid Waste, Teri Press, New Delhi, 2013, ISBN:978-81-7993-
+                            502-6</li>
+                        <li>Metcalf & Eddy, Waste Water Engineering, Mc-Graw Hill, New York, 2013, ISBN:077441206.</li>
+                        <li>Keshav Kant, Air Pollution & Control, Khanna Publishing House, New Delhi</li>
+                    </ol>
+                </section>
+                <section id="subject-103401P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital Electronics Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>Study and verify the operation of all logic gates.</li>
+                        <li>Design and verify NAND & NOR Gate as a Universalgates.</li>
+                        <li>Design and Verify DE Morgan's Theorem.</li>
+                        <li>Design and verity Binary to Gray & Gray to Binary Conversion.</li>
+                        <li>Design and verify Half adder circuit & Half Subtractor circuit.</li>
+                        <li>Design and Verity Full adder circuit & Full Subtractor Circuit.</li>
+                        <li>Study and verify multiplexer and De-multiplexer Circuit.</li>
+                        <li>Design and Verity BCD to 7-segment display.</li>
+                        <li>Study of Encoder and Decoder circuit</li>
+                        <li>Study of characteristics of SR, JK, T & Master-Slave Flip-Flop.</li>
+                        <li>Design and Verify shift, register circuit</li>
+                        <li>Study and Verity weighted Binary DAC R-2R ladder DAC & Flash ADC</li>
+                        <li>Study of Johnson counter & Binary counter.</li>
+                        <li>Study of 4-bit Synchronous Up/Down mod-n counter.</li>
+                    </ol>
+                </section>
+                <section id="subject-103403P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Electrical Machine-II Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform the following Experiments</h3>
+                    <ol>
+                        <li>Study of the three-phase Induction motor starting methods</li>
+                        <li>Determination of equivalent circuit parameters of a three-phase induction Motor</li>
+                        <li>To perform a load test on a single-phase squirrel-cage Induction motor</li>
+                        <li>To perform a load test on a three-phase squirrel-cage Induction motor</li>
+                        <li>To perform a load test on a three-phase slip ring induction motor</li>
+                        <li>To perform the speed control on a three-phase squirrel cage Induction motor</li>
+                        <li>To perform the operation of a three-phase synchronous motor by varying the field excitation
+                            at different mechanical loading</li>
+                        <li>Determination of OCC, SCC, and ZPF characteristics of a 3-phase Synchronous Machine</li>
+                        <li>Determining the V-curve of a Synchronous Machine</li>
+                        <li>To study the operation of a synchronous generator at NO load and Full load</li>
+                    </ol>
+                </section>
+                <section id="subject-103405P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Control System Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform the following Experiments</h3>
+                    <ol>
+                        <li>To study the potentiometer as an error detector.</li>
+                        <li>To study the PID controller for an oven.</li>
+                        <li>To study the synchro transmission-receiver & output v/s input characteristics.</li>
+                        <li>To study the characteristics of a small A.C. servomotor.</li>
+                        <li>Determine the transient response of a 2nd order system.</li>
+                        <li>To study the performance of an Analog PID controller using a simulated system.</li>
+                        <li>To study the behavior of DC-separated excited motors at open-loop and closed-loop control
+                            systems.</li>
+                    </ol>
+                </section>
+                <section id="subject-103407" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL-I (Open Course)</h2>
+                    <h3 class="sub-heading lab-heading">NPTEL (Open Course) Guidelines:</h3>
+                    <p>NPTEL (Open Course) should be taken from the course other than core subjects of the branch.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

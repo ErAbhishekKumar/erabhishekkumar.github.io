@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Aeronautical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Flight Vehicle Design [116701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective II [1167XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective III [1167XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Flight Vehicle Design Lab [116701P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Internship-II [116710P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>8 Weeks</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-I [116711P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Courses-II [116712P]</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>26</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-116701"
+                        data-type="theory">Flight Vehicle Design</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective II"
+                        data-modal-options='[ {"label": "Computational Fluid Dynamics", "target": "subject-116702", "btn-id": "btn-116702"}, {"label": "Airline and Airport Management", "target": "subject-116703", "btn-id": "btn-116703"}, {"label": "Aviation Fuels and Combustion", "target": "subject-116704", "btn-id": "btn-116704"}, {"label": "Flight Modelling, Analysis and Simulation", "target": "subject-116705", "btn-id": "btn-116705"} ]'>
+                        Program Elective II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective III"
+                        data-modal-options='[ {"label": "Rockets and Missiles", "target": "subject-116706", "btn-id": "btn-116706"}, {"label": "Aircraft Quality Control, Quality Assurance", "target": "subject-116707", "btn-id": "btn-116707"}, {"label": "Aircraft Systems and Avionics", "target": "subject-116708", "btn-id": "btn-116708"}, {"label": "Vibration and Aeroelasticity", "target": "subject-116709", "btn-id": "btn-116709"} ]'>
+                        Program Elective III </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-116701P" data-type="lab">Flight
+                        Vehicle Design Lab</button><button class="tab-btn" data-target="subject-116710P"
+                        data-type="lab">Summer Internship-II</button><button class="tab-btn"
+                        data-target="subject-116711P" data-type="lab">Project-I</button><button class="tab-btn"
+                        data-target="subject-116712P" data-type="lab">NPTEL Courses-II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-116701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Flight Vehicle Design [116701]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Flight Vehicle Design</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of aircraft design process</li>
+                                <li>Conceptual</li>
+                                <li>Preliminary</li>
+                                <li>And detail design phases</li>
+                                <li>Mission definition: payload</li>
+                                <li>Range</li>
+                                <li>Endurance</li>
+                                <li>Altitude</li>
+                                <li>Maneuver requirements</li>
+                                <li>Review of aircraft configurations: conventional</li>
+                                <li>Canard</li>
+                                <li>Blended wing</li>
+                                <li>UAV configurations</li>
+                                <li>Design drivers and constraints (regulations</li>
+                                <li>Cost</li>
+                                <li>Manufacturability)</li>
+                                <li>Technology trends influencing aircraft design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Weight Estimation and Aerodynamic Sizing</strong>
+                            <ul class="unit-topics">
+                                <li>Statistical and empirical weight estimation</li>
+                                <li>Take-off gross weight estimation</li>
+                                <li>Fuel fraction determination</li>
+                                <li>Wing loading (W/S) and power/thrust loading (T/W)</li>
+                                <li>Aerodynamic sizing of wing</li>
+                                <li>Tail</li>
+                                <li>Fuselage</li>
+                                <li>Airfoil selection</li>
+                                <li>Constraint analysis for climb</li>
+                                <li>Cruise</li>
+                                <li>Take-off</li>
+                                <li>Landing</li>
+                                <li>Sensitivity analysis of design parameters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Aircraft Performance Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Take-off and landing performance calculations</li>
+                                <li>Climb performance</li>
+                                <li>Service ceiling</li>
+                                <li>Drift-down analysis</li>
+                                <li>Cruise performance: range and endurance (piston/jet)</li>
+                                <li>Turning performance</li>
+                                <li>Maneuver envelopes</li>
+                                <li>Payload-range diagram development</li>
+                                <li>Energy methods in performance analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Stability</strong>
+                            <ul class="unit-topics">
+                                <li>Static stability: longitudinal</li>
+                                <li>Lateral</li>
+                                <li>And directional</li>
+                                <li>Neutral point</li>
+                                <li>Static margin</li>
+                                <li>CG limits</li>
+                                <li>Tail volume coefficients</li>
+                                <li>Tail sizing</li>
+                                <li>High-lift devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Control Design</strong>
+                            <ul class="unit-topics">
+                                <li>Control derivatives and control surface sizing</li>
+                                <li>Flying qualities (MIL-F-8785 standards)</li>
+                                <li>Trim and control analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Conceptual Design Integration</strong>
+                            <ul class="unit-topics">
+                                <li>Structuring and laying out a flight vehicle model</li>
+                                <li>Structural design considerations: loads</li>
+                                <li>Material selection</li>
+                                <li>Propulsion system integration: engine selection and placement</li>
+                                <li>Systems integration: landing gear layout</li>
+                                <li>Fuel system</li>
+                                <li>Avionics</li>
+                                <li>Subsystem</li>
+                                <li>Cost estimation and manufacturability</li>
+                                <li>Preparation of a conceptual design report and configuration drawing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aircraft Design: A Conceptual Approach, Daniel P. Raymer, AIAA Education Series, 6th
+                            Edition, 2018. ISBN: 978-1624104909.</li>
+                        <li>Aircraft Performance and Design, John D. Anderson, McGraw Hill Education, 2017. ISBN
+                            978-0070702455.</li>
+                        <li>Design of Aircraft, Thomas C. Corke Pearson Education, 2nd Edition, 2003. ISBN:
+                            9780130882824.</li>
+                        <li>Aircraft Design: A Systems Engineering Approach Mohammad, H. Sadraey Wiley, First Edition,
+                            2012. ISBN: 9781119953401.</li>
+                        <li>General Aviation Aircraft Design: Applied Methods and Procedures, Snorri Gudmundsson
+                            Butterworth-Heinemann, 2nd Edition, 2022. ISBN: 978-0128184653</li>
+                        <li>Airplane Design (Series I-VIII), Jan Roskam, DAR corporation, 2000. ISBN (Vol.1):
+                            978-1884885440</li>
+                        <li>Synthesis of Subsonic Airplane Design, Egbert Torenbeek, Delft University Press/ Springer,
+                            1990. ISBN: 978-0792331221.</li>
+                    </ol>
+                </section>
+                <section id="subject-116702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Computational Fluid Dynamics [116702]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Fundamental Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Computational Fluid Dynamics: Scope and importance of CFD in
+                                    aerospace and engineering applications</li>
+                                <li>Relation between experimental</li>
+                                <li>Analytical</li>
+                                <li>And computational approaches</li>
+                                <li>Fundamental assumptions: continuum hypothesis and Newtonian fluid model</li>
+                                <li>Types of fluid flows: incompressible vs. compressible</li>
+                                <li>Viscous vs. inviscid</li>
+                                <li>Steady vs. unsteady</li>
+                                <li>Basic Equations of Fluid Dynamics: Derivation and physical meaning of governing
+                                    equations: continuity</li>
+                                <li>Momentum</li>
+                                <li>And energy</li>
+                                <li>Integral and differential forms of conservation equations</li>
+                                <li>Navier-Stokes equations and simplifying assumptions for laminar and inviscid flows
+                                </li>
+                                <li>Role of viscosity</li>
+                                <li>Pressure</li>
+                                <li>And energy terms in governing flow behavior</li>
+                                <li>Mathematical Classification of Fluid Flow Equations: Nature and classification of
+                                    partial differential equations: elliptic</li>
+                                <li>Parabolic</li>
+                                <li>And hyperbolic</li>
+                                <li>Physical interpretation of each PDE type and examples (Laplace</li>
+                                <li>Diffusion</li>
+                                <li>Wave equations)</li>
+                                <li>Relevance of equation type to steady and unsteady flow problems</li>
+                                <li>Mathematical behavior and numerical implications for each class</li>
+                                <li>Well-Posed Problems and Boundary Conditions: Definition and importance of
+                                    well-posedness: existence</li>
+                                <li>Uniqueness</li>
+                                <li>And stability of solutions</li>
+                                <li>Classification of boundary conditions: Dirichlet</li>
+                                <li>Neumann</li>
+                                <li>And mixed</li>
+                                <li>Selection of initial and boundary conditions for subsonic and supersonic flows</li>
+                                <li>Impact of improper boundary specification on numerical convergence</li>
+                                <li>Discretization of Partial Differential Equations: Concept and purpose of
+                                    discretization in CFD</li>
+                                <li>Finite difference approximations: forward</li>
+                                <li>Backward</li>
+                                <li>And central difference schemes</li>
+                                <li>Taylor series expansion and truncation error analysis</li>
+                                <li>Consistency</li>
+                                <li>Accuracy</li>
+                                <li>And convergence of discretized equations</li>
+                                <li>Transformations and Computational Grids: Coordinate transformations: Cartesian</li>
+                                <li>Curvilinear</li>
+                                <li>And body-fitted coordinates</li>
+                                <li>Structured and unstructured grid systems - advantages and limitations</li>
+                                <li>Grid generation techniques and mesh quality criteria</li>
+                                <li>Grid refinement and independence testing</li>
+                                <li>Explicit Finite Difference Methods for Flow Problems: Time-dependent discretization:
+                                    explicit time-marching methods</li>
+                                <li>Application to model equations for subsonic</li>
+                                <li>Supersonic</li>
+                                <li>And viscous flows</li>
+                                <li>Stability analysis: Courant-Friedrichs-Lewy (CFL) condition and von Neumann method
+                                </li>
+                                <li>Limitations and practical implementation of explicit schemes</li>
+                                <li>Numerical Stability</li>
+                                <li>Convergence</li>
+                                <li>And Accuracy: Relationship between stability</li>
+                                <li>Consistency</li>
+                                <li>And convergence (Lax equivalence theorem)</li>
+                                <li>Sources of numerical errors: truncation</li>
+                                <li>Round-off</li>
+                                <li>And boundary approximations</li>
+                                <li>Influence of grid resolution and time-step size on solution accuracy</li>
+                                <li>Guidelines for achieving stable and convergent CFD simulations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Panel Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Panel Methods: Concept of potential flow and its relevance to
+                                    inviscid</li>
+                                <li>Incompressible external aerodynamics</li>
+                                <li>Simplification of flow field using Laplace's equation</li>
+                                <li>Representation of body surfaces by distributed singularities (sources and vortices)
+                                </li>
+                                <li>Importance of panel methods in aerodynamic analysis and design</li>
+                                <li>Source Panel Method: Fundamentals of source singularity distribution along surface
+                                    panels</li>
+                                <li>Mathematical formulation of source strength and potential function</li>
+                                <li>Enforcement of no-penetration boundary condition on non-lifting bodies</li>
+                                <li>Computation of surface velocity and pressure coefficient for symmetric airfoils and
+                                    bodies of revolution</li>
+                                <li>Practical examples and limitations of the source panel approach</li>
+                                <li>Vortex Panel Method: Need for vortex distribution to model circulation and lift in
+                                    aerodynamic flows</li>
+                                <li>Mathematical formulation of vortex panels and determination of vortex strength</li>
+                                <li>Application of Kutta condition for trailing-edge flow</li>
+                                <li>Calculation of lift</li>
+                                <li>Pressure distribution</li>
+                                <li>And streamline patterns for airfoils</li>
+                                <li>Extension to combined source-vortex panel methods for more accurate modeling</li>
+                                <li>Applications of Panel Methods: Use of panel methods for airfoil and wing performance
+                                    prediction</li>
+                                <li>Application to fuselage and external flow problems in aerospace and marine contexts
+                                </li>
+                                <li>Comparison with finite difference / finite volume CFD methods in terms of
+                                    computational cost and accuracy</li>
+                                <li>Advantages and limitations in practical aerodynamic design and preliminary analysis
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Discretization</strong>
+                            <ul class="unit-topics">
+                                <li>Boundary Layer Equations and Methods of Solution: Derivation and physical
+                                    interpretation of boundary layer equations from Navier-Stokes equations</li>
+                                <li>Simplifying assumptions for laminar and turbulent boundary layers</li>
+                                <li>Numerical approaches for boundary layer solution: finite difference and implicit
+                                    schemes</li>
+                                <li>Application to compressible and incompressible flows</li>
+                                <li>Implicit Time-Dependent Methods for Inviscid and Viscous Flows: Concept of implicit
+                                    discretization and its importance for stiff equations</li>
+                                <li>Formulation of implicit schemes for inviscid and viscous compressible flows</li>
+                                <li>Comparison between explicit and implicit time-marching methods</li>
+                                <li>Advantages in terms of stability and convergence for high-speed flow computations
+                                </li>
+                                <li>Concept of Numerical Dissipation: Definition and physical interpretation of
+                                    numerical dissipation (artificial viscosity)</li>
+                                <li>Role in damping oscillations and stabilizing high-speed flow simulations</li>
+                                <li>Balancing accuracy and stability through controlled dissipation</li>
+                                <li>Example of artificial viscosity terms in compressible flow solvers</li>
+                                <li>Stability Properties of Explicit and Implicit Methods: Review of stability</li>
+                                <li>Consistency</li>
+                                <li>And convergence for time-dependent schemes</li>
+                                <li>Von Neumann stability analysis and Courant-Friedrichs-Lewy (CFL) condition</li>
+                                <li>Comparison of stability limits for explicit and implicit discretization methods</li>
+                                <li>Practical criteria for selecting time steps and spatial resolution</li>
+                                <li>Conservative Upwind Discretization for Hyperbolic Systems: Formulation of upwind
+                                    differencing schemes for hyperbolic conservation laws</li>
+                                <li>Concept of information propagation direction and characteristic speeds</li>
+                                <li>Conservation form of finite difference equations for compressible flows</li>
+                                <li>Role of flux vector splitting and Riemann solvers in upwind schemes</li>
+                                <li>Advantages of Upwind Differencing Techniques: Comparison of upwind differencing with
+                                    central differencing in terms of stability and accuracy</li>
+                                <li>Reduction of numerical oscillations near shocks and discontinuities</li>
+                                <li>Enhanced shock-capturing and monotonicity-preserving properties</li>
+                                <li>Importance in modern CFD solvers for aerospace and turbomachinery flows</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Finite Element Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Finite Element Techniques in CFD: Overview of finite element method
+                                    (FEM) and its role in computational fluid dynamics</li>
+                                <li>Comparison of FEM with finite difference and finite volume methods</li>
+                                <li>Importance of FEM in solving complex geometries and boundary-dominated problems</li>
+                                <li>Applications of FEM in incompressible and compressible flow simulations</li>
+                                <li>Strong and Weak Formulations of Boundary Value Problems: Definition and derivation
+                                    of strong formulation for differential equations</li>
+                                <li>Introduction to weak formulation and its necessity in numerical analysis</li>
+                                <li>Concept of test functions and weighting functions in weak form derivation</li>
+                                <li>Physical interpretation of weak forms for fluid flow problems</li>
+                                <li>Weighted Residual and Galerkin Formulations: General concept of weighted residual
+                                    methods for approximate solutions</li>
+                                <li>Types of weighting techniques: Collocation</li>
+                                <li>Subdomain</li>
+                                <li>Least Squares</li>
+                                <li>And Galerkin</li>
+                                <li>Derivation of the Galerkin formulation from the weighted residual approach</li>
+                                <li>Application of the Galerkin method to ID convection-diffusion problems</li>
+                                <li>Weak and Variational Formulations: Relationship between weak and variational
+                                    formulations</li>
+                                <li>Application of the principle of minimum potential energy</li>
+                                <li>Role of boundary and initial conditions in variational methods</li>
+                                <li>Advantages of variational formulations in ensuring solution smoothness and
+                                    convergence</li>
+                                <li>Piecewise-Defined Shape Functions: Concept of domain discretization into elements
+                                </li>
+                                <li>Construction of shape (interpolation) functions for linear and quadratic elements
+                                </li>
+                                <li>Properties of shape functions: continuity</li>
+                                <li>Completeness</li>
+                                <li>And compatibility</li>
+                                <li>Evaluation of element matrices and assembly of the global system</li>
+                                <li>Implementation of the Finite Element Method (FEM): Step-by-step procedure for FEM
+                                    implementation in CFD: Discretization of domain</li>
+                                <li>Selection of shape functions</li>
+                                <li>Formulation of element equations</li>
+                                <li>Assembly of global equations</li>
+                                <li>Application of boundary conditions</li>
+                                <li>Integration over elements using Gaussian quadrature</li>
+                                <li>Numerical examples and discussion of computational efficiency</li>
+                                <li>The Solution Procedure and Post-Processing: Matrix formation and solution of
+                                    algebraic equations using direct and iterative methods</li>
+                                <li>Handling of symmetric and sparse matrices</li>
+                                <li>Post-processing: velocity</li>
+                                <li>Pressure</li>
+                                <li>And temperature field reconstruction</li>
+                                <li>Accuracy</li>
+                                <li>Convergence</li>
+                                <li>And verification of FEM solutions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Finite Volume Formulations I</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Finite Volume Techniques: Concept and principle of conservation over
+                                    a finite control volume</li>
+                                <li>Derivation of finite volume formulations from the integral form of governing
+                                    equations</li>
+                                <li>Comparison of finite volume</li>
+                                <li>Finite difference</li>
+                                <li>And finite element methods</li>
+                                <li>Applications of finite volume approach in compressible and incompressible flow
+                                    solvers</li>
+                                <li>Cell-Centered Formulation: Structure of control volumes around cell centers</li>
+                                <li>Evaluation of fluxes through cell faces and formulation of discrete conservation
+                                    equations</li>
+                                <li>Role of cell-centered storage in structured and unstructured grids</li>
+                                <li>Implementation aspects in compressible flow solvers</li>
+                                <li>Time-Stepping Techniques: Lax-Wendroff and Runge-Kutta Methods: Lax-Wendroff scheme:
+                                    formulation</li>
+                                <li>Second-order accuracy</li>
+                                <li>And stability aspects</li>
+                                <li>Runge-Kutta time-stepping: multi-stage explicit schemes for time advancement</li>
+                                <li>Comparison of Lax-Wendroff and Runge-Kutta schemes in terms of accuracy and
+                                    computational cost</li>
+                                <li>Applications in unsteady flow and shock-capturing problems</li>
+                                <li>Multi-Stage Time-Stepping and Accuracy Considerations: Concept of multi-stage
+                                    integration for improving temporal accuracy</li>
+                                <li>Stability limits and convergence behavior of multi-stage methods</li>
+                                <li>Order of accuracy and truncation error estimation</li>
+                                <li>Practical guidelines for selecting time-step size and scheme parameters</li>
+                                <li>Cell-Vertex Formulation: Difference between cell-centered and cell-vertex storage
+                                    approaches</li>
+                                <li>Advantages of vertex-based formulations for gradient evaluation and flux
+                                    interpolation</li>
+                                <li>Applications in finite volume schemes for unstructured grids</li>
+                                <li>Use in aerofoil and curved surface flow simulations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Finite Volume Formulations II</strong>
+                            <ul class="unit-topics">
+                                <li>FDM-like Finite Volume Techniques: Relationship between finite difference and finite
+                                    volume formulations</li>
+                                <li>Derivation of FDM-like schemes preserving flux conservation and numerical stability
+                                </li>
+                                <li>Hybrid methods combining the benefits of both formulations</li>
+                                <li>Examples of simple FDM-like discretizations for diffusion and advection equations
+                                </li>
+                                <li>Central and Upwind Type Discretization: Concept of information propagation direction
+                                    in flow fields</li>
+                                <li>Central differencing: accuracy</li>
+                                <li>Simplicity</li>
+                                <li>And limitations</li>
+                                <li>Upwind differencing: stability and robustness in convective-dominated problems</li>
+                                <li>Flux vector splitting and Roe's scheme concepts</li>
+                                <li>Treatment of Derivatives in Finite Volume Methods: Gradient and divergence
+                                    approximations within a control volume</li>
+                                <li>Use of Green-Gauss and least squares methods for derivative evaluation</li>
+                                <li>Ensuring conservation and consistency across cell interfaces</li>
+                                <li>Impact of derivative accuracy on solution stability and convergence</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Computational Fluid Dynamics -The Basics with Applications, John D Anderson, McGraw Hill,
+                            1995.</li>
+                        <li>An Introduction to Computational Fluid Dynamics - The Finite Volume Method, H. K. Versteeg
+                            and W. Malalasekera, Longman Scientific and Technical, 1995</li>
+                        <li>Theoretical and Computational Aerodynamics, Tapan K. Sengupta, John Wiley & Sons Ltd., 2015.
+                        </li>
+                        <li>Computational Method for Fluid Dynamics, Joel H. Ferziger and Milovan Peric, 3rd Edition,
+                            Springer, 2002.</li>
+                        <li>Computational Fluid Mechanics and Heat Transfer, Dale A. Anderson, John C. Tannehill and
+                            Richard H. Pletcher, 2nd Edition, Taylor and Francis, 1984.</li>
+                    </ol>
+                </section>
+                <section id="subject-116703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Airline and Airport Management [116703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Airline Industry</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution of air transport industry - Global and Indian scenario</li>
+                                <li>Organizational structures of airlines Full-service carriers vs. low-cost carriers
+                                </li>
+                                <li>Airline economics and cost structures</li>
+                                <li>Functions of commercial</li>
+                                <li>Operational</li>
+                                <li>And ground handling divisions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Airline Operations & Management</strong>
+                            <ul class="unit-topics">
+                                <li>Fleet planning and route planning</li>
+                                <li>Airline scheduling</li>
+                                <li>Slot allocation</li>
+                                <li>And hub-and-spoke systems</li>
+                                <li>Yield management and revenue optimization</li>
+                                <li>Cargo operations and ancillary revenue sources</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Airport Planning & Infrastructure</strong>
+                            <ul class="unit-topics">
+                                <li>Airport classification and ownership models</li>
+                                <li>Airside facilities runways</li>
+                                <li>Taxiways</li>
+                                <li>Aprons</li>
+                                <li>Terminal facilities design concepts</li>
+                                <li>Capacity planning</li>
+                                <li>Passenger flow management</li>
+                                <li>Airport support services - ATC</li>
+                                <li>Firefighting</li>
+                                <li>Ground handling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Airport Operations & Safety Management</strong>
+                            <ul class="unit-topics">
+                                <li>Airport operations: check-in</li>
+                                <li>Security</li>
+                                <li>Baggage handling</li>
+                                <li>Boarding</li>
+                                <li>Safety and emergency planning - ICAO</li>
+                                <li>IATA</li>
+                                <li>DGCA regulations</li>
+                                <li>Airport certification and audits</li>
+                                <li>Case studies on airport efficiency and disruptions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Emerging Trends & Sustainability I</strong>
+                            <ul class="unit-topics">
+                                <li>Digital transformation in airlines and airports (AI</li>
+                                <li>IoT</li>
+                                <li>Biometrics)</li>
+                                <li>Sustainable airport design and green initiatives</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Emerging Trends & Sustainability II</strong>
+                            <ul class="unit-topics">
+                                <li>Future of air transport: urban air mobility</li>
+                                <li>Drones</li>
+                                <li>And eVTOLs</li>
+                                <li>Challenges of post-pandemic recovery and resilience</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Air Transportation: A Management Perspective, John G. Wensveen, Routledge, 9th Edition,
+                            2018, ISBN-10: 1138664729, ISBN-13: 978-1138664729.</li>
+                        <li>Airport Planning and Management, Seth B. Young, Alexander T. Wells, McGraw-Hill Education,
+                            6th Edition, 2011, ISBN-10: 0071775735, ISBN-13: 978-0071775731.</li>
+                        <li>Airline Operations and Management: A Management Textbook, Gerald N. Cook, Bruce Billig,
+                            Routledge, 2nd Edition, 2017, ISBN-10: 1472478055, ISBN-13: 978-1472478056,</li>
+                        <li>Fundamentals of Air Transport Management P. S. Senguttuvan, Excel Books, 2nd Edition, 2006,
+                            ISBN-10: 8174464640, ISBN-13: 978-8174464643.</li>
+                        <li>Introduction to Air Transport Economics: From Theory to Applications, Bijan Vasigh, Ken
+                            Fleming, Thomas Tacker, Routledge, 3rd Edition, 2018, ISBN-10: 1138641404, ISBN-13:
+                            978-1138641409.</li>
+                        <li>Airline Management: Strategies for the 21st Century, Paul Stephen Dempsey, Laurence Gesell,
+                            Coast Aire Publications, 7th Edition, 2017, ISBN-10: 0972805320, ISBN-13: 978-0972805326.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-116704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Aviation Fuels and Combustion [116704]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Aviation Fuels</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of aviation fuels Avgas and Jet fuels</li>
+                                <li>Composition and refining process</li>
+                                <li>Physical and chemical properties</li>
+                                <li>ASTM specifications</li>
+                                <li>Comparison of gasoline and kerosene fuels</li>
+                                <li>Storage</li>
+                                <li>Handling</li>
+                                <li>And contamination control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Combustion Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Stoichiometric combustion</li>
+                                <li>Air-fuel ratio</li>
+                                <li>Equivalence ratio</li>
+                                <li>Adiabatic flame temperature</li>
+                                <li>Reaction kinetics</li>
+                                <li>Ignition delay</li>
+                                <li>Flammability limits</li>
+                                <li>Combustion efficiency</li>
+                                <li>Chemical equilibrium in combustion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Combustion in Aircraft Engines</strong>
+                            <ul class="unit-topics">
+                                <li>Combustion systems in gas turbine engines</li>
+                                <li>Flame stability</li>
+                                <li>Combustor configurations</li>
+                                <li>Fuel-air mixing</li>
+                                <li>Combustion efficiency</li>
+                                <li>Emission formation</li>
+                                <li>Performance testing and analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Fuel Additives</strong>
+                            <ul class="unit-topics">
+                                <li>Types and role of additives</li>
+                                <li>Anti-oxidants</li>
+                                <li>Anti-knock agents</li>
+                                <li>Icing inhibitors</li>
+                                <li>Corrosion preventers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Alternative Fuels</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to biofuels</li>
+                                <li>Synthetic fuels</li>
+                                <li>Hydrogen</li>
+                                <li>And cryogenic fuels</li>
+                                <li>Environmental aspects and emission control technologies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Fuel Testing and Performance Evaluation</strong>
+                            <ul class="unit-topics">
+                                <li>Fuel characterization techniques</li>
+                                <li>Calorific value determination</li>
+                                <li>Viscosity</li>
+                                <li>Flash point</li>
+                                <li>Fire point</li>
+                                <li>Density</li>
+                                <li>Volatility</li>
+                                <li>And freezing point</li>
+                                <li>ASTM testing methods and interpretation of results</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Combustion Engineering, Gary L. Borman, Kenneth W. Ragland, McGraw Hill, ISBN-10:
+                            9780071159784, ISBN-13: 978-0071159784.</li>
+                        <li>Jet Propulsion and Gas Turbine Engines, Nicholas CumpstyLongman Scientific</li>
+                        <li>Principles of combustion. Kenneth Kuan-Yun Kuo (2005), Springer Nature
+                            (https://doi.org/10.1007/s00162-006-0039-5).</li>
+                        <li>Aviation Fuels Technical Review Chevron Corporation Technical Publication
+                            (https://www.sciencedirect.com/topics/engineering/aviation-fuels)</li>
+                        <li>Thermodynamics and Combustion Cengel and Boles McGraw Hill Education.</li>
+                    </ol>
+                </section>
+                <section id="subject-116705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Flight Modelling, Analysis and Simulation [116705]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of flight simulation and analysis- classification and uses</li>
+                                <li>Coordinate systems (body</li>
+                                <li>Wind</li>
+                                <li>Stability axes)</li>
+                                <li>Euler angles and transformation matrices</li>
+                                <li>Equations of kinematics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Equation of Motion</strong>
+                            <ul class="unit-topics">
+                                <li>Derivation of translational and rotational equations of motion</li>
+                                <li>Derive aerodynamic</li>
+                                <li>Propulsive</li>
+                                <li>And gravitational forces and moments equations</li>
+                                <li>Small perturbation theory</li>
+                                <li>Linearization about steady flight</li>
+                                <li>State-space representation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stability and Control Derivatives I</strong>
+                            <ul class="unit-topics">
+                                <li>Longitudinal and lateral-directional dynamics</li>
+                                <li>Determination of stability derivatives pilot and autopilot models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Stability and Control Derivatives II</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamic modes of motion (phugoid</li>
+                                <li>Short period</li>
+                                <li>Dutch roll</li>
+                                <li>Spiral</li>
+                                <li>Roll) Control Surface modeling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: 6-DOF Simulation and Numerical Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Derive 6-DOF rigid body mode</li>
+                                <li>Modeling of sensors and actuators</li>
+                                <li>Pilot and autopilot models</li>
+                                <li>Real-time simulation aspects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Simulation Applications and Validation</strong>
+                            <ul class="unit-topics">
+                                <li>Simulation of control inputs</li>
+                                <li>Transient response</li>
+                                <li>Case studies (transport aircraft</li>
+                                <li>UAV</li>
+                                <li>Fighter)</li>
+                                <li>Comparison with flight test data</li>
+                                <li>Model verification and validation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aircraft Control and Simulation, Stevens, B.L., Lewis, F.L., and Johnson, E.N., 3rd Ed.,
+                            Wiley, 2016, ISBN-10: 1118870980, ISBN-13: 978-1118870983.</li>
+                        <li>Dynamics of Flight: Stability and Control, Etkin, B., and Reid, L.D., 3rd Ed., Wiley, 1996.
+                            ISBN 0-47 1-0341 8-5.</li>
+                        <li>Flight Dynamics for Aircraft Designers, Roskam, J., DAR corporation, 2018. ISBN-10:
+                            1884885179, ISBN-13: 978-1884885174.</li>
+                        <li>Flight Dynamics Principles, Jaco Cook, M.V., 4th Ed., Elsevier, 2019.</li>
+                        <li>Automatic Control Systems, Kuo, B.C., D Prentice-Hall, 2015.</li>
+                        <li>MATLAB/Simulink User Guide for Aerospace Toolbox, MathWorks Inc. MathWorks Inc.</li>
+                    </ol>
+                </section>
+                <section id="subject-116706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective III: Rockets and Missiles [116706]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Rockets and Missiles</strong>
+                            <ul class="unit-topics">
+                                <li>Classification and Configurations</li>
+                                <li>Mission Roles and Application Scope</li>
+                                <li>Missile Subsystems Overview</li>
+                                <li>Comparison of Rockets vs Missiles</li>
+                                <li>Trends in Rocket/Missile Development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Stability and Control of Rockets and Missiles
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Static Margin and Natural Stability</li>
+                                <li>Control Techniques and Stability Derivatives</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stability and Control of Rockets and Missiles
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Lateral/Directional Modes and Manoeuvring Control</li>
+                                <li>Role of Guidance in Stability Feedback Loops</li>
+                                <li>Stability During Powered vs Ballistic Flight</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Launch and Recovery Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Launch Phases and Ground Support Systems</li>
+                                <li>Boost and Coasting Flight Performance</li>
+                                <li>Re-entry Heating and Recovery Mechanisms</li>
+                                <li>Multi-stage Separation Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Trajectory Analysis and Guidance Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of Missile Guidance</li>
+                                <li>Interception and Miss Distance Calculations</li>
+                                <li>Inertial and Satellite Navigation Integration</li>
+                                <li>Motion Modelling and Trajectory Simulations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Design Considerations in Propulsion and
+                                Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Thrust Vector Control and Termination</li>
+                                <li>Thermal Protection Systems and TPS Design</li>
+                                <li>Cryogenic and High-Temperature Materials</li>
+                                <li>Engine Integration and Mounting Concepts</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Rocket Propulsion Elements, G.P. Sutton, O. Biblarz, Wiley, 9th Edition, ISBN: 9788126538986
+                        </li>
+                        <li>Rocket Propulsion and Space Dynamics, NJ.W. Cornelisse et al., Pitman Publishing, ISBN:
+                            9780273011436</li>
+                        <li>Rocket and Spacecraft Propulsion, Martin J.L. Turner, Springer, 3rd Edition, ISBN:
+                            9783540490436</li>
+                        <li>Missile Design and System Engineering, Eugene Fleeman, AIAA Education Series, ISBN:
+                            9781563475375</li>
+                        <li>Space Vehicle Dynamics and Control, Bong Wie, AIAA Education Series, ISBN: 9781563477034
+                        </li>
+                        <li>Fundamentals of Guided Missiles, S.R. Mohan, DRDO Publications, 1st Edition, 2016.</li>
+                        <li>Materials for Missiles and Spacecraft Earl R. Parker McGraw Hill, ISBN: 9780070488793</li>
+                    </ol>
+                </section>
+                <section id="subject-116707" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective III: Aircraft Quality Control, Quality Assurance
+                        [116707]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Quality in Aerospace</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution of quality concepts: quality inspection</li>
+                                <li>Quality control</li>
+                                <li>Quality assurance</li>
+                                <li>And total quality management (TQM)</li>
+                                <li>Role of quality in airworthiness</li>
+                                <li>Flight safety</li>
+                                <li>And reliability</li>
+                                <li>Aerospace regulatory bodies and standards: DGCA</li>
+                                <li>FAA</li>
+                                <li>EASA</li>
+                                <li>ICAO</li>
+                                <li>ISO 9001</li>
+                                <li>AS9100 Quality documentation: manuals</li>
+                                <li>Procedures</li>
+                                <li>Inspection checklists</li>
+                                <li>Certification records</li>
+                                <li>Case studies: aircraft accidents/failures due to poor quality practices and lessons
+                                    learned</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Quality Control Techniques and Statistical
+                                Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of aerospace quality control and inspection planning</li>
+                                <li>Statistical Quality Control (SQC): measures of variation</li>
+                                <li>Control charts (X-bar</li>
+                                <li>R</li>
+                                <li>P</li>
+                                <li>Np</li>
+                                <li>C</li>
+                                <li>U)</li>
+                                <li>Process capability indices (Cp</li>
+                                <li>Cpk)</li>
+                                <li>Acceptance sampling methods: single</li>
+                                <li>Double</li>
+                                <li>And sequential sampling plans</li>
+                                <li>Measurement System Analysis (MSA): calibration</li>
+                                <li>Gage R&R</li>
+                                <li>Traceability in aerospace metrology</li>
+                                <li>Practical applications: inspection of aerospace components and sub-assemblies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Non-Destructive Testing (NDT) and Reliability
+                                Engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to NDT: principles</li>
+                                <li>Advantages</li>
+                                <li>Limitations</li>
+                                <li>Techniques: radiographic testing</li>
+                                <li>Ultrasonic testing</li>
+                                <li>Eddy current testing</li>
+                                <li>Magnetic particle inspection</li>
+                                <li>Dye penetrant testing</li>
+                                <li>Thermography</li>
+                                <li>Standards and certification for NDT personnel (NAS-410</li>
+                                <li>EN 4179)</li>
+                                <li>Reliability concepts: MTBF</li>
+                                <li>MTTF</li>
+                                <li>Hazard rate</li>
+                                <li>Reliability block diagrams</li>
+                                <li>Reliability tools: Failure Mode and Effects Analysis (FMEA)</li>
+                                <li>Fault Tree Analysis (FTA)</li>
+                                <li>Applications in aircraft structures</li>
+                                <li>Engines</li>
+                                <li>Composites</li>
+                                <li>And avionics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Quality Assurance Systems and Certification</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of quality assurance in aerospace manufacturing and MRO</li>
+                                <li>Aerospace Quality Management Systems (QMS): ISO 9001</li>
+                                <li>AS9100 Rev D</li>
+                                <li>EASA Part-145</li>
+                                <li>Audit processes: internal audits</li>
+                                <li>Supplier audits</li>
+                                <li>Regulatory audits</li>
+                                <li>Corrective and preventive actions (CAPA)</li>
+                                <li>Root cause analysis (RCA)</li>
+                                <li>Certification processes for aerospace materials</li>
+                                <li>Components</li>
+                                <li>And systems Case studies: QA practices in aircraft OEMs and MRO facilities</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Modern Practices and Future Trends in Aerospace Quality
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Continuous improvement methodologies: Lean</li>
+                                <li>Six Sigma</li>
+                                <li>Kaizen in aerospace</li>
+                                <li>Digital quality assurance: Industry 4.0</li>
+                                <li>IoT</li>
+                                <li>Blockchain for traceability</li>
+                                <li>AI for defect detection</li>
+                                <li>Predictive maintenance and quality integration with digital twins</li>
+                                <li>Sustainability and environmental considerations in aerospace QA (green manufacturing
+                                </li>
+                                <li>Eco-friendly materials)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Modern Practices and Future Trends in Aerospace Quality
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Future challenges: quality assurance for UAVs</li>
+                                <li>EVTOLs</li>
+                                <li>And space vehicles</li>
+                                <li>Case studies: Boeing 787 Dreamliner & Airbus A350 quality challenges</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Quality Assurance in Aerospace Industries, D. J. Hume, McGraw-Hill Education, 2016 ISBN-10:
+                            0071433465, ISBN-13: 978-0071433464</li>
+                        <li>Introduction to Statistical Quality Control, Douglas C. Montgomery, Wiley, 7th Edition, 2019
+                            ISBN-10: 111972309X, ISBN-13: 978-1119723092.</li>
+                        <li>Reliability Engineering and Risk Analysis: A Practical Guide, Mohammad Modarres, CRC Press,
+                            3rd Edition, 2016 ISBN-10: 149875309X, ISBN-13: 978-1498753094.</li>
+                        <li>Non-Destructive Testing Handbook (Vol. 1-10), American Society for Nondestructive Testing
+                            (ASNT), ASNT Publications, Latest Edition ISBN-10: 1732420545 ISBN-13: 978-1732420545.</li>
+                        <li>AS9100D: Quality Management Systems for Aviation, Space and Defense SAE, International, SAE
+                            Standards, 2016, ISBN-10: 0997781913, ISBN-13: 978-0997781915.</li>
+                        <li>Reliability, Maintainability and Risk: Practical Methods for Engineers, David J. Smith,
+                            Butterworth-Heinemann, 9th Edition, 2017, ISBN-10: 0128054271, ISBN-13: 978-0128054276.</li>
+                    </ol>
+                </section>
+                <section id="subject-116708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective III: Aircraft Systems and Avionics [116708]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Aircraft Systems Overview and Control
+                                Mechanisms</strong>
+                            <ul class="unit-topics">
+                                <li>Explain the roles and types of aircraft control systems including mechanical</li>
+                                <li>Powered</li>
+                                <li>And digital fly-by-wire</li>
+                                <li>Describe the operational principles of autopilot systems and their role in aircraft
+                                    stability and control</li>
+                                <li>Identify the modeling methods of aircraft electrical systems using force-voltage and
+                                    force-current analogies</li>
+                                <li>Compare control system configurations used in civil vs. military aircraft</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hydraulic, Pneumatic, and Landing Gear Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Describe the layout and working principles of hydraulic systems used in flight
+                                    control surfaces</li>
+                                <li>Explain the function and advantages of pneumatic systems in aircraft</li>
+                                <li>Analyze the working of air pressure-based systems for braking and actuation</li>
+                                <li>Classify various types of landing gear systems and assess their design criteria</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Fuel, Lubrication, and Powerplant Support
+                                Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Identify and distinguish between fuel system configurations for piston and jet
+                                    engines</li>
+                                <li>Illustrate the operation of lubrication systems including dry sump and wet sump
+                                    types</li>
+                                <li>Understand ignition and starting system mechanisms in various engine types</li>
+                                <li>Apply knowledge to analyze reliability and redundancy in fuel and lubrication
+                                    systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Aircraft Instruments and Avionics Interfaces</strong>
+                            <ul class="unit-topics">
+                                <li>Describe and classify flight instruments (altimeters</li>
+                                <li>Gyros</li>
+                                <li>Mach meters</li>
+                                <li>Etc.) based on operational principles</li>
+                                <li>Understand the structure and application of digital cockpit instrumentation systems
+                                </li>
+                                <li>Explain the working principles and integration of CRT</li>
+                                <li>FLIR</li>
+                                <li>And NVG-based human-machine interfaces</li>
+                                <li>Interpret basic signal encoding formats and their roles in avionics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Communication</strong>
+                            <ul class="unit-topics">
+                                <li>Understand the working and limitations of aircraft communication systems including
+                                    HF</li>
+                                <li>VHF</li>
+                                <li>UHF</li>
+                                <li>And SATCOM</li>
+                                <li>Describe collision avoidance systems such as TCAS and their integration in civil
+                                    aircraft</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Navigation Avionics</strong>
+                            <ul class="unit-topics">
+                                <li>Analyze various radio navigation technologies like GPS</li>
+                                <li>DME</li>
+                                <li>VOR</li>
+                                <li>LORAN</li>
+                                <li>And their principles of operation</li>
+                                <li>Explain interrogator and transponder functionalities in airborne navigation systems
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aircraft Instruments and Integrated Systems E.H.J. Pallet Longman, Scientific and Technical,
+                            McGraw-Hill, ISBN-10: 0582086272, ISBN-13: 978-0582086272</li>
+                        <li>Introduction to Avionics, R.P.G. Collinson Springer, 3rd Edition, ISBN-10: 940070707X,
+                            ISBN-13: 978-9400707078</li>
+                        <li>A Pilot's Guide to Aircraft and Their Systems, Dale Crane ASA Publications, ISBN-10:
+                            9781560274612, ISBN-13: 978-1560274612.</li>
+                        <li>The Avionics Handbook, Cary R. Spitzer, CRC Press, ISBN 0-8493-8348-X</li>
+                        <li>Digital Avionics Systems, C.R. Spitzer, Prentice Hall.</li>
+                    </ol>
+                </section>
+                <section id="subject-116709" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective III: Vibration and Aeroelasticity [116709]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Systems with One Degree of Freedom</strong>
+                            <ul class="unit-topics">
+                                <li>Degrees of Freedom: Definition and examples</li>
+                                <li>Equations of Motion: Newton's laws and Energy method</li>
+                                <li>General Solution: Free and forced vibration response</li>
+                                <li>Steady-State Analysis: Amplitude and phase in harmonic loading</li>
+                                <li>System Types: Rectilinear and rotational</li>
+                                <li>Vibrations: Free & forced (undamped and damped)</li>
+                                <li>D'Alembert's Principle and Virtual Displacement</li>
+                                <li>Lagrange's Equation: Derivation and application</li>
+                                <li>Generalized Forces: Concept and formulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Systems with Two Degrees of Freedom</strong>
+                            <ul class="unit-topics">
+                                <li>Undamped free vibrations of 2-DOF systems</li>
+                                <li>Principal modes and mode shapes</li>
+                                <li>Semi-definitive systems: special characteristics</li>
+                                <li>Steady-state undamped forced vibrations</li>
+                                <li>Damped free vibrations in 2-DOF systems</li>
+                                <li>Steady-state forced vibrations with damping</li>
+                                <li>Influence coefficients and their significance</li>
+                                <li>Generalized coordinates and coordinate coupling</li>
+                                <li>Principal coordinates for decoupling equations</li>
+                                <li>Orthogonality of principal modes of vibration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Multi-Degree of Freedom System I</strong>
+                            <ul class="unit-topics">
+                                <li>Matrix method for formulating equations of motion</li>
+                                <li>Free vibrations of multi-DOF systems</li>
+                                <li>Principal modes and mode shapes</li>
+                                <li>Normal coordinates for system decoupling</li>
+                                <li>Orthogonality of principal modes of vibration</li>
+                                <li>Semi-definitive systems and their characteristics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Multi-Degree of Freedom System II</strong>
+                            <ul class="unit-topics">
+                                <li>Systems with equal natural frequencies</li>
+                                <li>Influence coefficients and their role in system response</li>
+                                <li>Determination of natural frequencies and modes using matrix iteration</li>
+                                <li>Damped free vibrations in multi-DOF systems</li>
+                                <li>Forced vibrations and response analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Aeroelasticity</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of aeroelasticity and its historical background</li>
+                                <li>Static aeroelastic phenomena (divergence</li>
+                                <li>Control reversal)</li>
+                                <li>Dynamic aeroelastic phenomena (flutter</li>
+                                <li>Buffeting</li>
+                                <li>Stall flutter)</li>
+                                <li>Integration of aerodynamic</li>
+                                <li>Elastic</li>
+                                <li>And inertial forces</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Aeroelasticity</strong>
+                            <ul class="unit-topics">
+                                <li>Influence of aeroelastic effects on aircraft design</li>
+                                <li>Comparison and evaluation of critical speeds</li>
+                                <li>Flutter phenomenon and analysis for aircraft wings</li>
+                                <li>Flutter analysis for a cantilever wing</li>
+                                <li>Approximate determination of critical speed using Galerkin's method</li>
+                                <li>Introduction to buffeting and stall flutter.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Mechanical Vibrations, S. S. Rao, Pearson Education 6th Edition (2017),</li>
+                        <li>Theory of Vibration with Applications, William T. Thomson, Marie Dillon Dahleh, Pearson
+                            Education 5th Edition (2017).</li>
+                        <li>Fundamentals of Vibrations, Leonard Meirovitch, McGraw-Hill Education 1st Edition (2001).
+                        </li>
+                        <li>A Modern Course in Aeroelasticity, Robert Clark and Earl H. Dowell, Springer 5th Edition
+                            (2013).</li>
+                        <li>Introduction to Structural Dynamics and Aeroelasticity, Dewey H. Hodges and G. Alvin Pierce,
+                            Cambridge University Press 2nd Edition (2011).</li>
+                        <li>Principles of Vibration, Benson H. Tongue, Oxford University Press 2nd Edition (2007).</li>
+                    </ol>
+                </section>
+                <section id="subject-116701P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Flight Vehicle Design Lab [116701P]</h2>
+                    <p>Preform all Experiments</p>
+                    <ul class="unit-topics">
+                        <li>Conduct a mission profile and requirement analysis for a selected flight vehicle.</li>
+                        <li>Perform empirical aircraft weight estimation using standard statistical methods.</li>
+                        <li>Determine fuel fraction and fuel weight distribution for a multi-segment mission.</li>
+                        <li>Construct wing loading and thrust loading constraint diagrams using computational tools.
+                        </li>
+                        <li>Analyze airfoil aerodynamic characteristics using XFOIL across multiple flow conditions</li>
+                        <li>Perform wing and tail sizing using aerodynamic and geometric design parameters.</li>
+                        <li>Compute aircraft stability and control derivatives using AVL or equivalent software</li>
+                        <li>Simulate aircraft performance for take-off, climb, cruise, and landing phases.</li>
+                        <li>Develop a conceptual CAD model of a complete flight vehicle configuration.</li>
+                        <li>Prepare and present a comprehensive conceptual flight vehicle design report..</li>
+                    </ul>
+                </section>
+                <section id="subject-116710P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Internship-II [116710P]</h2>
+                    <p>Details for Summer Internship-II will be provided by the department</p>
+                </section>
+                <section id="subject-116711P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-I [116711P]</h2>
+                    <p>Details for Project-I will be provided by the department</p>
+                </section>
+                <section id="subject-116712P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Courses-II [116712P]</h2>
+                    <p>Details for NPTEL Courses-II will be provided by the department</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>8th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">8th Semester Syllabus</h1>
+                <p class="page-subtitle">Computer Science & Engineering (AI)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Deep Learning [151801]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective -V [1518XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective II [1008XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective III [1008XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-II [100801P]</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>18</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-151801" data-type="theory">Deep
+                        Learning</button><button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective-V"
+                        data-modal-options='[ {"label": "Reinforcement Learning", "target": "subject-151802", "btn-id": "btn-151802"}, {"label": "Information Retrieval and Web Search", "target": "subject-151803", "btn-id": "btn-151803"}, {"label": "Recommender System", "target": "subject-151804", "btn-id": "btn-151804"}, {"label": "Generative AI", "target": "subject-151805", "btn-id": "btn-151805"} ]'>
+                        Program Elective-V </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective-II"
+                        data-modal-options='[ {"label": "Digital Image Processing", "target": "subject-100815", "btn-id": "btn-100815"}, {"label": "Control System", "target": "subject-100821", "btn-id": "btn-100821"}, {"label": "Simulation and Modelling", "target": "subject-100856", "btn-id": "btn-100856"}, {"label": "Microprocessor", "target": "subject-100842", "btn-id": "btn-100842"} ]'>
+                        Open Elective-II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective-III"
+                        data-modal-options='[ {"label": "Operation Research", "target": "subject-100857", "btn-id": "btn-100857"}, {"label": "Analog Communication", "target": "subject-100858", "btn-id": "btn-100858"}, {"label": "Satellite Communication", "target": "subject-100819", "btn-id": "btn-100819"} ]'>
+                        Open Elective-III </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100801P"
+                        data-type="lab">Project-II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-151801" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Deep Learning [151801]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Brief Introduction of Big Data Problem</li>
+                                <li>Overview of Linear Algebra</li>
+                                <li>Probability</li>
+                                <li>Numerical Computation</li>
+                                <li>Basics of Machine Learning/Feature Engineering</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Basics of Neural Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Neural Networks</li>
+                                <li>Tools for Deep Learning Network - Shallow vs Deep Network</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Feed Forward Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Multilayer Perceptron</li>
+                                <li>Gradient</li>
+                                <li>Loss Function</li>
+                                <li>Gradient Descent</li>
+                                <li>Stochastic Gradient Descent (SDD)</li>
+                                <li>Backpropagation Algorithm</li>
+                                <li>Empirical Risk Minimization</li>
+                                <li>Regularization</li>
+                                <li>Gradient Based Learning - Cost Function</li>
+                                <li>Learning Rate</li>
+                                <li>Soft Max</li>
+                                <li>Sigmoid Function</li>
+                                <li>Hidden Unit - ReLU</li>
+                                <li>Logistic Sigmoid</li>
+                                <li>Hyperbolic Tangent Architecture Design</li>
+                                <li>Heuristics for Faster Training</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Unsupervised Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Deep Belief Network</li>
+                                <li>Deep Boltzmann Machine (DBM)</li>
+                                <li>Factor Analysis</li>
+                                <li>Auto-Encoders (Standard, Sparse, Denoising, Contractive, Etc)</li>
+                                <li>Variational Auto-Encoders</li>
+                                <li>Adversarial Generative Networks</li>
+                                <li>Auto-Encoder</li>
+                                <li>Regularization Optimization for Training Deep Model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Advanced Topics</strong>
+                            <ul class="unit-topics">
+                                <li>Convolutional Neural Network (CNN): Architectures</li>
+                                <li>Convolution / Pooling Layers</li>
+                                <li>Recurrent Neural Network (RNN)/ Sequence Modeling: Long Short Term Memory Networks
+                                    (LSTM)</li>
+                                <li>GRU</li>
+                                <li>Encoder Decoder Architectures Reinforcement Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Practical Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Application of Deep Learning to Computer Vision</li>
+                                <li>Speech Recognition</li>
+                                <li>Natural Language Processing</li>
+                                <li>Etc</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Ian Goodfellow, Yoshua Bengio and Aaron Courville, "Deep Learning", Book in preparation for
+                            MIT Press, 2016.</li>
+                        <li>Jerome H. Friedman, Robert Tibshirani, and Trevor Hastie, "The elements of statistical
+                            learning", Springer Series in Statistics, 2009.</li>
+                        <li>Charu C Aggarwal, "Neural Networks and Deep Learning", Springer.</li>
+                    </ol>
+                </section>
+                <section id="subject-151802" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-V: Reinforcement Learning [151802]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basics of Probability & Intelligent Agents</strong>
+                            <ul class="unit-topics">
+                                <li>Random Variables</li>
+                                <li>Probability Mass Function (PMF)</li>
+                                <li>Probability Density Function (PDF)</li>
+                                <li>Introduction to Agents</li>
+                                <li>Intelligent Agents</li>
+                                <li>Problem Solving: Searching</li>
+                                <li>Logical Agents</li>
+                                <li>Overview of Reinforcement Learning: Elements of RL</li>
+                                <li>Scope and Limitations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: The Multi-Arm Bandit Problem</strong>
+                            <ul class="unit-topics">
+                                <li>Multi-Arm Bandit Fundamentals</li>
+                                <li>The n-Armed Bandit Problem</li>
+                                <li>Exploration vs. Exploitation</li>
+                                <li>UCB (Upper Confidence Bound) Algorithm</li>
+                                <li>Gradient Bandits</li>
+                                <li>Median Elimination</li>
+                                <li>Thomson (Thompson) Sampling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Markov Decision Processes (MDP)</strong>
+                            <ul class="unit-topics">
+                                <li>Markov Property</li>
+                                <li>Markov Chains</li>
+                                <li>Markov Reward Process (MRP)</li>
+                                <li>Bellman Optimality Equations for MRP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Dynamic Programming for RL</strong>
+                            <ul class="unit-topics">
+                                <li>Policy Evaluation</li>
+                                <li>Policy Improvement</li>
+                                <li>Policy Iteration</li>
+                                <li>Value Iteration</li>
+                                <li>Asynchronous Dynamic Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Monte Carlo & Temporal Difference Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Monte Carlo Prediction</li>
+                                <li>Estimation of Action Values</li>
+                                <li>Control With and Without Exploring Starts</li>
+                                <li>Off-Policy Control</li>
+                                <li>Temporal Difference Prediction (TD(0))</li>
+                                <li>SARSA (On-Policy TD Control)</li>
+                                <li>Q-Learning (Off-Policy TD Control)</li>
+                                <li>Special Cases: Games</li>
+                                <li>Afterstates</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Topics & Real-World RL</strong>
+                            <ul class="unit-topics">
+                                <li>Multi-Agent Learning</li>
+                                <li>Meta-Learning</li>
+                                <li>Partially Observable Markov Decision Processes (POMDP)</li>
+                                <li>Ethics in Reinforcement Learning</li>
+                                <li>RL in Real-World Applications</li>
+                                <li>Case Study: AlphaGo Zero</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Reinforcement learning: An Introduction", Second Edition, MIT Press, 2019." Richard S.
+                            Sutton and Andrew G. Barto.</li>
+                        <li>"An Introduction to Multi Agent Systems", Michael Wooldridge</li>
+                        <li>"Foundations of Deep Reinforcement Learning: Theory and Practice in Python", Keng, Wah Loon,
+                            Graesser, Laura, "Addison Wesley Data & Analytics Series"</li>
+                    </ol>
+                </section>
+                <section id="subject-151803" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-V: Information Retrieval and Web Search [151803]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Information Retrieval (IR)</strong>
+                            <ul class="unit-topics">
+                                <li>Goals and History of IR</li>
+                                <li>The Impact of the Web on IR</li>
+                                <li>Overview of Search Engines and Retrieval Systems</li>
+                                <li>Boolean Retrieval Model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Vector-Space Retrieval Model</strong>
+                            <ul class="unit-topics">
+                                <li>Text-Similarity Metrics</li>
+                                <li>TF-IDF (Term Frequency-Inverse Document Frequency) Weighting</li>
+                                <li>Cosine Similarity</li>
+                                <li>Ranked Retrieval Concepts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Tokenization and Indexing</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Tokenizing</li>
+                                <li>Stop-Word Removal</li>
+                                <li>Stemming</li>
+                                <li>Inverted Index Structure</li>
+                                <li>Efficient Processing of Sparse Vectors</li>
+                                <li>Implementation Aspects (e.g., Java)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Evaluation of IR Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Recall</li>
+                                <li>Precision</li>
+                                <li>F-Measure</li>
+                                <li>NDCG (Normalized Discounted Cumulative Gain)</li>
+                                <li>Experimental Evaluation on Benchmark Text Collections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Text Representation, Classification &
+                                Clustering</strong>
+                            <ul class="unit-topics">
+                                <li>Text Classification Problem</li>
+                                <li>Naive Bayes Classification</li>
+                                <li>K-Nearest Neighbours</li>
+                                <li>Support Vector Machines (SVM)</li>
+                                <li>Feature Selection</li>
+                                <li>Text Clustering Principles</li>
+                                <li>Word Statistics (Zipf's Law, Morphology)</li>
+                                <li>Porter Stemmer</li>
+                                <li>Thesauri and Index Term Selection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Query Operations</strong>
+                            <ul class="unit-topics">
+                                <li>Relevance Feedback</li>
+                                <li>Query Expansion Web Search Internals: Spidering and Metacrawlers</li>
+                                <li>Directed Crawling</li>
+                                <li>Link Analysis (HITS, PageRank)</li>
+                                <li>Shopping Agents</li>
+                                <li>Information Extraction and Integration: Semantic Web Basics</li>
+                                <li>Ethical Issues in IR: Privacy</li>
+                                <li>Fairness</li>
+                                <li>Fake News & Disinformation</li>
+                                <li>Filter Bubbles</li>
+                                <li>Viewpoint Diversity</li>
+                                <li>Internet Addiction</li>
+                                <li>Extremism Concerns IR Applications: Information Extraction</li>
+                                <li>Question Answering</li>
+                                <li>Opinion Summarization</li>
+                                <li>Social Network</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Introduction to Information Retrieval"; Christopher D. Manning, "Cambridge University
+                            Press."</li>
+                        <li>"Search Engines: Information Retrieval"; W, Bruce Croft, D. Metzler, T. Strohman, "Pearson".
+                        </li>
+                        <li>"Introduction to Information Retrieval"; Christopher D. Manning Prabhakar Raghavan and
+                            Hinrich Schütze, "Cambridge University Press."</li>
+                        <li>"Statistical Language Models for Information Retrieval (Synthesis Lectures Series on Human
+                            Language Technologies)"; Cheng Xiang Zhai, "Morgan & Claypool Publishers".</li>
+                    </ol>
+                </section>
+                <section id="subject-151804" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-V: Recommender System [151804]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Recommender Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Recommendation Systems</li>
+                                <li>Importance and Applications</li>
+                                <li>Challenges and Considerations in Building Recommender Systems</li>
+                                <li>Types of Recommendation Approaches: Collaborative Filtering</li>
+                                <li>Content-Based Filtering</li>
+                                <li>Hybrid Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: User-Based Collaborative Filtering</strong>
+                            <ul class="unit-topics">
+                                <li>Similarity Measures (Pearson Correlation, Cosine Similarity)</li>
+                                <li>Neighborhood-Based Methods (k-Nearest Neighbors)</li>
+                                <li>Rating Prediction (User-Item Rating Prediction)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Item-Based Collaborative Filtering & Matrix
+                                Factorization</strong>
+                            <ul class="unit-topics">
+                                <li>Item-Based Collaborative Filtering</li>
+                                <li>Item Similarity Computation</li>
+                                <li>Matrix Factorization Methods</li>
+                                <li>Singular Value Decomposition (SVD)</li>
+                                <li>Alternating Least Squares (ALS)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Content Representation Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Representation of Items and Users</li>
+                                <li>Vector Space Model TF-IDF Representation</li>
+                                <li>Similarity Computation (Cosine Similarity, Jaccard Similarity, Term Frequency and
+                                    Inverse Document Frequency (TF-IDF)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Combining Collaborative and Content-Based
+                                Filtering</strong>
+                            <ul class="unit-topics">
+                                <li>Weighted Approach</li>
+                                <li>Cascade Approach</li>
+                                <li>Advanced Hybrid Methods: Feature Combination</li>
+                                <li>Meta-Level Approach</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Evaluation Metrics for Recommender Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Accuracy Metrics (RMSE, MAE)</li>
+                                <li>Ranking Metrics (Precision, Recall, F1-Score)</li>
+                                <li>Optimization Techniques</li>
+                                <li>Model Selection</li>
+                                <li>Hyperparameter Tuning</li>
+                                <li>Cross-Validation</li>
+                                <li>Real-World Applications and Case Studies: Netflix Prize Case Study</li>
+                                <li>Amazon Recommendation System</li>
+                                <li>Spotify Discover Weekly</li>
+                                <li>Ethical and Social Implications: Privacy and Security</li>
+                                <li>Bias and Fairness</li>
+                                <li>Transparency and Explainability</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Recommender Systems: An Introduction", Dietmar Jannach, Markus, Zanker, Alexander
+                            Felfernig, and Gerhard Friedrich; Cambridge University Press.</li>
+                        <li>"Mining of Massive Datasets"; Jure Leskovec, Anand Rajaraman, and Jeffrey D. Ullman;
+                            Cambridge University Press.</li>
+                        <li>"Practical Recommender Systems", Kim Falk; Manning Publications".</li>
+                    </ol>
+                </section>
+                <section id="subject-151805" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-V: Generative AI [151805]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Discriminative vs. Generative Models</li>
+                                <li>Types of Generative Models: Explicit vs. Implicit</li>
+                                <li>Likelihood-Based vs. Likelihood-Free</li>
+                                <li>Maximum Likelihood Estimation and Variational Inference</li>
+                                <li>Applications of Generative AI (Text, Image, Audio, Code)</li>
+                                <li>Evaluation Metrics: Perplexity</li>
+                                <li>BLEU</li>
+                                <li>FID</li>
+                                <li>Inception Score</li>
+                                <li>Precision/Recall for Generative Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Variational Autoencoders</strong>
+                            <ul class="unit-topics">
+                                <li>Variational Autoencoders (VAE): Encoder-Decoder</li>
+                                <li>ELBO</li>
+                                <li>Latent Space Representations and Sampling</li>
+                                <li>Conditional VAEs</li>
+                                <li>Introduction to Flow-Based Models (e.g., RealNVP, Glow Overview Only)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: GANs</strong>
+                            <ul class="unit-topics">
+                                <li>Basic GAN Framework: Generator</li>
+                                <li>Discriminator</li>
+                                <li>Adversarial Loss</li>
+                                <li>Deep Convolutional GAN (DCGAN)</li>
+                                <li>Conditional GANs</li>
+                                <li>Pix2Pix</li>
+                                <li>CycleGAN</li>
+                                <li>StyleGAN (Overview)</li>
+                                <li>Challenges: Mode Collapse</li>
+                                <li>Vanishing Gradients</li>
+                                <li>Training Stability</li>
+                                <li>Applications of GANs: Data Augmentation</li>
+                                <li>Super-Resolution</li>
+                                <li>Image-to-Image Translation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Language Models</strong>
+                            <ul class="unit-topics">
+                                <li>Language Models as Generators: Autoregressive Models</li>
+                                <li>Transformer Recap</li>
+                                <li>GPT Architecture</li>
+                                <li>Fine-Tuning</li>
+                                <li>And Prompting</li>
+                                <li>Sampling Strategies: Greedy</li>
+                                <li>Beam Search</li>
+                                <li>Top-K</li>
+                                <li>Nucleus Sampling</li>
+                                <li>Code Generation Models: Codex</li>
+                                <li>CodeT5 (Overview and Demos)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Diffusion Models</strong>
+                            <ul class="unit-topics">
+                                <li>Motivation: Overcoming GAN Limitations</li>
+                                <li>Forward (Noising) and Reverse (De-Noising) Diffusion Processes</li>
+                                <li>De-Noising Diffusion Probabilistic Models (DDPMs)</li>
+                                <li>Architecture and Training of Diffusion Models</li>
+                                <li>Text-to-Image Generation with Stable Diffusion</li>
+                                <li>DALLE 2</li>
+                                <li>Imagen</li>
+                                <li>Tools and Applications: Hugging Face Diffusers</li>
+                                <li>Colab Demos</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Ethical Implications</strong>
+                            <ul class="unit-topics">
+                                <li>Ethical Implications: Deepfakes</li>
+                                <li>Fake News</li>
+                                <li>Misinformation</li>
+                                <li>Detecting AI-Generated Content</li>
+                                <li>Bias</li>
+                                <li>Fairness</li>
+                                <li>And Adversarial Use of Generative Models</li>
+                                <li>Policy</li>
+                                <li>Regulation</li>
+                                <li>And Responsible AI Guidelines (e.g., EU AI Act, UNESCO Principles)</li>
+                                <li>Case Studies: ChatGPT</li>
+                                <li>Midjourney</li>
+                                <li>DALL E</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>David Foster, Generative Deep Learning: Teaching Machines to Paint, Write, Compose, and
+                            Play, O'Reilly</li>
+                        <li>Ian Goodfellow, Yoshua Bengio, Aaron Courville, Deep Learning, MIT Press. Philipp Singer,
+                            Diffusion Models from Scratch (online textbook).</li>
+                        <li>Numa Dhamani, Maggie Engler, Introduction to Generative ΑΙ Manning Publications Co., 2024
+                        </li>
+                        <li>Joseph Babcock, Raghav Bali, Generative Al with Python and TensorFlow, Packt, 2021.</li>
+                    </ol>
+                </section>
+                <section id="subject-100815" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Digital Image Processing [100815]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction and Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Background</li>
+                                <li>Digital Image Representation</li>
+                                <li>Fundamental Steps in Image Processing</li>
+                                <li>Elements of a Digital Image Processing System</li>
+                                <li>Digital Image Fundamentals: Elements of Visual Perception</li>
+                                <li>A Simple Image Model</li>
+                                <li>Sampling and Quantization</li>
+                                <li>Some Basic Relationships Between Pixels</li>
+                                <li>Imagining Geometry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Image Transforms</strong>
+                            <ul class="unit-topics">
+                                <li>Image Transforms: Introduction to the Fourier Transform</li>
+                                <li>The Discrete Fourier Transform</li>
+                                <li>Some Properties of the Two-Dimensional Fourier Transform</li>
+                                <li>Other Separable Image Transforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Image Enhancement (Part 1 - Spatial Domain)</strong>
+                            <ul class="unit-topics">
+                                <li>Image Enhancement: Spatial Domain Methods</li>
+                                <li>Some Simple Intensity Transformations</li>
+                                <li>Histogram Processing</li>
+                                <li>Image Subtraction</li>
+                                <li>Image Averaging</li>
+                                <li>Background</li>
+                                <li>Smoothing Filters</li>
+                                <li>Sharpening Filters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Image Enhancement (Part 2 - Frequency Domain)</strong>
+                            <ul class="unit-topics">
+                                <li>Image Enhancement: Frequency Domain Methods</li>
+                                <li>Lowpass Filtering</li>
+                                <li>Highpass Filtering</li>
+                                <li>Generation of Spatial Masks from Frequency Domain Specifications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Image Restoration</strong>
+                            <ul class="unit-topics">
+                                <li>Image Restoring: Degradations Model Definitions</li>
+                                <li>Degradation Model for Continuous Functions</li>
+                                <li>Diagonalization of Circulant and Block-Circulant Matrices</li>
+                                <li>Circulant Matrices</li>
+                                <li>Block Circulant Matrices</li>
+                                <li>Effects of Diagonalization on the Degradation Model</li>
+                                <li>Algebraic Approach to Restoration</li>
+                                <li>Unconstrained Restoration</li>
+                                <li>Constrained Restoration</li>
+                                <li>Inverse Filtering- Formulation</li>
+                                <li>Removal of Blur Caused by Uniform Linear Motion</li>
+                                <li>Restoration in the Spatial Domain</li>
+                                <li>Geometric Transformation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Image Compression</strong>
+                            <ul class="unit-topics">
+                                <li>Image Compression: Fundamentals Coding Redundancy</li>
+                                <li>Interpixel Redundancy</li>
+                                <li>Psychovisual Redundancy</li>
+                                <li>Fidelity Criteria</li>
+                                <li>Image Compression Models Encoder and Decoder</li>
+                                <li>The Channel Encoder and Decoder</li>
+                                <li>Elements of Information Theory - Measuring Information</li>
+                                <li>The Information Channel</li>
+                                <li>Fundamental Coding Theorems</li>
+                                <li>Using Information Theory</li>
+                                <li>Error-Free Compression- Variable-Length Coding</li>
+                                <li>Bit-Plane Coding</li>
+                                <li>Lossless Predictive Coding</li>
+                                <li>Lossy Compression Lossy Predictive Coding</li>
+                                <li>Transform Coding</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Rafael. C. Gonzalez & Richard E.Woods.- Digital Image Processing, 2/e Pearson Education, New
+                            Delhi - 2006.</li>
+                        <li>W.K.Pratt.-Digital Image Processing, 3/e Edn., John Wiley & sons, Inc. 2006.</li>
+                        <li>M. Sonka et.al Image Processing, Analysis and Machine Vision, 2/e Thomson, Learning, India
+                            Edition, 2007.</li>
+                    </ol>
+                </section>
+                <section id="subject-100821" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Control Systems [100821]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Control Problem</strong>
+                            <ul class="unit-topics">
+                                <li>Industrial Control Examples</li>
+                                <li>Mathematical Models of Physical Systems</li>
+                                <li>Control Hardware and Their Models</li>
+                                <li>Transfer Function Models of Linear Time-Invariant Systems</li>
+                                <li>Feedback Control: Open-Loop and Closed-Loop Systems</li>
+                                <li>Benefits of Feedback</li>
+                                <li>Block Diagram Algebra</li>
+                                <li>Signal Flow Graph</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Time Response Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Standard Test Signals</li>
+                                <li>Time Response of First and Second Order Systems for Standard Test Inputs</li>
+                                <li>Application of Initial and Final Value Theorem</li>
+                                <li>Design Specifications for Second-Order Systems Based on the Time-Response</li>
+                                <li>Concept of Stability</li>
+                                <li>Routh-Hurwitz Criteria</li>
+                                <li>Relative Stability Analysis</li>
+                                <li>Root-Locus Technique</li>
+                                <li>Construction of Root-Loci</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Frequency-Response Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Relationship Between Time and Frequency Response</li>
+                                <li>Polar Plots</li>
+                                <li>Bode Plots</li>
+                                <li>Nyquist Stability Criterion</li>
+                                <li>Relative Stability Using Nyquist Criterion Gain and Phase Margin</li>
+                                <li>Closed-Loop Frequency Response</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Introduction to Controller Design</strong>
+                            <ul class="unit-topics">
+                                <li>Stability</li>
+                                <li>Steady-State Accuracy</li>
+                                <li>Transient Accuracy</li>
+                                <li>Disturbance Rejection</li>
+                                <li>Insensitivity and Robustness of Control Systems</li>
+                                <li>Root-Loci Method of Feedback Controller Design</li>
+                                <li>Design Specifications in Frequency-Domain</li>
+                                <li>Frequency-Domain Methods of Design</li>
+                                <li>Application of Proportional</li>
+                                <li>Integral and Derivative Controllers</li>
+                                <li>Lead and Lag Compensation in Designs</li>
+                                <li>Analog and Digital Implementation of Controllers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: State Variable Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of State Variables</li>
+                                <li>State Space Model</li>
+                                <li>Diagonalization of State Matrix</li>
+                                <li>Solution of State Equations</li>
+                                <li>Eigenvalues and Stability Analysis</li>
+                                <li>Concept of Controllability and Observability</li>
+                                <li>Pole-Placement by State Feedback</li>
+                                <li>Discrete-Time Systems</li>
+                                <li>Difference Equations</li>
+                                <li>State-Space Models of Linear Discrete-Time Systems</li>
+                                <li>Stability of Linear Discrete-Time Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Introduction to Optimal Control and Nonlinear
+                                Control</strong>
+                            <ul class="unit-topics">
+                                <li>Performance Indices</li>
+                                <li>Regulator Problem</li>
+                                <li>Tracking Problem</li>
+                                <li>Nonlinear System-Basic Concepts and Analysis</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>M. Gopal, "Control Systems: Principles and Design", McGraw Hill Education, 1997.</li>
+                        <li>B. C. Kuo, "Automatic Control System", Prentice Hall, 1995.</li>
+                        <li>K.Ogata, "Modern Control Engineering", Prentice Hall, 1991.</li>
+                        <li>I. J. Nagrath and M. Gopal, "Control Systems Engineering", New Age International, 2009.</li>
+                    </ol>
+                </section>
+                <section id="subject-100856" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Simulation and Modelling [100856]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>System</li>
+                                <li>Environment</li>
+                                <li>Input and Output Variables</li>
+                                <li>State Variables</li>
+                                <li>Static and Dynamic Systems</li>
+                                <li>Hierarchy of Knowledge About a System and Modelling Strategy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Physical Modelling</strong>
+                            <ul class="unit-topics">
+                                <li>Dimensions Analysis</li>
+                                <li>Dimensionless Grouping of Input and Output Variables of Find Empirical Relations
+                                </li>
+                                <li>Similarity Criteria and Their Application to Physical Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Modeling of System with Known Structure</strong>
+                            <ul class="unit-topics">
+                                <li>Review of Conservation Laws and the Governing Equation for Heat</li>
+                                <li>Mass and Momentum Transfer</li>
+                                <li>Deterministic Model-(A) Distributed Parameter Models in Terms of Partial
+                                    Identification and Their Solutions and (B) Lumped Parameter Models in Terms of
+                                    Differential and Difference Equations</li>
+                                <li>State Space Model</li>
+                                <li>Transfer Functions Block Diagram and Sub Systems</li>
+                                <li>Stability of Transfer Functions</li>
+                                <li>Modelling for Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Optimizations and Design of Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Summary of Gradient Based Techniques: Nontraditional Optimizations Techniques (1)
+                                    Genetic Algorithm (GA)- Coding</li>
+                                <li>GA Operations Elitism</li>
+                                <li>Application Using MATLAB:(Ii) Simulated Annealing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Neural Network Modelling of Systems Only with
+                                Input-Output Database</strong>
+                            <ul class="unit-topics">
+                                <li>Neurons</li>
+                                <li>Architecture of Neural Networks</li>
+                                <li>Knowledge Representation</li>
+                                <li>Learning Algorithm</li>
+                                <li>Multilayer Feed Forward Network and Its Back Propagation Learning Algorithm</li>
+                                <li>Application to Complex Engineering Systems and Strategy for Optimum Output</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Modelling Based on Expert Knowledge</strong>
+                            <ul class="unit-topics">
+                                <li>Fuzzy Sets</li>
+                                <li>Membership Functions</li>
+                                <li>Fuzzy Inference Systems</li>
+                                <li>Expert Knowledge and Fuzzy Models</li>
+                                <li>Design of Fuzzy Controllers</li>
+                                <li>Simulation of Engineering Systems</li>
+                                <li>Monte-Carlo Simulation</li>
+                                <li>Simulation of Continuous and Discrete Processes with Suitable Examples from
+                                    Engineering Problems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Theory of modeling and simulation, Zeigler B.P. Praehofer. H.and Kim I.G.</li>
+                        <li>System Simulation: the Art and Science, Shannon, R. E.</li>
+                        <li>Modern control Engineering, Ogata K Neuro-Fuzzy and soft Computing, Jang J.S.R. sun C.T and
+                            Mizutani E.</li>
+                    </ol>
+                </section>
+                <section id="subject-100842" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Microprocessor [100842]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Fundamentals of Microprocessors</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of Microprocessor Architecture</li>
+                                <li>8-BitMicroprocessor and Microcontroller Architecture</li>
+                                <li>Comparison of 8-Bit Microcontrollers</li>
+                                <li>16-Bit and 32-Bit Microcontrollers</li>
+                                <li>Definition of Embedded System and Its Characteristics</li>
+                                <li>Role of Microcontroller sin Embedded Systems</li>
+                                <li>Overview of the 8051 Family</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: The 8051 Architecture</strong>
+                            <ul class="unit-topics">
+                                <li>Internal BlockDiagram</li>
+                                <li>CPU</li>
+                                <li>ALU</li>
+                                <li>Address</li>
+                                <li>Data and Control Bus</li>
+                                <li>Working Registers</li>
+                                <li>SFRs</li>
+                                <li>Clock and RESET Circuits</li>
+                                <li>Stack and Stack Pointer</li>
+                                <li>Program Counter</li>
+                                <li>I/O Ports</li>
+                                <li>Memory Structures</li>
+                                <li>Data and Program Memory</li>
+                                <li>Timing Diagrams and Execution Cycles</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Instruction Set and Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Addressing Modes: Introduction</li>
+                                <li>Instruction Syntax</li>
+                                <li>Data Types</li>
+                                <li>Subroutines Immediate Addressing</li>
+                                <li>Register Addressing</li>
+                                <li>Direct Addressing</li>
+                                <li>Indirect Addressing</li>
+                                <li>Relative Addressing</li>
+                                <li>Indexed Addressing</li>
+                                <li>Bit Inherent Addressing</li>
+                                <li>Bit Direct Addressing</li>
+                                <li>8051 Instruction Set</li>
+                                <li>Instruction Timings</li>
+                                <li>Data Transfer Instructions</li>
+                                <li>Arithmetic Instructions</li>
+                                <li>Logical Instructions</li>
+                                <li>Branch Instructions</li>
+                                <li>Subroutine Instructions</li>
+                                <li>Bit Manipulation Instruction</li>
+                                <li>Assembly Language Programs</li>
+                                <li>C Language Programs</li>
+                                <li>Assemblers and Compilers</li>
+                                <li>Programming and Debugging Tools</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Memory and I/O Interfacing</strong>
+                            <ul class="unit-topics">
+                                <li>Memory and I/O Expansion Buses</li>
+                                <li>Control Signals</li>
+                                <li>Memory Wait States</li>
+                                <li>Interfacing of Peripheral Devices Such as General Purpose I/O</li>
+                                <li>ADC</li>
+                                <li>DAC</li>
+                                <li>Timers</li>
+                                <li>Counters</li>
+                                <li>Memory Devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: External Communication Interface</strong>
+                            <ul class="unit-topics">
+                                <li>Synchronous and Asynchronous Communication</li>
+                                <li>RS232</li>
+                                <li>SPI</li>
+                                <li>I2C</li>
+                                <li>Introduction and Interfacing to Protocols Like Blue-Tooth and Zig-Bee</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Applications</strong>
+                            <ul class="unit-topics">
+                                <li>LED</li>
+                                <li>LCD and Keyboard Interfacing</li>
+                                <li>Stepper Motor Interfacing</li>
+                                <li>DC Motor Interfacing</li>
+                                <li>Sensor Interfacing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>M. A.Mazidi, J. G. Mazidi and R. D. McKinlay, "The8051 Microcontroller and Embedded Systems:
+                            Using Assembly and C", Pearson Education, 2007.</li>
+                        <li>K.J. Ayala, "8051 Microcontroller", Delmar Cengage Learning, 2004.</li>
+                        <li>I R. Kamal, "Embedded System", McGraw HillEducation, 2009.</li>
+                        <li>R.S. Gaonkar,", Microprocessor Architecture: Programming and Applications with the 8085",
+                            Penram International Publishing, 1996.</li>
+                        <li>I D.A. Patterson and J.H. Hennessy, "Computer Organization and Design: The Hardware/ D. V.
+                            Hall, "Microprocessors & Interfacing", McGraw Hill Higher Education, 1991.</li>
+                    </ol>
+                </section>
+                <section id="subject-100857" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Operation Research [100857]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Features of Operations Research (OR)</li>
+                                <li>Methodology of OR</li>
+                                <li>Scopes and Objectives of OR</li>
+                                <li>Models in OR</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Inventory and LPP</strong>
+                            <ul class="unit-topics">
+                                <li>Inventory Classification</li>
+                                <li>Different Cost Associated to Inventory</li>
+                                <li>Economic Order Quantity</li>
+                                <li>Inventory Models with Deterministic Demands</li>
+                                <li>ABC Analysis Introduction and Assumptions of LPP</li>
+                                <li>Mathematical Formulation of LPP</li>
+                                <li>Graphical Method</li>
+                                <li>Simplex Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Transportation and Assignment Problems</strong>
+                            <ul class="unit-topics">
+                                <li>Transportation Problems: Introduction</li>
+                                <li>North West Corner Method</li>
+                                <li>Least Cost Method</li>
+                                <li>Vogels Approximation Method</li>
+                                <li>Test for Optimality</li>
+                                <li>Assignment Problems: Introduction</li>
+                                <li>Hungarian Assignment Method</li>
+                                <li>Unbalanced Assignment Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Sequencing and Network Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Sequencing: Introduction</li>
+                                <li>Formulation of Sequencing Problem</li>
+                                <li>Johnsons Rule</li>
+                                <li>Network Analysis: Introduction</li>
+                                <li>PERT and CPM</li>
+                                <li>Time-Cost Trade-Off (Project Crashing)</li>
+                                <li>Resource Leveling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Dynamic Programming and Simulation</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamic Programming: Introduction</li>
+                                <li>Deterministic Dynamic Programming</li>
+                                <li>Probabilistic Dynamic Programming</li>
+                                <li>Simulation: Introduction</li>
+                                <li>Monte Carlo Simulation</li>
+                                <li>Simulation of Inventory and Queuing System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Queuing Theory and Replacement Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Queuing Theory: Introduction</li>
+                                <li>General Structure of Queuing System</li>
+                                <li>Operating Characteristics of Queuing System</li>
+                                <li>Queuing Models</li>
+                                <li>Replacement Theory: Introduction</li>
+                                <li>Replacement Policies: Gradually Deteriorating Equipments</li>
+                                <li>Items That Fail Suddenly</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Operations research- An Introduction, Hamdy A Taha, 8th Edition, Pearson Education.</li>
+                        <li>Introduction to Operations Research, Hillier and Lieberman, 8th Edition, TMH.</li>
+                        <li>Operations Research, R Panneerselvan, 2nd Edition, PHI.</li>
+                        <li>Quantitative Techniques in Management, N D Vohra, 4th Edition, McGraw Hill.</li>
+                    </ol>
+                </section>
+                <section id="subject-100858" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Analog Communication [100858]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to the Communication System</strong>
+                            <ul class="unit-topics">
+                                <li>Block Diagram of Communication System and Comparative Study of Analog and Digital
+                                    Communication</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Modulation</strong>
+                            <ul class="unit-topics">
+                                <li>Modulation (Upward Frequency Translation) and Demodulation (Downward Frequency
+                                    Translation) and the Need for Modulation</li>
+                                <li>Broad Classification of Modulation [Linear (Amplitude-AM) and Exponential
+                                    (Frequency-FM and Phase-PM)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Generation and Demodulation</strong>
+                            <ul class="unit-topics">
+                                <li>Generation of Double Side Band (DSB) with Carrier</li>
+                                <li>Double Side Band with Suppressed Carrier (DSB-SC) and Single Side Band with
+                                    Suppressed Carrier</li>
+                                <li>De-Modulation of Double Side Band with Carrier -Incoherent Detector or Envelope
+                                    Detector</li>
+                                <li>Peak Diode Detector</li>
+                                <li>Coherent or Synchronous Detection of DSBSC and Single Side Band with Suppressed
+                                    Carrier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Superhetrodyne Receivers</strong>
+                            <ul class="unit-topics">
+                                <li>Characteristics</li>
+                                <li>Intermediate Frequency and Its Advantages</li>
+                                <li>Image Rejection of the Receiver</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: FM Signals</strong>
+                            <ul class="unit-topics">
+                                <li>Generation of FM Signals (Direct and Indirect Methods) and Demodulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Noise and Analog Pulse Modulation</strong>
+                            <ul class="unit-topics">
+                                <li>Noise: Different Types of Noise</li>
+                                <li>SNR in AM</li>
+                                <li>FM and PM System and Use of Emphasis Circuit in FM for SNR Optimization</li>
+                                <li>Analog Pulse Modulation: PAM</li>
+                                <li>PWM</li>
+                                <li>PPM and Demodulation</li>
+                                <li>Comparative Study of Various Analog Pulse Modulation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Electronic Communication system", by Kennedy. TMH.</li>
+                        <li>"Communication system", by Haykin, Wiley.</li>
+                        <li>"Communication system", by Bruce carison. TMH.</li>
+                        <li>"Modern Digital And Analog Communication", B.P.LATHI Oxford.</li>
+                    </ol>
+                </section>
+                <section id="subject-100819" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Satellite Communication [100819]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Satellite Communication</strong>
+                            <ul class="unit-topics">
+                                <li>Principles and Architecture of Satellite Communication</li>
+                                <li>Brief History of Satellite Systems</li>
+                                <li>Advantages</li>
+                                <li>Disadvantages</li>
+                                <li>Applications and Frequency Bands Used for Satellite Communication</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Orbital Mechanics</strong>
+                            <ul class="unit-topics">
+                                <li>Orbital Equations</li>
+                                <li>Kepler's Laws</li>
+                                <li>Apogee and Perigee for an Elliptical Orbit</li>
+                                <li>Evaluation of Velocity</li>
+                                <li>Orbital Period</li>
+                                <li>Angular Velocity Etc. of a Satellite</li>
+                                <li>Concepts of Solar Day and Sidereal Day</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Satellite Sub-Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Study of Architecture and Roles of Various Sub Systems of a Satellite System Such as
+                                    Telemetry</li>
+                                <li>Tracking</li>
+                                <li>Command and Monitoring (TTC and M)</li>
+                                <li>Attitude and Orbit Control System (AOCS)</li>
+                                <li>Communication Sub-System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Typical Phenomena in Satellite Communication</strong>
+                            <ul class="unit-topics">
+                                <li>Solar Eclipse on Satellite</li>
+                                <li>Its Effects</li>
+                                <li>Remedies for Eclipse</li>
+                                <li>Sun Transit Outage Phenomena</li>
+                                <li>Its Effects and Remedies</li>
+                                <li>Doppler Frequency Shift Phenomena and Expression for Doppler Shift</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Received Signal Power</strong>
+                            <ul class="unit-topics">
+                                <li>Flux Density and Received Signal Power Equations</li>
+                                <li>Calculation of System Noise Temperature for Satellite Receiver</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Noise Power Calculation</strong>
+                            <ul class="unit-topics">
+                                <li>Noise Power Calculation</li>
+                                <li>C/N Ratio Calculations in Clear Air and Rainy Conditions</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Timothy Pratt Charles Bostian, Jeremy E. Allnutt: Satellite Communications; Wiley.</li>
+                        <li>Tri T. Ha: Digital Satellite Communications: Tata McGraw Hill.</li>
+                        <li>Dennis Roddy: Satellite Communication: 4th Edition, McGraw Hill.</li>
+                    </ol>
+                </section>
+                <section id="subject-100801P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-II [100801P]</h2>
+                    <p>Details for Project-II will be provided by the department</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

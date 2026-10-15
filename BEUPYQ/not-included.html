@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101a2c">
+    <title>Content not in export · Abhi PYQ</title>
+    <link rel="icon" href="img/AbhiPYQ.jpg" type="image/jpeg">
+    <style>
+        * { box-sizing: border-box }
+        body {
+            display: grid; min-height: 100vh; margin: 0; padding: 24px; place-items: center;
+            color: #f4f6f1; background: radial-gradient(ellipse at top right, #204252, transparent 55%), #101a2c;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        main { width: min(540px, 100%); padding: 30px; border: 1px solid rgba(220,239,231,.15); border-radius: 22px; background: rgba(20,34,51,.84); box-shadow: 0 22px 70px rgba(0,0,0,.3); animation: enter .4s ease-out both }
+        .logo { width: 48px; height: 48px; object-fit: cover; border-radius: 15px }
+        .eyebrow { margin-top: 24px; color: #ffd28a; font-size: .75rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase }
+        h1 { margin: 8px 0 12px; font-size: clamp(1.7rem, 5vw, 2.35rem); line-height: 1.08; letter-spacing: -.04em }
+        p { color: #a8b4bf; line-height: 1.65 }
+        code { color: #a7f3d0; overflow-wrap: anywhere }
+        .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px }
+        a, button { min-height: 42px; padding: 10px 14px; border: 1px solid rgba(220,239,231,.16); border-radius: 12px; color: #f4f6f1; background: rgba(255,255,255,.05); font: inherit; font-size: .88rem; font-weight: 700; text-decoration: none; cursor: pointer }
+        a.primary { color: #10251e; border-color: transparent; background: #a7f3d0 }
+        a:hover, button:hover { transform: translateY(-2px) }
+        @keyframes enter { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important } }
+    </style>
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+<body>
+    <main>
+        <img class="logo" src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo">
+        <div class="eyebrow">Source file unavailable</div>
+        <h1>This page wasn't included in the export.</h1>
+        <p>The original app bundle did not contain this syllabus or semester-detail file, so this folder can't show its contents. No placeholder syllabus or question paper has been invented.</p>
+        <p>Requested page: <code id="requested-page">not specified</code></p>
+        <div class="actions">
+            <button type="button" onclick="if (history.length > 1) history.back(); else location.href='beusyllabus.html';">Back to previous page</button>
+            <a class="primary" href="beusyllabus.html">Browse syllabus branches</a>
+            <a href="pyq&amp;syllabus.html">Home</a>
+        </div>
+    </main>
+    <script>
+        const requestedPage = new URLSearchParams(location.search).get('resource');
+        if (requestedPage) {
+            document.getElementById('requested-page').textContent = requestedPage;
+        }
+    </script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+</html>

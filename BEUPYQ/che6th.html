@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Chemical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle">
+                    <span> Credits Table </span>
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Heat Transfer Operation [114601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Chemical Reaction Engineering [114602]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Simulation Software for Chemical Engineering [114603]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Employability Skills (Non-Credit) [114604]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1146XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-II [1006XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Heat Transfer Operation Lab [114601P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Chemical Reaction Engineering Lab [114602P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Simulation Software for Chemical Engineering Lab [114603P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Courses-I Lab [114605]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>20</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114601" data-type="theory">Heat Transfer
+                        Operation</button>
+                    <button class="tab-btn" data-target="subject-114602" data-type="theory">Chemical Reaction
+                        Engineering</button>
+                    <button class="tab-btn" data-target="subject-114603" data-type="theory">Simulation Software for
+                        Chemical Engineering</button>
+                    <button class="tab-btn" data-target="subject-114604" data-type="theory">Employability
+                        Skills</button>
+
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective-I"
+                        data-modal-options='[ {"label": "Plant Utility and Maintenance", "target": "subject-114606", "btn-id": "btn-114606"}, {"label": "Plant Design and Costing", "target": "subject-114607", "btn-id": "btn-114607"} ]'>
+                        Program Elective-I </button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective-II"
+                        data-modal-options='[ {"label": "Basic of AI", "target": "subject-100615", "btn-id": "btn-100615"}, {"label": "Electrical and Hybrid Vehicles", "target": "subject-100616", "btn-id": "btn-100616"}, {"label": "Industrial Automation", "target": "subject-100617", "btn-id": "btn-100617"}, {"label": "Basic of ML", "target": "subject-100618", "btn-id": "btn-100618"}, {"label": "AR VR Technology", "target": "subject-100619", "btn-id": "btn-100619"}, {"label": "Micro Electro Mechanical System (MEMS) Technology", "target": "subject-100620", "btn-id": "btn-100620"}, {"label": "Electronic Product Design & Packaging", "target": "subject-100621", "btn-id": "btn-100621"}, {"label": "3D Printing and Design", "target": "subject-100622", "btn-id": "btn-100622"} ]'>
+                        Open Elective-II </button>
+                </div>
+
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114601P" data-type="lab">Heat Transfer Operation
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-114602P" data-type="lab">Chemical Reaction Engineering
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-114603P" data-type="lab">Simulation Software for Chem
+                        Engg Lab</button>
+                    <button class="tab-btn" data-target="subject-114605" data-type="lab">NPTEL Courses-I Lab</button>
+                </div>
+            </section>
+
+            <div id="syllabus-content">
+                <section id="subject-114601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Heat Transfer Operation [114601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Conduction</strong>
+                            <ul class="unit-topics">
+                                <li>Basics concept of heat transfer</li>
+                                <li>Steady state & unsteady state heat transfer</li>
+                                <li>Concept of driving force & Fourier's law of heat transfer</li>
+                                <li>Modes of heat transfer</li>
+                                <li>Conduction</li>
+                                <li>Convention & radiation</li>
+                                <li>Concept of thermal conductivity</li>
+                                <li>Calculation of thermal conductivity for solid</li>
+                                <li>Liquid & gases</li>
+                                <li>Rate of heat transfer from plane wall</li>
+                                <li>Composite wall</li>
+                                <li>Sphere & cylinder</li>
+                                <li>Concept of thermal diffusivity</li>
+                                <li>Lagging of pipes</li>
+                                <li>Concept & importance of insulation</li>
+                                <li>Critical thickness of insulation</li>
+                                <li>Unsteady state conduction: Biot number</li>
+                                <li>Fourier number</li>
+                                <li>Numerical based on above topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Convection</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of convection mode of heat transfer</li>
+                                <li>Concept of heat transfer coefficient</li>
+                                <li>Derivation for individual & overall heat transfer coefficient</li>
+                                <li>Natural convection: Introduction convection current</li>
+                                <li>Coefficient of thermal expansion</li>
+                                <li>Significance of dimensionless number</li>
+                                <li>Dimensionless analysis</li>
+                                <li>Forced convection: Introduction</li>
+                                <li>Thermal & hydrodynamic boundary layer</li>
+                                <li>Heat transfer in laminar & turbulent flow inside & outside tube</li>
+                                <li>Heat transfer analogies</li>
+                                <li>Reynold's analogy</li>
+                                <li>Prandtl analogy</li>
+                                <li>Concept of condensation</li>
+                                <li>Types & Nusselt's theory</li>
+                                <li>Heat transfer to boiling liquids & corelations</li>
+                                <li>Film wise & dropwise condensation on vertical & horizontal surfaces</li>
+                                <li>Numerical on above topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Radiation</strong>
+                            <ul class="unit-topics">
+                                <li>Radiation mode of heat transfer</li>
+                                <li>Maxwell's electromagnetic theory</li>
+                                <li>Max Planck's theory</li>
+                                <li>Radiative properties: Absorptivity</li>
+                                <li>Transitivity</li>
+                                <li>Reflectivity</li>
+                                <li>Black body</li>
+                                <li>Spectral black body radiation intensity</li>
+                                <li>Gray body</li>
+                                <li>Black body emission power</li>
+                                <li>Wein's displacement law</li>
+                                <li>Stephan's Boltzmann's law</li>
+                                <li>Opaque body</li>
+                                <li>Kirchhoff's law</li>
+                                <li>Heat transfer between black bodies for finite & infinite distances</li>
+                                <li>Radiation shield</li>
+                                <li>Numerical on radiation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Heat Exchanger</strong>
+                            <ul class="unit-topics">
+                                <li>Heat exchanger: Concept</li>
+                                <li>Importance & classification</li>
+                                <li>Calculation of overall heat transfer coefficient for heat exchanger</li>
+                                <li>Fouling: Concept of fouling</li>
+                                <li>Reasons of fouling</li>
+                                <li>Methods to reduce fouling</li>
+                                <li>Fouling factors</li>
+                                <li>Log mean temperature: Concept of LMTD</li>
+                                <li>Calculation of LMTD for single pass</li>
+                                <li>Multipass</li>
+                                <li>Parallel</li>
+                                <li>Cocurrent & counter current flow</li>
+                                <li>Concept of N.T.U.</li>
+                                <li>Calculation of effectiveness for co current & counter current mode of heat transfer
+                                </li>
+                                <li>Heat exchanger construction</li>
+                                <li>Working</li>
+                                <li>Merits</li>
+                                <li>Demerits of shell & tube heat exchanger</li>
+                                <li>Double pipe heat exchanger</li>
+                                <li>Reboiler</li>
+                                <li>Plate type heat exchanger</li>
+                                <li>Fins: Concept of fins</li>
+                                <li>Fin efficiency & effectiveness</li>
+                                <li>Numerical based on above topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Evaporators I</strong>
+                            <ul class="unit-topics">
+                                <li>Evaporation: Concept of evaporation</li>
+                                <li>Difference between evaporation & drying</li>
+                                <li>Evaporator: Capacity & economy</li>
+                                <li>Single effect & multiple effect evaporator</li>
+                                <li>Forward feed</li>
+                                <li>Backward feed & mixed feed to evaporator</li>
+                                <li>Vapor recompression</li>
+                                <li>Mass & enthalpy balance for single effect evaporator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Evaporators I</strong>
+                            <ul class="unit-topics">
+                                <li>Construction</li>
+                                <li>Working & application of evaporators such as: Falling film</li>
+                                <li>Thin film</li>
+                                <li>Forced circulation</li>
+                                <li>Agitated thin film & multiple effect evaporator</li>
+                                <li>Numerical on above topics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Process Heat Transfer, D. Q. Kern, McGraw hill, 1997, ISBN-13: 978-0-07-463217-8; ISBN-10:
+                            0-07-463217-5.</li>
+                        <li>Unit Operations of Chemical Engineering, Ma Cabe W. L., Smith J. C., Harriot P, 5th edition,
+                            McGraw Hill, 1993, ISBN: 0-07-112738-0.</li>
+                        <li>Chemical Engineering Design, R. K. Sinnot, Coulson & Richardsons, Vol 1 & 6, Elsevier
+                            Science & Technology Books, ISBN: 0-7506-6538-6.</li>
+                        <li>Heat Transfer, Holman J. P, 9th Edition, McGraw Hill, 2008., ISBN: 9780070634510,
+                            0070634513.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Chemical Reaction Engineering [114602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Kinetics of Homogeneous Reactions</strong>
+                            <ul class="unit-topics">
+                                <li>Chemical kinetics concept</li>
+                                <li>Parameters that influence the rate of reaction</li>
+                                <li>Categories of reaction: Homogenous and heterogeneous reactions</li>
+                                <li>Catalytic non-catalytic reactions</li>
+                                <li>Molecularity of reaction</li>
+                                <li>Exothermic and endothermic reactions</li>
+                                <li>Order of reaction</li>
+                                <li>Reversible and irreversible reactions</li>
+                                <li>Elementary and non-elementary reaction</li>
+                                <li>And chain and non-chain reaction</li>
+                                <li>Reaction rate</li>
+                                <li>Rate equation</li>
+                                <li>Rate constant</li>
+                                <li>Units of rate constant</li>
+                                <li>Activation energy</li>
+                                <li>Its significance and numerical</li>
+                                <li>Temperature dependency of rate constant from: Arrhenius law</li>
+                                <li>Transition state theory</li>
+                                <li>And collision theory (numerical)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Catalysis</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of catalysis</li>
+                                <li>Promoters</li>
+                                <li>Inhibitors and accelerators</li>
+                                <li>Homogeneous and heterogeneous catalytic reaction: Catalyst preparation methods:
+                                    Precipitation</li>
+                                <li>Gel formation</li>
+                                <li>Simple mixing of components</li>
+                                <li>Impregnation</li>
+                                <li>Mechanism of solid gas phase catalytic reactions</li>
+                                <li>Catalyst poisoning</li>
+                                <li>Regeneration of catalyst</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Batch Reactor</strong>
+                            <ul class="unit-topics">
+                                <li>Constant volume batch reactor and variable volume batch reactor</li>
+                                <li>Techniques of analysis of kinetic data: Integral method</li>
+                                <li>Differential method</li>
+                                <li>Half-life method</li>
+                                <li>Ostwald isolation method and initial rate method</li>
+                                <li>Constant volume batch reactor to analyse the kinetic data: Integrated rate
+                                    expression for irreversible unimolecular type first order reactions and its
+                                    characteristics</li>
+                                <li>Integrated rate expression for irreversible bimolecular type second order reactions
+                                    (2A→ Product) and its characteristics</li>
+                                <li>Integrated rate expression for zero order reaction and its characteristics</li>
+                                <li>And integrated rate expression for nth order reaction (numerical)</li>
+                                <li>Variable volume batch reactor to analyse the kinetic data: Integrated rate
+                                    expression for irreversible unimolecular type first order reaction</li>
+                                <li>Integrated rate expression for irreversible bimolecular type second order reactions
+                                    (2A → Product)</li>
+                                <li>Integrated rate expression for zero order reaction (numerical)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Reactor Design</strong>
+                            <ul class="unit-topics">
+                                <li>Reactor: Batch</li>
+                                <li>Semi-batch</li>
+                                <li>Continuous stirred tank reactor</li>
+                                <li>Tubular/plug flow</li>
+                                <li>Fixed bed fluidised bed reactor (diagram, brief description and applications)</li>
+                                <li>Define of space time</li>
+                                <li>Space velocity</li>
+                                <li>Holding time for flow reactors (numerical)</li>
+                                <li>Performance/design equation at constant and variable volume system with their
+                                    graphical representation (numerical) for the following: Ideal batch reactor</li>
+                                <li>Continuous stirrer tank reactor (CSTR) (numerical)</li>
+                                <li>Plug flow reactor (PFR) (numerical)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Size Comparison of Plug Flow Reactor (PFR) and
+                                Continuous Stirrer Tank Reactor (CSTR)</strong>
+                            <ul class="unit-topics">
+                                <li>Size comparison of single reactor: CSTR and PFR</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Multiple Reactor System</strong>
+                            <ul class="unit-topics">
+                                <li>Equal and unequal size CSTR in series</li>
+                                <li>Judgement of the best system for given conversion in PFR and CSTR connected in
+                                    series</li>
+                                <li>CSTR connected in parallel</li>
+                                <li>PFR connected in series or in parallel</li>
+                                <li>PFR connected in series parallel combination</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Chemical Reaction Engineering, Octave Levenspiel, Wiley India, New Delhi, 2015
+                            ISBN-978-81-265 1000-9.</li>
+                        <li>Chemical Engineering Kinetics, J. M. Smith, Mc-Graw Hill New Delhi, 2015 ISBN 007*066574-5.
+                        </li>
+                        <li>Elements of Chemical Reaction Engineering, H. Scott Fogler, Pearson New Delhi, 2015 ISBN
+                            978-81-317-1430-0.</li>
+                        <li>A textbook of Engineering Chemistry, S. S. Dara, S, Chand and Company Limited, New Delhi
+                            ISBN-10. 8121903599</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Simulation Software for Chemical Engineering [114603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Software in Chemical
+                                Engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Importance of software tools in chemical engineering</li>
+                                <li>Categories of software: Simulation</li>
+                                <li>Design</li>
+                                <li>Data analysis</li>
+                                <li>And control</li>
+                                <li>Overview of commonly used software: ASPEN Plus</li>
+                                <li>HYSYS</li>
+                                <li>CHEMCAD</li>
+                                <li>MATLAB</li>
+                                <li>ANSYS Fluent</li>
+                                <li>COMSOL Multiphysics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Process Simulation & Modelling</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to process simulation: Importance of simulation in chemical engineering
+                                </li>
+                                <li>Types of process models: Steady-state modelling</li>
+                                <li>Dynamic modelling</li>
+                                <li>Software tools for process simulation: ASPEN Plus</li>
+                                <li>HYSYS</li>
+                                <li>CHEMCAD</li>
+                                <li>DWSIM</li>
+                                <li>Process flow diagram (PFD) development</li>
+                                <li>Thermodynamic property models</li>
+                                <li>Multicomponent distillation</li>
+                                <li>Reactors</li>
+                                <li>And heat exchangers</li>
+                                <li>Sensitivity analysis and process optimization</li>
+                                <li>Economic evaluation and cost estimation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Computational Fluid Dynamics (CFD) in Chemical
+                                Engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to CFD: Governing equations of fluid flow operation</li>
+                                <li>Heat transfer operation</li>
+                                <li>Mass transfer operation</li>
+                                <li>Navier-Stokes equations</li>
+                                <li>Turbulence modeling</li>
+                                <li>Software tools for CFD simulations: ANSYS Fluent</li>
+                                <li>Open FOAM</li>
+                                <li>Solving single-phase and multiphase flow problems</li>
+                                <li>Heat exchanger and reactor simulations</li>
+                                <li>COMSOL Multiphysics</li>
+                                <li>Modelling chemical reactions</li>
+                                <li>Heat transfer</li>
+                                <li>And fluid dynamics</li>
+                                <li>Industrial application of computational fluid dynamics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Data Analysis & Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to data analytics in chemical engineering: Big data applications in
+                                    chemical process industries</li>
+                                <li>Statistical tools for process analysis</li>
+                                <li>Regression analysis for process optimization</li>
+                                <li>Software tools for data analysis & optimization: MATLAB & Python (NumPy, Pandas,
+                                    SciPy)</li>
+                                <li>Process data visualization and machine learning applications</li>
+                                <li>Nonlinear regression for reaction kinetics</li>
+                                <li>GAMS (General Algebraic Modelling System) for process optimization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AI Tools in Chemical Engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to AI & machine learning for chemical processes</li>
+                                <li>AI vs. traditional process modelling</li>
+                                <li>Types of machine learning</li>
+                                <li>AI-based process optimization & fault detection</li>
+                                <li>Neural networks (ANNs) for chemical process modelling</li>
+                                <li>Applications in predictive maintenance and quality control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Software Tools for AI in Chemical Engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Python (TensorFlow, Scikit-Learn, PyTorch): AI-based chemical process modelling</li>
+                                <li>MATLAB AI Toolbox: AI-assisted predictive maintenance in chemical engineering</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Unit Operations of Chemical Engineering, Warren L. Mccabe, Julian C. Smith, Peter Harriott,
+                            McGraw Hill International Edition. ISBN: 0-07-112738-0.</li>
+                        <li>Chemical Engineering, Vol. 1 and 2, Coulson J. M., Richardson J. F., Backhurst J. R. and J.
+                            H. Harker, Butterworth Heinemann, ISBN: 0-7506-4445-1.</li>
+                        <li>Chemical Engineering Process Simulation, Dominic Foo, Elsevier, ISBN-10: 0323901689 ISBN-13:
+                            978-0323901680.</li>
+                        <li>Chemical Thermodynamics for Process Simulation, Jürgen Gmehling, Michael Kleiber, Bärbel
+                            Kolbe, Jürgen Rarey, Wiley, ISBN: 978-3-527-34325-6.</li>
+                        <li>Chemical Process Design and Simulation: Aspen Plus and Aspen Hysys Applications, Juma
+                            Haydary, Wiley, ISBN:9781119089117.</li>
+                        <li>Introduction to Chemical Engineering Computing, Bruce A. Finlayson, Wiley, ISBN-13:
+                            978-0-471-74062-9 ISBN-10: 0-471-74062-4</li>
+                        <li>An Introduction to Computational Fluid Dynamics: The Finite Volume Method, H. K. Versteeg,
+                            Pearson Education, ISBN: 978-0-13-127498-3</li>
+                        <li>Numerical Methods for Engineers, Steven C., Chapra, Raymond P. Canale, McGraw-Hill Higher
+                            Education, ISBN-10007339792X, ISBN-13: 978-0073397924</li>
+                        <li>GAMS A User's Guide, GAMS Development Corporation, GAMS Development Corporation</li>
+                        <li>Artificial Intelligence in Chemical Engineering, Thomas E. Quantrille, Yih An Liu, Academic
+                            Press, ISBN-13: 978-0080571218</li>
+                        <li>MATLAB for Machine Learning, Giuseppe Ciaburro, Packt Publishing, ISBN-10: 1788398432,
+                            ISBN-13: 978-1788398435</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Employability Skills (Non-Credit) [114604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Goal Setting</strong>
+                            <ul class="unit-topics">
+                                <li>Career planning</li>
+                                <li>SWOT</li>
+                                <li>Resume using internet formats</li>
+                                <li>Showcase portfolios</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Goal Setting-II</strong>
+                            <ul class="unit-topics">
+                                <li>Personal grooming</li>
+                                <li>Self-introduction</li>
+                                <li>Website development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Capacity Development I</strong>
+                            <ul class="unit-topics">
+                                <li>Interview skills</li>
+                                <li>Group discussion - Do's & don'ts</li>
+                                <li>Leadership</li>
+                                <li>Teamwork</li>
+                                <li>How to interrupt</li>
+                                <li>Synthesis</li>
+                                <li>And analysis of topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Capacity Development II</strong>
+                            <ul class="unit-topics">
+                                <li>Social media for personal enrichment</li>
+                                <li>Body language</li>
+                                <li>Self-management</li>
+                                <li>Emotional intelligence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Utilising Potential I</strong>
+                            <ul class="unit-topics">
+                                <li>Social networking</li>
+                                <li>Social engagements</li>
+                                <li>Volunteering</li>
+                                <li>Collaboration & team-work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Utilising Potential II</strong>
+                            <ul class="unit-topics">
+                                <li>QC-tools - Check sheets</li>
+                                <li>Fishbone diagram</li>
+                                <li>Histogram</li>
+                                <li>Pareto chart</li>
+                                <li>Control-chart</li>
+                                <li>Scatter diagram</li>
+                                <li>Stratification</li>
+                                <li>Lean manufacturing</li>
+                                <li>Kanban</li>
+                                <li>Kaizen</li>
+                                <li>Five S</li>
+                                <li>Poka-yoke</li>
+                                <li>Quality circle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Employability Skills Skills for Employability, Dr. M. Sen Gupta, Innovation Publication Pvt
+                            Ltd, 2020 ISBN: 978-81-933819-1-5.</li>
+                        <li>Employability Skills, Dr. Nishith Rajaram Dubey, Anupam Singh, Indra Publishing House, 2023
+                            ISBN 978-93-93577-68-9</li>
+                        <li>Organizational Behavior, A. K. Chitale, Rajendra Prasad Mohanty and Dr Nishith Dubey, PHI
+                            Learning Pvt Ltd ISBN 978-81-203-4696-3.</li>
+                        <li>Managerial Skills, Dr Nishith Dubey & Prof Gitanjali Shrivastava, Shiva Prakashan, Indore,
+                            India, 2010, ISBN 81-7677-100-7.</li>
+                        <li>Body Language, Allan Pease, Pease International PTY. Ltd Australia.</li>
+                        <li>Production and Operations Management Goods & Services approach, Dr S.V Deshmukh, Dr A. K.
+                            Chitale and Dr Nishith Dubey, Archers & Elevators publishing house, Bangalore, ISBN
+                            9789386501197</li>
+                        <li>Emotional Intelligence, Daniel Goleman, Word Press. Com, 9789382563792</li>
+                        <li>How to win friends and influence people, Dale Carnegie, Srishti Publishers & Distributors,
+                            Delhi, India</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114606" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Plant Utility and Maintenance [114606]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Industrial Water I</strong>
+                            <ul class="unit-topics">
+                                <li>Industrial water: Properties</li>
+                                <li>Uses</li>
+                                <li>Hard & soft water</li>
+                                <li>Hardness: Total hardness</li>
+                                <li>Permanent hardness</li>
+                                <li>Temporary hardness</li>
+                                <li>Units of hardness</li>
+                                <li>Alkalinity</li>
+                                <li>Numerical</li>
+                                <li>Boiler feed water</li>
+                                <li>Scale and sludge formation</li>
+                                <li>Corrosion</li>
+                                <li>Priming and foaming</li>
+                                <li>Caustic embrittlement</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Industrial Water II</strong>
+                            <ul class="unit-topics">
+                                <li>Methods of water softening processes (Principle</li>
+                                <li>Construction</li>
+                                <li>Working and application of the following processes: Lime soda process (cold and hot)
+                                </li>
+                                <li>Zeolite process</li>
+                                <li>Ion exchange process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Steam and Steam Generators</strong>
+                            <ul class="unit-topics">
+                                <li>Steam: Properties</li>
+                                <li>Uses and types of steam</li>
+                                <li>Steam generator: Classification of boilers</li>
+                                <li>Comparison of boilers based on capacity</li>
+                                <li>Fuel</li>
+                                <li>Design and application</li>
+                                <li>Different components of boiler</li>
+                                <li>Construction and working of: Lancashire boiler</li>
+                                <li>Babcock and Wilcox boiler</li>
+                                <li>Function of boiler mountings and accessories</li>
+                                <li>Boiler act: Indian boiler act and duties of boiler inspector</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Refrigeration</strong>
+                            <ul class="unit-topics">
+                                <li>Refrigeration: Concept</li>
+                                <li>Unit of refrigeration</li>
+                                <li>Coefficient of performance (COP)</li>
+                                <li>Numerical</li>
+                                <li>Types of primary and secondary refrigerants: Selection criteria of refrigerants</li>
+                                <li>Refrigeration cycle: Reverse Carnot cycle</li>
+                                <li>Vapor compression and absorption cycle</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Air and Psychrometry</strong>
+                            <ul class="unit-topics">
+                                <li>Concept and application of process air and instrument air</li>
+                                <li>Psychrometry: Dry bulb temperature</li>
+                                <li>Wet bulb temperature</li>
+                                <li>Dew point temperature</li>
+                                <li>Adiabatic saturation temperature</li>
+                                <li>Humidity</li>
+                                <li>Specific humidity</li>
+                                <li>Specific volume</li>
+                                <li>Relative humidity</li>
+                                <li>Psychrometric chart</li>
+                                <li>Numericals</li>
+                                <li>Psychrometric process: Humidification and dehumidification</li>
+                                <li>Cooling tower: Principle</li>
+                                <li>Construction and working of induced draft and forced draft</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Plant Maintenance</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose of plant maintenance</li>
+                                <li>Types of maintenance: Preventive maintenance</li>
+                                <li>Predictive maintenance</li>
+                                <li>Corrective maintenance</li>
+                                <li>Routine/scheduled maintenance</li>
+                                <li>Emergency maintenance</li>
+                                <li>Online maintenance and shut down maintenance</li>
+                                <li>Duties and responsibility of plant maintenance department</li>
+                                <li>Online maintenance of chemical equipment like rotameter etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Engineering Chemistry, P. C. Jain and Dr. Monika Jain, Dhanpatrai Publications, New Delhi,
+                            2008, ISBN-978-87-403-0363-6.</li>
+                        <li>Industrial Water, Powel S. T, Mc. Graw Hill, New York, 2009, ISBN 9781118843727</li>
+                        <li>Thermal Engineering, P. L. Ballaney, Khanna Publication, New Delhi 1975, ISBN9788174090317
+                        </li>
+                        <li>A Textbook of Refrigeration and Air Conditioning, Rajput R. K, Kataria S. K. and sons, New
+                            Delhi 2003, ISBN13:9789350142554.</li>
+                        <li>Refrigeration: Theory and Applications, James K. Carson, Mc. Graw Hill, New York, 2009,
+                            ISBN: 078-87-403-0363-6</li>
+                        <li>Chemical Plant Utilities, Sathiya moorthy Manickkam, Lambert Academic Publishing, October
+                            2016, ISBN: 978-3-659-97828-9</li>
+                        <li>Safe and Efficient Plant Operation and Maintenance, Kraus, Milton N., Mc. Graw Hill Inc. New
+                            York US, 1980, ISBN:978-0070107076</li>
+                        <li>Plant maintenance engineering and management, R. K. Jain, Khanna Publication, ISBN:
+                            9789392549090</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Plant Design and Costing [114607]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Plant Design</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to plant design</li>
+                                <li>Process design development</li>
+                                <li>Types of plant design</li>
+                                <li>Comparison of different processes by technical factors</li>
+                                <li>Raw materials</li>
+                                <li>By-products</li>
+                                <li>Plant location</li>
+                                <li>Equipment</li>
+                                <li>Time factor and process considerations</li>
+                                <li>Equipment layout diagram (ELD)</li>
+                                <li>CPM & PERT: Principle & objective</li>
+                                <li>Application of CPM & PERT for calculation of time duration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Design Considerations</strong>
+                            <ul class="unit-topics">
+                                <li>General design considerations</li>
+                                <li>Cost: Concept of cost</li>
+                                <li>Total cost</li>
+                                <li>Fixed cost</li>
+                                <li>Variable cost</li>
+                                <li>Direct</li>
+                                <li>Indirect cost</li>
+                                <li>Asset accounting</li>
+                                <li>Last in first out & first in first out</li>
+                                <li>Cash flow for industrial operations</li>
+                                <li>Demand & supply: Laws related to demand & supply</li>
+                                <li>Demand & supply schedule</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Cost Estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Cash flow for industrial operations: Factors affecting investment and production
+                                    cost</li>
+                                <li>Capital investments</li>
+                                <li>Estimation of capital investments</li>
+                                <li>Cost indices</li>
+                                <li>Cost factors in capital investment</li>
+                                <li>Organizations for presenting capital investment: Estimates by compartmentalization
+                                </li>
+                                <li>Estimation of total product of cost direction</li>
+                                <li>Production costs</li>
+                                <li>Fixed charges</li>
+                                <li>Plant overhead costs</li>
+                                <li>Financing</li>
+                                <li>Interest and investment cost: Types of interests</li>
+                                <li>Nominal and effective interest rates</li>
+                                <li>Continuous interest</li>
+                                <li>Present worth and discount annuities</li>
+                                <li>Cost due to interest on investment</li>
+                                <li>Source of capital</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Taxes, Insurances</strong>
+                            <ul class="unit-topics">
+                                <li>Taxes and insurances: Type of taxes: Federal income taxes</li>
+                                <li>Insurance-types of insurance self-insurance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Depreciation</strong>
+                            <ul class="unit-topics">
+                                <li>Depreciation: Service life</li>
+                                <li>Salvage value</li>
+                                <li>Present value</li>
+                                <li>Methods for determining depreciation</li>
+                                <li>Single unit and group depreciation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Profitability, Alternative Investments and
+                                Replacements</strong>
+                            <ul class="unit-topics">
+                                <li>Profitability standards</li>
+                                <li>Discounted cash flow</li>
+                                <li>Capitalized cost</li>
+                                <li>Pay out period</li>
+                                <li>Alternative investments</li>
+                                <li>Analysis with small investment increments and replacements</li>
+                                <li>Optimum design and design strategy</li>
+                                <li>Incremental cost</li>
+                                <li>General procedure for determining optimum condition</li>
+                                <li>Comparison of graphical and analytical methods</li>
+                                <li>Optimum production rates</li>
+                                <li>Semi continuous cyclic operation</li>
+                                <li>Fluid dynamics</li>
+                                <li>Mass transfer</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Plant Design and Economics for Chemical engineering", Peters. M.S. and Timmerhaus, K.D, 4th
+                            Edition, McGraw Hill, Singapore, 1991. ISBN:9780070496132, 0070496137.</li>
+                        <li>"Process Engineering Economics" Schweyer. H.E., McGraw Hill, 1st edition, New York, 1955.
+                        </li>
+                        <li>"Optimization of Chemical Processes" Edgar T.F. and Himmelblau D.M., 2nd edition, McGraw
+                            Hill, International editions, Chemical Engineering series, 2001. ISBN: 0-07-039359-1.</li>
+                        <li>Process Plant and Equipment Cost Estimation, Kharbanda O.P., Pennwell Corp; Subsequent
+                            edition (1 December 1979). ISBN-10: 091046068X, ISBN-13: 978-0910460682.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100615" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Basic of AI [100615]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to AI & Searching Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to artificial intelligence</li>
+                                <li>Types of AI and intelligent agents</li>
+                                <li>Breadth-first search</li>
+                                <li>Depth-first search</li>
+                                <li>Hill climbing</li>
+                                <li>And its variations</li>
+                                <li>Heuristic search techniques: Best-first search</li>
+                                <li>A* algorithm</li>
+                                <li>Constraint satisfaction problem</li>
+                                <li>Means-end analysis</li>
+                                <li>Introduction to game playing</li>
+                                <li>Min-max</li>
+                                <li>And alpha-beta pruning algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Knowledge Representation</strong>
+                            <ul class="unit-topics">
+                                <li>Propositional logic</li>
+                                <li>First-order predicate logic</li>
+                                <li>Resolution principle</li>
+                                <li>Unification</li>
+                                <li>Semantic nets</li>
+                                <li>Conceptual dependencies</li>
+                                <li>Frames</li>
+                                <li>Scripts</li>
+                                <li>And production rules</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Understanding Natural Languages I</strong>
+                            <ul class="unit-topics">
+                                <li>Components and steps of communication</li>
+                                <li>The contrast between formal and natural languages in the context of grammar</li>
+                                <li>Chomsky hierarchy of grammars</li>
+                                <li>Parsing</li>
+                                <li>And semantics</li>
+                                <li>Parsing techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Understanding Natural Languages II</strong>
+                            <ul class="unit-topics">
+                                <li>Context-free and transformational grammar</li>
+                                <li>Recursive and augmented transition networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AI in Decision Making</strong>
+                            <ul class="unit-topics">
+                                <li>Utility theory</li>
+                                <li>Utility functions</li>
+                                <li>Decision networks</li>
+                                <li>Sequential decision problems</li>
+                                <li>Partially observable Markov decision process (MDPs)</li>
+                                <li>Game theory</li>
+                                <li>AI solutions for real-time problems using ML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: AI in Reinforcement Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Passive reinforcement learning (RL) and active RL</li>
+                                <li>Generalization in RL</li>
+                                <li>Policy search</li>
+                                <li>Deep reinforcement learning</li>
+                                <li>AI solutions for real-time problems using RL</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Artificial Intelligence: A Modern Approach S. Russell and P. Norvig, Prentice Hall, Third
+                            Edition, 2015, ISBN-13: 978-0-13-604259-4, ISBN-10: 0-13-604259-7.</li>
+                        <li>Introduction to Artificial Intelligence & Expert Systems, Patterson Pearson, 1st ed. 2015,
+                            ISBN-10: 9332551944, ISBN-13: 978-8120307773.</li>
+                        <li>Intelligent Planning: A decomposition and abstraction-based approach Yang, Q, Springer
+                            Verlag, Berlin Heidelberg, 1997. ISBN-10: 354061901, ISBN-13978-3540619017.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100616" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Electrical and Hybrid Vehicles [100616]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Conventional vehicles: Basics of vehicle performance</li>
+                                <li>Vehicle power source characterization</li>
+                                <li>Transmission characteristics</li>
+                                <li>Mathematical models to describe vehicle performance</li>
+                                <li>Introduction to hybrid electric vehicles: History of hybrid and electric vehicles
+                                </li>
+                                <li>Social and environmental importance of hybrid and electric vehicles</li>
+                                <li>Impact of modern drive-trains on energy supplies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hybrid Electric Drive-trains</strong>
+                            <ul class="unit-topics">
+                                <li>Hybrid electric drive-trains: Basic concept of hybrid traction</li>
+                                <li>Introduction to various hybrid drive-train topologies</li>
+                                <li>Power flow control in hybrid drive-train topologies</li>
+                                <li>Fuel efficiency analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Electric Drive-trains</strong>
+                            <ul class="unit-topics">
+                                <li>Electric drive-trains: Basic concept of electric traction</li>
+                                <li>Introduction to various electric drive-train topologies</li>
+                                <li>Power flow control in electric drive-train topologies</li>
+                                <li>Fuel efficiency analysis</li>
+                                <li>Electric propulsion unit: Introduction to electric components used in hybrid and
+                                    electric vehicles</li>
+                                <li>Configuration and control of DC motor drives</li>
+                                <li>Configuration and control of induction motor drives</li>
+                                <li>Configuration and control of permanent magnet motor drives</li>
+                                <li>Configuration and control of switch reluctance motor drives</li>
+                                <li>Drive system efficiency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Energy Storage</strong>
+                            <ul class="unit-topics">
+                                <li>Energy storage: Introduction to energy storage requirements in hybrid and electric
+                                    vehicles</li>
+                                <li>Battery based energy storage and its analysis</li>
+                                <li>Fuel cell based energy storage and its analysis</li>
+                                <li>Super capacitor based energy storage and its analysis</li>
+                                <li>Flywheel based energy storage and its analysis</li>
+                                <li>Hybridization of different energy storage devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Sizing the drive system</strong>
+                            <ul class="unit-topics">
+                                <li>Sizing the drive system: Matching the electric machine and the internal combustion
+                                    engine (ICE)</li>
+                                <li>Sizing the propulsion motor</li>
+                                <li>Sizing the power electronics</li>
+                                <li>Selecting the energy storage technology</li>
+                                <li>Communications</li>
+                                <li>Supporting subsystems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Energy Management Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Energy management strategies: Introduction to energy management strategies used in
+                                    hybrid and electric vehicles</li>
+                                <li>Classification of different energy management strategies</li>
+                                <li>Comparison of different energy management strategies</li>
+                                <li>Implementation issues of energy management strategies</li>
+                                <li>Case studies: Design of a hybrid electric vehicle (HEV)</li>
+                                <li>Design of a battery electric vehicle (BEV)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>C. Mi, M. A. Masrur and D. W.Gao, "Hybrid Electric Vehicles: Principles and Applications
+                            with Practical Perspectives", John Wiley & Sons, 2011.</li>
+                        <li>S. Onori, L. Serrao and G. Rizzoni, "Hybrid Electric Vehicles: Energy Management
+                            Strategies", Springer, 2015.</li>
+                        <li>M. Ehsani, Y. Gao, S. E. Gay and A. Emadi, "Modern Electric, Hybrid Electric, and FuelCell
+                            Vehicles: Fundamentals, Theory, and Design", CRC Press, 2004.</li>
+                        <li>T. Denton, "Electric and Hybrid Vehicles", Routledge, 2016.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100617" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Industrial Automation [100617]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Industrial Automation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Industry 4.0 and its components</li>
+                                <li>Need of automation in industries</li>
+                                <li>Principles and strategies of automation</li>
+                                <li>Factory automation</li>
+                                <li>Process automation</li>
+                                <li>Basic elements of an automated system</li>
+                                <li>Structure of industrial automation</li>
+                                <li>Advanced automation functions</li>
+                                <li>Levels of automations</li>
+                                <li>Industrial control systems- Process and discrete system</li>
+                                <li>Types of automation system: Fixed</li>
+                                <li>Programmable</li>
+                                <li>Flexible</li>
+                                <li>Integrated automation and its application</li>
+                                <li>Different systems used for industrial automation: PLC</li>
+                                <li>HMI</li>
+                                <li>SCADA</li>
+                                <li>DCS</li>
+                                <li>Drives</li>
+                                <li>Introduction to Internet of Things (IoT) and Industrial Internet of Things (IIOT)
+                                    and its application in automation</li>
+                                <li>Role of robots in automation and its components</li>
+                                <li>Fundamentals of automated production lines or transfer lines and its applications
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Sensors and Input Field Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Analog input devices</li>
+                                <li>Electromagnetic relays</li>
+                                <li>Contactors</li>
+                                <li>Motor starters</li>
+                                <li>Manually operated switches</li>
+                                <li>Toggle switch</li>
+                                <li>Pushbutton switch</li>
+                                <li>Knife switch and selector switches</li>
+                                <li>Mechanically operated switches</li>
+                                <li>Limit switch</li>
+                                <li>Temperature switch (Thermostat)</li>
+                                <li>Pressure switch</li>
+                                <li>Level switch and their symbols</li>
+                                <li>Discrete/Digital input devices</li>
+                                <li>Construction and working of sensors</li>
+                                <li>Proximity sensors- Inductive</li>
+                                <li>Capacitive</li>
+                                <li>Optical and ultrasonic</li>
+                                <li>Advanced sensors- Construction and working of temperature sensors- Thermistor</li>
+                                <li>Thermocouple and resistance temperature detector (RTD)</li>
+                                <li>Liquid level sensor -Capacitive and ultrasonic</li>
+                                <li>Force -Strain/Weight sensors</li>
+                                <li>Flow sensors turbine flow sensor</li>
+                                <li>Pressure sensors- Linear variable</li>
+                                <li>Differential transformer (LVDT)</li>
+                                <li>Inclination sensor -Inclinometer</li>
+                                <li>Acceleration sensor- Accelerometer</li>
+                                <li>Angular and linear position sensor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Actuators and Output Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to actuators</li>
+                                <li>Classification of actuators</li>
+                                <li>Mechanical actuators -Translational and rotational motion</li>
+                                <li>Kinematic chains</li>
+                                <li>Cams</li>
+                                <li>Gears</li>
+                                <li>Belt and chain drives</li>
+                                <li>Bearings</li>
+                                <li>Hydraulic and pneumatic actuators</li>
+                                <li>Linear and rotary actuators</li>
+                                <li>Single and double acting cylinder</li>
+                                <li>Directional</li>
+                                <li>Process and pressure control valves</li>
+                                <li>Electrical actuators</li>
+                                <li>Electromechanical actuators</li>
+                                <li>Construction</li>
+                                <li>Working and application of stepper motors</li>
+                                <li>AC/DC servo motors</li>
+                                <li>BLDC motor (very brief)</li>
+                                <li>Electrohydraulic actuators-Solenoid valve</li>
+                                <li>Thermal actuators and magnetic actuators</li>
+                                <li>Selection of actuators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Other output Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Other output devices- Indicators</li>
+                                <li>Alarms</li>
+                                <li>Pilot lights</li>
+                                <li>Buzzers</li>
+                                <li>Valves</li>
+                                <li>Motor starters</li>
+                                <li>Horns and alarms</li>
+                                <li>Stack lights</li>
+                                <li>Control relays</li>
+                                <li>Pumps and fans</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Control System</strong>
+                            <ul class="unit-topics">
+                                <li>Open and closed loop system</li>
+                                <li>Their transfer function</li>
+                                <li>First order and second order system and their output response and parameters</li>
+                                <li>Types of control</li>
+                                <li>On-off</li>
+                                <li>Feed forward</li>
+                                <li>Open loop and closed loop control and transfer function</li>
+                                <li>Controllers in closed loop control</li>
+                                <li>Proportional controller (P controller)</li>
+                                <li>Integral controller (I controller)</li>
+                                <li>Derivative controller (D- controller)</li>
+                                <li>P-I controller</li>
+                                <li>P-D controller</li>
+                                <li>PID controller</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: SCADA and DCS</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Need</li>
+                                <li>Benefits and typical applications of SCADA and DCS</li>
+                                <li>SCADA architecture</li>
+                                <li>Remote terminal units (RTUs)</li>
+                                <li>Master terminal units</li>
+                                <li>Various SCADA editors</li>
+                                <li>Communication protocols for SCADA</li>
+                                <li>Comparison of SCADA with DCS</li>
+                                <li>Interfacing SCADA system with PLC</li>
+                                <li>Typical connection diagram</li>
+                                <li>Object linking and embedding for process control (OPC) architecture</li>
+                                <li>Creating SCADA screen</li>
+                                <li>HMI for simple object</li>
+                                <li>Steps for linking SCADA object (defining tags and items, creating trends etc.,) with
+                                    PLC ladder program using OPC</li>
+                                <li>Configuring simple applications using SCADA: Traffic light control</li>
+                                <li>Water distribution</li>
+                                <li>Pipeline control</li>
+                                <li>Power generation</li>
+                                <li>Transmission and distribution etc.</li>
+                                <li>Procedure to maintain the SCADA based PLC system</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Industrial Automation with SCADA: Concepts, Communications and Security, K S Manoj Notion
+                            Press; 1st edition, 2019, ISBN-13: 978-1684668281.</li>
+                        <li>Introduction to Industrial Automation, Stamatios Manesis, George Nikolakopoulos, CRC Press,
+                            1st edition, 2020, ISBN 9780367571832.</li>
+                        <li>Industrial Automation Using PLC SCADA & DCS, R.G.Jamkar, Global Education Limited, 2018,
+                            ISBN-13: 978-8193579954.</li>
+                        <li>Industrial automation and Process control, Stenerson Jon, PHI Learning, New Delhi, 2003,
+                            ISBN: 9780130618900.</li>
+                        <li>Control System, Nagrath & Gopal, New Age International Pvt Ltd, ISBN: 9789386070111.</li>
+                        <li>Industrial automation and Process control, Stenerson Jon PHI Learning, New Delhi, 2003,
+                            ISBN: 9780130618900.</li>
+                        <li>Programmable Logic Controller, Jadhav, V. R., Khanna publishers, New Delhi, 2017, ISBN:
+                            9788174092281.</li>
+                        <li>Programmable Logic Controllers and Industrial Automation – An introduction, Mitra,
+                            Madhuchandra; Sengupta, Samarjit Penram International Publication, 2015, ISBN:
+                            9788187972174.</li>
+                        <li>Supervisory Control and Data Acquisition, Boyar, S. A., ISA Publication, USA, ISBN:
+                            978-1936007097</li>
+                        <li>Practical SCADA for industry Bailey David; Wright Edwin Newnes (an imprint of Elsevier), UK
+                            2003, ISBN: 0750658053.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100618" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Basic of ML [100618]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Machine Learning and
+                                Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to machine learning</li>
+                                <li>Supervised learning</li>
+                                <li>Unsupervised learning</li>
+                                <li>And reinforcement learning</li>
+                                <li>Machine learning basics: Capacity</li>
+                                <li>Over fitting</li>
+                                <li>And under fitting</li>
+                                <li>Hyperparameters and validation sets</li>
+                                <li>Bias & variance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Bayesian Concepts and Decision Trees</strong>
+                            <ul class="unit-topics">
+                                <li>Bayes theorem</li>
+                                <li>Concept learning</li>
+                                <li>Maximum likelihood classifier</li>
+                                <li>Bayesian belief networks</li>
+                                <li>Decision-trees</li>
+                                <li>Univariate and multivariate decision tree</li>
+                                <li>Network equivalent of decision trees</li>
+                                <li>Overfitting</li>
+                                <li>And evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Instant-Based Learning and Support Vector
+                                Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Logistic regression</li>
+                                <li>Support vector machine (SVM)</li>
+                                <li>Kernel function and kernel SVM</li>
+                                <li>Instant-based learning: k- nearest neighbour</li>
+                                <li>Locally weighted regression</li>
+                                <li>Radial basis functions</li>
+                                <li>Case based learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Clustering</strong>
+                            <ul class="unit-topics">
+                                <li>Clustering: k-means</li>
+                                <li>Adaptive hierarchical clustering</li>
+                                <li>And Gaussian mixture model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Neural Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Neural network: Perception</li>
+                                <li>Multilayer network</li>
+                                <li>Back propagation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Applications and Case Studies of Machine
+                                Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Applications of machine learning (case studies): Business analytics</li>
+                                <li>Natural language processing</li>
+                                <li>Computer vision</li>
+                                <li>Internet of Things</li>
+                                <li>Bio-informatics etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Machine Learning, Tom M. Mitchell, McGraw-Hill Education (India) Private Limited, 2013, ISBN
+                            0070428077.</li>
+                        <li>Foundations of Machine Learning, Mohri, M., Rostamizadedh, A., and Talwalkar, A. The MIT
+                            Press, 2012, 9, ISBN 78-0-262-01825-8.</li>
+                        <li>Fundamentals of Machine Learning, Dr. M. Gopal, McGraw Hill Education (India),
+                            ISBN:978-9353161837.</li>
+                        <li>Machine Learning: Principles and Algorithms, P. K. Pattanayak, Universities Press (India)
+                            ISBN: 978-9386235513.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100619" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: AR VR Technology [100619]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Immersive Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of immersive technologies: Augmented reality (AR)</li>
+                                <li>Virtual reality (VR)</li>
+                                <li>Mixed reality (MR)</li>
+                                <li>And extended reality (XR)</li>
+                                <li>Applications in education</li>
+                                <li>Healthcare</li>
+                                <li>Entertainment</li>
+                                <li>And industry</li>
+                                <li>Key differences between AR</li>
+                                <li>VR</li>
+                                <li>MR and XR</li>
+                                <li>Challenges and future trends</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hardware and Software Requirements</strong>
+                            <ul class="unit-topics">
+                                <li>AR/VR headsets and displays (e.g.</li>
+                                <li>Oculus</li>
+                                <li>HoloLens</li>
+                                <li>Etc.)</li>
+                                <li>Sensors: Motion</li>
+                                <li>Depth</li>
+                                <li>And tracking systems</li>
+                                <li>Input devices: Controllers</li>
+                                <li>Gloves</li>
+                                <li>And mobile devices</li>
+                                <li>System specifications of central processing unit (CPU)</li>
+                                <li>Graphical processing unit (GPU)</li>
+                                <li>Random access memory (RAM)</li>
+                                <li>Graphics card and storage considerations</li>
+                                <li>AR/VR development platforms (overview): Unity</li>
+                                <li>Unreal Engine</li>
+                                <li>SDKs and APIs for AR</li>
+                                <li>VR: Vuforia</li>
+                                <li>ARKit</li>
+                                <li>ARCore</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Unity Software</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Unity software and its features</li>
+                                <li>System requirements for Unity installation</li>
+                                <li>Unity's interface and basic functionalities</li>
+                                <li>Assets and its types</li>
+                                <li>Sources of 2D and 3D assets</li>
+                                <li>Windows in Unity</li>
+                                <li>Game objects and their types</li>
+                                <li>Rigid bodies and colliders</li>
+                                <li>Physics-based interactions</li>
+                                <li>Software development kit (SDK)-Vuforia</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Augmented Reality (AR)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of AR and its working mechanisms</li>
+                                <li>AR image and object recognition techniques</li>
+                                <li>Location-based and marker-based AR</li>
+                                <li>Introduction to various AR web-based applications</li>
+                                <li>AR design on Blippar or similar platforms</li>
+                                <li>Testing and publishing AR applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AR Design and Development</strong>
+                            <ul class="unit-topics">
+                                <li>Anchoring and detecting objects in AR</li>
+                                <li>Development of AR application marker-based and marker less in Unity</li>
+                                <li>Deployment of AR app on Android/iOS devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Virtual Reality (VR)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles and technical requirements of virtual reality</li>
+                                <li>Types of VR systems: Non-immersive</li>
+                                <li>Semi-immersive</li>
+                                <li>And fully immersive</li>
+                                <li>Key elements of immersive VR experience</li>
+                                <li>Levels of immersion in VR environment</li>
+                                <li>360-degree media</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Learning Path Complete VR & AR Development with Unity, Jesse Glover & J. Linowes, Packt
+                            Publishers Ltd., ISBN-101838648186, ISBN-13: 978-1838648183.</li>
+                        <li>Mastering AR Development with Unity, Indika Wijesooriya, BPB.</li>
+                        <li>3D Game Development with Unity, Franz Lanzinger, CRC Press, ISBN-10: 0367349183, ISBN-13:
+                            978-0367349189.</li>
+                        <li>AR with Unity; AR Foundation - A Practical Guide, Jonathan Linowes. Packt Publishers Ltd.,
+                            ISBN: 978-1-83898-259-1.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100620" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Micro Electro Mechanical System (MEMS) Technology
+                        [100620]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Mems and Microfabrication</strong>
+                            <ul class="unit-topics">
+                                <li>History of MEMS development</li>
+                                <li>Characteristics of MEMS</li>
+                                <li>Miniaturization</li>
+                                <li>Microelectronics integration</li>
+                                <li>Mass fabrication with precision</li>
+                                <li>Micro fabrication</li>
+                                <li>Microelectronics fabrication process: Silicon based MEMS processes</li>
+                                <li>New material and fabrication processing</li>
+                                <li>Points of consideration for processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Electrical and Mechanical Properties of Mems
+                                Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Conductivity of semiconductors</li>
+                                <li>Crystal plane and orientation</li>
+                                <li>Stress and stain: Definition</li>
+                                <li>Relationship between tensile stress and stain</li>
+                                <li>Mechanical properties of silicon and thin films</li>
+                                <li>Flexural beam bending analysis under single loading condition</li>
+                                <li>Types of beam: Deflection of beam</li>
+                                <li>Longitudinal stain under pure bending</li>
+                                <li>Spring constant</li>
+                                <li>Tensional deflection</li>
+                                <li>Intrinsic stress</li>
+                                <li>Resonance and quality factor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensing and Actuation</strong>
+                            <ul class="unit-topics">
+                                <li>Electrostatic sensing and actuation: Parallel plate capacitor</li>
+                                <li>Application-Inertial sensor</li>
+                                <li>Pressure sensor and tactile sensor</li>
+                                <li>Parallel plate actuator and comb drive</li>
+                                <li>Thermal sensing and actuations: Thermal sensors</li>
+                                <li>Thermal actuators</li>
+                                <li>Application-Inertial</li>
+                                <li>Flow and infrared sensors</li>
+                                <li>Piezoresistive sensors: Piezoresistive sensor material</li>
+                                <li>Stress in flexural cantilever and membrane- Application-Inertial</li>
+                                <li>Pressure</li>
+                                <li>Flow and tactile sensor</li>
+                                <li>Piezoelectric sensing and actuation: Piezoelectric material
+                                    properties-quartz-PZT-PVDF ZnO</li>
+                                <li>Application-Inertial</li>
+                                <li>Acoustic</li>
+                                <li>Tactile</li>
+                                <li>Flow-surface elastic waves</li>
+                                <li>Magnetic actuation: Micro magnetic actuation principle</li>
+                                <li>Deposition of magnetic materials</li>
+                                <li>Design and fabrication of magnetic coil</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Bulk and Surface Micromachining</strong>
+                            <ul class="unit-topics">
+                                <li>Anisotropic wet etching</li>
+                                <li>Dry etching of silicon</li>
+                                <li>Deep reactive ion etching (DRIE)</li>
+                                <li>Isotropic wet etching</li>
+                                <li>Basic surface micromachining process</li>
+                                <li>Structural and sacrificial material</li>
+                                <li>Stiction and anti stiction methods</li>
+                                <li>Foundry process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Polymer Mems</strong>
+                            <ul class="unit-topics">
+                                <li>Polymers in MEMS</li>
+                                <li>Polymide-SU-8</li>
+                                <li>Liquid crystal polymer (LCP): PDMS</li>
+                                <li>PMMA</li>
+                                <li>Parylene</li>
+                                <li>Flurocorbon</li>
+                                <li>Application-Acceleration</li>
+                                <li>Pressure</li>
+                                <li>Flow and tactile sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Optical Mems</strong>
+                            <ul class="unit-topics">
+                                <li>Optical MEMS: Refraction</li>
+                                <li>Diffraction</li>
+                                <li>MOEMS components</li>
+                                <li>Digital mirror display (DMD)</li>
+                                <li>Grating light valve (GLV)</li>
+                                <li>Optical scanners</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Foundations of MEMS, Chang Liu, Pearson International Edition, 2006, ISBN-978-0132497367.
+                        </li>
+                        <li>RF MEMS Theory, Design and Technology, Gaberiel M.Rebiz, John Wiley & Sons, 2003,
+                            ISBN-978-0471201694.</li>
+                        <li>Introduction to nanotechnology, Charles P.Poole, Frank J.Owens, John Wiley & sons, 2003,
+                            ISBN-13: 978-0471079354.</li>
+                        <li>Microsensors, MEMS and Smart devices, Julian W.Gardner, Vijay K Varadhan, John Wiley & sons,
+                            2001, ISBN-978-0471861096.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100621" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Electronic Product Design & Packaging [100621]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Essentials of Electronic Product Design &
+                                Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to electronic product design</li>
+                                <li>Electronic packaging fundamentals</li>
+                                <li>Printed circuit board (PCB) design and fabrication</li>
+                                <li>Thermal</li>
+                                <li>Mechanical</li>
+                                <li>And EMI/EMC considerations</li>
+                                <li>Prototyping</li>
+                                <li>Testing</li>
+                                <li>And reliability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Design Aspects of Semiconductor Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of semiconductor packaging types: Dual in-line package (DIP)</li>
+                                <li>QFP</li>
+                                <li>BGA</li>
+                                <li>CSP</li>
+                                <li>And 3D ICs</li>
+                                <li>Wire bonding</li>
+                                <li>Flip-chip</li>
+                                <li>And through-silicon vias (TSVs)</li>
+                                <li>Trends in package miniaturization and integration</li>
+                                <li>Thermal and mechanical design considerations: Heat dissipation in semiconductor
+                                    packages</li>
+                                <li>Stress and strain due to thermal cycling</li>
+                                <li>Package warpage and delamination issues</li>
+                                <li>Electrical design aspects: Signal integrity and power integrity</li>
+                                <li>Parasitics: resistance</li>
+                                <li>Capacitance</li>
+                                <li>And inductance</li>
+                                <li>High-speed design challenges and mitigation techniques</li>
+                                <li>Materials and substrate technologies: Die attach materials</li>
+                                <li>Encapsulants</li>
+                                <li>And underfills</li>
+                                <li>Organic vs ceramic substrates</li>
+                                <li>Reliability and compatibility of packaging materials</li>
+                                <li>Packaging process flow and testing: Wafer-level packaging and assembly steps</li>
+                                <li>Burn-in</li>
+                                <li>Electrical</li>
+                                <li>And reliability testing</li>
+                                <li>Design for testability (DFT) in semiconductor packaging</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Dicing & Inspection</strong>
+                            <ul class="unit-topics">
+                                <li>Wafer dicing techniques: Mechanical sawing (blade dicing)</li>
+                                <li>Laser dicing and stealth dicing</li>
+                                <li>Plasma dicing (dry etching methods)</li>
+                                <li>Comparison of dicing methods based on precision</li>
+                                <li>Cost</li>
+                                <li>And material type</li>
+                                <li>Dicing process parameters and optimization: Cut depth</li>
+                                <li>Kerf width</li>
+                                <li>And feed rate</li>
+                                <li>Cooling and lubrication during dicing</li>
+                                <li>Minimizing chipping</li>
+                                <li>Cracking</li>
+                                <li>And contamination</li>
+                                <li>Wafer mounting and handling: Use of dicing tapes and frames</li>
+                                <li>Wafer alignment and chucking</li>
+                                <li>ESD precautions and cleanroom requirements</li>
+                                <li>Post-dicing cleaning and debris removal: Cleaning techniques (wet</li>
+                                <li>Dry</li>
+                                <li>CO2 snow)</li>
+                                <li>Particle contamination control</li>
+                                <li>Inspection for surface damage or residues</li>
+                                <li>Wafer inspection and defect analysis: Visual and automated optical inspection (AOI)
+                                </li>
+                                <li>Surface and edge defect detection</li>
+                                <li>Use of SEM</li>
+                                <li>X-ray</li>
+                                <li>And infrared imaging for deeper inspection</li>
+                                <li>Yield analysis and defect classification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Conventional Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to conventional packaging types: Dual in-line package (DIP)</li>
+                                <li>Surface mount device (SMD)</li>
+                                <li>Chip-on-board (COB) and leadframe-based packaging</li>
+                                <li>Through-hole vs. surface-mount technologies</li>
+                                <li>Materials used in conventional packaging: Encapsulants and molding compounds</li>
+                                <li>Leadframe materials (e.g.</li>
+                                <li>Copper</li>
+                                <li>Brass</li>
+                                <li>And alloys)</li>
+                                <li>Substrate materials: epoxy</li>
+                                <li>Ceramic</li>
+                                <li>And organic laminates</li>
+                                <li>Packaging assembly processes: Die attach methods: eutectic bonding</li>
+                                <li>Adhesive bonding</li>
+                                <li>Wire bonding techniques: gold</li>
+                                <li>Aluminum</li>
+                                <li>And copper wire</li>
+                                <li>Molding and encapsulation processes</li>
+                                <li>Electrical and thermal design in conventional packaging: Signal integrity in
+                                    conventional packages</li>
+                                <li>Heat dissipation and thermal management strategies</li>
+                                <li>Thermal cycling and reliability considerations</li>
+                                <li>Testing and reliability of conventional packages: Standard testing methods:
+                                    electrical</li>
+                                <li>Thermal</li>
+                                <li>And mechanical tests</li>
+                                <li>Reliability testing: accelerated life testing (ALT)</li>
+                                <li>Burn-in tests</li>
+                                <li>Failure analysis techniques: decapsulation</li>
+                                <li>Cross-sectioning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Bonding, Sealing</strong>
+                            <ul class="unit-topics">
+                                <li>Bonding techniques in semiconductor packaging: Wire bonding (gold</li>
+                                <li>Aluminum</li>
+                                <li>Copper)</li>
+                                <li>Flip-chip bonding and solder bumping</li>
+                                <li>Adhesive bonding and thermo-compression bonding</li>
+                                <li>Laser and ultrasonic bonding methods</li>
+                                <li>Sealing methods in semiconductor packaging: Molding and encapsulation processes</li>
+                                <li>Hermetic sealing and its importance for high-reliability applications</li>
+                                <li>Use of sealing materials: epoxy</li>
+                                <li>Silicone</li>
+                                <li>And elastomers</li>
+                                <li>Advanced sealing techniques for 3D and wafer-level packaging</li>
+                                <li>Reliability and testing in bonding and sealing: Mechanical and thermal stress
+                                    testing in bonded and sealed packages</li>
+                                <li>Failure analysis methods: decapsulation</li>
+                                <li>Cross-sectioning</li>
+                                <li>And SEM analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Advanced packaging technologies: System-in-package (SiP) and package-on-package
+                                    (PoP) technologies</li>
+                                <li>3D integrated circuits (3D ICs) and through-silicon vias (TSVs)</li>
+                                <li>Wafer-level packaging (WLP) and fan-out wafer-level packaging (FOWLP)</li>
+                                <li>Hybrid and multi-chip module (MCM) integration</li>
+                                <li>Thermal and electrical considerations in advanced packaging: Thermal management
+                                    techniques in advanced packaging (heat sinks</li>
+                                <li>Thermal vias)</li>
+                                <li>Electrical performance challenges: signal integrity and power delivery in
+                                    high-density packages</li>
+                                <li>Power dissipation and interconnect strategies in 3D packaging</li>
+                                <li>Reliability testing standards for advanced packaging (e.g.</li>
+                                <li>JEDEC</li>
+                                <li>MIL-STD)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Electronic Packaging and Interconnection Handbook, Charles Harper, ISBN-13, 978-0071430487,
+                            McGraw-Hill Professional, Edition: 4, Publication Date: 16 November 2004.</li>
+                        <li>"Electronic Product Design" A.E. Ward and J.A.S. Angus Chapman and Hall, ISBN:
+                            0-412-63200-4, 1996.</li>
+                        <li>Electronic Product Design, S.D. Mehta, S Chand Publishing ISBN: 9788121936156, 2011.</li>
+                        <li>Semiconductor Packaging Material Interaction and reliability, Chen, Andrea & Lo, Randy
+                            Hsiao-Yu, ISBN-13; 978-1439862056, CRC Press, 10 October 2011.</li>
+                        <li>Semiconductor Device Packaging, John H. Lau, Springer, ISBN-10: 9811613753, ISBN-13:
+                            978-9811613753.</li>
+                        <li>Microelectronics Packaging Handbook Part 1, Part 2, Part 3, R. R. Tumalla, Springer US,
+                            ISBN-13: 978-0412084416, ISBN-13: 978-0412084416, ISBN-13: 978-0412084515.</li>
+                        <li>Advanced Electronics Packaging, Richard K. Ulrich Wiley-IEEE Press, ISBN-13: 978-0471466093.
+                        </li>
+                        <li>Integrated Circuit Packaging, Assembly and Interconnection, William J. Greig, Springer,
+                            ISBN-13: 978-0387281537.</li>
+                        <li>3D IC Integration and Packaging, John H Lau, McGraw-Hill Education, ISBN-13: 978-0071848060.
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="subject-100622" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: 3D Printing and Design [100622]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Additive Manufacturing Introduction and CAD-CAM for 3D
+                                Printing</strong>
+                            <ul class="unit-topics">
+                                <li>Additive v/s conventional manufacturing processes</li>
+                                <li>Classification of 3D printing processes</li>
+                                <li>Working principle of various 3D printing processes- Fused deposition modeling (FDM)
+                                </li>
+                                <li>Stereo lithography (SLA)</li>
+                                <li>Selective laser sintering (SLS)</li>
+                                <li>Binder jetting</li>
+                                <li>Material jetting</li>
+                                <li>Direct energy deposition and laminate object manufacturing</li>
+                                <li>Additive manufacturing application domains: Aerospace</li>
+                                <li>Electronics</li>
+                                <li>Health care</li>
+                                <li>Defense</li>
+                                <li>Automotive</li>
+                                <li>Construction</li>
+                                <li>Food processing</li>
+                                <li>Machine tools</li>
+                                <li>Product design and prototyping</li>
+                                <li>Reverse engineering for 3D printing</li>
+                                <li>CAD-CAM and its integration</li>
+                                <li>CAD- Part and surface modeling</li>
+                                <li>CAD file formats</li>
+                                <li>Process chain for 3D printing</li>
+                                <li>STL interface specification</li>
+                                <li>STL data generation</li>
+                                <li>STL data manipulation</li>
+                                <li>Advantages and limitations of STL file format</li>
+                                <li>Open files</li>
+                                <li>Repair of STL files</li>
+                                <li>Alternative 3D printing interfaces</li>
+                                <li>Part orientation and support generation</li>
+                                <li>Factors affecting part orientation</li>
+                                <li>Various models for part orientation determination</li>
+                                <li>The function of part supports</li>
+                                <li>Support structure design</li>
+                                <li>Automatic support structure generation</li>
+                                <li>Model slicing and contour data organization</li>
+                                <li>Direct and adaptive slicing: Identification of peak features</li>
+                                <li>Adaptive layer thickness determination</li>
+                                <li>Tool path generation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: 3D Printing Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Various forms of 3D printing raw material- Liquid</li>
+                                <li>Solid</li>
+                                <li>Wire</li>
+                                <li>Powder</li>
+                                <li>Popular FDM</li>
+                                <li>SLA</li>
+                                <li>SLS</li>
+                                <li>Binder jetting</li>
+                                <li>Material jetting and direct energy deposition 3D printing materials</li>
+                                <li>Polymers</li>
+                                <li>Metals</li>
+                                <li>Non-metals</li>
+                                <li>Ceramics</li>
+                                <li>Polymers and their properties</li>
+                                <li>Powder preparation and their desired properties</li>
+                                <li>Choosing the right 3D printing material on the basis of performance requirements and
+                                    material properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Solid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Basic principle and working of fused deposition modeling (FDM) process</li>
+                                <li>Construction details and working of established FDM based 3D printers for plastics
+                                    parts</li>
+                                <li>3D printer software- Fusion 360</li>
+                                <li>Solidworks</li>
+                                <li>Onshape</li>
+                                <li>Tinkercad</li>
+                                <li>UltimakerCura</li>
+                                <li>MeshLab</li>
+                                <li>Simplyfy 3D</li>
+                                <li>Repetier host</li>
+                                <li>Slic3r</li>
+                                <li>Etc. use and operation of anyone</li>
+                                <li>3D scanners and working</li>
+                                <li>Producing a part using FDM based 3D printer</li>
+                                <li>Liquefaction</li>
+                                <li>Solidification and bonding</li>
+                                <li>Laminated object manufacturing process</li>
+                                <li>Cost estimation of FDM 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Liquid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Photo polymerization</li>
+                                <li>Principle and working of stereo lithography apparatus</li>
+                                <li>SLA based 3D printing processes</li>
+                                <li>SLA based 3D printing process materials</li>
+                                <li>Scanning techniques</li>
+                                <li>Curing processes</li>
+                                <li>Cost estimation of SLA 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Powder based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Powder fusion mechanism</li>
+                                <li>Principle and working of selective laser sintering (SLS) process</li>
+                                <li>SLS based 3D printers</li>
+                                <li>Laser engineering net shaping process</li>
+                                <li>Electron beam melting</li>
+                                <li>Binder jet 3D printing</li>
+                                <li>Materials and process parameters for SLS based 3D printing processes</li>
+                                <li>Cost estimation of SLS based 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Post Processing and Quality</strong>
+                            <ul class="unit-topics">
+                                <li>Need of post processing: Functional and aesthetic reasons</li>
+                                <li>Steps of post processing: Cleaning/support removal</li>
+                                <li>Fixing</li>
+                                <li>Curing or hardening</li>
+                                <li>Surface finishing</li>
+                                <li>Colouring</li>
+                                <li>Cleaning: Support removal (FDM and material jetting)</li>
+                                <li>Powder removal (SLS and powder bed fusion)</li>
+                                <li>Washing (SLA and photo polymerisation)</li>
+                                <li>Fixing: Filling</li>
+                                <li>Gluing</li>
+                                <li>Welding</li>
+                                <li>Surface finishing: Sanding</li>
+                                <li>Polishing</li>
+                                <li>Tumbling</li>
+                                <li>Hydro dipping</li>
+                                <li>Epoxy coating</li>
+                                <li>Electro plating</li>
+                                <li>Vapour smoothing-acetone treatment</li>
+                                <li>Colouring</li>
+                                <li>Coating</li>
+                                <li>Priming and painting</li>
+                                <li>Inspection and testing: Digital</li>
+                                <li>Visual</li>
+                                <li>Physical</li>
+                                <li>Defects and their causes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Fundamentals and Applications of Additive Manufacturing, Sharad K. Pradhan, Ankit Nayak,
+                            Surendra Singh Thakur, Vishal Francis, Aniket Nagargoje CRC Press, Taylor & Francis, ISBN
+                            9781032898049.</li>
+                        <li>Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling, Rapid Manufacturing
+                            Andreas Gebhardt, Hanser Publisher, 2011, ISBN: 156990507X, 9781569905074.</li>
+                        <li>3D Printing and Design, Sabrie Soloman, Khanna Publishing House, Delhi, ISBN: 9789386173768.
+                        </li>
+                        <li>3D Printing and Rapid Prototyping- Principles and Applications, C.K. Chua, Kah Fai Leong
+                            World Scientific, 2017, ISBN: 9789813146754.</li>
+                        <li>Getting Started with 3D Printing: A Hands-on Guide to the Hardware, Software, and Services
+                            Behind the New Manufacturing Revolution, Liza Wallach Kloski, Nick Kloski Make Community,
+                            LLC; 2nd edition, 2021, ISBN: 9781680450200.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114601P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Heat Transfer Operation Lab [114601P]</h2>
+                    <p>Perform any 10 Experiments</p>
+                    <ul class="unit-topics">
+                        <li>1. Determination of thermal conductivity of metal rod.</li>
+                        <li>2. Determination of thermal conductivity of liquid.</li>
+                        <li>3. Determination of thermal conductivity of insulating materials</li>
+                        <li>4. Determination of thermal conductivity of composite wall.</li>
+                        <li>5. Determination of heat transfer coefficient for natural convention</li>
+                        <li>6. Determination of heat transfer coefficient for forced convention.</li>
+                        <li>7. Determination heat transfer coefficient for Drop wise condensation.</li>
+                        <li>8. Determination heat transfer coefficient for film wise condensation.</li>
+                        <li>9. Determination of emissivity for given material.</li>
+                        <li>10. Determine Steafan Boltzmann's constant</li>
+                        <li>11. Determination of overall heat transfer coefficient for Shell & Tube heat exchanger for
+                            Co- current flow.</li>
+                        <li>12. Determination of overall heat transfer coefficient for Shell & Tube heat exchanger for
+                            Counter- current flow.</li>
+                        <li>13. Determination of overall heat transfer coefficient for Double pipe heat exchanger for
+                            Counter- current flow.</li>
+                        <li>14. Design heat exchanger using given software e.g. CAD</li>
+                        <li>15. Determination of efficiency of given fin.</li>
+                        <li>16. Determination of overall heat transfer coefficient of evaporator.</li>
+                        <li>17. Design evaporator using given software.</li>
+                    </ul>
+                </section>
+
+                <section id="subject-114602P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Chemical Reaction Engineering Lab [114602P]</h2>
+                    <p>Perform any 10 Experiments</p>
+                    <ul class="unit-topics">
+                        <li>1. Determination of activation energy of saponification of ethyl acetate and sodium
+                            hydroxide at various temperatures.</li>
+                        <li>2. Determination of the activation energy of the reaction by hydrolysis of methyl acetate at
+                            various temperatures</li>
+                        <li>3. Determination of Arrhenius rate constants for acidic hydrolysis of methyl acetate at
+                            various temperatures.</li>
+                        <li>4. Determination of Arrhenius rate constant for acidic hydrolysis of ethyl acetate at
+                            various temperatures.</li>
+                        <li>5. Determination of the rate constant for the saponification reaction of ethyl acetate and
+                            sodium hydroxide</li>
+                        <li>6. Determination of the void volume of a catalyst particle.</li>
+                        <li>7. Determination of the solid density of a catalyst particle</li>
+                        <li>8. Determination of the porosity of a catalyst particle</li>
+                        <li>9. Determination of order of reaction for saponification of ethyl-acetate with sodium
+                            hydroxide.</li>
+                        <li>10. Determination of the order of reaction for acidic hydrolysis of methyl acetate.</li>
+                        <li>11. Determination of the kinetics of the reaction between ethyl acetate and sodium hydroxide
+                            in an isothermal batch reactor</li>
+                        <li>12. Determination of the kinetics of saponification of ethyl acetate and sodium hydroxide in
+                            a Plug Flow Reactor.</li>
+                        <li>13. Determination of the kinetics of saponification of ethyl acetate and sodium hydroxide in
+                            a continuous stirrer tank reactor</li>
+                        <li>14. Determination of rate constant by the half-life period of the saponification reaction
+                            between ethyl acetate and sodium hydroxide in an isothermal batch reactor</li>
+                        <li>15. Determination of kinetics of Bio-diesel synthesis from vegetable oils by Trans
+                            esterification.</li>
+                        <li>16. The performance of three equal volumes of CSTR's in series for the saponification of
+                            ethyl acetate and sodium hydroxide reactions.</li>
+                    </ul>
+                </section>
+
+                <section id="subject-114603P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Simulation Software for Chemical Engineering Lab [114603P]</h2>
+                    <p>Perform any 10 Experiments</p>
+                    <ul class="unit-topics">
+                        <li>1. *Installation of given software and interact with its interface.</li>
+                        <li>2. Simulation of multicomponent distillation using available simulation software.</li>
+                        <li>3. Performing sensitivity analysis for process parameters using available simulation
+                            software.</li>
+                        <li>4. Perform cost estimation for a binary distillation using available simulation software.
+                        </li>
+                        <li>5. Simulation of heat exchanger to calculate heat load using available software.</li>
+                        <li>6. Simulation of single-phase fluid flow using ANSYS Fluent or available software.</li>
+                        <li>7. Simulation of multiphase flow systems using OpenFOAM or available software.</li>
+                        <li>8. Modeling of mass transfer and chemical reaction in a reactor using COMSOL Multi physics
+                            or available software.</li>
+                        <li>9. Performing basic data analysis of chemical process data using python</li>
+                        <li>10. Plotting and Interpreting Chemical Process Data Using MATLAB</li>
+                        <li>11. Applying linear regression on experimental data using Python</li>
+                        <li>12. Using GAMS solve simple process optimization problem.</li>
+                        <li>13. Performing statistical analysis using Python libraries (NumPy & Pandas)</li>
+                        <li>14. Implementing a fault detection model for process data using Python (Scikit-Learn)</li>
+                        <li>15. Comparing AI model vs. traditional model performance for process prediction in MATLAB.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="subject-114605" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Courses-I Lab [114605]</h2>
+                    <p>Details for NPTEL Courses-I Lab will be provided by the department</p>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

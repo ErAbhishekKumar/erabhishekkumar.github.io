@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>8th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3);
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">8th Semester Syllabus</h1>
+                <p class="page-subtitle">Chemical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Instrumentation Process & Control</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Transport Phenomenon</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Fertilizer Technology</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- III</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Instrumentation Process & Control Lab</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project- II</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>18</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114801" data-type="theory">Instrumentation Process &
+                        Control</button>
+                    <button class="tab-btn" data-target="subject-114802" data-type="theory">Transport
+                        Phenomenon</button>
+                    <button class="tab-btn" data-target="subject-114803" data-type="theory">Fertilizer
+                        Technology</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective- III"
+                        data-modal-options='[ {"label": "Advance Software for Process Modelling & Simulation", "target": "subject-114804", "btn-id": "btn-114804"}, {"label": "Process Engineering", "target": "subject-114805", "btn-id": "btn-114805"}, {"label": "Recent Trends in Chemical Engineering", "target": "subject-114806", "btn-id": "btn-114806"}, {"label": "Petrochemical Technology", "target": "subject-114807", "btn-id": "btn-114807"}, {"label": "Chemical Waste Treatment", "target": "subject-114808", "btn-id": "btn-114808"} ]'>
+                        Program Elective- III </button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114801P" data-type="lab">Instrumentation Process &
+                        Control Lab</button>
+                    <button class="tab-btn" data-target="subject-Project-II" data-type="lab">Project- II</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-Project-II" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project- II [114809P]</h2>
+                    <p>Details for Project-II will be provided by the department. This component carries 6 credits.</p>
+                </section>
+
+                <section id="subject-114801P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Instrumentation Process & Control Lab [114801P]</h2>
+                    <ul>
+                        <li><strong class="unit-title">List of Experiments: (Perform all experiments)</strong>
+                            <ul class="unit-topics">
+                                <li>To calibrate and study the response of bimetallic thermometer</li>
+                                <li>To study the response of a liquid level tank system</li>
+                                <li>To calibrate the P/I converter</li>
+                                <li>To calibrate the given manometer for level measurement</li>
+                                <li>To determine the viscosity of given samples by constant stress rotational viscometer
+                                </li>
+                                <li>To study and calibrate diaphragm control valve</li>
+                                <li>To study the response of first order system in series using two tank liquid level
+                                    system (non-interacting system) to step input</li>
+                                <li>To study the response of first order system in series using two tank liquid level
+                                    system (interacting system)</li>
+                                <li>To calibrate a thermocouple using a glass bulb thermometer</li>
+                                <li>To assess the accuracy of a pressure gauge with a dead weight gauge tester</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="subject-114801" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Instrumentation Process & Control [114801]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit-1.0 Introduction to Process Control Systems (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Use of Laplace & Inverse Laplace Transformation in study of Process Dynamics &
+                                    Control</li>
+                                <li>Dynamic behavior of First order system and First order systems in series</li>
+                                <li>Second & higher order systems</li>
+                                <li>Linearization of nonlinear systems</li>
+                                <li>Transportation & Transfer Lag</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit-2.0 Classification of Control Systems (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Regulator & Servo control</li>
+                                <li>Feed Forward & Feed backward control</li>
+                                <li>Negative & Positive Feedback Control</li>
+                                <li>Modes of control action</li>
+                                <li>Controllers & Final control Elements</li>
+                                <li>Reduction of Block & Signal Flow Diagrams</li>
+                                <li>Transient response of simple control systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit-3.0 Concept of Stability (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Response of closed loop</li>
+                                <li>Concept of stability</li>
+                                <li>Stability Criterion</li>
+                                <li>Routh test for stability</li>
+                                <li>Introduction to frequency response</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit-4.0 Process Control System Design (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to control system design by frequency response (Bode Plot, Zeigler
+                                    Nichols controller settings)</li>
+                                <li>Introduction to Controller Tuning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit-5.0 Characteristics of Measurement System (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Classification</li>
+                                <li>Performance characteristics</li>
+                                <li>Dynamic calibration</li>
+                                <li>Errors</li>
+                                <li>Statistical error analysis</li>
+                                <li>Temperature measurement</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit-6.0 Measurement of Pressure (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Measurement of pressure: Manometers, Elastic pressure transducers</li>
+                                <li>Measurement of Vacuum</li>
+                                <li>Flow measurement</li>
+                                <li>Level measurement</li>
+                                <li>Density and viscosity measurement</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Coughenour and Koppel, "Process System Analysis and Control", McGraw-Hill, New York, 1986.
+                        </li>
+                        <li>Stephanopoulos, G. "Chemical Process Control", Prentice-Hall of India Pvt Ltd., New Delhi,
+                            1990.</li>
+                        <li>Singh, S.K., "Industrial Instrumentation and Control", Prentice-Hall of India, 2016.</li>
+                        <li>Eckman, D.P., "Industrial Instrumentation", Wiley Eastern Ltd., New York, 1990.</li>
+                        <li>Sarkar, P.K. "Process Dynamic and Control", Prentice-Hall of India, 2014.</li>
+                        <li>Considine, D.N. "Process Instrumentation and Controls Books", McGraw-Hill 2008.</li>
+                        <li>Patranabis, D. "Principles of Industrial Instrumentation", Tata McGraw Hill, 2008.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114802" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Transport Phenomenon [114802]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit-1.0 (6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Newton's law of viscosity</li>
+                                <li>Pressure and temperature dependence of viscosity</li>
+                                <li>Theory of viscosity of gases (low density) and liquids</li>
+                                <li>Convective momentum transport</li>
+                                <li>Shell momentum balances</li>
+                                <li>Boundary conditions</li>
+                                <li>Selected applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit-2.0 (8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>The equation of change for isothermal system</li>
+                                <li>Navier stokes equation</li>
+                                <li>Use of equation of change to solve steady state flow problems</li>
+                                <li>Comparisons of laminar and turbulent flows</li>
+                                <li>Time smoothed equations of change for incompressible fluids</li>
+                                <li>The time smoothed velocity profile near a wall</li>
+                                <li>Turbulent flow in ducts and jets</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit-3.0 (8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Fourier's law of heat conductions</li>
+                                <li>Temperature and pressure dependence of thermal conductivity</li>
+                                <li>Thermal conductivity of gases, liquids, solids and composite solids</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit-4.0 (8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Shell energy balance</li>
+                                <li>Boundary conditions</li>
+                                <li>Heat conduction with an electrical heat source</li>
+                                <li>Nuclear heat source</li>
+                                <li>Viscous heat source</li>
+                                <li>Chemical heat source</li>
+                                <li>Composite walls and fins</li>
+                                <li>Forced convection</li>
+                                <li>Free convection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit-5.0 (6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Fick's law of diffusions</li>
+                                <li>Analogy with heat & mass transfer</li>
+                                <li>Transport by molecular motion</li>
+                                <li>Shell mass balance and boundary conditions</li>
+                                <li>Temperature and pressure dependence of diffusivities</li>
+                                <li>Concentration profile for stagnant gas film</li>
+                                <li>A heterogeneous chemical reactions</li>
+                                <li>Homogenous chemical reaction and porous catalyst</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit-6.0 (6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamental laws of conservation of thermal energy</li>
+                                <li>Define the heat transfer</li>
+                                <li>Conductivity and its dependence on temperature and pressure</li>
+                                <li>Shell energy balances</li>
+                                <li>Application in heat flow problems</li>
+                                <li>Heat transfer by radiation and coupled with conduction as a boundary condition</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Bird R.B., Stewart W.E. and Lightfoot E.N., "Transport Phenomena", 2nd Ed., John Wiley &
+                            Sons, Inc. 2002.</li>
+                        <li>James, W., Wicks, C.E, Wilson, R.E. and Rorrer, G.L. "Fundamentals of Momentum, Heat, and
+                            Mass Transfer". 4th Edn. John Wiley and Sons Inc., New York: January 2000. ISBN:
+                            9780471381495.</li>
+                        <li>Geankoplis, C.J., "Transport Processes and Separation Process Principles includes Unit
+                            Operations", 4th Ed., Prentice-Hall of India 2013.</li>
+                        <li>Brodkey, R.S. and Hershey H.C., "Basic Concepts of Transport Phenomena", Vol. 1 and 2,
+                            Brodkey Publishing 1998 & 2003.</li>
+                        <li>Bannet, C.O. and Myers J.E., "Momentum Heat and Mass Transfer" Tata McGraw Hill.</li>
+                        <li>Cussler E.L., "Diffusion: Mass Transfer in Fluid Systems", 2nd Edn., Cambridge University
+                            Press. 2009.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114803" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Fertilizer Technology [114803]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit-1.0 Introduction (5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Plant nutrients</li>
+                                <li>Different types of fertilizers and their production in India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit-2.0 Nitrogenous Fertilizers (4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Different feed stocks</li>
+                                <li>Synthesis gas production by steam naptha reforming and gas purification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit-3.0 Fertilizer Industries (5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Ammonia synthesis</li>
+                                <li>Urea manufacturing processes</li>
+                                <li>Manufacture of sulphuric acid and ammonium sulphate</li>
+                                <li>Nitric acid and ammonium nitrate manufacture</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit-4.0 Phosphatic Fertilizers (4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Availability and grinding of rock phosphate</li>
+                                <li>Manufacturing processes for single and triple super-phosphate and phosphoric acid
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit-5.0 Mixed fertilizers (3 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Availability and manufacture of muriate of potash</li>
+                                <li>Mono and di-ammonium phosphate</li>
+                                <li>Urea ammonium phosphates</li>
+                                <li>NPK complex fertilizers</li>
+                                <li>Granulation techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit-6.0 Engineering Problems (3 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Fertilizers Storage and handling</li>
+                                <li>Corrosion problems in fertilizers industries</li>
+                                <li>Fertilizer plant effluent treatment and disposal</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Slack A.V. "Chemistry and Technology of Fertilizers", Wiley linter science Publishers.</li>
+                        <li>Waggaman W.H., "Phosphoric Acid, Phosphates and Phosphatic Fertilizers" Hafner Pub.</li>
+                        <li>Austin G.T., "Shreve's Chemical Processes Industries", 5th Ed. McGraw Hill.</li>
+                        <li>Rao M.G. and Sittig M., "Dryden's Outlines of Chemical Technology", Affiliated East West
+                            Press, Delhi.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114804" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective- III: Advance Software for Process Modelling &
+                        Simulation [114804]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit 1.0 Introduction of Process Simulation (6
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to process modelling and simulation</li>
+                                <li>Introduction to process simulation software (e.g. Aspen Plus, CHEMCAD)</li>
+                                <li>Steady state versus dynamic process simulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit 2.0 Simulation Software Interface (10
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to basic simulation software interfaces</li>
+                                <li>Steps involve in process simulation software</li>
+                                <li>Building simple flowsheets</li>
+                                <li>Component properties and thermodynamic models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit 3.0 Data Input & Result Analysis (4 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Data input for streams</li>
+                                <li>Data input for unit operations (distillation, heat exchanger, pump, flash still,
+                                    absorber, cyclone separator etc.)</li>
+                                <li>Convergence of process</li>
+                                <li>Result analysis</li>
+                                <li>Tubular & graphical</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit 4.0 Simulation of Unit Operations (8
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to distillation column simulation (simple binary systems)</li>
+                                <li>Introduction to distillation column simulation (azeotropic systems)</li>
+                                <li>Simulation of pumps and compressors</li>
+                                <li>Simulation of mixing and splitting operations</li>
+                                <li>Simulation of heat exchangers (basic models)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit 5.0 Applications and Case Studies I (6
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Simulation of basic chemical processes (e.g. simple separation processes, reaction
+                                    systems)</li>
+                                <li>Application of simulation to solve practical problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit 6.0 Applications and Case Studies II (6
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to process optimization concepts (Sensitivity Analysis)</li>
+                                <li>Case studies focusing on material and energy balance applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Unit Operations of Chemical Engineering, Warren L. Mccabe, Julian C. Smith, Peter Harriott,
+                            McGraw Hill International Edition. ISBN-10: 9339213238, ISBN-13: 978-8184959635</li>
+                        <li>Chemical Engineering, Vol. 1 and 2. Coulson J. M., Richardson J. F., Backhurst J. R. and J.
+                            H. Harker, Butterworth Heinemann, ISBN-10 0750644443, ISBN-13: 978-0750644440</li>
+                        <li>Chemical Engineering Process Simulation Dominic Foo Elsevier, ISBN-10: 0323901689, ISBN-13:
+                            978-0323901680</li>
+                        <li>Chemical Thermodynamics for Process Simulation Jürgen Gmehling, Michael Kleiber, Bärbel
+                            Kolbe, Jürgen Rarey, Wiley, ISBN-10: 3527312773, ISBN-13: 978-3527312771.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114805" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective- III: Process Engineering [114805]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit- 1.0 Introduction to Process Engineering (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Alternative routes in process engineering</li>
+                                <li>Approach to chemical plant design</li>
+                                <li>Preparation of manuals</li>
+                                <li>Test runs</li>
+                                <li>Troubleshooting</li>
+                                <li>Cost cutting</li>
+                                <li>Data sheet</li>
+                                <li>Green engineering and process intensification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit- 2.0 Process Design of Piping and Moving Devices
+                                (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Process design of piping</li>
+                                <li>Process design of pumps with performance of pumps</li>
+                                <li>Troubleshooting of fluid flow systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit-3.0 Process Design of Heat Exchangers I (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Shell and tube heat exchanger</li>
+                                <li>Design of parts of exchanger</li>
+                                <li>General design method of exchanger</li>
+                                <li>Method to calculate heat transfer and pressure drop calculations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit- 4.0 Process Design of Heat Exchangers II (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Delaware method for design of baffled exchanger</li>
+                                <li>Heat Exchanger Networking (HEN) and Heat Integration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit- 5.0 Process Design of Tall Columns (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Criteria for Selection</li>
+                                <li>Distillation Column Design</li>
+                                <li>Batch distillation and with rectification</li>
+                                <li>Multicomponent batch rectification</li>
+                                <li>Energy conservation in distillation</li>
+                                <li>Criteria for selection and Design of packed tower absorber</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit- 6.0 Process Design of Utility Systems (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Design of Process Heating Systems</li>
+                                <li>Design of Process Cooling Systems</li>
+                                <li>Compressed Air Systems</li>
+                                <li>Inert Gas Systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Introduction to Process Engineering and Design Shuchen B Thakore, Bharat I Bhatt McGraw Hill
+                            Education (India) Private Limited, 2nd edition, ISBN-10: 935134178X, ISBN-13: 978-9351341789
+                        </li>
+                        <li>Process Heat Transfer Kern, D. Q McGraw-Hill, USA, ISBN-10 : 0074632175, ISBN-13:
+                            978-0074632178</li>
+                        <li>Applied Process Design for Chemical and Petrochemical Plants Ludwig, E. Gulf Publishing
+                            Company, Vol. 1, 3rd Ed</li>
+                        <li>Chemical Engineering design volume 6, J.M Coulson, J.F. Richardson Pregamovr press,
+                            International edition 1989</li>
+                        <li>Perry's Chemical Engineer's Handbook, Perry, R. H., and Green D McGraw- Hill Education, USA,
+                            6th Ed</li>
+                        <li>Chemical Engineering Design, Ray Sinnott and Cavin Towler Fifth edition, Elsevier,
+                            Butterworth-Heinemann publications</li>
+                        <li>Handbook of Chemical Engineering Calculations Chopey, N. P McGraw-Hill, Inc., USA, 2nd Ed,
+                            ISBN-10: 0070110212, ISBN-13: 978-0070110212.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114806" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective- III: Recent Trends in Chemical Engineering [114806]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit-1.0 Sustainable and Green Chemical Processing (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Sustainability: Concept, Overview and attributes of sustainability</li>
+                                <li>Green Chemistry and 12 Principles of Green Chemistry</li>
+                                <li>Case studies to demonstrate the concept of atom economy and E-Factor</li>
+                                <li>Numericals based on estimation of atom economy and E-factor</li>
+                                <li>Integration of Ecofriendly Practices: Green approach in raw material processing</li>
+                                <li>Unit processes and Unit operations</li>
+                                <li>Alternate pathway case studies (Ibuprofen and Propylene oxide synthesis)</li>
+                                <li>Shift from Chemical transformation to biochemical transformation (Biodiesel and
+                                    acrylamide manufacturing)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit-2.0 Circular Economy and Waste Minimization (6
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Linear Economy</li>
+                                <li>Circular Economy and Industrial Ecology</li>
+                                <li>5R approach for waste minimization relevant examples</li>
+                                <li>Waste to resource conversion: Waste valorization (Flowsheet and Process description)
+                                </li>
+                                <li>Pyrolysis of tyres and plastics</li>
+                                <li>2G ethanol manufacturing from waste biomass</li>
+                                <li>Zero Liquid discharge: Concept, component and process flow</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit-3.0 Chemical Process Intensification and Advanced
+                                Separation (6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Process intensification Concept and approach of intensification</li>
+                                <li>Microreactors and Membrane reactor: Constructional features and applications</li>
+                                <li>Microwave, Cavitation and Photochemical based intensification: Features and
+                                    applications</li>
+                                <li>Advanced separation processes: Reactive distillation, Supercritical fluid extraction
+                                    and pervaporation</li>
+                                <li>Heat Integration Network and its application in Energy optimization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit-4.0 Nanotechnology and Advanced Material (10
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Nanotechnology: Introduction and its significance in chemical engineering</li>
+                                <li>Physical, chemical, Electrical and optical properties of nanomaterials</li>
+                                <li>Classification examples and applications of nanomaterials on the basis of:
+                                    Dimensions: Zero, one, two and three dimensional</li>
+                                <li>Origin: Natural and engineered</li>
+                                <li>Pore size: Microporous, mesoporous and macroporous</li>
+                                <li>Composition: Carbon based, inorganic, organic and composites</li>
+                                <li>Introduction and features of Advanced materials such as Metal Organic Framework
+                                    (MOF)</li>
+                                <li>Smart and Surface responsive materials</li>
+                                <li>Application of above materials in: Catalysis, Energy and hydrogen storage, Drug
+                                    delivery, Carbon capture, As a sensor that responds to changes in pH. temperature or
+                                    chemical nature</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit-5.0 Digital Chemical Engineering - Industry
+                                applications (8 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Journey from Industry 1.0 to 4.0</li>
+                                <li>Digital Twins: Concept, components like physical assets (reactors, distillation
+                                    columns, process vessels, etc.), IIoT sensors, visual model and data link</li>
+                                <li>Component Digital twin like IIoT Sensors Data logger, real time data integration and
+                                    analysis tools</li>
+                                <li>Data driven Physics based Simulation model that represent process/equipment</li>
+                                <li>Controllers and visualization dashboard equipped with AR</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit-6.0 Digital Chemical Engineering AI applications
+                                (5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Al applications in Chemical Engineering</li>
+                                <li>Process Optimization</li>
+                                <li>Reaction Prediction</li>
+                                <li>Process Fault Detection</li>
+                                <li>Quality Control</li>
+                                <li>Process Simulation and Modeling</li>
+                                <li>Energy Optimization</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Green Chemistry: Theory and Practice, Paul T. Anastas, John C. Warner, Oxford University
+                            Press, 1st (1998), ISBN: 9780198506980</li>
+                        <li>Process Intensification for Chemical and Biotechnology Industries Sule Ayol, Marcello
+                            Remelli, Burcu Yeşilada (Editors) Wiley, 1st (2025), 9781394191207</li>
+                        <li>Green Chemistry for Environmental Remediation Rashmi Sanghi (Editor), Vandana Singh (Editor)
+                            Wiley-Scrivener; 1st edition, ISBN-13: 978-0470943083</li>
+                        <li>Textbook of Nanoscience and Nanotechnology B.S.Murty, P. Shankar, Baldev Raj, B. B. Rath
+                            Murdev J, Springer-Verlag Berlin and Heidelberg GmbH & Co. K; Softcover reprint of the
+                            original 1st ed. 2013 edition (23 August 2016) ISBN: 978-3662509128</li>
+                        <li>Sustainable Process Engineering, Gyorgy Szekely, Gyorgy. Sustainable Process Engineering,
+                            Berlin Boston: De Gruyter, 2024. https://doi.org/10.1515/9783111028163</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114807" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective- III: Petrochemical Technology [114807]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit 1.0 Petroleum-An Overview (6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Petroleum reserves in India</li>
+                                <li>Methods of petroleum exploration</li>
+                                <li>Drilling of petroleum</li>
+                                <li>Physical properties of petroleum</li>
+                                <li>Constituents of crude oil</li>
+                                <li>Petroleum recovery techniques</li>
+                                <li>Petroleum refineries in India</li>
+                                <li>Global crude oil producer countries</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit 2.0 Refining of Petroleum I (10 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Dehydration and desaltification of petroleum</li>
+                                <li>Atmospheric and vacuum distillation unit</li>
+                                <li>Petroleum fractions with their boiling range, carbon number and uses</li>
+                                <li>Properties of petroleum fractions with definition and significance: API gravity,
+                                    viscosity, flash point, fire point, aniline point, smoke point, pour point, cloud
+                                    point, octane number, cetane number, diesel index, drop melting point of wax,
+                                    calorific value, carbon residue and penetration index</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit 3.0 Refining of Petroleum II (5 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Characterization of Petroleum Fractions: redwood viscometer, flash and fire point
+                                    apparatus (Pensky-martens apparatus, Abel's apparatus, Cleveland open cup), cloud
+                                    point apparatus, pour point apparatus, drop melting point apparatus, smoke point
+                                    apparatus, aniline point apparatus and Conradson carbon residue apparatus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit 4.0 Petroleum Refinery Processes (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Thermal Cracking: vis breaking process, steam cracking process and delayed coking
+                                </li>
+                                <li>Catalytic Cracking: fluid catalytic cracking</li>
+                                <li>Alkylation: Sulphuric acid process, Hydrogen Fluoride Process</li>
+                                <li>Hydrocracking Process</li>
+                                <li>Catalytic Reforming Process</li>
+                                <li>Isomerization Process</li>
+                                <li>Polymerization Process</li>
+                                <li>Catalytic Hydrotreating Process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit 5.0 Chemicals Derived from C1 to C4 Chemicals (8
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Petrochemical from C1 chemicals: (a) Methanol (b) Formaldehyde c) Chloromethane</li>
+                                <li>Petrochemical from C2 chemicals: (a) Ethanol from chemical synthesis route
+                                    (Hydration of ethylene), (b) Ethylene oxide, (c) Vinyl chloride</li>
+                                <li>Petrochemical from C3 chemicals: (a) Acetaldehyde (b) Isopropanol (c) Propylene
+                                    oxide</li>
+                                <li>Petrochemical from C4 chemicals: (a) Butadiene (b) Methyl tertiary butyl ether, (c)
+                                    Butyl acetate</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit 6.0 Aromatics (6 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Separation of aromatic hydrocarbon (BTX) from reformate by using Udex process</li>
+                                <li>Aniline manufacturing process from hydrogenation of nitrobenzene</li>
+                                <li>Benzoic acid manufacturing process from toluene</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>B. K. Bhaskara Rao Modern Petrochemical Refining processes Oxford IBH Publications,
+                            DelhiISBN:9788120417115</li>
+                        <li>B. K. Bhaskara Rao, A Text on Petrochemicals, Khanna Publishers, Delhi ISBN- 9788174090444
+                        </li>
+                        <li>W. L. Nelson, Petroleum Refinery Engineering, McGraw Hill, New York Publications, ISBN:
+                            9780070855366</li>
+                        <li>Gary, James H Glenn E Handwork Mark J Kai sen, Petroleum Refining Technology and Economics
+                            CRC Press, USA Publications, ISBN-9780849370380</li>
+                        <li>M. Gopal Rao and Sitting, Marshal, M. Gopal Rao and Sitting, Marshal, East-West Press Pvt.
+                            Ltd., Delhi Publications, ISBN-9788185938790</li>
+                        <li>Austin G. T, Shreve's Chemical Process Industries, McGraw Hill India, Pune Publications,
+                            ISBN-9781259029455</li>
+                        <li>Dr. Ram Prasad, Petroleum Refining Technology, Khanna Publishers, Delhi ISBN- 9788174090645
+                        </li>
+                        <li>Sukumar Maiti Introduction to Petrochemicals, Oxford IBH Publications,
+                            DelhiISBN:9788120406636</li>
+                        <li>James G. Speight, Handbook of petrochemical processes, CRC Press Publications, ISBN:
+                            10:1498729703.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114808" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective- III: Chemical Waste Treatment [114808]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Unit-1.0 Solid Waste & Management (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to solid waste</li>
+                                <li>Types, properties & sources of solid waste</li>
+                                <li>Solid waste generation, collection of solid waste</li>
+                                <li>Reduce-Reuse-Recycle (RRR) approach for solid waste</li>
+                                <li>Mass balance for biological conversion (composting/bio methanation)</li>
+                                <li>Recovery of biological & thermal conversion products</li>
+                                <li>Design, site selection & operation of sanitary landfills</li>
+                                <li>Key aspects of landfill design</li>
+                                <li>Characterization, transportation & disposal of hazardous waste</li>
+                                <li>E-waste Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Unit-2.0 Treatment of Liquid Waste (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to liquid waste</li>
+                                <li>Parameter of liquid waste</li>
+                                <li>Treatment methods for liquid waste</li>
+                                <li>Primary Methods: screening and sedimentation</li>
+                                <li>Secondary Methods: activated sludge process and trickling filter</li>
+                                <li>Tertiary Methods: nutrient removal and disinfection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Unit- 3.0 Regulations for Waste Management (7
+                                hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to acts for waste management in India</li>
+                                <li>Bio medical waste rules 1998</li>
+                                <li>The hazardous waste rules 2008</li>
+                                <li>The plastic waste rules 2011</li>
+                                <li>The E-waste rules 2011</li>
+                                <li>Solid waste management rules 2016</li>
+                                <li>Penalties for non-compliance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Unit-4.0 Treatment of Hazardous Waste (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to hazardous waste</li>
+                                <li>Hazardous Waste: collection & storage</li>
+                                <li>Rules & Regulations for storage & handling</li>
+                                <li>Treatment technologies for waste: physical & chemical</li>
+                                <li>Management of biomedical waste & nuclear waste</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Unit- 5.0 Energy From Waste I (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Concept of energy from waste</li>
+                                <li>Energy production technologies: Incineration, Gasification & pyrolysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Unit-6.0 Energy From Waste II (7 hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Heat Recovery System: regenerator, heat pipe exchanger</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Integrated Solid Waste Management, Engineering Principles and Management Issues,
+                            Tchobanoglous G., Theisen H., and Vigil S. A (2014)., 2nd Ed., McGraw-Hill, USA.</li>
+                        <li>Environmental Engineering Peavy, H.S, Rowe, D.R., and G. Tchobanoglous, McGraw Hill
+                            Education, 2017, 1st Indian Edition 2.</li>
+                        <li>Hazardous Wastes - Sources, Pathways, Receptors Richard J. Watts, John Wiley and Sons 1998,
+                            1st Edition.</li>
+                        <li>Hazardous Waste Management, LaGrega M.D., Buckingham P.L. and Evans J.C., Waveland Pr Inc,
+                            2010, Reissue Edition 5.</li>
+                        <li>Geotechnical Aspects of Landfill Design and Construction Qian X, Koerner R M and Gray D H,
+                            Prentice Hall, 2002, 1st Edition 4</li>
+                        <li>Handbook of Solid Waste Management, Tchobanoglous G and Kreith F, McGraw-Hill Education,
+                            2002, 2nd Edition 3.</li>
+                        <li>Manual on Municipal Solid Waste Management, -CPHEEO (2016)., Ministry of Urban Development,
+                            India.</li>
+                        <li>Solid Waste Engineering, Vesilind, P.A., and Worrell W. A. (2016), 2nd Ed., Cengage India. 2
+                        </li>
+                        <li>Environmental Engineering, (2017) Peavy, H.S, Rowe, D.R., and Tchobanoglous, G, Indian ED,
+                            McGraw Hill Inc., India. 3</li>
+                        <li>Geotechnical Aspects of Landfill Design and Construction, Qian X, Koerner RM and Gray DH.
+                            (2002)., 1st Ed., Prentice Hall, USA. 4.</li>
+                        <li>NIT Warangal, M. Tech Waste Management.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

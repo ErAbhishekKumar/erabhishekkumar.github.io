@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Electrical & Electronics Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Digital Signal Processing [100606]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Introduction to VLSI Design [100607]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Professional Skill Development [100608]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Measurements and Instrumentation [110601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1106XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-II [1106XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital Signal Processing Lab [100606P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Introduction to VLSI Design Lab [100607P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Electronics Design Laboratory [100609P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Measurements and Instrumentation Lab [110601P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>25</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100606"
+                        data-type="theory">Digital Signal Processing</button><button class="tab-btn"
+                        data-target="subject-100607" data-type="theory">Introduction to VLSI Design</button><button
+                        class="tab-btn" data-target="subject-100608" data-type="theory">Professional Skill
+                        Development</button><button class="tab-btn" data-target="subject-110601"
+                        data-type="theory">Measurements and Instrumentation</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective-I"
+                        data-modal-options='[ {"label": "Advanced Electric Drives", "target": "subject-110602", "btn-id": "btn-110602"}, {"label": "Electrical Energy Conservation and Auditing", "target": "subject-110608", "btn-id": "btn-110608"}, {"label": "Computer Architecture", "target": "subject-100611", "btn-id": "btn-100611"}, {"label": "Digital Image & Video Processing", "target": "subject-100614", "btn-id": "btn-100614"} ]'>
+                        Program Elective-I </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective-II"
+                        data-modal-options='[ {"label": "Computational Electromagnetics", "target": "subject-110603", "btn-id": "btn-110603"}, {"label": "Electrical Machine Design", "target": "subject-110609", "btn-id": "btn-110609"}, {"label": "Digital Control Systems", "target": "subject-100612", "btn-id": "btn-100612"}, {"label": "Electrical Drives", "target": "subject-100613", "btn-id": "btn-100613"} ]'>
+                        Program Elective-II </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100606P" data-type="lab">Digital
+                        Signal Processing Lab</button><button class="tab-btn" data-target="subject-100607P"
+                        data-type="lab">Introduction to VLSI Design Lab</button><button
+                        class="tab-btn" data-target="subject-100609P" data-type="lab">Electronics Design
+                        Laboratory</button><button class="tab-btn" data-target="subject-110601P"
+                        data-type="lab">Measurements and Instrumentation Lab</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-100606" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital Signal Processing [100606]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Discrete-time Signals and Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Discrete Time Signals and Systems Sequences</li>
+                                <li>Representation Of Signals On Orthogonal Basis</li>
+                                <li>Representation Of Discrete Systems Using Difference Equations</li>
+                                <li>Sampling And Reconstruction Of Signals Aliasing</li>
+                                <li>Sampling Theorem And Nyquist Rate</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Z-transform</strong>
+                            <ul class="unit-topics">
+                                <li>Z-Transform</li>
+                                <li>Region Of Convergence</li>
+                                <li>Analysis Of Linear Shift Invariant Systems Using Z-Transform</li>
+                                <li>Properties Of Z-Transform For Causal Signals</li>
+                                <li>Interpretation Of Stability In Z-Domain</li>
+                                <li>Inverse Z-Transforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Discrete Fourier Transform</strong>
+                            <ul class="unit-topics">
+                                <li>Frequency Domain Analysis</li>
+                                <li>Discrete Fourier Transform (Dft)</li>
+                                <li>Properties Of Dft</li>
+                                <li>Convolution Of Signals</li>
+                                <li>Fast Fourier Transform Algorithm</li>
+                                <li>Parsevals Identity</li>
+                                <li>Implementation Of Discrete Time Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Design of Digital Filters</strong>
+                            <ul class="unit-topics">
+                                <li>Design Of Fir Digital Filters Window Method</li>
+                                <li>Park-Mcclellans Method</li>
+                                <li>Design Of Iir Digital Filters Butterworth</li>
+                                <li>Chebyshev And Elliptic Approximations</li>
+                                <li>Low-pass</li>
+                                <li>Band-pass</li>
+                                <li>Band-stop And Highpass Filters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Finite Register Length and Spectral Estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Effect Of Finite Register Length In Fir Filter Design</li>
+                                <li>Parametric And Non-parametric Spectral Estimation</li>
+                                <li>Introduction To Multi-rate Signal Processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Applications of Digital Signal Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Correlation Functions And Power Spectra</li>
+                                <li>Stationary Processes</li>
+                                <li>Optimal Filtering Using Arma Model</li>
+                                <li>Linear Mean-square Estimation</li>
+                                <li>Wiener Filter</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. K. Mitra, “Digital Signal Processing: A computer based approach”, McGraw Hill, 2011.</li>
+                        <li>A.V. Oppenheim and R. W. Schafer, “Discrete Time Signal Processing”, Prentice Hall, 1989.
+                        </li>
+                        <li>J. G. Proakis and D.G. Manolakis, “Digital Signal Processing: Principles, Algorithms and
+                            Applications”, Prentice Hall, 1997.</li>
+                        <li>L. R. Rabiner and B. Gold, “Theory and Application of Digital Signal Processing”, Prentice
+                            Hall, 1992.</li>
+                        <li>J. R. Johnson, “Introduction to Digital Signal Processing”, Prentice Hall, 1992.</li>
+                        <li>D. J. DeFatta, J. G. Lucas and W. S. Hodgkiss, “Digital Signal Processing”, John Wiley &
+                            Sons, 1988.</li>
+                    </ol>
+                </section>
+                <section id="subject-100607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Introduction to VLSI Design [100607]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: MOSFET Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction Mosfet</li>
+                                <li>Threshold Voltage</li>
+                                <li>Current</li>
+                                <li>Channel Length Modulation</li>
+                                <li>Body Bias Effect And Short Channel Effects</li>
+                                <li>Mos Switch</li>
+                                <li>Mosfet Capacitances</li>
+                                <li>Mosfet Models For Calculation Transistors And Layout</li>
+                                <li>Cmos Layout Elements</li>
+                                <li>Parasitics</li>
+                                <li>Wires And Vias Design Rules Layout Design</li>
+                                <li>Spice Simulation Of Mosfet I-v Characteristics And Parameter Extraction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: CMOS Inverter</strong>
+                            <ul class="unit-topics">
+                                <li>Cmos Inverter</li>
+                                <li>Static Characteristics</li>
+                                <li>Noise Margin</li>
+                                <li>Effect Of Process Variation</li>
+                                <li>Supply Scaling</li>
+                                <li>Dynamic Characteristics</li>
+                                <li>Inverter Design For A Given Vtc And Speed</li>
+                                <li>Effect Of Input Rise Time And Fall Time</li>
+                                <li>Static And Dynamic Power Dissipation</li>
+                                <li>Energy & Power Delay Product</li>
+                                <li>Sizing Chain Of Inverters</li>
+                                <li>Latch Up Effect</li>
+                                <li>Simulation Of Static And Dynamic Characteristics</li>
+                                <li>Layout</li>
+                                <li>Post Layout Simulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Static CMOS Design</strong>
+                            <ul class="unit-topics">
+                                <li>Static Cmos Design</li>
+                                <li>Complementary Cmos</li>
+                                <li>Static Properties</li>
+                                <li>Propagation Delay</li>
+                                <li>Elmore Delay Model</li>
+                                <li>Power Consumption</li>
+                                <li>Low Power Design Techniques</li>
+                                <li>Logical Effort For Transistor Sizing</li>
+                                <li>Ratioed Logic</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Logic Styles and Dynamic CMOS</strong>
+                            <ul class="unit-topics">
+                                <li>Pseudo Nmos Inverter</li>
+                                <li>Dcvsl</li>
+                                <li>Ptl</li>
+                                <li>Dptl & Transmission Gate Logic</li>
+                                <li>Dynamic Cmos Design</li>
+                                <li>Speed And Power Considerations</li>
+                                <li>Domino Logic And Its Derivatives</li>
+                                <li>C2mos</li>
+                                <li>Tspc Registers</li>
+                                <li>Nora Cmos Course Project</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Arithmetic Circuits and Memory Design</strong>
+                            <ul class="unit-topics">
+                                <li>Circuit Design Considerations Of Arithmetic Circuits</li>
+                                <li>Shifter</li>
+                                <li>Cmos Memory Design Sram And Dram</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: BiCMOS Logic</strong>
+                            <ul class="unit-topics">
+                                <li>Bicmos Logic Static And Dynamic Behaviour</li>
+                                <li>Delay And Power Consumption In Bicmos Logic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Principles of CMOS VLSI design: a system perspective by Neil H.E. Weste and Kamran
+                            Eshraghian; Addision Wesley pub.</li>
+                        <li>Digital integrated circuits by Demassa & Ciccone. Wiley pub.</li>
+                        <li>Modern VLSI Design system on silicon by Wayne Wolf: Addision Wesley Longman Publisher.</li>
+                        <li>Basic VLSI Design by Douglas A Pucknell & Kamran Eshranghian; PHI</li>
+                        <li>Digital Integrated Circuits: A Design Perspective by Jan M Rabaey; PHI</li>
+                    </ol>
+                </section>
+                <section id="subject-100608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Skill Development [100608]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Communication Skills</strong>
+                            <ul class="unit-topics">
+                                <li>Public Speaking</li>
+                                <li>Group Discussion</li>
+                                <li>Gestures And Body Language & Professional Presentation Skills</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Interpersonal Skills</strong>
+                            <ul class="unit-topics">
+                                <li>Group Dynamics</li>
+                                <li>Negotiation Skills</li>
+                                <li>Leadership</li>
+                                <li>Emotional Intelligence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Employability and Corporate Skills I</strong>
+                            <ul class="unit-topics">
+                                <li>Time Management And Effective Planning</li>
+                                <li>Stress Management</li>
+                                <li>People Skills</li>
+                                <li>Team Work</li>
+                                <li>Development Of Leadership Qualities</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Employability and Corporate Skills II</strong>
+                            <ul class="unit-topics">
+                                <li>Decision Making And Negotiation Skills</li>
+                                <li>Positive Attitude</li>
+                                <li>Self-motivation</li>
+                                <li>Professional Ethics</li>
+                                <li>Business Etiquettes</li>
+                                <li>Balancing Board Room</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Business Writing and Interview Skills</strong>
+                            <ul class="unit-topics">
+                                <li>Business Writing Skills</li>
+                                <li>Resume Writing</li>
+                                <li>Interview Skills</li>
+                                <li>Technical Presentation</li>
+                                <li>Guest Lecture</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Professional Ethics and Entrepreneurship</strong>
+                            <ul class="unit-topics">
+                                <li>Professional Ethics</li>
+                                <li>Project Management</li>
+                                <li>Entrepreneurship</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>“Personality Development and Soft Skills”, Barun Mitra, Oxford University Press.</li>
+                        <li>“Managing Soft Skills for Personality Development”, B.N. Ghosh, McGraw Hill.</li>
+                        <li>“Communication Skills and Soft Skills: An Integrated Approach”, E. Suresh Kumar, Pearson
+                        </li>
+                        <li>“Communication to Win”, Richard Denny, Kogan Page India Pvt. Ltd.</li>
+                    </ol>
+                </section>
+                <section id="subject-110601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Measurements and Instrumentation [110601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Concepts Relating to Measurements</strong>
+                            <ul class="unit-topics">
+                                <li>True Value</li>
+                                <li>Accuracy</li>
+                                <li>Precision</li>
+                                <li>Resolution</li>
+                                <li>Drift</li>
+                                <li>Hysteresis</li>
+                                <li>Dead-band</li>
+                                <li>Sensitivity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Errors and Statistical Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Errors In Measurements</li>
+                                <li>Basic Statistical Analysis Applied To Measurements Mean</li>
+                                <li>Standard Deviation</li>
+                                <li>Six-sigma Estimation</li>
+                                <li>Cp</li>
+                                <li>Cpk</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensors and Transducers</strong>
+                            <ul class="unit-topics">
+                                <li>Sensors And Transducers For Physical Parameters Temperature</li>
+                                <li>Pressure</li>
+                                <li>Torque</li>
+                                <li>Flow</li>
+                                <li>Speed And Position Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Current and Voltage Measurements</strong>
+                            <ul class="unit-topics">
+                                <li>Current And Voltage Measurements</li>
+                                <li>Shunts</li>
+                                <li>Potential Dividers</li>
+                                <li>Instrument Transformers</li>
+                                <li>Hall Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Measurements of R, L, C and Instruments</strong>
+                            <ul class="unit-topics">
+                                <li>Measurements Of R</li>
+                                <li>L And C</li>
+                                <li>Digital Multi-meter</li>
+                                <li>True Rms Meters</li>
+                                <li>Clamp-on Meters</li>
+                                <li>Meggers</li>
+                                <li>Digital Storage Oscilloscope</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Biomedical Instruments</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Components Of Bio-medical Instruments</li>
+                                <li>Bio-electric Signals & Recording Electrodes</li>
+                                <li>Transducers</li>
+                                <li>Recording And Display Devices</li>
+                                <li>Patient Care And Monitoring Systems</li>
+                                <li>Cardiovascular Measurements Blood Pressure</li>
+                                <li>Blood Flow</li>
+                                <li>Cardiac Output</li>
+                                <li>Heart Sounds Etc</li>
+                                <li>Instrumentation For Respiratory And Nervous Systems</li>
+                                <li>Analysis Of Eeg</li>
+                                <li>Ecg</li>
+                                <li>Emg</li>
+                                <li>Eog And Action Potentials</li>
+                                <li>Non- Invasive Diagnostic Measurements Temperature</li>
+                                <li>Ultrasonic Diagnosis</li>
+                                <li>Cat Scan Techniques</li>
+                                <li>Sensory Measurements Motor Response</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>“Measurement System, Application and Design”, E O Doeblin, TMH.</li>
+                        <li>“Course in Electrical and Electronic Measurement and Instrumentation”, A K Sawhney, Dhanpat
+                            Rai and Sons.</li>
+                        <li>“Electronic Measurements and Instrumentation”, Rajendra Prasad, Khanna Publishers</li>
+                        <li>“Basic Electrical Measurements”, M.B. Stout, Prentice Hall</li>
+                        <li>Sawhney A.K., A course in Electrical and Electronic Measurements & instrumentation, Dhanpat
+                            Rai.</li>
+                        <li>J. B. Gupta, A course in Electrical & Electronic Measurement & Instrumentation., S K Kataria
+                            & Sons.</li>
+                        <li>Kalsi H. S., Electronic Instrumentation, 3/e, Tata McGraw Hill, New Delhi, 2012</li>
+                        <li>S Tumanski, Principles of electrical measurement, Taylor & Francis.</li>
+                        <li>David A Bell, Electronic Instrumentation and Measurements,3/e, Oxford</li>
+                    </ol>
+                </section>
+                <section id="subject-100606P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital Signal Processing Lab [100606P]</h2>
+                    <p>Perform All Experiments</p>
+                    <ul class="unit-topics">
+                        <li>To Represent Basic Signals (Unit Step, Unit Impulse, Ramp, Exponential, Sine And Cosine)
+                        </li>
+                        <li>To Develop Program For Discrete Convolution</li>
+                        <li>To Develop Program For Discrete Correlation</li>
+                        <li>To Understand Stability Test</li>
+                        <li>To Understand Sampling Theorem</li>
+                        <li>To Design Analog Filters (Low-pass, High Pass, Band Pass, Band Stop)</li>
+                        <li>To Design Digital Filters (Low-pass, High Pass, Band Pass, Band Stop)</li>
+                        <li>To Design Fir Filters Using Windows Techniques</li>
+                    </ul>
+                </section>
+                <section id="subject-100607P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Introduction to VLSI Design Lab [100607P]</h2>
+                    <p>Hands-on/Computer Experiments Related To The Course Contents Of Introduction To VLSI Design
+                        Theory</p>
+                </section>
+                <section id="subject-103601P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Power Systems-II Lab [103601P]</h2>
+                    <p>Lab Details As Per Department Guidelines</p>
+                </section>
+                <section id="subject-100609P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Electronics Design Laboratory [100609P]</h2>
+                    <p>Perform All Experiments</p>
+                    <p>Students Will Demonstrate The Ability To</p>
+                    <ul class="unit-topics">
+                        <li>Understand The Practical Issues Related To Practical Implementation Of Applications Using
+                            Electronic Circuits</li>
+                        <li>Choose Appropriate Components, Software And Hardware Platforms</li>
+                        <li>Design A Printed Circuit Board, Get It Made And Populate/solder It With Components</li>
+                        <li>Work As A Team With Other Students To Implement An Application</li>
+                    </ul>
+                    <p><strong>List of Experiments:</strong></p>
+                    <ul class="unit-topics">
+                        <li>Basic Concepts On Measurements; Noise In Electronic Systems; Sensors And Signal Conditioning
+                            Circuits</li>
+                        <li>Introduction To Electronic Instrumentation And Pc Based Data Acquisition; Electronic System
+                            Design, Analog System Design</li>
+                        <li>Interfacing Of Analog And Digital Systems, Embedded Systems, Electronic System Design
+                            Employing Microcontrollers, Cplds, And Fpgas, Pcb Design And Layout; System Assembly
+                            Considerations</li>
+                        <li>Group Projects Involving Electronic Hardware (Analog, Digital, Mixed Signal) Leading To
+                            Implementation Of An Application</li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. Sedra and K. C. Smith, “Microelectronic circuits”, Oxford University Press, 2007.</li>
+                        <li>P. Horowitz and W. Hill, “The Art of Electronics”, Cambridge University Press, 1997.</li>
+                        <li>H. W. Ott, “Noise Reduction Techniques in Electronic Systems”, Wiley, 1989.</li>
+                        <li>W.C. Bosshart, “Printed Circuit Boards: Design and Technology”, Tata McGraw Hill, 1983.</li>
+                        <li>G.L. Ginsberg, “Printed Circuit Design”, McGraw Hill, 1991.</li>
+                    </ol>
+                </section>
+                <section id="subject-110601P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Measurements and Instrumentation Lab [110601P]</h2>
+                    <ul class="unit-topics">
+                        <li>Measurement Of A Batch Of Resistors And Estimating Statistical Parameters</li>
+                        <li>Measurement Of L Using A Bridge Technique As Well As Lcr Meter</li>
+                        <li>Measurement Of C Using A Bridge Technique As Well As Lcr Meter</li>
+                        <li>Measurement Of Low Resistance Using Kelvins Double Bridge</li>
+                        <li>Measurement Of High Resistance And Insulation Resistance Using Megger</li>
+                        <li>Usage Of Dso For Steady State Periodic Waveforms Produced By A Function Generator <ul>
+                                <li>Selection Of Trigger Source And Trigger Level, Selection Of Time-scale And Voltage
+                                    Scale</li>
+                                <li>Bandwidth Of Measurement And Sampling Rate</li>
+                            </ul>
+                        </li>
+                        <li>Download Of One-cycle Data Of A Periodic Waveform From A Dso And Use Values To Compute The
+                            Rms Values Using A C Program</li>
+                        <li>Usage Of Dso To Capture Transients Like A Step Change In R-l-c Circuit</li>
+                        <li>Current Measurement Using Shunt, Ct, And Hall Sensor</li>
+                    </ul>
+                </section>
+                <section id="subject-110602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Advanced Electric Drives [110602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Power Converters for AC Drives</strong>
+                            <ul class="unit-topics">
+                                <li>Pwm Control Of Inverter</li>
+                                <li>Selected Harmonic Elimination</li>
+                                <li>Space Vector Modulation</li>
+                                <li>Current Control Of Vsi</li>
+                                <li>Three Level Inverter</li>
+                                <li>Different Topologies</li>
+                                <li>Svm For 3 Level Inverter</li>
+                                <li>Diode Rectifier With Boost Chopper</li>
+                                <li>Pwm Converter As Line Side Rectifier</li>
+                                <li>Current Fed Inverters With Self-commutated Devices</li>
+                                <li>Control Of Csi</li>
+                                <li>H Bridge As A 4-q Drive</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Induction Motor Drives</strong>
+                            <ul class="unit-topics">
+                                <li>Different Transformations And Reference Frame Theory</li>
+                                <li>Modeling Of Induction Machines</li>
+                                <li>Voltage Fed Inverter Control-v/f Control</li>
+                                <li>Vector Control</li>
+                                <li>Direct Torque And Flux Control (Dtc)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Synchronous Motor Drives</strong>
+                            <ul class="unit-topics">
+                                <li>Modeling Of Synchronous Machines</li>
+                                <li>Open Loop V/f Control</li>
+                                <li>Vector Control</li>
+                                <li>Direct Torque Control</li>
+                                <li>Csi Fed Synchronous Motor Drives</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Permanent Magnet Motor Drives</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Various Pm Motors</li>
+                                <li>Bldc And Pmsm Drive Configuration</li>
+                                <li>Comparison</li>
+                                <li>Block Diagrams</li>
+                                <li>Speed And Torque Control In Bldc And Pmsm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Switched Reluctance Motor Drives</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution Of Switched Reluctance Motors</li>
+                                <li>Various Topologies For Srm Drives</li>
+                                <li>Comparison</li>
+                                <li>Closed Loop Speed And Torque Control Of Srm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: DSP Based Motion Control</strong>
+                            <ul class="unit-topics">
+                                <li>Use Of Dsps In Motion Control</li>
+                                <li>Various Dsps Available</li>
+                                <li>Realization Of Some Basic Blocks In Dsp For Implementation Of Dsp Based Motion
+                                    Control</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>B. K. Bose, “Modern Power Electronics and AC Drives”, Pearson Education, Asia, 2003.</li>
+                        <li>P.C. Krause, O. Wasynczuk and S.D. Sudhoff, “Analysis of Electric Machinery and Drive
+                            Systems”, John Wiley & Sons, 2013.</li>
+                        <li>H. A. Taliyat and S. G. Campbell, “DSP based Electromechanical Motion Control”, CRC press,
+                            2003.</li>
+                        <li>R. Krishnan, “Permanent Magnet Synchronous and Brushless DC motor Drives”, CRC Press, 2009.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-110608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Electrical Energy Conservation and Auditing [110608]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Energy Scenario</strong>
+                            <ul class="unit-topics">
+                                <li>Commercial And Non-commercial Energy</li>
+                                <li>Primary Energy Resources</li>
+                                <li>Commercial Energy Production</li>
+                                <li>Final Energy Consumption</li>
+                                <li>Energy Needs Of Growing Economy</li>
+                                <li>Long Term Energy Scenario</li>
+                                <li>Energy Pricing</li>
+                                <li>Energy Sector Reforms</li>
+                                <li>Energy And Environment</li>
+                                <li>Energy Security</li>
+                                <li>Energy Conservation And Its Importance</li>
+                                <li>Restructuring Of The Energy Supply Sector</li>
+                                <li>Energy Strategy For The Future</li>
+                                <li>Air Pollution</li>
+                                <li>Climate Change</li>
+                                <li>Energy Conservation Act-2001 And Its Features</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Basics of Energy and its Various Forms</strong>
+                            <ul class="unit-topics">
+                                <li>Electricity Tariff</li>
+                                <li>Load Management And Maximum Demand Control</li>
+                                <li>Power Factor Improvement</li>
+                                <li>Selection & Location Of Capacitors</li>
+                                <li>Thermal Basics-fuels</li>
+                                <li>Thermal Energy Contents Of Fuel</li>
+                                <li>Temperature & Pressure</li>
+                                <li>Heat Capacity</li>
+                                <li>Sensible And Latent Heat</li>
+                                <li>Evaporation</li>
+                                <li>Condensation</li>
+                                <li>Steam</li>
+                                <li>Moist Air And Humidity & Heat Transfer</li>
+                                <li>Units And Conversion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Energy Management & Audit</strong>
+                            <ul class="unit-topics">
+                                <li>Definition</li>
+                                <li>Energy Audit</li>
+                                <li>Need</li>
+                                <li>Types Of Energy Audit</li>
+                                <li>Energy Management (audit) Approach-understanding Energy Costs</li>
+                                <li>Bench Marking</li>
+                                <li>Energy Performance</li>
+                                <li>Matching Energy Use To Requirement</li>
+                                <li>Maximizing System Efficiencies</li>
+                                <li>Optimizing The Input Energy Requirements</li>
+                                <li>Fuel & Energy Substitution</li>
+                                <li>Energy Audit Instruments</li>
+                                <li>Material And Energy Balance Facility As An Energy System</li>
+                                <li>Methods For Preparing Process Flow</li>
+                                <li>Material And Energy Balance Diagrams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Energy Efficiency in Electrical Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Electrical System Electricity Billing</li>
+                                <li>Electrical Load Management And Maximum Demand Control</li>
+                                <li>Power Factor Improvement And Its Benefit</li>
+                                <li>Selection And Location Of Capacitors</li>
+                                <li>Performance Assessment Of Pf Capacitors</li>
+                                <li>Distribution And Transformer Losses</li>
+                                <li>Electric Motors Types</li>
+                                <li>Losses In Induction Motors</li>
+                                <li>Motor Efficiency</li>
+                                <li>Factors Affecting Motor Performance</li>
+                                <li>Rewinding And Motor Replacement Issues</li>
+                                <li>Energy Saving Opportunities With Energy Efficient Motors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Energy Efficiency in Industrial Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Compressed Air System Types Of Air Compressors</li>
+                                <li>Compressor Efficiency</li>
+                                <li>Efficient Compressor Operation</li>
+                                <li>Compressed Air System Components</li>
+                                <li>Capacity Assessment</li>
+                                <li>Leakage Test</li>
+                                <li>Factors Affecting The Performance And Savings Opportunities In Hvac</li>
+                                <li>Fans And Blowers Types</li>
+                                <li>Performance Evaluation</li>
+                                <li>Efficient System Operation</li>
+                                <li>Flow Control Strategies And Energy Conservation Opportunities</li>
+                                <li>Pumps And Pumping System Types</li>
+                                <li>Performance Evaluation</li>
+                                <li>Efficient System Operation</li>
+                                <li>Flow Control Strategies And Energy Conservation Opportunities</li>
+                                <li>Cooling Tower Types And Performance Evaluation</li>
+                                <li>Efficient System Operation</li>
+                                <li>Flow Control Strategies And Energy Saving Opportunities</li>
+                                <li>Assessment Of Cooling Towers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Energy Efficient Technologies in Electrical
+                                Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Maximum Demand Controllers</li>
+                                <li>Automatic Power Factor Controllers</li>
+                                <li>Energy Efficient Motors</li>
+                                <li>Soft Starters With Energy Saver</li>
+                                <li>Variable Speed Drives</li>
+                                <li>Energy Efficient Transformers</li>
+                                <li>Electronic Ballast</li>
+                                <li>Occupancy Sensors</li>
+                                <li>Energy Efficient Lighting Controls</li>
+                                <li>Energy Saving Potential Of Each Technology</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Guide books for National Certification Examination for Energy Manager / Energy Auditors
+                            Book-1, General Aspects (available online)</li>
+                        <li>Guide books for National Certification Examination for Energy Manager / Energy Auditors
+                            Book-3, Electrical Utilities (available online)</li>
+                        <li>S. C. Tripathy, “Utilization of Electrical Energy and Conservation”, McGraw Hill,1991.</li>
+                        <li>Success stories of Energy Conservation by BEE, New Delhi (www.bee-india.org)</li>
+                    </ol>
+                </section>
+                <section id="subject-100611" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Computer Architecture [100611]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Computer Organization</strong>
+                            <ul class="unit-topics">
+                                <li>Architecture And Function Of General Computer System</li>
+                                <li>Cisc Vs Risc</li>
+                                <li>Data Types</li>
+                                <li>Integer Arithmetic Multiplication</li>
+                                <li>Division</li>
+                                <li>Fixed And Floating Point Representation And Arithmetic</li>
+                                <li>Control Unit Operation</li>
+                                <li>Hardware Implementation Of Cpu With Micro Instruction</li>
+                                <li>Microprogramming</li>
+                                <li>System Buses</li>
+                                <li>Multi-bus Organization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Memory Organization</strong>
+                            <ul class="unit-topics">
+                                <li>System Memory</li>
+                                <li>Cache Memory Types And Organization</li>
+                                <li>Virtual Memory And Its Implementation</li>
+                                <li>Memory Management Unit</li>
+                                <li>Magnetic Hard Disks</li>
+                                <li>Optical Disks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Input – Output Organization</strong>
+                            <ul class="unit-topics">
+                                <li>Accessing I/o Devices</li>
+                                <li>Direct Memory Access And Dma Controller</li>
+                                <li>Interrupts And Interrupt Controllers</li>
+                                <li>Arbitration</li>
+                                <li>Multilevel Bus Architecture</li>
+                                <li>Interface Circuits Parallel And Serial Port</li>
+                                <li>Features Of Pci And Pci Express Bus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: 16 and 32 Microprocessors</strong>
+                            <ul class="unit-topics">
+                                <li>80x86 Architecture</li>
+                                <li>Ia 32 And Ia 64</li>
+                                <li>Programming Model</li>
+                                <li>Concurrent Operation Of Eu And Biu</li>
+                                <li>Real Mode Addressing</li>
+                                <li>Segmentation</li>
+                                <li>Addressing Modes Of 80x86</li>
+                                <li>Instruction Set Of 80x86</li>
+                                <li>I/o Addressing In 80x86</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Pipelining</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Pipelining</li>
+                                <li>Instruction Level Pipelining (Ilp)</li>
+                                <li>Compiler Techniques For Ilp</li>
+                                <li>Data Hazards</li>
+                                <li>Dynamic Scheduling</li>
+                                <li>Dependability</li>
+                                <li>Branch Cost</li>
+                                <li>Branch Prediction</li>
+                                <li>Influence On Instruction Set</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Different Architectures</strong>
+                            <ul class="unit-topics">
+                                <li>Vliw Architecture</li>
+                                <li>Dsp Architecture</li>
+                                <li>Soc Architecture</li>
+                                <li>Mips Processor And Programming</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>V. Carl, G. Zvonko and S. G. Zaky, “Computer organization”, McGraw Hill, 1978.</li>
+                        <li>B. Brey and C. R. Sarma, “The Intel microprocessors”, Pearson Education, 2000.</li>
+                        <li>J. L. Hennessy and D. A. Patterson, “Computer Architecture A Quantitative Approach”, Morgan
+                            Kauffman, 2011.</li>
+                        <li>W. Stallings, “Computer organization”, PHI, 1987.</li>
+                        <li>P. Barry and P. Crowley, “Modern Embedded Computing”, Morgan Kaufmann, 2012.</li>
+                        <li>N. Mathivanan, “Microprocessors, PC Hardware and Interfacing”, Prentice Hall, 2004.</li>
+                        <li>Y. C. Lieu and G. A. Gibson, “Microcomputer Systems: The 8086/8088 Family”, Prentice Hall
+                            India, 1986.</li>
+                        <li>J. Uffenbeck, “The 8086/8088 Design, Programming, Interfacing”, Prentice Hall, 1987.</li>
+                        <li>B. Govindarajalu, “IBM PC and Clones”, Tata McGraw Hill, 1991.</li>
+                        <li>P. Able, “8086 Assembly Language Programming”, Prentice Hall India.</li>
+                    </ol>
+                </section>
+                <section id="subject-100614" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Digital Image & Video Processing [100614]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Digital Image Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Elements Of Visual Perception</li>
+                                <li>Image Sensing And Acquisition</li>
+                                <li>Image Sampling And Quantization</li>
+                                <li>Basic Relationships Between Pixels-neighbourhood</li>
+                                <li>Adjacency</li>
+                                <li>Connectivity</li>
+                                <li>Distance Measures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Image Enhancements and Filtering</strong>
+                            <ul class="unit-topics">
+                                <li>Gray Level Transformations</li>
+                                <li>Histogram Equalization And Specifications</li>
+                                <li>Pixel-domain Smoothing Filters Linear And Order-statistics</li>
+                                <li>Pixel-domain Sharpening Filters First And Second Derivative</li>
+                                <li>Two-dimensional Dft And Its Inverse</li>
+                                <li>Frequency Domain Filters Low-pass And High-pass</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Color Image Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Color Models Rgb</li>
+                                <li>Yuv</li>
+                                <li>Hsi</li>
+                                <li>Color Transformations Formulation</li>
+                                <li>Color Complements</li>
+                                <li>Color Slicing</li>
+                                <li>Tone And Color Corrections</li>
+                                <li>Color Image Smoothing And Sharpening</li>
+                                <li>Color Segmentation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Image Segmentation</strong>
+                            <ul class="unit-topics">
+                                <li>Detection Of Discontinuities</li>
+                                <li>Edge Linking And Boundary Detection</li>
+                                <li>Thresholding Global And Adaptive</li>
+                                <li>Region-based Segmentation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Wavelets and Multi-resolution Image Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Uncertainty Principles Of Fourier Transform</li>
+                                <li>Time Frequency Localization</li>
+                                <li>Continuous Wavelet Transforms</li>
+                                <li>Wavelet Bases And Multi-resolution Analysis</li>
+                                <li>Wavelets And Subb And Filter Banks</li>
+                                <li>Wavelet Packets</li>
+                                <li>Image Compression Redundancy Inter Pixel And Psycho-visual</li>
+                                <li>Loss Less Compression Predictive</li>
+                                <li>Entropy</li>
+                                <li>Lossy Compression Predictive And Transform Coding</li>
+                                <li>Discrete Cosine Transform</li>
+                                <li>Still Image Compression Standards Jpeg And Jpeg-2000</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Fundamentals of Video Coding</strong>
+                            <ul class="unit-topics">
+                                <li>Inter-frame Redundancy</li>
+                                <li>Motion Estimation Techniques Full-search</li>
+                                <li>Fast Search Strategies</li>
+                                <li>Forward And Backward Motion Prediction</li>
+                                <li>Frame Classification I</li>
+                                <li>P And B</li>
+                                <li>Video Sequence Hierarchy Group Of Pictures</li>
+                                <li>Frames</li>
+                                <li>Slices</li>
+                                <li>Macro-blocks And Blocks</li>
+                                <li>Elements Of A Video Encoder And Decoder</li>
+                                <li>Video Coding Standards Mpeg And H.26x</li>
+                                <li>Video Segmentation Temporal Segmentation Shot Boundary Detection</li>
+                                <li>Hard-cuts And Soft-cuts</li>
+                                <li>Spatial Segmentation Motion-based</li>
+                                <li>Video Object Detection And Tracking</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>R.C. Gonzalez and R.E. Woods, Digital Image Processing, Second Edition, Pearson Education
+                            3rd edition 2008</li>
+                        <li>Anil Kumar Jain, Fundamentals of Digital Image Processing, Prentice Hall of India.2nd
+                            edition 2004</li>
+                        <li>Murat Tekalp, Digital Video Processing” Prentice Hall, 2nd edition 2015.</li>
+                    </ol>
+                </section>
+                <section id="subject-110603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-II: Computational Electromagnetics [110603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Conventional Design Methodology</li>
+                                <li>Computer Aided Design Aspects Advantages</li>
+                                <li>Review Of Basic Fundamentals Of Electrostatics And Electromagnetics</li>
+                                <li>Development Of Helmhotz Equation</li>
+                                <li>Energy Transformer Vectors Poynting And Slepian</li>
+                                <li>Magnetic Diffusion-transients And Time-harmonic</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Analytical Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Analytical Methods Of Solving Field Equations</li>
+                                <li>Method Of Separation Of Variables</li>
+                                <li>Roths Method</li>
+                                <li>Integral Methods Greens Function</li>
+                                <li>Method Of Images</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Finite Difference Method (FDM)</strong>
+                            <ul class="unit-topics">
+                                <li>Finite Difference Schemes</li>
+                                <li>Treatment Of Irregular Boundaries</li>
+                                <li>Accuracy And Stability Of Fd Solutions</li>
+                                <li>Finite-difference Time-domain (Fdtd) Method Uniqueness And Convergence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Finite Element Method (FEM)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Fem</li>
+                                <li>Variational And Galerkin Methods</li>
+                                <li>Shape Functions</li>
+                                <li>Lower And Higher Order Elements</li>
+                                <li>Vector Elements</li>
+                                <li>2d And 3d Finite Elements</li>
+                                <li>Efficient Finite Element Computations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Special Topics</strong>
+                            <ul class="unit-topics">
+                                <li>Background Of Experimental Methods Electrolytic Tank</li>
+                                <li>R-c Network Solution</li>
+                                <li>Field Plotting (graphical Method)</li>
+                                <li>Hybrid Methods</li>
+                                <li>Coupled Circuit Field Computations</li>
+                                <li>Electromagnetic Thermal And Electromagnetic Structural Coupled Computations</li>
+                                <li>Solution Of Equations</li>
+                                <li>Method Of Moments</li>
+                                <li>Poissons Fields</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Low Frequency Electrical Devices</li>
+                                <li>Static/time-harmonic/transient Problems In Transformers</li>
+                                <li>Rotating Machines</li>
+                                <li>Actuators</li>
+                                <li>Cad Packages</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>P. P. Silvester and R. L. Ferrari “Finite Element for Electrical Engineers”, Cambridge
+                            University press, 1996.</li>
+                        <li>M. N. O. Sadiku, “Numerical Techniques in Electromagnetics”, CRC press, 2001.</li>
+                    </ol>
+                </section>
+                <section id="subject-110609" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-II: Electrical Machine Design [110609]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Major Consideration Sin Electrical Machine Design</li>
+                                <li>Electrical Engineering Materials</li>
+                                <li>Space Factor</li>
+                                <li>Choice Of Specific Electrical And Magnetic Loadings</li>
+                                <li>Thermal Considerations</li>
+                                <li>Heat Flow</li>
+                                <li>Temperature Rise</li>
+                                <li>Rating Of Machines</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Transformers</strong>
+                            <ul class="unit-topics">
+                                <li>Sizing Of A Transformer</li>
+                                <li>Main Dimensions</li>
+                                <li>Kva Output For Single- And Three-phase Transformers</li>
+                                <li>Window Space Factor</li>
+                                <li>Overall Dimensions</li>
+                                <li>Operating Characteristics</li>
+                                <li>Regulation</li>
+                                <li>No Load Current</li>
+                                <li>Temperature Rise In Transformers</li>
+                                <li>Design Of Cooling Tank</li>
+                                <li>Methods For Cooling Of Transformers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Induction Motors</strong>
+                            <ul class="unit-topics">
+                                <li>Sizing Of An Induction Motor</li>
+                                <li>Main Dimensions</li>
+                                <li>Length Of Air Gap</li>
+                                <li>Rules For Selecting Rotor Slots Of Squirrel Cage Machines</li>
+                                <li>Design Of Rotor Bars & Slots</li>
+                                <li>Design Of End Rings</li>
+                                <li>Design Of Wound Rotor</li>
+                                <li>Magnetic Leakage Calculations</li>
+                                <li>Leakage Reactance Of Polyphase Machines</li>
+                                <li>Magnetizing Current</li>
+                                <li>Short Circuit Current</li>
+                                <li>Circle Diagram</li>
+                                <li>Operating Characteristics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Synchronous Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Sizing Of Asynchronous Machine</li>
+                                <li>Main Dimensions</li>
+                                <li>Design Of Salient Pole Machines</li>
+                                <li>Short Circuit Ratio</li>
+                                <li>Shape Of Pole Face</li>
+                                <li>Armature Design</li>
+                                <li>Armature Parameters</li>
+                                <li>Estimation Of Air Gap Length</li>
+                                <li>Design Of Rotor</li>
+                                <li>Design Of Damper Winding</li>
+                                <li>Determination Of Full Load Field Mmf</li>
+                                <li>Design Of Field Winding</li>
+                                <li>Design Of Turbo Alternators</li>
+                                <li>Rotor Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Computer Aided Design (CAD) I</strong>
+                            <ul class="unit-topics">
+                                <li>Limitations (assumptions) Of Traditional Designs</li>
+                                <li>Need For Cad Analysis</li>
+                                <li>Synthesis And Hybrid Methods</li>
+                                <li>Design Optimization Methods</li>
+                                <li>Variables</li>
+                                <li>Constraints And Objective Function</li>
+                                <li>Problem Formulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Computer Aided Design (CAD) II</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Fem Based Machine Design</li>
+                                <li>Introduction To Complex Structures Of Modern Machines Pmsms</li>
+                                <li>Bldcs</li>
+                                <li>Srm And Claw-pole Machines</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A. K. Sawhney, “A Course in Electrical Machine Design”, Dhanpat Rai and Sons, 1970.</li>
+                        <li>M.G. Say, “Theory & Performance & Design of A.C. Machines”, ELBS London.</li>
+                        <li>S. K. Sen, “Principles of Electrical Machine Design with computer programmes”, Oxford and
+                            IBH Publishing, 2006.</li>
+                        <li>K. L. Narang, “A Text Book of Electrical Engineering Drawings”, Satya Prakashan, 1969.</li>
+                        <li>A. Shansugasundaram, G. Gangadharan and R. Palani, “Electrical Machine Design Data Book”,
+                            New Age International, 1979.</li>
+                        <li>K. M. V. Murthy, “Computer Aided Design of Electrical Machines”, B.S. Publications, 2008.
+                        </li>
+                        <li>Electrical machines and equipment design exercise examples using Ansoft’s Maxwell 2D machine
+                            design package.</li>
+                    </ol>
+                </section>
+                <section id="subject-100612" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-II: Digital Control Systems [100612]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Discrete Representation of Continuous Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basics Of Digital Control Systems</li>
+                                <li>Discrete Representation Of Continuous Systems</li>
+                                <li>Sample And Hold Circuit</li>
+                                <li>Mathematical Modelling Of Sample And Hold Circuit</li>
+                                <li>Effects Of Sampling And Quantization</li>
+                                <li>Choice Of Sampling Frequency</li>
+                                <li>Zoh Equivalent</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Discrete System Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Z-Transform And Inverse Z Transform For Analyzing Discrete Time Systems</li>
+                                <li>Pulse Transfer Function</li>
+                                <li>Pulse Transfer Function Of Closed Loop Systems</li>
+                                <li>Mapping From S-plane To Z Plane</li>
+                                <li>Solution Of Discrete Time Systems</li>
+                                <li>Time Response Of Discrete Time System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stability of Discrete Time System</strong>
+                            <ul class="unit-topics">
+                                <li>Stability Analysis By Jury Test</li>
+                                <li>Stability Analysis Using Bilinear Transformation</li>
+                                <li>Design Of Digital Control System With Dead Beat Response</li>
+                                <li>Practical Issues With Dead Beat Response Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: State Space Approach for Discrete Time Systems</strong>
+                            <ul class="unit-topics">
+                                <li>State Space Models Of Discrete Systems</li>
+                                <li>State Space Analysis</li>
+                                <li>Lyapunov Stability</li>
+                                <li>Controllability</li>
+                                <li>Reach-ability</li>
+                                <li>Reconstructibility And Observability Analysis</li>
+                                <li>Effect Of Pole Zero Cancellation On The Controllability & Observability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Design of Digital Control System</strong>
+                            <ul class="unit-topics">
+                                <li>Design Of Discrete Pid Controller</li>
+                                <li>Design Of Discrete State Feedback Controller</li>
+                                <li>Design Of Set Point Tracker</li>
+                                <li>Design Of Discrete Observer For Lti System</li>
+                                <li>Design Of Discrete Compensator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Discrete Output Feedback Control</strong>
+                            <ul class="unit-topics">
+                                <li>Design Of Discrete Output Feedback Control</li>
+                                <li>Fast Output Sampling (Fos) And Periodic Output Feedback Controller Design For
+                                    Discrete Time Systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>K. Ogata, “Digital Control Engineering”, Prentice Hall, Englewood Cliffs, 1995.</li>
+                        <li>M. Gopal, “Digital Control Engineering”, Wiley Eastern, 1988.</li>
+                        <li>G. F. Franklin, J. D. Powell and M. L. Workman, “Digital Control of Dynamic Systems”,
+                            Addison-Wesley, 1998.</li>
+                        <li>B.C. Kuo, “Digital Control System”, Holt, Rinehart and Winston, 1980.</li>
+                    </ol>
+                </section>
+                <section id="subject-100613" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-II: Electrical Drives [100613]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: DC Motor Characteristics</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Emf And Torque Equations Of Dc Machine</li>
+                                <li>Review Of Torque-speed Characteristics Of Separately Excited Dc Motor</li>
+                                <li>Change Into Rque-speed Curve With Armature Voltage</li>
+                                <li>Example Load Torque Speed Characteristics</li>
+                                <li>Operating Point</li>
+                                <li>Armature Voltage Control For Varying Motor Speed</li>
+                                <li>Flux Weakening For High Speed Operation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Chopper Fed DC Drive</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Dc Chopper And Duty Ratio Control</li>
+                                <li>Chopper Fed Dc Motor For Speed Control</li>
+                                <li>Steady State Operation Of A Chopper Fed Drive</li>
+                                <li>Armature Current Waveform And Ripple</li>
+                                <li>Calculation Of Losses In Dc Motor And Chopper</li>
+                                <li>Efficiency Of Dc Drive</li>
+                                <li>Smooth Starting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Multi-quadrant DC Drive</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Motoring And Generating Modes Operation Of A Separately Excited Dc Machine
+                                </li>
+                                <li>Four Quadrant Operation Of Dc Machine</li>
+                                <li>Single-quadrant</li>
+                                <li>Two-quadrant And Four-quadrant Choppers</li>
+                                <li>Steady-state Operation Of Multi-quadrant Chopper Fed Dc Drive</li>
+                                <li>Regenerative Braking</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Closed-loop Control of DC Drive</strong>
+                            <ul class="unit-topics">
+                                <li>Control Structure Of Dc Drive</li>
+                                <li>Inner Current Loop And Outer Speed Loop</li>
+                                <li>Dynamic Model Of Dc Motor Dynamic Equations And Transfer Functions</li>
+                                <li>Modeling Of Chopper As Gain With Switching Delay</li>
+                                <li>Plant Transfer Function</li>
+                                <li>For Controller Design</li>
+                                <li>Current Controller Specification And Design</li>
+                                <li>Speed Controller Specification And Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Induction Motor Characteristics</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Induction Motor Equivalent Circuit And Torque-speed Characteristic</li>
+                                <li>Variation Of Torque Speed Curve With (i) Applied Voltage</li>
+                                <li>(ii) Applied Frequency And (iii) Applied Voltage And Frequency</li>
+                                <li>Typical Torque-speed Curves Of Fan And Pump Loads</li>
+                                <li>Operating Point</li>
+                                <li>Constant Flux Operation</li>
+                                <li>Flux Weakening Operation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Scalar Control and Slip Ring Induction Motor
+                                Control</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Three-phase Voltage Source Inverter</li>
+                                <li>Generation Of Three-phase Pwm Signals</li>
+                                <li>Sinusoidal Modulation</li>
+                                <li>Space Vector Theory</li>
+                                <li>Conventional Space Vector Modulation</li>
+                                <li>Constant V/f Control Of Induction Motor</li>
+                                <li>Steady-state Performance Analysis Based On Equivalent Circuit</li>
+                                <li>Speed Drop With Loading</li>
+                                <li>Slip Regulation</li>
+                                <li>Impact Of Rotor Resistance Of The Induction Motor Torque-speed Curve</li>
+                                <li>Operation Of Slip-ring Induction Motor With External Rotor Resistance</li>
+                                <li>Starting Torque</li>
+                                <li>Power Electronic Based Rotor Side Control Of Slip Ring Motor</li>
+                                <li>Slip Power Recovery</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>G. K. Dubey, “Power Semiconductor Controlled Drives”, Prentice Hall,1989.</li>
+                        <li>R. Krishnan, “Electric Motor Drives: Modeling, Analysis and Control”, Prentice Hall, 2001.
+                        </li>
+                        <li>G. K. Dubey, “Fundamentals of Electrical Drives”, CRC Press, 2002.</li>
+                        <li>W. Leonhard, “Control of Electric Drives”, Springer Science & Business Media, 2001.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

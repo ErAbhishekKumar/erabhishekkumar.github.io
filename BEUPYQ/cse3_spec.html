@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>3rd Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">3rd Semester Syllabus</h1>
+                <p class="page-subtitle">CSE (All Specializations)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Digital Electronics [105301]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Data Structure and Algorithms [105302]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Object Oriented Programming using JAVA [105303]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Discrete Mathematics and Graph Theory [105304]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Operating System [105305]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Universal Human Values [105306]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Indian Knowledge System [105307]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital Electronics Lab [105301P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Data Structure and Algorithms Lab [105302P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Object Oriented Programming using JAVA Lab [105303P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Operating System Lab [105305P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Internship-I [105308]</td>
+                                <td colspan="3">2 Weeks</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>25</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-105301"
+                        data-type="theory">Digital Electronics</button><button class="tab-btn"
+                        data-target="subject-105302" data-type="theory">Data Structure and Algorithms</button><button
+                        class="tab-btn" data-target="subject-105303" data-type="theory">OOP using JAVA</button><button
+                        class="tab-btn" data-target="subject-105304" data-type="theory">Discrete
+                        Mathematics</button><button class="tab-btn" data-target="subject-105305"
+                        data-type="theory">Operating System</button><button class="tab-btn" data-target="subject-105306"
+                        data-type="theory">Universal Human Values</button><button class="tab-btn"
+                        data-target="subject-105307" data-type="theory">Indian Knowledge System</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-105301P" data-type="lab">Digital
+                        Electronics Lab</button><button class="tab-btn" data-target="subject-105302P"
+                        data-type="lab">Data Structure and Algorithms Lab</button><button class="tab-btn" data-target="subject-105303P"
+                        data-type="lab">OOP using JAVA Lab</button><button class="tab-btn" data-target="subject-105305P"
+                        data-type="lab">Operating System Lab</button><button class="tab-btn"
+                        data-target="subject-105308" data-type="lab">Internship-I</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-105301" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital Electronics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Fundamentals of Digital Systems and logic
+                                families</strong>
+                            <ul class="unit-topics">
+                                <li>Digital signals, digital circuits</li>
+                                <li>AND, OR, NOT, NAND, NOR and Exclusive-OR operations</li>
+                                <li>Boolean algebra, examples of IC gates</li>
+                                <li>Number systems: binary, signed binary, octal hexadecimal number</li>
+                                <li>Binary arithmetic, one's and two's complements arithmetic</li>
+                                <li>Codes, error detecting and correcting codes</li>
+                                <li>Characteristics of digital ICs</li>
+                                <li>Digital logic families: TTL, Schottky TTL and CMOS logic</li>
+                                <li>Interfacing CMOS and TTL, Tri-state logic</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Combinational Digital Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Standard representation for logic functions K-map representation</li>
+                                <li>Simplification of logic functions using K-map</li>
+                                <li>Minimization of logical functions</li>
+                                <li>Don't care conditions</li>
+                                <li>Multiplexer, DeMultiplexer/Decoders</li>
+                                <li>Adders, Subtractors, BCD arithmetic</li>
+                                <li>Carry look ahead adder, serial adder, ALU</li>
+                                <li>Elementary ALU design, popular MSI chips</li>
+                                <li>Digital comparator, parity checker/generator</li>
+                                <li>Code converters, priority encoders</li>
+                                <li>Decoders/drivers for display devices</li>
+                                <li>Q-M method of function realization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sequential circuits and systems</strong>
+                            <ul class="unit-topics">
+                                <li>A 1-bit memory, the circuit properties of Bistable latch</li>
+                                <li>The clocked SR flip flop</li>
+                                <li>J-K-T and D types flip flops</li>
+                                <li>Applications of flip flops</li>
+                                <li>Shift registers, applications of shift registers</li>
+                                <li>Serial to parallel converter, parallel to serial converter</li>
+                                <li>Ring counter, sequence generator</li>
+                                <li>Ripple (Asynchronous) counters, synchronous counters</li>
+                                <li>Counters design using flip flops</li>
+                                <li>Special counter IC's, asynchronous sequential counters</li>
+                                <li>Applications of counters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: A/D and D/A Converters</strong>
+                            <ul class="unit-topics">
+                                <li>Digital to analog converters: weighted resistor/converter</li>
+                                <li>R-2R Ladder D/A converter</li>
+                                <li>Specifications for D/A converters</li>
+                                <li>Examples of D/A converter ICs</li>
+                                <li>Sample and hold circuit</li>
+                                <li>Analog to digital converters: quantization and encoding</li>
+                                <li>Parallel comparator A/D converter</li>
+                                <li>Successive approximation A/D converter</li>
+                                <li>Counting A/D converter, dual slope A/D converter</li>
+                                <li>A/D converter using Voltage to frequency and voltage to time conversion</li>
+                                <li>Specifications of A/D converters</li>
+                                <li>Example of A/D converter ICs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Semiconductor memories</strong>
+                            <ul class="unit-topics">
+                                <li>Memory organization and operation</li>
+                                <li>Expanding memory size</li>
+                                <li>Classification and characteristics of memories</li>
+                                <li>Sequential memory</li>
+                                <li>Read only memory (ROM)</li>
+                                <li>Read and write memory (RAM)</li>
+                                <li>Content addressable memory (CAM)</li>
+                                <li>Charge de coupled device memory (CCD)</li>
+                                <li>Commonly used memory chips</li>
+                                <li>ROM as a PLD</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Programmable logic devices</strong>
+                            <ul class="unit-topics">
+                                <li>Programmable logic array</li>
+                                <li>Programmable array logic</li>
+                                <li>Complex Programmable logic devices (CPLDS)</li>
+                                <li>Field Programmable Gate Array (FPGA)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>R. P. Jain, "Modern Digital Electronics", McGraw Hill Education, 2009.</li>
+                        <li>M. M. Mano, "Digital logic and Computer design", Pearson Education India, 2016.</li>
+                        <li>A. Kumar, "Fundamentals of Digital Circuits", Prentice Hall India, 2016.</li>
+                    </ol>
+                </section>
+                <section id="subject-105302" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Data Structure and Algorithms</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Terminologies: Elementary Data Organizations</li>
+                                <li>Data Structure Operations: insertion, deletion, traversal etc.</li>
+                                <li>Analysis of an Algorithm</li>
+                                <li>Asymptotic Notations</li>
+                                <li>Time-Space trade off</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Stacks and Queues</strong>
+                            <ul class="unit-topics">
+                                <li>ADT Stack and its operations: Algorithms and their complexity analysis</li>
+                                <li>Applications of Stacks: Expression Conversion and evaluation</li>
+                                <li>Corresponding algorithms and complexity analysis</li>
+                                <li>ADT queue, Types of Queue: Simple Queue, Circular Queue, Priority Queue</li>
+                                <li>Operations on each Type of Queues: Algorithms and their analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Linked Lists</strong>
+                            <ul class="unit-topics">
+                                <li>Singly linked lists: Representation in memory</li>
+                                <li>Algorithms of several operations: Traversing, Searching, Insertion, Deletion</li>
+                                <li>Linked representation of Stack and Queue</li>
+                                <li>Header nodes, doubly linked list: operations and algorithmic analysis</li>
+                                <li>Circular Linked Lists: all operations and complexity analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Searching, Sorting and Hashing</strong>
+                            <ul class="unit-topics">
+                                <li>Linear Search and Binary Search Techniques and complexity analysis</li>
+                                <li>Objective and properties of different sorting algorithms</li>
+                                <li>Selection Sort, Bubble Sort, Insertion Sort, Quick Sort, Merge Sort, Heap Sort</li>
+                                <li>Performance and Comparison among all methods</li>
+                                <li>Hashing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Trees</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Tree Terminologies</li>
+                                <li>Different types of Trees: Binary Tree, Threaded Binary Tree, Binary Search Tree, AVL
+                                    Tree</li>
+                                <li>Tree operations and algorithms with complexity analysis</li>
+                                <li>Applications of Binary Trees</li>
+                                <li>B Tree, B+ Tree: definitions, algorithms and analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Graph</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Terminologies and Representations</li>
+                                <li>Graph search and traversal algorithms</li>
+                                <li>Complexity analysis</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Algorithms, Data Structures, and Problem Solving with C++, Illustrated Edition by Mark Allen
+                            Weiss, Addison-Wesley Publishing Company.</li>
+                        <li>How to Solve it by Computer, 2nd Impression by R.G. Dromey, Pearson Education.</li>
+                        <li>Fundamentals of Data Structures, Illustrated Edition by Ellis Horowitz, Sartaj Sahni,
+                            Computer Science Press.</li>
+                    </ol>
+                </section>
+                <section id="subject-105303" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Object Oriented Programming using JAVA</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: OOP Concepts and Java Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Java: History of java, Java buzzwords</li>
+                                <li>Basics of Java programming</li>
+                                <li>Difference between procedural and object-oriented programming paradigm</li>
+                                <li>Need for OOPs paradigm, OOPs features, advantages of oops</li>
+                                <li>JDK, JRE and JVM</li>
+                                <li>Data types, variables, operators</li>
+                                <li>Control structures including selection, looping</li>
+                                <li>Java methods</li>
+                                <li>Compilation and execution of simple program</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Objects, Classes, and Constructors in Java</strong>
+                            <ul class="unit-topics">
+                                <li>Objects and Classes: Basics of objects and classes in java</li>
+                                <li>Declaring objects, new keyword</li>
+                                <li>Defining and calling methods in class</li>
+                                <li>Array of Objects</li>
+                                <li>Constructors, Different types of Constructors</li>
+                                <li>Overloading Methods and Constructors</li>
+                                <li>Method Binding, Overriding and Exceptions</li>
+                                <li>Passing Object as parameters, returning object</li>
+                                <li>Static members</li>
+                                <li>Concept of Access Modifiers (Public, Private, Protected, Default)</li>
+                                <li>this Keyword, garbage Collection, finalize() method</li>
+                                <li>Nested and Inner Classes</li>
+                                <li>Exploring string class</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Inheritance, Interfaces and Packages</strong>
+                            <ul class="unit-topics">
+                                <li>Inheritance: Inheritance hierarchies, Benefits of Inheritance</li>
+                                <li>Super and subclasses, member access rules, super keyword</li>
+                                <li>Preventing inheritance: final classes and methods</li>
+                                <li>The object class and its methods</li>
+                                <li>Polymorphism: Dynamic binding, method overriding</li>
+                                <li>Abstract classes and methods</li>
+                                <li>Interface: Interfaces vs Abstract classes</li>
+                                <li>Defining an interface, implement interfaces</li>
+                                <li>Accessing implementations through interface references, extending interface</li>
+                                <li>Packages: Defining, creating and accessing a package</li>
+                                <li>Understanding CLASSPATH, importing packages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Exception Handling</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to error and exception</li>
+                                <li>Error vs Exception</li>
+                                <li>Concepts of Exception Handling</li>
+                                <li>Benefits of exception handling</li>
+                                <li>Exception types, exception hierarchy</li>
+                                <li>Checked and unchecked exceptions</li>
+                                <li>Usage of try, catch, throw, throws and finally</li>
+                                <li>Multiple catch clauses, nested try statements</li>
+                                <li>Re throwing exceptions</li>
+                                <li>Creating own exception sub classes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Introduction to Multithreading</strong>
+                            <ul class="unit-topics">
+                                <li>Differences between multiple processes and multiple threads</li>
+                                <li>Thread states</li>
+                                <li>Creating threads, interrupting threads</li>
+                                <li>Thread priorities</li>
+                                <li>Synchronizing threads, inter thread communication</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Files, The Collections Framework and Connecting To
+                                Database</strong>
+                            <ul class="unit-topics">
+                                <li>Files: Streams, byte streams, character stream</li>
+                                <li>Text input/output, binary input/output</li>
+                                <li>Random access file operations</li>
+                                <li>File management using file class</li>
+                                <li>The Collections Framework (java.util): Collections overview</li>
+                                <li>Hierarchy of Collection Framework, Collection Interfaces</li>
+                                <li>The Collection classes- Array List, Linked List, Hash Set, Tree Set, Priority Queue,
+                                    Array Deque</li>
+                                <li>Connecting to Database: Connecting to a database</li>
+                                <li>Querying a database and processing the results</li>
+                                <li>Updating data with JDBC</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Schildt, Herbert. "Java: The Complete Reference, Eleventh Edition", New York: McGraw-Hill
+                            Education, 2018.</li>
+                        <li>Schildt, Herbert. "Java: A Beginner's Guide, Eighth Edition", US: McGraw-Hill Osborne Media,
+                            2018.</li>
+                        <li>Balagurusamy, E. "Programming with Java", United States: McGraw-Hill Education, 2019.</li>
+                        <li>Herbert Schildt, Dale Skrien. "Java Fundamentals – A Comprehensive Introduction",
+                            McGraw-Hill, 1st Edition, 2013.</li>
+                        <li>P. J. Deitel, H. M. Deitel, "Java: How to Program", Prentice Hall, 6th Edition, 2005.</li>
+                        <li>P. Radha Krishna, "Object Oriented Programming through Java", Universities Press, CRC Press,
+                            2007.</li>
+                        <li>Bruce Eckel, "Thinking in Java", Prentice Hall, 4th Edition, 2006.</li>
+                        <li>Sachin Malhotra, Saurabh Chaudhary, "Programming in Java", Oxford University Press, 2nd
+                            Edition, 2014.</li>
+                    </ol>
+                </section>
+                <section id="subject-105304" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Discrete Mathematics and Graph Theory</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Sets, Relation and Function</strong>
+                            <ul class="unit-topics">
+                                <li>Operations and Laws of Sets</li>
+                                <li>Cartesian Products</li>
+                                <li>Binary Relation, Partial Ordering Relation, Equivalence Relation</li>
+                                <li>Image of a Set</li>
+                                <li>Sum and Product of Functions</li>
+                                <li>Bijective functions, Inverse and Composite Function</li>
+                                <li>Size of a Set, Finite and infinite Sets</li>
+                                <li>Countable and uncountable Sets</li>
+                                <li>Cantor's diagonal argument and The Power Set theorem</li>
+                                <li>Schroeder-Bernstein theorem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Principles of Mathematical Induction</strong>
+                            <ul class="unit-topics">
+                                <li>The Well-Ordering Principle</li>
+                                <li>Recursive definition</li>
+                                <li>The Division algorithm: Prime Numbers</li>
+                                <li>The Greatest Common Divisor: Euclidean Algorithm</li>
+                                <li>The Fundamental Theorem of Arithmetic</li>
+                                <li>Basic counting techniques: inclusion and exclusion</li>
+                                <li>Pigeon-hole principle</li>
+                                <li>Permutation and combination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Propositional Logic</strong>
+                            <ul class="unit-topics">
+                                <li>Syntax, Semantics</li>
+                                <li>Validity and Satisfiability</li>
+                                <li>Basic Connectives and Truth Tables</li>
+                                <li>Logical Equivalence: The Laws of Logic</li>
+                                <li>Logical Implication</li>
+                                <li>Rules of Inference</li>
+                                <li>The use of Quantifiers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Proof Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Some Terminology</li>
+                                <li>Proof Methods and Strategies</li>
+                                <li>Forward Proof</li>
+                                <li>Proof by Contradiction</li>
+                                <li>Proof by Contraposition</li>
+                                <li>Proof of Necessity and Sufficiency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Algebraic Structures and Morphism</strong>
+                            <ul class="unit-topics">
+                                <li>Algebraic Structures with one Binary Operation</li>
+                                <li>Semi Groups, Monoids, Groups</li>
+                                <li>Congruence Relation and Quotient Structures</li>
+                                <li>Free and Cyclic Monoids and Groups</li>
+                                <li>Permutation Groups, Substructures, Normal Subgroups</li>
+                                <li>Algebraic Structures with two Binary Operation</li>
+                                <li>Rings, Integral Domain and Fields</li>
+                                <li>Boolean Algebra and Boolean Ring</li>
+                                <li>Identities of Boolean Algebra, Duality</li>
+                                <li>Representation of Boolean Function</li>
+                                <li>Disjunctive and Conjunctive Normal Form</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Graphs and Trees</strong>
+                            <ul class="unit-topics">
+                                <li>Graphs and their properties</li>
+                                <li>Degree, Connectivity, Path, Cycle, Sub Graph, Isomorphism</li>
+                                <li>Eulerian and Hamiltonian Walks</li>
+                                <li>Graph Coloring</li>
+                                <li>Coloring maps and Planar Graphs</li>
+                                <li>Coloring Vertices, Coloring Edges, List Coloring</li>
+                                <li>Perfect Graph, definition properties and Example</li>
+                                <li>Rooted trees, trees and sorting</li>
+                                <li>Weighted trees and prefix codes</li>
+                                <li>Bi-connected component and Articulation Points</li>
+                                <li>Shortest distances</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Kenneth H. Rosen, Discrete Mathematics and its Applications, Tata McGraw –Hill</li>
+                        <li>Susanna S. Epp, Discrete Mathematics with Applications, 4th edition, Wadsworth Publishing
+                            Co.Inc.</li>
+                        <li>C L Liu and D P Mohapatra, Elements of Discrete Mathematics A Computer Oriented Approach,
+                            3rd Edition by, Tata McGraw –Hill.</li>
+                        <li>J.P. Tremblay and R. Manohar, Discrete Mathematical Structure and It's Application to
+                            Computer Science, TMG Edition, Tata McGraw-Hill</li>
+                        <li>Norman L. Biggs, Discrete Mathematics, 2nd Edition, Oxford University Press.</li>
+                        <li>Schaum's Outlines Series, Seymour Lipschutz, Marc Lipson, Discrete Mathematics, Tata McGraw
+                            - Hill</li>
+                    </ol>
+                </section>
+                <section id="subject-105305" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Operating System</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of Operating Systems</li>
+                                <li>Generations of Operating systems</li>
+                                <li>Types of Operating Systems</li>
+                                <li>OS Services, System Calls</li>
+                                <li>Structure of an OS: Layered, Monolithic, Microkernel</li>
+                                <li>Concept of Virtual Machine</li>
+                                <li>Case study on UNIX and WINDOWS Operating System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Definition, Process Relationship</li>
+                                <li>Different states of a Process</li>
+                                <li>Process State transitions</li>
+                                <li>Process Control Block (PCB), Context switching</li>
+                                <li>Thread: Definition, Various states</li>
+                                <li>Benefits of threads, Types of threads</li>
+                                <li>Concept of multithreads</li>
+                                <li>Process Scheduling: Foundation and Scheduling objectives</li>
+                                <li>Types of Schedulers</li>
+                                <li>Scheduling criteria: CPU utilization, Throughput, Turnaround Time, Waiting Time,
+                                    Response Time</li>
+                                <li>Scheduling algorithms: Pre-emptive and Non pre-emptive, FCFS, SJF, RR</li>
+                                <li>Multiprocessor scheduling</li>
+                                <li>Real Time scheduling: RM and EDF</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Inter-process Communication</strong>
+                            <ul class="unit-topics">
+                                <li>Critical Section, Race Conditions</li>
+                                <li>Mutual Exclusion</li>
+                                <li>Hardware Solution, Strict Alternation, Peterson's Solution</li>
+                                <li>The Producer - Consumer Problem</li>
+                                <li>Semaphores, Event Counters, Monitors</li>
+                                <li>Message Passing, Shared Memory</li>
+                                <li>Classical IPC Problems: Reader's & Writer Problem, Dining Philosopher Problem etc.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Deadlocks</strong>
+                            <ul class="unit-topics">
+                                <li>Definition</li>
+                                <li>Necessary and sufficient conditions for Deadlock</li>
+                                <li>Deadlock Prevention</li>
+                                <li>Deadlock Avoidance: Banker's algorithm</li>
+                                <li>Deadlock detection and Recovery</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Memory Management</strong>
+                            <ul class="unit-topics">
+                                <li>Basic concept, Logical and Physical address map</li>
+                                <li>Memory allocation: Contiguous Memory allocation</li>
+                                <li>Fixed and variable partition</li>
+                                <li>Internal and External fragmentation and Compaction</li>
+                                <li>Paging and Segmentation: Principle of operation</li>
+                                <li>Page allocation, Hardware support for paging</li>
+                                <li>Protection and sharing</li>
+                                <li>Advantages and Disadvantages of paging and segmentation</li>
+                                <li>Virtual Memory: Basics of Virtual Memory</li>
+                                <li>Hardware and control structures</li>
+                                <li>Locality of reference, Page fault, Working Set, Dirty page/Dirty bit</li>
+                                <li>Demand paging</li>
+                                <li>Page Replacement algorithms: Optimal, First in First Out (FIFO), Second Chance (SC),
+                                    Not recently used (NRU) and Least Recently used (LRU)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: File Management</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of File, Access methods, File types, File operation</li>
+                                <li>Directory structure, File System structure</li>
+                                <li>Allocation methods (contiguous, linked, indexed)</li>
+                                <li>Free-space management (bit vector, linked list, grouping)</li>
+                                <li>Directory implementation (linear list, hash table)</li>
+                                <li>Efficiency and performance</li>
+                                <li>Disk Management: Disk structure</li>
+                                <li>Disk scheduling - FCFS, SSTF, SCAN, C-SCAN</li>
+                                <li>Disk reliability, Disk formatting, Boot-block, Bad blocks</li>
+                                <li>I/O Hardware: I/O devices, Device controllers, Direct memory access</li>
+                                <li>Principles of I/O Software: Goals of Interrupt handlers</li>
+                                <li>Device drivers, Device independent I/O software</li>
+                                <li>Secondary-Storage Structure</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Operating System Concepts Essentials, 9th Edition by Avi Silberschatz, Peter Galvin, Greg
+                            Gagne, Wiley Asia Student Edition.</li>
+                        <li>Operating Systems: Internals and Design Principles, 5th Edition, William Stallings, Prentice
+                            Hall of India.</li>
+                        <li>Operating Systems: Design and Implementation 3rd Edition, 3rd Edition, Andrew S. Tanenbaum
+                        </li>
+                        <li>Modern Operating Systems, 4th Edition, Andrew S. Tanenbaum</li>
+                        <li>Operating System: A Design-oriented Approach, 1st Edition by Charles Crowley, Irwin
+                            Publishing</li>
+                        <li>Operating Systems: A Modern Perspective, 2nd Edition by Gary J. Nutt, Addison-Wesley</li>
+                        <li>Design of the Unix Operating Systems, 8th Edition by Maurice Bach, Prentice-Hall of India
+                        </li>
+                        <li>Understanding the Linux Kernel, 3rd Edition, Daniel P. Bovet, Marco Cesati, O'Reilly and
+                            Associates</li>
+                    </ol>
+                </section>
+                <section id="subject-105306" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Universal Human Values</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Value Education</strong>
+                            <ul class="unit-topics">
+                                <li>Right Understanding, Relationship and Physical Facility (Holistic Development and
+                                    the Role of Education)</li>
+                                <li>Understanding Value Education Sharing about Oneself</li>
+                                <li>Self-exploration as the Process for Value Education</li>
+                                <li>Continuous Happiness and Prosperity – the Basic Human Aspirations</li>
+                                <li>Exploring Human Consciousness</li>
+                                <li>Happiness and Prosperity – Current Scenario</li>
+                                <li>Method to Fulfil the Basic Human Aspirations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Harmony in the Human Being</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Human being as the Co-existence of the Self and the Body</li>
+                                <li>Distinguishing between the Needs of the Self and the Body</li>
+                                <li>The Body as an Instrument of the Self</li>
+                                <li>Understanding Harmony in the Self</li>
+                                <li>Harmony of the Self with the Body</li>
+                                <li>Programme to ensure self-regulation and Health</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Harmony in the Family and Society</strong>
+                            <ul class="unit-topics">
+                                <li>Harmony in the Family – the Basic Unit of Human Interaction</li>
+                                <li>Trust – the Foundational Value in Relationship</li>
+                                <li>Respect – as the Right Evaluation</li>
+                                <li>Other Feelings</li>
+                                <li>Justice in Human-to-Human Relationship</li>
+                                <li>Understanding Harmony in the Society</li>
+                                <li>Vision for the Universal Human Order</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Harmony in the Nature/Existence</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Harmony in the Nature</li>
+                                <li>Interconnectedness, self-regulation and Mutual Fulfilment among the Four Orders of
+                                    Nature</li>
+                                <li>Realizing Existence as Co-existence at All Levels</li>
+                                <li>The Holistic Perception of Harmony in Existence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Implications of the Holistic Understanding – a Look at
+                                Professional</strong>
+                            <ul class="unit-topics">
+                                <li>Natural Acceptance of Human Values</li>
+                                <li>Definitiveness of (Ethical) Human Conduct</li>
+                                <li>A Basis for Humanistic Education</li>
+                                <li>Humanistic Constitution and Universal Human Order</li>
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies, Production Systems and Management Models-Typical Case Studies
+                                </li>
+                                <li>Strategies for Transition towards Value-based Life and Profession</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Professional Ethics and Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies, Production Systems and Management Models-Typical Case Studies
+                                </li>
+                                <li>Strategies for Transition towards Value-based Life and Profession</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>A Foundation Course in Human Values and Professional Ethics, R R Gaur, R Asthana, G P
+                            Bagaria, 2nd Revised Edition, Excel Books, New Delhi, 2019. ISBN 978-93-87034-47.</li>
+                        <li>Jeevan Vidya: Ek Parichaya, A Nagaraj, Jeevan Vidya Prakashan, Amarkantak, 1999.</li>
+                        <li>Human Values, A.N. Tripathi, New Age Intl. Publishers, New Delhi, 2004.</li>
+                        <li>The Story of Stuff (Book)</li>
+                        <li>The Story of My Experiments with Truth – by Mohandas Karamchand Gandhi</li>
+                        <li>Small is Beautiful – E. F Schumacher</li>
+                        <li>Slow is Beautiful – Cecile Andrews</li>
+                        <li>Economy of Permanence – J C Kumarappa</li>
+                        <li>Bharat Mein Angreji Raj – Pandit Sunderlal</li>
+                        <li>Rediscovering India – by Dharampal</li>
+                        <li>Hind Swaraj or Indian Home Rule – by Mohandas K. Gandhi</li>
+                        <li>India Wins Freedom – Maulana Abdul Kalam Azad</li>
+                        <li>Vivekananda – Romain Rolland (English)</li>
+                    </ol>
+                </section>
+                <section id="subject-105307" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Indian Knowledge System</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Indian Knowledge Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of IKS</li>
+                                <li>Organization of IKS</li>
+                                <li>Conception and constitution of knowledge in Indian tradition</li>
+                                <li>The oral tradition</li>
+                                <li>Models and Strategies of IKS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Overview of IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>The vedas as the basis of IKS</li>
+                                <li>Overview of all the six vedangas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Relevance in Current Technical Education System
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Relevance of following IKS domains in present technical education system:</li>
+                                <li>Arthashastra (Indian economics and political systems)</li>
+                                <li>Ganita and Jyamiti (Indian mathematics, astronomy and geometry)</li>
+                                <li>Rasayana (Indian chemical Sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Relevance in Current Technical Education System
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Ayurveda (Indian Biological Sciences / Diet & Nutrition)</li>
+                                <li>Jyotish Vidya (observational astronomy and calendar systems)</li>
+                                <li>Prakriti Vidya (Indian system of terrestrial/ material sciences/ecology and
+                                    atmospheric sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Relevance in Current Technical Education System
+                                III</strong>
+                            <ul class="unit-topics">
+                                <li>Vastu Vidya (Indian system of aesthetics-iconography and built-environment
+                                    /architecture)</li>
+                                <li>Nyaya Shastra (Indian systems of social ethics, logic and law)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>Shilpa and Natya Shastra (Indian classical arts: performing and fine arts)</li>
+                                <li>Sankhya and Yoga Darshna (Indian psychology, yoga and consciousness studies)</li>
+                                <li>Virkshayurveda (plant science/sustainable agriculture/food preservation methods)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Indian Knowledge System: Concepts and Applications, Archak, K.B. (2012),
+                            Kaveri Books, New Delhi, ISBN-13:978-9391818203</li>
+                        <li>Introduction To Indian Knowledge System: Concepts and Applications, Mahadevan, B. Bhat,
+                            Vinayak Rajat, Nagendra Pavana R.N., PHI, ISBN: 9789391818203.</li>
+                        <li>Glimpse into Kautilya's Arthashastra Ramachandrudu P. (2010), Sanskrit Academy, Hyderabad,
+                            ISBN:9788380171074.</li>
+                        <li>"Introduction" in Studies in Epics and Puranas, (Eds.), KM Munshi and N Chandrashekara Aiyer
+                            Bhartiya Vidya Bhavan.</li>
+                    </ol>
+                </section>
+                <section id="subject-105301P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital Electronics Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li><strong>Universal Gates</strong>
+                            <ul class="unit-topics">
+                                <li>Identification and verification of NAND gate (IC #7400) and NOR gate (IC #7402)</li>
+                                <li>Construction and Verification of all other gate (AND, OR, NOT, XOR) USING a) Only
+                                    NAND gate b) Only NOR gate</li>
+                            </ul>
+                        </li>
+                        <li><strong>Code Converter & Parity Generator and checker</strong>
+                            <ul class="unit-topics">
+                                <li>Identification & verification of NOT (7404), AND (7408) OR (7432) & XOR (7486) gates
+                                </li>
+                                <li>Design, construction and verification of 3-bit Binary to Gray convertor and 3-bit
+                                    Grey to Binary convertor circuit</li>
+                                <li>Design, construction and verification of 3-bit odd/even Parity Generator and 4-bit
+                                    odd/even parity checker circuit</li>
+                            </ul>
+                        </li>
+                        <li><strong>Adder, Subtractor & Magnitude comparator circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Design, construction and verification of Half Adder and Half Subtractor circuit</li>
+                                <li>Design, construction and verification of Full Adder and Full Subtractor circuit</li>
+                                <li>Design, construction and verification of 1-bit and 4-bit Magnitude comparator</li>
+                                <li>BCD Adder/Subtractor</li>
+                            </ul>
+                        </li>
+                        <li><strong>Decoder, MUX & DMUX</strong>
+                            <ul class="unit-topics">
+                                <li>Construction and verification of BCD to 7-segment decoder using IC # 7447</li>
+                                <li>Verification of 4:1 MUX, 8:1 MUX & 16:1 MUX</li>
+                                <li>Verification of 1:4 DMUX, 1:8 DMUX</li>
+                                <li>Cascading of MUX and Cascading of Decoders</li>
+                            </ul>
+                        </li>
+                        <li><strong>Latches and Flip Flops</strong>
+                            <ul class="unit-topics">
+                                <li>Construction and Verification of a Latch circuit using NAND/NOR gates</li>
+                                <li>Construction and Verification of S-R Flip Flop using above Latch circuits</li>
+                                <li>Verification of J-K Flip Flop using IC # 7476 (Dual J-K FF)</li>
+                                <li>Construction and Verification of D-Flip Flop and T-Flip Flop using J-K FF (IC #7476)
+                                </li>
+                                <li>Construction and Verification of Master Slave J-K Flip Flop</li>
+                            </ul>
+                        </li>
+                        <li><strong>Shift Registers</strong>
+                            <ul class="unit-topics">
+                                <li>Verification of D-FF using IC # 7474 (Dual D- FF)</li>
+                                <li>Construction and verification of a 2-bit Shift Right Register using IC # 7474</li>
+                                <li>Construction and verification of a 2-bit Shift Left Register using IC # 7474</li>
+                                <li>Verification of SISO, SIPO, PISO & PIPO Shift Registers</li>
+                            </ul>
+                        </li>
+                        <li><strong>Synchronous & Asynchronous Counters</strong>
+                            <ul class="unit-topics">
+                                <li>Construction and verification of 2-bit Ripple counter using J-K FF</li>
+                                <li>Construction and verification of Mod-3 up and Mod-3 down synchronous counter</li>
+                                <li>Construction and verification of 2-bit Ring counter using J-K FF</li>
+                                <li>Construction and verification of 2-bit twisted Ring (Johnson) counter using J-K FF
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Design and construction of a 4 bit sequence generator</li>
+                        <li><strong>Digital to Analog Converter (DAC)</strong>
+                            <ul class="unit-topics">
+                                <li>Construction & Verification of D/A converters using:<br>
+                                    1. Weighted Resistor type<br>
+                                    2. R-2R ladder network type
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Analog to Digital Converter (ADC)</strong>
+                            <ul class="unit-topics">
+                                <li>Construction & Verification of A/D Converter using:<br>
+                                    1. Counter type<br>
+                                    2. Successive Approximation type
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Familiarization with multisim. Design of various Digital Circuits using Multisim.</li>
+                    </ol>
+                </section>
+                <section id="subject-105302P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Data Structure and Algorithms Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten Experiments</h3>
+                    <ol>
+                        <li>Write a program to read a linear list of items and store it in an array.</li>
+                        <li>Write a program to implement binary search.</li>
+                        <li>Write a program to implement stack using array.</li>
+                        <li>Write a program to implement stack using linked list.</li>
+                        <li>Write a program to convert infix expression into postfix expression.</li>
+                        <li>Write a program to implement queue using array.</li>
+                        <li>Write a program to insert element in a circular queue using array.</li>
+                        <li>Write a program to implement queue using Linked List.</li>
+                        <li>Implement single linked list:<br>
+                            1. Create a single linked list<br>
+                            2. Count number of nodes<br>
+                            3. Traverse the linked list
+                        </li>
+                        <li>Insert node in singly linked list:<br>
+                            1. from beginning<br>
+                            2. at certain position
+                        </li>
+                        <li>Delete a node of singly linked list:<br>
+                            1. from beginning<br>
+                            2. from end<br>
+                            3. at certain position<br>
+                            4. delete entire list<br>
+                            5. Reverse the single linked list
+                        </li>
+                        <li>Insert a node in the doubly linked list:<br>
+                            1. from beginning<br>
+                            2. from end<br>
+                            3. at a certain position<br>
+                            4. Reverse the list
+                        </li>
+                        <li>Delete a node of doubly linked list:<br>
+                            1. from beginning<br>
+                            2. from end<br>
+                            3. at certain position
+                        </li>
+                        <li>Create a node of circular singly linked list and circular doubly linked list.</li>
+                        <li>Write a program for tree traversal:<br>
+                            1. Preorder<br>
+                            2. Inorder<br>
+                            3. Postorder
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-105303P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Object Oriented Programming Using JAVA Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>Program to Demonstrate Basic Java Syntax and Control Structures</li>
+                        <li>Program Using Classes, Objects, Methods, and Constructors</li>
+                        <li>Program on Method Overloading and Constructor Overloading</li>
+                        <li>Program to Demonstrate Inheritance and Use of 'super' Keyword</li>
+                        <li>Program Using Method Overriding and Runtime Polymorphism</li>
+                        <li>Program to Implement Abstract Class and Interface</li>
+                        <li>Program on User-Defined Exceptions</li>
+                        <li>Multithreading Program with Synchronization</li>
+                        <li>File Handling Program Using Byte Stream & Character Stream</li>
+                        <li>Program Using Java Collections Framework & JDBC Connectivity</li>
+                    </ol>
+                </section>
+                <section id="subject-105305P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Operating System Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>Write a program to implement FCFS scheduling algorithm.</li>
+                        <li>Write a program to implement SJF scheduling algorithm.</li>
+                        <li>Write a program to implement priority scheduling algorithm.</li>
+                        <li>Write a program to implement round robin scheduling.</li>
+                        <li>Write a program to implement banker's algorithm.</li>
+                        <li>Write a device driver for any device or peripheral.</li>
+                        <li>Write a program to implement disk scheduling algorithm.</li>
+                        <li>Write a program to implement dining philosopher problem.</li>
+                        <li>Write a program to implement producer consumer problem.</li>
+                        <li>Write a program to implement LRU page replacement algorithm.</li>
+                    </ol>
+                </section>
+                <section id="subject-105308" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Internship – I</h2>
+                    <h3 class="sub-heading lab-heading">Internship I Guidelines</h3>
+                    <p>Internship I is of a minimum duration of two weeks which can be completed in an
+                        Industry/Institute in consultation with concerned Engineering College/ Institute. After
+                        completion of internship a detailed report of the internship mentioning the training undertaken
+                        along with certificate should be submitted.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

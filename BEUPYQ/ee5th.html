@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Electrical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Power Systems-I (Apparatus and Modeling) [100507]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Power Systems Lab - I [100507P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Control Systems [100502]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Control Systems Lab [100502P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Microprocessors [100504]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Microprocessors Lab [100504P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Power Electronics [100506]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Power Electronics Lab [100506P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective - 1 (Linear Control System) [104503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>OE-1(MOOC) MOOCs / SWAYAM / NPTEL Courses - 1 [100511P]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-II [100510]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Graduate Employability Skills and Competitive Courses (GATE, IES, etc.)</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>33</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100507" data-type="theory">Power
+                        Systems-I</button><button class="tab-btn" data-target="subject-100502"
+                        data-type="theory">Control Systems</button><button class="tab-btn" data-target="subject-100504"
+                        data-type="theory">Microprocessors</button><button class="tab-btn" data-target="subject-100506"
+                        data-type="theory">Power Electronics</button><button class="tab-btn"
+                        data-target="subject-104503" data-type="theory">Program Elective - 1</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100507P" data-type="lab">Power
+                        Systems Lab - I</button><button class="tab-btn" data-target="subject-100502P"
+                        data-type="lab">Control Systems Lab</button><button class="tab-btn"
+                        data-target="subject-100504P" data-type="lab">Microprocessors Lab</button><button
+                        class="tab-btn" data-target="subject-100506P" data-type="lab">Power Electronics
+                        Lab</button><button class="tab-btn" data-target="subject-100510" data-type="lab">Summer
+                        Entrepreneurship-II</button><button class="tab-btn" data-target="subject-100511P"
+                        data-type="theory">MOOCs / SWAYAM /
+                        NPTEL Courses - 1</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-100507" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Power Systems-I (Apparatus and Modeling) [100507]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to understand the concepts of power systems, understand the various power system
+                        components, evaluate fault currents for different types of faults, understand the generation of
+                        over-voltages and insulation coordination, understand basic protection schemes, and understand
+                        concepts of HVDC power transmission and renewable energy generation.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Basic Concepts (4 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution of Power Systems and Present-Day Scenario</li>
+                                <li>Structure of a power system: Bulk Power Grids and Micro-grids</li>
+                                <li>Generation: Conventional and Renewable Energy Sources</li>
+                                <li>Distributed Energy Resources</li>
+                                <li>Energy Storage</li>
+                                <li>Transmission and Distribution Systems: Line diagrams</li>
+                                <li>Transmission and distribution voltage levels and topologies (meshed and radial
+                                    systems)</li>
+                                <li>Synchronous Grids and Asynchronous (DC) interconnections</li>
+                                <li>Review of Three-phase systems</li>
+                                <li>Analysis of simple three-phase circuits</li>
+                                <li>Power Transfer in AC circuits and Reactive Power</li>
+                                <li>Skin effect and Ferranti effect</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Power System Components (15 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Overhead Transmission Lines and Cables: Electrical and Magnetic Fields around
+                                    conductors, Corona</li>
+                                <li>Parameters of lines and cables</li>
+                                <li>Capacitance and Inductance calculations for simple configurations</li>
+                                <li>Travelling-wave Equations</li>
+                                <li>Sinusoidal Steady state representation of Lines: Short, medium and long lines</li>
+                                <li>Power Transfer, Voltage profile and Reactive Power</li>
+                                <li>Characteristics of transmission lines</li>
+                                <li>Surge Impedance Loading</li>
+                                <li>Series and Shunt Compensation of transmission lines</li>
+                                <li>Transformers: Three-phase connections and Phase-shifts</li>
+                                <li>Three-winding transformers, auto-transformers, Neutral Grounding transformers</li>
+                                <li>Tap-Changing in transformers</li>
+                                <li>Transformer Parameters</li>
+                                <li>Single phase equivalent of three-phase transformers</li>
+                                <li>Synchronous Machines: Steady-state performance characteristics</li>
+                                <li>Operation when connected to infinite bus</li>
+                                <li>Real and Reactive Power Capability Curve of generators</li>
+                                <li>Typical waveform under balanced terminal short circuit conditions – steady state,
+                                    transient and sub-transient equivalent circuits</li>
+                                <li>Loads: Types, Voltage and Frequency Dependence of Loads</li>
+                                <li>Per-unit System and per unit calculations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Over-voltages and Insulation Requirements (4
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Generation of Over-voltages: Lightning and Switching Surges</li>
+                                <li>Protection against Over-voltages, Insulation Coordination</li>
+                                <li>Propagation of Surges</li>
+                                <li>Voltages produced by traveling surges</li>
+                                <li>Bewley Diagrams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Introduction to DC Transmission & Renewable Energy
+                                Systems (9 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>DC Transmission Systems: Line-Commutated Converters (LCC) and Voltage Source
+                                    Converters (VSC)</li>
+                                <li>LCC and VSC based dc link, Real Power Flow control in a dc link</li>
+                                <li>Comparison of ac and dc transmission</li>
+                                <li>Solar PV systems: I-V and P-V characteristics of PV panels, power electronic
+                                    interface of PV to the grid</li>
+                                <li>Wind Energy Systems: Power curve of wind turbine</li>
+                                <li>Fixed and variable speed turbines</li>
+                                <li>Permanent Magnetic Synchronous Generators and Induction Generators</li>
+                                <li>Power Electronics interfaces of wind generators to the grid</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>J. Grainger and W. D. Stevenson, "Power System Analysis", McGraw Hill Education, 1994</li>
+                        <li>O. I. Elgerd, "Electric Energy Systems Theory", McGraw Hill Education, 1995</li>
+                        <li>A. R. Bergen and V. Vittal, "Power System Analysis", Pearson Education Inc., 1999</li>
+                        <li>D. P. Kothari and I. J. Nagrath, "Modern Power System Analysis", McGraw Hill Education, 2003
+                        </li>
+                        <li>B. M. Weedy, B. J. Cory, N. Jenkins, J. Ekanayake and G. Strbac, "Electric Power Systems",
+                            Wiley, 2012</li>
+                    </ol>
+                </section>
+                <section id="subject-100502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Control Systems [100502]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to understand the modelling of linear-time-invariant systems using transfer function and
+                        state-space representations, understand the concept of stability and its assessment for
+                        linear-time invariant systems, and design simple feedback controllers.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to control problem (4 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Industrial Control examples</li>
+                                <li>Mathematical models of physical systems</li>
+                                <li>Control hardware and their models</li>
+                                <li>Transfer function models of linear time-invariant systems</li>
+                                <li>Feedback Control: Open-Loop and Closed-loop systems</li>
+                                <li>Benefits of Feedback</li>
+                                <li>Block diagram algebra</li>
+                                <li>Signal flow graph</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Time Response Analysis (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Standard test signals</li>
+                                <li>Time response of first and second order systems for standard test inputs</li>
+                                <li>Application of initial and final value theorem</li>
+                                <li>Design specifications for second-order systems based on the time-response</li>
+                                <li>Concept of Stability</li>
+                                <li>Routh-Hurwitz Criteria</li>
+                                <li>Relative Stability analysis</li>
+                                <li>Root-Locus technique</li>
+                                <li>Construction of Root-loci</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Frequency-response analysis (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Relationship between time and frequency response</li>
+                                <li>Polar plots, Bode plots</li>
+                                <li>Nyquist stability criterion</li>
+                                <li>Relative stability using Nyquist criterion – gain and phase margin</li>
+                                <li>Closed-loop frequency response</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Introduction to Controller Design (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Stability, steady-state accuracy, transient accuracy, disturbance rejection,
+                                    insensitivity and robustness of control systems</li>
+                                <li>Root-loci method of feedback controller design</li>
+                                <li>Design specifications in frequency-domain</li>
+                                <li>Frequency-domain methods of design</li>
+                                <li>Application of Proportional, Integral and Derivative Controllers, Lead and Lag
+                                    compensation in designs</li>
+                                <li>Analog and Digital implementation of controllers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: State variable Analysis (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of state variables</li>
+                                <li>State space model</li>
+                                <li>Diagonalization of State Matrix</li>
+                                <li>Solution of state equations</li>
+                                <li>Eigen values and Stability Analysis</li>
+                                <li>Concept of controllability and observability</li>
+                                <li>Pole-placement by state feedback</li>
+                                <li>Discrete-time systems</li>
+                                <li>Difference Equations</li>
+                                <li>State-space models of linear discrete-time systems</li>
+                                <li>Stability of linear discrete-time systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>M. Gopal, "Control Systems: Principles and Design", McGraw Hill Education, 1997</li>
+                        <li>B. C. Kuo, "Automatic Control System", Prentice Hall, 1995</li>
+                        <li>K. Ogata, "Modern Control Engineering", Prentice Hall, 1991</li>
+                        <li>I. J. Nagrath and M. Gopal, "Control Systems Engineering", New Age International, 2009</li>
+                    </ol>
+                </section>
+                <section id="subject-100504" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Microprocessors [100504]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to do assembly language programming, do interfacing design of peripherals like I/O, A/D,
+                        D/A, timer etc., and develop systems using different microcontrollers.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Fundamentals of Microprocessors (7 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of Microprocessor Architecture</li>
+                                <li>8-bit Microprocessor and Microcontroller architecture</li>
+                                <li>Comparison of 8-bit microcontrollers, 16-bit and 32-bit microcontrollers</li>
+                                <li>Definition of embedded system and its characteristics</li>
+                                <li>Role of microcontrollers in embedded Systems</li>
+                                <li>Overview of the 8051 family</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: The 8051 Architecture (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Internal Block Diagram</li>
+                                <li>CPU, ALU, Address, Data and Control bus</li>
+                                <li>Working Registers, SFRs</li>
+                                <li>Clock and RESET circuits</li>
+                                <li>Stack and Stack Pointer</li>
+                                <li>Program Counter</li>
+                                <li>I/O ports</li>
+                                <li>Memory Structures, Data and Program Memory</li>
+                                <li>Timing diagrams and Execution Cycles</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Instruction Set and Programming (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Addressing modes: Introduction, Instruction syntax, Data types, Subroutines</li>
+                                <li>Immediate addressing, Register addressing, Direct addressing, Indirect addressing,
+                                    Relative addressing, indexed addressing</li>
+                                <li>Bit inherent addressing, bit direct addressing</li>
+                                <li>8051 Instruction set, Instruction timings</li>
+                                <li>Data transfer instructions, Arithmetic instructions, Logical instructions</li>
+                                <li>Branch instructions, Subroutine instructions, Bit manipulation instruction</li>
+                                <li>Assembly language programs, C language programs</li>
+                                <li>Assemblers and compilers</li>
+                                <li>Programming and debugging tools</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Memory and I/O Interfacing (6 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Memory and I/O expansion buses, control signals, memory wait states</li>
+                                <li>Interfacing of peripheral devices such as General Purpose I/O, ADC, DAC, timers,
+                                    counters, memory devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: External Communication Interface (6 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Synchronous and Asynchronous Communication</li>
+                                <li>RS232, SPI, I2C</li>
+                                <li>Introduction and interfacing to protocols like Blue-tooth and Zig-bee</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Applications (6 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>LED, LCD and keyboard interfacing</li>
+                                <li>Stepper motor interfacing, DC Motor interfacing, sensor interfacing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>M. A. Mazidi, J. G. Mazidi and R. D. McKinlay, "The 8051 Microcontroller and Embedded
+                            Systems: Using Assembly and C", Pearson Education, 2007</li>
+                        <li>K. J. Ayala, "8051 Microcontroller", Delmar Cengage Learning, 2004</li>
+                        <li>R. Kamal, "Embedded System", McGraw Hill Education, 2009</li>
+                        <li>R. S. Gaonkar, "Microprocessor Architecture: Programming and Applications with the 8085",
+                            Penram International Publishing, 1996</li>
+                        <li>D. A. Patterson and J. H. Hennessy, "Computer Organization and Design: The Hardware/Software
+                            interface", Morgan Kaufman Publishers, 2013</li>
+                        <li>D. V. Hall, "Microprocessors & Interfacing", McGraw Hill Higher Education, 1991</li>
+                    </ol>
+                </section>
+                <section id="subject-100506" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Power Electronics [100506]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course students will demonstrate the ability
+                        to understand the differences between signal level and power level devices, analyse controlled
+                        rectifier circuits, analyse the operation of DC-DC choppers, and analyse the operation of
+                        voltage source inverters.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Power switching devices (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Diode, Thyristor, MOSFET, IGBT: I-V Characteristics</li>
+                                <li>Firing circuit for thyristor</li>
+                                <li>Voltage and current commutation of a thyristor</li>
+                                <li>Gate drive circuits for MOSFET and IGBT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Thyristor rectifiers (7 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Single-phase half-wave and full-wave rectifiers</li>
+                                <li>Single-phase full-bridge thyristor rectifier with R-load and highly inductive load
+                                </li>
+                                <li>Three-phase full-bridge thyristor rectifier with R-load and highly inductive load
+                                </li>
+                                <li>Input current wave shape and power factor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: DC-DC converter (10 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Elementary chopper with an active switch and diode</li>
+                                <li>Concepts of duty ratio and average voltage</li>
+                                <li>Power circuit of a buck converter, analysis and waveforms at steady state</li>
+                                <li>Duty ratio control of output voltage</li>
+                                <li>Power circuit of a boost converter, analysis and waveforms at steady state</li>
+                                <li>Relation between duty ratio and average output voltage</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Single-phase and 3-phase voltage source inverter (14
+                                Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Power circuit of single-phase voltage source inverter</li>
+                                <li>Switch states and instantaneous output voltage</li>
+                                <li>Square wave operation of the inverter</li>
+                                <li>Concept of average voltage over a switching cycle</li>
+                                <li>Bipolar sinusoidal modulation and unipolar sinusoidal modulation</li>
+                                <li>Modulation index and output voltage</li>
+                                <li>Power circuit of a three-phase voltage source inverter</li>
+                                <li>Switch states, instantaneous output voltages</li>
+                                <li>Average output voltages over a sub-cycle</li>
+                                <li>Three-phase sinusoidal modulation</li>
+                                <li>Current Source Inverter</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>M. H. Rashid, "Power electronics: circuits, devices, and applications", Pearson Education
+                            India, 2009</li>
+                        <li>N. Mohan and T. M. Undeland, "Power Electronics: Converters, Applications and Design", John
+                            Wiley & Sons, 2007</li>
+                        <li>R. W. Erickson and D. Maksimovic, "Fundamentals of Power Electronics", Springer Science &
+                            Business Media, 2007</li>
+                        <li>L. Umanand, "Power Electronics: Essentials and Applications", Wiley India, 2009</li>
+                    </ol>
+                </section>
+                <section id="subject-104503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective - 1: Linear Control System [104503]</h2>
+                    <ul>
+                        <li><strong class="unit-title">1. Control Systems (8 Hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Basics & Components, Introduction to basic terms, Classifications and types of
+                                    Control Systems</li>
+                                <li>Block diagrams & Signal flow graphs</li>
+                                <li>Transfer function, Determination of transfer function using Block diagram reduction
+                                    techniques and Mason's Gain formula</li>
+                                <li>Control system components: Electrical, Mechanical, Electronic, AC/DC Servo Motors,
+                                    Stepper Motors, Tacho Generators, Synchro's, Magnetic Amplifiers, Servo Amplifiers
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">2. Time-Domain Analysis (8 Hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Time domain performance specifications</li>
+                                <li>Transient response of first and second order systems</li>
+                                <li>Steady state errors and Static error constants in unity feedback control systems
+                                </li>
+                                <li>Response with P, PI and PID controllers</li>
+                                <li>Limitations of time domain analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">3. Frequency Domain Analysis (8 Hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Polar and inverse polar plots</li>
+                                <li>Frequency domain specifications and Performance of LTI systems</li>
+                                <li>Logarithmic plots (Bode plots), Gain and Phase Margins, Relative stability</li>
+                                <li>Correlation with time domain performance</li>
+                                <li>Closed loop frequency responses from Open loop response</li>
+                                <li>Limitations of frequency domain analysis, Minimum/Non-minimum phase systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">4. Stability and Compensation Techniques (8 Hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts, absolute, Asymptotic, Conditional and Marginal stability</li>
+                                <li>Routh-Hurwitz and Nyquist stability criterion</li>
+                                <li>Root locus technique and its application</li>
+                                <li>Concepts of compensation, series/parallel/series parallel/feedback compensation</li>
+                                <li>Lag/Lead/Lag-Lead networks for compensation</li>
+                                <li>Compensation using P, PI, PID controllers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">5. Control System Analysis using State Variable Methods (8
+                                Hrs.)</strong>
+                            <ul class="unit-topics">
+                                <li>State variable representation</li>
+                                <li>Conversion of state variable models to transfer functions</li>
+                                <li>Conversion of transfer functions to state variable models</li>
+                                <li>Solution of state equations</li>
+                                <li>Concepts of Controllability and Observability</li>
+                                <li>Stability of linear systems</li>
+                                <li>Equivalence between transfer function and state variable representations</li>
+                                <li>State variable analysis of digital control system</li>
+                                <li>Digital control design using state feedback</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Automatic Control System", B. C. Kuo, Prentice Hall of India, 7th edition, 2001</li>
+                        <li>"Control Systems Engineering - Principles and Design", Nagraath and Gopal, New Age
+                            Publishers</li>
+                        <li>"Control systems engineering", Norman S. Nise, John Wiley and Sons (Asia) Singapore</li>
+                        <li>"Design of Feedback Control System", Raymond T. Stefani, Oxford University Press</li>
+                        <li>"Modern control engineering", K. Ogata, Pearson, 2002</li>
+                    </ol>
+                </section>
+                <section id="subject-100511P" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">OE-1(MOOC) MOOCs / SWAYAM / NPTEL Courses - 1 [100511P]</h2>
+                    <p>Details for MOOCs / SWAYAM / NPTEL Courses will be provided by the Department</p>
+                </section>
+                <section id="subject-100507P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Power Systems Lab - I [100507P]</h2>
+                    <p>Hands-on experiments related to the course contents of Power Systems-I. Visits to power system
+                        installations (generation stations, EHV substations etc.) are suggested. Exposure to fault
+                        analysis and Electro-magnetic transient program (EMTP) and Numerical Relays are suggested.</p>
+                </section>
+                <section id="subject-100502P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Control Systems Lab [100502P]</h2>
+                    <p>Hands-on/Computer experiments related to the course contents of Control Systems</p>
+                </section>
+                <section id="subject-100504P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Microprocessors Lab [100504P]</h2>
+                    <p>Hands-on experiments related to the course contents of Microprocessors</p>
+                </section>
+                <section id="subject-100506P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Power Electronics Lab [100506P]</h2>
+                    <p>Hands-on experiments related to the course contents of Power Electronics</p>
+                </section>
+                <section id="subject-100510" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-II [100510]</h2>
+                    <p>Details for Summer Entrepreneurship-II will be provided by the Department</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

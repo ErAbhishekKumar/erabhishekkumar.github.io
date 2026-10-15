@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>3rd Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">3rd Semester Syllabus</h1>
+                <p class="page-subtitle">B. Tech (Robotics and Automation)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Biology for Engineers [162301]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Basic Electronics Engineering [162302]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Engineering Mechanics [162303]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Thermodynamics [162304]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Engineering Mathematics III (PDE, Probability & Statistics) [162305]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Universal Human Values [162306]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Indian Knowledge System [162307]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Basic Electronics Engineering Lab [162302P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Engineering Mechanics Lab [162303P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Internship-I [162308]</td>
+                                <td colspan="3">2 Weeks</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>24</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-162301"
+                        data-type="theory">Biology for Engineers</button><button class="tab-btn"
+                        data-target="subject-162302" data-type="theory">Basic Electronics Engineering</button><button
+                        class="tab-btn" data-target="subject-162303" data-type="theory">Engineering
+                        Mechanics</button><button class="tab-btn" data-target="subject-162304"
+                        data-type="theory">Thermodynamics</button><button class="tab-btn" data-target="subject-162305"
+                        data-type="theory">Engineering Mathematics III</button><button class="tab-btn"
+                        data-target="subject-162306" data-type="theory">Universal Human Values</button><button
+                        class="tab-btn" data-target="subject-162307" data-type="theory">Indian Knowledge System</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-162302P" data-type="lab">Basic
+                        Electronics Engineering Lab</button><button class="tab-btn" data-target="subject-162303P"
+                        data-type="lab">Engineering Mechanics Lab</button><button class="tab-btn"
+                        data-target="subject-162308" data-type="lab">Internship-I</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-162301" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Biology for Engineers</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction & Classification</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To convey that Biology is as important a scientific discipline as
+                                    Mathematics, Physics and Chemistry</li>
+                                <li>Bring out the fundamental differences between science and engineering by drawing a
+                                    comparison between eye and camera</li>
+                                <li>Bird flying and aircraft</li>
+                                <li>Mention the most exciting aspect of biology as an independent scientific discipline
+                                </li>
+                                <li>Why we need to study biology?</li>
+                                <li>Discuss how biological observations of 18th Century that lead to major discoveries
+                                </li>
+                                <li>Examples from Brownian motion and the origin of thermodynamics by referring to the
+                                    original observation of Robert Brown and Julius Mayor</li>
+                                <li>These examples will highlight the fundamental importance of observations in any
+                                    scientific inquiry</li>
+                                <li>Purpose: To convey that classification per seis not what biology is all about</li>
+                                <li>The underlying criterion, such as morphological</li>
+                                <li>Biochemical or ecological be highlighted</li>
+                                <li>Hierarchy of life forms at phenomenological level</li>
+                                <li>A common thread weaves this hierarchy Classification</li>
+                                <li>Discuss classification based on (a) cellularity- Unicellular or multicellular</li>
+                                <li>(b) ultrastructure- prokaryotes or eucaryotes</li>
+                                <li>(c) energy and Carbon utilisation -Autotrophs</li>
+                                <li>Heterotrophs</li>
+                                <li>Lithotropes</li>
+                                <li>(d) Ammonia excretion aminotelic</li>
+                                <li>Uricoteliec</li>
+                                <li>Ureotelic</li>
+                                <li>(e) Habitata- acquatic or terrestrial</li>
+                                <li>(e) Molecular taxonomy- three major kingdoms of life</li>
+                                <li>A given organism can come under different category based on classification</li>
+                                <li>Model organisms for the study of biology come from different groups</li>
+                                <li>E. coli</li>
+                                <li>S.cerevisiae</li>
+                                <li>D. Melanogaster</li>
+                                <li>C. elegance</li>
+                                <li>A. Thaliana</li>
+                                <li>M. musculus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Genetics</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To convey that "Genetics is to biology what Newton's laws are to Physical
+                                    Sciences"</li>
+                                <li>Mendel's laws</li>
+                                <li>Concept of segregation and independent assortment</li>
+                                <li>Concept of allele</li>
+                                <li>Gene mapping</li>
+                                <li>Gene interaction</li>
+                                <li>Epistasis</li>
+                                <li>Meiosis and Mitosis be taught as a part of genetics</li>
+                                <li>Emphasis to be give not to the mechanics of cell division nor the phases but how
+                                    genetic material passes from parent to offspring</li>
+                                <li>Concepts of recessiveness and dominance</li>
+                                <li>Concept of mapping of phenotype to genes</li>
+                                <li>Discuss about the single gene disorders in humans</li>
+                                <li>Discuss the concept of complementation using human genetics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Biomolecules & Enzymes</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To convey that all forms of life has the same building blocks and yet the
+                                    manifestations are as diverse as one can imagine</li>
+                                <li>Molecules of life</li>
+                                <li>In this context discuss monomeric units and polymeric structures</li>
+                                <li>Discuss about sugars</li>
+                                <li>Starch and cellulose</li>
+                                <li>Amino acids and proteins</li>
+                                <li>Nucleotides and DNA/RNA</li>
+                                <li>Two carbon units and lipids</li>
+                                <li>Purpose: To convey that without catalysis life would not have existed on earth</li>
+                                <li>Enzymology: How to monitor enzyme catalysed reactions</li>
+                                <li>How does an enzyme catalyze reactions?</li>
+                                <li>Enzyme classification</li>
+                                <li>Mechanism of enzyme action</li>
+                                <li>Discuss at least two examples</li>
+                                <li>Enzyme kinetics and kinetic parameters</li>
+                                <li>Why should we know these parameters to understand biology?</li>
+                                <li>RNA catalysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Information Transfer & Macromolecular analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: The molecular basis of coding and decoding genetic information is universal
+                                    Molecular basis of information transfer</li>
+                                <li>DNA as a genetic material</li>
+                                <li>Hierarchy of DNA structure- from single stranded to double helix to nucleosomes</li>
+                                <li>Concept of genetic code</li>
+                                <li>Universality and degeneracy of genetic code</li>
+                                <li>Define gene in terms of complementation and recombination</li>
+                                <li>Purpose: How to analyse biological processes at the reductionist level</li>
+                                <li>Proteins- structure and function</li>
+                                <li>Hierarch in protein structure</li>
+                                <li>Primary secondary</li>
+                                <li>Tertiary and quaternary structure</li>
+                                <li>Proteins as enzymes</li>
+                                <li>Transporters</li>
+                                <li>Receptors and structural elements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Metabolism</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: The fundamental principles of energy transactions are the same in physical
+                                    and biological world</li>
+                                <li>Thermodynamics as applied to biological systems</li>
+                                <li>Exothermic and endothermic versus endergonic and exergoinc reactions</li>
+                                <li>Concept of Keqand its relation to standard free energy</li>
+                                <li>Spontaneity</li>
+                                <li>ATP as an energy currency</li>
+                                <li>This should include the breakdown of glucose to CO2+H2O (Glycolysis and Krebs cycle)
+                                    and synthesis of glucose from CO2and H2O (Photosynthesis)</li>
+                                <li>Energy yielding and energy consuming reactions</li>
+                                <li>Concept of Energy charge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Microbiology</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of single celled organisms</li>
+                                <li>Concept of species and strains</li>
+                                <li>Identification and classification of microorganisms</li>
+                                <li>Microscopy</li>
+                                <li>Ecological aspects of single celled organisms</li>
+                                <li>Sterilization and media compositions</li>
+                                <li>Growth kinetics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Biology: A global approach: Campbell, N. A.; Reece, J. B.; Urr y, Lisa; Cain, M, L.; Wasser
+                            man, S. A.; Minorsk y, P. V.; Jackson, R. B. Pearson Education Ltd.</li>
+                        <li>Outlines of Biochemistry, Conn, E.E; Stumpf, P.K; Bruening, G; Doi, R.H. John Wiley and
+                            Sons.</li>
+                        <li>Principles of Biochemistry (V Edition), By Nelson, D. L.; and Cox, M. M.W.H. Freeman and
+                            Company.</li>
+                        <li>Molecular Genetics (Second edition), Stent, G. S.; and Calender, R. W.H. Freeman and
+                            company, Distributed by Satish Kumar Jain for CBS Publisher.</li>
+                        <li>Microbiology, Prescott, L.M J.P. Harley and C.A. Klein 1995. 2nd edition Wm, C. Brown
+                            Publishers.</li>
+                    </ol>
+                </section>
+                <section id="subject-162302" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Basic Electronic Engineering</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Semiconductor Devices and Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to P-N Junction Diode and V-I characteristics</li>
+                                <li>Half wave and Full-wave rectifiers</li>
+                                <li>Capacitor filter</li>
+                                <li>Zener diode and its characteristics</li>
+                                <li>Zener diode as voltage regulator</li>
+                                <li>Regulated power supply IC based on 78XX and 79XX series</li>
+                                <li>Introduction to BJT</li>
+                                <li>Its input-output and transfer characteristics</li>
+                                <li>BJT as a single stage CE amplifier</li>
+                                <li>Frequency response and bandwidth</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Operational amplifier and its applications</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to operational amplifiers</li>
+                                <li>Op-amp input modes and parameters</li>
+                                <li>Op-amp in open loop configuration</li>
+                                <li>Op-amp with negative feedback</li>
+                                <li>Study of practical op-amp IC 741</li>
+                                <li>Inverting and non-inverting amplifier applications: summing and difference amplifier
+                                </li>
+                                <li>Unity gain buffer</li>
+                                <li>Comparator</li>
+                                <li>Integrator and differentiator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Timing Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>RC-timing circuits</li>
+                                <li>IC 555 and its applications as table and mono-stable multi-vibrators</li>
+                                <li>Positive feedback</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Oscillators</strong>
+                            <ul class="unit-topics">
+                                <li>Barkhausen's criteria for oscillation</li>
+                                <li>R-C phase shift and Wein bridge oscillator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Digital Electronics Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Difference between analog and digital signals</li>
+                                <li>Boolean algebra</li>
+                                <li>Basic and Universal Gates</li>
+                                <li>Symbols</li>
+                                <li>Truth tables</li>
+                                <li>Logic expressions</li>
+                                <li>Logic simplification using Kmap</li>
+                                <li>Logic ICs</li>
+                                <li>Half and full adder/subtractor</li>
+                                <li>Multiplexers</li>
+                                <li>De-multiplexers</li>
+                                <li>Flip-flops</li>
+                                <li>Shift registers</li>
+                                <li>Counters</li>
+                                <li>Block diagram of microprocessor/microcontroller and their applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Electronic Communication Systems</strong>
+                            <ul class="unit-topics">
+                                <li>The elements of communication system</li>
+                                <li>IEEE frequency spectrum</li>
+                                <li>Transmission media: wired and wireless</li>
+                                <li>Need of modulation</li>
+                                <li>AM and FM modulation schemes</li>
+                                <li>Mobile communication systems: cellular concept and block diagram of GSM system</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Floyd," Electronic Devices" Pearson Education 9th edition, 2012.</li>
+                        <li>R.P. Jain, "Modern Digital Electronics", Tata Mc Graw Hill, 3rd Edition, 2007.</li>
+                        <li>Frenzel, "Communication Electronics: Principles and Applications", Tata Mc Graw Hill, 3rd
+                            Edition, 2001.</li>
+                    </ol>
+                </section>
+                <section id="subject-162303" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Engineering Mechanics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Statics</strong>
+                            <ul class="unit-topics">
+                                <li>Force System</li>
+                                <li>Moment of a force about a point and an axis</li>
+                                <li>Equivalent force and moment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Equilibrium</strong>
+                            <ul class="unit-topics">
+                                <li>Free body diagram</li>
+                                <li>Equations of equilibrium</li>
+                                <li>Problems in two and three dimension</li>
+                                <li>Plane frames and trusses</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Friction</strong>
+                            <ul class="unit-topics">
+                                <li>Laws of Coulomb friction</li>
+                                <li>Impending motion problems involving large and small contact surfaces</li>
+                                <li>Square threaded screw</li>
+                                <li>Principle of virtual work and stability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Dynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Kinematics and kinetics of particles dynamics in rectangular coordinates cylindrical
+                                    coordinates and in terms of path variables</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Properties of areas</strong>
+                            <ul class="unit-topics">
+                                <li>Center of mass</li>
+                                <li>Moments of inertia</li>
+                                <li>Kinematics of rigid bodies</li>
+                                <li>Chasle's Theorem</li>
+                                <li>Concept of fixed vector</li>
+                                <li>Velocity and acceleration of particles in different frames of references</li>
+                                <li>General plane motion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Work & Energy and impulse and Momentum methods for
+                                particles and rigid bodies</strong>
+                            <ul class="unit-topics">
+                                <li>Conservation of momentum</li>
+                                <li>Coefficient of restitution</li>
+                                <li>Moment of momentum equation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Engineering Mechanics by Shames, Pearson's Education.</li>
+                        <li>Mechanics for Engineers. Beer, F.P. and Johnston. Tata McGraw Hill. New Delhi.</li>
+                        <li>Engineering mechanics. Meriam Wiley pub.</li>
+                        <li>Engineering Mechanics. Timoshenko. McGraw Hill Inc.</li>
+                    </ol>
+                </section>
+                <section id="subject-162304" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Thermodynamics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>System & Control volume</li>
+                                <li>Property</li>
+                                <li>State & Process</li>
+                                <li>Exact & Inexact differentials</li>
+                                <li>Work-Thermodynamic definition of work</li>
+                                <li>Examples</li>
+                                <li>Displacement work</li>
+                                <li>Path dependence of displacement work and illustrations for simple processes</li>
+                                <li>Electrical</li>
+                                <li>Magnetic</li>
+                                <li>Gravitational</li>
+                                <li>Spring and shaft work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Temperature and Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Temperature</li>
+                                <li>Definition of thermal equilibrium and Zeroth law</li>
+                                <li>Temperature scales</li>
+                                <li>Various Thermometers- Definition of heat</li>
+                                <li>Examples of heat/work interaction in systems- First Law for Cyclic & Non-cyclic
+                                    processes</li>
+                                <li>Concept of total energy E</li>
+                                <li>Demonstration that E is a property</li>
+                                <li>Various modes of energy</li>
+                                <li>Internal energy and Enthalpy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Properties of Pure Substances</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of Pure substance</li>
+                                <li>Ideal Gases and ideal gas mixtures</li>
+                                <li>Real gases and real gas mixtures</li>
+                                <li>Compressibility charts- Properties of two phase systems Const</li>
+                                <li>Temperature and Const. pressure heating of water</li>
+                                <li>Definitions of saturated states</li>
+                                <li>P-v-T surface</li>
+                                <li>Use of steam tables</li>
+                                <li>Saturation tables</li>
+                                <li>Superheated tables</li>
+                                <li>Identification of states & determination of properties</li>
+                                <li>Mollier's chart</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Flow Processes and Second Law</strong>
+                            <ul class="unit-topics">
+                                <li>First Law for Flow Processes - Derivation of general energy equation for a control
+                                    volume</li>
+                                <li>Steady state steady flow processes including throttling</li>
+                                <li>Examples of steady flow devices</li>
+                                <li>Unsteady processes</li>
+                                <li>Examples of steady and unsteady First law applications for system and control volume
+                                </li>
+                                <li>Second law - Definitions of direct and reverse heat engines</li>
+                                <li>Definitions of thermal efficiency and COP</li>
+                                <li>Kelvin-Planck and Clausius statements</li>
+                                <li>Definition of reversible process</li>
+                                <li>Internal and external irreversibility</li>
+                                <li>Carnot cycle</li>
+                                <li>Absolute temperature scale</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Entropy and Exergy</strong>
+                            <ul class="unit-topics">
+                                <li>Clausius inequality</li>
+                                <li>Definition of entropy S</li>
+                                <li>Demonstration that entropy S is a property</li>
+                                <li>Evaluation of Entropy for solids</li>
+                                <li>Liquids</li>
+                                <li>Ideal gases and ideal gas mixtures undergoing various processes</li>
+                                <li>Determination of entropy from steam tables-Principle of increase of entropy</li>
+                                <li>Illustration of processes in T-s coordinates</li>
+                                <li>Definition of Isentropic efficiency for compressors</li>
+                                <li>Turbines and nozzles- Irreversibility and Availability</li>
+                                <li>Availability function for systems and Control volumes undergoing different processes
+                                </li>
+                                <li>Lost work</li>
+                                <li>Second law analysis for a control volume</li>
+                                <li>Exergy balance equation and Exergy analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Psychrometrics</strong>
+                            <ul class="unit-topics">
+                                <li>Properties of dry and wet air</li>
+                                <li>Use of psychometric chart</li>
+                                <li>Processes involving heating/cooling and humidification/dehumidification</li>
+                                <li>Dew point</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Sonntag, R. E, Borgnakke, C. and Van Wylen, G. J., 2003, 6th Edition, Fundamentals of
+                            Thermodynamics, John Wiley and Sons.</li>
+                        <li>Jones, J. B. and Duggan, R. E., 1996, Engineering Thermodynamics, Prentice-Hall of India.
+                        </li>
+                        <li>Moran, M. J. and Shapiro, H. N., 1999, Fundamentals of Engineering Thermodynamics, John
+                            Wiley and Sons.</li>
+                        <li>Yunus A. Cengel; Michael A. Boles, Thermodynamics: An Engineering Approach, McGraw-Hill.
+                        </li>
+                        <li>Nag, P.K, 1995, Engineering Thermodynamics, Tata McGraw-Hill Publishing Co. Ltd.</li>
+                    </ol>
+                </section>
+                <section id="subject-162305" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Engineering Mathematics III (PDE, Probability & Statistics)</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Partial Differential Equations I</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of Partial Differential Equations</li>
+                                <li>First order partial differential equations</li>
+                                <li>Solutions of first order linear PDEs</li>
+                                <li>Solution to homogenous and non-homogenous linear partial differential equations of
+                                    second order by complimentary function and particular integral method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Partial Differential Equations II</strong>
+                            <ul class="unit-topics">
+                                <li>Second-order linear equations and their classification</li>
+                                <li>Initial and boundary conditions</li>
+                                <li>D'Alembert's solution of the wave equation</li>
+                                <li>Duhamel's principle for one dimensional wave equation</li>
+                                <li>Heat diffusion and vibration problems</li>
+                                <li>Separation of variables method to simple problems in Cartesian coordinates</li>
+                                <li>The Laplacian in plane</li>
+                                <li>Cylindrical and spherical polar coordinates</li>
+                                <li>Solutions with Bessel functions and Legendre functions</li>
+                                <li>One dimensional diffusion equation and its solution by separation of variables</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Probability</strong>
+                            <ul class="unit-topics">
+                                <li>Probability spaces</li>
+                                <li>Conditional probability</li>
+                                <li>Independence</li>
+                                <li>Discrete random variables</li>
+                                <li>Independent random variables</li>
+                                <li>The multinomial distribution</li>
+                                <li>Poisson approximation to the binomial distribution</li>
+                                <li>Infinite sequences of Bernoulli trials</li>
+                                <li>Sums of independent random variables</li>
+                                <li>Expectation of Discrete Random Variables</li>
+                                <li>Moments</li>
+                                <li>Variance of a sum</li>
+                                <li>Correlation coefficient</li>
+                                <li>Chebyshev's Inequality</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Continuous Random Variables</strong>
+                            <ul class="unit-topics">
+                                <li>Continuous random variables and their properties</li>
+                                <li>Distribution functions and densities</li>
+                                <li>Normal</li>
+                                <li>Exponential and gamma densities</li>
+                                <li>Bivariate distributions and their properties</li>
+                                <li>Distribution of sums and quotients</li>
+                                <li>Conditional densities</li>
+                                <li>Bayes' rule</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Basic Statistics</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Statistics</li>
+                                <li>Measures of Central tendency: Moments</li>
+                                <li>Skewness and Kurtosis</li>
+                                <li>Probability distributions: Binomial</li>
+                                <li>Poisson and Normal - evaluation of statistical parameters for these three
+                                    distributions</li>
+                                <li>Correlation and regression - Rank correlation</li>
+                                <li>Curve fitting by the method of least squares- fitting of straight lines</li>
+                                <li>Second degree parabolas and more general curves</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Test of Significance</strong>
+                            <ul class="unit-topics">
+                                <li>Test of significance: Large sample test for single proportion</li>
+                                <li>Difference of proportions</li>
+                                <li>Tests for single mean</li>
+                                <li>Difference of means</li>
+                                <li>And difference of standard deviations</li>
+                                <li>Test for ratio of variances - Chi-square test for goodness of fit and independence
+                                    of attributes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Erwin Kreyszig, Advanced Engineering Mathematics, 9thEdition, John Wiley & Sons, 2006.</li>
+                        <li>N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications.</li>
+                        <li>P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book
+                            Stall.</li>
+                        <li>S. Ross, A First Course in Probability, 6th Ed., Pearson Education India, 2002.</li>
+                    </ol>
+                </section>
+                <section id="subject-162306" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Universal Human Values</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Value Education</strong>
+                            <ul class="unit-topics">
+                                <li>Right Understanding</li>
+                                <li>Relationship and Physical Facility (Holistic Development and the Role of Education)
+                                </li>
+                                <li>Understanding Value Education Sharing about Oneself</li>
+                                <li>Self-exploration as the Process for Value Education</li>
+                                <li>Continuous Happiness and Prosperity the Basic Human Aspirations</li>
+                                <li>Exploring Human Consciousness</li>
+                                <li>Happiness and Prosperity - Current Scenario</li>
+                                <li>Method to Fulfill the Basic Human Aspirations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Harmony in the Human Being</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Human being as the Co-existence of the Self and the Body</li>
+                                <li>Distinguishing between the Needs of the Self and the Body</li>
+                                <li>The Body as an Instrument of the Self</li>
+                                <li>Understanding Harmony in the Self</li>
+                                <li>Harmony of the Self with the Body</li>
+                                <li>Programme to ensure self-regulation and Health</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Harmony in the Family and Society</strong>
+                            <ul class="unit-topics">
+                                <li>Harmony in the Family the Basic Unit of Human Interaction</li>
+                                <li>'Trust' the Foundational Value in Relationship</li>
+                                <li>'Respect' - as the Right Evaluation</li>
+                                <li>Other Feelings</li>
+                                <li>Justice in Human-to-Human Relationship</li>
+                                <li>Understanding Harmony in the Society</li>
+                                <li>Vision for the Universal Human Order</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Harmony in the Nature/Existence</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Harmony in the Nature</li>
+                                <li>Interconnectedness</li>
+                                <li>Self-regulation and Mutual Fulfilment among the Four Orders of Nature</li>
+                                <li>Realizing Existence as Co-existence at All Levels</li>
+                                <li>The Holistic Perception of Harmony in Existence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Implications of the Holistic Understanding - a Look at
+                                Professional</strong>
+                            <ul class="unit-topics">
+                                <li>Natural Acceptance of Human Values</li>
+                                <li>Definitiveness of (Ethical) Human Conduct</li>
+                                <li>A Basis for Humanistic Education</li>
+                                <li>Humanistic Constitution and Universal Human Order</li>
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies</li>
+                                <li>Production Systems and Management Models-Typical Case Studies</li>
+                                <li>Strategies for Transition towards Value-based Life and Profession</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Competence in Professional Ethics and
+                                Transition</strong>
+                            <ul class="unit-topics">
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies</li>
+                                <li>Production Systems and Management Models-Typical Case Studies</li>
+                                <li>Strategies for Transition towards Value-based Life and Profession</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>A Foundation Course in Human Values and Professional Ethics, RR Gaur, R Asthana, G P
+                            Bagaria, 2nd Revised Edition, Excel Books, New Delhi, 2019. ISBN 978-93-8703447.</li>
+                        <li>Jeevan Vidya: EkParichaya, A Nagaraj, Jeevan Vidya Prakashan, Amarkantak, 1999.</li>
+                        <li>Human Values, A.N. Tripathi, New Age Intl. Publishers, New Delhi, 2004.</li>
+                        <li>The Story of Stuff (Book).</li>
+                        <li>The Story of My Experiments with Truth - by Mohandas Karamchand Gandhi.</li>
+                        <li>Small is Beautiful - E. F Schumacher.</li>
+                        <li>Slow is Beautiful - Cecile Andrews.</li>
+                        <li>Economy of Permanence - JC Kumarappa.</li>
+                        <li>Bharat Mein Angreji Raj - Pandit Sunderlal.</li>
+                        <li>Rediscovering India - by Dharampal.</li>
+                        <li>Hind Swaraj or Indian Home Rule - by Mohandas K. Gandhi.</li>
+                        <li>India Wins Freedom - Maulana Abdul Kalam Azad.</li>
+                        <li>Vivekananda - Romain Rolland (English)</li>
+                        <li>Gandhi - Romain Rolland (English)</li>
+                    </ol>
+                </section>
+                <section id="subject-162307" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Indian Knowledge System</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Indian Knowledge Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of IKS</li>
+                                <li>Organization of IKS</li>
+                                <li>Conception and constitution of knowledge in indian tradition</li>
+                                <li>The oral tradition</li>
+                                <li>Models and Strategies of IKS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Overview of IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>The vedasas the basis of IKS</li>
+                                <li>Overview of all the six vedängas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Relevance in Current Technical Education System
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Relevance of following IKS domains in present technical education system:
+                                    Arthashastra (Indian economics and political systems)</li>
+                                <li>Ganitaand Jyamiti(indianmathematics</li>
+                                <li>Astronomy and geometry</li>
+                                <li>Rasayana (indianchemical Sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Relevance in Current Technical Education System
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Ayurveda (Indian Biological Sciences / Diet & Nutrition)</li>
+                                <li>JyotishVidya (observational astronomy and calendar systems)</li>
+                                <li>Prakriti Vidya(indian system of terrestrial/ material sciences/ecology and
+                                    atmospheric sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Relevance in Current Technical Education System
+                                III</strong>
+                            <ul class="unit-topics">
+                                <li>Vastu Vidya(indian system of aesthetics-iconography and
+                                    built-environment/architecture)</li>
+                                <li>NyayaShastra(indian systems of social ethics</li>
+                                <li>Logic and law)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Relevance in Current Technical Education System
+                                IV</strong>
+                            <ul class="unit-topics">
+                                <li>Shilpa andNatyaShastra (indian classical arts: performing and fine arts)</li>
+                                <li>Sankhyaand Yoga Darshna(indian psychology</li>
+                                <li>Yoga and consciousness studies)</li>
+                                <li>Vrikshayurveda(plant science/sustainable agriculture/food preservation methods)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Indian Knowledge System: Concepts and Applications, Archak, K.B. (2012).,
+                            Kaveri Books, New Delhi, ISBN-13:978-9391818203</li>
+                        <li>Introduction To Indian Knowledge System: Concepts and Applications, Mahadevan, B. Bhat,
+                            VinayakRajat, NagendraPavana R.N., PHI, ISBN: 9789391818203.</li>
+                        <li>Glimpse into Kautilya's Arthashastra Ramachandrudu P. (2010), Sanskrit Academy, Hyderabad,
+                            ISBN:9788380171074.</li>
+                        <li>"Introduction" in Studies in Epics and Purāņas, (Eds.), KM Munshi and N ChandrashekaraAiyer
+                            Bhartiya VidyaBhavan.</li>
+                    </ol>
+                </section>
+                <section id="subject-162302P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Basic Electronic Engineering Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all Experiments</h3>
+                    <ol>
+                        <li>Measurement of different signal parameters using oscilloscope.</li>
+                        <li>Lissajous pattern.</li>
+                        <li>V-I characteristics of ordinary p-n junction diode.</li>
+                        <li>Full wave rectifier-with and without filter.</li>
+                        <li>Zener diode as a voltage regulator.</li>
+                        <li>Input and output characteristics of BJT.</li>
+                        <li>Input and output characteristics of FET.</li>
+                        <li>Op-amp based inverting and non-inverting amplifier.</li>
+                        <li>Op-Amp based differentiator and integrator.</li>
+                        <li>Op-Amp based adder and subtractor.</li>
+                    </ol>
+                </section>
+                <section id="subject-162303P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Engineering Mechanics Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>Practical based on mechanical advantage of different machines.</li>
+                        <li>Verification of triangle law & parallelogram law of forces.</li>
+                        <li>Verification of polygon law of forces.</li>
+                        <li>Determination of moment of inertia of a flywheel.</li>
+                        <li>Crank Lever apparatus.</li>
+                        <li>Verification of support reactions of a simply supported beam.</li>
+                        <li>Verification of condition of equilibrium of a system of forces.</li>
+                        <li>Verification of axial forces in the members of a truss.</li>
+                        <li>Verification of equilibrium of three dimensional forces.</li>
+                        <li>Determination of coefficient of friction between two surfaces.</li>
+                        <li>Verification of centroid of different laminae.</li>
+                        <li>Verification of Newton's laws of motion.</li>
+                    </ol>
+                </section>
+                <section id="subject-162308" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Internship – I</h2>
+                    <h3 class="sub-heading lab-heading">Internship I Guidelines</h3>
+                    <p>Summer Internship I is of a minimum duration of two weeks which can be completed in an
+                        Industry/Institute in consultation with concerned Engineering College/Institute. After
+                        completion of Internship a detailed report of the Internship mentioning the training
+                        undertaken along with certificate should be submitted.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Civil Engineering with Computer Application</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Machine Learning [119501]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Hydraulic Engineering [119502]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Analysis and design Of Concrete structure [119503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Geotechnical Engineering -I [119504]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Hydrology and Water Resources Engineering [119505]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Environmental Engineering-I [119506]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Transportation Engineering [119507]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-II [119508P]</td>
+                                <td colspan="3">6 Weeks</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Hydraulic Engineering Lab [119502P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Geotechnical Engineering -I Lab [119504P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Hydrology and Water Resources Engineering Lab [119505P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Environmental Engineering-I Lab [119506P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Transportation Engineering Lab [119507P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>30</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-119501" data-type="theory">Machine Learning</button>
+                    <button class="tab-btn" data-target="subject-119502" data-type="theory">Hydraulic
+                        Engineering</button>
+                    <button class="tab-btn" data-target="subject-119503" data-type="theory">Analysis and design Of
+                        Concrete structure</button>
+                    <button class="tab-btn" data-target="subject-119504" data-type="theory">Geotechnical Engineering
+                        -I</button>
+                    <button class="tab-btn" data-target="subject-119505" data-type="theory">Hydrology and Water
+                        Resources Engineering</button>
+                    <button class="tab-btn" data-target="subject-119506" data-type="theory">Environmental
+                        Engineering-I</button>
+                    <button class="tab-btn" data-target="subject-119507" data-type="theory">Transportation
+                        Engineering</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-119508P" data-type="lab">Summer
+                        Entrepreneurship-II</button>
+                    <button class="tab-btn" data-target="subject-119502P" data-type="lab">Hydraulic Engineering
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-119504P" data-type="lab">Geotechnical Engineering -I
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-119505P" data-type="lab">Hydrology and Water Resources
+                        Engineering Lab</button>
+                    <button class="tab-btn" data-target="subject-119506P" data-type="lab">Environmental Engineering-I
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-119507P" data-type="lab">Transportation Engineering
+                        Lab</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-119501" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Machine Learning</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Types of learning</li>
+                                <li>Common aspects of machine learning approach: Model</li>
+                                <li>Parameters</li>
+                                <li>Bias-Variance</li>
+                                <li>Test</li>
+                                <li>Train and validation datasets</li>
+                                <li>Error function</li>
+                                <li>Curse of dimensionality</li>
+                                <li>Predictive analysis using regression</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Python Basics</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamental Data Types in Python</li>
+                                <li>Looping and Decision-making constructs</li>
+                                <li>Functions</li>
+                                <li>Classes</li>
+                                <li>File handling</li>
+                                <li>Database access</li>
+                                <li>Output formatting</li>
+                                <li>Modules</li>
+                                <li>Statistics module</li>
+                                <li>Numpy</li>
+                                <li>Introduction to popular machine learning libraries Tensor Flow & Keras</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Unsupervised Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Clustering</li>
+                                <li>K-means</li>
+                                <li>GMM & EM Algorithm</li>
+                                <li>Eigen values and Eigen vectors</li>
+                                <li>PCA - unsupervised dimensionality reduction technique</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Supervised Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Classification: KNN</li>
+                                <li>Bayes</li>
+                                <li>Decision Tree</li>
+                                <li>SVM: soft and hard margin</li>
+                                <li>Kernel trick</li>
+                                <li>LDA - supervised dimensionality reduction technique</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Ensemble and Reinforcement Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Bagging</li>
+                                <li>Random Forest and Boosting</li>
+                                <li>Q-learning and SARSA algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Neural Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Perceptron model</li>
+                                <li>Learning rules and activation functions</li>
+                                <li>Multi-layer feed forward</li>
+                                <li>Back-propagation</li>
+                                <li>Introduction to feed-back networks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Machine Learning. Tom Mitchell, McGraw-Hill.</li>
+                        <li>Machine learning: an algorithmic perspective. Marsland, Stephen. Chapman and Hall/CRC, 2011.
+                        </li>
+                        <li>Introduction to artificial neural systems. Zurada, Jacek M. Vol. 8. St. Paul: West
+                            publishing company, 1992.</li>
+                        <li>A Tutorial on Support Vector Machines for Pattern Recognition. Christopher Burges, Data
+                            Mining and Knowledge Discovery, 1998</li>
+                    </ol>
+                </section>
+                <section id="subject-119502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Hydraulic Engineering</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Boundary Layer Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Assumption and concept of boundary layer theory</li>
+                                <li>Boundary-layer thickness</li>
+                                <li>Displacement</li>
+                                <li>Momentum & energy thickness</li>
+                                <li>Laminar and Turbulent boundary layers on a flat plate</li>
+                                <li>Laminar sub-layer</li>
+                                <li>Smooth and rough boundaries</li>
+                                <li>Local and average friction coefficients</li>
+                                <li>Separation and Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Introduction to Open Channel Flow</strong>
+                            <ul class="unit-topics">
+                                <li>Comparison between open channel flow and pipe flow</li>
+                                <li>Geometrical parameters of a channel</li>
+                                <li>Classification of open channels</li>
+                                <li>Classification of open channel flow</li>
+                                <li>Velocity Distribution of channel section</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Uniform Flow</strong>
+                            <ul class="unit-topics">
+                                <li>Continuity Equation</li>
+                                <li>Energy Equation and Momentum Equation</li>
+                                <li>Characteristics of uniform flow</li>
+                                <li>Chezy's formula</li>
+                                <li>Manning's formula</li>
+                                <li>Factors affecting Manning's Roughness Coefficient "n"</li>
+                                <li>Most economical section of channel</li>
+                                <li>Computation of Uniform flow</li>
+                                <li>Normal depth</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Non- Uniform Flow</strong>
+                            <ul class="unit-topics">
+                                <li>Specific energy</li>
+                                <li>Specific energy curve</li>
+                                <li>Critical flow</li>
+                                <li>Discharge curve Specific force Specific depth</li>
+                                <li>And Critical depth</li>
+                                <li>Channel Transitions</li>
+                                <li>Measurement of Discharge and Velocity - Venturi Flume</li>
+                                <li>Standing Wave Flume</li>
+                                <li>Parshall Flume</li>
+                                <li>Broad Crested Weir</li>
+                                <li>Measurement of Velocity- Current meter</li>
+                                <li>Floats</li>
+                                <li>Hot-wire anemometer</li>
+                                <li>Gradually Varied Flow- Dynamic Equation of Gradually Varied Flow</li>
+                                <li>Classification of channel bottom slopes</li>
+                                <li>Classification of surface profile</li>
+                                <li>Characteristics of surface profile</li>
+                                <li>Computation of water surface profile by graphical</li>
+                                <li>Numerical and analytical approaches</li>
+                                <li>Direct Step method</li>
+                                <li>Graphical Integration method and Direct integration method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Hydraulic Jump</strong>
+                            <ul class="unit-topics">
+                                <li>Theory of hydraulic jump</li>
+                                <li>Elements and characteristics of hydraulic jump in a rectangular Channel</li>
+                                <li>Length and height of jump</li>
+                                <li>Location of jump</li>
+                                <li>Types</li>
+                                <li>Applications and location of hydraulic jump</li>
+                                <li>Energy dissipation and other uses</li>
+                                <li>Surge as a moving hydraulic jump</li>
+                                <li>Positive and negative surges</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Computational Fluid Dynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Basic equations of fluid dynamics</li>
+                                <li>Grid generation</li>
+                                <li>Introduction to in viscid incompressible flow</li>
+                                <li>Boundary layer flow as applicable to C.F.D</li>
+                                <li>Hydro informatics: Concept of hydro informatics - scope of internet and web based
+                                    modeling in water resources engineering</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Hydraulics and Fluid Mechanics, P.M. Modi and S.M. Seth, Standard Book House</li>
+                        <li>Theory and Applications of Fluid Mechanics, K. Subramanya, Tata McGraw Hill.</li>
+                        <li>Open channel Flow, K. Subramanya, Tata McGraw Hill.</li>
+                        <li>Open Channel Hydraulics, Ven Te Chow, Tata McGraw Hill.</li>
+                        <li>Burnside, C.D., "Electromagnetic Distance Measurement," Beekman Publishers, 1971.</li>
+                    </ol>
+                </section>
+                <section id="subject-119503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Analysis and design Of Concrete structure</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of energy principles</li>
+                                <li>Safety</li>
+                                <li>Sustainable development in performance</li>
+                                <li>What makes a structure</li>
+                                <li>Principles of stability</li>
+                                <li>Equilibrium</li>
+                                <li>What is a structural engineer</li>
+                                <li>Role of engineer</li>
+                                <li>Architect</li>
+                                <li>User</li>
+                                <li>Builder</li>
+                                <li>What are the functions</li>
+                                <li>What do the engineers design</li>
+                                <li>First principles of process of design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Introduction to reinforced concrete structures</strong>
+                            <ul class="unit-topics">
+                                <li>Basic material properties: Stress-strain relation of concrete and reinforcing steel
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Planning and Design Process</strong>
+                            <ul class="unit-topics">
+                                <li>Materials</li>
+                                <li>Loads</li>
+                                <li>And Design Safety</li>
+                                <li>Behaviour and Properties of Concrete and Steel</li>
+                                <li>Wind and Earthquake Loads Design philosophy: assumptions and code of practice</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Theory of singly reinforced members in bending</strong>
+                            <ul class="unit-topics">
+                                <li>Design of simply supported and continuous beams with rectangular and flanged section
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Limit state of collapse in shear</strong>
+                            <ul class="unit-topics">
+                                <li>Design for bond</li>
+                                <li>Design of one-way and two-way slab systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Design of columns under uniaxial and biaxial
+                                bending</strong>
+                            <ul class="unit-topics">
+                                <li>Design of footings and staircase</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Nilson, A. H. Design of Concrete Structures. 13th edition. McGraw Hill, 2004</li>
+                        <li>Mc Cormac, J.C., Nelson, J.K. Jr., Structural Steel Design. 3rd edition. Prentice Hall,
+                            N.J., 2003.</li>
+                        <li>Galambos, T.V., Lin, F.J., Johnston, B.G., Basic Steel Design with LRFD, Prentice Hall, 1996
+                        </li>
+                        <li>Segui, W. T., LRFD Steel Design, 2nd Ed., PWS Publishing, Boston.</li>
+                        <li>Salmon, C.G. and Johnson, J.E., Steel Structures: Design and Behavior, 3rd Edition, Harper &
+                            Row, Publishers, New York, 1990.</li>
+                        <li>MacGregor, J. G., Reinforced Concrete: Mechanics and Design, 3rd Edition, Prentice Hall, New
+                            Jersey, 1997.</li>
+                        <li>Navy, E. G., Reinforced Concrete: A Fundamental Approach, 5th Edition, Prentice Hall, New
+                            Jersey.</li>
+                        <li>Wang C.K. and Salmon, C. G., Reinforced Concrete Design, 6th Edition, Addison Wesley, New
+                            York.</li>
+                        <li>Navy, E. G. Prestressed Concrete: A Fundamental Approach, Prentice Hall, NJ, (2003).</li>
+                        <li>Related Codes of Practice of BIS</li>
+                        <li>Smith, J. C., Structural Analysis, Harper and Row, Publishers, New York.</li>
+                        <li>W. McGuire, R. H. Gallagher and R. D. Ziemian. "Matrix Structural Analysis", 2nd Edition,
+                            John Wiley and Sons, 2000.</li>
+                        <li>NBC, National Building Code, BIS (2017).</li>
+                        <li>ASCE, Minimum Design Loads for Buildings and Other Structures, ASCE 7-02, American Society
+                            of Civil Engineers, Virginia, 2002.</li>
+                        <li>S. U. Pillai and D. Menon, Reinforced Concrete Design, Tata McGraw-Hill, 3rd edition, 2009.
+                        </li>
+                        <li>P. C. Varghese, Limit State Design of Reinforced Concrete, Prentice Hall India, 2nd edition,
+                            2008.</li>
+                    </ol>
+                </section>
+                <section id="subject-119504" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Geotechnical Engineering -I</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Types of soils</li>
+                                <li>Their formation and deposition</li>
+                                <li>Definitions: Soil mechanics</li>
+                                <li>Soil engineering</li>
+                                <li>Rock mechanics</li>
+                                <li>Geotechnical engineering</li>
+                                <li>Scope of soil engineering</li>
+                                <li>Comparison and difference between soil and rock</li>
+                                <li>Basic Definitions and Relationships- Soil as three-phase system in terms of weight
+                                </li>
+                                <li>Volume</li>
+                                <li>Voids ratio</li>
+                                <li>And porosity</li>
+                                <li>Definitions: Moisture content</li>
+                                <li>Unit weights</li>
+                                <li>Degree of saturation</li>
+                                <li>Voids ratio</li>
+                                <li>Porosity</li>
+                                <li>Specific gravity</li>
+                                <li>Mass specific gravity</li>
+                                <li>Etc</li>
+                                <li>Relationship between volume weight</li>
+                                <li>Voids ratio-moisture content</li>
+                                <li>Unit weight-percent air voids</li>
+                                <li>Saturation-moisture content</li>
+                                <li>Moisture content-specific gravity etc</li>
+                                <li>Determination of various parameters such as: Moisture content by oven dry method
+                                </li>
+                                <li>Pycnometer</li>
+                                <li>Sand bath method</li>
+                                <li>Torsional balance method</li>
+                                <li>Nuclear method</li>
+                                <li>Alcohol method and sensors</li>
+                                <li>Specific gravity by density bottle method</li>
+                                <li>Pycnometer method</li>
+                                <li>Measuring flask method</li>
+                                <li>Unit weight by water displacement method</li>
+                                <li>Submerged weight method</li>
+                                <li>Core-cutter method</li>
+                                <li>Sand-replacement method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Plasticity Characteristics of Soil</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to definitions of: Plasticity of soil</li>
+                                <li>Consistency limits- liquid limit</li>
+                                <li>Plastic limit</li>
+                                <li>Shrinkage limit</li>
+                                <li>Plasticity</li>
+                                <li>Liquidity and consistency indices</li>
+                                <li>Flow & toughness indices</li>
+                                <li>Definitions of activity and sensitivity</li>
+                                <li>Determination of: Liquid limit</li>
+                                <li>Plastic limit and shrinkage limit</li>
+                                <li>Use of consistency limits</li>
+                                <li>Classification of Soils- Introduction of soil classification: Particle size
+                                    classification</li>
+                                <li>Textural classification</li>
+                                <li>Unified soil classification system</li>
+                                <li>Indian standard soil classification system</li>
+                                <li>Identification: Field identification of soils</li>
+                                <li>General characteristics of soil in different groups</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Permeability of Soil</strong>
+                            <ul class="unit-topics">
+                                <li>Darcy's law</li>
+                                <li>Validity of Darcy's law</li>
+                                <li>Determination of coefficient of permeability: Laboratory method: Constant-head
+                                    method</li>
+                                <li>Falling-head method</li>
+                                <li>Field method: Pumping-in test</li>
+                                <li>Pumping-out test</li>
+                                <li>Permeability aspects: Permeability of stratified soils</li>
+                                <li>Factors affecting permeability of soil</li>
+                                <li>Seepage Analysis- Introduction</li>
+                                <li>Stream and potential functions</li>
+                                <li>Characteristics of flow nets</li>
+                                <li>Graphical method to plot flow nets</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Effective Stress Principle</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Effective stress principle</li>
+                                <li>Nature of effective stress</li>
+                                <li>Effect of water table</li>
+                                <li>Fluctuations of effective stress</li>
+                                <li>Effective stress in soils saturated by capillary action</li>
+                                <li>Seepage pressure</li>
+                                <li>Quick sand condition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Composition of Soil</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Theory of compaction</li>
+                                <li>Laboratory determination of optimum moisture content and maximum dry density</li>
+                                <li>Compaction in field</li>
+                                <li>Compaction specifications and field control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Stresses in soils</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Stresses due to point load</li>
+                                <li>Line load</li>
+                                <li>Strip load</li>
+                                <li>Uniformly loaded circular area</li>
+                                <li>Rectangular loaded area</li>
+                                <li>Influence factors</li>
+                                <li>Isobars</li>
+                                <li>Boussinesq's equation</li>
+                                <li>Newmark's Influence Chart</li>
+                                <li>Contact pressure under rigid and flexible area</li>
+                                <li>Computation of displacements from elastic theory</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Soil Mechanics by Craig R.F., Chapman & Hall</li>
+                        <li>Fundamentals of Soil Engineering by Taylor, John Wiley & Sons</li>
+                        <li>An Introduction to Geotechnical Engineering, by Holtz R.D. and Kovacs, W.D., Prentice Hall,
+                            NJ</li>
+                        <li>Principles of Geotechnical Engineering, by Braja M. Das, Cengage Learning</li>
+                        <li>Principles of Foundation Engineering, by Braja M. Das, Cengage Learning</li>
+                        <li>Essentials of Soil Mechanics and Foundations: Basic Geotechnics by David F. McCarthy</li>
+                        <li>Soil Mechanics in Engineering Practice by Karl Terzaghi, Ralph B. Peck, and Gholamreza
+                            Mesri.</li>
+                        <li>Geotechnical Engineering: Principles and Practices of Soil Mechanics and Foundation
+                            Engineering (Civil and Environmental Engineering) by V.N.S. Murthy.</li>
+                    </ol>
+                </section>
+                <section id="subject-119505" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Hydrology and Water Resources Engineering</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Hydrologic cycle</li>
+                                <li>Water-budget equation</li>
+                                <li>History of hydrology</li>
+                                <li>World water balance</li>
+                                <li>Applications in engineering</li>
+                                <li>Sources of data</li>
+                                <li>Precipitation - forms of precipitation</li>
+                                <li>Characteristics of precipitation in India</li>
+                                <li>Measurement of precipitation</li>
+                                <li>Rain gauge network</li>
+                                <li>Mean precipitation over an area</li>
+                                <li>Depth-area-duration relationships</li>
+                                <li>Maximum intensity/depth-duration-frequency relationship</li>
+                                <li>Probable Maximum Precipitation (PMP)</li>
+                                <li>Rainfall data in India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Abstractions from precipitation</strong>
+                            <ul class="unit-topics">
+                                <li>Evaporation process</li>
+                                <li>Evaporimeters</li>
+                                <li>Analytical methods of evaporation estimation</li>
+                                <li>Reservoir evaporation and methods for its reduction</li>
+                                <li>Evapotranspiration</li>
+                                <li>Measurement of evapotranspiration</li>
+                                <li>Evapotranspiration equations</li>
+                                <li>Potential evapotranspiration over India</li>
+                                <li>Actual evapotranspiration</li>
+                                <li>Interception</li>
+                                <li>Depression storage</li>
+                                <li>Infiltration</li>
+                                <li>Infiltration capacity</li>
+                                <li>Measurement of infiltration</li>
+                                <li>Modelling infiltration capacity</li>
+                                <li>Classification of infiltration capacities</li>
+                                <li>Infiltration indices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Runoff</strong>
+                            <ul class="unit-topics">
+                                <li>Runoff volume</li>
+                                <li>SCS-CN method of estimating runoff volume</li>
+                                <li>Flow-duration curve</li>
+                                <li>Flow-mass curve</li>
+                                <li>Hydrograph</li>
+                                <li>Factors affecting runoff hydrograph</li>
+                                <li>Components of hydrograph</li>
+                                <li>Base flow separation</li>
+                                <li>Effective rainfall</li>
+                                <li>Unit hydrograph surface water resources of India</li>
+                                <li>Environmental flows</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Ground water and well hydrology</strong>
+                            <ul class="unit-topics">
+                                <li>Forms of subsurface water</li>
+                                <li>Saturated formation</li>
+                                <li>Aquifer properties</li>
+                                <li>Geologic formations of aquifers</li>
+                                <li>Well hydraulics: Steady state flow in wells</li>
+                                <li>Equilibrium equations for confined and unconfined aquifers</li>
+                                <li>Aquifer tests</li>
+                                <li>Water withdrawals and uses - water for energy production</li>
+                                <li>Water for agriculture</li>
+                                <li>Water for hydroelectric generation; flood control</li>
+                                <li>Analysis of surface water supply</li>
+                                <li>Water requirement of crops- Crops and crop seasons in India</li>
+                                <li>Cropping pattern</li>
+                                <li>Duty and delta</li>
+                                <li>Quality of irrigation water</li>
+                                <li>Soil-water relationships</li>
+                                <li>Root zone soil water</li>
+                                <li>Infiltration</li>
+                                <li>Consumptive use</li>
+                                <li>Irrigation requirement</li>
+                                <li>Frequency of irrigation</li>
+                                <li>Methods of applying water to the fields: Surface</li>
+                                <li>Subsurface</li>
+                                <li>Sprinkler and trickle / drip irrigation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Distribution systems</strong>
+                            <ul class="unit-topics">
+                                <li>Canal systems</li>
+                                <li>Alignment of canals</li>
+                                <li>Canal losses</li>
+                                <li>Estimation of design discharge</li>
+                                <li>Design of channels- rigid boundary channels</li>
+                                <li>Alluvial channels</li>
+                                <li>Kennedy's and Lacey's theory of regime channels</li>
+                                <li>Canal outlets: Non-modular</li>
+                                <li>Semi-modular and modular outlets</li>
+                                <li>Water logging: Causes</li>
+                                <li>Effects and remedial measures</li>
+                                <li>Lining of canals</li>
+                                <li>Types of lining</li>
+                                <li>Drainage of irrigated lands: Necessity</li>
+                                <li>Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Dams and spillways</strong>
+                            <ul class="unit-topics">
+                                <li>Embankment dams: Classification</li>
+                                <li>Design considerations</li>
+                                <li>Estimation and control of seepage</li>
+                                <li>Slope protection</li>
+                                <li>Gravity dams: Forces on gravity dams</li>
+                                <li>Causes of failure</li>
+                                <li>Stress analysis</li>
+                                <li>Elementary and practical profile</li>
+                                <li>Arch and buttress dams</li>
+                                <li>Spillways: Components of spillways</li>
+                                <li>Types of gates for spillway crests</li>
+                                <li>Reservoirs- Types</li>
+                                <li>Capacity of reservoirs</li>
+                                <li>Yield of reservoir</li>
+                                <li>Reservoir regulation</li>
+                                <li>Sedimentation</li>
+                                <li>Economic height of dam</li>
+                                <li>Selection of suitable site</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>K Subramanya, Engineering Hydrology, Mc-Graw Hill.</li>
+                        <li>K N Muthreja, Applied Hydrology, Tata Mc-Graw Hill.</li>
+                        <li>K Subramanya, Water Resources Engineering through Objective Questions, Tata McGraw Hill.
+                        </li>
+                        <li>G L Asawa, Irrigation Engineering, Wiley Eastern</li>
+                        <li>L W Mays, Water Resources Engineering, Wiley.</li>
+                        <li>J D Zimmerman, Irrigation, John Wiley & Sons</li>
+                        <li>C S P Ojha, R Berndtsson and P Bhunya, Engineering Hydrology, Oxford.</li>
+                    </ol>
+                </section>
+                <section id="subject-119506" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Environmental Engineering-I</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Water</strong>
+                            <ul class="unit-topics">
+                                <li>Sources of Water and quality issues</li>
+                                <li>Water quality requirement for different beneficial uses</li>
+                                <li>Water quality standards</li>
+                                <li>Water quality indices</li>
+                                <li>Water safety plans</li>
+                                <li>Water Supply systems</li>
+                                <li>Need for planned water supply schemes</li>
+                                <li>Water demand industrial and agricultural water requirements</li>
+                                <li>Components of water supply system; Transmission of water</li>
+                                <li>Distribution system</li>
+                                <li>Various valves used in W/S systems</li>
+                                <li>Service reservoirs and design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Water Treatment</strong>
+                            <ul class="unit-topics">
+                                <li>Aeration</li>
+                                <li>Sedimentation</li>
+                                <li>Coagulation flocculation</li>
+                                <li>Filtration</li>
+                                <li>Disinfection</li>
+                                <li>Advanced treatments like adsorption</li>
+                                <li>Ion exchange</li>
+                                <li>Membrane processes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Air</strong>
+                            <ul class="unit-topics">
+                                <li>Composition and properties of air</li>
+                                <li>Quantification of air pollutants</li>
+                                <li>Monitoring of air pollutants</li>
+                                <li>Air pollution- Occupational hazards</li>
+                                <li>Urban air pollution automobile pollution</li>
+                                <li>Chemistry of combustion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Automobile engines</strong>
+                            <ul class="unit-topics">
+                                <li>Quality of fuel</li>
+                                <li>Operating conditions and interrelationship</li>
+                                <li>Air quality standards</li>
+                                <li>Control measures for Air pollution</li>
+                                <li>Construction and limitations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Noise</strong>
+                            <ul class="unit-topics">
+                                <li>Basic concept</li>
+                                <li>Measurement and various control methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Building Plumbing</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to various types of home plumbing systems for water supply and waste
+                                    water disposal</li>
+                                <li>High rise building plumbing</li>
+                                <li>Pressure reducing valves</li>
+                                <li>Break pressure tanks</li>
+                                <li>Storage tanks</li>
+                                <li>Building drainage for high rise buildings</li>
+                                <li>Various kinds of fixtures and fittings used</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Introduction to Environmental Engineering and Science by Gilbert Masters, Prentice Hall, New
+                            Jersey.</li>
+                        <li>Introduction to Environmental Engineering by P. Aarne Vesilind, Susan M. Morgan,
+                            Thompson/Brooks/Cole; Second Edition 2008.</li>
+                        <li>Peavy, H.s, Rowe, D.R, Tchobanoglous, G. Environmental Engineering, Mc-Graw Hill
+                            International Editions, New York 1985.</li>
+                        <li>MetCalf and Eddy. Wastewater Engineering, Treatment, Disposal and Reuse, Tata McGraw-Hill,
+                            New Delhi.</li>
+                        <li>Manual on Water Supply and Treatment. Ministry of Urban Development, New Delhi.</li>
+                        <li>Plumbing Engineering. Theory, Design and Practice, S.M. Patil, 1999.</li>
+                        <li>Integrated Solid Waste Management, Tchobanoglous, Theissen & Vigil. McGraw Hill Publication
+                        </li>
+                        <li>Manual on Sewerage and Sewage Treatment Systems, Part A, B and C. Central Public Health and
+                            Environmental Engineering Organization, Ministry of Urban Development.</li>
+                    </ol>
+                </section>
+                <section id="subject-119507" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Transportation Engineering</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Highway development and planning</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of roads</li>
+                                <li>Road development in India</li>
+                                <li>Current road projects in India</li>
+                                <li>Highway alignment and project preparation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Geometric design of highways</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Highway cross section elements</li>
+                                <li>Sight distance</li>
+                                <li>Design of horizontal alignment</li>
+                                <li>Design of vertical alignment</li>
+                                <li>Design of intersections</li>
+                                <li>Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Traffic engineering & control</strong>
+                            <ul class="unit-topics">
+                                <li>Traffic Characteristics</li>
+                                <li>Traffic engineering studies</li>
+                                <li>Traffic flow and capacity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Traffic regulation and control</strong>
+                            <ul class="unit-topics">
+                                <li>Design of road intersections</li>
+                                <li>Design of parking facilities</li>
+                                <li>Highway lighting</li>
+                                <li>Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Pavement materials</strong>
+                            <ul class="unit-topics">
+                                <li>Materials used in Highway Construction- Soils</li>
+                                <li>Stone aggregates</li>
+                                <li>Bituminous binders</li>
+                                <li>Bituminous paving mixes</li>
+                                <li>Portland cement and cement concrete: Desirable properties</li>
+                                <li>Tests</li>
+                                <li>Requirements for different types of pavements</li>
+                                <li>Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Design of pavements</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Flexible pavements</li>
+                                <li>Factors affecting design and performance</li>
+                                <li>Stresses in flexible pavements</li>
+                                <li>Design of flexible pavements as per IRC</li>
+                                <li>Rigid pavements- components and functions</li>
+                                <li>Factors affecting design and performance of CC pavements</li>
+                                <li>Stresses in rigid pavements</li>
+                                <li>Design of concrete pavements as per IRC</li>
+                                <li>Problems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference</h3>
+                    <ol>
+                        <li>Khanna, S.K., Justo, C.E.G and Veeraragavan, A, 'Highway Engineering', Revised 10th Edition,
+                            Nem Chand & Bros, 2017.</li>
+                        <li>Kadiyalai, L.R., 'Traffic Engineering and Transport Planning', Khanna Publishers.</li>
+                        <li>Partha Chakraborty, 'Principles of Transportation Engineering, PHI Learning.</li>
+                        <li>Fred L. Mannering, Scott S. Washburn, Walter P. Kilareski, 'Principles of Highway
+                            Engineering and Traffic Analysis', 4th Edition, John Wiley.</li>
+                        <li>Srinivasa Kumar, R., Textbook of Highway Engineering, Universities Press, 2011.</li>
+                        <li>Paul H. Wright and Karen K. Dixon, Highway Engineering, 7th Edition, Wiley Student Edition,
+                            2009.</li>
+                    </ol>
+                </section>
+                <section id="subject-119508P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-II</h2>
+                    <h3 class="sub-heading lab-heading">Details</h3>
+                    <p>Summer Entrepreneurship-II is a 6-week program focusing on entrepreneurial skills and practical
+                        exposure.</p>
+                </section>
+                <section id="subject-119502P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Hydraulic Engineering Lab</h2>
+                    <h3 class="sub-heading lab-heading">List of Experiments</h3>
+                    <ol>
+                        <li>Flow Visualization</li>
+                        <li>Studies in Wind Tunnel</li>
+                        <li>Boundary Layer</li>
+                        <li>Flow around an Aerofoil / circular cylinder</li>
+                        <li>Uniform Flow</li>
+                        <li>Velocity Distribution in Open channel flow</li>
+                        <li>Venturi Flume</li>
+                        <li>Standing Wave Flume</li>
+                        <li>Gradually Varied Flow</li>
+                        <li>Hydraulic Jump</li>
+                        <li>Flow under Sluice Gate</li>
+                        <li>Flow through pipes</li>
+                        <li>Turbulent flow through pipes</li>
+                        <li>Laminar flow through pipes</li>
+                        <li>Major losses / Minor losses in pipe</li>
+                    </ol>
+                </section>
+                <section id="subject-119504P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Geotechnical Engineering -I Lab</h2>
+                    <h3 class="sub-heading lab-heading">List of Experiments</h3>
+                    <ol>
+                        <li>Field Density using Core Cutter method</li>
+                        <li>Field Density using Sand replacement method</li>
+                        <li>Natural moisture content using Oven Drying method</li>
+                        <li>Field identification of Fine Grained soils</li>
+                        <li>Specific gravity of Soils</li>
+                        <li>Grain size distribution by Sieve Analysis</li>
+                        <li>Grain size distribution by Hydrometer Analysis</li>
+                        <li>Consistency limits by Liquid limit</li>
+                        <li>Consistency limits by Plastic limit</li>
+                        <li>Consistency limits by Shrinkage limit</li>
+                        <li>Permeability test using Constant-head test method</li>
+                        <li>Permeability test using Falling-head method</li>
+                        <li>Compaction test: Standard Proctor test</li>
+                        <li>Compaction test: Modified Proctor test</li>
+                        <li>Relative density</li>
+                        <li>Consolidation Test</li>
+                        <li>Triaxial Test (UU)</li>
+                        <li>Vane shear test</li>
+                        <li>Direct Shear Test</li>
+                        <li>Unconfined Compression Strength Test</li>
+                    </ol>
+                </section>
+                <section id="subject-119505P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Hydrology and Water Resources Engineering Lab</h2>
+                    <h3 class="sub-heading lab-heading">Description</h3>
+                    <p>Hands on Experiment based on the theory of Hydrology & Water Resources Engineering.</p>
+                </section>
+                <section id="subject-119506P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Environmental Engineering-I Lab</h2>
+                    <h3 class="sub-heading lab-heading">List of Experiments</h3>
+                    <ol>
+                        <li>Physical Characterization of water: Turbidity, Electrical Conductivity, pH</li>
+                        <li>Analysis of solids content of water: Dissolved, Settleable, Suspended, Total, Volatile, Inorganic etc</li>
+                        <li>Alkalinity and acidity, Hardness: Total hardness, Calcium and magnesium hardness</li>
+                        <li>Analysis of ions: Copper, Chloride and sulfate</li>
+                        <li>Optimum coagulant dose</li>
+                        <li>Chemical Oxygen Demand (COD)</li>
+                        <li>Dissolved Oxygen (D.O) and Biochemical Oxygen Demand (BOD)</li>
+                        <li>Break point Chlorination</li>
+                        <li>Bacteriological quality measurement: MPN</li>
+                        <li>Ambient Air quality monitoring (TSP, RSPM, SOx, NOx)</li>
+                        <li>Ambient noise measurement</li>
+                    </ol>
+                </section>
+                <section id="subject-119507P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Transportation Engineering Lab</h2>
+                    <h3 class="sub-heading lab-heading">Description</h3>
+                    <p>Hands on Experiment based on the theory of Transportation Engineering.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

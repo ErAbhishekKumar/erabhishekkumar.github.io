@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo">
+                </div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Chemical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle">
+                    <span> Credits Table </span>
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Mass Transfer Operations [114701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective II [1147XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Mass Transfer Operations Lab [114701P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Internship II [114706]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>8 Weeks</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-I [114707]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>NPTEL Course II [114708]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>23</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114701" data-type="theory">Mass Transfer
+                        Operations</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective II"
+                        data-modal-options='[ {"label": "Bioprocess Engineering", "target": "subject-114702", "btn-id": "btn-114702"}, {"label": "Disaster Management", "target": "subject-114703", "btn-id": "btn-114703"}, {"label": "Membrane Technology", "target": "subject-114704", "btn-id": "btn-114704"}, {"label": "Renewable Energy Technology", "target": "subject-114705", "btn-id": "btn-114705"} ]'>
+                        Program Elective II </button>
+                    <button class="tab-btn" data-target="subject-114708" data-type="theory">NPTEL Course II</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114701P" data-type="lab">Mass Transfer Operations
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-114706" data-type="lab">Summer Internship II</button>
+                    <button class="tab-btn" data-target="subject-114707" data-type="lab">Project-I</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-114701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Mass Transfer Operations [114701]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1: Diffusion: Fundamentals and Applications in Mass
+                                Transfer</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Diffusion: Concept</li>
+                                <li>Significance</li>
+                                <li>And Role Of Diffusion In Mass Transfer And Separation Processes</li>
+                                <li>Types Of Diffusion: Molecular Diffusion</li>
+                                <li>Eddy Diffusion</li>
+                                <li>And Knudsen Diffusion Mechanisms And Comparative Analysis</li>
+                                <li>Fundamental Principles Of Diffusion: Fick's First Law Of Diffusion: Diffusional Flux
+                                </li>
+                                <li>Concentration Gradient</li>
+                                <li>Assumptions</li>
+                                <li>Derivation</li>
+                                <li>And Limitations</li>
+                                <li>Fick's Second Law Of Diffusion: Unsteady-state Diffusion</li>
+                                <li>Mathematical Formulation</li>
+                                <li>And Solution For Simple Boundary Conditions</li>
+                                <li>Steady-State Molecular Diffusion In Gases And Liquids: Diffusion Of A Gas A Through
+                                    A Stagnant Gas B</li>
+                                <li>Equimolar Counter Diffusion</li>
+                                <li>Diffusion In Liquids Binary Diffusivity</li>
+                                <li>Interdiffusion</li>
+                                <li>And Factors Influencing Diffusivity (Temperature, Pressure, Molecular Weight, And
+                                    Medium)</li>
+                                <li>Numerical Problems: Application Of Fick's Laws To Steady And Unsteady Diffusion In
+                                    Gases And Liquids</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2: Distillation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Definition And Importance Of Distillation In Separation Processes</li>
+                                <li>Concept And Basic Principles Of Distillation</li>
+                                <li>Vapour-Liquid Equilibrium (VLE): Phase Behaviour And Boiling Point Diagram</li>
+                                <li>Equilibrium Diagram And Relative Volatility</li>
+                                <li>Effect Of Pressure On VLEP-x-y Diagrams</li>
+                                <li>Ideal Solutions: Raoult's Law</li>
+                                <li>Non-ideal Solutions: Henry's Law And Deviations From Ideality</li>
+                                <li>Distillation Methods: Distillation Without Fractionation</li>
+                                <li>Flash Vaporization: Principle</li>
+                                <li>Operation</li>
+                                <li>And Material Balance</li>
+                                <li>Simple Distillation: Principle</li>
+                                <li>Operation</li>
+                                <li>Material Balance</li>
+                                <li>And Rayleigh's Equation</li>
+                                <li>Steam Distillation: Principle</li>
+                                <li>Operation</li>
+                                <li>And Material Balance</li>
+                                <li>Distillation With Fractionation: Principle Of Fractionation And Types Of Refluxes
+                                    (Total, Minimum, And Optimum)</li>
+                                <li>Material Balance: Overall And Component Material Balance For Distillation Columns
+                                </li>
+                                <li>McCabe-Thiele Method: Determination Of Theoretical Stages/Plates: Construction Of
+                                    Operating Lines For Rectifying And Stripping Sections</li>
+                                <li>Feed Line (q-line): Feed Quality</li>
+                                <li>Equation</li>
+                                <li>And Effect On Slope</li>
+                                <li>Numerical Problems: Determination Of Number Of Theoretical Plates By McCabe-Thiele
+                                    Method</li>
+                                <li>Types Of Fractionating Columns: Plate Columns: Bubble-cap</li>
+                                <li>Sieve</li>
+                                <li>And Valve Plates</li>
+                                <li>Packed Columns: Random And Structured Packings</li>
+                                <li>Column Internals: Weirs And Downcomers</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3: Gas Absorption</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Definition</li>
+                                <li>Concept</li>
+                                <li>And Basic Principles Of Gas Absorption</li>
+                                <li>Importance Of Gas-liquid Mass Transfer Operations In Process Industries</li>
+                                <li>Distinction Between Absorption And Adsorption Phenomena With Suitable Industrial
+                                    Examples</li>
+                                <li>Applications Of Absorption In Chemical</li>
+                                <li>Petrochemical</li>
+                                <li>And Environmental Engineering (e.g., Removal Of CO2, SO2, And NH3 From Gas Streams)
+                                </li>
+                                <li>Absorption Equilibrium: Concept Of Solubility Of Gases In Liquids And Equilibrium
+                                    Relations Between Gas And Liquid Phases</li>
+                                <li>Use Of Henry's Law And Raoult's Law In Describing Gas Absorption Equilibrium</li>
+                                <li>Influence Of Temperature</li>
+                                <li>Pressure</li>
+                                <li>And Solute Concentration On Solubility</li>
+                                <li>Application Of The Phase Rule To Gas-liquid Systems</li>
+                                <li>Criteria For Selection Of Solvents For Specific Absorption Duties Based On
+                                    Solubility</li>
+                                <li>Selectivity</li>
+                                <li>Volatility</li>
+                                <li>Chemical Stability</li>
+                                <li>Viscosity</li>
+                                <li>Cost</li>
+                                <li>And Ease Of Regeneration</li>
+                                <li>Gas Absorption Equipment: Types</li>
+                                <li>Principles</li>
+                                <li>And Design Fundamentals</li>
+                                <li>Major Gas Absorption Equipment Used In Industry</li>
+                                <li>Including Packed Columns</li>
+                                <li>Plate Columns</li>
+                                <li>And Mechanically Agitated Vessels</li>
+                                <li>Packed Columns: Constructional Features</li>
+                                <li>Operating Principles</li>
+                                <li>And Design Fundamentals Of Packed Towers</li>
+                                <li>Characteristics And Performance Parameters Of Structured Packings (Metallic Or
+                                    Plastic Corrugated Sheets, Wire Mesh) And Random Packings (Raschig Rings, Pall
+                                    Rings, Berl And Intalox Saddles)</li>
+                                <li>Packing Characteristics</li>
+                                <li>Mass Transfer Area</li>
+                                <li>And Pressure Drop Through Packed Beds</li>
+                                <li>Hydrodynamics In Packed Columns</li>
+                                <li>Including Liquid Holdup</li>
+                                <li>Channeling</li>
+                                <li>Flooding</li>
+                                <li>And Loading Behavior</li>
+                                <li>Definition And Significance Of Height Equivalent To A Theoretical Plate (HETP) And
+                                    Its Correlation With Column Performance</li>
+                                <li>Numerical Problems Based On Design And Performance Of Packed Columns</li>
+                                <li>Mechanically Agitated Vessels: Principle</li>
+                                <li>Design Features</li>
+                                <li>Working</li>
+                                <li>And Application In Gas Absorption Operations Where High Gas-liquid Contact
+                                    Efficiency Is Required</li>
+                                <li>Material Balance And Power Consumption</li>
+                                <li>Venturi Scrubber: Principle Of Operation</li>
+                                <li>Design Features</li>
+                                <li>Hydrodynamic Behavior</li>
+                                <li>And Mass Transfer Mechanism</li>
+                                <li>Advantages</li>
+                                <li>Limitations</li>
+                                <li>And Industrial Applications In Removing Fine Particulate Matter And Soluble Gases
+                                    From Gas Streams</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4: Liquid-Liquid Extraction</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Definition</li>
+                                <li>Concept</li>
+                                <li>And Basic Principles Of Liquid-liquid Extraction As A Mass Transfer Operation</li>
+                                <li>Importance Of Extraction In Separating Components From Liquid Mixtures Where
+                                    Distillation Is Ineffective Due To Close Boiling Points</li>
+                                <li>Heat Sensitivity</li>
+                                <li>Or Azeotrope Formation</li>
+                                <li>Comparison Between Extraction And Distillation Based On Driving Force</li>
+                                <li>Equipment</li>
+                                <li>And Industrial Applications</li>
+                                <li>Liquid Equilibria: Equilibrium Distribution Of Solute Between Two Immiscible Liquid
+                                    Phases And Derivation Of The Distribution Law</li>
+                                <li>Representation Of Equilibrium Data Using Distribution Coefficient And Its Dependence
+                                    On Temperature And Solute Concentration</li>
+                                <li>Graphical Representation Of Equilibrium Using Equilateral Triangular Coordinates And
+                                    Ternary Phase Diagrams For Systems Containing One Pair Partially Miscible And Two
+                                    Pairs Partially Miscible</li>
+                                <li>Interpretation Of Tie Lines</li>
+                                <li>Plait Point</li>
+                                <li>And Binodal Curve In Ternary Diagrams</li>
+                                <li>Determination Of The Number Of Theoretical Stages In Extraction Using Graphical
+                                    Methods</li>
+                                <li>Numerical Problems Based On Distribution Coefficient And Extraction Efficiency</li>
+                                <li>Choice Of Solvent: Selection Criteria For Solvents Used In Extraction</li>
+                                <li>Including High Selectivity For Solute</li>
+                                <li>Low Miscibility With The Feed Liquid</li>
+                                <li>Chemical Stability</li>
+                                <li>Low Viscosity</li>
+                                <li>Ease Of Regeneration</li>
+                                <li>Non-toxicity</li>
+                                <li>Availability</li>
+                                <li>And Cost-effectiveness</li>
+                                <li>Solvent Recovery And Economic Considerations In Extraction Processes</li>
+                                <li>Extraction Equipment: Various Types Of Liquid-liquid Extraction Equipment Used In
+                                    Industrial Practice</li>
+                                <li>Emphasizing Their Principle</li>
+                                <li>Construction</li>
+                                <li>Working</li>
+                                <li>And Application</li>
+                                <li>Mixer-Settler Assemblies: Design And Operation Of Mixer-settler Units</li>
+                                <li>Principle Of Dispersion And Phase Separation</li>
+                                <li>Application In Batch And Continuous Extraction Processes</li>
+                                <li>Static Columns: Design And Operation Of Spray Columns And Sieve Plate Columns</li>
+                                <li>Flow Pattern</li>
+                                <li>Contact Efficiency</li>
+                                <li>Residence Time</li>
+                                <li>And Operating Limitations</li>
+                                <li>Mechanically Agitated Columns: Working Principles And Design Features Of Rotating
+                                    Disc Contactors (RDC) And Pulse Columns</li>
+                                <li>Effect Of Agitation Speed</li>
+                                <li>Droplet Size</li>
+                                <li>And Column Dimensions On Mass Transfer Rate And Extraction Efficiency</li>
+                                <li>Centrifugal Contactors: Principle And Design Aspects Of Centrifugal Extractors</li>
+                                <li>Advantages Such As High Mass Transfer Efficiency</li>
+                                <li>Compact Design</li>
+                                <li>And Short Residence Time</li>
+                                <li>Industrial Applications In Solvent Recovery</li>
+                                <li>Metal Extraction</li>
+                                <li>And Pharmaceutical Industries</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5: Crystallization</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Definition</li>
+                                <li>Importance</li>
+                                <li>And Fundamental Concept Of Crystallization As A Separation And Purification Process
+                                </li>
+                                <li>Applications Of Crystallization In Chemical</li>
+                                <li>Pharmaceutical</li>
+                                <li>And Food Industries</li>
+                                <li>Crystal Formation As A Simultaneous Process Of Mass Transfer And Thermodynamic
+                                    Equilibrium</li>
+                                <li>Mechanism Of Crystallization: Concepts Of Saturation</li>
+                                <li>Supersaturation</li>
+                                <li>And Nucleation</li>
+                                <li>Explanation Of Mier's Theory Of Supersaturation And Its Role In Controlling Crystal
+                                    Size And Purity</li>
+                                <li>Distinction Between Primary And Secondary Nucleation And Between Crystal Growth And
+                                    Nucleation Kinetics</li>
+                                <li>Factors Affecting Crystal Formation Such As Temperature</li>
+                                <li>Concentration</li>
+                                <li>Agitation</li>
+                                <li>And Impurities</li>
+                                <li>Crystallization Equipment: Principle</li>
+                                <li>Construction</li>
+                                <li>Operation And Performance Of Major Crystallizers Used In Industry</li>
+                                <li>Detailed Design And Working Of Agitated Tank Crystallizer And Swenson-Walker
+                                    Crystallizer</li>
+                                <li>Process Parameters Influencing Product Yield And Quality</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6: Drying</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Definition</li>
+                                <li>Significance</li>
+                                <li>And Basic Principles Of Drying As A Mass Transfer Operation</li>
+                                <li>Importance Of Drying In Process Industries For Solid-liquid Separation</li>
+                                <li>Moisture Removal</li>
+                                <li>And Product Preservation</li>
+                                <li>Modes Of Drying: Constant-rate And Falling-rate Periods</li>
+                                <li>Drying Equilibrium: Concept Of Drying Equilibrium And Representation Of Moisture
+                                    Content On Dry Basis And Wet Basis</li>
+                                <li>Relationship Between Relative Humidity And Moisture Content Of Solids</li>
+                                <li>Explanation Of Equilibrium Moisture Content</li>
+                                <li>Free Moisture</li>
+                                <li>Bound And Unbound Water</li>
+                                <li>Hysteresis</li>
+                                <li>And The Effect Of Soluble Solids On Drying Characteristics</li>
+                                <li>Development And Interpretation Of Drying Rate Curves</li>
+                                <li>Numerical Problems Based On Drying Equilibrium And Rate Calculations</li>
+                                <li>Drying Equipment: Classification Of Dryers Into Batch And Continuous Types</li>
+                                <li>Principles</li>
+                                <li>Construction</li>
+                                <li>Working</li>
+                                <li>And Applications Of Common Industrial Dryers Including Tray Dryer</li>
+                                <li>Rotary Dryer</li>
+                                <li>Drum Dryer</li>
+                                <li>Spray Dryer</li>
+                                <li>And Fluidized Bed Dryer</li>
+                                <li>Comparative Analysis Of These Dryers Based On Heat And Mass Transfer Rates</li>
+                                <li>Energy Efficiency</li>
+                                <li>And Suitability For Different Materials</li>
+                                <li>Process Optimization</li>
+                                <li>Drying Kinetics</li>
+                                <li>And Scale-up Considerations</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Mass Transfer Operations: Theory and Application, K.V.Narayanan, B. Lakshmikutty, CBS
+                            Publishers & Distributors Pvt. Ltd. ISBN: 978-9354666094</li>
+                        <li>Mass Transfer Operations, Robert E. Treybal, McGraw-Hill, ISBN: 978-0070666153</li>
+                        <li>Unit Operations of Chemical Engineering, Warren L. McCabe, Julian C. Smith, Peter Harriott,
+                            McGraw-Hill, ISBN: 978-0072848236.</li>
+                        <li>Principles of Mass Transfer and Separation Processes, Binay K. DuttaPHI Learning, ISBN:
+                            978-8120345187.</li>
+                        <li>Transport Processes and Separation Process Principles, Christie J. Geankoplis Pearson
+                            Education, ISBN: 978-0131013674.</li>
+                        <li>Chemical Engineering: Volume 1 & 2, J.M. Coulson, J.F. RichardsonButterworth-Heinemann,
+                            ISBN: 978-0750644457 (Vol. 1), 978-0750644464 (Vol. 2).</li>
+                        <li>Separation Process Principles J.D. Seader, Ernest J. Henley Wiley, ISBN: 978-0470481837.
+                        </li>
+                        <li>Process Fluid Mechanics, Morton M. Denn, Prentice Hall, ISBN: 978-0137232093. Inc.,
+                            Illinois, 1996.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Bioprocess Engineering [114702]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Bioprocesses</li>
+                                <li>Historical Development Of Bioprocess Technology</li>
+                                <li>An Overview Of Traditional And Modern Applications Of Biotechnology Industry</li>
+                                <li>Outline Of An Integrated Bioprocess And The Various (upstream And Downstream) Unit
+                                    Operations Involved In Bioprocess</li>
+                                <li>Generalized Process Flow Sheets</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2</strong>
+                            <ul class="unit-topics">
+                                <li>Fermentation Process-I: General Requirements Of Fermentation Processes</li>
+                                <li>Basic Design And Construction Of Fermenter And Ancillaries</li>
+                                <li>Main Parameters To Be Monitored And Controlled In Fermentation Process</li>
+                                <li>Fermentation Process-II: An Overview Of Aerobic And Anaerobic Fermentation Processes
+                                    And Their Application In The Biotechnology Industry</li>
+                                <li>Solid-substrate</li>
+                                <li>Slurry Fermentation And Its Applications</li>
+                                <li>Whole Cell Immobilization</li>
+                                <li>Behaviour Of Microbes In Different Reactors (Air Lift, Fluidized, Batch, Continuous
+                                    Fed Batch Condition)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3</strong>
+                            <ul class="unit-topics">
+                                <li>Media Design: Medium Requirements For Fermentation Process</li>
+                                <li>Carbon</li>
+                                <li>Nitrogen</li>
+                                <li>Minerals</li>
+                                <li>Vitamins And Other Complex Nutrients</li>
+                                <li>Oxygen Requirements</li>
+                                <li>Medium Formulation For Optimal Growth And Product Formation</li>
+                                <li>Examples Of Simple And Complex Media</li>
+                                <li>Design And Usage Of Various Commercial Media For Industrial Fermentations</li>
+                                <li>Sterilization: Thermal Death Kinetics Of Microorganisms</li>
+                                <li>Batch And Continuous Heat</li>
+                                <li>Sterilization Of Liquid Media</li>
+                                <li>Filter Sterilization Of Liquid Media</li>
+                                <li>Air</li>
+                                <li>Design Of Sterilization Equipment</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4</strong>
+                            <ul class="unit-topics">
+                                <li>Kinetics Of Microbial Growth And Product Formation: Phases Of Cell Growth In Batch
+                                    Cultures</li>
+                                <li>Simple Unstructured Kinetic Models For Microbial Growth</li>
+                                <li>Monod Model</li>
+                                <li>Growth Of Filamentous Organisms</li>
+                                <li>Growth Associated (Primary) And Nongrowth Associated (Secondary) Product Formation
+                                    Kinetics</li>
+                                <li>Leudeking-Piret Models</li>
+                                <li>Substrate And Product Inhibition On Cell Growth And Product Formation</li>
+                                <li>Introduction To Structured Models For Growth And Product Formation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5</strong>
+                            <ul class="unit-topics">
+                                <li>Metabolic Stoichiometry: Stoichiometry Of Cell Growth And Product Formation</li>
+                                <li>Elemental Balances</li>
+                                <li>Degrees Of Reduction Of Substrate And Biomass</li>
+                                <li>Available Electron Balances</li>
+                                <li>Yield Coefficients Of Biomass And Product Formation</li>
+                                <li>Maintenance Coefficients</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6</strong>
+                            <ul class="unit-topics">
+                                <li>Energetics: Energetic Analysis Of Microbial Growth And Product Formation</li>
+                                <li>Oxygen Consumption And Heat Evolution In Aerobic Cultures Thermodynamic Efficiency
+                                    Of Growth</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Biochemical Engineering Fundamentals Balleyand Ollis, McGraw Hill (2nd Ed.), 1986.</li>
+                        <li>Bioprocess Engineering, Shule and Kargi, Prentice Hall, 1992.</li>
+                        <li>Stanbury, P.F., Whitaker, A., & Hall, S.J., (1998), Principles of fermentation Technology,
+                            2nd ed., Elsevier Science Publishers, BV, Amsterdam.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Disaster Management [114703]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1: Fundamentals of Disaster Management</strong>
+                            <ul class="unit-topics">
+                                <li>Definitions And Concepts Of Hazard</li>
+                                <li>Vulnerability</li>
+                                <li>Risk</li>
+                                <li>Resilience</li>
+                                <li>Concept Of Disaster Management Cycle</li>
+                                <li>Introduction To Various Hazards Both Natural And Man-Made Hazards- Earthquakes</li>
+                                <li>Cyclones</li>
+                                <li>Droughts</li>
+                                <li>Floods</li>
+                                <li>Volcanoes</li>
+                                <li>Coastal Hazards</li>
+                                <li>Landslides</li>
+                                <li>Forest Fires</li>
+                                <li>Industrial Accidents</li>
+                                <li>Biological Disasters</li>
+                                <li>Etc.</li>
+                                <li>Climate Change</li>
+                                <li>Global Warming</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2: Disaster Management in India</strong>
+                            <ul class="unit-topics">
+                                <li>Hazard And Vulnerability Profile Of India</li>
+                                <li>Disaster Management Act 2005</li>
+                                <li>National Disaster Mitigation And Management Guideline On -National Policy On
+                                    Disaster Management 2009</li>
+                                <li>NDMA Guidelines On Cyclones Specifically</li>
+                                <li>Besides Earthquakes</li>
+                                <li>Floods</li>
+                                <li>Urban Floods</li>
+                                <li>Information Systems</li>
+                                <li>Communication Systems Etc.</li>
+                                <li>Introduction To State Disaster Management Authorities</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3: Hazard Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Estimation Of Potential Causes</li>
+                                <li>Characteristics And Impact Of Hazards</li>
+                                <li>Geological/Processes Leading To Natural Hazards</li>
+                                <li>Multi-Hazard Assessment</li>
+                                <li>Short Term And Long Term Prediction</li>
+                                <li>Early Warning System For Different Hazards</li>
+                                <li>Risk Analysis For Individuals</li>
+                                <li>Communities Etc.</li>
+                                <li>Role Of Remote Sensing & GIS In Disaster Management And Its Applications</li>
+                                <li>Case Studies</li>
+                                <li>Sudden Explosion Of Cylinder</li>
+                                <li>Bulk Chemical Storage Fire</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4: Disaster Risk Reduction (DRR)</strong>
+                            <ul class="unit-topics">
+                                <li>Assessing Vulnerabilities</li>
+                                <li>Risk Assessment</li>
+                                <li>Preparation Of Exposure And Risk Database</li>
+                                <li>Prevention And Mitigation Strategies For DRR</li>
+                                <li>Framework Of Disaster Risk Reduction</li>
+                                <li>Capacity Building Measures</li>
+                                <li>Community Participation</li>
+                                <li>Contemporary Studies And Work Towards Disaster Risk Reduction</li>
+                                <li>Disaster Risk Reduction Plan</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5: Response & Recovery Operation I</strong>
+                            <ul class="unit-topics">
+                                <li>Role Of NDRF</li>
+                                <li>Training Of Personnel</li>
+                                <li>Equipment Necessary</li>
+                                <li>Public Awareness Creation</li>
+                                <li>Mass Casualty Management</li>
+                                <li>Agencies Involved In Mass Casualty Management</li>
+                                <li>Qualification And Duties Of Professionals</li>
+                                <li>Response Policy</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6: Response & Recovery Operation II</strong>
+                            <ul class="unit-topics">
+                                <li>Case Studies: Case Study: Recover & Rehabilitation After Bhopal Gas Tragedy</li>
+                                <li>The Indian Ocean Tsunami 2004</li>
+                                <li>The 2013 IOCL Hazira Fire Accident</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Disaster management H. K. Gupta 2nd Edition, University Press, 2001.</li>
+                        <li>Disaster Management R. B. Singh (Ed), Rawat Publication, New Delhi, 2000., ISBN: 8170335582,
+                            9788170335580.</li>
+                        <li>An overview on natural & man-made disasters and their reduction, R K Bhandani, CSIR, New
+                            Delhi.</li>
+                        <li>Encyclopedia of disaster management, SL Goyal Deep & Deep, Publications, New Delhi, 2006,
+                            ISBN-10: 817629716X, ISBN-13: 978-8176297165.</li>
+                        <li>Manuals on Natural Disaster management in India. Gupta, M.C. National Centre for Disaster
+                            Management, IIPA, New Delhi, 2002.</li>
+                        <li>Disaster Management Guidelines. GOI-UNDP, GOI-UNDP Disaster Risk Reduction Programme
+                            (2009-2012).</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Membrane Technology [114704]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1: Introduction to Membrane Technology</strong>
+                            <ul class="unit-topics">
+                                <li>History And Evolution Of Membrane Technology</li>
+                                <li>Classification Of Membranes</li>
+                                <li>Basic Principles Of Membrane Separation</li>
+                                <li>Transport Mechanisms: Diffusion</li>
+                                <li>Osmosis</li>
+                                <li>Filtration</li>
+                                <li>Dead End And Crossflow Membrane Process</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2: Membrane Materials and Fabrication</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Membrane Materials (Polymeric, Ceramic, Metallic, Composite)</li>
+                                <li>Fabrication Techniques (Phase Inversion, Electrospinning, Sintering)</li>
+                                <li>Membrane Structure: Symmetric Vs. Asymmetric</li>
+                                <li>Characterization Methods (SEM, AFM, Porometry, Spectroscopy)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3: Membrane Processes and Membrane Modules</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Membrane Separation Processes: A) Microfiltration (MF)</li>
+                                <li>B) Ultrafiltration (UF)</li>
+                                <li>C) Nanofiltration (NF)</li>
+                                <li>D) Reverse Osmosis (RO)</li>
+                                <li>E) Forward Osmosis (FO)</li>
+                                <li>F) Gas Separation</li>
+                                <li>G) Pervaporation</li>
+                                <li>H) Electrodialysis</li>
+                                <li>Membrane Modules: A) Plate-and-frame</li>
+                                <li>B) Spiral-wound</li>
+                                <li>C) Hollow Fiber</li>
+                                <li>D) Tabular</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4: Applications of Membrane Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Membrane Bioreactor For Wastewater Treatment</li>
+                                <li>Desalination By Membrane Technology</li>
+                                <li>Separation Of Azeotropic Mixture Using Pervaporation Membrane Process</li>
+                                <li>Food And Beverage Industry (e.g., Dairy, Juice Concentration)</li>
+                                <li>Pharmaceutical And Biotechnology Applications</li>
+                                <li>Energy Sectors (e.g., Hydrogen Production, Carbon Capture)</li>
+                                <li>Emerging Areas: Membranes In Batteries And Fuel Cells</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5: Challenges, Innovations and Future Trends I</strong>
+                            <ul class="unit-topics">
+                                <li>Membrane Fouling And Cleaning Strategies</li>
+                                <li>Economic Considerations (Cost Analysis, Lifecycle Assessment)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6: Challenges, Innovations and Future Trends II</strong>
+                            <ul class="unit-topics">
+                                <li>Advances In Membrane Materials (Graphene, MOFs, Aquaporin-based Membranes)</li>
+                                <li>Sustainability And Environmental Impacts</li>
+                                <li>Future Directions: Smart Membranes</li>
+                                <li>Bioinspired Membranes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Membrane Technology and Applications, Richard Baker, Publisher: Wiley, ISBN:978-0470743720
+                        </li>
+                        <li>Membrane Separation Processes, Kaushik Nath, Publisher: PHI Learning, ISBN:978-8120335325
+                        </li>
+                        <li>Basic Principles of Membrane Technology, Marcel Mulder, Publisher: Springer, ISBN:
+                            978-9401058545.</li>
+                        <li>Membrane Processes in Separation and Purification J.G. Crespo and K.W. Boddeker, Publisher:
+                            Springer, ISBN:978-0792323586.</li>
+                        <li>Advanced Membrane Technology and Applications Norman N Li, Anthony G. Fane, W. S. Winston
+                            Ho, Takeshi Matsuura, Publisher: Wiley, ISBN:978-0471731672.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective II: Renewable Energy Technology [114705]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1: Introduction to Renewable Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Global And National Energy Scenarios</li>
+                                <li>Types Of Renewable Energy Sources</li>
+                                <li>Need For Renewable Energy: Environmental And Economic Perspectives</li>
+                                <li>Energy Units And Conversions</li>
+                                <li>Energy Balance And Efficiency Calculations</li>
+                                <li>Conventional</li>
+                                <li>Non-conventional</li>
+                                <li>Renewable</li>
+                                <li>Non-renewable Sources Of Energy: Prospects</li>
+                                <li>Perspectives</li>
+                                <li>& Advantages</li>
+                                <li>Types Of Energy Storage: Thermal</li>
+                                <li>Electrochemical (Batteries)</li>
+                                <li>Mechanical (Flywheels)</li>
+                                <li>Chemical (Hydrogen)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2: Solar Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Solar Thermal Systems: Solar Collectors (Flat Plate, Evacuated Tube, Concentrating)
+                                </li>
+                                <li>Heat Transfer Fluids And Materials</li>
+                                <li>Solar Water Heating Systems</li>
+                                <li>Photovoltaic (PV) Systems: Working Principle And Components</li>
+                                <li>Efficiency And Performance Analysis</li>
+                                <li>PV Cell Materials (Silicon-based, Thin-film, Emerging Technologies)</li>
+                                <li>Performance Analysis Of Liquid Flat Plate Collectors And Solar Air Heaters</li>
+                                <li>Chemical Applications: Solar-assisted Chemical Reactors</li>
+                                <li>Solar Hydrogen Production (Photocatalysis, Thermolysis)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3: Hydrogen and Fuel Cells</strong>
+                            <ul class="unit-topics">
+                                <li>Hydrogen As An Energy Carrier</li>
+                                <li>Production Methods: Steam Methane Reforming (SMR)</li>
+                                <li>Electrolysis (Alkaline, PEM)</li>
+                                <li>Thermochemical Water Splitting</li>
+                                <li>Hydrogen Storage And Transport</li>
+                                <li>Fuel Cell Types: Proton Exchange Membrane Fuel Cell (PEMFC)</li>
+                                <li>Solid Oxide Fuel Cell (SOFC)</li>
+                                <li>Direct Methanol Fuel Cell (DMFC)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4: Wind Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Wind Energy: Wind Turbine Types</li>
+                                <li>Aerodynamics</li>
+                                <li>Wind Farm Siting And Design</li>
+                                <li>Power Generation And Control Systems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5: Hydropower Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Hydropower: Principles Of Hydropower</li>
+                                <li>Small-scale Hydro Systems</li>
+                                <li>Environmental Impacts And Mitigation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6: Geothermal and Ocean Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Geothermal Resources And Extraction Technologies</li>
+                                <li>Binary Cycle And Flash Steam Plants</li>
+                                <li>Ocean Energy: Tidal And Wave Energy Conversion</li>
+                                <li>Ocean Thermal Energy Conversion (OTEC)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Renewable Energy: Power for a Sustainable Future, Godfrey Boyle, Oxford University, Press,
+                            3rd Edition (2012)</li>
+                        <li>Renewable Energy Resources, John Twidell and Tony Weir, Routledge, 3rd Edition (2015)</li>
+                        <li>Biofuels Engineering Process Technology, Caye M. Drapcho, Narendra N. Nimbkar, Terry H.
+                            Walker, McGraw-Hill, 2nd Edition (2008)</li>
+                        <li>Solar Engineering of Thermal Processes John A. Duffie and William A. Beckman, Wiley, 4th
+                            Edition (2013)</li>
+                        <li>Hydrogen and Fuel Cells: Emerging Technologies and Applications, Bent Sørensen, Elsevier,
+                            2nd Edition (2005)</li>
+                        <li>Energy Storage, Robert A. Huggins, Springe, 1st Edition (2016)</li>
+                        <li>Non-Conventional Energy Resources, B. H. Khan, McGraw Hill, 3rd edition</li>
+                        <li>Renewable Energy Sources and Emerging Technologies D. P. Kothari, K. C. Singhal, and Rakesh
+                            Ranjan, PHI Learning</li>
+                        <li>Solar Energy: Principles of Thermal Collection and Storage, S. P. Sukhatme and J. K. Nayak,
+                            McGraw Hill, 3rd edition</li>
+                    </ol>
+                </section>
+
+                <section id="subject-114708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">NPTEL Course II [114708]</h2>
+                    <p>Details for NPTEL Course II will be provided by the department. This component carries 2 credits.
+                    </p>
+                </section>
+
+                <section id="subject-114701P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Mass Transfer Operations Lab [114701P]</h2>
+                    <p>Perform any 10 Experiments from the list below:</p>
+                    <ul>
+                        <li><strong class="unit-title">List of Experiments:</strong>
+                            <ul class="unit-topics">
+                                <li>1. Determination Of The Diffusion Coefficient Of A Given Gas Or Vapor In Air Using A
+                                    Diffusion Cell</li>
+                                <li>2. Determination Of The Diffusivity Of A Solute In A Liquid Medium Using A Diffusion
+                                    Cell</li>
+                                <li>3. Verification Of Rayleigh's Equation In Simple Distillations</li>
+                                <li>4. Determination Of Vapour-Liquid Equilibrium (VLE) Data For A Binary Mixture</li>
+                                <li>5. Performance Evaluation Of A Fractional Distillation Column For Separation Of
+                                    Binary Mixtures</li>
+                                <li>6. Performance Evaluation Of A Packed Column For Gas Absorption</li>
+                                <li>7. Determination Of Distribution Coefficient Of A Solute From A Liquid Mixture Using
+                                    A Suitable Solvent For Liquid-Liquid Extraction In A Mixer Settler Unit</li>
+                                <li>8. Determination Of The Crystal Yield And Crystal Size Distribution By Performing
+                                    Batch Crystallization Of A Solution In A Batch Crystallizer</li>
+                                <li>9. Determination Of The Drying Rate And Equilibrium Moisture Content Using A Tray
+                                    Dryer</li>
+                                <li>10. Evaluation Of Hydrodynamics In A Packed Column</li>
+                                <li>11. Determination Of The Percentage Recovery Of An Essential Oil By Using Steam
+                                    Distillation Apparatus</li>
+                                <li>12. Determination Of Height Equivalent To Theoretical Plates (HETP) In A Packed
+                                    Distillation Column</li>
+                                <li>13. Determination Of Drying Rate Of A Wet Solid Using A Fluidized Bed Dryer</li>
+                                <li>14. Performance Analysis Of A Rotary Dryer To Investigate The Drying Efficiency And
+                                    Residence Time Of Solids In A Rotary Dryer</li>
+                                <li>15. Analysis Of The Role Of An Entrainer In Breaking The Azeotrope By Performing
+                                    Azeotropic Distillation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="subject-114706" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Internship II [114706]</h2>
+                    <p>Details for Summer Internship II will be provided by the department. This component carries 8
+                        credits.</p>
+                </section>
+
+                <section id="subject-114707" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-I [114707]</h2>
+                    <p>Details for Project-I will be provided by the department. This component carries 6 credits.</p>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

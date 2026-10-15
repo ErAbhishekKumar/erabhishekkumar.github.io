@@ -168,6 +168,472 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
+
+        body {
+            background:
+                radial-gradient(ellipse at 50% -12rem, rgba(30, 136, 229, .2), transparent 34rem),
+                #f3f6fb;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #102a56, #1565c0 58%, #168aad);
+            padding: clamp(2.5rem, 8vw, 5rem) 1.5rem;
+            border-bottom: 4px solid #80deea;
+        }
+
+        .header h1 {
+            font-size: clamp(2.3rem, 6vw, 3.6rem);
+            letter-spacing: -.045em;
+        }
+
+        .header p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+        }
+
+        .beu-pyq-spotlight {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            width: min(1160px, calc(100% - 40px));
+            margin: -0.5rem auto 2rem;
+            padding: clamp(1.25rem, 4vw, 2rem);
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 20px;
+            background: linear-gradient(115deg, #102a56, #174e86 65%, #087e8b);
+            box-shadow: 0 18px 42px rgba(16, 42, 86, .2);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .beu-pyq-spotlight:hover,
+        .beu-pyq-spotlight:focus-visible {
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px rgba(16, 42, 86, .28);
+        }
+
+        .beu-pyq-spotlight:focus-visible {
+            outline: 3px solid #ffcc80;
+            outline-offset: 3px;
+        }
+
+        .beu-pyq-copy {
+            display: grid;
+            gap: .35rem;
+        }
+
+        .beu-pyq-label {
+            color: #80deea;
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .beu-pyq-copy strong {
+            font-size: clamp(1.3rem, 4vw, 1.85rem);
+            letter-spacing: -.025em;
+        }
+
+        .beu-pyq-copy span:last-child {
+            color: #dbeafe;
+            font-size: .95rem;
+        }
+
+        .beu-pyq-action {
+            flex: 0 0 auto;
+            padding: .8rem 1.1rem;
+            color: #102a56;
+            border-radius: 12px;
+            background: #b2f5ea;
+            font-weight: 800;
+        }
+
+        .donate-btn {
+            display: block;
+            margin: 0 auto 1.75rem;
+            border-radius: 999px;
+            box-shadow: 0 8px 20px rgba(230, 137, 0, .2);
+            font-weight: 700;
+        }
+
+        .tools-grid {
+            gap: 22px;
+        }
+
+        .tool-card {
+            border: 1px solid #e3eaf3;
+            border-radius: 18px;
+            box-shadow: 0 10px 28px rgba(30, 60, 90, .08);
+        }
+
+        .tool-card:hover {
+            border-color: #b9d8f2;
+            box-shadow: 0 16px 34px rgba(30, 60, 90, .14);
+        }
+
+        .tool-card h2 {
+            letter-spacing: -.025em;
+        }
+
+        .tool-card a {
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-weight: 750;
+            letter-spacing: -.035em;
+        }
+
+        .footer {
+            border-top: 1px solid #e3eaf3;
+            box-shadow: 0 -8px 24px rgba(30, 60, 90, .05);
+        }
+
+        html {
+            overflow-x: clip;
+            background: #0b1730;
+        }
+
+        body {
+            overflow-x: clip;
+            color: #17243a;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, .15), transparent 35rem),
+                linear-gradient(180deg, #0b1730 0, #132744 440px, #edf3fb 440px, #f7f9fd 100%);
+            perspective: 1400px;
+        }
+
+        .header {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            place-content: center;
+            min-height: clamp(270px, 36vw, 390px);
+            margin: 18px auto 0;
+            padding: 3.5rem 1.5rem 5.5rem;
+            border: 1px solid rgba(255, 255, 255, .13);
+            border-bottom: 1px solid rgba(255, 255, 255, .22);
+            border-radius: 28px;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 76% 38%, rgba(67, 213, 229, .32), transparent 23rem),
+                radial-gradient(ellipse at 18% 115%, rgba(103, 80, 220, .5), transparent 26rem),
+                linear-gradient(128deg, #101d40 0%, #144d83 56%, #087e8b 100%);
+            box-shadow: 0 32px 70px rgba(4, 15, 35, .32), inset 0 1px rgba(255, 255, 255, .2);
+            transform: translateZ(0);
+        }
+
+        .header::before,
+        .header::after {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            pointer-events: none;
+        }
+
+        .header::before {
+            inset: 0;
+            opacity: .28;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, .09) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, .09) 1px, transparent 1px);
+            background-size: 46px 46px;
+            mask-image: linear-gradient(115deg, transparent 12%, #000 100%);
+            transform: perspective(520px) rotateX(12deg) scale(1.15);
+            transform-origin: center bottom;
+        }
+
+        .header::after {
+            top: 50%;
+            right: clamp(-100px, 8vw, 115px);
+            width: clamp(155px, 22vw, 270px);
+            aspect-ratio: 1;
+            border: 1px solid rgba(196, 248, 255, .35);
+            border-radius: 50%;
+            background: radial-gradient(circle at 32% 27%, rgba(255, 255, 255, .42), rgba(125, 231, 244, .13) 31%, rgba(13, 74, 131, .12) 63%, transparent 68%);
+            box-shadow:
+                inset -18px -14px 35px rgba(5, 25, 66, .22),
+                0 0 0 18px rgba(167, 243, 255, .055),
+                0 0 0 38px rgba(167, 243, 255, .035),
+                0 24px 80px rgba(5, 18, 52, .26);
+            transform: translateY(-50%) rotateX(12deg) rotateY(-24deg);
+            animation: hero-orbit 9s ease-in-out infinite;
+        }
+
+        .header h1,
+        .header p {
+            position: relative;
+            z-index: 1;
+            text-align: left;
+        }
+
+        .header h1 {
+            max-width: 750px;
+            color: #fff;
+            font-size: clamp(2.7rem, 7vw, 5.4rem);
+            line-height: .98;
+            text-shadow: 0 2px 0 #4ebbd1, 0 5px 0 #237d9e, 0 12px 28px rgba(2, 13, 42, .56);
+            transform: perspective(700px) rotateX(3deg);
+        }
+
+        .header p {
+            max-width: 520px;
+            color: #d5f4ff;
+            font-size: clamp(1rem, 2.5vw, 1.22rem);
+            text-shadow: 0 3px 18px rgba(3, 15, 42, .42);
+        }
+
+        .beu-pyq-spotlight {
+            position: relative;
+            isolation: isolate;
+            min-height: 150px;
+            margin: -2.3rem auto 2.7rem;
+            overflow: hidden;
+            border-color: rgba(255, 255, 255, .42);
+            border-radius: 24px;
+            background:
+                radial-gradient(ellipse at 90% 10%, rgba(45, 212, 191, .26), transparent 18rem),
+                linear-gradient(112deg, #122141, #174e86 62%, #087e8b);
+            box-shadow: 0 24px 45px rgba(12, 35, 72, .3), inset 0 1px rgba(255, 255, 255, .24);
+            transform: perspective(1100px) rotateX(2deg) translateZ(18px);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .beu-pyq-spotlight::before,
+        .beu-pyq-spotlight::after {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            pointer-events: none;
+        }
+
+        .beu-pyq-spotlight::before {
+            inset: 0;
+            opacity: .35;
+            background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, .2) 48%, transparent 72%);
+            transform: translateX(-100%);
+            transition: transform .65s ease;
+        }
+
+        .beu-pyq-spotlight::after {
+            top: -58px;
+            right: 17%;
+            width: 180px;
+            aspect-ratio: 1;
+            border: 1px solid rgba(191, 250, 255, .17);
+            border-radius: 50%;
+            box-shadow: 0 0 0 16px rgba(191, 250, 255, .035), 0 0 0 34px rgba(191, 250, 255, .025);
+        }
+
+        .beu-pyq-spotlight:hover,
+        .beu-pyq-spotlight:focus-visible {
+            transform: perspective(1100px) rotateX(0) rotateY(-1deg) translateY(-7px) translateZ(28px);
+            box-shadow: 0 32px 58px rgba(12, 35, 72, .36), inset 0 1px rgba(255, 255, 255, .3);
+        }
+
+        .beu-pyq-spotlight:hover::before,
+        .beu-pyq-spotlight:focus-visible::before {
+            transform: translateX(100%);
+        }
+
+        .beu-pyq-copy,
+        .beu-pyq-action {
+            position: relative;
+            z-index: 1;
+        }
+
+        .beu-pyq-copy strong {
+            color: #fff;
+            text-shadow: 0 3px 12px rgba(3, 15, 42, .35);
+        }
+
+        .beu-pyq-action {
+            padding: .9rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, .56);
+            background: linear-gradient(180deg, #c8fff1, #89ead7);
+            box-shadow: 0 7px 0 #318f91, 0 12px 25px rgba(0, 0, 0, .2), inset 0 1px #fff;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .beu-pyq-spotlight:hover .beu-pyq-action {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 0 #318f91, 0 16px 28px rgba(0, 0, 0, .23), inset 0 1px #fff;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            transform-style: preserve-3d;
+        }
+
+        .tools-grid {
+            perspective: 1200px;
+            gap: 26px;
+        }
+
+        .tool-card {
+            position: relative;
+            isolation: isolate;
+            min-height: 100%;
+            padding: 28px 22px;
+            overflow: hidden;
+            border: 1px solid rgba(191, 213, 240, .8);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #fff, #f2f7ff);
+            box-shadow: 0 8px 0 #d7e3f2, 0 18px 32px rgba(26, 52, 91, .12), inset 0 1px #fff;
+            transform: translateZ(0);
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+        }
+
+        .tool-card::before {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 12%;
+            width: 76%;
+            height: 3px;
+            content: "";
+            border-radius: 0 0 8px 8px;
+            background: linear-gradient(90deg, transparent, #48b9dc, #7b72eb, transparent);
+            opacity: .8;
+        }
+
+        .tool-card::after {
+            position: absolute;
+            z-index: -1;
+            right: -60px;
+            bottom: -92px;
+            width: 190px;
+            aspect-ratio: 1;
+            content: "";
+            border: 1px solid rgba(65, 142, 207, .1);
+            border-radius: 50%;
+            box-shadow: 0 0 0 16px rgba(65, 142, 207, .035), 0 0 0 34px rgba(65, 142, 207, .025);
+            pointer-events: none;
+        }
+
+        .tool-card:hover {
+            border-color: #a8cbed;
+            box-shadow: 0 12px 0 #cadcf0, 0 30px 45px rgba(26, 52, 91, .2), inset 0 1px #fff;
+            transform: perspective(900px) translateY(-8px) rotateX(2deg) rotateY(-1deg) translateZ(18px);
+        }
+
+        .tool-card h2 {
+            color: #173e72;
+            font-size: 1.35rem;
+        }
+
+        .tool-card a {
+            position: relative;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .tool-card a:hover {
+            color: #105995;
+            background: linear-gradient(90deg, #edf7ff, #eaf4ff);
+            transform: translateX(3px);
+        }
+
+        .section-title {
+            color: #152b4b;
+            text-shadow: 0 2px 0 #fff, 0 5px 18px rgba(20, 57, 100, .1);
+        }
+
+        .donate-btn {
+            position: relative;
+            z-index: 1;
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, .7);
+            background: linear-gradient(180deg, #ffbd55, #ed8500);
+            box-shadow: 0 6px 0 #b85e00, 0 12px 22px rgba(181, 94, 0, .22), inset 0 1px rgba(255, 255, 255, .62);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .donate-btn:hover {
+            background: linear-gradient(180deg, #ffc86e, #f09516);
+            box-shadow: 0 8px 0 #b85e00, 0 17px 27px rgba(181, 94, 0, .26), inset 0 1px rgba(255, 255, 255, .65);
+            transform: translateY(-3px);
+        }
+
+        .donate-btn:active {
+            box-shadow: 0 2px 0 #b85e00, 0 5px 12px rgba(181, 94, 0, .2), inset 0 1px rgba(255, 255, 255, .5);
+            transform: translateY(3px);
+        }
+
+        .footer {
+            border-top: 1px solid rgba(184, 205, 230, .65);
+            background: linear-gradient(180deg, #fff, #f3f7fc);
+        }
+
+        @keyframes hero-orbit {
+            0%, 100% { transform: translateY(-50%) rotateX(12deg) rotateY(-24deg) }
+            50% { transform: translateY(calc(-50% - 10px)) rotateX(16deg) rotateY(-16deg) }
+        }
+
+        @media (max-width: 560px) {
+            .header {
+                min-height: 250px;
+                margin: 10px 10px 0;
+                padding: 3rem 1.25rem 4rem;
+                border-radius: 22px;
+            }
+
+            .header::after {
+                top: 25%;
+                right: -64px;
+                opacity: .65;
+            }
+
+            .header h1,
+            .header p {
+                text-align: left;
+            }
+
+            .beu-pyq-spotlight {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 1rem;
+                min-height: 0;
+                margin: -1.8rem auto 2rem;
+                border-radius: 20px;
+                transform: perspective(900px) rotateX(1deg) translateZ(10px);
+            }
+
+            .beu-pyq-spotlight:hover,
+            .beu-pyq-spotlight:focus-visible {
+                transform: perspective(900px) translateY(-4px) translateZ(15px);
+            }
+
+            .beu-pyq-spotlight::after {
+                right: -55px;
+            }
+
+            .tool-card {
+                min-height: auto;
+            }
+
+            .tool-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .header::after {
+                animation: none;
+            }
+
+            .beu-pyq-spotlight,
+            .beu-pyq-action,
+            .tool-card,
+            .tool-card a,
+            .donate-btn {
+                transition: none;
+            }
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
@@ -182,6 +648,14 @@
         <p>All Bihar Technical Education Tools in One Place</p>
     </header>
 
+    <a class="beu-pyq-spotlight" href="BEUPYQ/pyq%26syllabus.html">
+        <span class="beu-pyq-copy">
+            <span class="beu-pyq-label">Featured study portal</span>
+            <strong>BEU PYQ &amp; Syllabus</strong>
+            <span>Previous-year questions and branch-wise syllabus for Bihar Engineering University.</span>
+        </span>
+        <span class="beu-pyq-action">Explore BEU PYQ&nbsp; →</span>
+    </a>
 
 <button class="donate-btn" onclick="handleDonate()">₹ Donate</button>
 
@@ -323,7 +797,4 @@
     </script>
 </body>
 </html>
-
-
-
 

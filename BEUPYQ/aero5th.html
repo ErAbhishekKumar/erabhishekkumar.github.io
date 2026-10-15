@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo">
+                </div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Aeronautical Engineering</p>
+            </div>
+
+            <section class="info-card">
+                <h2 id="credits-toggle">
+                    <span> Credits Table </span>
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Propulsion-II [116501]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Aircraft Structure - II [116502]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Theory of Machines [116503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective Course [1005XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Entrepreneurship Development and Start-ups [116505]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Sports, Yoga and Meditation [116506]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Internship -I [116504P]</td>
+                                <td colspan="3">6 Weeks</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Theory of Machines Lab [116503P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>25</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-116501" data-type="theory">Propulsion-II</button>
+                    <button class="tab-btn" data-target="subject-116502" data-type="theory">Aircraft Structure -
+                        II</button>
+                    <button class="tab-btn" data-target="subject-116503" data-type="theory">Theory of Machines</button>
+                    <button class="tab-btn" data-target="subject-116505" data-type="theory">Entrepreneurship Development
+                        and Start-ups</button>
+                    <button class="tab-btn" data-target="subject-116506" data-type="theory">Sports, Yoga and
+                        Meditation</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective Course" data-modal-options='[ 
+                        {"label": "Design Thinking", "target": "subject-100512", "btn-id": "btn-100512"}, 
+                        {"label": "Internet of Things", "target": "subject-100513", "btn-id": "btn-100513"}, 
+                        {"label": "Green Energy Technologies", "target": "subject-100514", "btn-id": "btn-100514"}, 
+                        {"label": "Optimization Techniques", "target": "subject-100515", "btn-id": "btn-100515"}, 
+                        {"label": "Non-Destructive Testing", "target": "subject-100516", "btn-id": "btn-100516"}, 
+                        {"label": "Embedded Systems", "target": "subject-100517", "btn-id": "btn-100517"}, 
+                        {"label": "Renewable Energy Sources", "target": "subject-100518", "btn-id": "btn-100518"}, 
+                        {"label": "MATLAB for Engineers", "target": "subject-100519", "btn-id": "btn-100519"}, 
+                        {"label": "Additive Manufacturing", "target": "subject-100520", "btn-id": "btn-100520"} 
+                    ]'> Open Elective Course </button>
+                </div>
+
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-116504P" data-type="lab">Summer Internship -I</button>
+                    <button class="tab-btn" data-target="subject-116503P" data-type="lab">Theory of Machines
+                        Lab</button>
+                </div>
+            </section>
+
+            <div id="syllabus-content">
+                <section id="subject-116501" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Propulsion-II [116501]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Rocket Propulsion</strong>
+                            <ul class="unit-topics">
+                                <li>Rocket propulsion</li>
+                                <li>Applications of rocket propulsion (Space Launch Vehicles, Spacecraft, Missiles and
+                                    Other Applications)</li>
+                                <li>Rocket classification: Chemical and Non-Chemical Rockets</li>
+                                <li>Definitions-Impulse</li>
+                                <li>Specific Impulse</li>
+                                <li>Effective exhaust velocity</li>
+                                <li>Specific propellant consumption</li>
+                                <li>Propellant mass fraction</li>
+                                <li>Residual or unusable remaining propellant</li>
+                                <li>Impulse-to-weight ratio</li>
+                                <li>Thrust to weight ratio</li>
+                                <li>Thrust equation of rocket engines- Effective Exhaust Velocity</li>
+                                <li>Maximum Thrust</li>
+                                <li>Variation of thrust with altitude</li>
+                                <li>Effect of Divergence angle on thrust</li>
+                                <li>Rocket performance parameters- Total Impulse and Specific Impulse</li>
+                                <li>Specific Impulse Efficiency</li>
+                                <li>Volumetric Specific Impulse</li>
+                                <li>Mass Flow Coefficient</li>
+                                <li>Thrust Coefficient</li>
+                                <li>Specific Propellant Consumption</li>
+                                <li>Characteristic Velocity</li>
+                                <li>Impulse-to-Weight Ratio</li>
+                                <li>Energy Balance and Efficiencies</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Liquid Propellant Rocket Engines- Basics and
+                                Combustion</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction and Basic configuration</li>
+                                <li>Types of liquid-propellant rocket engines: Monopropellant rocket engines</li>
+                                <li>Bipropellant rocket engines</li>
+                                <li>Liquid oxidizers</li>
+                                <li>Safety and environmental concerns</li>
+                                <li>Performance Parameters of selected existing Liquid Rocket Engines</li>
+                                <li>Types of feed system in liquid rocket engine</li>
+                                <li>Purpose</li>
+                                <li>Types of Pressure feed systems</li>
+                                <li>Methods of Tank- pressure Control</li>
+                                <li>Types of Pressurization Systems</li>
+                                <li>Desirable Characteristics of Pressurants</li>
+                                <li>Tank Pressurant requirements and its determination</li>
+                                <li>Pressurized Gas systems</li>
+                                <li>Elements of Pump Feed systems</li>
+                                <li>Design layout of Turbo-pump assemblies</li>
+                                <li>Control valves and their selection</li>
+                                <li>Overall design of feed systems both pressure fed and turbo pump fed systems</li>
+                                <li>Combustion of liquid propellants: Hypergolic propellant combustion</li>
+                                <li>Nonhypergolic propellant combustion</li>
+                                <li>Combustion instabilities in LPRE: Analysis of bulk mode combustion instability</li>
+                                <li>Control of combustion instability</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Liquid Propellant Rocket Engines- Components and
+                                Design</strong>
+                            <ul class="unit-topics">
+                                <li>Thrust Chambers; Working and Basic elements</li>
+                                <li>Heat Transfer analysis</li>
+                                <li>Thrust Chamber design analysis</li>
+                                <li>Injectors: Liquid propellant injection system</li>
+                                <li>Types of Injectors</li>
+                                <li>Injector design and performance</li>
+                                <li>Injector distributor</li>
+                                <li>Injector manifold</li>
+                                <li>Combustion Chamber: Geometry- Combustion chamber design and Characteristic length
+                                </li>
+                                <li>Nozzle and Nozzle Flow</li>
+                                <li>Nozzle configurations</li>
+                                <li>Basics of Convergent Divergent (CD) nozzle flow</li>
+                                <li>Nozzle Design</li>
+                                <li>Exhaust Velocity</li>
+                                <li>Mass Flow Rate</li>
+                                <li>Characteristics of Velocity</li>
+                                <li>Expansion Area Ratio</li>
+                                <li>CD Nozzle Geometry</li>
+                                <li>Effect of ambient pressure in CD Nozzle (Underexpansion, Overexpansion)
+                                    Thrust-Vectoring Nozzles-Thrust Vector Control</li>
+                                <li>Losses in rocket nozzle</li>
+                                <li>Performance of Exhaust nozzle- Isentropic Efficiency</li>
+                                <li>Discharge Coefficient</li>
+                                <li>Mass Flow Coefficient</li>
+                                <li>Thrust coefficient</li>
+                                <li>Ignition systems</li>
+                                <li>Cooling systems: Regenerative cooling</li>
+                                <li>Film/sweat cooling</li>
+                                <li>Ablative cooling</li>
+                                <li>Heat transfer analysis for Cooling Systems</li>
+                                <li>Rocket motor insulation</li>
+                                <li>Nozzle cooling</li>
+                                <li>Throat cooling</li>
+                                <li>Engine Design and Control; Configuration Layout</li>
+                                <li>Materials and Selection</li>
+                                <li>Design of liquid rockets with sub system design</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Solid Propellant Rocket Engines</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction and Basic configuration</li>
+                                <li>Physical processes of solid-propellant burning</li>
+                                <li>Burning mechanism of solid propellants: Double-Base Propellants</li>
+                                <li>Composite Propellant Combustion</li>
+                                <li>Measurement of propellant burning/regression rate: Effect of Chamber pressure</li>
+                                <li>Grain temperature</li>
+                                <li>Gas Flow rate</li>
+                                <li>Transients</li>
+                                <li>Acceleration on Burning Rate</li>
+                                <li>Other Methods of Augmenting Burning Rate</li>
+                                <li>Thermal model for solid-propellant burning</li>
+                                <li>Solid-Propellant Rocket Engine operation</li>
+                                <li>Internal ballistics of SPR</li>
+                                <li>Propellant grain configuration</li>
+                                <li>Evolution of burning surface ignition system</li>
+                                <li>Modeling of flow in a side burning grain of rocket engine</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Hybrid and Cryogenic Rocket Engines</strong>
+                            <ul class="unit-topics">
+                                <li>Hybrid Rocket Engines-Introduction</li>
+                                <li>Relative advantages and applications</li>
+                                <li>Propellants for HPRE</li>
+                                <li>Classification</li>
+                                <li>System Arrangement and Components</li>
+                                <li>Ignition of Hybrid propellants</li>
+                                <li>Combustion Chamber</li>
+                                <li>Grain configuration</li>
+                                <li>Combustion of Hybrid propellants</li>
+                                <li>Combustion instability in HPRE: Feed System-Coupled Instabilities</li>
+                                <li>Chuffing</li>
+                                <li>Intrinsic Low-Frequency Instabilities</li>
+                                <li>Performance Parameters of selected existing Hybrid Rocket Engines</li>
+                                <li>System Integration</li>
+                                <li>Manufacturing Methods for Low- and High- Thrust Engines</li>
+                                <li>Design of hybrid rockets with sub system design including grain design</li>
+                                <li>Cryogenic Rocket Engines -Introduction</li>
+                                <li>Construction and working</li>
+                                <li>Cryogenic propellants</li>
+                                <li>Components and combustion cycles</li>
+                                <li>Cryogenic Loading Problems</li>
+                                <li>Temperature and Pressure Effects on Loading</li>
+                                <li>Tank Collapse</li>
+                                <li>Phenomenon of Thermal Stratification</li>
+                                <li>Effect of Thermal Stratification on Rocket Engine Performance</li>
+                                <li>Prediction and Methods of Elimination of Thermal Stratification</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Mass Transfer</strong>
+                            <ul class="unit-topics">
+                                <li>Nonchemical rocket engines classification: (1) electrical rocket engine</li>
+                                <li>(2) nuclear rocket engine</li>
+                                <li>(3) solar rocket engine</li>
+                                <li>Basic principles of Electrical Rocket Engine</li>
+                                <li>Classifications of Electrical Rockets; Electrostatic and Electromagnetic Forces;
+                                    Ionization; Electric Discharge Behavior: Electrothermal Thrusters: Resistojets;
+                                    Arcjets</li>
+                                <li>Electrostatic Thrusters: Basic Principles of Electrostatic Thrusters; Propellant
+                                    Choice; Performance of Ion Thruster</li>
+                                <li>Electromagnetic Thruster: Basic Principles of Electromagnetic Thruster; Types of
+                                    Plasma Thruster- Magnetoplasmadynamic Thrusters</li>
+                                <li>Pulsed Plasma Thruster</li>
+                                <li>Hall Effect Thruster</li>
+                                <li>Nuclear Rocket Engines</li>
+                                <li>Solar Energy Rockets: Solar sail- Concepts in nozzle less propulsion</li>
+                                <li>Area of applications of Nonchemical rocket engines</li>
+                                <li>Electric Space-Power supplies and Power conditioning systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aerothermodynamics of Gas Turbine and Rocket Propulsion, Oates, G. C., AIAA Education
+                            Series, 1997, ISBN-10: 1563472414 ISBN-13: 978-1563472411</li>
+                        <li>Gas Turbine Theory, Cohen, H., Rogers, G.F.C. and Saravanamuttoo, H.I.H, 5th Ed., Pearson
+                            Education Asia, 2001, ISBN 978-81-7758-902-3</li>
+                        <li>Rocket Propulsion Element, George P Sutton and Oscar Biblarz, John Wiley and Sons Inc. 8th
+                            Edition, 2000, ISBN: 978-0-470-08024-5</li>
+                        <li>Mechanics and Thermodynamics of Propulsion, Hill, P. G. and Peterson, C, 2nd Ed., Prentice
+                            Hall, 1991</li>
+                        <li>Fundamentals of Rocket Propulsion, D.P. Mishra, CRC Press, Taylor & Francis Group, 2017,
+                            ISBN-9781498785358</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Aircraft Structure - II [116502]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Theory of Elasticity</strong>
+                            <ul class="unit-topics">
+                                <li>Basic elasticity</li>
+                                <li>Equations of equilibrium</li>
+                                <li>Plane stress</li>
+                                <li>Stresses on inclined planes</li>
+                                <li>Principal stresses and strains</li>
+                                <li>Plane stress and Plane strain conditions</li>
+                                <li>Two- and Three-dimensional problems in elasticity</li>
+                                <li>Equations of equilibrium and compatibility equations</li>
+                                <li>Experimental measurement of surface strains</li>
+                                <li>2- D stress-strain problems</li>
+                                <li>Stress functions</li>
+                                <li>St. Venant's principle</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Elastic Buckling of Columns and Plates Columns</strong>
+                            <ul class="unit-topics">
+                                <li>Buckling load of Euler columns with different end conditions</li>
+                                <li>Inelastic stability of columns</li>
+                                <li>Empirical formula for buckling of column</li>
+                                <li>Effect of initial imperfections of column Energy method for the calculation of
+                                    buckling loads in columns</li>
+                                <li>Higher order differential equations for columns</li>
+                                <li>Energy approach</li>
+                                <li>Dynamic approach of predicting buckling loads</li>
+                                <li>Approximate methods for prediction of buckling loads</li>
+                                <li>Effect of shear on buckling loads</li>
+                                <li>Large deflection of columns</li>
+                                <li>Columns with eccentricity in geometry</li>
+                                <li>Open section columns</li>
+                                <li>Torsional buckling of open section columns</li>
+                                <li>Flexural torsional buckling of open section columns</li>
+                                <li>Plates Pure bending of thin plates</li>
+                                <li>Plates subjected to bending</li>
+                                <li>Combined bending and twisting</li>
+                                <li>Distributed transverse loads</li>
+                                <li>Post-buckling Behaviour of Plates</li>
+                                <li>Concept of effective width</li>
+                                <li>Buckling behaviour of plates</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Stability of Elastic Plates and Shells</strong>
+                            <ul class="unit-topics">
+                                <li>Governing differential equation for stability of plates under uni-axial compressive
+                                    loads</li>
+                                <li>Energy equation for appropriate solution for buckling loads</li>
+                                <li>Rayleigh Ritz technique</li>
+                                <li>Galerkin technique</li>
+                                <li>Buckling loads under biaxial compressive loads and shear loads</li>
+                                <li>Finite difference equations for estimating buckling loads</li>
+                                <li>Buckling of stiffened plates</li>
+                                <li>Buckling of plates with different boundary conditions</li>
+                                <li>Types of shells</li>
+                                <li>Stress and strain in shells</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Bending of Thin-Walled and other Beams</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Symmetrical and Unsymmetrical Bending</li>
+                                <li>Bending Stress distribution</li>
+                                <li>Position of neutral axis and deflections</li>
+                                <li>Calculation of section properties for thin-walled sections</li>
+                                <li>Calculations of bending stress for idealized sections</li>
+                                <li>Complete Tension and Semi-tension Field Beams</li>
+                                <li>Wagner beam analysis</li>
+                                <li>Types of tension field beam</li>
+                                <li>Analysis of stress in different parts of tension field beam</li>
+                                <li>Establish condition for minimum deformation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Shear stress in Beams and Torsion of Beams</strong>
+                            <ul class="unit-topics">
+                                <li>Shear stress in Beams</li>
+                                <li>Flexural Shear flow in thin-walled beams</li>
+                                <li>Shear flow and shear center for open section beam due to bending</li>
+                                <li>Shear flow and shear center for closed beam Sections due to bending</li>
+                                <li>Shear stress distribution at a built in end of a closed section beam</li>
+                                <li>Shear flow and shear center for idealized sections</li>
+                                <li>Introduction to torsion of solid sections</li>
+                                <li>Torsion of open and closed thin-walled beam sections</li>
+                                <li>Bredt-Batho formula</li>
+                                <li>Torsion of multi-section thin-walled beams</li>
+                                <li>Structural idealization of different aircraft components</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Advanced Structural Analysis of Aircraft
+                                Components</strong>
+                            <ul class="unit-topics">
+                                <li>Loads on structural components: Tie</li>
+                                <li>Strut</li>
+                                <li>Columns</li>
+                                <li>Bar</li>
+                                <li>Beam</li>
+                                <li>Shear Panel</li>
+                                <li>Shell</li>
+                                <li>Beam Column</li>
+                                <li>Functions of structural components</li>
+                                <li>Direct stress and shear flow distribution -Wing spars</li>
+                                <li>Tapered wing and fuselage frames</li>
+                                <li>Fabrication of structural components</li>
+                                <li>Connections</li>
+                                <li>V-n diagram</li>
+                                <li>Gust loads</li>
+                                <li>Crack propagation</li>
+                                <li>Stress concentration factor</li>
+                                <li>Crack tip plasticity</li>
+                                <li>Crack propagation rates</li>
+                                <li>Stress analysis of Wing spars</li>
+                                <li>Tapered wing</li>
+                                <li>Fuselage</li>
+                                <li>Fuselage frame and Wing ribs under different loads</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aircraft Structures for Engineering Students, THG Megson, Elsevier Exclusive, 5TH, T.H.G.cbs
+                            publishers & distributors pvt Ltd, ISBN-10: 9789382291053, ISBN-13: 978-9382291053</li>
+                        <li>Aircraft Structures, DJ Perry, McGraw Hill Education $2^{ND},$ ISBN: 9789339222123,
+                            9339222121</li>
+                        <li>Aircraft Structures, G Lakshmi Narasaiah, BS Publications, ISBN-10: 9389974976,
+                            ISBN-13:978-9389974973.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Theory of Machines [116503]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Planar Mechanisms and
+                                Velocity-Acceleration Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Kinematics of Machines: Definition of Kinematics</li>
+                                <li>Dynamics</li>
+                                <li>Statics</li>
+                                <li>Kinetics</li>
+                                <li>Kinematic link</li>
+                                <li>Kinematic Pair and its types</li>
+                                <li>Degree of freedom</li>
+                                <li>Constrained motion and its types</li>
+                                <li>Kinematic chain and its types</li>
+                                <li>Grubler's criterion</li>
+                                <li>Mechanism</li>
+                                <li>Machine and Structure</li>
+                                <li>Four-link planar mechanisms and their Inversions: Four Bar chain: Grashof's law</li>
+                                <li>Locomotive coupler</li>
+                                <li>Beam engine</li>
+                                <li>Pantograph</li>
+                                <li>Ackerman steering Mechanism</li>
+                                <li>Single Slider Crank chain: Engine and Compressor Mechanism</li>
+                                <li>Rotary I.C. engine mechanism</li>
+                                <li>Oscillating cylinder engine mechanism; Whitworth and Slotted Lever Quick return
+                                    mechanisms; Hand Pump mechanism</li>
+                                <li>Double Slider chain: Scotch Yoke mechanism</li>
+                                <li>Elliptical trammels</li>
+                                <li>Oldham's Coupling</li>
+                                <li>Examples of different planar mechanisms used in aeronautical applications</li>
+                                <li>Velocity and Acceleration Analysis Concept of relative velocity and relative
+                                    acceleration of a point on a link</li>
+                                <li>Angular acceleration</li>
+                                <li>Inter-relation between linear and angular velocity and acceleration</li>
+                                <li>Determination of velocity and acceleration of any point on a link by relative
+                                    velocity method</li>
+                                <li>Velocity and acceleration diagrams for various planar mechanisms and planar
+                                    mechanisms used in aeronautical applications</li>
+                                <li>Analytical method and Klein's construction to determine velocity and acceleration of
+                                    different links in single slider crank mechanism</li>
+                                <li>Instantaneous Center method for velocity analysis</li>
+                                <li>Kennedy's Theorem</li>
+                                <li>Mechanical Advantage calculation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Cams and Followers</strong>
+                            <ul class="unit-topics">
+                                <li>Cam and follower terminology</li>
+                                <li>Classification of Cams and Followers</li>
+                                <li>Applications of Cams and Followers</li>
+                                <li>Types of follower motions-Uniform velocity</li>
+                                <li>Uniform acceleration</li>
+                                <li>S.H.M and Cycloidal</li>
+                                <li>Their displacement</li>
+                                <li>Velocity and acceleration diagrams</li>
+                                <li>Drawing of profile of a radial cam based on given motion of reciprocating knife-edge
+                                    and roller follower with and without offset</li>
+                                <li>Displacement</li>
+                                <li>Velocity and acceleration of follower with Cams of Specified contours (tangent and
+                                    convex)</li>
+                                <li>Examples of different Cam-Follower mechanisms used in aeronautical applications</li>
+                                <li>Cam-Follower in aircraft engines</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Power Transmission Elements</strong>
+                            <ul class="unit-topics">
+                                <li>Types of Drives - Belt</li>
+                                <li>Chain</li>
+                                <li>Rope</li>
+                                <li>Gear drives & their comparison; Belt Drives - Introduction to Flat belt</li>
+                                <li>V-belt & its applications</li>
+                                <li>Materials used for flat and V-belts</li>
+                                <li>Introduction of timing belt and pulley</li>
+                                <li>Law of Belting</li>
+                                <li>Angle of lap</li>
+                                <li>Length of belt</li>
+                                <li>Slip and creep</li>
+                                <li>Determination of velocity ratio of tight side and slack side tension</li>
+                                <li>Centrifugal tension and initial tension</li>
+                                <li>Condition for maximum power transmission</li>
+                                <li>Merits</li>
+                                <li>Demerits and selection of belts for given applications</li>
+                                <li>Poly V belts used in alternators and compressors in aircrafts</li>
+                                <li>Timing belts used in microlight aircraft</li>
+                                <li>Amateur-built airplanes and Airbus A380</li>
+                                <li>Chain Drives Introduction to chain drives</li>
+                                <li>Types of chains and sprockets</li>
+                                <li>Methods of lubrication</li>
+                                <li>Merits</li>
+                                <li>Demerits and selection of chains for given applications</li>
+                                <li>Harrier jump jet (thrust vectoring)</li>
+                                <li>Gear Drives Types of gears</li>
+                                <li>Spur gear terminology; Law of gearing</li>
+                                <li>Cycloidal and Involute profile teeth</li>
+                                <li>Path of Contact</li>
+                                <li>Arc of Contact</li>
+                                <li>Pair of teeth in contact</li>
+                                <li>Interference in Involute profile teeth</li>
+                                <li>Minimum number of teeth</li>
+                                <li>Other gears (Helical; Worm and Worm wheel; Bevel and Skew)</li>
+                                <li>Velocity ratio and Center distance</li>
+                                <li>Selection for different applications</li>
+                                <li>Landing gear in an aircraft</li>
+                                <li>Tricycle tailwheel in Helicopter</li>
+                                <li>Gear trains- Train value & Velocity ratio for Simple</li>
+                                <li>Compounded</li>
+                                <li>Reverted and Epicyclic gear trains; Torque calculations</li>
+                                <li>Methods of lubrication</li>
+                                <li>Examples of different drives used in aeronautical applications</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Brakes and Clutches</strong>
+                            <ul class="unit-topics">
+                                <li>Brakes: Functions</li>
+                                <li>Types</li>
+                                <li>Applications Construction and working principle of Shoe brake</li>
+                                <li>Band brake Internal expanding shoe brake</li>
+                                <li>Disc Brake</li>
+                                <li>Concept of Self Locking & Self energizing brakes; Numerical problems to find braking
+                                    force and braking torque for shoe & band brakes</li>
+                                <li>Comparison between brakes and dynamometers; Clutches: Classification</li>
+                                <li>Functions and Applications</li>
+                                <li>Construction and principle of working of Single-plate clutch</li>
+                                <li>Multi-plate clutch</li>
+                                <li>Centrifugal Clutch</li>
+                                <li>Calculation of power loss assuming uniform pressure and uniform wear theory</li>
+                                <li>Examples of different Clutches and Brakes used in aeronautical applications</li>
+                                <li>Disengaging the propeller from the engine; Autopilot control actuation; torque
+                                    coupling clutch assembly; Sprag clutches; Air engaged friction clutches</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Balancing of Rotating and Reciprocating Masses &
+                                Gyroscopic Effect</strong>
+                            <ul class="unit-topics">
+                                <li>Balancing- Need and types of balancing</li>
+                                <li>Effects of unbalanced masses</li>
+                                <li>Balancing of single rotating mass in same and different plane; (Analytical Method)
+                                </li>
+                                <li>Balancing of several masses revolving in same plane and revolving in different
+                                    planes</li>
+                                <li>Balancing of reciprocating masses</li>
+                                <li>Balancing of Inline Engines</li>
+                                <li>V-Engines and Radial Engines</li>
+                                <li>Examples of different rotary and reciprocating unbalanced/balanced situations in
+                                    aeronautical applications</li>
+                                <li>Gyroscope: Angular velocity</li>
+                                <li>Angular acceleration</li>
+                                <li>Vectorial representation of angular motion</li>
+                                <li>Principle of gyroscopic couple</li>
+                                <li>Effect of gyroscopic couple on ship</li>
+                                <li>Plane disc</li>
+                                <li>Aero plane</li>
+                                <li>Four-wheeler and stability of two wheelers</li>
+                                <li>Examples of gyroscopic situations in aeronautical applications</li>
+                                <li>Gyroscopic instruments installed in a typical aircraft (attitude indicators, heading
+                                    indicators and turn coordinators)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Mechanical Vibrations</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Terminology</li>
+                                <li>Effects</li>
+                                <li>Causes</li>
+                                <li>Remedies</li>
+                                <li>Types of vibrations</li>
+                                <li>S.H.M</li>
+                                <li>Principle of super position applied to Simple Harmonic Motions</li>
+                                <li>Beats</li>
+                                <li>Fourier theorem and simple problems</li>
+                                <li>Undamped Free Vibrations: Single degree of freedom systems</li>
+                                <li>Undamped free vibration</li>
+                                <li>Natural frequency of free vibration</li>
+                                <li>Spring and Mass elements</li>
+                                <li>Effect of mass of spring</li>
+                                <li>Compound Pendulum</li>
+                                <li>Damped Free Vibrations: Single degree of freedom systems</li>
+                                <li>Different types of damping</li>
+                                <li>Concept of critical damping and its importance</li>
+                                <li>Study of response of viscous damped systems for cases of under damping</li>
+                                <li>Critical and over damping</li>
+                                <li>Logarithmic decrement</li>
+                                <li>Forced Vibration: Single degree of freedom systems</li>
+                                <li>Steady state solution with viscous damping due to harmonic force</li>
+                                <li>Solution by Complex algebra</li>
+                                <li>Reciprocating and rotating unbalance</li>
+                                <li>Vibration isolation</li>
+                                <li>Transmissibility ratio due to harmonic excitation and support motion</li>
+                                <li>Vibration Measuring Instruments & Whirling of Shafts</li>
+                                <li>Examples of vibration situations in aeronautical applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Theory of Machines SS Ratan, Tata Mcgraw Hills; 5th edition, 2019, ISBN-978-9353166281</li>
+                        <li>Mechanical Vibrations, S. S. Rao, Pearson Education; Sixth edition (25 June 2018); Pearson
+                            India, ISBN-978-9353062569</li>
+                        <li>Theory of Machines and Mechanisms, J.J Uicker, G.R. Pennock, J.E. Shigley Oxford University
+                            Press, New York, ISBN-978-0199454167</li>
+                        <li>Theory of Machines, R. S. Khurmi, J. K. Gupta S. CHAND; 14th edition, 2020
+                            ISBN-978-8121925242</li>
+                        <li>Theory of machines, R.K.Bansal, Laxmi publications; Revised, 2016, ISBN-978-8131808054</li>
+                        <li>Theory of machines, Jagdishlal, Metropolitan Book Co. (p) Ltd. ISBN-978-8120002722</li>
+                        <li>Dynamics of Machines, J. B. K. Das Sapna Book House, 2008, ISBN-978-8128009112</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116505" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Entrepreneurship Development and Start-ups [116505]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Entrepreneurship & Start-ups</strong>
+                            <ul class="unit-topics">
+                                <li>Charms of Entrepreneurship & Start-ups</li>
+                                <li>Types</li>
+                                <li>Entrepreneurial Motivation</li>
+                                <li>Goal Setting</li>
+                                <li>Traits of a successful entrepreneur</li>
+                                <li>Assessment of traits</li>
+                                <li>Developmental strategies</li>
+                                <li>Planning of an enterprise</li>
+                                <li>Start-up stages</li>
+                                <li>Business opportunity Guidance: Sources</li>
+                                <li>Product/Service selection: Process</li>
+                                <li>Core competence</li>
+                                <li>Product/service life cycle</li>
+                                <li>New product/ service development process</li>
+                                <li>Mortality curve</li>
+                                <li>Idea Generation and Product Selection</li>
+                                <li>Design thinking</li>
+                                <li>Creativity techniques for development and modification of product and services</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Sustainable Enterprise</strong>
+                            <ul class="unit-topics">
+                                <li>Registration Process for Udyam/Start-up</li>
+                                <li>Types of business organisations: associated risk and liabilities</li>
+                                <li>Sustainable/Green businesses</li>
+                                <li>Social Entrepreneurship</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Start-up Plan</strong>
+                            <ul class="unit-topics">
+                                <li>Process selection: Technology life-cycle</li>
+                                <li>Forms and cost of transformation</li>
+                                <li>Factors affecting process selection and location for an industry</li>
+                                <li>Marketing Intelligence: Market Survey questionnaire design</li>
+                                <li>Sampling</li>
+                                <li>Market survey</li>
+                                <li>Data analysis</li>
+                                <li>Target market: segmentation</li>
+                                <li>Targeting</li>
+                                <li>Positioning</li>
+                                <li>Marketing mix strategies</li>
+                                <li>Digital Marketing</li>
+                                <li>B2B marketing</li>
+                                <li>Risk analysis</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Eco System for Entrepreneurship and Start-ups.
+                                -I</strong>
+                            <ul class="unit-topics">
+                                <li>Support institutions for entrepreneurship development (state and national level)
+                                </li>
+                                <li>MSME</li>
+                                <li>EDII</li>
+                                <li>NESBUD</li>
+                                <li>NSTEDB</li>
+                                <li>KVIC</li>
+                                <li>NABARD</li>
+                                <li>TCO's</li>
+                                <li>BIS</li>
+                                <li>CII</li>
+                                <li>FICCI</li>
+                                <li>Association of Industries</li>
+                                <li>NSIC</li>
+                                <li>CED</li>
+                                <li>BIRAC</li>
+                                <li>Etc</li>
+                                <li>Schemes for entrepreneurs: Central and State</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Eco System for Entrepreneurship and Start-ups.
+                                -II</strong>
+                            <ul class="unit-topics">
+                                <li>Schemes for entrepreneurs: Central and State</li>
+                                <li>Schemes for start-ups: Central and State</li>
+                                <li>Incubation centres</li>
+                                <li>Accelerators</li>
+                                <li>Bootstrapping</li>
+                                <li>Angel investors</li>
+                                <li>Venture capitalist</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Project Planning</strong>
+                            <ul class="unit-topics">
+                                <li>Business Model Canvas (BMC)</li>
+                                <li>Techno commercial feasibility Report</li>
+                                <li>Sources of finance: loans</li>
+                                <li>Equity</li>
+                                <li>Pitch Deck</li>
+                                <li>Boot camp</li>
+                                <li>SIDBI</li>
+                                <li>IDBI</li>
+                                <li>Etc</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Un- boxing Entrepreneurship your self help guide to setup a successful business, Dubey
+                            Nishith, Vyas Aditya, Soman Annu, Singh Anupam Indira Publishing House
+                            ISBN-2023,978-93-93577-70-2</li>
+                        <li>Entrepreneurship Development Small Business Entrepreneurship, Charantimath, Poornima,
+                            Pearson Education India, New Delhi; ISBN: 9788131762264.</li>
+                        <li>Entrepreneurship and Small Business Management, Khanka, S.S, John Wiley & Sons Inc.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116506" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Sports, Yoga and Meditation [116506]</h2>
+                    <p>Details for Sports, Yoga and Meditation will be provided by the department</p>
+                </section>
+
+                <section id="subject-116504P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Internship -I [116504P]</h2>
+                    <p>6 Weeks Summer Internship. Details will be provided by the department.</p>
+                </section>
+
+                <section id="subject-116503P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Theory of Machines Lab [116503P]</h2>
+                    <p>Preform any ten Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Draw line diagrams with dimensions of the working models of all the inversions of following
+                            mechanisms available in the lab, Slider Crank Mechanism, Double Slider Crank Mechanism, Four
+                            bar Mechanism, Any two other mechanisms used in aeronautical applications.</li>
+                        <li>Dismantle and assemble, Wiper mechanism of any four-wheeler, Steering Mechanism of Tractor,
+                            Slider Crank mechanism of any IC Engine, Any two other mechanisms used in aeronautical
+                            applications.</li>
+                        <li>Draw the profile of radial CAM without offset for given follower (Knife edge and Roller
+                            follower) to obtained desired follower motion. (Minimum two problem on A2 size sheet), Draw
+                            the profile of radial CAM to obtained desired follower motion used in aeronautical
+                            applications.</li>
+                        <li>Draw the profile of radial CAM with offset for given follower to obtained desired follower
+                            motion. (Minimum two problem on A2 size sheet).</li>
+                        <li>Measure main dimension of a Tangent flank cam and Convex cam used in aeronautical
+                            applications and estimate lift, velocity and acceleration at critical points.</li>
+                        <li>Measure slack side and tight side tension in Chain of sprocket of an experimental Bicycle
+                            setup, Measure slack side and tight side tension in Chain of sprocket of any aeronautical
+                            application.</li>
+                        <li>Study of various types of gears and gear train specific to aeronautical applications.</li>
+                        <li>Find out velocity and gear ratio in, Lathe machine gear box, Cane crushing machine, Two
+                            wheelers, Drilling Machine, Any two setups in aeronautical domain with gear mechanism.</li>
+                        <li>Calculate the braking torque required for different brakes in different load situations,
+                            Identify the use of brakes in aeronautical applications and calculate the braking torque
+                            required (in one application) for the given brake in different load situations.</li>
+                        <li>Use rope/band brake dynamometer to calculate power in an IC Engine, Identify the use of
+                            dynamometer in aeronautical applications and calculate the power required (in one
+                            application) for the given dynamometer in different load situations.</li>
+                        <li>Dismantle and Assemble an internal expanding brake and Disc Brake, Dismantle and Assemble an
+                            internal expanding brake and Disc Brake related to aeronautical application.</li>
+                        <li>Dismantle and Assemble following, Single plate clutch, Multi plate clutch, Centrifugal
+                            clutch, Any one aeronautical system with clutch.</li>
+                        <li>Estimate torque transmitting capacity of single and multi-plate clutch with the help of
+                            working model.</li>
+                        <li>Perform balancing of many unbalanced rotating masses in single plane using rotating
+                            balancing machine, Identify two such situations in an aeronautical setup.</li>
+                        <li>Determination of Critical Speed in Whirling of Shafts, Determination of Natural Frequency in
+                            Longitudinal Vibrating System, Determination of Natural Frequency in Torsional Vibration
+                            System, Determine the radius of Gyration of the given IC engine connecting rod using
+                            compound pendulum principal, Determine the Moment of inertial of a given body using Trifilar
+                            suspension system, Calculate the dynamic parameters of undamped free vibration of spring
+                            mass system, Calculate the dynamic parameters of simply supported beam for different
+                            damping, Calculate the dynamic parameters of Undamped torsional vibrations of single and
+                            double rotor system, Calculate the dynamic parameters of damped torsional vibration of
+                            single rotor system and also determine the damping coefficient, Calculate the dynamic
+                            parameters of forced damped vibration of spring mass system.</li>
+                        <li>Calculate the gyroscopic couple and other parameters for different angular velocities.</li>
+                    </ul>
+                </section>
+
+                <section id="subject-100512" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Design Thinking [100512]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Basics of Design Thinking</strong>
+                            <ul class="unit-topics">
+                                <li>Over view of design thinking</li>
+                                <li>Design Thinking Skills</li>
+                                <li>Introduction to the Essential Ideation Techniques</li>
+                                <li>Core elements of design thinking</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Design Thinking Process</strong>
+                            <ul class="unit-topics">
+                                <li>Stages of design thinking process (explain with examples) Empathize</li>
+                                <li>Define</li>
+                                <li>Ideate</li>
+                                <li>Prototype</li>
+                                <li>Test</li>
+                                <li>Design thinking frameworks: "Head, Heart and Hand"</li>
+                                <li>"Inspire, Ideate, Implement"</li>
+                                <li>"Double Diamond"</li>
+                                <li>Mindset for design thinking: innovation heuristics</li>
+                                <li>Behavior models</li>
+                                <li>Ask 5 Why/5W+H questions</li>
+                                <li>Overcoming cognitive fixedness</li>
+                                <li>Exercises and case based discussions</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Design Thinking in IT</strong>
+                            <ul class="unit-topics">
+                                <li>Diagrams and Maps in Design Thinking - Empathy map</li>
+                                <li>Affinity diagram</li>
+                                <li>Mind map</li>
+                                <li>Journey map</li>
+                                <li>Combining ideas into complex innovation concepts</li>
+                                <li>Design Thinking to Business Process modeling Agile in Virtual collaboration
+                                    environment</li>
+                                <li>Thinking vs Agile Methodology</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Design Thinking & Customer Centricity</strong>
+                            <ul class="unit-topics">
+                                <li>Scenario based Prototyping</li>
+                                <li>Design Understanding customer needs: Voice of customer</li>
+                                <li>Customer population</li>
+                                <li>Type of customer needs</li>
+                                <li>Gathering customer needs</li>
+                                <li>Organizing and prioritizing customer needs</li>
+                                <li>Generating concepts</li>
+                                <li>Concept selection</li>
+                                <li>Use of Design Thinking to Enhance Customer Experience</li>
+                                <li>Parameters of Product experience</li>
+                                <li>Alignment of Customer Expectations with Product Design</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Innovation</strong>
+                            <ul class="unit-topics">
+                                <li>Innovation</li>
+                                <li>Difference between innovation and creativity</li>
+                                <li>Role of creativity and innovation</li>
+                                <li>Creativity to Innovation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Process of Product Design</strong>
+                            <ul class="unit-topics">
+                                <li>Process of Product Design: introduction to product design</li>
+                                <li>Product strategies</li>
+                                <li>Product value</li>
+                                <li>Product planning</li>
+                                <li>Product specifications</li>
+                                <li>Stages of Product Design</li>
+                                <li>Examples of best product designs and functions</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>The Design of Business: Why Design Thinking is the Next Competitive Advantage Roger Martin
+                            Harvard Business Press, 2009, ISBN-10: 1422177807, ISBN-13: 978-1422177808.</li>
+                        <li>Design Thinking: Understand-Improve- Apply, Hasso Plattner, Christoph Meinel and Larry
+                            Leifer (eds), Springer Berlin, Heidelberg, 2011, ISBN-13:978-3-642-13756-3.</li>
+                        <li>Strategic Management of Technology and Innovation, Burgelman, Christensen, and Wheelwright
+                            5th ed., McGraw-Hill Education, 2008, ISBN-10: 0073381543, ISBN-13: 978-0073381541.</li>
+                        <li>Engineering Design: An Introduction, John R Karsnitz, Stephen O'Brien and John P. Hutchinson
+                            2nd ed., Cengage India Private Limited, 2013. ISBN-10: 8131530744, ISBN-13: 978-8131530740.
+                        </li>
+                        <li>Design Thinking for Strategic Innovation: What They Can't Teach You at Business or Design
+                            School Idris Mootee John Wiley & Sons 2014, ISBN-10: 1118620127, ISBN-13: 978-1118620120.
+                        </li>
+                        <li>Product Design, Kevin Otto and Kristin Wood, 19th ed., Pearson Education India, 2018,
+                            ISBN-10: 8177588217, ISBN-13: 978-8177588217</li>
+                        <li>Product Design and Development, Karl T. Ulrich, Steven D. Eppinger, Maria C. Yan, 7th Ed.,
+                            McGraw Hill, 2020, ISBN-10: 9390113237, ISBN-13: 978-9390113231.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100513" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Internet of Things [100513]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of IoT and its building blocks</li>
+                                <li>Concept of IR 4.0 and IoT</li>
+                                <li>Structure and planning involved for making an IoT project</li>
+                                <li>Introducing IoT platforms</li>
+                                <li>Development boards used in IoT Projects</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Communication protocols used in IoT</li>
+                                <li>Sensors and Actuators</li>
+                                <li>Choosing the sensors and develop the boards depending on the requirements</li>
+                                <li>Creating custom sensors and boards (digital and analog electronics circuits)</li>
+                                <li>Introducing Embedded Systems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Raspberry Pi</strong>
+                            <ul class="unit-topics">
+                                <li>Introducing Raspberry pi</li>
+                                <li>Setting up a Raspberry pi as our customized IoT server</li>
+                                <li>Introducing ESP boards ESP8266/ESP32</li>
+                                <li>Embedded C programming language</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Arduino</strong>
+                            <ul class="unit-topics">
+                                <li>Arduino IDE</li>
+                                <li>Setting up Arduino IDE to program other boards</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: IoT Web Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Introducing Python Programming</li>
+                                <li>Development of IoT web applications</li>
+                                <li>Flask framework in Python programming</li>
+                                <li>HTML</li>
+                                <li>CSS and JavaScript programming languages for creating interactive GUIs</li>
+                                <li>Introducing APIs and how to use them in the applications</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: IoT Security</strong>
+                            <ul class="unit-topics">
+                                <li>Security policies</li>
+                                <li>Risk assessment</li>
+                                <li>Concept of Cyber-security</li>
+                                <li>Authentication techniques used in web applications</li>
+                                <li>Authorization techniques used in web applications</li>
+                                <li>Security in cloud computing</li>
+                                <li>Securing your products from online attacks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>IoT Fundamentals: Networking Technologies, Protocols, and Use Cases for the Internet of
+                            Things David Hanes, Gonzalo Salgueiro, Patrick Grossetete, Robert Barton, Jerome Henry,
+                            First Edition, Cisco Press, 2017, ISBN-13 978-1587144561.</li>
+                        <li>Designing the Internet of Things, Adrian Mcewen, Hakin Cassimally Wiley, 2013, ISBN-13
+                            978-1118430620.</li>
+                        <li>Internet of Things: Architecture and Design Principles, Raj Kamal First Edition, McGraw Hill
+                            Education, 2017. ISBN-13 97-89390727384.</li>
+                        <li>Mastering Internet of Things: Design and create your own IoT applications using Raspberry Pi
+                            3, Peter Waher, First Edition, Packt Publishing, 2018, ISSBN-13 978-1788397483.</li>
+                        <li>IoT Security MadhusankaLiyanage, An Braeken, Pardeep Kumar, Mika Ylianttila, Wiley
+                            Publisher, First Edition, ISBN: 9781119527923.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100514" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Green Energy Technologies [100514]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Solar Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Solar energy- history</li>
+                                <li>Sun light- properties</li>
+                                <li>Solar cell physics</li>
+                                <li>Dark and illuminate junctions characteristics</li>
+                                <li>PV cell architecture and fabrication</li>
+                                <li>PV cell PV Module and Array- characteristics</li>
+                                <li>Estimation of solar panel requirement for the given application</li>
+                                <li>Tilt angle calculation</li>
+                                <li>Algorithm for maximum power point tracking</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Solar Thermal Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Concentrating and non- Concentrating Solar thermal Collectors</li>
+                                <li>Black bodies and radiation</li>
+                                <li>Inclined surfaces and diffuse radiation Models</li>
+                                <li>Absorber</li>
+                                <li>Reflection plates</li>
+                                <li>Operation</li>
+                                <li>Collector Efficiency</li>
+                                <li>Solar collector efficiency Factor</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Wind Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Wind energy</li>
+                                <li>Current status and future prospects in India</li>
+                                <li>Wind resource assessment</li>
+                                <li>Wind Turbines: types and components of horizontal and vertical axis wind turbines
+                                </li>
+                                <li>Power extracted from wind</li>
+                                <li>Betz limit</li>
+                                <li>Airfoil</li>
+                                <li>Lift and drag force-characteristics</li>
+                                <li>Stand-alone systems</li>
+                                <li>Wind pumps and small wind turbine - schemes and system design</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Fuel Cell</strong>
+                            <ul class="unit-topics">
+                                <li>Operating principle of fuel cell</li>
+                                <li>Types of fuel cell and polarization curves</li>
+                                <li>Low and high temperature fuel cells</li>
+                                <li>Fuel cell stacks</li>
+                                <li>Advantage of electrochemical energy Conversion</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Hydrogen Energy Technology</strong>
+                            <ul class="unit-topics">
+                                <li>Hydrogen energy System- components</li>
+                                <li>Concepts and working principles of electrolysers</li>
+                                <li>Methodologies of hydrogen energy extraction process</li>
+                                <li>Monitoring</li>
+                                <li>Control</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Ocean Energy Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>Ocean Energy: Introduction and types</li>
+                                <li>Tidal Energy: General Arrangement</li>
+                                <li>Components and working principle</li>
+                                <li>Wave Energy: General Arrangement</li>
+                                <li>Components and working principle</li>
+                                <li>Marine Current: General Arrangement</li>
+                                <li>Components and working principle</li>
+                                <li>Ocean Thermal Energy Conversion: General Arrangement</li>
+                                <li>Components and working principle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Solar Photovoltaics: Fundamentals, Technologies and Applications, Chetan singh solanki, PHI
+                            Learning Pvt. Ltd., May 2015, ISBN: 8120337603, 9788120337602.</li>
+                        <li>Solar Thermal Energy Author: Soteris A. Kalogirou, Editor: Spiros Alexopoulos Springer,
+                            March 2022, ISBN 978-1-0716-1421-1.</li>
+                        <li>Wind Power Plants and Project Development Joshua Earnest and Tore Wizelius, Second Edition,
+                            PHI Learning Pvt. Ltd., New Delhi, 2017, ISBN: 9788120351271, 8120351274.</li>
+                        <li>Renewable Hydrogen Technologies Edited by: Luis M Gandia, Gurutze Arzamedi, Pedro M Dieguez
+                            Energy and Power, Elseveir, 1st Edition - May 3, 2013, ISBN, 044456361X, 9780444563613.</li>
+                        <li>Ocean, Tidal, and Wave Energy, Peppas, Lynn Crabtree Pub Co, 2008, ISBN-10. 0778729338.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100515" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Optimization Techniques [100515]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Optimal design problem formulation</li>
+                                <li>Concept of duality</li>
+                                <li>Examples of optimization problems</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Linear Programming Problems</strong>
+                            <ul class="unit-topics">
+                                <li>Linear programming</li>
+                                <li>Simplex method and Dual method</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Single Variable Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Optimality Criteria</li>
+                                <li>Bracketing methods</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Single Variable Optimization (Direct Search & Gradient
+                                based)</strong>
+                            <ul class="unit-topics">
+                                <li>Direct search methods</li>
+                                <li>Gradient based methods</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Multivariable Unconstrained Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Optimality Criteria</li>
+                                <li>Direct search method</li>
+                                <li>Gradient based methods</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Constrained Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Optimality Criteria</li>
+                                <li>Transformation methods</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Optimization for Engineering Design, Kalyanmoy Deb, 2nd Edition, Prentice Hall of India,
+                            ISBN 9788120346789</li>
+                        <li>Introduction to Optimum Design, J. S. Arora, 4th Edition, Elsevier, ISBN 978-0-12-800806-5.
+                        </li>
+                        <li>Engineering Optimization Theory and Practice, Singiresu S Rao, John Wiley & Sons,
+                            ISBN:9781119454717.</li>
+                        <li>Linear Programming and Extensions G.B. Dantzig, 3rd ed, Princeton University Press, ISBN:
+                            0691080003.</li>
+                        <li>Non-Linear Optimization - Theory and Algorithms L.C.W. Dixon Birkhauser, Boston, ISBN:
+                            9783764330200.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100516" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Non-Destructive Testing [100516]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Non-Destructive Testing</strong>
+                            <ul class="unit-topics">
+                                <li>NDT versus Mechanical Testing</li>
+                                <li>Overview of the Non-Destructive Testing Methods for the detection of manufacturing
+                                    defects as well as material characterization</li>
+                                <li>Various physical characteristics of materials and their applications in NDT</li>
+                                <li>Visual Testing</li>
+                                <li>Types of VT</li>
+                                <li>Relative merits and limitations</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Liquid Penetrant Testing</strong>
+                            <ul class="unit-topics">
+                                <li>Liquid Penetrant Testing Principles</li>
+                                <li>Types and properties of liquid penetrants</li>
+                                <li>Developers</li>
+                                <li>Testing Procedure</li>
+                                <li>Control and measurement of penetrant process variables</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Magnetic Particle Testing</strong>
+                            <ul class="unit-topics">
+                                <li>Magnetic Particle Testing- Theory of magnetism</li>
+                                <li>Inspection materials</li>
+                                <li>Magnetization methods</li>
+                                <li>Interpretation and evaluation of test indications</li>
+                                <li>Principles and methods of demagnetization</li>
+                                <li>Residual magnetism</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Ultrasonic Inspection Method</strong>
+                            <ul class="unit-topics">
+                                <li>Characteristics of ultrasonic waves</li>
+                                <li>Types of Ultrasonic Waves Principles of wave propagation Attenuation</li>
+                                <li>Principle of pulse echo method</li>
+                                <li>Through transmission method</li>
+                                <li>Resonance method</li>
+                                <li>Data presentation A, B and C scan displays - Ultrasonic testing and evaluation of
+                                    base material</li>
+                                <li>Ultrasonic test indications</li>
+                                <li>Safety and precautions</li>
+                                <li>Focusing Techniques: Synthetic aperture focusing technique (SAFT)</li>
+                                <li>Time of flight diffraction (TOFD)</li>
+                                <li>Signal analysis</li>
+                                <li>Capabilities</li>
+                                <li>Effectiveness and Limitations of Ultrasonic Testing</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Radiography</strong>
+                            <ul class="unit-topics">
+                                <li>Principle</li>
+                                <li>Interaction of X-Ray with matter</li>
+                                <li>Imaging</li>
+                                <li>Film and film less techniques</li>
+                                <li>Types and use of filters and screens</li>
+                                <li>Geometric factors</li>
+                                <li>Inverse square law</li>
+                                <li>Characteristics of films graininess</li>
+                                <li>Density</li>
+                                <li>Speed</li>
+                                <li>Contrast</li>
+                                <li>Characteristic curves</li>
+                                <li>Penetrameters</li>
+                                <li>Exposure charts; Radiographic equivalence</li>
+                                <li>Applications</li>
+                                <li>Fluoroscopy Xero-Radiography</li>
+                                <li>Computed Radiography</li>
+                                <li>Computed Tomography</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Industrial Applications of Non-Destructive
+                                Evaluation</strong>
+                            <ul class="unit-topics">
+                                <li>Span of NDE Activities Railways</li>
+                                <li>Nuclear</li>
+                                <li>Non-nuclear and Chemical Industries</li>
+                                <li>Aircraft and Aerospace Industries</li>
+                                <li>Automotive Industries</li>
+                                <li>Offshore Gas and Petroleum Projects</li>
+                                <li>Coal Mining Industry</li>
+                                <li>NDE of pressure vessels</li>
+                                <li>Castings</li>
+                                <li>Welded constructions</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Industrial ultrasonic inspection, Rayan chaplin, Friesen press, 4th Ed, 2024, ISBN:
+                            978-1-4602-9567-0.</li>
+                        <li>Practical Non-Destructive Testing Baldev Raj, T.Jayakumar and M.Thavasimuthu3rd edition,
+                            Narosa Publishing House, 2014, ISBN 1-85573-600-4.</li>
+                        <li>Non-Destructive Testing Techniques Ravi Prakash 1st edition, New Age International
+                            Publishers, 2012, ISBN:978-1-906574-42.</li>
+                        <li>Non-Destructive Test and Evaluation of Materials, J.Prasad and C.G.K. Nair, 2nd Edition.,
+                            McGraw-Hill, 2011, ISBN:9780070707030.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100517" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Embedded Systems [100517]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to Embedded System</strong>
+                            <ul class="unit-topics">
+                                <li>Block diagram of embedded system</li>
+                                <li>Embedded system vs. General Computing system</li>
+                                <li>Harvard and Von-Neumann Architecture</li>
+                                <li>RISC and CISC Processors</li>
+                                <li>Main components of an Embedded system</li>
+                                <li>Important characteristics of an embedded system: processor power</li>
+                                <li>Memory</li>
+                                <li>Operating system</li>
+                                <li>Reliability</li>
+                                <li>Performance</li>
+                                <li>Power consumption</li>
+                                <li>Flexibility</li>
+                                <li>Advantages & Disadvantages of an Embedded system</li>
+                                <li>Application areas of an Embedded system</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Atmel & PIC Microcontroller IC</strong>
+                            <ul class="unit-topics">
+                                <li>Atmel Microcontroller: Basics of ATMEL Microcontroller: Pin Diagram and its
+                                    functions</li>
+                                <li>Atmel Microcontroller family</li>
+                                <li>Arduino Microcontroller board: IDE (Integrated development Environment)</li>
+                                <li>Types of Arduino Board and its specifications</li>
+                                <li>PIC Microcontroller: Introduction</li>
+                                <li>Pin Configuration</li>
+                                <li>Architecture</li>
+                                <li>Instruction Set</li>
+                                <li>Application</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Programming using Embedded C</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Embedded C</li>
+                                <li>Embedded C & C Language</li>
+                                <li>Embedded C basic operators</li>
+                                <li>Instruction set of Embedded C:Arithmetic operations</li>
+                                <li>Logical operations</li>
+                                <li>Data transfer operation</li>
+                                <li>Decision control and Looping</li>
+                                <li>Timer/Counter Programming</li>
+                                <li>Serial communication programming</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Communication Standards</strong>
+                            <ul class="unit-topics">
+                                <li>Modes of data communication: Serial & Parallel</li>
+                                <li>Synchronous and Asynchronous Communication</li>
+                                <li>Serial communication standards RS 232 and RS485</li>
+                                <li>External Communication Interface: Bluetooth</li>
+                                <li>Wi-Fi</li>
+                                <li>Zigbee</li>
+                                <li>GSM</li>
+                                <li>GPRS</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Communication Protocol</strong>
+                            <ul class="unit-topics">
+                                <li>Communication protocols: UART</li>
+                                <li>SPI</li>
+                                <li>I2C</li>
+                                <li>RTOS (Real time operating system): Basics of RTOS</li>
+                                <li>Types of RTOs and Characteristics of RTOS</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Interfacing I/O Devices</strong>
+                            <ul class="unit-topics">
+                                <li>I/O Interfacing with: Switch(s) and Keypad</li>
+                                <li>LCD and LED Display</li>
+                                <li>OLED and TFT Display</li>
+                                <li>Relay</li>
+                                <li>Interfacing with: ADC and DAC</li>
+                                <li>Stepper motor DC Motor</li>
+                                <li>Other Sub systems: Reset circuit</li>
+                                <li>Oscillator circuit</li>
+                                <li>Watch dog timer</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>The AVR Microcontroller and Embedded Systems: Using Assembly and C Muhammad Ali Mazidi,
+                            Sarmad Naimi, Sepehr Naimi, Pearson, First Edition ISBN-10: 0138003319 ISBN-13:
+                            978-0138003319.</li>
+                        <li>Introduction to Embedded Systems Shibu K.V. McGraw Hill Education India Private Limited;
+                            Second edition, ISBN: 978-9339219680.</li>
+                        <li>Embedded Systems: Introduction to ARM Cortex-M Microcontrollers, Jonathan W. Valvano,
+                            Cengage Learning, Third Edition, ISBN-10: 1305970665 ISBN-13: 978-1305970667.</li>
+                        <li>The 8051 Microcontroller and Embedded system Mazidi, Mohmad Ali; Mazidi, Janice Gelispe;
+                            McKinley, Roline D. Pearson/Prentice Hall, 2nd edition, Delhi, 2008, ISBN: 978-8177589030.
+                        </li>
+                        <li>Embedded System Design, Chattopadhyay S. Prentice Hall, India, New Delhi, 2014, ISBN:
+                            978-8120347304.</li>
+                        <li>PIC Microcontroller and Embedded System Mazidi, Mohmad Ali; Mazidi, Janice Gelispe;
+                            McKinley, Roline D. Pearson/Prentice Hall, 2nd edition, Delhi, 2008, ISBN: 978-0997925999.
+                        </li>
+                        <li>Microcontrollers: Theory and Applications Deshmukh, Ajay, Tata McGraw Hill Pvt. Ltd., New
+                            Delhi, 2011, ISBN: 978-0070585959.</li>
+                        <li>Microcontroller Architecture Programming, Interfacing and System Design, Kamal, Raj, Pearson
+                            Education India, Delhi, 2012, ISBN:978-8131759905.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100518" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Renewable Energy Sources [100518]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Solar Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Sun as a source of energy</li>
+                                <li>Solar energy-Importance</li>
+                                <li>Solar radiation at the earth's surface</li>
+                                <li>Measurement of Solar radiation-Pyroheliometer</li>
+                                <li>Pyranometer</li>
+                                <li>Sunshine recorder</li>
+                                <li>Solar still</li>
+                                <li>Solar pond</li>
+                                <li>Storage of solar energy for heating</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Wind Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Factors influencing wind</li>
+                                <li>Wind shear and turbulence</li>
+                                <li>Wind speed monitoring</li>
+                                <li>Site selection for wind turbine</li>
+                                <li>Wind Energy Conversion System (WECS)</li>
+                                <li>Classification of WECS</li>
+                                <li>WECS- Characteristics</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Biomass Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Photosynthesis process</li>
+                                <li>Biomass fuels</li>
+                                <li>Biomass conversion technologies</li>
+                                <li>Urban waste to energy conversion</li>
+                                <li>Biomass gasification</li>
+                                <li>Biomass to ethanol production</li>
+                                <li>Biomass electrical power generation</li>
+                                <li>Factors affecting the biomass generation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Hydrogen Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Concepts of hydrogen energy</li>
+                                <li>Components of hydrogen energy</li>
+                                <li>Working principles of electrolysers</li>
+                                <li>Hydrogen energy extraction</li>
+                                <li>Methodologies</li>
+                                <li>Hydrogen energy extraction process</li>
+                                <li>Monitoring and control</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Ocean</strong>
+                            <ul class="unit-topics">
+                                <li>Principle of Ocean Thermal Energy Conversion: off shore and onshore</li>
+                                <li>Tidal Current</li>
+                                <li>High and Low Tides</li>
+                                <li>Ocean tidal energy conversion schemes</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Geothermal Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Origin and distribution of geothermal energy</li>
+                                <li>Site selection for geothermal energy</li>
+                                <li>Economic aspects about tidal energy</li>
+                                <li>Conversion plant</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Solar Photovoltaics: Fundamentals, Technologies and Applications Chetan singh solank PHI
+                            Learning Pvt. Ltd., May 2015 ISBN: 8120337603, 9788120337602.</li>
+                        <li>Solar Thermal Energy Author: Soteris A. Kalogirou, Editor: Spiros Alexopoulos Springer,
+                            March 2022 ISBN 978-1-0716-1421-1</li>
+                        <li>Wind Power Plants and Project Development Joshua Earnest and Tore Wizelius, Second Edition,
+                            PHI Learning Pvt. Ltd., New Delhi, 2017 ISBN: 9788120351271, 8120351274.</li>
+                        <li>Renewable Hydrogen Technologies Edited by: Luis M Gandia, Gurutze Arzamedi, Pedro M Dieguez
+                            Energy and Power, Elseveir, 1st Edition May 3, 2013 ISBN, 044456361X, 9780444563613.</li>
+                        <li>Ocean, Tidal, and Wave Energy Peppas, Lynn Crabtree Pub Co, 2008 ISBN-10. 0778729338.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100519" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: MATLAB for Engineers [100519]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Introduction to MATLAB</strong>
+                            <ul class="unit-topics">
+                                <li>MATLAB</li>
+                                <li>Command window</li>
+                                <li>Computing with MATLAB</li>
+                                <li>Math Built-in functions</li>
+                                <li>Variables</li>
+                                <li>Numbers</li>
+                                <li>Operators</li>
+                                <li>Expressions</li>
+                                <li>Input and output</li>
+                                <li>Vector in MATLAB</li>
+                                <li>Matrices in MATLAB</li>
+                                <li>Arrays in MATLAB</li>
+                                <li>Muti-dimensional matrices and Arrays</li>
+                                <li>Array addressing</li>
+                                <li>Cell Arrays</li>
+                                <li>Structure Arrays</li>
+                                <li>Built in functions for analyzing arrays</li>
+                                <li>Element by Element Operations</li>
+                                <li>Polynomial Operations Using Arrays</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: Plots</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to graphs & plots</li>
+                                <li>Different type of plot designing</li>
+                                <li>2D & 3D plots</li>
+                                <li>Scientific data based plots</li>
+                                <li>Plot editing & handling</li>
+                                <li>Plotting Images</li>
+                                <li>Plot commands</li>
+                                <li>Multiple plots on the same page</li>
+                                <li>Line plots</li>
+                                <li>Mesh and surface plots</li>
+                                <li>Plots with special graphics</li>
+                                <li>Files and File Management- Import/Export</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: GUI</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Graphical User Interface</li>
+                                <li>GUIDE tool</li>
+                                <li>Interfacing of MATLAB script and GUI</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Programming using MATLAB</strong>
+                            <ul class="unit-topics">
+                                <li>Operators and Variables</li>
+                                <li>Operators and Functions</li>
+                                <li>Conditional statements</li>
+                                <li>Loops</li>
+                                <li>Nested Loops</li>
+                                <li>The break and continue commands</li>
+                                <li>Function file</li>
+                                <li>Debugging Mat Lab Programs</li>
+                                <li>Examples of simple User-defined functions</li>
+                                <li>Comparison between script files and function files</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Mathematical Computing with MATLAB</strong>
+                            <ul class="unit-topics">
+                                <li>Polynomial Addition and Subtraction</li>
+                                <li>Polynomial Multiplication and Division</li>
+                                <li>Formulation of Polynomial Equation</li>
+                                <li>Polynomial Differentiation and Integration</li>
+                                <li>Polynomial Curve Fitting</li>
+                                <li>Examples</li>
+                                <li>Solving equation of one variable</li>
+                                <li>Finding minimum or maximum of a function</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Introduction to MATLAB Toolboxes and Simulink</strong>
+                            <ul class="unit-topics">
+                                <li>Simulink Introduction</li>
+                                <li>Image & Video processing Toolbox</li>
+                                <li>Fuzzy Logic Toolbox</li>
+                                <li>Neural Network Toolbox</li>
+                                <li>SIMSCAPE</li>
+                                <li>Machine Learning</li>
+                                <li>Artificial Intelligence</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Practical MATLAB applications for engineers, Misza Kalechman, CRC Press Inc, ISBN
+                            978-1-4200-4776-9</li>
+                        <li>Getting started with MATLAB, Rudrapratap, Oxford 28 May 2010, ISBN-10: 9780198069195,
+                            ISBN-13: 978-0198069195.</li>
+                        <li>Modelling and simulation using MATLAB-Simulink, Shailendra Jain, Wiley India, 2nd edition
+                            Jan 2015, ISBN-10: 9788126551972, ISBN-13: 978-8126551972.</li>
+                        <li>MATLAB 7 William D Paul McGraw-Hill Higher Education, 2nd Edition August, 2004.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100520" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Additive Manufacturing [100520]</h2>
+                    <ul>
+                        <li>
+                            <strong class="unit-title">Unit 1.0: Additive Manufacturing Introduction and Data
+                                Preparation for 3D Printing</strong>
+                            <ul class="unit-topics">
+                                <li>CAD-CAM and its integration</li>
+                                <li>CAD- Part and Surface modeling</li>
+                                <li>CAD file formats</li>
+                                <li>Additive v/s Conventional Manufacturing processes</li>
+                                <li>Process chain for 3D Printing</li>
+                                <li>Classification of 3D Printing Processes</li>
+                                <li>Product design and prototyping</li>
+                                <li>Reverse Engineering for 3D Printing</li>
+                                <li>3D Scanners and working</li>
+                                <li>Data Preparation for 3D Printing: STL interface Specification</li>
+                                <li>STL data generation</li>
+                                <li>STL data Manipulation</li>
+                                <li>Advantages and limitations of STL file format</li>
+                                <li>Open files</li>
+                                <li>Repair of STL files</li>
+                                <li>Alternative 3D Printing interfaces</li>
+                                <li>Part orientation and support generation</li>
+                                <li>Factors affecting part orientation</li>
+                                <li>Various models for part orientation determination</li>
+                                <li>The function of part supports</li>
+                                <li>Support structure design</li>
+                                <li>Automatic support structure generation</li>
+                                <li>Model Slicing and Contour Data organization</li>
+                                <li>Direct and adaptive slicing: Identification of peak features</li>
+                                <li>Adaptive layer thickness determination</li>
+                                <li>Tool path generation</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 2.0: 3D Printing Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Various forms of 3D printing raw material- Liquid</li>
+                                <li>Solid</li>
+                                <li>Wire</li>
+                                <li>Powder</li>
+                                <li>Polymers</li>
+                                <li>Metals</li>
+                                <li>Non-Metals</li>
+                                <li>Ceramics</li>
+                                <li>Polymers and their properties</li>
+                                <li>Powder Preparation and their desired properties</li>
+                                <li>3D Printing material for FDM</li>
+                                <li>SLA</li>
+                                <li>SLS</li>
+                                <li>Binder Jetting</li>
+                                <li>Material Jetting and Direct Energy deposition 3D printing processes</li>
+                                <li>Choosing the right 3D Printing material on the basis of performance requirements and
+                                    material properties</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 3.0: Solid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Basic principle and working of Fused Deposition Modeling (FDM) process</li>
+                                <li>Construction details and working of established FDM based 3D printers for plastics
+                                    parts</li>
+                                <li>Producing a part using FDM based 3D Printer</li>
+                                <li>Liquefaction</li>
+                                <li>Solidification and bonding</li>
+                                <li>Laminated Object Manufacturing process</li>
+                                <li>Accuracy</li>
+                                <li>Precision and Tolerance in 3D printing</li>
+                                <li>3D Printer software- Fusion 360</li>
+                                <li>Solidworks</li>
+                                <li>Onshape</li>
+                                <li>Tinkercad</li>
+                                <li>UltimakerCura</li>
+                                <li>MeshLab</li>
+                                <li>Simplyfy 3D</li>
+                                <li>Repetier host</li>
+                                <li>Slic3r</li>
+                                <li>Etc. use and operation of anyone</li>
+                                <li>Cost estimation of FDM 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 4.0: Liquid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Photo polymerization</li>
+                                <li>Principle and working of stereo lithography apparatus</li>
+                                <li>SLA based 3D printing processes</li>
+                                <li>SLA based 3D printing process materials</li>
+                                <li>Scanning techniques</li>
+                                <li>Curing processes</li>
+                                <li>Cost estimation of SLA 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 5.0: Powder based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Powder fusion mechanism</li>
+                                <li>Principle and working of Selective Laser Sintering (SLS) process</li>
+                                <li>SLS based 3D printers</li>
+                                <li>Laser Engineering Net Shaping process</li>
+                                <li>Electron Beam Melting</li>
+                                <li>Binder Jet 3D Printing</li>
+                                <li>Materials and Process parameters for SLS based 3D printing processes</li>
+                                <li>Cost estimation of SLS based 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong class="unit-title">Unit 6.0: Post Processing and Quality</strong>
+                            <ul class="unit-topics">
+                                <li>Need of post processing: Functional and Aesthetic reasons</li>
+                                <li>Steps of Post Processing: Cleaning/Support removal</li>
+                                <li>Fixing</li>
+                                <li>Curing or hardening</li>
+                                <li>Surface finishing</li>
+                                <li>Colouring</li>
+                                <li>Cleaning: Support Removal (FDM and Material Jetting); Powder Removal (SLS and Powder
+                                    Bed Fusion); Washing (SLA and Photopolymerisation)</li>
+                                <li>Fixing: Filling</li>
+                                <li>Gluing</li>
+                                <li>Welding</li>
+                                <li>Surface finishing: Sanding</li>
+                                <li>Polishing</li>
+                                <li>Tumbling</li>
+                                <li>Hydro dipping</li>
+                                <li>Epoxy coating</li>
+                                <li>Electro Plating</li>
+                                <li>Vapour smoothing-Acetone treatment</li>
+                                <li>Colouring</li>
+                                <li>Coating</li>
+                                <li>Priming and Painting</li>
+                                <li>Inspection and testing: Digital</li>
+                                <li>Visual</li>
+                                <li>Physical</li>
+                                <li>Defects and their causes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Additive Manufacturing Technologies: Rapid Prototyping to Direct Digital ManufacturingLan
+                            Gibson, David W. Rosen, Brent Stucker Springer, 2010, ISBN: 9781493921133.</li>
+                        <li>Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling, Rapid Manufacturing
+                            Andreas Gebhardt, Hanser Publisher, 2011, ISBN: 156990507X, 9781569905074.</li>
+                        <li>3D Printing and Design, Sabrie Soloman, Khanna Publishing House, Delhi, ISBN: 9789386173768.
+                        </li>
+                        <li>3D Printing and Rapid Prototyping- Principles and Applications C.K. Chua, Kah Fai Leong
+                            World Scientific, 2017, ISBN: 9789813146754.</li>
+                        <li>Getting Started with 3D Printing: A Hands-on Guide to the Hardware, Software, and Services
+                            Behind the New Manufacturing Revolution, Liza Wallach Kloski, Nick KloskiMake Community,
+                            LLC; 2nd edition, 2021, ISBN: 9781680450200.</li>
+                        <li>Laser-Induced Materials and Processes for Rapid Prototyping, L. Lu, J. Fuh, Y.S. Wong Kulwer
+                            Academic Press, 2001, ISBN: 9781461514695.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

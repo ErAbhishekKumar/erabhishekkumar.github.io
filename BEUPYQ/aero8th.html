@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>8th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">8th Semester Syllabus</h1>
+                <p class="page-subtitle">Aeronautical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Aviation Logistics and Supply Chain Management [116801]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Aircraft Maintenance, Repair and Overhaul [116802]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Flight Dynamics [116803]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-III [1008XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Aircraft Maintenance, Repair and Overhaul Lab [116802P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-II [116804P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>18</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-116801"
+                        data-type="theory">Aviation Logistics</button><button class="tab-btn"
+                        data-target="subject-116802" data-type="theory">Aircraft Maintenance</button><button
+                        class="tab-btn" data-target="subject-116803" data-type="theory">Flight Dynamics</button><button
+                        class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective-III"
+                        data-modal-options='[ {"label": "Basic Practice of Liberal Arts", "target": "subject-100825", "btn-id": "btn-100825"}, {"label": "Digital Marketing", "target": "subject-100826", "btn-id": "btn-100826"}, {"label": "Holistic Personality Development", "target": "subject-100827", "btn-id": "btn-100827"}, {"label": "Professional Ethics", "target": "subject-100828", "btn-id": "btn-100828"}, {"label": "Universal Human Values", "target": "subject-100829", "btn-id": "btn-100829"} ]'>
+                        Open Elective-III </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-116802P"
+                        data-type="lab">Aircraft Maintenance Lab</button><button class="tab-btn"
+                        data-target="subject-116804P" data-type="lab">Project-II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-116801" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Aviation Logistics and Supply Chain Management [116801]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Aviation Logistics</strong>
+                            <ul class="unit-topics">
+                                <li>Aviation logistics overview</li>
+                                <li>Airline and MRO supply chain structure</li>
+                                <li>Global aviation supply networks</li>
+                                <li>Demand forecasting techniques</li>
+                                <li>Logistics performance metrics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Procurement and Inventory Management</strong>
+                            <ul class="unit-topics">
+                                <li>Aviation procurement systems</li>
+                                <li>Inventory classification methods</li>
+                                <li>Inventory control models</li>
+                                <li>Rotables and expendables management</li>
+                                <li>Supplier evaluation systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Airline & MRO Logistics Operations</strong>
+                            <ul class="unit-topics">
+                                <li>Aircraft spare warehousing systems</li>
+                                <li>Aircraft on Ground (AOG) logistics management</li>
+                                <li>Transportation and freight management systems</li>
+                                <li>Reverse logistics in aviation</li>
+                                <li>Integration of maintenance planning with logistics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Digitalization in Aviation SCM</strong>
+                            <ul class="unit-topics">
+                                <li>ERP systems in aviation supply chain</li>
+                                <li>RFID</li>
+                                <li>IoT and blockchain applications</li>
+                                <li>Digital twin applications in aviation SCM</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Analytics in Aviation SCM</strong>
+                            <ul class="unit-topics">
+                                <li>Predictive analytics for spare parts demand forecasting</li>
+                                <li>KPI dashboards and performance monitoring</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Sustainability, Risk and Regulatory Compliance</strong>
+                            <ul class="unit-topics">
+                                <li>Aviation safety and regulatory compliance</li>
+                                <li>Risk management in aviation supply chain</li>
+                                <li>Green logistics and carbon footprint reduction</li>
+                                <li>Quality audits and compliance monitoring systems</li>
+                                <li>Resilience strategies for global disruptions</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aviation Logistics: The Dynamic Partnership of Air Freight and Supply Chain, Michael Sales
+                            Kogan Page, 2nd Edition, 2016</li>
+                        <li>Air Transport Management: An International Perspective Lucy Budd & Stephen Ison, Routledge,
+                            2nd Edition, 2017</li>
+                        <li>Supply Chain Management: Strategy, Planning, and Operation Sunil Chopra & Peter Meindl
+                            Pearson, 7th Edition, 2019</li>
+                        <li>Logistics & Supply Chain Management Martin Christopher Pearson Education, 5th Edition, 2016
+                        </li>
+                        <li>Designing and Managing the Supply Chain David Kaminsky, Edith Simchi-Levi, Philip
+                            McGraw-Hill Education, 3rd Edition, 2007</li>
+                        <li>Aircraft Maintenance Management Harry A. Kinnison McGraw-Hill Education, 2nd Edition, 2012
+                        </li>
+                        <li>Global Logistics and Supply Chain Management John Mangan, Chandra Lalwani, Tim Butcher
+                            Wiley, 3rd Edition, 2016</li>
+                        <li>Operations and Supply Chain Management F. Robert Jacobs & Richard B. Chase, McGraw-Hill
+                            Education, 15th Edition, 2018</li>
+                    </ol>
+                </section>
+                <section id="subject-116802" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Aircraft Maintenance, Repair and Overhaul [116802]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Aircraft Maintenance & Regulatory
+                                Framework</strong>
+                            <ul class="unit-topics">
+                                <li>Maintenance philosophy: preventive, corrective, predictive</li>
+                                <li>Maintenance schedules (A, B, C, D checks)</li>
+                                <li>Airworthiness requirements (DGCA, FAA, EASA)</li>
+                                <li>Aircraft documentation: logbooks, Minimum Equipment List (MEL), and Aircraft
+                                    Maintenance Manual (AMM)</li>
+                                <li>Human factors in maintenance</li>
+                                <li>Continuing Airworthiness Management Organization (CAMO)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Inspection & Non-Destructive Testing (NDT)</strong>
+                            <ul class="unit-topics">
+                                <li>Inspection methods: visual, detailed, special NDT techniques</li>
+                                <li>Ultrasonic testing</li>
+                                <li>Radiography</li>
+                                <li>Magnetic particle inspection</li>
+                                <li>Dye penetrant testing and Eddy current testing</li>
+                                <li>Corrosion detection and prevention</li>
+                                <li>Structural health monitoring</li>
+                                <li>Aircraft structural damage assessment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Aircraft Systems & Engine Overhaul</strong>
+                            <ul class="unit-topics">
+                                <li>Hydraulic system maintenance</li>
+                                <li>Landing gear maintenance</li>
+                                <li>Electrical and avionics troubleshooting</li>
+                                <li>Fuel system maintenance</li>
+                                <li>Gas turbine engine maintenance and overhaul</li>
+                                <li>Engine performance trend monitoring</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Structural Repair Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Metallic structure repairs (riveting, patching)</li>
+                                <li>Composite repair procedures</li>
+                                <li>Repair design approval process</li>
+                                <li>Fatigue and crack growth management</li>
+                                <li>Aircraft aging and life extension programs</li>
+                                <li>Repair documentation and certification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: MRO Management & Quality Assurance</strong>
+                            <ul class="unit-topics">
+                                <li>MRO organizational structure</li>
+                                <li>Maintenance planning & logistics</li>
+                                <li>Safety Management Systems (SMS)</li>
+                                <li>Digital MRO & predictive maintenance technologies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: MRO Management & Quality Assurance</strong>
+                            <ul class="unit-topics">
+                                <li>Quality control and audits</li>
+                                <li>Reliability centered maintenance (RCM)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aircraft Maintenance and Repair Michael J. Kroes, William A. Watkins, Frank Delp, Ronald
+                            Sterkenburg McGraw-Hill Education, 7th Edition, 2013</li>
+                        <li>Aviation Maintenance Technician Handbook - Airframe (Vol. 1 & 2), FAA (Federal Aviation
+                            Administration) FAA-H-8083-31A, Latest Edition, 2018</li>
+                        <li>Aviation Maintenance Technician Handbook - Powerplant (Vol. 1 & 2) FAA, FAA-H-8083-32A,
+                            Latest Edition, 2018</li>
+                        <li>Aircraft Systems: Mechanical, Electrical and Avionics Subsystems Integration Ian Moir, Allan
+                            Seabridge Wiley, 3rd Edition, 2011</li>
+                        <li>Aircraft Inspection, Repair & Alterations Dale Crane Aviation Supplies & Academics (ASA),
+                            7th Edition, 2017</li>
+                        <li>Aircraft Maintenance Management Harry A. Kinnison, McGraw-Hill Education, 2nd Edition, 2012
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-116803" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Flight Dynamics [116803]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Principles of Flight</strong>
+                            <ul class="unit-topics">
+                                <li>Physical properties and structure of the atmosphere</li>
+                                <li>International Standard Atmosphere (ISA)</li>
+                                <li>Temperature-pressure-altitude relationships</li>
+                                <li>Forces and moments on a flight vehicle</li>
+                                <li>Equilibrium conditions</li>
+                                <li>Equations of motion of a rigid flight vehicle</li>
+                                <li>Measurement of airspeed: true, indicated, calibrated, and equivalent</li>
+                                <li>Streamlined and bluff bodies</li>
+                                <li>Types of drag in airplanes</li>
+                                <li>Drag polar</li>
+                                <li>Methods of drag reduction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Aircraft Performance in Level, Climbing, and Gliding
+                                Flight</strong>
+                            <ul class="unit-topics">
+                                <li>Straight and level flight: thrust required vs. available</li>
+                                <li>Power required vs. available</li>
+                                <li>Effect of altitude on thrust and power</li>
+                                <li>Conditions for minimum drag and minimum power</li>
+                                <li>Climbing flight: maximum rate of climb</li>
+                                <li>Steepest angle of climb</li>
+                                <li>Gliding flight: minimum rate of sink</li>
+                                <li>Shallowest angle of glide</li>
+                                <li>Range and endurance for propeller- and jet-powered aircraft</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Accelerating Flight</strong>
+                            <ul class="unit-topics">
+                                <li>Take-off performance: ground roll, lift-off, climb-out</li>
+                                <li>Landing performance: approach, flare, and ground roll</li>
+                                <li>Turning performance: horizontal and vertical turns</li>
+                                <li>Pull-up and pull-down maneuvers</li>
+                                <li>Maximum turn rate and minimum turn radius</li>
+                                <li>V-n diagram: maneuvering and gust load factors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Longitudinal Stability and Control</strong>
+                            <ul class="unit-topics">
+                                <li>Degrees of freedom of an aircraft</li>
+                                <li>Static and dynamic stability concepts</li>
+                                <li>Static longitudinal stability: contributions of components</li>
+                                <li>Neutral point, static margin</li>
+                                <li>Hinge moment and elevator control effectiveness</li>
+                                <li>Power effects</li>
+                                <li>Elevator angle to trim</li>
+                                <li>Stick force gradient</li>
+                                <li>Aerodynamic balancing</li>
+                                <li>Aircraft equations of motion</li>
+                                <li>Stability derivatives</li>
+                                <li>Stability quartic</li>
+                                <li>Phugoid motion and short-period oscillations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Lateral and Directional Stability and Control
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Yaw and side-slip relationships</li>
+                                <li>Dihedral effect and component contributions</li>
+                                <li>Lateral control: aileron control power</li>
+                                <li>Strip theory</li>
+                                <li>Aileron reversal</li>
+                                <li>Weathercock stability and directional control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Lateral and Directional Stability and Control
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Rudder requirements and dorsal fin effects</li>
+                                <li>One-engine inoperative condition</li>
+                                <li>Dynamic stability: Dutch roll, spiral divergence, directional divergence</li>
+                                <li>Autorotation and spin</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Aircraft Performance and Design John D. Anderson McGraw Hill Education, Indian Edition 2017
+                        </li>
+                        <li>Flight Stability and Automatic Control, Robert C. Nelson McGraw-Hill Education, Second
+                            Edition, 1997</li>
+                        <li>Performance, Stability, Dynamics, and Control of Airplanes, Bandu N. Pamadi, AIAA Education
+                            Series, Third Edition, 2015</li>
+                        <li>Airplane Performance, Stability and Control Courtland D. Perkins and Robert E. Hage, John
+                            Wiley and Sons, 1966</li>
+                        <li>Aircraft Performance Theory and Practice Martin E. Eshelby, Elsevier; First Edition 2012
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-100825" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Basic Practice of Liberal Arts [100825]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to liberal Arts</strong>
+                            <ul class="unit-topics">
+                                <li>Definition and significance of liberal arts</li>
+                                <li>Historical development and evolution of liberal arts</li>
+                                <li>Overview of interdisciplinary approaches in liberal arts</li>
+                                <li>Modern interdisciplinary innovators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Liberal arts education and its benefits</strong>
+                            <ul class="unit-topics">
+                                <li>Liberal arts education and its benefits: STEM to STEAM</li>
+                                <li>Utilitarianism</li>
+                                <li>Deontology</li>
+                                <li>Virtue Ethics in engineering context</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Critical Thinking I</strong>
+                            <ul class="unit-topics">
+                                <li>The Role of Critical Thinking in Liberal Arts Education</li>
+                                <li>Arguments in Liberal Arts Disciplines</li>
+                                <li>Information Assumptions</li>
+                                <li>And biases</li>
+                                <li>Formal logic principles and applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Critical Thinking II</strong>
+                            <ul class="unit-topics">
+                                <li>Critical Thinking and Interpretation</li>
+                                <li>Logical conclusions from the evidence</li>
+                                <li>Fallacies in engineering decision-making</li>
+                                <li>Media Literacy and Critical Thinking in the Digital Age</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Creativity I</strong>
+                            <ul class="unit-topics">
+                                <li>Creative Thinking Skills in Education</li>
+                                <li>Ideation Techniques</li>
+                                <li>Whole Brain Approach</li>
+                                <li>Technology lifecycle and adoption curves</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Creativity II</strong>
+                            <ul class="unit-topics">
+                                <li>Characteristics of creative and innovative individuals</li>
+                                <li>Lifecycle and adoption curves</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Liberal Arts and Sciences: Thinking Critically, Creatively, and Ethically Ed. D.,
+                            Christopher a Ulloa Chaves Trafford Publishing, 2014</li>
+                        <li>Art of Creative Thinking Rod Judkins Hachette Book Publishing 2015</li>
+                        <li>Introduction to Creativity and Innovation for Engineers Stuart Walesh, Pearson, 2017</li>
+                        <li>The Reflective Practitioner Donald A. Schön Basic Books, 1984</li>
+                        <li>The Innovator's Dilemma Clayton Christensen Harvard Business Review Press, 1997</li>
+                    </ol>
+                </section>
+                <section id="subject-100826" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Digital Marketing [100826]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Search Engine Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Search Engine Marketing (SEM): Introduction to SEM</li>
+                                <li>Pay-Per-Click (PPC) Advertising</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Social Media Advertising</strong>
+                            <ul class="unit-topics">
+                                <li>Social Media Advertising: Advertising on Facebook</li>
+                                <li>Instagram</li>
+                                <li>LinkedIn</li>
+                                <li>And Twitter</li>
+                                <li>Creating Effective Social Media Ads</li>
+                                <li>Budgeting for Social Media Campaigns</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Content and Influencer Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Content and Influencer Marketing: Creating Engaging Content</li>
+                                <li>Working with Influencers</li>
+                                <li>Measuring Content Performance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Email and Mobile Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Email and Mobile Marketing: Fundamentals of Email Marketing</li>
+                                <li>Building Email Lists</li>
+                                <li>Mobile Marketing Strategies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Digital Marketing: A Practical Approach Dr. S. Ramesh Kumar, McGraw-Hill Education</li>
+                        <li>Digital Marketing: Strategy, Implementation, and Practic Dave Chaffey, Fiona Ellis-Chadwick,
+                            Pearson Education India</li>
+                        <li>Digital Marketing for Dummies, Ryan Deiss, Russ Henneberry Wiley</li>
+                    </ol>
+                </section>
+                <section id="subject-100827" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Holistic Personality Development [100827]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Self-Discovery</strong>
+                            <ul class="unit-topics">
+                                <li>Discovering personality types and traits</li>
+                                <li>Emotional intelligence and empathy</li>
+                                <li>Goal-setting and visioning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Confidence, Resilience and Adaptability I</strong>
+                            <ul class="unit-topics">
+                                <li>Self-reflection: Identify strengths and accomplishments</li>
+                                <li>Positive self-talk: Encourage yourself with positive affirmations</li>
+                                <li>Set achievable goals: Celebrate small wins</li>
+                                <li>Practice mindfulness: Focus on the present moment</li>
+                                <li>Seek feedback: Learn from constructive criticism</li>
+                                <li>Take calculated risks: Step out of your comfort zone</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Confidence, Resilience and Adaptability II</strong>
+                            <ul class="unit-topics">
+                                <li>Develop a growth mindset: Believe abilities can be developed</li>
+                                <li>Develop problem-solving skills: Approach challenges with a solution-focused mindset
+                                </li>
+                                <li>Practice self-care: Take care of physical</li>
+                                <li>Emotional</li>
+                                <li>And mental well-being</li>
+                                <li>Build a support network: Surround yourself with positive relationships</li>
+                                <li>Learn from failures: Extract lessons and move forward</li>
+                                <li>Focus on the present: Manage stress and anxiety</li>
+                                <li>Develop emotional regulation: Recognize and manage emotions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Confidence, Resilience and Adaptability II</strong>
+                            <ul class="unit-topics">
+                                <li>Practice gratitude: Focus on the positive aspects of life</li>
+                                <li>Stay curious: Embrace lifelong learning</li>
+                                <li>Be open-minded: Consider different perspectives</li>
+                                <li>Develop flexibility: Adjust to changing circumstances</li>
+                                <li>Practice self-awareness: Recognize your emotions and thoughts</li>
+                                <li>Take calculated risks: Step out of your comfort zone</li>
+                                <li>Learn from others: Seek diverse experiences and knowledge</li>
+                                <li>Stay positive: Focus on opportunities and solutions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Personal Growth</strong>
+                            <ul class="unit-topics">
+                                <li>Mindfulness and stress management</li>
+                                <li>Time management and productivity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Well-being</strong>
+                            <ul class="unit-topics">
+                                <li>Physical and mental well-being</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>The Art of Living, Sri Sri Ravi Shankar, HarperCollins UK, 2014</li>
+                        <li>You Can Win Shiv Khera Bloomsbury India; 1st edition, (2014)</li>
+                        <li>The 7 Habits of Highly Effective People Stephen Covey, adapted by Suresh Mansharamani, Simon
+                            & Schuster; 12th edition (2019)</li>
+                        <li>The Gita for Success V. Srinivasan V&S Publishers, New Delhi</li>
+                        <li>Yoga and the Art of Living B.K.S. Iyengar, Harpercollins (2005)</li>
+                        <li>Employability Skills Dr. Nishith Rajaram Dubey, Anupam Singh, Indra Publishing House, 2023
+                        </li>
+                        <li>Organizational Behavior A. K. Chitale, Rajendra Prasad Mohanty and Dr Nishith Dubey, PHI
+                            Learning Pvt Ltd</li>
+                        <li>Managerial Skills Dr Nishith Dubey & Prof Gitanjali Shrivastava Shiva Prakashan, Indore,
+                            India, 2010</li>
+                        <li>Emotional Intelligence, Daniel Goleman, Word Press</li>
+                        <li>How to win friends and influence people, Dale Carnegie Srishti Publishers & Distributors,
+                            Delhi, India</li>
+                    </ol>
+                </section>
+                <section id="subject-100828" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Professional Ethics [100828]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Values and Ethics in Day to Day Life I</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to values and ethics</li>
+                                <li>Definition</li>
+                                <li>Examples</li>
+                                <li>Concept of attitude and development of attitude</li>
+                                <li>Importance of values and ethics in day to day activities and at workplace</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Values and Ethics in Day to Day Life II</strong>
+                            <ul class="unit-topics">
+                                <li>Ethical ways of communication</li>
+                                <li>Ethical ways to demonstrate environmental considerations in engineering processes in
+                                    the context of carbon</li>
+                                <li>Ethics at workplace</li>
+                                <li>Examples of situations depicting values-based decisions and ethical behaviour in day
+                                    to Day life</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Values and Ethics in Profession II</strong>
+                            <ul class="unit-topics">
+                                <li>Relevance of profession to society</li>
+                                <li>Ethical principles such as Respecting others and ourselves</li>
+                                <li>Respecting the rights of others</li>
+                                <li>Keeping promises</li>
+                                <li>Avoiding unnecessary problems to others</li>
+                                <li>Avoiding cheating and dishonesty</li>
+                                <li>Expressing gratitude towards others and encouraging them to work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Values and Ethics in Profession II</strong>
+                            <ul class="unit-topics">
+                                <li>Identification of activities in one's own area of work and related ethical and
+                                    unethical behavior</li>
+                                <li>Identification of ethical and unethical behavior in profession related to one's own
+                                    discipline</li>
+                                <li>Examples / cases of situations depicting values-based decisions and ethical behavior
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Introduction to sustainability and 5R Approach
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Sustainable Development: Concept and Environmental Ethics</li>
+                                <li>Impact of Development on Ecosystem: Panch-tatva - (पंच-तत्व)'</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Introduction to sustainability and 5R Approach
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Role of 5Rs for Sustainable Development</li>
+                                <li>National Guidelines on the Economic, Social and Environmental Responsibilities of
+                                    Business</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Professional Ethics and Human Values, D. R. Kiran, McGraw-Hill Education Pvt. Ltd. 2007</li>
+                        <li>A Textbook On Professional Ethics And Human Values, Dr. R S Nagarajan, New Age International
+                            (P) Ltd., Publishers, 2017</li>
+                        <li>Ethics, Integrity and Aptitude - Hindi (Paperback), (एथिक्स, सत्यनिष्ठा एवं अभिवृत्ति), P.D
+                            Sharma, Rawat Publications, 2019</li>
+                        <li>Chanakya Niti (Sutra Sahit) (Hindi), Chanakya, Maple Press. 2014, Environment and
+                            sustainable development (Digital Book by NCERT)</li>
+                    </ol>
+                </section>
+                <section id="subject-100829" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-III: Universal Human Values [100829]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Value Education</strong>
+                            <ul class="unit-topics">
+                                <li>Right Understanding</li>
+                                <li>Relationship and Physical Facility (Holistic Development and the Role of Education)
+                                </li>
+                                <li>Understanding Value Education Sharing about Oneself</li>
+                                <li>Self-exploration as the Process for Value Education</li>
+                                <li>Continuous Happiness and Prosperity the Basic Human Aspirations</li>
+                                <li>Exploring Human Consciousness</li>
+                                <li>Happiness and Prosperity - Current Scenario</li>
+                                <li>Method to Fulfill the Basic Human Aspirations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Harmony in the Human Being</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Human being as the Co-existence of the Self and the Body</li>
+                                <li>Distinguishing between the Needs of the Self and the Body</li>
+                                <li>The Body as an Instrument of the Self</li>
+                                <li>Understanding Harmony in the Self</li>
+                                <li>Harmony of the Self with the Body</li>
+                                <li>Programme to ensure self-regulation and Health</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Harmony in the Family and Society</strong>
+                            <ul class="unit-topics">
+                                <li>Harmony in the Family the Basic Unit of Human Interaction</li>
+                                <li>'Trust' the Foundational Value in Relationship</li>
+                                <li>'Respect' - as the Right Evaluation</li>
+                                <li>Other Feelings</li>
+                                <li>Justice in Human-to-Human Relationship</li>
+                                <li>Understanding Harmony in the Society</li>
+                                <li>Vision for the Universal Human Order</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Harmony in the Nature/Existence</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding Harmony in the Nature</li>
+                                <li>Interconnectedness</li>
+                                <li>Self-regulation and Mutual Fulfilment among the Four Orders of Nature</li>
+                                <li>Realizing Existence as Co-existence at All Levels</li>
+                                <li>The Holistic Perception of Harmony in Existence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Implications of the Holistic Understanding - a Look at
+                                Professional</strong>
+                            <ul class="unit-topics">
+                                <li>Natural Acceptance of Human Values</li>
+                                <li>Definitiveness of (Ethical) Human Conduct</li>
+                                <li>A Basis for Humanistic Education</li>
+                                <li>Humanistic Constitution and Universal Human Order</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Implications of the Holistic Understanding</strong>
+                            <ul class="unit-topics">
+                                <li>Competence in Professional Ethics</li>
+                                <li>Holistic Technologies</li>
+                                <li>Production Systems and Management Models-Typical Case Studies</li>
+                                <li>Strategies for Transition towards Value-based Life and Profession</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A Foundation Course in Human Values and Professional Ethics, RR Gaur, R Asthana, GP Bagaria,
+                            2nd Revised Edition, Excel Books, New Delhi, 2019</li>
+                        <li>Jeevan Vidya: EkParichaya, A Nagaraj, Jeevan Vidya Prakashan, Amarkantak, 1999</li>
+                        <li>Human Values, A.N. Tripathi, New Age Intl. Publishers, New Delhi, 2004</li>
+                        <li>The Story of Stuff (Book)</li>
+                        <li>The Story of My Experiments with Truth - by Mohandas Karamchand Gandhi</li>
+                        <li>Small is Beautiful - E. F Schumacher</li>
+                        <li>Slow is Beautiful - Cecile Andrews</li>
+                    </ol>
+                </section>
+                <section id="subject-116802P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Aircraft Maintenance, Repair and Overhaul Lab [116802P]</h2>
+                    <p>Perform all Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Aircraft maintenance documentation study</li>
+                        <li>Visual inspection of aircraft components</li>
+                        <li>Perform dye penetrant inspection</li>
+                        <li>Eddy current crack detection experiment</li>
+                        <li>Hydraulic system troubleshooting simulation</li>
+                        <li>Engine-Identification of components and defects</li>
+                        <li>Composite repair demonstration</li>
+                        <li>Corrosion identification and treatment methods</li>
+                        <li>Propeller pitch setting and balancing</li>
+                        <li>Piston Engine and Jet Engine starting procedure</li>
+                    </ul>
+                </section>
+                <section id="subject-116804P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-II [116804P]</h2>
+                    <p>Details for Project-II will be provided by the department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

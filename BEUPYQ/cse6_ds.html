@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">CSE (Data Science)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Big Data & Tools [153601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Data Visualization [153602]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Image and Video Processing [153603]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Al and Ethics [153604]</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Constitution of India [153605]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective Course-II [1536XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective Course-III [1536XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Big Data & Tools Lab [153601P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Data Visualization Lab [153602P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Image and Video Processing Lab [153603P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Course-II Lab [153606P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>23</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-153601" data-type="theory">Big Data & Tools</button>
+                    <button class="tab-btn" data-target="subject-153602" data-type="theory">Data Visualization</button>
+                    <button class="tab-btn" data-target="subject-153603" data-type="theory">Image and Video
+                        Processing</button>
+                    <button class="tab-btn" data-target="subject-153604" data-type="theory">Al and Ethics</button>
+                    <button class="tab-btn" data-target="subject-153605" data-type="theory">Constitution of
+                        India</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective Course-II"
+                        data-modal-options='[ {"label": "Compiler Design", "target": "subject-153607", "btn-id": "btn-153607"}, {"label": "Cyber Security", "target": "subject-153608", "btn-id": "btn-153608"}, {"label": "Deep Learning Algorithms", "target": "subject-153609", "btn-id": "btn-153609"}, {"label": "Network Security", "target": "subject-153610", "btn-id": "btn-153610"}, {"label": "Soft Computing", "target": "subject-153611", "btn-id": "btn-153611"} ]'>
+                        Program Elective-II </button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective Course-III"
+                        data-modal-options='[ {"label": "Adversarial Machine Learning", "target": "subject-153612", "btn-id": "btn-153612"}, {"label": "Distributed System Design", "target": "subject-153613", "btn-id": "btn-153613"}, {"label": "Introduction to Wireless Networks", "target": "subject-153614", "btn-id": "btn-153614"}, {"label": "Intrusion Detection", "target": "subject-153615", "btn-id": "btn-153615"}, {"label": "Natural Language Processing", "target": "subject-153616", "btn-id": "btn-153616"}, {"label": "Reinforcement Learning", "target": "subject-153617", "btn-id": "btn-153617"} ]'>
+                        Program Elective-III </button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-153601P" data-type="lab">Big Data & Tools Lab</button>
+                    <button class="tab-btn" data-target="subject-153602P" data-type="lab">Data Visualization
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-153603P" data-type="lab">Image and Video Processing
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-153606P" data-type="lab">NPTEL Course-II Lab</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-153601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Big Data and Tools [153601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Big Data</strong>
+                            <ul class="unit-topics">
+                                <li>Big Data - Definition</li>
+                                <li>Characteristic Features - Big Data Applications</li>
+                                <li>Big Data vs Traditional Data - Risks of Big Data - Structure of Big Data -
+                                    Challenges of Conventional Systems - Web Data - Evolution of Analytic Scalability -
+                                    Evolution of Analytic Processes</li>
+                                <li>Tools and methods - Analysis vs Reporting - Modern Data Analytic Tools</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Hadoop</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: History of Hadoop</li>
+                                <li>Hadoop Ecosystem</li>
+                                <li>Analyzing data with Hadoop</li>
+                                <li>Hadoop Distributed File System - Design - HDFS concepts - Hadoop filesystem - Data
+                                    flow - Hadoop I/O - Data integrity - Serialization - Setting up a Hadoop cluster -
+                                    Cluster specification - cluster setup and installation - YARN</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Map Reduce</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Understanding MapReduce functions - Scaling out</li>
+                                <li>Anatomy of a MapReduce Job Run - Failures - Shuffle and sort</li>
+                                <li>MapReduce types and formats</li>
+                                <li>Features</li>
+                                <li>Counters - sorting - MapReduce Applications -Configuring and setting the environment
+                                    - Unit-1.0:test with MR</li>
+                                <li>Unit-1.0:- local test</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Spark</strong>
+                            <ul class="unit-topics">
+                                <li>Installing spark - Spark applications - Jobs - Stages and Tasks - Resilient
+                                    Distributed databases - Anatomy of a Spark Job Run</li>
+                                <li>Spark on YARN</li>
+                                <li>SCALA: Introduction</li>
+                                <li>Classes and objects</li>
+                                <li>Basic types and operators - built-in control structures - functions and closures -
+                                    inheritance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Big Data Frameworks</strong>
+                            <ul class="unit-topics">
+                                <li>Matrix-Vector Multiplication</li>
+                                <li>Hadoop YARN</li>
+                                <li>Spark</li>
+                                <li>Aggregate Data Models</li>
+                                <li>Hbase: Data Model and Implementations - Hbase Clients - Examples - Cassandra: Data
+                                    Model - Examples - Cassandra Clients - Hadoop Integration</li>
+                                <li>Pig</li>
+                                <li>Grunt</li>
+                                <li>Pig Data Model</li>
+                                <li>Pig Latin developing and testing Pig Latin scripts</li>
+                                <li>Hive - Data Types and File Formats - HiveQL Data Definition - HiveQL Data
+                                    Manipulation - HiveQL Queries</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: NoSQL Databases</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to NoSQL</li>
+                                <li>MongoDB: Introduction Data types</li>
+                                <li>Creating</li>
+                                <li>Updating and deleing documents - Querying</li>
+                                <li>Introduction to indexing</li>
+                                <li>Capped collections</li>
+                                <li>Hbase: Concepts</li>
+                                <li>Hbase Vs RDBMS - Creating records</li>
+                                <li>Accessing data Updating and deleting data</li>
+                                <li>Modifying data - exporting and importing data</li>
+                                <li>USE CASES: Call detail log analysis - Credit fraud alert - Weather forecast</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Bill Franks, Taming the Big Data Tidal Wave: Finding Opportunities in Huge Data Streams with
+                            Advanced Analytics, Wiley and SAS Business Series, 2012</li>
+                        <li>David Loshin, "Big Data Analytics: From Strategic Planning to Enterprise Integration with
+                            Tools, Techniques, NoSQL, and Graph", 2013</li>
+                        <li>Michael Berthold, David J. Hand, -Intelligent Data Analysisl, Springer, Second Edition, 2007
+                        </li>
+                        <li>Michael Minelli, Michelle Chambers, and Ambiga Dhiraj, "Big Data, Big Analytics: Emerging
+                            Business Intelligence and Analytic Trends for Today's Businesses", Wiley, 2013</li>
+                        <li>P. J. Sadalage and M. Fowler, "NoSQL Distilled: A Brief Guide to the Emerging World of
+                            Polyglot Persistence", Addison-Wesley Professional, 2012</li>
+                        <li>Richard Cotton, "Learning R-A Step-by-step Function Guide to Data Analysis,, O'Reilly Media,
+                            2013</li>
+                    </ol>
+                </section>
+                <section id="subject-153602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Data Visualization [153602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Data and Types</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Data</li>
+                                <li>The Basic Data Types - Nominal</li>
+                                <li>Ordinal</li>
+                                <li>Interval</li>
+                                <li>Ratio scaled</li>
+                                <li>Non dependency Oriented Data: Quantitative Multidimensional Data</li>
+                                <li>Categorical and Mixed Attribute Data</li>
+                                <li>Binary and Set Data</li>
+                                <li>Text Data</li>
+                                <li>Dependency-Oriented Data: Time-Series Data</li>
+                                <li>Discrete Sequences and Strings</li>
+                                <li>Spatial Data</li>
+                                <li>Network and Graph Data</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Fundamentals of Data Visualization</strong>
+                            <ul class="unit-topics">
+                                <li>The visualization pipeline</li>
+                                <li>Visualizing Data: Mapping Data onto Aesthetics</li>
+                                <li>Coordinate Systems and Axes</li>
+                                <li>Colour scales</li>
+                                <li>Directory of Visualizations</li>
+                                <li>Visualizing Amounts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Visualizing Distributions and Relationships</strong>
+                            <ul class="unit-topics">
+                                <li>Visualizing Distributions and visualizing many Distributions at once</li>
+                                <li>Visualizing Associations among Two or More Quantitative Variables</li>
+                                <li>Visualizing Time series and other functions of an independent variable</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Advanced Visualization Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Visualize Trends</li>
+                                <li>Geospatial data and uncertainty</li>
+                                <li>Visualization of Networks and Trees</li>
+                                <li>Visualizing multidimensional data</li>
+                                <li>Data Reduction - Reduce Items and Attributes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Principles and Challenges in Data
+                                Visualization</strong>
+                            <ul class="unit-topics">
+                                <li>The principles of proportional link</li>
+                                <li>Handling overlapping points</li>
+                                <li>Balance the data and context</li>
+                                <li>Understanding the most commonly used Image file formats</li>
+                                <li>Choosing the right visualization software</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Data Visualization and Graphical Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Visualized exploratory data Analysis</li>
+                                <li>Histograms and frequency polygons</li>
+                                <li>Box-plots</li>
+                                <li>Quartiles</li>
+                                <li>Scatter Plots</li>
+                                <li>Heat Maps</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Claus O. Wilke, Fundamentals of Data Visualization, O'Reilly publication, first Release
+                            Edition</li>
+                        <li>Chun-houh Chen, Wolfgang Hardle, Antony Unwin, Handbook of Data Visualization, Springer,
+                            2008</li>
+                        <li>Tamara Munzner. Visualization Analysis and Design. A K Peters Visualization Series, CRC
+                            Press, 2014</li>
+                        <li>Kieran Healy, Data Visualization: A Practical Introduction 1stEdition, Princeton university
+                            press</li>
+                        <li>Jiawei Han and Micheline Kamber, Data Mining- Concepts and Techniques-Morgan Kaufmann
+                            Publishers, Elsevier, 2nd Edition, 2006</li>
+                    </ol>
+                </section>
+                <section id="subject-153603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Image and Video Processing [153603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Fundamentals of Image Processing and Image
+                                Transforms</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Image fundamentals</li>
+                                <li>Sampling and quantization of an Image</li>
+                                <li>Relationship between pixels</li>
+                                <li>Image Transforms: 2-D Discrete Fourier Transform</li>
+                                <li>Properties</li>
+                                <li>Discrete cosine Transform</li>
+                                <li>Hadamard Transform</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Image Processing Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Image Enhancement: Spatial Domain methods: Histogram Processing</li>
+                                <li>Fundamentals of Spatial filtering</li>
+                                <li>Smoothing spatial filters</li>
+                                <li>Sharpening Spatial filters</li>
+                                <li>Frequency Domain methods: Basics of filtering in frequency domain</li>
+                                <li>Image smoothing</li>
+                                <li>Image sharpening</li>
+                                <li>Color image processing: Introduction</li>
+                                <li>Fundamentals of color image processing: Color models - RGB</li>
+                                <li>CMY</li>
+                                <li>YIQ</li>
+                                <li>HSI</li>
+                                <li>Pseudo color image processing intensity slicing</li>
+                                <li>Gray level to color transformation</li>
+                                <li>Basics of Full Color image processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Image Restoration</strong>
+                            <ul class="unit-topics">
+                                <li>Degradation Model</li>
+                                <li>Inverse Filtering</li>
+                                <li>Least Mean Square Filters</li>
+                                <li>Constrained Least Squares Restoration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Image Compression</strong>
+                            <ul class="unit-topics">
+                                <li>Image compression fundamentals coding Redundancy</li>
+                                <li>Spatial and temporal redundancy</li>
+                                <li>Compression models: Lossy and Lossless</li>
+                                <li>Huffmann coding</li>
+                                <li>Arithmetic coding</li>
+                                <li>Run length coding</li>
+                                <li>Transform coding</li>
+                                <li>Predictive coding</li>
+                                <li>JPEG standards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Basic Steps of Video Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Analog video</li>
+                                <li>Digital video</li>
+                                <li>Time varying image formation model</li>
+                                <li>Geometric image formation</li>
+                                <li>Formation</li>
+                                <li>Sampling of video signal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: 2D Motion Estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Optical flow</li>
+                                <li>Pixel based motion estimation</li>
+                                <li>Region based Motion estimation</li>
+                                <li>Multi resolution motion estimation</li>
+                                <li>Application of motion estimation in video coding</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Gonzalez and Woods, "Digital Image Processing ", 3rd edition, Pearson</li>
+                        <li>Yao wang, Joem Ostarmann and Ya Qin Zhang, "Video processing and communication ", 1st
+                            edition, PHI</li>
+                        <li>M. Tekalp, "Digital video Processing", Prentice Hall International</li>
+                    </ol>
+                </section>
+                <section id="subject-153604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">AI and Ethics [153604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Definition of morality and ethics in AI</li>
+                                <li>AI</li>
+                                <li>And society</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Impact of AI: Impact on society</li>
+                                <li>Impact on human psychology</li>
+                                <li>Impact on the legal system</li>
+                                <li>Impact on the environment and the planet</li>
+                                <li>And Impact on trust</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Ethical Initiatives in AI: International ethical initiatives</li>
+                                <li>Ethical harms</li>
+                                <li>And concerns</li>
+                                <li>Case study: healthcare robots</li>
+                                <li>Autonomous Vehicles</li>
+                                <li>Warfare</li>
+                                <li>And weaponization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>AI Standards And Regulation: Model Process for Addressing Ethical Concerns During
+                                    System Design</li>
+                                <li>Transparency of Autonomous Systems</li>
+                                <li>Data Privacy Process</li>
+                                <li>Algorithmic Bias Considerations</li>
+                                <li>Ontological Standard for Ethically Driven Robotics and Automation Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Rob ethics: Social and Ethical Implication of Robotics</li>
+                                <li>Robotics- Ethics and Morality</li>
+                                <li>Moral Theories-Ethics in Science and Technology</li>
+                                <li>Ethical Issues in an ICT Society</li>
+                                <li>Harmonization of Principles</li>
+                                <li>Ethics and Professional Responsibility</li>
+                                <li>Robotics Taxonomy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Issues Challenges and Opportunities: Ethical issues in artificial intelligence</li>
+                                <li>Societal Concerning the Application of Artificial Intelligence in Medicine</li>
+                                <li>Decision-making role in industries</li>
+                                <li>And National and International Strategies on AI</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Eleanor Bird, Jasmin Fox-Skelly, Nicola Jenner, Ruth Larbey, Emma Weitkamp and Alan
+                            Winfield," The ethics of artificial intelligence: Issues and initiatives", EPRS | European
+                            Parliamentary Research Service Scientific Foresight Unit (STOA) PE 634.452- March 2020</li>
+                        <li>Patrick Lin, Keith Abney, George A Bekey," Robot Ethics: The Ethical and Social Implications
+                            of Robotics", The MIT Press- January 2014</li>
+                        <li>Towards a Code of Ethics for Artificial Intelligence (Artificial Intelligence: Foundations,
+                            Theory, and Algorithms) by Paula Boddington, November 2017</li>
+                        <li>Mark Coeckelbergh," AI Ethics", The MIT Press Essential Knowledge series, April 2020</li>
+                    </ol>
+                </section>
+                <section id="subject-153605" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Constitution of India [153605]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Meaning of the constitution law and constitutionalism</li>
+                                <li>Historical perspective of the Constitution of India</li>
+                                <li>Salient features and characteristics of the Constitution of India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Scheme of the fundamental rights</li>
+                                <li>The scheme of the Fundamental Duties and its legal status</li>
+                                <li>The Directive Principles of State Policy - Its importance and implementation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Federal structure and distribution of legislative and financial powers between the
+                                    Union and the States</li>
+                                <li>Parliamentary Form of Government in India - The constitution powers and status of
+                                    the President of India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Amendment of the Constitutional Powers and Procedure</li>
+                                <li>The historical perspectives of the constitutional amendments in India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Emergency Provisions: National Emergency</li>
+                                <li>President Rule</li>
+                                <li>Financial Emergency</li>
+                                <li>Local Self Government - Constitutional Scheme in India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Scheme of the Fundamental Right to Equality</li>
+                                <li>Scheme of the Fundamental Right to certain Freedom under Article 19</li>
+                                <li>Scope of the Right to Life and Personal Liberty under Article 21</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Constitution of India" (for Competitive Exams) Published by Naidhruva Edutech Learning
+                            Solutions, Bengaluru. - 2022</li>
+                        <li>"Introduction to the Constitution of India", (Students Edition.) by Durga Das Basu (DD
+                            Basu): Prentice-Hall, 2008</li>
+                        <li>"Constitution of India, Professional Ethics and Human Rights" by Shubham Singles, Charles E.
+                            Haries, and et al: published by Cengage Learning India, Latest Edition - 2019</li>
+                        <li>"The Constitution of India" by Merunandan K B: published by Merugu Publication, Second
+                            Edition, Bengaluru</li>
+                        <li>"Samvidhana Odu" - for Students & Youths by Justice HN Nagamohan Dhas, Sahayana, kerekon
+                        </li>
+                        <li>M.Govindarajan, S.Natarajan, V.S.Senthilkumar, "Engineering Ethics", Prentice-Hall, 2004
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-153607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Compiler Design [153607]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Phases of compilation and overview</li>
+                                <li>Lexical Analysis (scanner): Regular languages</li>
+                                <li>Finite automata</li>
+                                <li>Regular expressions</li>
+                                <li>From regular expressions to finite automata</li>
+                                <li>Scanner generator (lex, flex)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Syntax Analysis (Parser): Context-free languages and grammars</li>
+                                <li>Push-down automata</li>
+                                <li>LL(1) grammars and top-down parsing</li>
+                                <li>Operator grammars</li>
+                                <li>LR(O)</li>
+                                <li>SLR(1)</li>
+                                <li>LR(1)</li>
+                                <li>LALR(1) grammars and bottom-up parsing</li>
+                                <li>Ambiguity and LR parsing</li>
+                                <li>LALR(1) parser generator (yacc, bison)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Semantic Analysis: Attribute grammars</li>
+                                <li>Syntax directed definition</li>
+                                <li>Evaluation and flow of attribute in a syntax tree</li>
+                                <li>Symbol Table: Its structure</li>
+                                <li>Symbol attributes and management</li>
+                                <li>Run-time environment: Procedure activation</li>
+                                <li>Parameter passing</li>
+                                <li>Value return</li>
+                                <li>Memory allocation</li>
+                                <li>And scope</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Intermediate Code Generation: Translation of different language features</li>
+                                <li>Different types of intermediate forms</li>
+                                <li>Code Improvement (optimization) Analysis: control-flow</li>
+                                <li>Data-flow dependence etc.</li>
+                                <li>Code improvement local optimization</li>
+                                <li>Global optimization</li>
+                                <li>Loop optimization and peep-hole optimization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Architecture dependent code improvement: instruction scheduling (for pipeline) and
+                                    loop optimization (for cache memory)</li>
+                                <li>Register allocation and target code generation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Advanced topics: Type systems</li>
+                                <li>Data abstraction</li>
+                                <li>Compilation of Object Oriented features and non-imperative programming languages
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Compilers Principles Techniques And Tools by Alfred V. Aho, Ravi Sethi, Jeffery D. Ullman.
+                            Pearson Education</li>
+                        <li>Compiler Design by Santanu Chattopadhyay. PHI</li>
+                        <li>Modern Compiler Design by Dick Grune, E. Bal. Ceriel, J. H. Jacobs, and Koen G. Langendoen,
+                            Viley Dreamtech</li>
+                    </ol>
+                </section>
+                <section id="subject-153608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Cyber Security [153608]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Cyber Security Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Cybercrime and Information Security</li>
+                                <li>Classification of Cybercrimes</li>
+                                <li>Cybercrime the legal Perspective</li>
+                                <li>Cyberoffences</li>
+                                <li>Cyber-attacks</li>
+                                <li>Social engineering</li>
+                                <li>Cyberstalking</li>
+                                <li>Botnets</li>
+                                <li>Attack Vector</li>
+                                <li>Cybercrime and cloud computing</li>
+                                <li>Cybercrimes on mobile and wireless devices</li>
+                                <li>Attacks on mobile/cell phones</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Authentication and Security Measures</strong>
+                            <ul class="unit-topics">
+                                <li>Authentication service security</li>
+                                <li>Organizational security policies and measures in mobile computing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Ethics in Cyber Security</strong>
+                            <ul class="unit-topics">
+                                <li>Privacy</li>
+                                <li>Intellectual Property in cyberspace</li>
+                                <li>Professional Ethics</li>
+                                <li>Freedom of Speech</li>
+                                <li>Fair User and Ethical Hacking</li>
+                                <li>Trademarks</li>
+                                <li>Internet Fraud</li>
+                                <li>Electronic Evidence</li>
+                                <li>Forensic Technologies</li>
+                                <li>Digital Evidence collection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Tools and Methods Used in Cybercrime</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Proxy Servers and Anonymizers</li>
+                                <li>Phishing</li>
+                                <li>Password Cracking</li>
+                                <li>Keyloggers and Spywares</li>
+                                <li>Virus and Worms</li>
+                                <li>Phishing and Identity Theft</li>
+                                <li>Trojan Horses and Backdoors</li>
+                                <li>Steganography</li>
+                                <li>DoS and DDoS Attacks</li>
+                                <li>SQL Injection</li>
+                                <li>Buffer overflows</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Cybercrimes and Cyber security</strong>
+                            <ul class="unit-topics">
+                                <li>Cybercrime and Legal Landscape around the world</li>
+                                <li>Cyber laws</li>
+                                <li>The Indian IT Act</li>
+                                <li>Challenges</li>
+                                <li>Digital Signatures and Indian IT Act</li>
+                                <li>Amendments to the Indian IT Act</li>
+                                <li>Cybercrime and punishment</li>
+                                <li>Cost of Cybercrimes and IPR Issues</li>
+                                <li>Web threats for Organizations</li>
+                                <li>Social Computing and associated Challenges for Organizations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Cybercrime Examples and Mini-Cases</strong>
+                            <ul class="unit-topics">
+                                <li>Career Paths in Cyber security</li>
+                                <li>Honeypots</li>
+                                <li>Case study (Official Website Hacking</li>
+                                <li>E-mail spoofing</li>
+                                <li>Banking related Frauds</li>
+                                <li>Credit Card related Frauds)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Cyber Security by Nina Godhole, SUnit-1.0: Belapure, Wiley India</li>
+                        <li>Cyber Security Essentials by James Graham, Ryan Olson, Rick Howard CRC Press, Taylor &
+                            Francis Group, 2011 ISBN: 978-1-4398-5123-4</li>
+                    </ol>
+                </section>
+                <section id="subject-153609" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Deep Learning Algorithms [153609]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Neural Network: Brief introduction to neural networks</li>
+                                <li>Error Cost Function</li>
+                                <li>Mean-Square Error</li>
+                                <li>Cross-Entropy</li>
+                                <li>Linear vs Nonlinear functions: Activation Function Linear</li>
+                                <li>Sigmoid</li>
+                                <li>Softmax</li>
+                                <li>Relu</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Optimization: Gradient Descent Algorithm</li>
+                                <li>Momentum Based Gradient Descent Algorithm and Nesterov Accelerated Gradient Descent
+                                    Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Algorithm for Pattern Association/Reconstruction: Associative memory networks</li>
+                                <li>Hetero Associative Memory neural networks</li>
+                                <li>Auto Associative Memory Networks</li>
+                                <li>Bi-directional Associative memory networks</li>
+                                <li>Feedback Networks: Discrete Hopfield Net</li>
+                                <li>Continuous Hopfield Net</li>
+                                <li>Radial Basis Function Networks (RBFN): Training algorithm for an RBFN with fixed
+                                    Centres</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Cluster Network: Self-Organizing Feature Map</li>
+                                <li>Plasticity/Stability Problem</li>
+                                <li>Adaptive Resonance Theory (ARTI and ARTII) - Architecture</li>
+                                <li>ARTMAP</li>
+                                <li>Dense Embeddings: word2vec - Skip-gram model</li>
+                                <li>Continuous Bag Of Words (CBOW) Model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Convolutional Neural Network: Architecture</li>
+                                <li>Convolution Operation</li>
+                                <li>Filters</li>
+                                <li>Pooling Operation - Max pooling</li>
+                                <li>Average pooling</li>
+                                <li>Global pooling</li>
+                                <li>Dilated CNN</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Deep Recurrent Neural Network: Long Short Term Memory (LSTM) - Architecture</li>
+                                <li>Gated Recurrent Unit-1.0:(GRU)</li>
+                                <li>Attention Mechanism</li>
+                                <li>Recursive Neural Network</li>
+                                <li>Deep Unsupervised Learning: Autoencoders</li>
+                                <li>Variational Autoencoders</li>
+                                <li>Adversarial Generative Networks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Neural Network by Simon Haykin, Pearson Education/PHI</li>
+                        <li>Deep Learning, Part II. Goodfellow, I., Bengio, Y., Courville, A., MIT Press, 2016</li>
+                        <li>Learning deep architectures for AI. Bengio, Yoshua. Foundations and trends in Machine
+                            Learning 2.1 (2009): 1127</li>
+                    </ol>
+                </section>
+                <section id="subject-153610" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Network Security [153610]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Computer Security concepts</li>
+                                <li>OSI security Architecture</li>
+                                <li>Security attacks</li>
+                                <li>Security Services</li>
+                                <li>Security Mechanisms</li>
+                                <li>Model of network security</li>
+                                <li>Standards</li>
+                                <li>Physical Layer Security</li>
+                                <li>Network device security</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Symmetric encryption Principles</li>
+                                <li>Block cipher algorithms</li>
+                                <li>Random and pseudorandom numbers</li>
+                                <li>Stream ciphers and RC4</li>
+                                <li>Block cipher modes</li>
+                                <li>Secure hash functions</li>
+                                <li>Message authentication codes</li>
+                                <li>Public-key-cryptography principles</li>
+                                <li>Digital signature</li>
+                                <li>Access control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Key distribution and user authentication</li>
+                                <li>Kerberos</li>
+                                <li>X.509 Certificates</li>
+                                <li>Federated identity management</li>
+                                <li>Web security considerations</li>
+                                <li>Secure Socket layer</li>
+                                <li>Transport layer security</li>
+                                <li>HTTPS 160</li>
+                                <li>Secure Shell(SSH)</li>
+                                <li>IEEE 802.11i Wireless LAN Security</li>
+                                <li>Wireless application protocol overview</li>
+                                <li>Wireless transport layer security</li>
+                                <li>WAP end-to-end security</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Electronic mail security</li>
+                                <li>Pretty good privacy</li>
+                                <li>S/MIME</li>
+                                <li>Domain keys Identified Mail</li>
+                                <li>IP Security overview</li>
+                                <li>IP security Policy</li>
+                                <li>Encapsulating security payload</li>
+                                <li>Combining security association</li>
+                                <li>Internet key exchange</li>
+                                <li>DNSSec</li>
+                                <li>eSMTPS</li>
+                                <li>TCP session hijacking</li>
+                                <li>ARP attacks</li>
+                                <li>Route table modification</li>
+                                <li>UDP hijacking</li>
+                                <li>And man-in-the-middle attacks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>System Security- Types of malicious software</li>
+                                <li>Viruses</li>
+                                <li>Worms</li>
+                                <li>DoS</li>
+                                <li>DDoS</li>
+                                <li>BOF</li>
+                                <li>Countermeasures</li>
+                                <li>IDS concepts</li>
+                                <li>IDS types and detection models</li>
+                                <li>IDS features</li>
+                                <li>IDS deployment considerations</li>
+                                <li>Firewalls characteristics</li>
+                                <li>Types of Firewalls</li>
+                                <li>Firewall location and Configuration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Voice over IP (VoIP) and PBX security</li>
+                                <li>VoIP components</li>
+                                <li>VoIP vulnerabilities and countermeasures</li>
+                                <li>Securing a PBX</li>
+                                <li>Proxy or application level gateways as security devices</li>
+                                <li>VPN</li>
+                                <li>Privacy protection and anonymity services</li>
+                                <li>Electronic payment system</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Network Security Essentials: Applications and Standards" by William Stallings, Pearson</li>
+                        <li>"Network Security private communication in a public world", C. Kaufman, R. Perlman and M.
+                            Speciner, Pearson</li>
+                        <li>LAN Switch Security: What Hackers Know About Your Switches, 1st Ed. (2007), by Eric Vyncke
+                            and Christopher Paggen</li>
+                        <li>"Designing Network Security", Merike Kaeo, 2nd Edition, Pearson Books</li>
+                        <li>"Building Internet Firewalls", Elizabeth D. Zwicky, Simon Cooper, D. Brent Chapman, 2nd
+                            Edition, Oreilly publisher</li>
+                        <li>"Practical Unix & Internet Security", Simson Garfinkel, Gene Spafford, Alan Schwartz, 3rd
+                            Edition, O'reilly publisher</li>
+                    </ol>
+                </section>
+                <section id="subject-153611" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Soft Computing [153611]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Soft Computing: Evolution of Computing: Soft Computing Constituents
+                                </li>
+                                <li>Soft vs Hard Computing</li>
+                                <li>From Conventional AI to Computational Intelligence: Machine Learning Basics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Neural Networks: Machine Learning Using Neural Network</li>
+                                <li>Adaptive Networks</li>
+                                <li>Feed forward Networks</li>
+                                <li>Supervised Learning Neural Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Radial Basis Function Networks: Reinforcement Learning</li>
+                                <li>Unsupervised Learning Neural Networks</li>
+                                <li>Adaptive Resonance architectures</li>
+                                <li>Advances in Neural networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Fuzzy Systems: Fuzzy Sets</li>
+                                <li>Operations on Fuzzy Sets</li>
+                                <li>Fuzzy Relations</li>
+                                <li>Membership Functions: Fuzzy Rules and Fuzzy Reasoning</li>
+                                <li>Fuzzy Inference Systems</li>
+                                <li>Fuzzy Expert Systems</li>
+                                <li>Fuzzy Decision Making</li>
+                                <li>Fuzzy based Back Propagation network</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Genetic Algorithm: Introduction to Genetic Algorithms (GA)</li>
+                                <li>Applications of GA in Machine Learning: Machine Learning Approach to Knowledge
+                                    Acquisition</li>
+                                <li>GA based Back P</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Matlab/Python Lib: Introduction to Matlab/Python</li>
+                                <li>Arrays and array operations</li>
+                                <li>Functions and Files</li>
+                                <li>Study of neural network toolbox and fuzzy logic toolbox</li>
+                                <li>Simple implementation of Artificial Neural Network and Fuzzy Logic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Principles Of Soft Computing, 2nd Ed (With CD) Book by S. N. Deepa and S. N. Sivanandam</li>
+                        <li>Soft Computing, D. K. Pratihar, Narosa, 2008</li>
+                        <li>Neural Networks, Fuzzy Logic and Genetic Algorithms: Synthesis & Applications,
+                            S.Rajasekaran, G. A. Vijayalakshami, PHI</li>
+                        <li>Genetic Algorithms: Search and Optimization, E. Goldberg</li>
+                        <li>Neuro-Fuzzy Systems, Chin Teng Lin, C. S. George Lee, PHI</li>
+                        <li>Build Neural Network With MS Excel sample by Joe choong</li>
+                    </ol>
+                </section>
+                <section id="subject-153612" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Adversarial Machine Learning [153612]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of adversarial machine learning</li>
+                                <li>Statistical machine learning</li>
+                                <li>A framework for secure learning</li>
+                                <li>Security analysis</li>
+                                <li>Framework</li>
+                                <li>Exploratory attacks</li>
+                                <li>Causative attacks</li>
+                                <li>Repeated learning games</li>
+                                <li>Privacy-Preserving learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Attacking a hypersphere learner</li>
+                                <li>Causative attacks on hypersphere detectors</li>
+                                <li>Hypersphere attack description</li>
+                                <li>Optimal unconstrained attacks</li>
+                                <li>Imposing time constraints on the attack</li>
+                                <li>Attacks against retraining with data replacements</li>
+                                <li>Constrained attackers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Availability attack Case Study: SpamBayes</li>
+                                <li>Spam Filter</li>
+                                <li>Threat model</li>
+                                <li>Causative attacks</li>
+                                <li>RONI Defense</li>
+                                <li>Experiments with SpamBayes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Integrity Attack Case Study: PCA Detector</li>
+                                <li>Traffic anomalies</li>
+                                <li>Corrupting the PCA subspace</li>
+                                <li>Corruption-Resilient Detectors</li>
+                                <li>Empirical evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Privacy-Preserving Mechanism for SVM learning</li>
+                                <li>Privacy Breach case studies</li>
+                                <li>Problem setting: privacy-preserving learning</li>
+                                <li>Support Vector Machines: A brief primer</li>
+                                <li>Differential privacy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Near optimal evasion of classifiers</li>
+                                <li>Convex classes</li>
+                                <li>Adversarial machine learning challenges</li>
+                                <li>Open problems</li>
+                                <li>Defensive technologies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Adversarial Machine Learning by Anthony D. Joseph, Blaine Nelson, Benjamin I. P. Rubinstein,
+                            J. D. Tygar</li>
+                        <li>Adversarial Machine Learning by Yevgeniy Vorobeychik, Murat Kantarcioglu</li>
+                    </ol>
+                </section>
+                <section id="subject-153613" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Distributed System Design [153613]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction: Motivation for distributed systems</li>
+                                <li>Characteristics of distributed systems and middleware categories</li>
+                                <li>Network service requirements for distributed systems</li>
+                                <li>Architectural models of distributed systems</li>
+                                <li>Interprocess communication: Multithreading models and multithreaded client/server
+                                    architectures</li>
+                                <li>Hardware virtualization</li>
+                                <li>Code mobility</li>
+                                <li>Virtual machine migration</li>
+                                <li>Interprocess communication paradigms in distributed systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Naming: Naming scheme and namespace</li>
+                                <li>URI</li>
+                                <li>URN</li>
+                                <li>URL</li>
+                                <li>Name resolution and DNS naming service</li>
+                                <li>Naming and location services of mobile entities</li>
+                                <li>Distributed garbage collection</li>
+                                <li>Synchronization: Clock synchronization</li>
+                                <li>NTP and GPS</li>
+                                <li>Lamport's clock and vector clock</li>
+                                <li>Total-ordered and causal-ordered multicasting</li>
+                                <li>Election and mutual exclusion in distributed systems</li>
+                                <li>Coordination: Coordination models</li>
+                                <li>Direct and indirect coordination</li>
+                                <li>Gossip based and group coordination</li>
+                                <li>Publish-subscribe coordination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Consistency: Consistency models</li>
+                                <li>Data-centric and client-centric consistency</li>
+                                <li>Linearizability</li>
+                                <li>Sequential</li>
+                                <li>Causal and FIFO consistency</li>
+                                <li>Eventual consistency</li>
+                                <li>Monotonic read/write</li>
+                                <li>Read-your-writes</li>
+                                <li>Writes-follow-reads consistency</li>
+                                <li>Replication: Replication system architecture and functioning</li>
+                                <li>Passive and active replication</li>
+                                <li>Replication in gossip architecture</li>
+                                <li>Consistency models and protocols in replication</li>
+                                <li>Continuous consistency and conit</li>
+                                <li>Replica management</li>
+                                <li>Placement and distribution</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Fault Tolerance: Dependability</li>
+                                <li>Failure model</li>
+                                <li>Failure handling and resiliency</li>
+                                <li>Reliable group communication</li>
+                                <li>Distributed commit and consensus</li>
+                                <li>Failure Recovery: Forward-error and backward-error recovery</li>
+                                <li>Rollback and checkpointing</li>
+                                <li>Message logging</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed object-based and component-based systems: Distributed objects</li>
+                                <li>Object servers and adapters</li>
+                                <li>Distributed components and containers</li>
+                                <li>Distributed event-based systems: Distributed event-based system architectures</li>
+                                <li>Communication</li>
+                                <li>Matching and filtering</li>
+                                <li>Content-based</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed web-based systems: Web service descriptions</li>
+                                <li>SOAP and REST protocol</li>
+                                <li>UDDI service</li>
+                                <li>Web servers and web server clusters</li>
+                                <li>Distributed file systems: Distributed file system design requirements</li>
+                                <li>File service architecture</li>
+                                <li>Pervasive systems: Sensor</li>
+                                <li>Actuator and IoT</li>
+                                <li>Ubiquity</li>
+                                <li>Sensor network</li>
+                                <li>Context awareness</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Maarten van Steen and Andrew S. Tanenbaum, Distributed Systems, Third edition, 2017</li>
+                        <li>George Coulouris, Jean Dollimore, Tim Kindberg and Gordon Blair, Distributed Systems:
+                            Concepts and Design, Fifth edition, Pearson/Addison-Wesley, 2012</li>
+                        <li>Andrew S. Tanenbaum and Maarten van Steen, Distributed Systems: Principles and Paradigms,
+                            Second edition, Pearson/Prentice-Hall, 2007</li>
+                        <li>Joel M. Crichlow, Distributed Systems: Computing Over Networks, Second edition,
+                            Pearson/Prentice-Hall, 2014</li>
+                        <li>Sukumar Ghosh, Distributed Systems: An Algorithmic Approach, Chapman and Hall/CRC, 2014</li>
+                        <li>Arno Puder, Kay Römer and Frank Pilhofer, Distributed Systems Architecture: A Middleware
+                            Approach, Elsevier, 2011</li>
+                        <li>Ajay D. Kshemkalyani and Mukesh Singhal, Distributed Computing: Principles, Algorithms, and
+                            Systems, Cambridge University Press, 2008</li>
+                        <li>Pankaj Jalote, Fault Tolerance in Distributed Systems, Prentice-Hall, 1994</li>
+                        <li>Mukesh Singhal and Niranjan G. Shivaratri, Advanced Concepts in Operating Systems,
+                            McGraw-Hill, 1994</li>
+                    </ol>
+                </section>
+                <section id="subject-153614" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Introduction to Wireless Networks [153614]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of wireless and mobile infrastructure</li>
+                                <li>Preliminary concepts on cellular architecture</li>
+                                <li>Design objectives and performance issues</li>
+                                <li>Radio resource management and interface</li>
+                                <li>Propagation and path loss models</li>
+                                <li>Channel interference and frequency reuse</li>
+                                <li>Cell splitting</li>
+                                <li>Channel assignment strategies</li>
+                                <li>Overview of generations: - 1G to 5G</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Location Management</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to location management (HLR and VLR)</li>
+                                <li>Mobility models characterizing individual node movement (Random walk</li>
+                                <li>Fluid flow</li>
+                                <li>Markovian</li>
+                                <li>Activity based)</li>
+                                <li>Mobility models characterizing the movement of groups of nodes (Reference point
+                                    based group mobility model</li>
+                                <li>Community based group mobility model)</li>
+                                <li>Static (Always vs. Never update</li>
+                                <li>Reporting Cells</li>
+                                <li>Location Areas) and Dynamic location management schemes (Time</li>
+                                <li>Movement</li>
+                                <li>Distance</li>
+                                <li>Profile Based)</li>
+                                <li>Terminal Paging (Simultaneous paging</li>
+                                <li>Sequential paging)</li>
+                                <li>Location management and Mobile IP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Handoff Management</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of handoff process</li>
+                                <li>Factors affecting handoffs and performance evaluation metrics</li>
+                                <li>Handoff strategies</li>
+                                <li>Different types of handoffs (soft</li>
+                                <li>Hard</li>
+                                <li>Horizontal</li>
+                                <li>Vertical)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Basics of Wireless Transmission</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to narrow and wideband systems</li>
+                                <li>Spread spectrum</li>
+                                <li>Frequency hopping</li>
+                                <li>Introduction to MIMO</li>
+                                <li>MIMO Channel Capacity and diversity gain</li>
+                                <li>Introduction to OFDM</li>
+                                <li>MIMO-OFDM system</li>
+                                <li>Multiple access control (FDMA</li>
+                                <li>TDMA</li>
+                                <li>CDMA</li>
+                                <li>SDMA)</li>
+                                <li>Wireless local area network</li>
+                                <li>Wireless personal area network (Bluetooth and Zigbee)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Cognitive Radio Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Fixed and dynamic spectrum access</li>
+                                <li>Direct and indirect spectrum sensing</li>
+                                <li>Spectrum sharing</li>
+                                <li>Interoperability and co-existence issues</li>
+                                <li>Applications of cognitive radio networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Basics Of 5g Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to D2D communications</li>
+                                <li>High level requirements for 5G architecture</li>
+                                <li>Introduction to the radio resource management</li>
+                                <li>Power control and mode selection problems</li>
+                                <li>Milli-meterwave communication in 5G</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Jochen Schiller, Mobile Communications, 2nd Edition, Pearson Education, 2008, Pearson
+                            Education</li>
+                        <li>Andrea Goldsmith, Wireless Communications, 1st Edition, Cambridge University Press, 2009,
+                            978-0521704168</li>
+                    </ol>
+                </section>
+                <section id="subject-153615" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Intrusion Detection [153615]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Network Attacks</li>
+                                <li>Understanding Intrusion Detection and Intrusion Prevention System</li>
+                                <li>Detection Approaches (Misuse Detection</li>
+                                <li>Anomaly Detection</li>
+                                <li>Etc.)</li>
+                                <li>Uses of IDPS Technologies</li>
+                                <li>Key Functions of IDPS Technologies</li>
+                                <li>Stateful Protocol Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Data Collection (Host-Based</li>
+                                <li>Network-Based</li>
+                                <li>Application-Based</li>
+                                <li>Application-Integrated and Hybrid)</li>
+                                <li>Theoretical Foundations of Detection Taxonomy of anomaly detection system</li>
+                                <li>Fuzzy logic</li>
+                                <li>Bayes theorem</li>
+                                <li>Artificial Neural networks</li>
+                                <li>Support vector machine</li>
+                                <li>Evolutionary computation</li>
+                                <li>Association rules</li>
+                                <li>Clustering</li>
+                                <li>Architecture and Implementation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>IDS Challenges</li>
+                                <li>Alert Management & Correlation (Data Fusion</li>
+                                <li>Alert Correlation</li>
+                                <li>Cooperative Intrusion Detection)</li>
+                                <li>Evaluation Criteria- Accuracy</li>
+                                <li>Performance</li>
+                                <li>Completeness</li>
+                                <li>Timely Response</li>
+                                <li>Adaptation and Cost-Sensitivity</li>
+                                <li>Intrusion Tolerance and Attack Resistance</li>
+                                <li>Test</li>
+                                <li>Intrusion Response</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Security and IDS Management (Data Correlation</li>
+                                <li>Incident Response</li>
+                                <li>Policy and Procedures</li>
+                                <li>Law</li>
+                                <li>Standards and organizations</li>
+                                <li>Security Business issues</li>
+                                <li>Future of Intrusion Detection and Prevention)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Implementation and Deployment: Internet Security System's Real Source</li>
+                                <li>Snort</li>
+                                <li>NFR Security</li>
+                                <li>IDS Tools</li>
+                                <li>Detailed case study of IDS in different networks like Ethernet Networks</li>
+                                <li>802.11 Networks</li>
+                                <li>Mobile Networks</li>
+                                <li>Ad-hoc Networks</li>
+                                <li>And Wireless Sensor Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Snort</li>
+                                <li>Different modes of Snort</li>
+                                <li>Snort IDS Components</li>
+                                <li>Snort Rules</li>
+                                <li>Snort Filters</li>
+                                <li>Snort output</li>
+                                <li>Alert modes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Network Intrusion Detection and Prevention by Ali A. Ghorbani, Wei Lu Mahbod Tavallaee,
+                            Springer</li>
+                        <li>Intrusion Detection & Prevention by Carl Endorf, Eugene Schultz, and Jim Mellander, TMH</li>
+                        <li>Implementing Intrusion Detection Systems by Tim Crothers, Wiley</li>
+                    </ol>
+                </section>
+                <section id="subject-153616" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Natural Language Processing [153616]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Sound: Biology of Speech Processing</li>
+                                <li>Place and Manner of Articulation</li>
+                                <li>Word Boundary Detection</li>
+                                <li>Argmax based computations</li>
+                                <li>HMM and Speech Recognition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Words and Word Forms: Morphology fundamentals</li>
+                                <li>Morphological Diversity of Indian Languages</li>
+                                <li>Morphology Paradigms</li>
+                                <li>Finite State Machine Based Morphology</li>
+                                <li>Automatic Morphology Learning</li>
+                                <li>Shallow Parsing</li>
+                                <li>Named Entities</li>
+                                <li>Maximum Entropy Models</li>
+                                <li>Random Fields</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Structures: Theories of Parsing</li>
+                                <li>Parsing Algorithms</li>
+                                <li>Robust and Scalable Parsing on Noisy Text as in Web documents</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Hybrid of Rule Based and Probabilistic Parsing</li>
+                                <li>Scope Ambiguity and Attachment Ambiguity resolution</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Meaning: Lexical Knowledge Networks</li>
+                                <li>Wordnet Theory</li>
+                                <li>Indian Language Wordnets and Multilingual Dictionaries</li>
+                                <li>Semantic Roles</li>
+                                <li>Word Sense Disambiguation</li>
+                                <li>WSD and Multilinguality</li>
+                                <li>Metaphors</li>
+                                <li>Coreferences</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0:</strong>
+                            <ul class="unit-topics">
+                                <li>Web 2.0 Applications: Sentiment Analysis</li>
+                                <li>Text Entailment</li>
+                                <li>Robust and Scalable Machine Translation</li>
+                                <li>Question Answering in Multilingual Setting</li>
+                                <li>Cross Lingual Information Retrieval (CLIR)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Jurafsky, Dan and Martin, James, "Speech and Language Processing", 2nd Edition, Prentice
+                            Hall, 2008</li>
+                        <li>Manning, Christopher and Heinrich, Schutze, "Foundations of Statistical Natural Language
+                            Processing", MIT Press, 1999</li>
+                        <li>Allen James, "Natural Language Understanding", 2nd edition, Benjamin Cumming, 1995</li>
+                        <li>Charniack, Eugene, "Statistical Language Learning", MIT Press, 1993</li>
+                    </ol>
+                </section>
+                <section id="subject-153617" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Reinforcement Learning [153617]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Reinforcement Learning Problem</strong>
+                            <ul class="unit-topics">
+                                <li>Reinforcement Learning</li>
+                                <li>Elements of Reinforcement Learning</li>
+                                <li>Limitations and Scope</li>
+                                <li>An Extended Example: Tic-Tac-Toe</li>
+                                <li>History of Reinforcement Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Multi-arm Bandits</strong>
+                            <ul class="unit-topics">
+                                <li>An n-Armed Bandit Problem</li>
+                                <li>Action-Value Methods</li>
+                                <li>Incremental Implementation</li>
+                                <li>Tracking a Nonstationary Problem</li>
+                                <li>Optimistic Initial Values</li>
+                                <li>Upper-Confidence-Bound</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Finite Markov Decision Processes</strong>
+                            <ul class="unit-topics">
+                                <li>The Agent-Environment Interface</li>
+                                <li>Goals and Rewards</li>
+                                <li>Returns</li>
+                                <li>Unified Notation for Episodic and Continuing Tasks</li>
+                                <li>The Markov Property</li>
+                                <li>Markov Decision Processes</li>
+                                <li>Value Functions</li>
+                                <li>Optimal Value Functions</li>
+                                <li>Optimality and Approximation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Dynamic Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Policy Evaluation</li>
+                                <li>Policy Improvement</li>
+                                <li>Policy Iteration</li>
+                                <li>Value Iteration</li>
+                                <li>Asynchronous Dynamic Programming</li>
+                                <li>Generalized Policy Iteration</li>
+                                <li>Efficiency of Dynamic Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: BMonte Carlo Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Monte Carlo Prediction</li>
+                                <li>Monte Carlo Estimation of Action Values</li>
+                                <li>Monte Carlo Control</li>
+                                <li>Monte Carlo Control without Exploring Starts</li>
+                                <li>Off-policy Prediction via Importance Sampling</li>
+                                <li>Incremental Implementation</li>
+                                <li>Off-Policy Monte Carlo Control</li>
+                                <li>Importance Sampling on Truncated Returns</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Temporal-Difference Learning and Policy
+                                Approximation</strong>
+                            <ul class="unit-topics">
+                                <li>TD Prediction</li>
+                                <li>Advantages of TD Prediction Methods</li>
+                                <li>Optimality of TD(0)</li>
+                                <li>Sarsa: On-Policy TD Control</li>
+                                <li>Q-Learning: Off-Policy TD Control</li>
+                                <li>Games</li>
+                                <li>Actor-Critic Methods</li>
+                                <li>Eligibility Traces for Actor-Critic Methods</li>
+                                <li>R-Learning and the Average-Reward Setting</li>
+                                <li>Vanilla policy gradient method</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>RS Sutton Reinforcement Learning: An Introduction - Stanford University</li>
+                        <li>Enes Bilgin, Mastering Reinforcement Learning with Python, Packt</li>
+                        <li>Sudharsan Ravichandiran, Hands-On Reinforcement Learning with Python: Master Reinforcement
+                            and Deep Reinforcement Learning Using OpenAI Gym and TensorFlow</li>
+                        <li>Aske Plaat, Deep Reinforcement Learning, Springer Singapore</li>
+                    </ol>
+                </section>
+                <section id="subject-153601P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Big Data and Tools Lab [153601P]</h2>
+                    <p>List of experiments (at least 10, equally distributed across all topics):</p>
+                    <ul class="unit-topics">
+                        <li>Exploring Big Data Characteristics (Python/Pandas): Load a large dataset and analyze its
+                            characteristics based on the 5Vs (Volume, Velocity, Variety, Veracity, and Value)</li>
+                        <li>Comparing SQL and Big Data Processing (SQLite/PySpark): Perform the same queries on a
+                            dataset using both SQLite and PySpark, and compare execution times</li>
+                        <li>Modern Data Analytic Tools (Hadoop/Spark/Kafka): Install and explore Hadoop, Spark, and
+                            Kafka. Write a basic PySpark program to process a text file</li>
+                        <li>HDFS File Operations (Hadoop/MinIO): Perform basic file operations (upload, download, list,
+                            delete) in HDFS or MinIO</li>
+                        <li>Map Reduce Word Count Program (Java/Python MapReduce): Implement a MapReduce program to
+                            count word occurrences in a text file</li>
+                        <li>Matrix-Vector Multiplication Using MapReduce (Hadoop/PySpark): Implement matrix-vector
+                            multiplication using MapReduce and execute it on Hadoop or PySpark</li>
+                        <li>Hadoop YARN & Spark Execution (YARN/PySpark): Submit a PySpark job on Hadoop YARN and
+                            monitor its execution</li>
+                        <li>Predictive Analytics using Spark MLlib (PySpark MLlib): Train and test a logistic regression
+                            model using Spark MLlib</li>
+                        <li>NoSQL Database Operations with Cassandra (Cassandra/MongoDB): Create a NoSQL database,
+                            insert data, and perform queries using Cassandra or MongoDB</li>
+                        <li>Big Data Querying using Hive & Pig (HiveQL/Pig Latin): Execute data manipulation and
+                            querying tasks using HiveQL and Pig Latin</li>
+                    </ul>
+                </section>
+                <section id="subject-153602P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Data Visualization Lab [153602P]</h2>
+                    <p>List of experiments (at least 10, equally distributed across all topics):</p>
+                    <ul class="unit-topics">
+                        <li>Exploring Different Data Types (Python/Pandas): Load a dataset and classify its attributes
+                            into nominal, ordinal, interval, and ratio scales</li>
+                        <li>Handling Non-Dependency Oriented Data (Python/Numpy): Process and visualize different types
+                            of non-dependency data (e.g., categorical, binary, text) using NumPy and Pandas</li>
+                        <li>Analyzing Dependency-Oriented Data (Python/Matplotlib): Load and visualize time-series,
+                            spatial, or network data using appropriate plotting techniques</li>
+                        <li>Understanding the Visualization Pipeline (Python/Seaborn): Demonstrate the process of
+                            transforming raw data into visual insights using a structured visualization pipeline</li>
+                        <li>Mapping Data onto Aesthetics (Python/Matplotlib/Seaborn): Apply aesthetics such as color,
+                            shape, and size to visualize data attributes effectively</li>
+                        <li>Using Different Coordinate Systems (Python/Matplotlib): Compare Cartesian, polar, and
+                            logarithmic coordinate systems with different types of plots</li>
+                        <li>Applying Color Scales in Visualizations (Python/Seaborn): Create visualizations using
+                            various color palettes and explain their impact on interpretation</li>
+                        <li>Visualizing Data Distributions (Python/Seaborn): Create histograms, density plots, and box
+                            plots to analyze data distributions</li>
+                        <li>Comparing Multiple Distributions (Python/Seaborn/Matplotlib): Use violin plots and swarm
+                            plots to visualize multiple distributions simultaneously</li>
+                        <li>Visualizing Relationships Between Variables (Python/Seaborn): Create scatter plots, pair
+                            plots, and correlation matrices to analyze associations between variables</li>
+                        <li>Visualizing Time-Series Data (Python/Matplotlib/Pandas): Plot time-series data with
+                            trendlines and moving averages to observe patterns over time</li>
+                        <li>Visualizing Geospatial Data (Python/Folium/GeoPandas): Plot geospatial data on maps using
+                            Python libraries like Folium or GeoPandas</li>
+                        <li>Network and Tree Visualization (Python/NetworkX/Matplotlib): Generate and visualize a
+                            network graph or hierarchical tree structure</li>
+                        <li>Handling Multidimensional Data (Python/Seaborn/PCA): Reduce dimensionality using PCA and
+                            visualize high-dimensional data using pair plots or 3D scatter plots</li>
+                        <li>Handling Overlapping Data Points (Python/Seaborn/Matplotlib): Implement jittering,
+                            transparency, or faceting to reduce clutter in visualizations</li>
+                        <li>Comparing Image File Formats for Visualization (Python/OpenCV): Save a visualization in
+                            different formats (JPEG, PNG, SVG) and compare quality vs. size</li>
+                        <li>Choosing the Right Visualization Tool (Python/Tableau/Power BI): Compare different
+                            visualization tools like Matplotlib, Tableau, and Power BI for specific use cases</li>
+                    </ul>
+                </section>
+                <section id="subject-153603P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Image and Video Processing Lab [153603P]</h2>
+                    <p>List of experiments (at least 10, equally distributed across all topics):</p>
+                    <ul class="unit-topics">
+                        <li>Image Sampling and Quantization (Python/OpenCV/MATLAB/Octave): Reduce image resolution
+                            (sampling) and change bit depth (quantization) to observe effects on image quality</li>
+                        <li>Pixel Relationships and Neighborhood Operations (Python/OpenCV/MATLAB/Octave): Implement
+                            4-connected and 8-connected neighborhood pixel analysis, and compute pixel intensity
+                            differences</li>
+                        <li>Histogram Equalization (Python/OpenCV/MATLAB/Octave): Compute and visualize image histograms
+                            and apply histogram equalization for contrast enhancement</li>
+                        <li>Spatial Filtering - Smoothing (Python/OpenCV/MATLAB/Octave): Apply mean, Gaussian, and
+                            median filters to remove noise and compare results</li>
+                        <li>Spatial Filtering - Sharpening (Python/OpenCV/MATLAB/Octave): Implement Laplacian and
+                            high-pass filters to enhance edges in an image</li>
+                        <li>Frequency Domain Filtering (Python/OpenCV/MATLAB/Octave): Perform Fourier Transform, apply
+                            low-pass and high-pass filtering, and reconstruct the image in the spatial domain</li>
+                        <li>Color Model Conversion (Python/OpenCV/MATLAB/Octave): Convert an image between RGB, CMY,
+                            YIQ, and HSI color spaces and analyze the differences</li>
+                        <li>Pseudo Color Processing (Python/OpenCV/MATLAB/Octave): Implement intensity slicing and
+                            grayscale-to-color transformation techniques</li>
+                        <li>Image Degradation and Restoration (Python/OpenCV/MATLAB/Octave): Simulate image degradation
+                            (motion blur, Gaussian noise) and restore it using inverse filtering</li>
+                        <li>Least Mean Square (Wiener) Filtering (Python/OpenCV/MATLAB/Octave): Apply Wiener filtering
+                            to restore a noisy and blurred image</li>
+                        <li>Lossless Compression - Huffman Encoding (Python/MATLAB/Octave): Implement Huffman encoding
+                            and decoding for image compression</li>
+                        <li>Lossy Compression JPEG Analysis (Python/OpenCV/MATLAB/Octave): Apply JPEG compression and
+                            analyze its effect on image quality by varying quality factors</li>
+                        <li>Video Frame Extraction (Python/OpenCV/MATLAB/Octave): Extract frames from a video file and
+                            display them sequentially</li>
+                        <li>Motion Detection in Video (Python/OpenCV/MATLAB/Octave): Implement background subtraction
+                            techniques to detect moving objects in a video</li>
+                        <li>Optical Flow Estimation (Python/OpenCV/MATLAB/Octave): Implement optical flow algorithms
+                            (e.g., Lucas-Kanade) to estimate motion in a video sequence</li>
+                    </ul>
+                </section>
+                <section id="subject-153606P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Course-II Lab [153606P]</h2>
+                    <p>Details for NPTEL Courses-II Lab will be provided by the department</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

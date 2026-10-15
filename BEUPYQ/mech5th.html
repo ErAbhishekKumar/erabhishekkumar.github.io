@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3);
+            max-height: 80vh;
+            overflow-y: auto
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Mechanical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Heat Transfer [PCC-ME 301]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Fluid Machinery [PCC-ME 302]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Manufacturing Processes [PCC-ME 303]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Kinematics of Machine [PCC-ME 304]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Constitution of India ...</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            
+                            <tr class="theory-row">
+                                <td>Graduate Employability Skills ...</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Heat Transfer Lab [PCC-ME 301L]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td><strong>1.5</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>MOOCs / SWAYAM / NPTEL</td>
+                                <td>-</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Fluid Machinery Lab [PCC-ME 302L]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td><strong>1.5</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Manufacturing Processes Lab [PCC-ME 303L]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td><strong>1.5</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-II</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>26.5</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-PCC-ME-301"
+                        data-type="theory">Heat Transfer</button><button class="tab-btn"
+                        data-target="subject-PCC-ME-302" data-type="theory">Fluid Machinery</button><button
+                        class="tab-btn" data-target="subject-PCC-ME-303" data-type="theory">Manufacturing
+                        Processes</button><button class="tab-btn" data-target="subject-PCC-ME-304"
+                        data-type="theory">Kinematics of Machine</button><button class="tab-btn"
+                        data-target="subject-COI" data-type="theory">Constitution of India</button><button
+                        class="tab-btn" data-target="subject-GES" data-type="theory">Graduate Employability
+                        Skills</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-PCC-ME-301L"
+                        data-type="lab">Heat Transfer Lab</button><button
+                        class="tab-btn" data-target="subject-OE1" data-type="theory">MOOCs / SWAYAM / NPTEL</button><button class="tab-btn"
+                        data-target="subject-PCC-ME-302L" data-type="lab">Fluid Machinery Lab</button><button
+                        class="tab-btn" data-target="subject-PCC-ME-303L" data-type="lab">Manufacturing Processes
+                        Lab</button><button class="tab-btn" data-target="subject-SE2" data-type="lab">Summer
+                        Entrepreneurship-II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-PCC-ME-301" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Heat Transfer [PCC-ME 301]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>&rarr; The aim of the course is to build a solid foundation in heat transfer exposing students to
+                        the three basic modes namely conduction, convection and radiation.</p>
+                    <p>&rarr; Rigorous treatment of governing equations and solution procedures for the three modes will
+                        be provided, along with solutions of practical problems using empirical correlations.</p>
+                    <p>&rarr; The course will also briefly cover boiling and condensation heat transfer, and the
+                        analysis and design of heat exchangers.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Three Modes Of Heat Transfer</li>
+                                <li>Derivation Of Heat Balance Equation- Steady One Dimensional Solution For Conduction
+                                    Heat Transfer In Cartesian</li>
+                                <li>Cylindrical And Spherical Geometry</li>
+                                <li>Concept Of Conduction And Film Resistances</li>
+                                <li>Critical Insulation Thickness</li>
+                                <li>Lumped System Approximation And Biot Number</li>
+                                <li>Heat Transfer Through Pin Fins Two Dimensional Conduction Solutions For Both Steady
+                                    And Unsteady Heat Transfer-approximate Solution To Unsteady Conduction Heat Transfer
+                                    By The Use Of Heissler Charts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2</strong>
+                            <ul class="unit-topics">
+                                <li>Heat Convection</li>
+                                <li>Basic Equations</li>
+                                <li>Boundary Layers: Forced Convection</li>
+                                <li>External And Internal Flows Natural Convective Heat Transfer Dimensionless
+                                    Parameters For Forced And Free Convection Heat Transfer-correlations For Forced And
+                                    Free Convection- Approximate Solutions To Laminar Boundary Layer Equations (Momentum
+                                    And Energy) For Both Internal And External Flow Estimating Heat Transfer Rates In
+                                    Laminar And Turbulent Flow Situations Using Appropriate Correlations For Free And
+                                    Forced Convection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3</strong>
+                            <ul class="unit-topics">
+                                <li>Interaction Of Radiation With Materials</li>
+                                <li>Definitions Of Radiative Properties</li>
+                                <li>Stefan Boltzmann's Law</li>
+                                <li>Black And Gray Body Radiation</li>
+                                <li>Calculation Of Radiation Heat Transfer Between Surfaces Using Radiative Properties
+                                </li>
+                                <li>View Factors And The Radiosity Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Heat Exchangers</li>
+                                <li>Analysis And Design Of Heat Exchangers Using Bothlmtd And -ntu Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5</strong>
+                            <ul class="unit-topics">
+                                <li>Boiling And Condensation Heat Transfer</li>
+                                <li>Pool Boiling Curve</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction Mass Transfer</li>
+                                <li>Similarity Between Heat And Mass Transfer</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Bejan, Heat Transfer John Wiley, 1993</li>
+                        <li>J.P. Holman, Heat Transfer, Eighth Edition, McGraw Hill, 1997.</li>
+                        <li>F.P. Incropera, and D.P. Dewitt, Fundamentals of Heat and Mass Transfer, John Wiley, Sixth
+                            Edition, 2007.</li>
+                        <li>MassoudKaviany, Principles of Heat Transfer, John Wiley, 2002</li>
+                        <li>Yunus A Cengel, Heat Transfer: A Practical Approach, McGraw Hill, 2002</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>&rarr; After completing the course, the students will be able to formulate and analyze a heat
+                        transfer problem involving any of the three modes of heat transfer.</p>
+                    <p>&rarr; The students will be able to obtain exact solutions for the temperature variation using
+                        analytical methods where possible or employ approximate methods or empirical correlations to
+                        evaluate the rate of heat transfer.</p>
+                    <p>&rarr; The students will be able to design devices such as heat exchangers and also estimate the
+                        insulation needed to reduce heat losses where necessary.</p>
+                </section>
+                <section id="subject-PCC-ME-301L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Heat Transfer Lab [PCC-ME 301L]</h2>
+                    <p>Practical:</p>
+                    <ul class="unit-topics">
+                        <li>Determination Of Thermal Conductivity Of A Metal Rod</li>
+                        <li>Determination Of Overall Heat Transfer Coefficient Of A Composite Wall</li>
+                        <li>To Find The Effectiveness Of A Pin Fin In A Rectangular Duct Natural Convective Condition
+                            And Plot Temperature Distribution Along Its Length</li>
+                        <li>To Find The Effectiveness Of A Pin Fin In A Rectangular Duct Under Forced Convective And
+                            Plot Temperature Distribution Along Its Length</li>
+                        <li>Determination Of Heat Transfer Coefficient In A Free Convection On A Vertical Tube</li>
+                        <li>Determination Of Heat Transfer Coefficient In A Forced Convection Flow Through A Pipe</li>
+                        <li>Determination Of Emissivity Of A Surface</li>
+                        <li>Determination Of Stefan Boltzmann's Constant</li>
+                        <li>Determination Of Lmdt And Effectiveness In A Parallel Flow And Counter Flow Heat Exchangers
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-PCC-ME-302" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Fluid Machinery [PCC-ME 302]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>The objective is to present the mathematical and physical principles in understanding the linear
+                        continuum behavior of solids.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Classification Of Fluid Machinery</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Dynamic action of fluid jet</strong>
+                            <ul class="unit-topics">
+                                <li>Impact Of Fluid Jet On Fixed And Moving Flat Places</li>
+                                <li>Impact Of Jet On Fixed And Moving Curved Vanes</li>
+                                <li>Flow Over Radial Vanes</li>
+                                <li>Jet Propulsions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3</strong>
+                            <ul class="unit-topics">
+                                <li>Euler's Fundamental Equation</li>
+                                <li>Degree Of Reaction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Hydraulic turbines</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Classification</li>
+                                <li>Impulse Turbine</li>
+                                <li>Construction Details</li>
+                                <li>Velocity Triangles</li>
+                                <li>Power And Efficiency Calculations</li>
+                                <li>Reaction Turbines</li>
+                                <li>Construction Details</li>
+                                <li>Working Principle</li>
+                                <li>Velocity Triangles</li>
+                                <li>Power And Efficiency Calculations</li>
+                                <li>Draft Tube</li>
+                                <li>Cavitation</li>
+                                <li>Governing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5</strong>
+                            <ul class="unit-topics">
+                                <li>Principle Of Similarity In Fluid Machinery</li>
+                                <li>Unit And Specific Quantities</li>
+                                <li>Testing Models And Selection Of Hydraulic Turbines</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Positive displacement pumps</strong>
+                            <ul class="unit-topics">
+                                <li>Reciprocating Pump</li>
+                                <li>Working Principle</li>
+                                <li>Classification</li>
+                                <li>Slip</li>
+                                <li>Indicator Diagram</li>
+                                <li>Effect Of Friction And Acceleration</li>
+                                <li>Theory Of Air Vessel</li>
+                                <li>Performance Characteristics Gas Gear Oil Pump And Screw Pump</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Rotodynamic pumps</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Classification</li>
+                                <li>Centrifugal Pump</li>
+                                <li>Main Components</li>
+                                <li>Working Principle Velocity Triangle</li>
+                                <li>Effect Of Shape Of Blade Specific Speed</li>
+                                <li>Heats</li>
+                                <li>Power And Efficiency</li>
+                                <li>Calculations Minimum Steering Speed</li>
+                                <li>Multi Stage Pumps</li>
+                                <li>Performance Characteristic</li>
+                                <li>Comparison With Reciprocating Pump</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>G. T. Mase, R. E. Smelser and G. E. Mase, Continuum Mechanics for Engineers, Third Edition,
+                            CRC Press, 2004.</li>
+                        <li>Y. C. Fung, Foundations of Solid Mechanics, Prentice Hall International, 1965.</li>
+                        <li>Lawrence. E. Malvern, Introduction to Mechanics of a Continuous Medium, Prentice Hall
+                            international, 1969.</li>
+                        <li>Hydrantic Machine by Jagdish Lal</li>
+                        <li>Hydraulics & Hydraulic Machines by Vasandari</li>
+                        <li>Hydrantic Machine by RD Purohit</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Upon completion of this course, students will be able to understand the deformation behavior of
+                        solids under different types of loading and obtain mathematical solutions for simple Geometries.
+                    </p>
+                </section>
+                <section id="subject-PCC-ME-302L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Fluid Machinery Lab [PCC-ME 302L]</h2>
+                    <p>Practical:</p>
+                    <ul class="unit-topics">
+                        <li>Performance On Hydraulic Turbines:</li>
+                        <li>Pelton Wheel</li>
+                        <li>Francis Turbine</li>
+                        <li>Kaplan Turbine</li>
+                        <li>Performance On Hydraulic Pumps:</li>
+                        <li>Single Stage And Multi Stage Centrifugal Pumps</li>
+                        <li>Reciprocating Pump</li>
+                        <li>Performance Test Of A Two Stage Reciprocating Air Compressor</li>
+                        <li>Performance Test On An Air Blower</li>
+                    </ul>
+                    <p>OPTIONAL</p>
+                    <ul class="unit-topics">
+                        <li>Visit To Hydraulic Power Station/municipal Water Pump House And Case Studies</li>
+                        <li>Demonstration Of Cut Section Models Of Hydraulic Turbines And Pumps</li>
+                    </ul>
+                </section>
+                <section id="subject-PCC-ME-303" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Manufacturing Processes [PCC-ME 303]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>To motivate and challenge students to understand and develop an appreciation of the processes in
+                        correlation with material properties which change the shape, size and form of the raw materials
+                        into the desirable product by conventional or unconventional manufacturing methods.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Conventional Manufacturing processes</strong>
+                            <ul class="unit-topics">
+                                <li>Casting And Moulding: Metal Casting Processes And Equipment</li>
+                                <li>Heat Transfer And Solidification</li>
+                                <li>Shrinkage</li>
+                                <li>Riser Design</li>
+                                <li>Casting Defects And Residual Stresses</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Bulk And Sheet Metal Forming</li>
+                                <li>Plastic Deformation And Yield Criteria</li>
+                                <li>Fundamentals Of Hot And Cold Working Processes</li>
+                                <li>Load Estimation For Bulk Forming (Forging, Rolling, Extrusion, Drawing) And Sheet
+                                    Forming (Shearing, Deep Drawing, Bending) Principles Of Powder Metallurgy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Metal cutting</strong>
+                            <ul class="unit-topics">
+                                <li>Single And Multi-point Cutting</li>
+                                <li>Orthogonal Cutting</li>
+                                <li>Various Force Components: Chip Formation</li>
+                                <li>Tool Wear And Tool Life</li>
+                                <li>Surface Finish And Integrity</li>
+                                <li>Machinability</li>
+                                <li>Cutting Tool Materials</li>
+                                <li>Cutting Fluids</li>
+                                <li>Coating</li>
+                                <li>Turning</li>
+                                <li>Drilling</li>
+                                <li>Milling And Finishing Processes</li>
+                                <li>Introduction To Cnc Machining</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Joining/fastening processes</strong>
+                            <ul class="unit-topics">
+                                <li>Physics Of Welding</li>
+                                <li>Brazing And Soldering</li>
+                                <li>Design Considerations In Welding</li>
+                                <li>Solid And Liquid State Joining Processes</li>
+                                <li>Adhesive Bonding</li>
+                                <li>Additive Manufacturing: Rapid Prototyping And Rapid Tooling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Machine Tools</strong>
+                            <ul class="unit-topics">
+                                <li>Lathe: Principle</li>
+                                <li>Types</li>
+                                <li>Operations</li>
+                                <li>Turret/capstan</li>
+                                <li>Semi/automatic</li>
+                                <li>Tool Layout</li>
+                                <li>Shaper</li>
+                                <li>Slotted</li>
+                                <li>Planer</li>
+                                <li>Operation</li>
+                                <li>Drive</li>
+                                <li>Milling</li>
+                                <li>Milling Cutter</li>
+                                <li>Up & Down Milling</li>
+                                <li>Dividing Head Indexing</li>
+                                <li>Max Chip Thickness</li>
+                                <li>Power Required</li>
+                                <li>Drilling And Boring</li>
+                                <li>Reaming Tools</li>
+                                <li>Geometry Of Twist Drill</li>
+                                <li>Grinding</li>
+                                <li>Grinding Wheel</li>
+                                <li>Abrasive</li>
+                                <li>Cutting Action</li>
+                                <li>Grinding Wheel Specification</li>
+                                <li>Grinding Wheel Wear</li>
+                                <li>Alterations</li>
+                                <li>Wear</li>
+                                <li>Fracture Wear</li>
+                                <li>Dressing And Trimming</li>
+                                <li>Max Chip Thickness And Guest Criteria</li>
+                                <li>Flat And Cylindrical Grinding</li>
+                                <li>Centerless Grinding</li>
+                                <li>Super Finishing</li>
+                                <li>Honing Lapping</li>
+                                <li>Pol</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Kalpakjian and Schmid, Manufacturing processes for engineering materials (5th
+                            Edition)-Pearson India, 2014</li>
+                        <li>Mikell P. Groover, Fundamentals of Modern Manufacturing: Materials, Processes, and Systems
+                        </li>
+                        <li>Degarmo, Black & Kohser, Materials and Processes in Manufacturing</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>Upon completion of this course, students will be able to understand the different conventional
+                        and unconventional manufacturing methods employed for making different products</p>
+                </section>
+                <section id="subject-PCC-ME-303L" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Manufacturing Processes Lab [PCC-ME 303L]</h2>
+                    <p>Practical: (Minimum of 10 Experiment need to be performed)</p>
+                    <p>Metal Casting Lab:</p>
+                    <ul class="unit-topics">
+                        <li>Pattern Design And Making For One Casting Drawing</li>
+                        <li>Sand Properties Testing (Strengths And Permeability)</li>
+                        <li>Moulding, Melting And Casting</li>
+                    </ul>
+                    <p>Welding Lab:</p>
+                    <ul class="unit-topics">
+                        <li>Arc Welding Lap & Butt Joint</li>
+                        <li>Spot Welding</li>
+                        <li>Gas Welding</li>
+                    </ul>
+                    <p>Mechanical Press Working:</p>
+                    <ul class="unit-topics">
+                        <li>Blanking & Piercing Operation And Study Of Simple, Compound And Progressivepress Tool</li>
+                        <li>Bending And Other Operations</li>
+                    </ul>
+                    <p>Machining Lab:</p>
+                    <ul class="unit-topics">
+                        <li>Cutting Operation (Orthogonal & Oblique) On Lathe Machine</li>
+                        <li>Bolt Making On Lathe Machine</li>
+                        <li>Facing, Plain Turning And Step Turning Knurling</li>
+                        <li>Boring And Internal Thread Cutting</li>
+                        <li>Finishing Of A Surface On Surface -grinding Machine</li>
+                        <li>Gear Cutting On Milling Machine (Spur Gear)</li>
+                        <li>Machining A Block On A Shaper Machine</li>
+                        <li>Drilling Holes On Drilling Machine</li>
+                    </ul>
+                </section>
+                <section id="subject-PCC-ME-304" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Kinematics of Machine [PCC-ME 304]</h2>
+                    <h3 class="sub-heading lab-heading" style="margin-top: 0;">Objectives of the course</h3>
+                    <p>&rarr; To understand the kinematics and rigid body dynamics of kinematically driven machine
+                        components.</p>
+                    <p>&rarr; To understand the motion of linked mechanisms in terms of the displacement, velocity and
+                        acceleration at any point in a rigid link.</p>
+                    <p>&rarr; To be able to design some linkage mechanisms and cam systems to generate specified output
+                        motion.</p>
+                    <p>&rarr; To understand the kinematics of gear trains.</p>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Classification Of Mechanisms: Basic Kinematic Concepts And Definitions-degree Of
+                                    Freedom</li>
+                                <li>Mobility-grashof's Law</li>
+                                <li>Kinematic Inversions Of Four Bar Chain And Slider Crank Chains</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Kinematic analysis of plane mechanism</strong>
+                            <ul class="unit-topics">
+                                <li>Displacement</li>
+                                <li>Velocity And Acceleration Analysis Of Simple Mechanisms</li>
+                                <li>Graphical Velocity Analysis Using Instantaneous Centers</li>
+                                <li>Kinematic Analysis Of Simple Mechanisms Slider Crank Mechanism Dynamics- Coriolis
+                                    Component Of Acceleration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Friction devices</strong>
+                            <ul class="unit-topics">
+                                <li>Belt Drive</li>
+                                <li>Clutch</li>
+                                <li>Shoe Brakes</li>
+                                <li>Band And Block Brakes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Gear</strong>
+                            <ul class="unit-topics">
+                                <li>Gear Terminology</li>
+                                <li>Involute And Cycloidal Gear Profiles</li>
+                                <li>Gear Parameters</li>
+                                <li>Fundamental Law Of Gearing And Conjugate Action</li>
+                                <li>Spur Gear Contact Ratio And Interference/undercutting</li>
+                                <li>Gear Train: Analysis Of Simple</li>
+                                <li>Compound</li>
+                                <li>Reverted And Epicyclic Gear Trains With Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Balancing of rotating masses</strong>
+                            <ul class="unit-topics">
+                                <li>Balancing Of Rotating Masses In The Same Plane By A Single Revolving Mass</li>
+                                <li>Balancing Of Several Rotating Masses In The Same Plane</li>
+                                <li>Balancing Of Several Rotating Masses In Different Planes By Two Revolving Masses In
+                                    Suitable Planes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Governors</strong>
+                            <ul class="unit-topics">
+                                <li>Watt</li>
+                                <li>Porter</li>
+                                <li>Proel & Hartnell Governors</li>
+                                <li>Effect Of Friction</li>
+                                <li>Controlling Force</li>
+                                <li>Governor Effort And Power</li>
+                                <li>Sensitivity And Isochronics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Thomas Bevan, Theory of Machines, 3rd edition, CBS Publishers & Distributors, 2005.</li>
+                        <li>CleghornW.L., Mechanisms of Machines, Oxford University Press, 2005.</li>
+                        <li>Robert L. Norton, Kinematics and Dynamics of Machinery, Tata McGrawHill, 2009.</li>
+                        <li>Ghosh A. and Mallik A.K., Theory of Mechanisms and Machines, Affiliated East-West Pvt. Ltd,
+                            New Delhi, 1988.</li>
+                    </ol>
+                    <h3 class="sub-heading theory-heading">Course Outcomes:</h3>
+                    <p>After completing this course, the students can design various types of linkage mechanisms for
+                        obtaining specific motion and analyse them for optimal functioning.</p>
+                </section>
+                <section id="subject-COI" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Constitution of India / Essence of Indian Knowledge Tradition</h2>
+                    <p>Details for this course will be provided by the university. This component carries 0 credits.
+                    </p>
+                </section>
+                <section id="subject-OE1" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective I (MOOCs / SWAYAM / NPTEL)</h2>
+                    <p>This is a placeholder for Open Elective- I. The specific subject and syllabus will be as per the
+                        course chosen by the student from the options provided by the university.</p>
+                </section>
+                <section id="subject-GES" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Graduate Employability Skills and Competitive Courses (GATE, IES, etc.)
+                    </h2>
+                    <p>Details for this course will be provided by the university. This component carries 0 credits.
+                    </p>
+                </section>
+                <section id="subject-SE2" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-II</h2>
+                    <p>Details for Summer Entrepreneurship-II will be provided by the department. This component carries
+                        6 credits.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

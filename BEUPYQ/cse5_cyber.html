@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">CSE (Cyber Security)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Artificial Intelligence [152501]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Automata Theory &amp; Compiler Design [152502]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Database Management System [152503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Computer Network [152504]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Seminar [152505]</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective Courses-I [1525XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+
+                            <tr class="theory-row">
+                                <td>Professional Practice, Law &amp; Ethics [152509]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-II [152511]</td>
+                                <td colspan="3">6 Weeks</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Course [152512]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Artificial Intelligence Lab [152501P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Database Management System Lab [152503P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>27</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-152501" data-type="theory">Artificial
+                        Intelligence</button>
+                    <button class="tab-btn" data-target="subject-152502" data-type="theory">Automata Theory & Compiler
+                        Design</button>
+                    <button class="tab-btn" data-target="subject-152503" data-type="theory">Database Management
+                        System</button>
+                    <button class="tab-btn" data-target="subject-152504" data-type="theory">Computer Network</button>
+                    <button class="tab-btn" data-target="subject-152505" data-type="theory">Seminar</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective Courses-I"
+                        data-modal-options='[ {"label": "Graph Theory", "target": "subject-152506", "btn-id": "btn-152506"}, {"label": "Internet of Things", "target": "subject-152507", "btn-id": "btn-152507"}, {"label": "Natural Language Processing", "target": "subject-152508", "btn-id": "btn-152508"}, {"label": "E-Commerce and ERP", "target": "subject-152509E", "btn-id": "btn-152509E"}, {"label": "Web and Internet Technology", "target": "subject-152510", "btn-id": "btn-152510"} ]'>
+                        Program Elective Courses-I </button>
+
+                    <button class="tab-btn" data-target="subject-152509" data-type="theory">Professional Practice, Law &
+                        Ethics</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-152511" data-type="theory">Summer
+                        Entrepreneurship-II</button>
+                    <button class="tab-btn" data-target="subject-152512" data-type="lab">NPTEL Course</button>
+                    <button class="tab-btn" data-target="subject-152501P" data-type="lab">Artificial Intelligence
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-152503P" data-type="lab">Database Management System
+                        Lab</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-152501" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Artificial Intelligence [152501]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Overview</li>
+                                <li>Turing Test</li>
+                                <li>Intelligent Agents</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Problem Solving</strong>
+                            <ul class="unit-topics">
+                                <li>Solving Problems By Searching</li>
+                                <li>Uninformed Search</li>
+                                <li>Depth First Search</li>
+                                <li>Breadth First Search</li>
+                                <li>DFID</li>
+                                <li>Heuristic Search</li>
+                                <li>Generate And Test</li>
+                                <li>Best First Search</li>
+                                <li>Beam Search</li>
+                                <li>Hill Climbing</li>
+                                <li>A*</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Problem Reduction Search And Stochastic
+                                Methods</strong>
+                            <ul class="unit-topics">
+                                <li>AND/OR Graphs</li>
+                                <li>AO*</li>
+                                <li>Constraint Satisfaction</li>
+                                <li>Means-Ends Analysis</li>
+                                <li>Stochastic Search Methods</li>
+                                <li>Simulated Annealing</li>
+                                <li>Particle Swarm Optimization</li>
+                                <li>Game Playing</li>
+                                <li>Minimax Algorithm</li>
+                                <li>Alpha-Beta Pruning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Knowledge And Reasoning</strong>
+                            <ul class="unit-topics">
+                                <li>Building A Knowledge Base</li>
+                                <li>Propositional Logic</li>
+                                <li>First Order Logic</li>
+                                <li>Inference In First Order Logic</li>
+                                <li>Resolution – Refutation Proofs</li>
+                                <li>Theorem Proving In First Order Logic</li>
+                                <li>Planning</li>
+                                <li>Partial Order Planning</li>
+                                <li>Uncertain Knowledge And Reasoning</li>
+                                <li>Probabilities</li>
+                                <li>Bayesian Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Different Forms Of Learning</li>
+                                <li>Unsupervised</li>
+                                <li>Supervised</li>
+                                <li>Semi-Supervised</li>
+                                <li>K-Means Clustering Algorithm</li>
+                                <li>Decision Trees</li>
+                                <li>Neural Networks</li>
+                                <li>Deep Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Topics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Computer Vision</li>
+                                <li>Natural Language Processing</li>
+                                <li>Expert Systems</li>
+                                <li>Robotics</li>
+                                <li>Genetic Algorithm</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. Russell And P. Norvig, “Artificial Intelligence: A Modern Approach,” Prentice Hall</li>
+                        <li>E. Rich, K. Knight And S. B. Nair, “Artificial Intelligence,” TMH.</li>
+                        <li>C. Bishop,“Pattern Recognition And Machine Learning,” Springer</li>
+                        <li>D. W. Patterson, “Introduction To Artificial Intelligence And Expert Systems,” Prentice Hall
+                        </li>
+                        <li>A. C. Staugaard, Jr., “Robotics And AI: An Introduction To Applied Machine Intelligence,”
+                            Prentice Hall</li>
+                        <li>I. Bratko, “Prolog Programming For Artificial Intelligence,” Addison-Wesley</li>
+                        <li>S. O. Haykin, “Neural Networks And Learning Machines,” Prentice Hall</li>
+                        <li>D. Jurafsky And J. H. Martin, “Speech And Language Processing,” Prentice Hall.</li>
+                    </ol>
+                </section>
+                <section id="subject-152502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Automata Theory & Compiler Design [152502]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Formal Language And Regular Expressions</strong>
+                            <ul class="unit-topics">
+                                <li>Languages</li>
+                                <li>Definition Languages Regular Expressions</li>
+                                <li>Finite Automata - DFA, NFA</li>
+                                <li>Conversion Of Regular Expression To NFA</li>
+                                <li>NFA To DFA</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Applications And Context Free Grammars</strong>
+                            <ul class="unit-topics">
+                                <li>Applications Of Finite Automata To Lexical Analysis</li>
+                                <li>Lex Tools</li>
+                                <li>Context Free Grammars</li>
+                                <li>Derivation</li>
+                                <li>Parse Trees</li>
+                                <li>Ambiguity LL(K) Grammars And LL(1) Parsing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Parsing And Semantics</strong>
+                            <ul class="unit-topics">
+                                <li>Bottom Up Parsing Handle Pruning LR Grammar Parsing</li>
+                                <li>LALR Parsing</li>
+                                <li>Parsing Ambiguous Grammars</li>
+                                <li>YACC Programming Specification</li>
+                                <li>Semantics</li>
+                                <li>Syntax Directed Translation</li>
+                                <li>S- Attributed And L- Attributed Grammars</li>
+                                <li>Intermediate Code - Abstract Syntax Tree</li>
+                                <li>Translation Of Simple Statements And Control Flow Statements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Context Sensitive Features And Type Checking</strong>
+                            <ul class="unit-topics">
+                                <li>Context Sensitive Features - Chomsky Hierarchy Of Languages And Recognizers</li>
+                                <li>Type Checking</li>
+                                <li>Type Conversions</li>
+                                <li>Equivalence Of Type Expressions</li>
+                                <li>Overloading Of Functions And Operations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Run Time Storage And Code Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Run Time Storage</li>
+                                <li>Storage Organization</li>
+                                <li>Storage Allocation Strategies Scope Access To Now Local Names</li>
+                                <li>Parameters</li>
+                                <li>Language Facilities For Dynamics Storage Allocation</li>
+                                <li>Code Optimization</li>
+                                <li>Principal Sources Of Optimization</li>
+                                <li>Optimization Of Basic Blocks</li>
+                                <li>Peephole Optimization</li>
+                                <li>Flow Graphs</li>
+                                <li>Data Flow Analysis Of Flow Graphs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Code Generation</strong>
+                            <ul class="unit-topics">
+                                <li>Machine Dependent Code Generation</li>
+                                <li>Object Code Forms</li>
+                                <li>Generic Code Generation Algorithm</li>
+                                <li>Register Allocation And Assignment</li>
+                                <li>Using DAG Representation Of Blocks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Introduction To Theory Of Computation. Sipser, 2nd Edition, Thomson.</li>
+                        <li>Compilers Principles, Techniques And Tools Aho, Ullman, Ravisethi, Pearson Education.</li>
+                        <li>Modern Compiler Construction In C, Andrew W.Appel Cambridge University Press.</li>
+                        <li>Compiler Construction, LOUDEN, Thomson.</li>
+                        <li>Elements Of Compiler Design, A. Meduna, Auerbach Publications, Taylor And Francis Group.
+                        </li>
+                        <li>Principles Of Compiler Design, V. Raghavan, TMH.</li>
+                        <li>Engineering A Compiler, K. D. Cooper, L. Torczon, ELSEVIER.</li>
+                        <li>Introduction To Formal Languages And Automata Theory And Computation - Kamala Krithivasan
+                            And Rama R, Pearson.</li>
+                        <li>Modern Compiler Design, D. Grune And Others, Wiley- India.</li>
+                        <li>A Text Book On Automata Theory, S. F. B. Nasir, P. K. Srimani, Cambridge Univ. Press.</li>
+                        <li>Automata And Language, A. Meduna, Springer.</li>
+                    </ol>
+                </section>
+                <section id="subject-152503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Database Management System [152503]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Data Abstraction And Models</strong>
+                            <ul class="unit-topics">
+                                <li>Data Abstraction</li>
+                                <li>Data Independence</li>
+                                <li>Data Definition Language (DDL)</li>
+                                <li>Data Manipulation Language (DML)</li>
+                                <li>Data Models</li>
+                                <li>Entity- Relationship Model</li>
+                                <li>Network Model</li>
+                                <li>Relational And Object Oriented Data Models</li>
+                                <li>Integrity Constraints</li>
+                                <li>Data Manipulation Operations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Relational Query Languages And Design</strong>
+                            <ul class="unit-topics">
+                                <li>Relational Algebra</li>
+                                <li>Tuple And Domain Relational Calculus</li>
+                                <li>SQL3</li>
+                                <li>DDL And DML Constructs</li>
+                                <li>Open Source And Commercial DBMS - MYSQL, ORACLE, DB2, SQL Server</li>
+                                <li>Relational Database Design</li>
+                                <li>Domain And Data Dependency</li>
+                                <li>Armstrong's Axioms</li>
+                                <li>Normal Forms</li>
+                                <li>Dependency Preservation</li>
+                                <li>Lossless Design</li>
+                                <li>Query Processing And Optimization</li>
+                                <li>Evaluation Of Relational Algebra Expressions</li>
+                                <li>Query Equivalence</li>
+                                <li>Join Strategies</li>
+                                <li>Query Optimization Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Storage Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Indices</li>
+                                <li>B- Trees</li>
+                                <li>Hashing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Transaction Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Concurrency Control</li>
+                                <li>ACID Property</li>
+                                <li>Serializability Of Scheduling</li>
+                                <li>Locking And Timestamp Based Schedulers</li>
+                                <li>Multi- Version And Optimistic Concurrency Control Schemes</li>
+                                <li>Database Recovery</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Database Security</strong>
+                            <ul class="unit-topics">
+                                <li>Authentication</li>
+                                <li>Authorization And Access Control</li>
+                                <li>DAC, MAC And RBAC Models</li>
+                                <li>Intrusion Detection</li>
+                                <li>SQL Injection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Topics</strong>
+                            <ul class="unit-topics">
+                                <li>Object Oriented And Object Relational Databases</li>
+                                <li>Logical Databases</li>
+                                <li>Web Databases</li>
+                                <li>Distributed Databases</li>
+                                <li>Data Warehousing And Data Mining</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Database System Concepts, 6th Edition By Abraham Silberschatz, Henry F. Korth, S. Sudarshan,
+                            McGraw- Hill.</li>
+                        <li>Principles Of Database And Knowledge - Base Systems, Vol 1 By J. D. Ullman, Computer Science
+                            Press.</li>
+                        <li>Fundamentals Of Database Systems, 5th Edition By R. Elmasri And S. Navathe, Pearson
+                            Education</li>
+                        <li>Foundations Of Databases, Reprint By Serge Abiteboul, Richard Hull, Victor Vianu, Addison -
+                            Wesley.</li>
+                    </ol>
+                </section>
+                <section id="subject-152504" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Computer Network [152504]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Overview Of Data Communication And Networking</strong>
+                            <ul class="unit-topics">
+                                <li>OSI Reference Model</li>
+                                <li>TCP/IP Protocol Suite</li>
+                                <li>Network Architecture And Physical Topology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Physical Layer</strong>
+                            <ul class="unit-topics">
+                                <li>Analog And Digital Signals</li>
+                                <li>Transmission Impairment</li>
+                                <li>Data Rate Limits</li>
+                                <li>Performance Analysis Of A Network</li>
+                                <li>Representation And Synchronization Of Bits</li>
+                                <li>Analog And Digital Transmission</li>
+                                <li>Multiplexing And Spreading Techniques</li>
+                                <li>Guided Transmission Media</li>
+                                <li>Circuit, Packet And Virtual Circuit Switching</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Data Link Layer</strong>
+                            <ul class="unit-topics">
+                                <li>Framing</li>
+                                <li>Flow And Error Control (Noiseless And Noisy Channels Protocols)</li>
+                                <li>PointToPoint Protocol</li>
+                                <li>Random Access Protocols (Pure/Slotted ALOHA, CSMA/CD, CSMA/CA)</li>
+                                <li>Controlled Access Protocol (Bit- Map, Polling And Token Passing)</li>
+                                <li>Channelization (TDMA, FDMA, CDMA)</li>
+                                <li>Physical Addressing And Ethernet</li>
+                                <li>Connecting LANs And Virtual LANs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Network Layer</strong>
+                            <ul class="unit-topics">
+                                <li>Internet Protocol Version 4 And 6</li>
+                                <li>Address Mapping (ARP, RARP, BOOTP And DHCP)</li>
+                                <li>ICMP And IGMP</li>
+                                <li>Routing Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Transport Layer</strong>
+                            <ul class="unit-topics">
+                                <li>UDP</li>
+                                <li>TCP</li>
+                                <li>Congestion Control And QoS</li>
+                                <li>Client- Server Model And Socket Interface</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Application Layer</strong>
+                            <ul class="unit-topics">
+                                <li>DNS</li>
+                                <li>Remote Logging</li>
+                                <li>Electronic Mail (SMTP, POP)</li>
+                                <li>FTP</li>
+                                <li>Introduction To WWW And HTTP</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>B. Forouzan, "Data Communication And Network", McGraw-Hill Publications. 4th Ed.</li>
+                        <li>A. S. Tanenbaum, "Computer Networks", Pearson Education Asia. 5th Ed.</li>
+                        <li>W. Stalling, "Data And Computer Communication", PHI (EEE). 8th Ed.</li>
+                        <li>A. L. Garcia And I. Widjaja, "Communication Networks: Fundamental Concepts And Key
+                            Architectures", Tata McGraw-Hill. 2nd Ed.</li>
+                        <li>S. Sharma, "A Course In Computer Networks", Kataria. 3rd Ed.</li>
+                    </ol>
+                </section>
+                <section id="subject-152505" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Seminar [152505]</h2>
+                    <p>Details For Seminar Will Be Provided By The Department.</p>
+                </section>
+                <section id="subject-152509" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Practice, Law & Ethics [152509]</h2>
+                    <p>Detailed Syllabus For This Subject will be Provided By The Department Or Instructor.</p>
+                </section>
+                <section id="subject-152511" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Summer Entrepreneurship-II [152511]</h2>
+                    <p>This Is A 6-Week Course. Specific Syllabus And Project Guidelines Will Be Provided By The
+                        Department.</p>
+                </section>
+                <section id="subject-152506" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Graph Theory [152506]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>What Is Graph</li>
+                                <li>Application Of Graphs</li>
+                                <li>Finite And Infinite Graphs</li>
+                                <li>Incidence And Degree</li>
+                                <li>Isolated Vertex</li>
+                                <li>Pendant Vertex</li>
+                                <li>Null Graph</li>
+                                <li>Paths And Circuits</li>
+                                <li>Isomorphism</li>
+                                <li>Sub Graphs</li>
+                                <li>A Puzzle With Multicolored Cubes</li>
+                                <li>Walks</li>
+                                <li>Paths</li>
+                                <li>Circuits</li>
+                                <li>Connected Graphs</li>
+                                <li>Disconnected Graphs And Components</li>
+                                <li>Euler Graphs</li>
+                                <li>Operations On Graphs</li>
+                                <li>More On Euler Graphs</li>
+                                <li>Hamiltonian Paths And Circuits</li>
+                                <li>The Traveling Salesman Problem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Trees And Fundamental Circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Trees</li>
+                                <li>Some Properties Of Trees</li>
+                                <li>Pendant Vertices In A Tree</li>
+                                <li>Distance And Centers In A Tree</li>
+                                <li>Rooted And Binary Trees</li>
+                                <li>On Counting Trees</li>
+                                <li>Spanning Trees</li>
+                                <li>Fundamental Circuits</li>
+                                <li>Finding All Spanning Trees Of A Graph</li>
+                                <li>Spanning Trees In A Weighted Graph</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Cut Set, And Cut Vertices</strong>
+                            <ul class="unit-topics">
+                                <li>Properties Of A Cut Set</li>
+                                <li>All Cut Sets In A Graph</li>
+                                <li>Fundamental Circuits And Cut Sets</li>
+                                <li>Connectivity And Separability</li>
+                                <li>Network Flows</li>
+                                <li>1- Isomorphism</li>
+                                <li>2- Isomorphism</li>
+                                <li>Planar And Dual Graphs</li>
+                                <li>Combinatorial Vs. Geometric Graphs</li>
+                                <li>Planar Graph</li>
+                                <li>Kuratowski's Two Graphs</li>
+                                <li>Difference Representations Of A Planar Graph</li>
+                                <li>Detection Of Planarity</li>
+                                <li>Geometric Dual</li>
+                                <li>Combinatorial Duel</li>
+                                <li>More On Criteria Of Planarity</li>
+                                <li>Thickness And Crossings</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Matrix Representation Of Graphs</strong>
+                            <ul class="unit-topics">
+                                <li>Incidence Matrix Sub Matrices Of A(G)</li>
+                                <li>Circuits Matrix</li>
+                                <li>Fundamental Circuit Matrix And Rank Of B</li>
+                                <li>An Application To A Switching Network</li>
+                                <li>Cut- Set Matrix</li>
+                                <li>Relationships Among Af, Bf And Cf</li>
+                                <li>Path Matrix</li>
+                                <li>Adjacency Matrix</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Coloring, Covering And Partitioning</strong>
+                            <ul class="unit-topics">
+                                <li>Chromatic Number</li>
+                                <li>Chromatic Partitioning</li>
+                                <li>Chromatics Polynomial</li>
+                                <li>Coverings</li>
+                                <li>Four Color Problem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Directed Graphs</strong>
+                            <ul class="unit-topics">
+                                <li>What's A Directed Graphs</li>
+                                <li>Some Types Of Digraphs</li>
+                                <li>Digraphs And Binary Relations</li>
+                                <li>Directed Paths And Connectedness</li>
+                                <li>Euler Digraphs</li>
+                                <li>Trees With Directed Edges</li>
+                                <li>Fundamental Circuits In Digraphs</li>
+                                <li>Matrices A, B And C Of Digraphs</li>
+                                <li>Adjacency Matrix Of A Digraph</li>
+                                <li>Paired Comparisons And Tournaments</li>
+                                <li>Acyclic Digraphs And Decyelization</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Douglas B. West, "Introduction To Graph Theory", Prentice Hall Of India</li>
+                        <li>Deo, N: Graph Theory, PHI.</li>
+                        <li>Bondy And Murthy: Graph Theory And Application. Addison Wesley.</li>
+                        <li>R. Diestel, "Graph Theory", Springer-Verlag, 2nd Edition, 2000.</li>
+                        <li>John M. Aldous And Robin J. Wilson: Graphs And Applications-An Introductory Approach,
+                            Springer</li>
+                        <li>Robin J, Wilson: Introduction To Graph Theory, Addison Wesley.</li>
+                        <li>Frank Harary, "Graph Theory", Narosa.</li>
+                        <li>R. Ahuja, T. Magnanti, And J. Orlin, "Network Flows: Theory, Algorithms, And Applications".
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-152507" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Internet Of Things [152507]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction To IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Architectural Overview</li>
+                                <li>Design Principles And Needed Capabilities</li>
+                                <li>IoT Applications</li>
+                                <li>Sensing</li>
+                                <li>Actuation</li>
+                                <li>Basics Of Networking</li>
+                                <li>M2M And IoT Technology Fundamentals- Devices And Gateways</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Data Management And Business Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Data Management</li>
+                                <li>Business Processes In IoT</li>
+                                <li>Everything As A Service (XaaS)</li>
+                                <li>Role Of Cloud In IoT</li>
+                                <li>Security Aspects In IoT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Elements Of IoT: Hardware Components</strong>
+                            <ul class="unit-topics">
+                                <li>Computing (Arduino, Raspberry Pi)</li>
+                                <li>Communication</li>
+                                <li>Sensing</li>
+                                <li>Actuation</li>
+                                <li>I/O Interfaces</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Software Components And Protocols</strong>
+                            <ul class="unit-topics">
+                                <li>Software Components- Programming API's (Using Python/Node.js/Arduino) For
+                                    Communication</li>
+                                <li>Protocols- MQTT</li>
+                                <li>ZigBee</li>
+                                <li>Bluetooth</li>
+                                <li>CoAP</li>
+                                <li>UDP</li>
+                                <li>TCP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: IoT Application Development</strong>
+                            <ul class="unit-topics">
+                                <li>Solution Framework For IoT Applications- Implementation Of Device Integration</li>
+                                <li>Data Acquisition And Integration</li>
+                                <li>Device Data Storage- Unstructured Data Storage On Cloud/Local Server</li>
+                                <li>Authentication</li>
+                                <li>Authorization Of Devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: IoT Case Studies</strong>
+                            <ul class="unit-topics">
+                                <li>IoT Case Studies And Mini Projects Based On Industrial Automation</li>
+                                <li>Transportation</li>
+                                <li>Agriculture</li>
+                                <li>Healthcare</li>
+                                <li>Home Automation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Vijay Madisetti, Arshdeep Bahga, Internet Of Things, "A Hands On Approach", University Press
+                        </li>
+                        <li>Dr. SRN Reddy, Rachit Thukral And Manasi Mishra, "Introduction To Internet Of Things: A
+                            Practical Approach", ETI Labs</li>
+                        <li>Pethuru Raj And Anupama C. Raman, "The Internet Of Things: Enabling Technologies, Platforms,
+                            And Use Cases", CRC Press</li>
+                        <li>Jeeva Jose, "Internet Of Things", Khanna Publishing House, Delhi</li>
+                        <li>Adrian McEwen, "Designing The Internet Of Things", Wiley</li>
+                        <li>Raj Kamal, "Internet Of Things: Architecture And Design", McGraw Hill</li>
+                        <li>Cuno Pfister, "Getting Started With The Internet Of Things", O Reilly Media.</li>
+                    </ol>
+                </section>
+                <section id="subject-152508" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Natural Language Processing [152508]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Sound</strong>
+                            <ul class="unit-topics">
+                                <li>Biology Of Speech Processing</li>
+                                <li>Place And Manner Of Articulation</li>
+                                <li>Word Boundary Detection</li>
+                                <li>Argmax Based Computations</li>
+                                <li>HMM And Speech Recognition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Words And Word Forms</strong>
+                            <ul class="unit-topics">
+                                <li>Morphology Fundamentals</li>
+                                <li>Morphological Diversity Of Indian Languages</li>
+                                <li>Morphology Paradigms</li>
+                                <li>Finite State Machine Based Morphology</li>
+                                <li>Automatic Morphology Learning</li>
+                                <li>Shallow Parsing</li>
+                                <li>Named Entities</li>
+                                <li>Maximum Entropy Models</li>
+                                <li>Random Fields</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Structures</strong>
+                            <ul class="unit-topics">
+                                <li>Theories Of Parsing</li>
+                                <li>Parsing Algorithms</li>
+                                <li>Robust And Scalable Parsing On Noisy Text As In Web Documents</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Hybrid Parsing And Ambiguity Resolution</strong>
+                            <ul class="unit-topics">
+                                <li>Hybrid Of Rule Based And Probabilistic Parsing</li>
+                                <li>Scope Ambiguity And Attachment Ambiguity Resolution</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Meaning</strong>
+                            <ul class="unit-topics">
+                                <li>Lexical Knowledge Networks</li>
+                                <li>Wordnet Theory</li>
+                                <li>Indian Language Wordnets And Multilingual Dictionaries</li>
+                                <li>Semantic Roles</li>
+                                <li>Word Sense Disambiguation</li>
+                                <li>WSD And Multilinguality</li>
+                                <li>Metaphors</li>
+                                <li>Coreferences</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Web 2.0 Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Sentiment Analysis</li>
+                                <li>Text Entailment</li>
+                                <li>Robust And Scalable Machine Translation</li>
+                                <li>Question Answering In Multilingual Setting</li>
+                                <li>Cross Lingual Information Retrieval (CLIR)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Jurafsky, Dan And Martin, James, "Speech And Language Processing", 2nd Edition, Prentice
+                            Hall, 2008</li>
+                        <li>Manning, Christopher And Heinrich, Schutze, "Foundations Of Statistical Natural Language
+                            Processing", MIT Press, 1999</li>
+                        <li>Allen James, "Natural Language Understanding", 2nd Edition, Benjamin Cumming, 1995</li>
+                        <li>Charniak, Eugene, "Statistical Language Learning", MIT Press, 1993</li>
+                    </ol>
+                </section>
+                <section id="subject-152509E" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: E-Commerce and ERP [152509E]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction To E- Commerce</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution Of E- Commerce</li>
+                                <li>Advantage And Disadvantage Of E Commerce</li>
+                                <li>Roadmap Of E- Commerce In India</li>
+                                <li>Business Models Of E- Commerce</li>
+                                <li>Model Based On Transaction Party</li>
+                                <li>B2B</li>
+                                <li>B2C</li>
+                                <li>C2B</li>
+                                <li>C2C</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: E Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>The Scope Of E- Marketing</li>
+                                <li>Identifying Web Presence Goals</li>
+                                <li>Uniqueness Of The Web</li>
+                                <li>Meeting The Need Of Website Visitors</li>
+                                <li>Website Design Issues</li>
+                                <li>Factors That Make People Return To Your Site</li>
+                                <li>Strategies For Website Development</li>
+                                <li>Site Adhesion</li>
+                                <li>Content, Format And Access</li>
+                                <li>Maintaining A Website</li>
+                                <li>E- Advertising</li>
+                                <li>E- Branding</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: E- Payment System</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Payment Requirement</li>
+                                <li>Digital Token Based E- Payment System</li>
+                                <li>Electronic Cash</li>
+                                <li>Smart Card And Electronics Payment System</li>
+                                <li>Credit And Debit Card</li>
+                                <li>Virtual Currency</li>
+                                <li>Digital Wallet</li>
+                                <li>Risk Of Electronics Payment System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Digital Signature And E Security</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Signature</li>
+                                <li>E Security</li>
+                                <li>Security On The Internet</li>
+                                <li>Network And Website Security Risk</li>
+                                <li>Denial- Of- Service Attack</li>
+                                <li>Viruses</li>
+                                <li>Unauthorized Access To Computer Network</li>
+                                <li>Security Standards</li>
+                                <li>Firewall</li>
+                                <li>Cryptography</li>
+                                <li>Key Management</li>
+                                <li>Password Systems</li>
+                                <li>Digital Certificates</li>
+                                <li>Digital Signatures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Enterprise Resource Planning (ERP)</strong>
+                            <ul class="unit-topics">
+                                <li>Introductory Concepts</li>
+                                <li>Advantages & Disadvantages Of ERP</li>
+                                <li>ERP And Related Technologies</li>
+                                <li>Business Process Reengineering</li>
+                                <li>Data Warehousing</li>
+                                <li>Data Mining</li>
+                                <li>Supply Chain Management</li>
+                                <li>ERP Implementation</li>
+                                <li>ERP Implementation Life Cycle Implementation Methodology</li>
+                                <li>Hidden Costs</li>
+                                <li>Organizing Implementation - Contracts With Vendors, Consultants And Users</li>
+                                <li>Project Management And Monitoring</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: ERP Business Modules</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Basic Modules Of ERP System</li>
+                                <li>Business Modules In An ERP Package- Finance</li>
+                                <li>Manufacturing</li>
+                                <li>Human Resource</li>
+                                <li>Plant Maintenance</li>
+                                <li>Materials Management</li>
+                                <li>Quality Management</li>
+                                <li>Sales And Distribution</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Alexis Leon, "ERP Demystified", Tata McGraw Hill.</li>
+                        <li>E-Commerce An Indian Perspective By P.T.Joseph, PHI</li>
+                        <li>K.K. Bajaj, D. Nag "E-Commerce", 2nd Edition, McGraw-Hill Education, New Delhi.</li>
+                        <li>Bhaskar Bharat, "Electronic Commerce-Technology And Application", McGraw-Hill Education, New
+                            Delhi.</li>
+                        <li>Mary Sumner, "Enterprise Resource Planning", 2005, PHI Learning India Pvt. Ltd. /Pearson
+                            Education, New Delhi.</li>
+                        <li>Chan, "E-Commerce Fundamentals And Applications", Wiley India, New Delhi.</li>
+                        <li>Vinod Kumar Garg And N.K. Venkata Krishnan, "Enterprise Resource Planning - Concepts And
+                            Planning", Prentice Hall, 1998.</li>
+                    </ol>
+                </section>
+                <section id="subject-152510" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Web and Internet Technology [152510]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Web Basics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Concept Of Internet- History Of Internet</li>
+                                <li>Protocols Of Internet</li>
+                                <li>World Wide Web</li>
+                                <li>URL</li>
+                                <li>Web Server</li>
+                                <li>Web Browser</li>
+                                <li>Recent Web Technologies - A Case Study On WWW, Web 2.0 Etc.</li>
+                                <li>Client/Server Computing</li>
+                                <li>C/S Computing</li>
+                                <li>Middleware</li>
+                                <li>Fat Client VS Fat Servers</li>
+                                <li>N-Tiered Software Architecture</li>
+                                <li>Markup- Language</li>
+                                <li>Markup Languages And Their Grammars - SGML, DTD Resources</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>XML</li>
+                                <li>XSL</li>
+                                <li>Query Languages For XML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: HTML</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>History Of HTML</li>
+                                <li>Structure Of HTML Document</li>
+                                <li>Text Basics</li>
+                                <li>Images And Multimedia</li>
+                                <li>Links And Webs</li>
+                                <li>Document Layout</li>
+                                <li>Cascading Style Sheet- HTML 4 Style Sheet Features</li>
+                                <li>Creating Forms</li>
+                                <li>Frames And Tables</li>
+                                <li>Dynamic HTML</li>
+                                <li>Introduction Of DHTML- HTML Vs. DHTML</li>
+                                <li>Advantages Of DHTML</li>
+                                <li>CSS Of DHTML</li>
+                                <li>Event Handling</li>
+                                <li>Data Binding</li>
+                                <li>Browser Object Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: XML Introduction And Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction Of XML- Some Current Applications Of XML</li>
+                                <li>Features Of XML</li>
+                                <li>Anatomy Of XML Document</li>
+                                <li>The XML Declaration</li>
+                                <li>Element Tags- Nesting And Structure</li>
+                                <li>XML Text And Text Formatting Element</li>
+                                <li>Table Element</li>
+                                <li>Mark- Up Element And Attributes</li>
+                                <li>Document Type Definition (DTD), Types</li>
+                                <li>XML Programming- XML Objects</li>
+                                <li>Checking Validity</li>
+                                <li>Understanding XLinks, XPointer</li>
+                                <li>Event- Driven Programming</li>
+                                <li>XML Scripting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: XML Presentation Technology & XML Processor</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>XML With Style Sheet Technologies- Concept Of XSL</li>
+                                <li>XML Schema</li>
+                                <li>Importance Of XML Schema</li>
+                                <li>Creating Element In XML Schema</li>
+                                <li>XML Schema Types</li>
+                                <li>Introduction Of XML Processor- Components Of XML Processor</li>
+                                <li>Concept Of DOM And SAX</li>
+                                <li>Introduction Of Java Script</li>
+                                <li>JavaScript Characteristics</li>
+                                <li>Objects In Java Script</li>
+                                <li>Dynamic HTML With Java Script</li>
+                                <li>XML Http Request</li>
+                                <li>The XML Http Request Object</li>
+                                <li>Events For The XML Http Request Object</li>
+                                <li>Request Object For XML Http Request</li>
+                                <li>Response Object For XML Http Request</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AJAX Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>AJAX Introduction</li>
+                                <li>AJAX Components</li>
+                                <li>Handling Dynamic HTML With Ajax</li>
+                                <li>CSS To Define Look And Feel</li>
+                                <li>Understand The XML Mark-Up</li>
+                                <li>XMLHttpRequest</li>
+                                <li>AJAX Using XML And XML Http Request</li>
+                                <li>Accessing, Creating And Modifying XML Nodes</li>
+                                <li>Loading XML Data Into An HTML Page</li>
+                                <li>Receiving XML Responses</li>
+                                <li>Handling Response XML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: PHP Introduction & AJAX With Database</strong>
+                            <ul class="unit-topics">
+                                <li>PHP Introduction</li>
+                                <li>Structure Of PHP</li>
+                                <li>PHP Functions</li>
+                                <li>AJAX With PHP</li>
+                                <li>PHP Code And The Complete AJAX Example</li>
+                                <li>AJAX Database</li>
+                                <li>Working Of AJAX With PHP</li>
+                                <li>Ajax PHP Database Form</li>
+                                <li>AJAX PHP MySQL Select Query</li>
+                                <li>Active Server Page & ASP Database Connectivity</li>
+                                <li>Introduction Of ASP</li>
+                                <li>ASP – Variables</li>
+                                <li>ASP Control Structure</li>
+                                <li>ASP Objects' Properties And Methods</li>
+                                <li>ASP Components</li>
+                                <li>ASP Database Connection</li>
+                                <li>ASP Scripting Components</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Jeffrey C. Jackson, "Web Technologies: A Computer Science Perspective", Pearson Education
+                        </li>
+                        <li>Developing Web Applications, Ralph Moseley And M. T. Savaliya, Wiley-India</li>
+                        <li>Web Technologies, Black Book, Dreamtech Press</li>
+                        <li>Web Design, Joel Sklar, Cengage Learning</li>
+                        <li>Developing Web Applications In PHP And AJAX, Harwani, McGraw-Hill</li>
+                        <li>Eric T. Freeman, Elisabeth Robson, "Head First JavaScript Programming", O'Reilly Media</li>
+                        <li>L. Beighley, Michael Morrison, "Head First PHP & MySQL", O-Reilly Media</li>
+                        <li>B. Basham, Kathy Sierra, Bert Bates, "Head First Servlets And JSP", O'Reilly Publication.
+                        </li>
+                        <li>R. M. Riordan, "Head First Ajax", O'Reilly Media.</li>
+                        <li>Web Design With HTML, CSS, JavaScript And Query Set By Jon Duckett</li>
+                    </ol>
+                </section>
+                <section id="subject-152512" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Course [152512]</h2>
+                    <p>Details For NPTEL Course Will Be Provided By The Department.</p>
+                </section>
+                <section id="subject-152501P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Artificial Intelligence Lab [152501P]</h2>
+                    <p>Preform Any Ten Experiments. Write The Following Programs Using Python/Prolog</p>
+                    <ul class="unit-topics">
+                        <li><strong>Week 1:</strong> Write A Program To Print The Multiplication Table For The Given
+                            Number. Write A Program To Find Factorial Of A Number. Write A Program To Check Whether The
+                            Given Number Is Prime Or Not.</li>
+                        <li><strong>Week 2:</strong> Write A Program To Implement Simple Calculator Program. Write A
+                            Program To Generate Calendar For The Given Month And Year. Write A Program To Illustrate
+                            Different Set Operations.</li>
+                        <li><strong>Week 3:</strong> Write A Program To Implement Simple Chat Bot.</li>
+                        <li><strong>Week 4:</strong> Write A Program To Remove Punctuations From The Given String. Write
+                            A Program To Sort The Sentence In Alphabetical Order.</li>
+                        <li><strong>Week 5:</strong> Write A Program To Implement Of Towers Of Hanoi Problem.</li>
+                        <li><strong>Week 6:</strong> Write A Program To Implement Breadth First Search.</li>
+                        <li><strong>Week 7:</strong> Write A Program To Implement Depth First Search.</li>
+                        <li><strong>Week 8:</strong> Write A Program To Implement Hill Climbing Algorithm.</li>
+                        <li><strong>Week 9:</strong> Write A Program To Implement A* Algorithm.</li>
+                        <li><strong>Week 10:</strong> Write A Program To Implement Tic- Tac- Toe Game.</li>
+                    </ul>
+                </section>
+                <section id="subject-152503P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Database Management System Lab [152503P]</h2>
+                    <ol>
+                        <li>Student Should Decide On A Case Study And Formulate The Problem Statement.</li>
+                        <li>Conceptual Designing Using ER Diagrams (Identifying Entities, Attributes, Keys And
+                            Relationships Between Entities, Cardinalities, Generalization, Specialization Etc.) Note:
+                            Student Is Required To Submit A Document By Drawing ER Diagram To The Lab Teacher.</li>
+                        <li>Converting ER Model To Relational Model (Represent Entities And Relationships In Tabular
+                            Form, Represent Attributes As Columns, Identifying Keys) Note: Student Is Required To Submit
+                            A Document Showing The Database Tables Created From ER Model.</li>
+                        <li>Normalization -To Remove The Redundancies And Anomalies In The Above Relational Tables,
+                            Normalize Up To Third Normal Form.</li>
+                        <li>Creation Of Tables Using SQL-Overview Of Using SQL Tool, Data Types In SQL, Creating Tables
+                            (Along With Primary And Foreign Keys), Altering Tables And Dropping Tables.</li>
+                        <li>Practicing DML Commands-Insert, Select, Update, Delete.</li>
+                        <li>Practicing Queries Using ANY, ALL, IN, EXISTS, NOT EXISTS, UNION, INTERSECT, CONSTRAINTS
+                            Etc.</li>
+                        <li>Practicing Sub Queries (Nested, Correlated) And Joins (Inner, Outer And Equi).</li>
+                        <li>Practice Queries Using COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING, VIEWS Creation And
+                            Dropping.</li>
+                        <li>Practicing On Triggers - Creation Of Trigger, Insertion Using Trigger, Deletion Using
+                            Trigger, Updating Using Trigger.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus – Civil Engg with CA</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Civil Engineering with Computer Application</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Professional Practice, Law & Ethics [119701]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-II [1197XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-III [1197XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-I [1007XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-III [100707P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-I [100709P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>25</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-119701"
+                        data-type="theory">Professional Practice, Law & Ethics</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective-II"
+                        data-modal-options='[ {"label": "Computer Application in Construction Engineering and Management [119702]", "target": "subject-119702", "btn-id": "btn-119702"}, {"label": "Internet of Things [119703]", "target": "subject-119703", "btn-id": "btn-119703"}, {"label": "Optimization Techniques [119704]", "target": "subject-119704", "btn-id": "btn-119704"}, {"label": "High Performance Computing [119705]", "target": "subject-119705", "btn-id": "btn-119705"}, {"label": "Operation Research [119706]", "target": "subject-119706", "btn-id": "btn-119706"}, {"label": "Data Analytics [119707]", "target": "subject-119707", "btn-id": "btn-119707"} ]'>
+                        Program Elective-II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective-III"
+                        data-modal-options='[ {"label": "Design of Structural Systems [119708]", "target": "subject-119708", "btn-id": "btn-119708"}, {"label": "Structural Dynamics [119709]", "target": "subject-119709", "btn-id": "btn-119709"}, {"label": "Construction Equipment & Automation [119710]", "target": "subject-119710", "btn-id": "btn-119710"}, {"label": "Hydrographic surveying [119711]", "target": "subject-119711", "btn-id": "btn-119711"}, {"label": "Industrial Waste water Management [119712]", "target": "subject-119712", "btn-id": "btn-119712"}, {"label": "Integrated water resource management [119713]", "target": "subject-119713", "btn-id": "btn-119713"}, {"label": "Basics of computational hydraulics [119714]", "target": "subject-119714", "btn-id": "btn-119714"}, {"label": "Coastal Zone Management and Remote Sensing [119715]", "target": "subject-119715", "btn-id": "btn-119715"}, {"label": "RS and GIS Application in Civil Engineering [119716]", "target": "subject-119716", "btn-id": "btn-119716"} ]'>
+                        Program Elective-III </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective-I"
+                        data-modal-options='[ {"label": "Soft Skills and Interpersonal Communication [100728]", "target": "subject-100728", "btn-id": "btn-100728"}, {"label": "Sales and Marketing [100734]", "target": "subject-100734", "btn-id": "btn-100734"}, {"label": "Financial Literacy [100746]", "target": "subject-100746", "btn-id": "btn-100746"} ]'>
+                        Open Elective-I </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Practical / Project</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100707P" data-type="lab">Summer
+                        Entrepreneurship-III</button><button class="tab-btn" data-target="subject-100709P"
+                        data-type="lab">Project-I</button></div>
+            </section>
+            <div id="syllabus-content"><!-- Core theory: Professional Practice, Law & Ethics -->
+                <section id="subject-119701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Practice, Law & Ethics [119701]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (5 hrs): Professional Practice</strong>
+                            <ul class="unit-topics">
+                                <li>Respective roles of various stakeholders: Government (constituting regulatory bodies
+                                    and standardization organizations, prescribing norms to ensure safety of the
+                                    citizens)</li>
+                                <li>Standardization Bodies (ex. BIS, IRC) (formulating standards of practice)</li>
+                                <li>Professional bodies (ex. Institution of Engineers(India), Indian Roads Congress,
+                                    IIA/ COA, ECI, Local Bodies/ Planning Authorities) (certifying professionals and
+                                    offering platforms for interaction)</li>
+                                <li>Clients/ owners (role governed by contracts)</li>
+                                <li>Developers (role governed by regulations such as RERA)</li>
+                                <li>Consultants (role governed by bodies such as CEAI)</li>
+                                <li>Contractors (role governed by contracts and regulatory Acts and Standards)</li>
+                                <li>Manufacturers/ Vendors/ Service agencies (role governed by contracts and regulatory
+                                    Acts and Standards)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (3 hrs): Professional Ethics</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of Ethics, Professional Ethics, Business Ethics, Corporate Ethics,
+                                    Engineering Ethics, Personal Ethics</li>
+                                <li>Code of Ethics as defined in the website of Institution of Engineers (India)</li>
+                                <li>Profession, Professionalism, Professional Responsibility, Professional Ethics</li>
+                                <li>Conflict of Interest, Gift Vs Bribery, Environmental breaches, Negligence,
+                                    Deficiencies in state-of-the-art</li>
+                                <li>Vigil Mechanism, Whistleblowing, protected disclosures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (6 hrs): General Principles of Contracts
+                                Management</strong>
+                            <ul class="unit-topics">
+                                <li>Indian Contract Act, 1972 and amendments covering General principles of contracting
+                                </li>
+                                <li>Contract Formation & Law; Privacy of contract</li>
+                                <li>Various types of contract and their features</li>
+                                <li>Valid & Voidable Contracts</li>
+                                <li>Prime and subcontracts; Joint Ventures & Consortium</li>
+                                <li>Complex contract terminology</li>
+                                <li>Tenders, Request For Proposals, Bids & Proposals</li>
+                                <li>Bid Evaluation; Contract Conditions & Specifications</li>
+                                <li>Critical /"Red Flag" conditions</li>
+                                <li>Contract award & Notice To Proceed</li>
+                                <li>Variations & Changes in Contracts; Differing site conditions</li>
+                                <li>Cost escalation; Delays, Suspensions & Terminations</li>
+                                <li>Time extensions & Force Majeure; Delay Analysis</li>
+                                <li>Liquidated damages & Penalties; Insurance & Taxation</li>
+                                <li>Performance and Excusable Non-performance</li>
+                                <li>Contract documentation; Contract Notices</li>
+                                <li>Wrong practices in contracting (Bid shopping, Bid fixing, Cartels)</li>
+                                <li>Reverse auction; Case Studies</li>
+                                <li>Build-Own-Operate & variations; Public-Private Partnerships</li>
+                                <li>International Commercial Terms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (6 hrs): Arbitration, Conciliation and ADR (Alternative
+                                Dispute Resolution) system</strong>
+                            <ul class="unit-topics">
+                                <li>Arbitration - meaning, scope and types - distinction between laws of 1940 and 1996
+                                </li>
+                                <li>UNCITRAL model law - Arbitration and expert determination</li>
+                                <li>Extent of judicial intervention</li>
+                                <li>International commercial arbitration</li>
+                                <li>Arbitration agreements - essential and kinds, validity, reference and interim
+                                    measures by court</li>
+                                <li>Arbitration tribunal - appointment, challenge, jurisdiction of arbitral tribunal,
+                                    powers, grounds of challenge, procedure and court assistance</li>
+                                <li>Award including Form and content, Grounds for setting aside an award, Enforcement,
+                                    Appeal and Revision</li>
+                                <li>Enforcement of foreign awards - New York and Geneva Convention Awards</li>
+                                <li>Distinction between conciliation, negotiation, mediation and arbitration,
+                                    confidentiality, resort to judicial proceedings, costs</li>
+                                <li>Dispute Resolution Boards; Lok Adalats</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (3 hrs): Engagement of Labour and Labour & other
+                                construction-related Laws</strong>
+                            <ul class="unit-topics">
+                                <li>Role of Labour in Civil Engineering</li>
+                                <li>Methods of engaging labour- on rolls, labour sub-contract, piece rate work</li>
+                                <li>Industrial Disputes Act, 1947</li>
+                                <li>Collective bargaining</li>
+                                <li>Industrial Employment (Standing Orders) Act, 1946</li>
+                                <li>Workmen's Compensation Act, 1923</li>
+                                <li>Building & Other Construction Workers (regulation of employment and conditions of
+                                    service) Act (1996) and Rules (1998)</li>
+                                <li>RERA Act 2017, NBC 2017</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (5 hrs): Law relating to Intellectual property</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction - meaning of intellectual property, main forms of IP, Copyright,
+                                    Trademarks, Patents and Designs, Secrets</li>
+                                <li>Law relating to Copyright in India including Historical evolution of Copy Rights
+                                    Act, 1957, Meaning of copyright - computer programs, Ownership of copyrights and
+                                    assignment, Criteria of infringement, Piracy in Internet - Remedies and procedures
+                                    in India</li>
+                                <li>Law relating to Patents under Patents Act, 1970 including Concept and historical
+                                    perspective of patents law in India, Patentable inventions with special reference to
+                                    biotechnology products, Patent protection for computer programs, Process of
+                                    obtaining patent - application, examination, opposition and sealing of patents,
+                                    Patent cooperation treaty and grounds for opposition, Rights and obligations of
+                                    patentee, Duration of patents - law and policy considerations, Infringement and
+                                    related remedies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>B.S. Patil, Legal Aspects of Building and Engineering Contracts, 1974.</li>
+                        <li>The National Building Code, BIS, 2017</li>
+                        <li>RERA Act, 2017</li>
+                        <li>Meena Rao (2006), Fundamental concepts in Law of Contract, 3rd Edn. Professional Offset</li>
+                        <li>Neelima Chandiramani (2000), The Law of Contract: An Outline, 2nd Edn. Avinash Publications
+                            Mumbai</li>
+                        <li>Avtarsingh (2002), Law of Contract, Eastern Book Co.</li>
+                        <li>Dutt (1994), Indian Contract Act, Eastern Law House</li>
+                        <li>Anson W.R. (1979), Law of Contract, Oxford University Press</li>
+                        <li>Kwatra G.K. (2005), The Arbitration & Conciliation of Law in India with case law on UNCITRAL
+                            Model Law on Arbitration, Indian Council of Arbitration</li>
+                        <li>Wadhera (2004), Intellectual Property Rights, Universal Law Publishing Co.</li>
+                        <li>T. Ramappa (2010), Intellectual Property Rights Law in India, Asia Law House</li>
+                        <li>Bare text (2005), Right to Information Act</li>
+                        <li>O.P. Malhotra, Law of Industrial Disputes, N.M. Tripathi Publishers</li>
+                        <li>K.M. Desai (1946), The Industrial Employment (Standing Orders) Act</li>
+                        <li>Rustamji R.F., Introduction to the Law of Industrial Disputes, Asia Publishing House</li>
+                        <li>Vee, Charles & Skitmore, Martin (2003) Professional Ethics in the Construction Industry,
+                            Engineering Construction and Architectural management, Vol.10, Iss2,pp 117-127, MCB UP Ltd
+                        </li>
+                        <li>American Society of Civil Engineers (2011) ASCE Code of Ethics - Principles Study and
+                            Application</li>
+                        <li>Ethics in Engineering- M.W.Martin& R.Schinzinger, McGraw-Hill</li>
+                        <li>Engineering Ethics, National Institute for Engineering Ethics, USA</li>
+                    </ol>
+                </section><!-- Program Elective-II subjects -->
+                <section id="subject-119702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Computer Application in Construction Engineering and Management [119702]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Introduction to Computer Applications and
+                                Project Planning</strong>
+                            <ul class="unit-topics">
+                                <li>Overview: Role of computers in the modern construction industry; impact of
+                                    information technology</li>
+                                <li>Fundamentals: Computer basics, hardware/software, operating systems overview as
+                                    relevant to construction applications</li>
+                                <li>Project Management Fundamentals: Introduction to project phases, stakeholders, and
+                                    management functions (planning, scheduling, cost, quality, safety)</li>
+                                <li>Scheduling Techniques: Manual methods of bar charts and Network diagrams (CPM/PERT)
+                                    as a basis for computer application</li>
+                                <li>Software Introduction: Overview of common construction management software (e.g., MS
+                                    Project, Primavera P6)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Project Planning and Scheduling
+                                Software</strong>
+                            <ul class="unit-topics">
+                                <li>Software Application: Detailed exposure to planning and scheduling software (e.g.,
+                                    MS Project, Primavera)</li>
+                                <li>Key Functions: Creating project networks, defining activities, assigning durations,
+                                    estimating activity times, and identifying the critical path</li>
+                                <li>Outputs and Analysis: Generating Gantt charts, network diagrams, and reports</li>
+                                <li>Optimization: Calculating floats, analyzing project duration, and understanding
+                                    time-cost trade-offs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Resource Management and Cost
+                                Estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Resource Planning: Resource identification, allocation, leveling, and management
+                                    using software tools</li>
+                                <li>Cost Estimation: Principles of cost estimation and control; use of spreadsheets and
+                                    dedicated software for quantity take-off and cost estimation</li>
+                                <li>Financial Management: Introduction to construction accounting, cost control
+                                    techniques, and management information systems (MIS)</li>
+                                <li>Earned Value Management: Using software to track and control project costs and
+                                    performance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Specialized Software Applications in
+                                Construction</strong>
+                            <ul class="unit-topics">
+                                <li>Building Information Modeling (BIM): Fundamentals of BIM, creating building
+                                    information models, and its role in project management</li>
+                                <li>Structural and Design Software: Overview and application of software like STAAD Pro
+                                    or similar for structural analysis and design simulation</li>
+                                <li>CAD Applications: Use of Computer-Aided Design in construction documentation and
+                                    planning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Legal and Risk Management, Data &
+                                Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Contract and Legal Aspects: Understanding the legal implications of contracts in the
+                                    construction context, aided by information systems</li>
+                                <li>Risk Management: Application of software in identifying, analyzing, and mitigating
+                                    project risks</li>
+                                <li>Database Management: Fundamentals of databases in managing large-scale construction
+                                    data sets; data management in a networked environment</li>
+                                <li>Emerging Technologies: Introduction to advanced topics like geographic information
+                                    systems (GIS), GPS, and automation in construction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Case Studies and Lab Exercises</strong>
+                            <ul class="unit-topics">
+                                <li>Integrated Project Exercise: Hands-on application of learned software for a complete
+                                    case study project (planning, scheduling, resource, cost, and BIM modeling)</li>
+                                <li>Software Integration: Understanding data exchange and integration between different
+                                    software platforms</li>
+                                <li>Evaluation: Analyzing various project scenarios, updating project plans based on
+                                    progress, and generating comprehensive reports for decision-making</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Computer Applications in Construction by Boyd Paulson</li>
+                        <li>Computer-Based Construction Project Management by Palmer</li>
+                        <li>Construction Management by James B. Fullman</li>
+                        <li>Construction Project Management by Frederick E. Gould and Nancy E. Joyce</li>
+                        <li>Innovations in Construction Engineering and Management (various editors/publishers, focusing
+                            on recent technologies)</li>
+                        <li>Software Engineering: A Practitioner's Approach by Roger S. Pressman (for general software
+                            principles)</li>
+                        <li>Project Management: A Systems Approach to Planning, Scheduling, and Controlling by Harold
+                            Kerzner</li>
+                        <li>Specific software user manuals and tutorials (e.g., for Primavera P6, MS Project, Revit,
+                            STAAD.Pro)</li>
+                    </ol>
+                </section>
+                <section id="subject-119703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Internet of Things [119703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Architectural Overview, Design principles and needed capabilities</li>
+                                <li>IoT Applications, Sensing, Actuation, Basics of Networking</li>
+                                <li>M2M and IoT Technology Fundamentals- Devices and gateways, Data management, Business
+                                    processes in IoT</li>
+                                <li>Everything as a Service (XaaS), Role of Cloud in IoT, Security aspects in IoT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Elements of IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Hardware Components - Computing (Arduino, Raspberry Pi), Communication, Sensing,
+                                    Actuation, I/O interfaces</li>
+                                <li>Software Components- Programming API's (using Python/Node.js/Arduino) for
+                                    Communication</li>
+                                <li>Protocols- MQTT, ZigBee, Bluetooth, CoAP, UDP, TCP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Networking and Protocols for IoT</strong>
+                            <ul class="unit-topics">
+                                <li>IPv4, IPv6, IP addressing in IoT Protocol Stack: Application, Transport, Network,
+                                    Link layers</li>
+                                <li>Application Layer Protocols: MQTT, CoAP, HTTP/HTTPS</li>
+                                <li>Transport and Network Layer: TCP/UDP, 6LoWPAN</li>
+                                <li>Data formats: JSON, XML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: IoT Application Development</strong>
+                            <ul class="unit-topics">
+                                <li>Solution framework for IoT applications- Implementation of Device integration, Data
+                                    acquisition and integration</li>
+                                <li>Device data storage- Unstructured data storage on cloud/local server</li>
+                                <li>Authentication, authorization of devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: IoT Security & Application Development</strong>
+                            <ul class="unit-topics">
+                                <li>Threats (DDoS, spoofing), encryption (AES), authentication (OAuth, JWT)</li>
+                                <li>Device integration, Data acquisition, Storage Analytics</li>
+                                <li>Certificate-based security, role-based access control (RBAC)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: IoT Case Studies</strong>
+                            <ul class="unit-topics">
+                                <li>IoT case studies and mini projects based on Industrial automation, Transportation,
+                                    Agriculture, Healthcare, Home Automation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Vijay Madisetti, Arshdeep Bahga, Internet of Things, "A Hands-on Approach", University Press
+                        </li>
+                        <li>Dr. SRN Reddy, Rachit Thukral and Manasi Mishra, "Introduction to Internet of Things: A
+                            practical Approach", ETI Labs</li>
+                        <li>Pethuru Raj and Anupama C. Raman, "The Internet of Things: Enabling Technologies, Platforms,
+                            and Use Cases", CRC Press</li>
+                        <li>Jeeva Jose, "Internet of Things", Khanna Publishing House, Delhi</li>
+                        <li>Adrian McEwen, "Designing the Internet of Things", Wiley</li>
+                        <li>Raj Kamal, "Internet of Things: Architecture and Design", McGraw Hill</li>
+                        <li>Cuno Pfister, "Getting Started with the Internet of Things", O Reilly Media</li>
+                    </ol>
+                </section>
+                <section id="subject-119704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Optimization Techniques [119704]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Introduction to Optimization
+                                Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of optimization problems- unconstrained vs. constrained, Single variable vs
+                                    multivariable Optimization</li>
+                                <li>Types of optimizations - linear, nonlinear, discrete, continuous</li>
+                                <li>Linear Programming: Formulation of linear programming problems, Graphical method for
+                                    solving LP problems, Simplex method and its applications, Two Phase method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Convex Functions</strong>
+                            <ul class="unit-topics">
+                                <li>Definition and Basic Properties, First-order and Second-order Conditions, Epigraph
+                                    and Sublevel Sets</li>
+                                <li>Concave Functions, Definition and Basic Properties, First-order and Second-order
+                                    Conditions, Hypograph and Superlevel Sets</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Hessian Matrix and Eigenvalues</strong>
+                            <ul class="unit-topics">
+                                <li>Computation of Hessian Matrix, Eigenvalues and Definiteness, Using Eigenvalues to
+                                    Determine Convexity or Concavity</li>
+                                <li>Bordered Hessian Matrix- Second-order Conditions for Constrained Optimization</li>
+                                <li>convex optimization problems, Quadratic Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Introduction to nonlinear optimization
+                                problems</strong>
+                            <ul class="unit-topics">
+                                <li>Types of nonlinear programming problems</li>
+                                <li>Single variable optimization: Unimodal Function, Elimination Methods- Unrestricted
+                                    search, Exhaustive Search</li>
+                                <li>Multivariable optimization with no constraints, Multivariable Optimization with
+                                    Equality Constraints, Multivariable Optimization with Inequality constraints</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Unconstrained Optimization Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, Direct Search Methods, Random Search Methods</li>
+                                <li>Indirect search (Descent) methods, Gradient of a function, Steepest Descent(Cauchy)
+                                    Method, Newton's Method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Modern Methods of Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, Genetic Algorithms- Use case, Simulated Annealing- Use case</li>
+                                <li>Particle Swarm Optimization- Use case, Ant Colony Optimization- Use case</li>
+                                <li>Optimization of Fuzzy Systems- Use case, Neural-Network-Based Optimization- Use case
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Singiresu S. Rao," Engineering Optimization - Theory and Practices", JohnWiley & Sons, 4th
+                            Edition, 2009</li>
+                        <li>Operations research, theory and applications: J K Sharma</li>
+                        <li>Convex Optimization: Stephen Boyd, Lieven Vandenberghe</li>
+                        <li>Operations Research Theory, Methods and Applications, S D Sharma, 2020</li>
+                        <li>Introduction to Operations Research, 11th Edition, by Frederick S. Hillier, Gerald J.
+                            Lieberman, et al., 2021</li>
+                        <li>Operations Research: An Introduction, 10e by Hamdy A. Taha</li>
+                        <li>Multi-Objective Optimization using Evolutionary Algorithms, Kalyanmoy Deb, ISBN:
+                            978-0-471-87339-6, July 2001</li>
+                    </ol>
+                </section>
+                <section id="subject-119705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">High Performance Computing [119705]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (6 hrs): Overview of Grid Computing Technology</strong>
+                            <ul class="unit-topics">
+                                <li>History of Grid Computing, High Performance Computing, Cluster Computing</li>
+                                <li>Peer-to-Peer Computing, Internet Computing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (6 hrs): Grid Computing Model and Protocols</strong>
+                            <ul class="unit-topics">
+                                <li>Types of Grids: Desktop Grids, Cluster Grids, Data Grids, High-Performance Grids
+                                </li>
+                                <li>Applications and Architectures of High Performance Grids, High Performance
+                                    Application Development Environment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Open Grid Services Architecture</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, Requirements, Capabilities, Security Considerations</li>
+                                <li>GLOBUS Toolkit</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (8 hrs): Overview of Cluster Computing</strong>
+                            <ul class="unit-topics">
+                                <li>Cluster Computer and its Architecture, Clusters Classifications</li>
+                                <li>Components for Clusters, Cluster Middleware and SSI, Resource Management and
+                                    Scheduling</li>
+                                <li>Programming, Environments and Tools, Cluster Applications, Cluster Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (8 hrs): Beowulf Cluster</strong>
+                            <ul class="unit-topics">
+                                <li>The Beowulf Model, Application Domains, Beowulf System Architecture</li>
+                                <li>Software Practices, Parallel Programming with MPL, Parallel Virtual Machine (PVM)
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Overview of Cloud Computing</strong>
+                            <ul class="unit-topics">
+                                <li>Types of Cloud, Cyber infrastructure, Service Oriented Architecture</li>
+                                <li>Cloud Computing Components: Infrastructure, Storage, Platform, Application,
+                                    Services, Clients, Cloud Computing Architecture</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Laurence T.Yang, Minyi Guo - High Performance Computing Paradigm and Infrastructure John
+                            iley</li>
+                        <li>Ahmar Abbas, Grid Computing: Practical Guide to Technology & Applications, Firewall Media,
+                            2004</li>
+                        <li>Joshy Joseph and Craig Fellenstein, Grid Computing Pearson Education, 2004</li>
+                        <li>lan Foster, et al., The Open Grid Services Architectured, Version 1. (GFD.80). Open Grid
+                            Forum, 2006. Page 101 of 140</li>
+                        <li>RajkumarBuyya. High Performance Cluster Computing: Architectures and Systems. PrenticeHall
+                            India, 1999</li>
+                    </ol>
+                </section>
+                <section id="subject-119706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Operation Research [119706]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Features of O.R</strong>
+                            <ul class="unit-topics">
+                                <li>Modeling in Operations Research, Classification of Models, General Solution Methods
+                                    for O.R Models</li>
+                                <li>Scientific Method in O.R, Methodology of O.R., Applications, Opportunities and
+                                    Shortcomings of O.R</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Applications of operation research in
+                                economics</strong>
+                            <ul class="unit-topics">
+                                <li>Finance and decision making, Formulation of Mathematical Model of Linear Programming
+                                    Problem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Graphical Solution</strong>
+                            <ul class="unit-topics">
+                                <li>Solution of Linear Programming Problem by Graphical Method, Special Cases: (i)
+                                    Alternate Optima (ii) Unbounded Solution (iii) Infeasible Solution</li>
+                                <li>Simplex Method: Introduction to Simplex Method- Maximization and Minimization,
+                                    Duality, primal to dual conversion only</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (6 hrs): Game Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Two-Person Zero sum Games, Some Basic Terms, The Maximin-Minimax Principle, Games
+                                    without Saddle Points (Mixed Strategies), Graphical solution of \(2 \times
+                                    \mathrm{n}\) and \(\mathrm{m} \times 2\) Games, algebraic method</li>
+                                <li>Queuing Theory: Introduction; Basic Definitions and Notations; Axiomatic Derivation
+                                    of the Arrival & Departure (Poisson Queue). Pure Birth and Death Models; Poisson
+                                    Queue Models: \(\mathrm{M} / \mathrm{M} / 1: \infty /\mathrm{FIFO}\) and
+                                    \(\mathrm{M} / \mathrm{M} / 1: \mathrm{N} / \mathrm{FIFO}\)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (9 hrs): Resource Access Control, Synchronization &
+                                Advanced Topics</strong>
+                            <ul class="unit-topics">
+                                <li>Schedulability of fixed-priority end-to-end periodic Tasks, Predictability &
+                                    Validation of dynamic multiprocessor system, Scheduling flexible computations and
+                                    tasks with temporal distance constraints</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (6 hrs): Shortest Path</strong>
+                            <ul class="unit-topics">
+                                <li>Dijkstra Algorithm; Floyd Algorithm; Maximal Flow Problem (Ford Fulkerson); PERT-
+                                    CPM (Cost Analysis, Crashing, Resource Allocation excluded)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Kanti Swarup, Gupta, P.K. and Manmohan, Operations Research, Sultan Chand: New Delhi, 12th
+                            thoroughly revised Ed</li>
+                        <li>Hamdy A. Taha, Operations Research; Pearson, 8th Ed</li>
+                        <li>Fredrick S. Hiller, Gerald J. Liberman, Introduction to Operations Research, McGraw- Hill,
+                            9th Ed</li>
+                        <li>J.K. Sharma, Operations Research Theory & Application, Macmillan, 3rd Ed</li>
+                    </ol>
+                </section>
+                <section id="subject-119707" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Data Analytics [119707]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Data Management</strong>
+                            <ul class="unit-topics">
+                                <li>Design Data Architecture and manage the data for analysis, understand various
+                                    sources of Data like Sensors/Signals/GPS etc</li>
+                                <li>Data Management, Data Quality(noise, outliers, missing values, duplicate data) and
+                                    Data Processing & Processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (8 hrs): Data Analytics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Analytics, Introduction to Tools and Environment, Application of
+                                    Modeling in Business, Databases & Types of Data and Variables, Data Modeling
+                                    Techniques, Missing Imputations etc. Need for Business Modeling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (9 hrs): Regression - Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Blue property assumptions, Least Square Estimation, Variable Rationalization, and
+                                    Model Building etc</li>
+                                <li>Logistic Regression: Model Theory, Model fit Statistics, Model Construction,
+                                    Analytics applications to various Business Domains etc</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (5 hrs): Object Segmentation</strong>
+                            <ul class="unit-topics">
+                                <li>Regression Vs Segmentation - Supervised and Unsupervised Learning, Tree Building -
+                                    Regression, Classification, Overfitting, Pruning and Complexity, Multiple Decision
+                                    Trees etc</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (5 hrs): Time Series Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Arima, Measures of Forecast Accuracy, STL approach, Extract features from generated
+                                    model as Height, Average Energy etc and Analyze for prediction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (8 hrs): Data Visualization</strong>
+                            <ul class="unit-topics">
+                                <li>Pixel-Oriented Visualization Techniques, Geometric Projection Visualization
+                                    Techniques, Icon-Based Visualization Techniques, Hierarchical Visualization
+                                    Techniques, Visualizing Complex Data and Relations</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Student's Handbook for Associate Analytics - II, III</li>
+                        <li>Data Mining Concepts and Techniques, Han, Kamber, 3rd Edition, Morgan Kaufmann Publishers
+                        </li>
+                        <li>Introduction to Data Mining, Tan, Steinbach and Kumar, Addison Wisley, 2006</li>
+                        <li>Data Mining Analysis and Concepts, M. Zaki and W. Meira</li>
+                        <li>Mining of Massive Datasets, Jure Leskovec Stanford Univ. Anand Rajaraman Millway Labs
+                            Jeffrey D Ullman Stanford Univ</li>
+                    </ol>
+                </section><!-- Program Elective-III subjects -->
+                <section id="subject-119708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Design of Structural Systems [119708]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Functional Requirements</strong>
+                            <ul class="unit-topics">
+                                <li>Defining the purpose of the structure, user needs, architectural constraints, and
+                                    performance criteria (safety, serviceability)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Structural Scheme Selection</strong>
+                            <ul class="unit-topics">
+                                <li>Evaluating alternative structural systems (frame, truss, shell, etc.), material
+                                    selection (steel, concrete, wood), and overall configuration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Formulation of Design Criteria</strong>
+                            <ul class="unit-topics">
+                                <li>Establishing design loads (dead, live, wind, seismic, etc.) based on codes, defining
+                                    acceptable safety factors, and material properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Preliminary Proportioning & Modeling</strong>
+                            <ul class="unit-topics">
+                                <li>Initial sizing of structural elements (beams, columns, slabs) and creating the
+                                    structural model for analysis, including computer-aided formulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Analysis of Response</strong>
+                            <ul class="unit-topics">
+                                <li>Application of structural analysis methods (manual and computer-aided) to determine
+                                    internal forces, stresses, deflections, and stability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Cost, Value & Optimization</strong>
+                            <ul class="unit-topics">
+                                <li>Economic analysis of different schemes, value engineering, whole-life costing, and
+                                    achieving an optimal, safe, and economical final design</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Design of Concrete Structures" by Arthur H. Nilson, David Darwin, and Charles W. Dolan
+                            (Covers design principles and applications)</li>
+                        <li>"Structural Analysis: A Unified Classical and Matrix Approach" by Ghali, Neville, and
+                            Elmasry (For analysis of response)</li>
+                        <li>"Fundamentals of Structural Analysis" by Kenneth M. Leet, Chia-Ming Uang, and Joel L.
+                            Lanning (Focuses on analysis methods)</li>
+                        <li>"Structural Engineering Design: A Practice-Oriented Approach" by David A. Fanella and Jack
+                            McCormac</li>
+                        <li>"Building Code Requirements for Structural Concrete (ACI 318)" (Example of code for design
+                            criteria)</li>
+                        <li>"IS 456: 2000 - Plain and Reinforced Concrete - Code of Practice" (Indian Standard Code for
+                            design)</li>
+                        <li>"Introduction to Structural Analysis & Design" by S. D. Rajan</li>
+                        <li>Manuals for relevant software (e.g., SAP2000, ETABS, STAAD.Pro) for computer-aided
+                            proportioning and analysis</li>
+                    </ol>
+                </section>
+                <section id="subject-119709" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Structural Dynamics [119709]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Single-Degree-of-Freedom Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Analysis of dynamic response of structures and structural components to transient
+                                    loads and foundation excitation for SDOF systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Multi-Degree-of-Freedom Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Analysis of dynamic response for MDOF systems, including formulation of equations of
+                                    motion and free vibration analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Response to Transient Loads</strong>
+                            <ul class="unit-topics">
+                                <li>Detailed analysis of structural response to various transient loads using
+                                    time-history methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Response Spectrum Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction and application of response spectrum concepts for earthquake
+                                    engineering and dynamic analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Inelastic Structural Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Analysis and behavior of simple inelastic structural systems under dynamic loads
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Distributed Mass and Flexibility</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to systems with distributed mass and flexibility, and their dynamic
+                                    analysis</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A.K. Chopra, Dynamics of Structures: Theory and Applications to Earthquake Engineering,
+                            Prentice Hall. (Considered a standard text in the field)</li>
+                        <li>Mario Paz, Structural Dynamics: Theory and Computation, Springer</li>
+                        <li>Clough and Penzien, Dynamics of Structures, McGraw-Hill</li>
+                        <li>W.C. Hurty and M.F. Rubinstein, Dynamics of Structures, Prentice Hall</li>
+                        <li>Anil K. Chopra, Earthquake Engineering for Structural Design, WCB/McGraw-Hill</li>
+                        <li>R.W. Clough and E.L. Wilson, Finite Elements for the Analysis of Structures, Prentice Hall
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-119710" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Construction Equipment & Automation [119710]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Unique features of construction equipment, Need of construction Equipment, past
+                                    history</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Construction Equipment</strong>
+                            <ul class="unit-topics">
+                                <li>Capacity, Feasibility, owning and operating cost and Productivity of Different
+                                    Equipment: Excavators, Pavers, Plastering machines; Pre-stressing jacks and grouting
+                                    equipment; Cranes and Hoists, Concrete Batching Plants, etc</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Automation in Construction Industry</strong>
+                            <ul class="unit-topics">
+                                <li>Need and Benefit of automation: Automation in Canal lining, Automation in
+                                    Construction of Highway, Automation in concrete technology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Drones</strong>
+                            <ul class="unit-topics">
+                                <li>Photogrammetry, Project Monitoring- real time data, aerial mapping, land survey,
+                                    quantity survey, quality survey, structural health monitoring survey, under water
+                                    survey</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Robotics in Construction</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, Benefits of robots in construction industry with respect to time,
+                                    cost, quality, safety</li>
+                                <li>Use of robots for construction activities like Brick laying, Demolition, Material
+                                    Handling, Structural steel cutting, Rebar tying/bending, Form work mould making, 3D
+                                    printing- print complex, layered, parts and objects of homes, buildings, bridges and
+                                    roads</li>
+                                <li>3D Scanner for surveying and project management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Introduction to Advanced Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>Virtual Reality, Augmented Reality, Building Information Modeling (BIM)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Construction Planning, Methods and Equipment, R.L. Peurifoy, McGraw Hill, 2011</li>
+                        <li>Construction Project management, Theory & Practice, Kumar Neeraj Jha., Pearson Education
+                            India</li>
+                        <li>BIM and Construction Management: Proven Tools, Methods, and Workflows By Brad Hardin, Dave
+                            McCool, John Wiley & Sons</li>
+                        <li>Construction equipment and its planning and application Mahesh Varma Metropolitan Book Co
+                        </li>
+                        <li>Robotics and Automation in Construction, Open access peer-reviewed edited volume</li>
+                        <li>Automation in Construction Management: Automated management of Construction Materials Using
+                            RFID Technology, Javad Majrouhi Sardroud, Scholars' Press</li>
+                        <li>Enhancing BIM Methodology with VR Technology, Open access peer</li>
+                    </ol>
+                </section>
+                <section id="subject-119711" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Hydrographic surveying [119711]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Basic & Geodetic Surveying</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of land surveying, measurements (linear, angular, height), leveling,
+                                    traversing, triangulation</li>
+                                <li>Introduction to Geodesy, Earth models, coordinate systems, and map projections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Satellite Positioning (GNSS/GPS)</strong>
+                            <ul class="unit-topics">
+                                <li>Theory and operation of Global Navigation Satellite Systems (GPS, GLONASS, Galileo,
+                                    etc.), differential GPS (DGPS), post-processing, and error sources</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Hydrographic Principles & Methods</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to hydrographic surveying applications, planning a survey, methods for
+                                    depth determination (lead lines to echo sounders), positioning techniques for marine
+                                    environments, and tidal theory</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Acoustic & Sonar Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of underwater acoustics, operation and application of single beam echo
+                                    sounders (SBES), multibeam echo sounders (MBES), and side scan sonar (SSS) for
+                                    seafloor mapping and object detection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Acoustic & Sonar Systems (continued)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of underwater acoustics, operation and application of single beam echo
+                                    sounders (SBES), multibeam echo sounders (MBES), and side scan sonar (SSS) for
+                                    seafloor mapping and object detection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Remote Sensing & GIS</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of Remote Sensing and Geographic Information Systems, image
+                                    interpretation, spatial analysis, and their integration with hydrographic data for
+                                    marine spatial data infrastructure</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Surveying (Vol I, II & III) by B.C. Punnia, Ashok Kumar Jain, and Arun Kumar Jain, Laxmi
+                            Publications</li>
+                        <li>Surveying (Vol I & II) by S.K. Duggal, Tata McGraw Hill Education</li>
+                        <li>Surveying: Theory and Practice by James M. Anderson and Edward M. Mikhail, Tata McGraw Hill
+                        </li>
+                        <li>Manual on Hydrography (Publication C-13) by the International Hydrographic Organization
+                            (IHO). This manual is a fundamental reference for standards and practices in hydrography
+                        </li>
+                        <li>Hydrographic Surveying: Elementary: For Beginners, Seamen and Others by Samuel Hill Lea</li>
+                        <li>Surveying and Geomatics Engineering: Principles, Technologies, and Applications by Daniel T.
+                            Gillins, Michael L. Dennis, Allan Y. Ng, American Society of Civil Engineers</li>
+                        <li>Hydrographic Survey: Principles and Practices: "A Complete Guide to Fundamentals, Methods,
+                            and Applications" (specific authors vary by edition)</li>
+                        <li>Engineer Manual EM 1110-2-1003, Hydrographic Surveying by US Army Corps of Engineers (USACE)
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-119712" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Industrial Waste water Management [119712]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Fundamentals & Characterization</strong>
+                            <ul class="unit-topics">
+                                <li>Sources of industrial waste, physical & chemical characteristics, environmental
+                                    impacts, and regulatory standards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Preliminary & Primary Treatment</strong>
+                            <ul class="unit-topics">
+                                <li>Waste minimization strategies, equalization, neutralization, oil-water separation,
+                                    and primary sedimentation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Biological Treatment Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Aerobic & anaerobic treatment kinetics, activated sludge systems, trickling filters,
+                                    biofilters, ponds, and lagoons</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Physico-Chemical Treatment</strong>
+                            <ul class="unit-topics">
+                                <li>Coagulation, flocculation, precipitation, adsorption, ion exchange, membrane
+                                    processes (RO, UF, NF, etc.), and advanced oxidation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Industry-Specific & Sludge Management</strong>
+                            <ul class="unit-topics">
+                                <li>Treatment for key industries (textile, dairy, refinery, etc.), sludge generation,
+                                    treatment, thickening, dewatering, and disposal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Reuse, Recycling & ZLD</strong>
+                            <ul class="unit-topics">
+                                <li>Wastewater reclamation and reuse technologies, Zero Liquid Discharge (ZLD) systems,
+                                    and related environmental audits and impact assessments</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Metcalf & Eddy (Revised by George Tchobanoglous, Franklin L. Burton, H. David Stensel):
+                            Wastewater Engineering: Treatment and Reuse [2]. This is a foundational and widely used
+                            textbook for all aspects of wastewater management</li>
+                        <li>Sincero, A. P., and G. A. Sincero: Physical and Chemical Treatment of Water and Wastewater
+                            [2]. Provides detailed coverage of the principles of physical and chemical processes</li>
+                        <li>Mahajan, S. P.: Pollution Control in Process Industries [2]. Specifically addresses
+                            industrial pollution control measures</li>
+                        <li>Arceivala, S. J., and Shyam R. Asolekar: Wastewater Treatment for Pollution Control [2]. A
+                            classic reference focusing on design and practical applications</li>
+                        <li>Weber Jr., W. J.: Physicochemical Processes for Water Quality Control [2]. Offers in-depth
+                            analysis of various treatment processes</li>
+                        <li>Tebbutt, T. H. Y.: Principles of Water Quality Control. Covers fundamental principles of
+                            water quality management</li>
+                        <li>Eckenfelder Jr., W. Wesley: Industrial Water Pollution Control. A specialized text for
+                            industrial effluent management</li>
+                    </ol>
+                </section>
+                <section id="subject-119713" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Integrated water resource management [119713]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Engineering Foundations & Surveying</strong>
+                            <ul class="unit-topics">
+                                <li>Basic sciences, engineering mechanics, fluid mechanics, surveying techniques,
+                                    computational tools</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Hydrology & Water Quality</strong>
+                            <ul class="unit-topics">
+                                <li>Hydrologic cycle, precipitation, runoff, groundwater flow, water quality parameters,
+                                    treatment fundamentals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Hydraulic Structures & Irrigation</strong>
+                            <ul class="unit-topics">
+                                <li>Design of dams, canals, hydraulic jump, irrigation systems, crop water requirements,
+                                    soil-water-plant relationships</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Watershed & Environmental Management</strong>
+                            <ul class="unit-topics">
+                                <li>Soil and water conservation, erosion control, environmental impact assessment (EIA)
+                                    of water projects, ecological sustainability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Remote Sensing, GIS & Modelling</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of RS and GIS, application in water resources planning, numerical
+                                    modelling techniques for water flow and quality</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): IWRM Planning, Policy & Economics</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of IWRM, water resource systems planning, optimization models, water law,
+                                    policy, governance, and economics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Fluid Mechanics by F. White</li>
+                        <li>Surveying: Theory and Practice by S. K. Duggal</li>
+                        <li>Engineering Hydrology by K. Subramanya</li>
+                        <li>Water Supply and Sanitary Engineering by G. S. Birdie & J. S. Birdie</li>
+                        <li>Hydraulic Structures by P. N. Modi & S. M. Seth</li>
+                        <li>Irrigation Engineering and Hydraulic Structures by S. K. Garg</li>
+                        <li>Watershed Management by J. V. S. Murty</li>
+                        <li>Remote Sensing and GIS by B. Bhatta</li>
+                        <li>Applied Hydrology and Sedimentology for Disturbed Areas by D. H. Gray & R. B. Sotir</li>
+                        <li>Water Resources Systems Planning and Management by Daniel P. Loucks & Jery R. Stedinger</li>
+                        <li>Water Management: Policies and Practices by C. S. P. Ojha, R. Bhargava, & N. R. Sharma</li>
+                    </ol>
+                </section>
+                <section id="subject-119714" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Basics of computational hydraulics [119714]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Derivation of governing equations</strong>
+                            <ul class="unit-topics">
+                                <li>For flow and transport in surface and sub-surface (saturated and unsaturated flow)
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Equations for reactive transport</strong>
+                            <ul class="unit-topics">
+                                <li>Coupled surface and sub-surface flow models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Basics of finite difference, finite element and
+                                finite volume methods</strong>
+                            <ul class="unit-topics">
+                                <li>Consistency, stability, convergence, order of accuracy, computational efficiency
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Application of numerical methods</strong>
+                            <ul class="unit-topics">
+                                <li>For solving flow and transport equations, fully coupled and iteratively coupled
+                                    models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Model simplification, Parameter
+                                estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Model calibration and validation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Computational Fluid Dynamics (CFD)
+                                software</strong>
+                            <ul class="unit-topics">
+                                <li>For three-dimensional turbulent flow modeling, Software for sub-surface flow
+                                    simulation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Abbott, Michael B., and Panagiotis Zervos. Computational Hydraulics: An Introduction. CRC
+                            Press, 2017. (A solid introduction to the principles and applications)</li>
+                        <li>Chaudhry, M. Hanif. Open-Channel Flow. 2nd ed. Springer, 2008. (Includes detailed sections
+                            on numerical methods for open channel flow)</li>
+                        <li>Zannetti, Paolo. Air Pollution Modeling: Theories, Computational Methods and Available
+                            Software. 3rd ed. CALENVIRO, 2016. (While focused on air pollution, the underlying numerical
+                            methods and principles are highly relevant to water flow)</li>
+                        <li>Cunge, Jean A., F. Michael Holly Jr., and Andrew Verwey. Practical Aspects of Computational
+                            River Hydraulics. Pitman, 1980. (A classic reference for practical implementation)</li>
+                        <li>Hirsch, Charles. Numerical Computation of Internal and External Flows: Volume 1:
+                            Fundamentals of Numerical Discretization. 2nd ed. Wiley, 2007. (More advanced but provides
+                            rigorous detail on numerical methods)</li>
+                        <li>Jha, Arvind Kumar. Computational Hydraulics. Global Vision Publishing House, 2007</li>
+                    </ol>
+                </section>
+                <section id="subject-119715" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Coastal Zone Management and Remote Sensing [119715]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Coastal Environment & Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Coastal landforms (beaches, mangroves, coral reefs), waves, tides, currents,
+                                    sediment dynamics, and coastal water properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Remote Sensing Principles</strong>
+                            <ul class="unit-topics">
+                                <li>Electromagnetic spectrum, platforms and sensors (active/passive), data acquisition
+                                    (satellites like OCEANSAT), image interpretation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Geographic Information Systems (GIS)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of GIS, data structures (raster/vector), spatial analysis, map
+                                    projections, and GIS software applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Coastal Engineering & Structures</strong>
+                            <ul class="unit-topics">
+                                <li>Design of breakwaters, seawalls, groynes, ports and harbors; corrosion in marine
+                                    environments; coastal protection methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): CZM Applications of RS & GIS</strong>
+                            <ul class="unit-topics">
+                                <li>Mapping coastal ecosystems, monitoring shoreline changes, bathymetric surveys,
+                                    disaster management (tsunami, cyclone) applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Integrated Coastal Zone Management
+                                (ICZM)</strong>
+                            <ul class="unit-topics">
+                                <li>ICZM frameworks, legal policies, socioeconomic aspects, community participation,
+                                    sustainable development, national/international case studies</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Coastal Engineering: An Introduction to Ocean Engineering by R. Sorensen</li>
+                        <li>Introduction to Physical Oceanography by Robert H. Stewart</li>
+                        <li>Remote Sensing and Image Interpretation by T. Lillesand, R. Kiefer, and J. Chipman</li>
+                        <li>Introduction to Remote Sensing by James B. Campbell</li>
+                        <li>Principles of Geographic Information Systems by Peter A. Burrough and Rachael McDonnell</li>
+                        <li>GIS: A Computing Perspective by M. F. Worboys and M. Duckham</li>
+                        <li>Coastal Engineering by P. N. Modi and S. M. Seth</li>
+                        <li>Coastal Engineering Manual (CEM), U.S. Army Corps of Engineers</li>
+                        <li>Coastal Zone Management Using Remote Sensing and GIS by P. Ramamohana Rao and P. Suneetha
+                        </li>
+                        <li>Remote Sensing Handbook for Tropical Coastal Management, UNESCO</li>
+                        <li>Integrated Management of Coastal Zones by J. R. Clark</li>
+                        <li>Guidelines for Integrated Coastal Zone Management by C. G. Lundin</li>
+                    </ol>
+                </section>
+                <section id="subject-119716" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">RS and GIS Application in Civil Engineering [119716]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Fundamentals of Remote Sensing</strong>
+                            <ul class="unit-topics">
+                                <li>Basic concepts, elements involved (energy source, atmosphere, ground features,
+                                    sensors, platforms)</li>
+                                <li>Electromagnetic Spectrum (EMS), atmospheric windows, energy interactions with
+                                    atmosphere and earth surface features (vegetation, water, soil)</li>
+                                <li>Resolutions: spatial, spectral, radiometric, and temporal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (7 hrs): Data Acquisition and Interpretation</strong>
+                            <ul class="unit-topics">
+                                <li>Types of platforms (airborne, spaceborne) and sensors (optical, thermal, microwave)
+                                </li>
+                                <li>Data products and formats</li>
+                                <li>Principles of aerial photography and photogrammetry (types of photographs, scale,
+                                    stereoscopy, parallax measurement)</li>
+                                <li>Visual interpretation techniques and keys</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (7 hrs): Geographic Information Systems (GIS)
+                                Principles</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to GIS, definitions, components (hardware, software, data, users,
+                                    procedures)</li>
+                                <li>Spatial and non-spatial (attribute) data</li>
+                                <li>Types of maps, map projections, and coordinate systems</li>
+                                <li>Raster and vector data structures, advantages and disadvantages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): GIS Data Input, Analysis, and Output</strong>
+                            <ul class="unit-topics">
+                                <li>Data input methods (digitizing, scanning, GPS data)</li>
+                                <li>Data editing and topology creation</li>
+                                <li>Spatial analysis methods (retrieval, reclassification, overlay analysis, buffering)
+                                </li>
+                                <li>Data output (printers, plotters, digital formats)</li>
+                                <li>Introduction to Global Positioning System (GPS) fundamentals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (7 hrs): Digital Image Processing (DIP)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of DIP, pre-processing (radiometric and geometric corrections, image
+                                    registration)</li>
+                                <li>Image enhancement techniques (contrast manipulation, filtering)</li>
+                                <li>Image classification (supervised, unsupervised, hybrid) and accuracy assessment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Applications in Civil Engineering</strong>
+                            <ul class="unit-topics">
+                                <li>Specific applications in: Water Resources (watershed management, flood monitoring,
+                                    groundwater assessment, irrigation management)</li>
+                                <li>Urban Planning (land use/land cover mapping, site selection, urban sprawl analysis)
+                                </li>
+                                <li>Transportation (route alignment, traffic management)</li>
+                                <li>Disaster Management (drought assessment, environmental impact analysis)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Remote Sensing and Image Interpretation" by T.M. Lillesand and R.W. Kiefer</li>
+                        <li>"An Introduction to Geographical Information Systems" by I. Heywood, S. Cornelius, and S.
+                            Carver</li>
+                        <li>Additional suggested textbooks include "Remote Sensing and GIS: Principles & Applications"
+                            by Dr. Basavaraja Simpi, et al. and "Geomatics Engineering" by Prof. Surbhi Jain and Prof.
+                            Mukesh Rai</li>
+                        <li>"Remote Sensing - Principles and Interpretation" by F.F. Sabins Jr.</li>
+                        <li>Other reference books include "Principles of Remote Sensing" by Paul J. Gibson and
+                            "Fundamentals of Satellite Remote Sensing" by Arthur Cracknell and Alun Vaughan</li>
+                    </ol>
+                </section><!-- Open Elective-I subjects -->
+                <section id="subject-100728" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Soft Skills and Interpersonal Communication [100728]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (7 hrs): Self-Discovery and Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Self-Analysis: SWOT Analysis, Who am I, Attributes, Importance of Self-Confidence,
+                                    Self-Esteem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (3 hrs): Creative and Innovative Thinking</strong>
+                            <ul class="unit-topics">
+                                <li>Creativity: Out of Box Thinking, Lateral Thinking</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (8 hrs): Attitude and Motivation</strong>
+                            <ul class="unit-topics">
+                                <li>Attitude: Factors Influencing Attitude, Challenges and Lessons from Attitude,
+                                    Etiquette</li>
+                                <li>Motivation: Factors of Motivation, Self-Talk, Intrinsic & Extrinsic Motivators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (7 hrs): Strategic Goal Setting</strong>
+                            <ul class="unit-topics">
+                                <li>Goal Setting: Wish List, SMART Goals, Blue Print for Success, Short Term, Long Term,
+                                    Life Time Goals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (8 hrs): Effective Time Management</strong>
+                            <ul class="unit-topics">
+                                <li>Time Management: Value of Time, Diagnosing Time Management, Weekly Planner, To Do
+                                    List, Prioritizing Work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (9 hrs): Interpersonal Skills and Teamwork</strong>
+                            <ul class="unit-topics">
+                                <li>Interpersonal Skills: Gratitude - Understanding the relationship between Leadership
+                                    Networking & Team work. Assessing Interpersonal Skills Situation description of
+                                    Interpersonal Skill</li>
+                                <li>Team Work - Necessity of Team Work Personally, Socially and Educationally</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Soft Skills, 2015, Career Development Centre, Green Pearl Publications</li>
+                        <li>Covey Sean, Seven Habits of Highly Effective Teens, New York, Fireside Publishers, 1998</li>
+                        <li>Carnegie Dale, How to win Friends and Influence People, New York: Simon & Schuster, 1998
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-100734" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Sales and Marketing [100734]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Sales and Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Marketing: Definition, importance, and evolution of marketing concepts</li>
+                                <li>Sales: Definition, role of sales in a business, and the relationship between sales
+                                    and marketing</li>
+                                <li>Marketing Mix (4Ps): Product, Price, Place (Distribution), and Promotion</li>
+                                <li>Consumer Behavior: Understanding consumer motivations, buying decisions, and factors
+                                    influencing purchasing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Market Analysis and Strategy</strong>
+                            <ul class="unit-topics">
+                                <li>Market Segmentation, Targeting, and Positioning (STP): Identifying target markets,
+                                    developing positioning strategies</li>
+                                <li>Market Research: Understanding the purpose of market research, types of research
+                                    methods, and data analysis</li>
+                                <li>Competitive Analysis: Identifying competitors, analyzing their strengths and
+                                    weaknesses, and developing competitive strategies</li>
+                                <li>Strategic Marketing Planning: Developing marketing plans, setting objectives, and
+                                    measuring performance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sales Management and Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Sales Processes and Strategies: Understanding different sales strategies, lead
+                                    generation, and sales techniques</li>
+                                <li>Sales Force Management: Recruiting, training, motivating, and managing sales
+                                    personnel</li>
+                                <li>Customer Relationship Management (CRM): Understanding the importance of CRM,
+                                    managing customer interactions, and building strong relationships</li>
+                                <li>Sales Communication and Negotiation: Developing effective communication skills,
+                                    negotiation techniques, and closing sales</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Marketing Communication and Promotion</strong>
+                            <ul class="unit-topics">
+                                <li>Advertising: Understanding different advertising media, campaign planning, and media
+                                    buying</li>
+                                <li>Sales Promotion: Understanding different types of sales promotions, couponing, and
+                                    loyalty programs</li>
+                                <li>Public Relations (PR): Building positive relationships with the public, media
+                                    relations, and crisis communication</li>
+                                <li>Digital Marketing: Understanding online marketing channels, social media marketing,
+                                    SEO, and email marketing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Product, Branding, and Pricing Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Product and Brand Management: Developing and managing product lines, branding
+                                    strategies, and brand equity</li>
+                                <li>Pricing Strategies: Understanding different pricing methods, pricing objectives, and
+                                    pricing policies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Distribution Channels and Ethics in Sales &
+                                Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Distribution Channels: Understanding different distribution channels, logistics, and
+                                    supply chain management</li>
+                                <li>Ethics in Sales and Marketing: Understanding ethical issues in sales and marketing,
+                                    and responsible marketing practices</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>K.S. Chandrasekar, Marketing Management Text And Cases, Tata Mcgraw-Hill Publication, New
+                            Delhi.2010</li>
+                        <li>Govindarajan, Marketing Management Concepts, Cases, Chhallenges And Trends, Prentice Hall Of
+                            India, New Delhi. 2009</li>
+                        <li>Philip Kotler, Marketing Management- Analysis Planning And Control, Prentice Hall Of India,
+                            New Delhi</li>
+                        <li>Ramaswamy. V S & Namakumari. S, Marketing Management-Planning Implementation And Control,
+                            Macmillan Business Books, New Delhi, 2002</li>
+                        <li>Balaram Dogra & Karminder Ghuman, Rural Marketing: Concept & Cases, Tata Mcgraw-Hill
+                            Publishing Company, New Delhi, 2008</li>
+                        <li>Ravi Shanker, Services Marketing: The Indian Perspective, Excel Books, New Delhi, 2008</li>
+                    </ol>
+                </section>
+                <section id="subject-100746" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Financial Literacy [100746]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0 (8 hrs): Basic Financial Concepts- I</strong>
+                            <ul class="unit-topics">
+                                <li>Personal Financial Goals, Income, Expenses, and Net Worth</li>
+                                <li>Budgeting & Cash Flow Management, Saving, Investing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0 (5 hrs): Basic Financial Concepts- II</strong>
+                            <ul class="unit-topics">
+                                <li>Inflation & Interest Rates, Bank Accounts and Payment Methods</li>
+                                <li>Credit Management, Debt Management, Insurance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0 (9 hrs): Investing</strong>
+                            <ul class="unit-topics">
+                                <li>Investment option and types, Building a Diversified Portfolio, Risk-Return
+                                    Trade-off, Informed Investment Decisions</li>
+                                <li>Retirement Planning, Social Security and Pensions, Estimating Future Retirement
+                                    Expenses, Planning for a Comfortable Retirement, Investment Options for Retirement
+                                    Savings, Planning for Unexpected Events</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0 (8 hrs): Taxation</strong>
+                            <ul class="unit-topics">
+                                <li>Filing Taxes and Forms, Tax Laws and Regulations, Minimizing Tax Liability, Making
+                                    Tax-Effective Investment Decisions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0 (5 hrs): Entrepreneurship Support System- I</strong>
+                            <ul class="unit-topics">
+                                <li>Entrepreneurship education, Achievement Motivation, Entrepreneurial Opportunities
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0 (7 hrs): Entrepreneurship Support System- II</strong>
+                            <ul class="unit-topics">
+                                <li>Entrepreneurship Support Eco-System, Business opportunities Identification, Market
+                                    Survey, Procedure and formalities for Bank Finance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Exploring Financial Literacy, Judi Deatherage, M. D. Goodheart-Willcox,
+                            ISBN-13:9781635637069</li>
+                        <li>The Money Guide by Anushka Rathod, Zebralearn Pvt Ltd, ISBN-13: 978-8196373566</li>
+                        <li>Money Works: The Guide to Financial Literacy, Abhijeet Kolapkar Publisher Penguin Business,
+                            ISBN-13: 978-0143461647</li>
+                        <li>Financial Literacy, Prof. Rajni and Dr. Abhishek Kumar Singh, JSR Publishing House LLP</li>
+                        <li>Taxmann's Financial Literacy - Equip Yourself with The Knowledge and Skills to Achieve
+                            Financial Independence and Make Informed Financial Decisions Confidently, Prof. (Dr.) Amit
+                            Kumar Singh. Taxmann Publications Private Limited; ISBN-13: 978-9357785464</li>
+                        <li>Personal Finance: A Treatise on Financial Literacy Prof (Dr.) Kana Sukumaran, Notion Press,
+                            ISBN-13: 979-8894463421</li>
+                        <li>The Legacy Of Financial Literacy: Guiding My Child To Financial Success, Jyotinath Ganguly
+                            Notion Press, ISBN-13: 978-1637453223</li>
+                    </ol>
+                </section><!-- Practical / Project subjects -->
+                <section id="subject-100707P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-III [100707P]</h2>
+                    <p>Practical work / entrepreneurship project as per institute guidelines. The student is expected to
+                        engage in entrepreneurial activities or summer internship related to civil engineering and
+                        computer applications. Detailed evaluation criteria will be provided by the department.</p>
+                </section>
+                <section id="subject-100709P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-I [100709P]</h2>
+                    <p>Major project / dissertation – part 1. Students are required to carry out a comprehensive project
+                        under faculty guidance, demonstrating application of civil engineering with computer application
+                        concepts. The project may involve design, analysis, software development, or experimental work.
+                        Detailed project guidelines and evaluation scheme will be provided by the department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

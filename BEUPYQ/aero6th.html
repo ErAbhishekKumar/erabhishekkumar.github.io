@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Aeronautical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Aerodynamics - I [116601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Heat Transfer: Aerospace Application [116602]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Aircraft Systems and Instruments [116603]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Finite Element Method [116604]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Employability Skills (Non-Credit) [116605]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1166XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-II [1006XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Aircraft Systems and Instruments Lab [116603P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>3</td>
+                                <td><strong>1.5</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Finite Element Method Lab [116604P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Courses-I Lab [116606P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>20.5</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-116601" data-type="theory">Aerodynamics - I</button>
+                    <button class="tab-btn" data-target="subject-116602" data-type="theory">Heat Transfer: Aerospace
+                        Application</button>
+                    <button class="tab-btn" data-target="subject-116603" data-type="theory">Aircraft Systems and
+                        Instruments</button>
+                    <button class="tab-btn" data-target="subject-116604" data-type="theory">Finite Element
+                        Method</button>
+                    <button class="tab-btn" data-target="subject-116605" data-type="theory">Employability
+                        Skills</button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Elective-I" data-modal-options='[
+                    {"label": "Gas Turbine Technology", "target": "subject-116607", "btn-id": "btn-116607"},
+                    {"label": "Helicopter Engineering", "target": "subject-116608", "btn-id": "btn-116608"},
+                    {"label": "Hypersonic Aerodynamics", "target": "subject-116609", "btn-id": "btn-116609"},
+                    {"label": "Wind Tunnel Techniques", "target": "subject-116610", "btn-id": "btn-116610"}
+                ]'> Program Elective-I </button>
+                    <button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Open Elective-II" data-modal-options='[
+                    {"label": "Basic of AΙ", "target": "subject-100615", "btn-id": "btn-100615"},
+                    {"label": "Electrical and Hybrid Vehicles", "target": "subject-100616", "btn-id": "btn-100616"},
+                    {"label": "Industrial Automation", "target": "subject-100617", "btn-id": "btn-100617"},
+                    {"label": "Basic of ML", "target": "subject-100618", "btn-id": "btn-100618"},
+                    {"label": "AR VR Technology", "target": "subject-100619", "btn-id": "btn-100619"},
+                    {"label": "Micro Electro Mechanical System (MEMS) Technology", "target": "subject-100620", "btn-id": "btn-100620"},
+                    {"label": "Electronic Product Design & Packaging", "target": "subject-100621", "btn-id": "btn-100621"},
+                    {"label": "3D Printing and Design", "target": "subject-100622", "btn-id": "btn-100622"}
+                ]'> Open Elective-II </button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-116603P" data-type="lab">Aircraft Systems and
+                        Instruments Lab</button>
+                    <button class="tab-btn" data-target="subject-116604P" data-type="lab">Finite Element Method
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-116606P" data-type="lab">NPTEL Courses-I Lab</button>
+                </div>
+            </section>
+
+            <div id="syllabus-content">
+                <section id="subject-116601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Aerodynamics - I [116601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basics of Aerodynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Review of Fluid Mechanics</li>
+                                <li>Developments in aerodynamics</li>
+                                <li>Fundamental aerodynamics variables</li>
+                                <li>Aerofoil Geometry and nomenclature</li>
+                                <li>Aerodynamic forces and moments and coefficients</li>
+                                <li>Pressure distribution on an airfoil</li>
+                                <li>Variation of pressure distribution with respect to angle of attack</li>
+                                <li>Types of drag</li>
+                                <li>Estimation of lift</li>
+                                <li>Drag and pitching moment coefficient from the pressure distribution</li>
+                                <li>Governing equations Continuity</li>
+                                <li>Momentum and Energy equations in differential form</li>
+                                <li>Flow regimes based on Mach number</li>
+                                <li>Pitot tube: Measurement of airspeed</li>
+                                <li>Pressure Coefficient</li>
+                                <li>Aerofoil characteristics</li>
+                                <li>Cl vs Angle of attack</li>
+                                <li>Aspect ratio effect on Cl curve</li>
+                                <li>Cl vs Cd</li>
+                                <li>Pitching moment coefficient</li>
+                                <li>NACA Airfoil</li>
+                                <li>Wing Geometrical Parameters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Inviscid Incompressible Flow Over Airfoil</strong>
+                            <ul class="unit-topics">
+                                <li>Inviscid Incompressible Flows: Angular Velocity</li>
+                                <li>Vorticity and circulation</li>
+                                <li>Potential flow</li>
+                                <li>Velocity potential</li>
+                                <li>Stream function</li>
+                                <li>Laplace equation</li>
+                                <li>Flow singularities</li>
+                                <li>Governing Equation for incompressible and irrotational flow</li>
+                                <li>Elementary flows and their combinations Uniform</li>
+                                <li>Source</li>
+                                <li>Sink</li>
+                                <li>Doublet and Vortex flow</li>
+                                <li>Combination of a uniform flow with a source and sink</li>
+                                <li>Boundary condition at infinity and wall</li>
+                                <li>Magnus effect</li>
+                                <li>D'Alembert's Paradox</li>
+                                <li>Kutta-Joukowski theorem</li>
+                                <li>Kutta condition</li>
+                                <li>Kelvin's circulation theorem & starting vortex</li>
+                                <li>Concept of small perturbation & thin airfoil theory</li>
+                                <li>Expressions for calculating the aerodynamic center and Center of pressure</li>
+                                <li>Non lifting flow over a circular cylinder</li>
+                                <li>Lifting flow over a cylinder</li>
+                                <li>Wing-body interference</li>
+                                <li>Effect of propeller on wings and bodies and tail unit</li>
+                                <li>Flow over a flat plate</li>
+                                <li>Flow over airplane as a whole</li>
+                                <li>Wind tunnel and its Components</li>
+                                <li>Types of wind tunnels and Model testing in wind tunnels</li>
+                                <li>Pressure</li>
+                                <li>Temperature</li>
+                                <li>Velocity measurements Hotwire and Laser Doppler anemometer</li>
+                                <li>Force measurements- Wind tunnel balances</li>
+                                <li>Flow visualization</li>
+                                <li>Techniques- Schileren and Shadowgraph methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Conformal Transformation</strong>
+                            <ul class="unit-topics">
+                                <li>Conformal transformation</li>
+                                <li>Basic Principles</li>
+                                <li>Complex numbers</li>
+                                <li>Differentiation of a Complex Function</li>
+                                <li>Complex potential</li>
+                                <li>Cauchy-Riemann equation</li>
+                                <li>Examples of Simple Transformation</li>
+                                <li>Kutta-Joukowski Transformation and its application to fluid flow problems:-
+                                    Transformation of Circle to Straight Line</li>
+                                <li>Transformation of Circle to Ellipse</li>
+                                <li>Transformation of Circle to Symmetrical Aerofoil</li>
+                                <li>Transformation of a Circle to a Cambered Aerofoil</li>
+                                <li>Transformation of Circle to Circular Arc</li>
+                                <li>Karman-Trefftz Profiles</li>
+                                <li>The Velocity and Pressure Distributions on the Joukowski Aerofoil</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Inviscid Incompressible Flow over Wings</strong>
+                            <ul class="unit-topics">
+                                <li>Vortex motions</li>
+                                <li>Forced Vortex</li>
+                                <li>Free Vortex</li>
+                                <li>Compound Vortex</li>
+                                <li>Vortex line</li>
+                                <li>Vortex tube</li>
+                                <li>Vortex sheet</li>
+                                <li>Physical meaning of circulation</li>
+                                <li>Kelvin and Helmhotz theorem</li>
+                                <li>Biot-Savart's law</li>
+                                <li>Applications</li>
+                                <li>Rankine's vortex</li>
+                                <li>Flow past finite wings</li>
+                                <li>Vortex model of the wing and bound vortices</li>
+                                <li>Starting</li>
+                                <li>Bound & trailing vortices of wings</li>
+                                <li>Prandtl's Lifting line theorem- downwash and induced drag</li>
+                                <li>Elliptic loading & wings of elliptic platforms</li>
+                                <li>Expression for induced drag</li>
+                                <li>Minimum induced drag for Elliptic platform</li>
+                                <li>Influence of taper and twist applied to wings</li>
+                                <li>Effect of sweep back wings</li>
+                                <li>Delta wings</li>
+                                <li>Primary and secondary vortex</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Propeller Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Froude momentum and Blade element theories</li>
+                                <li>Propeller coefficients</li>
+                                <li>Performance of fixed and variable pitch propeller</li>
+                                <li>Airscrew</li>
+                                <li>Airscrew pitch</li>
+                                <li>Geometric Pitch</li>
+                                <li>Mean pitch</li>
+                                <li>Vortex system of an airscrew</li>
+                                <li>Performance of blade</li>
+                                <li>Actuator disc in hovering flight</li>
+                                <li>Ideal momentum theory</li>
+                                <li>Blade element theory</li>
+                                <li>Activity factor</li>
+                                <li>Airscrew coefficients</li>
+                                <li>Selection of propellers</li>
+                                <li>Fixed</li>
+                                <li>Variable and constant speed propellers</li>
+                                <li>Material for propellers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Boundary Layer Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Role of viscosity in fluid flow</li>
+                                <li>Boundary layer growth along a flat plate and nearly flat surface</li>
+                                <li>Displacement thickness and patching of inviscid external flow to viscous boundary
+                                    layer flow</li>
+                                <li>Laminar boundary layer</li>
+                                <li>Transition and turbulent boundary layer</li>
+                                <li>Factors influencing boundary layer separation adverse pressure gradient and sharp
+                                    bending / turning of surface</li>
+                                <li>Real (viscous) flow and importance of skin friction drag airfoils</li>
+                                <li>Blasius solution for the flat plate problem</li>
+                                <li>Definition of momentum thickness & Von Karman's momentum equation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Fundamentals of Aerodynamics, Anderson, J. D., McGraw-Hill Education, Sixth Edition, 2016,
+                            ISBN: 1259129918, 978-1259129919.</li>
+                        <li>Aerodynamics Clancy, L.J. Shroff, 2006, ISBN: 8175980575, 978-8175980570.</li>
+                        <li>Theoretical Aerodynamics, Ethirajan Rathakrishnan, John Wiley & Sons Inc, First Edition,
+                            2013. ISBN: 1118479343, 978-1118479346.</li>
+                        <li>Aerodynamics for Engineering Students, E. L. Houghton, P. W. Carpenter, Steven H. Collicott,
+                            and Daniel T. Valentine, Butterworth-Heinemann Ltd, Seventh edition, 2016, ISBN: 0081001940,
+                            978-0081001943.</li>
+                        <li>Foundations of Aerodynamics: Bases of Aerodynamic Design, A.M. Kuethe and C-Y Chow, Wiley
+                            India Pvt Ltd, Fifth edition, 2009, ISBN:8126523980, 978-8126523986</li>
+                        <li>Aerodynamics for Engineering Students, John J. Bertin and Russell M. Cummings, Pearson, 5th
+                            Edition, 2009.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Heat Transfer: Aerospace Application [116602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Heat Transfer in Aerospace
+                                Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Concepts: Modes of Heat Transfer: Conduction</li>
+                                <li>Convection</li>
+                                <li>Radiation</li>
+                                <li>Aerospace-specific thermal challenges in subsonic</li>
+                                <li>Supersonic</li>
+                                <li>And hypersonic regimes</li>
+                                <li>Reduced gravity</li>
+                                <li>Aerodynamic heating</li>
+                                <li>High heat flux</li>
+                                <li>Thermal loads</li>
+                                <li>Shock loading</li>
+                                <li>And structural integrity</li>
+                                <li>Thermal Management Strategies: Film cooling</li>
+                                <li>Ablative cooling</li>
+                                <li>Transpiration cooling</li>
+                                <li>Cryogenics and heat pipes</li>
+                                <li>Microchannels and phase change systems</li>
+                                <li>Relevance to Applications: Thermal loading in launch and reentry vehicles</li>
+                                <li>Role of compactness and weight constraints in aerospace systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Conduction Heat Transfer in Aerospace
+                                Structures</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals: Fourier's law</li>
+                                <li>Thermal conductivity</li>
+                                <li>Electrical analogy</li>
+                                <li>Heat diffusion equation in Cartesian coordinates with boundary conditions</li>
+                                <li>Analytical Solutions: Steady-state conduction in plane slabs</li>
+                                <li>Cylindrical shells</li>
+                                <li>And spherical coordinates</li>
+                                <li>Critical insulation thickness and thermal resistance concept</li>
+                                <li>Extended Surfaces (Fins): Fin efficiency and effectiveness for cooling engine
+                                    components and avionics</li>
+                                <li>Transient Conduction: Lumped system analysis</li>
+                                <li>Biot number</li>
+                                <li>Heisler charts for transient conduction problems</li>
+                                <li>Thermal penetration in ablative materials during atmospheric reentry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Convection Heat Transfer in Aerospace Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals: Free and forced convection</li>
+                                <li>Newton's law of cooling</li>
+                                <li>Nusselt</li>
+                                <li>Reynolds</li>
+                                <li>Prandtl</li>
+                                <li>Grashof</li>
+                                <li>And Rayleigh numbers</li>
+                                <li>Boundary Layers: Hydrodynamic and thermal boundary layers</li>
+                                <li>Similarity solutions</li>
+                                <li>Reynolds Analogy and turbulent convection concepts</li>
+                                <li>High-Speed Effects: Aerodynamic heating on spacecraft and missile surfaces</li>
+                                <li>Thermal protection mechanisms at hypersonic speeds</li>
+                                <li>Special Topics: Low-density heat transfer in high-altitude flights (Knudsen number
+                                    effects)</li>
+                                <li>Microgravity convection and boiling/condensation in spacecraft</li>
+                                <li>Cryogenic convection and Kapitza resistance in fuel systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Radiation Heat Transfer and Space Applications</strong>
+                            <ul class="unit-topics">
+                                <li>Radiative Transfer Fundamentals: Blackbody radiation</li>
+                                <li>Emissivity</li>
+                                <li>Absorptivity</li>
+                                <li>Planck's law</li>
+                                <li>Stefan-Boltzmann law</li>
+                                <li>Wien's law</li>
+                                <li>Kirchoff's law</li>
+                                <li>Lambert's cosine law</li>
+                                <li>Engineering Applications: View factor and enclosure analysis for spacecraft
+                                    interiors</li>
+                                <li>Radiative cooling systems for satellites</li>
+                                <li>Surface coatings and materials for emissivity control</li>
+                                <li>Analysis of radiative heat loads in vacuum conditions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Heat Exchangers</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Heat Exchangers: Applications: Intercoolers</li>
+                                <li>Recuperators</li>
+                                <li>Precoolers in propulsion</li>
+                                <li>Aircraft environmental control systems: air cycle and vapor cycle refrigeration</li>
+                                <li>Design & Performance Analysis: Plate-fin</li>
+                                <li>Printed circuit</li>
+                                <li>And micro heat exchangers</li>
+                                <li>Tube-in-tube configurations: counter flow and parallel flow</li>
+                                <li>Effectiveness-NTU method and LMTD method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Aerospace Thermal Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Emerging Topics: Additive manufactured heat exchangers</li>
+                                <li>High-performance thermal management using nanofluids and PCMs</li>
+                                <li>Aerospace thermal systems design for reliability and compactness</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Fundamentals of Heat and Mass Transfer, Frank P. Incropera, David P. DeWitt, Theodore L.
+                            Bergman, Adrienne S. Lavine Wiley, ISBN-13: 978-0-471-45728-2 (cloth) ISBN-10: 0-471-45728-0
+                            (cloth)</li>
+                        <li>Heat Transfer, J.P. Holman, McGraw-Hill Education, ISBN 978-0-07-352936-3.</li>
+                        <li>Convective Heat and Mass Transfer, William M. Kays, Michael E. Crawford, Bernhard Weigand,
+                            McGraw-Hill Education, ISBN: 0072468769 (book: acid-free paper), ISBN: 0072990732.</li>
+                        <li>Thermal Control of Spacecraft and Instruments, Eric Silk, American Institute of Aeronautics
+                            and Astronautics (AIAA).</li>
+                        <li>Thermal Design and Thermal Behaviour of Instruments for Space Applications, R. S.
+                            Ghaffarian, Springer.</li>
+                        <li>Heat Transfer in Aerospace Applications, Bengt Sunden and Juan Fu, Academic Press
+                            (Elsevier), ISBN-10: 0128097604, ISBN-13: 978-0128097601.</li>
+                        <li>Thermal Management of Electronics in Aerospace Systems, Allan D. Kraus, CRC Press.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Aircraft Systems and Instruments [116603]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Aircraft Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Hydraulic systems</li>
+                                <li>Study of typical systems</li>
+                                <li>Components</li>
+                                <li>Hydraulic systems controllers</li>
+                                <li>Modes of operation</li>
+                                <li>Pneumatic systems</li>
+                                <li>Working principles</li>
+                                <li>Typical Pneumatic Power system</li>
+                                <li>Brake system</li>
+                                <li>Components</li>
+                                <li>Landing Gear Systems</li>
+                                <li>Classification</li>
+                                <li>Shock absorbers and Retractive mechanism</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Airplane Control Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Conventional Systems</li>
+                                <li>Power assisted and fully powered flight controls</li>
+                                <li>Power actuated systems</li>
+                                <li>Engine control systems</li>
+                                <li>Push pull rod system</li>
+                                <li>Operating principles</li>
+                                <li>Modern control systems</li>
+                                <li>Digital fly by wire systems</li>
+                                <li>Auto pilot system</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Engine Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Piston and Jet Engines- Fuel systems</li>
+                                <li>Components</li>
+                                <li>Multi-engine fuel systems</li>
+                                <li>Lubricating systems</li>
+                                <li>Starting and Ignition systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Air-conditioning and Pressurizing System</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Air Cycle systems</li>
+                                <li>Vapour Cycle Systems</li>
+                                <li>Boot-strap air cycle system</li>
+                                <li>Evaporative vapour cycle systems & Evaporation air cycle systems</li>
+                                <li>Oxygen systems</li>
+                                <li>Fire extinguishing system and smoke detection system</li>
+                                <li>De-icing and anti-icing system</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Aircraft Instruments I</strong>
+                            <ul class="unit-topics">
+                                <li>Flight Instruments and Navigation Instruments</li>
+                                <li>Accelerometers</li>
+                                <li>Air speed Indicators</li>
+                                <li>Mach Meters</li>
+                                <li>Altimeters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Aircraft Instruments II</strong>
+                            <ul class="unit-topics">
+                                <li>Gyroscopic Instruments- Principles and operation</li>
+                                <li>Study of various types of engine instruments</li>
+                                <li>Tachometers</li>
+                                <li>Temperature and Pressure gauges</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Aircraft Instruments, E.H.J. Pallett, Pearson Education, Second Edition, 2009, ISBN:
+                            8131728137, 978-8131728130.</li>
+                        <li>Aircraft Gas Turbine Engine Technology, Irwin E. Treager McGraw Hill Education, Third
+                            Edition, 2017. ISBN: 9781259064876.</li>
+                        <li>Airframe and Powerplant Mechanics: General Handbook, Administration Aviation Federal,
+                            Transportation Department of U.S. Aviation Supplies & Academics Inc, 1988, ISBN: 1560270640,
+                            978-1560270645.</li>
+                        <li>Aircraft Systems: Mechanical, Electrical and Avionics Subsystems Integration, Ian Moir,
+                            Allan Seabridge, Wiley India Pvt Ltd, Third Edition, 2012, ISBN: 8126535210, 978-8126535217.
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="subject-116604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Finite Element Method [116604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Finite Element Method</strong>
+                            <ul class="unit-topics">
+                                <li>General description of the finite element method</li>
+                                <li>Applications in engineering</li>
+                                <li>Advantages and limitations of FEM</li>
+                                <li>General steps of FEM (discretization, element stiffness, assembly, boundary
+                                    conditions, solution)</li>
+                                <li>Mathematical preliminaries (differential equations, variational methods, weighted
+                                    residual methods)</li>
+                                <li>Convergence criteria and error analysis</li>
+                                <li>Initial value problems</li>
+                                <li>Boundary value problems and Eigen value problems</li>
+                                <li>Boundary conditions: homogeneous and non-homogeneous for structural</li>
+                                <li>Heat transfer and fluid flow problems</li>
+                                <li>Discretisation process</li>
+                                <li>Mesh generation and Convergence criteria</li>
+                                <li>Types of elements (1D, 2D, 3D, curved, isoparametric)</li>
+                                <li>Node numbering</li>
+                                <li>Location of nodes</li>
+                                <li>Shape functions and their properties (linear, quadratic, etc.)</li>
+                                <li>Interpolation models: Simplex</li>
+                                <li>Complex and multiplex elements</li>
+                                <li>Linear interpolation polynomials in terms of global coordinates 1D</li>
+                                <li>2D</li>
+                                <li>3D Simplex Elements</li>
+                                <li>Higher order interpolation functions for ID quadratic and cubic elements in natural
+                                    coordinates</li>
+                                <li>Constant strain triangle</li>
+                                <li>Four-Nodded Tetrahedral Element (TET 4)</li>
+                                <li>Eight-Nodded Hexahedral Element (HEXA8)</li>
+                                <li>2D isoparametric element</li>
+                                <li>Lagrange interpolation functions</li>
+                                <li>Numerical integration: Gaussian quadrature one point</li>
+                                <li>Two point formulae</li>
+                                <li>2D integrals</li>
+                                <li>Introduction to Numerical Methods: Variational methods (principle of minimum
+                                    potential energy, principle of virtual work)</li>
+                                <li>Weighted residual methods (Galerkin, collocation, least squares)</li>
+                                <li>Formulation of element equations using these methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: One-Dimensional FE Analysis in Structural
+                                Mechanics</strong>
+                            <ul class="unit-topics">
+                                <li>One-Dimensional Elements-Analysis of Bars and Trusses</li>
+                                <li>Force terms: Body force</li>
+                                <li>Traction force and point loads</li>
+                                <li>Strain displacement relations</li>
+                                <li>Stress strain relations</li>
+                                <li>Plain stress and Plain strain conditions</li>
+                                <li>Temperature effects</li>
+                                <li>Bar Element: Formulation of a linear bar element</li>
+                                <li>Shape Functions Polynomial</li>
+                                <li>The Potential Energy Approach</li>
+                                <li>Derivation of stiffness matrix</li>
+                                <li>Properties of stiffness matrix</li>
+                                <li>Assembly of Global Stiffness Matrix and Load Vector</li>
+                                <li>Boundary conditions</li>
+                                <li>Elimination method and penalty method</li>
+                                <li>Solution for displacement</li>
+                                <li>Stress and strain in ID straight bars</li>
+                                <li>Stepped bars and tapered bars using elimination approach and penalty approach</li>
+                                <li>Truss Element: Formulation plane trusses element</li>
+                                <li>Stiffness matrix (No derivation)</li>
+                                <li>Solution for displacement</li>
+                                <li>Stress and strain in trusses with point load</li>
+                                <li>Beam Element: Beams: Types</li>
+                                <li>Formulation beam element</li>
+                                <li>Boundary conditions</li>
+                                <li>Load vector</li>
+                                <li>Hermite shape functions</li>
+                                <li>Beam stiffness matrix based on Euler-Bernoulli beam theory</li>
+                                <li>Examples on cantilever beams</li>
+                                <li>Propped cantilever beams</li>
+                                <li>Solution for displacement</li>
+                                <li>Slope</li>
+                                <li>Stress and strain in beams -simply supported</li>
+                                <li>Fixed straight and stepped beams using direct stiffness method with concentrated and
+                                    uniformly distributed load</li>
+                                <li>Torsion of Shafts: Finite element formulation of shafts</li>
+                                <li>Determination of stress and twists in circular shafts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Two-Dimensional FE Analysis in Structural
+                                Mechanics</strong>
+                            <ul class="unit-topics">
+                                <li>Formulation of triangular and quadrilateral elements</li>
+                                <li>Displacement models and shape functions for linear and higher order elements</li>
+                                <li>Lagrangian and serendipity elements</li>
+                                <li>Iso parametric sub parametric super parametric elements</li>
+                                <li>Introduction to axisymmetric-triangular elements</li>
+                                <li>Convergence criteria</li>
+                                <li>Pascal triangle</li>
+                                <li>Analysis of plates and shells: Introduction to Plate Bending problems</li>
+                                <li>Finite Element Analysis of Thin Plate</li>
+                                <li>Finite Element Analysis of Thick Plate</li>
+                                <li>Finite Element Analysis of Skew Plate</li>
+                                <li>Introduction to Finite Strip Method Finite Element Analysis of Shell</li>
+                                <li>Analyzing the behavior of aircraft wings and fuselages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: FE Analysis of 1D Heat Transfer and Fluid Flow
+                                Situations</strong>
+                            <ul class="unit-topics">
+                                <li>Heat Transfer: Fundamental concepts of heat transfer</li>
+                                <li>Basic equations of heat transfer: Energy balance equation</li>
+                                <li>Rate equations for conduction</li>
+                                <li>Convection</li>
+                                <li>Radiation</li>
+                                <li>Energy generated in solid</li>
+                                <li>Energy stored in solid</li>
+                                <li>Formulation of finite element equations for steady-state and transient heat transfer
+                                    in ID problems</li>
+                                <li>Such as composite walls and fins using variational method</li>
+                                <li>Problems with temperature gradient and heat fluxes</li>
+                                <li>Heat transfer in composite sections</li>
+                                <li>Straight fins</li>
+                                <li>Fluid Flow: Fundamental concepts of fluid flow</li>
+                                <li>Governing Equations of Fluid Flow: Continuity</li>
+                                <li>Momentum (Navier-Stokes)</li>
+                                <li>And energy equations</li>
+                                <li>FEA Formulation for Fluid Flow: Discretization</li>
+                                <li>Element types</li>
+                                <li>And solution techniques for fluid flow problems</li>
+                                <li>Laminar and Turbulent Flows: Modeling different flow regimes using FEA</li>
+                                <li>1-D Fluid flow analysis</li>
+                                <li>Analysis of flow in pipes of uniform and stepped sections</li>
+                                <li>Including friction and heat transfer</li>
+                                <li>Modeling fluid flow through porous materials</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Axi-symmetric Solid Elements and Dynamic
+                                Considerations</strong>
+                            <ul class="unit-topics">
+                                <li>Axi-symmetric Solid Elements: Derivation of stiffness matrix of axisymmetric bodies
+                                    with triangular elements</li>
+                                <li>Numerical solution of axisymmetric triangular element(s) subjected to surface forces
+                                </li>
+                                <li>Point loads</li>
+                                <li>Angular velocity</li>
+                                <li>Pressure vessels</li>
+                                <li>Dynamic Considerations: Formulation for point mass and distributed masses</li>
+                                <li>Consistent element mass matrix of one dimensional bar element</li>
+                                <li>Truss element</li>
+                                <li>Axisymmetric triangular element</li>
+                                <li>Quadrilateral element</li>
+                                <li>Beam element</li>
+                                <li>Lumped mass matrix of bar element</li>
+                                <li>Truss element</li>
+                                <li>Evaluation of eigen values and eigen vectors</li>
+                                <li>Applications to bars</li>
+                                <li>Stepped bars</li>
+                                <li>And beams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Finite Element Analysis Software</strong>
+                            <ul class="unit-topics">
+                                <li>FEA software and its Interfaces</li>
+                                <li>Familiarizing with the main window interface and its various components</li>
+                                <li>Understanding the Commands</li>
+                                <li>GUI and its role in FEA software</li>
+                                <li>Managing files and data within FEA software</li>
+                                <li>Basic FEA Procedures in FEA software Creating or importing geometry for analysis
+                                </li>
+                                <li>Discretizing the geometry into mesh of elements</li>
+                                <li>Assigning material properties to the model</li>
+                                <li>Applying loads</li>
+                                <li>Constraints</li>
+                                <li>And other boundary conditions</li>
+                                <li>Understanding the solution process and interpreting results</li>
+                                <li>Visualizing and analyzing the results of the simulation</li>
+                                <li>Hands-on- Analyzing the behavior of structures under static loads</li>
+                                <li>Analyzing 1 D heat transfer phenomena (conduction)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>The Finite Element Method in Engineering, S.S. Rao, Butterworth-Heinemann, 6th Edition
+                            (2017), ISBN: 0128143649.</li>
+                        <li>Introduction to Finite Elements in Engineering, Tirupathi R. Chandrupatla, Ashok D.
+                            Belegundu, Pearson Education, 4th Edition (2012), ISBN: 0133840808.</li>
+                        <li>A First Course in the Finite Element Method Daryl L. Logan, Cengage Learning, 6th Edition
+                            (2016), ISBN: 1305635116</li>
+                        <li>Concepts and Applications of Finite Element Analysis, Robert D. Cook, David S. Malkus et al.
+                            Wiley India, 4th Edition (2007), ISBN: 8126512676.</li>
+                        <li>Fundamentals of Finite Element Analysis, David V. Hutton, McGraw-Hill Education, 1st Edition
+                            (2003), ISBN: 0071123811.</li>
+                        <li>The Finite Element Method: Its Basis and Fundamentals, O.C. Zienkiewicz, R.L. Taylor, J.Z.
+                            Zhu, Elsevier, 7th Edition (2013), ISBN: 1856176339.</li>
+                        <li>Finite Element Procedures, Klaus-Jürgen Bathe, Prentice Hall, 1st Edition (1996), ISBN:
+                            0133014584.</li>
+                        <li>Finite Element Method with Applications in Engineering, Y. M. Desai, T.I. Eldho, A.H. Shah,
+                            Pearson Education, 1st Edition (2011), ISBN: 8131734460.</li>
+                        <li>The Finite Element Method for Engineers, Kenneth H. Huebner et al., Wiley, 4th Edition
+                            (2000), ISBN: 0471370789.</li>
+                        <li>Applied Finite Element Analysis, Larry J. Segerlind Wiley, 2nd Edition (1984), ISBN:
+                            0471806629.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116605" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Employability Skills [116605]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Goal Setting</strong>
+                            <ul class="unit-topics">
+                                <li>Career Planning</li>
+                                <li>SWOT</li>
+                                <li>Resume using Internet formats</li>
+                                <li>Showcase portfolios</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Goal Setting-II</strong>
+                            <ul class="unit-topics">
+                                <li>Personal grooming</li>
+                                <li>Self-Introduction</li>
+                                <li>Website Development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Capacity Development I</strong>
+                            <ul class="unit-topics">
+                                <li>Interview Skills</li>
+                                <li>Group Discussion - Do's & don'ts</li>
+                                <li>Leadership</li>
+                                <li>Teamwork</li>
+                                <li>How to interrupt</li>
+                                <li>Synthesis</li>
+                                <li>And analysis of topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Capacity Development II</strong>
+                            <ul class="unit-topics">
+                                <li>Social Media for Personal Enrichment</li>
+                                <li>Body language</li>
+                                <li>Self-Management</li>
+                                <li>Emotional Intelligence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Utilising Potential I</strong>
+                            <ul class="unit-topics">
+                                <li>Social Networking</li>
+                                <li>Social Engagements</li>
+                                <li>Volunteering</li>
+                                <li>Collaboration& Team-work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Utilising Potential II</strong>
+                            <ul class="unit-topics">
+                                <li>QC-Tools Check sheets</li>
+                                <li>Fishbone Diagram</li>
+                                <li>Histogram</li>
+                                <li>Pareto chart</li>
+                                <li>Control-chart</li>
+                                <li>Scatter Diagram</li>
+                                <li>Stratification</li>
+                                <li>Lean Manufacturing</li>
+                                <li>Kanban</li>
+                                <li>Kaizen</li>
+                                <li>Five S</li>
+                                <li>Poka-yoke</li>
+                                <li>Quality Circle</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Employability Skills Skills for Employability, Dr. M. Sen Gupta, Innovation Publication Pvt
+                            Ltd, 2020 ISBN: 978-81-933819-1-5.</li>
+                        <li>Employability Skills, Dr. Nishith Rajaram Dubey, Anupam Singh, Indra Publishing House, 2023
+                            ISBN 978-93-93577-68-9</li>
+                        <li>Organizational Behavior, A. K. Chitale, Rajendra Prasad Mohanty and Dr Nishith Dubey, PHI
+                            Learning Pvt Ltd ISBN 978-81-203-4696-3.</li>
+                        <li>Managerial Skills, Dr Nishith Dubey & Prof Gitanjali Shrivastava, Shiva Prakashan, Indore,
+                            India, 2010, ISBN 81-7677-100-7,.</li>
+                        <li>Body Language, Allan Pease, Pease International PTY. Ltd Australia.</li>
+                        <li>Production and Operations Management Goods & Services approach, Dr S.V Deshmukh, Dr A. K.
+                            Chitale and Dr Nishith Dubey, Archers & Elevators publishing house, Bangalore, ISBN
+                            9789386501197</li>
+                        <li>Emotional Intelligence, Daniel Goleman, Word Press. Com, 9789382563792</li>
+                        <li>How to win friends and influence people, Dale Carnegie, Srishti Publishers & Distributors,
+                            Delhi, India</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116607" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Gas Turbine Technology [116607]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Fundamentals of Gas Turbine Engines and the Brayton
+                                Cycle</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Gas Turbines: Classification: Turbojet</li>
+                                <li>Turbofan</li>
+                                <li>Turboprop</li>
+                                <li>Turboshaft</li>
+                                <li>Comparison of air-breathing and non-air-breathing propulsion systems</li>
+                                <li>Applications of gas turbines in aviation</li>
+                                <li>Power generation</li>
+                                <li>And marine sectors</li>
+                                <li>Historical development and technological evolution of gas turbines</li>
+                                <li>Thermodynamic Cycle for Gas Turbines: Ideal Brayton cycle: Processes and assumptions
+                                </li>
+                                <li>Open vs. closed Brayton cycle</li>
+                                <li>P-v and T-s diagrams</li>
+                                <li>Thermal efficiency and work output</li>
+                                <li>Real cycle deviations: pressure losses</li>
+                                <li>Component inefficiencies</li>
+                                <li>And cooling requirements</li>
+                                <li>Basic Gas Turbine Configuration and Flow Path: Principal components: Inlet</li>
+                                <li>Compressor</li>
+                                <li>Combustor</li>
+                                <li>Turbine</li>
+                                <li>Nozzle</li>
+                                <li>Flow through a gas turbine engine stagnation properties</li>
+                                <li>Overview of single-spool and multi-spool engine architectures</li>
+                                <li>Role of thrust and power in different engine types</li>
+                                <li>Types of Gas Turbine Engines (Aircraft Jet Engines): Turbojet: Construction</li>
+                                <li>Working principle</li>
+                                <li>Performance characteristics</li>
+                                <li>Turbofan: Bypass ratio</li>
+                                <li>Core vs. fan flow</li>
+                                <li>Performance benefits</li>
+                                <li>Turboprop and Turboshaft: Application in low-speed flight and helicopters</li>
+                                <li>Comparative analysis of thrust-specific fuel consumption and efficiencies</li>
+                                <li>Basic Performance Parameters: Thrust</li>
+                                <li>Specific thrust</li>
+                                <li>Thrust specific fuel consumption (TSFC)</li>
+                                <li>Specific impulse</li>
+                                <li>Propulsive efficiency</li>
+                                <li>Thermal efficiency</li>
+                                <li>Impact of ambient conditions and altitude on performance</li>
+                                <li>Power required vs. power available in propulsion</li>
+                                <li>Overview of Air Standard Cycles: Otto</li>
+                                <li>Diesel</li>
+                                <li>And Dual cycles in comparison with Brayton cycle</li>
+                                <li>Relevance of air-standard cycle assumptions in practical analysis</li>
+                                <li>Efficiency trends for different propulsion systems</li>
+                                <li>Enhancements to Brayton Cycle: Intercooling</li>
+                                <li>Reheating</li>
+                                <li>And regeneration: principle and impact on cycle</li>
+                                <li>Practical challenges and trade-offs in real engines</li>
+                                <li>Combined cycle systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Thermodynamics of Gas Turbine Components</strong>
+                            <ul class="unit-topics">
+                                <li>Thermodynamic Principles in Gas Turbines: Application of First and Second Laws of
+                                    Thermodynamics to open systems</li>
+                                <li>Steady flow energy equation for compressors</li>
+                                <li>Turbines</li>
+                                <li>And combustors</li>
+                                <li>Definition and calculation of stagnation (total) and static properties</li>
+                                <li>Concept of entropy and its role in irreversibility and efficiency</li>
+                                <li>Isentropic and polytropic processes for compression and expansion</li>
+                                <li>Thermodynamics of Compressors: Working principles of axial and centrifugal
+                                    compressors</li>
+                                <li>Enthalpy rise and pressure ratio determination</li>
+                                <li>Isentropic and polytropic efficiency of compressors</li>
+                                <li>Multi-stage compression and intercooling concepts</li>
+                                <li>Impact of inlet temperature</li>
+                                <li>Pressure</li>
+                                <li>And rotational speed on compressor performance</li>
+                                <li>Thermodynamics of Turbines: Expansion of hot gases in axial turbines</li>
+                                <li>Work output calculation from turbine stages</li>
+                                <li>Isentropic expansion and polytropic efficiency</li>
+                                <li>Role of turbine in driving the compressor and producing thrust or shaft power</li>
+                                <li>Real-world losses and impact of cooling on turbine work output</li>
+                                <li>Combustion and Heat Addition Process: Heat addition under constant pressure in the
+                                    Brayton cycle</li>
+                                <li>Combustion efficiency and temperature limits</li>
+                                <li>Adiabatic flame temperature and excess air requirement</li>
+                                <li>Combustion chamber pressure loss and its impact on cycle performance</li>
+                                <li>Variation of specific heat at high temperatures</li>
+                                <li>Fundamentals of Heat Transfer in Gas Turbines: Conduction</li>
+                                <li>Convection</li>
+                                <li>And radiation mechanisms in gas turbine components</li>
+                                <li>Convective heat transfer in combustor walls and turbine blades</li>
+                                <li>Film cooling and internal convective cooling design basics</li>
+                                <li>Importance of heat transfer in maintaining material integrity and efficiency</li>
+                                <li>Estimation of thermal loads and temperature distribution in critical components</li>
+                                <li>Cycle Enhancements and Modifications: Thermodynamic benefits of intercooling in
+                                    multistage compressors</li>
+                                <li>Reheating in multi-stage turbines to enhance work output</li>
+                                <li>Regeneration for improving cycle efficiency by utilizing exhaust heat</li>
+                                <li>Combined cycle configurations and integration with steam turbines</li>
+                                <li>Practical constraints in implementing these modifications (size, weight, cost)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Aerodynamics and Performance of Gas Turbine
+                                Components</strong>
+                            <ul class="unit-topics">
+                                <li>Aerodynamics of Axial and Centrifugal Compressors: Flow analysis using velocity
+                                    triangles at rotor and stator</li>
+                                <li>Concepts of axial velocity</li>
+                                <li>Blade speed</li>
+                                <li>Relative velocity</li>
+                                <li>Flow coefficient</li>
+                                <li>Work coefficient</li>
+                                <li>And stage loading</li>
+                                <li>Compressor blade geometry: rotor/stator profiles and blade angles</li>
+                                <li>Loss mechanisms: profile losses</li>
+                                <li>Secondary flow losses</li>
+                                <li>Tip clearance effects</li>
+                                <li>Operating limits: surge</li>
+                                <li>Stall</li>
+                                <li>Choking</li>
+                                <li>Performance maps and surge margin control</li>
+                                <li>Differences in operation and application of axial vs. centrifugal compressors</li>
+                                <li>Aerodynamics of Axial Turbines: Flow analysis through axial turbine stages using
+                                    velocity triangles</li>
+                                <li>Impulse vs. Reaction turbines: degree of reaction</li>
+                                <li>Stage efficiency</li>
+                                <li>Work output and energy transfer in turbine blades</li>
+                                <li>Blade spacing</li>
+                                <li>Aspect ratio</li>
+                                <li>And number of stages</li>
+                                <li>Influence of incidence and deflection angles on flow and efficiency</li>
+                                <li>Loss mechanisms: tip leakage</li>
+                                <li>Secondary flows</li>
+                                <li>Trailing edge losses</li>
+                                <li>Estimation of turbine performance using enthalpy and flow parameters</li>
+                                <li>Combustion Chamber Fundamentals: Types of combustion chambers: can</li>
+                                <li>Annular</li>
+                                <li>Can-annular</li>
+                                <li>Fuel-air mixing and combustion zones: primary</li>
+                                <li>Secondary</li>
+                                <li>Dilution</li>
+                                <li>Parameters affecting combustion: residence time</li>
+                                <li>Turbulence</li>
+                                <li>Atomization</li>
+                                <li>Combustion stability</li>
+                                <li>Blowout limits</li>
+                                <li>And lean blowout</li>
+                                <li>Combustion efficiency</li>
+                                <li>Pressure loss</li>
+                                <li>And temperature rise</li>
+                                <li>Design considerations: uniform temperature profile at turbine inlet (pattern factor)
+                                </li>
+                                <li>Cooling methods for liners and domes</li>
+                                <li>Turbine Blade Cooling Techniques: Necessity for blade cooling due to high turbine
+                                    inlet temperatures</li>
+                                <li>Heat transfer mechanisms on rotating blades</li>
+                                <li>Film cooling: hole pattern</li>
+                                <li>Blowing ratio</li>
+                                <li>Effectiveness</li>
+                                <li>Internal convection cooling: serpentine passages</li>
+                                <li>Impingement cooling</li>
+                                <li>Transpiration cooling: porous blades and coolant flow</li>
+                                <li>Cooling effectiveness and performance trade-offs</li>
+                                <li>Impact of cooling on turbine efficiency and durability</li>
+                                <li>Component Matching and Engine Operating Characteristics: Matching characteristics of
+                                    compressor</li>
+                                <li>Combustor</li>
+                                <li>And turbine</li>
+                                <li>Operating line and surge line in engine maps</li>
+                                <li>Influence of altitude and flight Mach number on engine operation</li>
+                                <li>Variable geometry components: inlet guide vanes</li>
+                                <li>Variable stators</li>
+                                <li>Bleed air systems and their impact on compressor stability</li>
+                                <li>Turbomachine component interaction and balancing at off-design conditions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Materials, Manufacturing, and Emission Control</strong>
+                            <ul class="unit-topics">
+                                <li>Materials for Gas Turbine Components: Material selection criteria:
+                                    strength-to-weight ratio</li>
+                                <li>High-temperature performance</li>
+                                <li>Oxidation and corrosion resistance</li>
+                                <li>High-performance alloys: nickel-based superalloys</li>
+                                <li>Cobalt-based alloys</li>
+                                <li>Titanium alloys</li>
+                                <li>Advanced materials: ceramics</li>
+                                <li>Ceramic matrix composites (CMCs)</li>
+                                <li>Metal matrix composites (MMCs): Mechanical properties: fatigue resistance</li>
+                                <li>Creep strength</li>
+                                <li>Fracture toughness</li>
+                                <li>Role of grain structure and single-crystal/blade casting in turbine blade
+                                    performance</li>
+                                <li>Thermal Barrier Coatings (TBCs) and Blade Lifing: Purpose and function of TBCs in
+                                    hot section components</li>
+                                <li>Structure: bond coat</li>
+                                <li>Ceramic top coat (typically YSZ - Yttria Stabilized Zirconia)</li>
+                                <li>Coating application methods: Air Plasma Spray (APS) and Electron Beam Physical Vapor
+                                    Deposition (EB-PVD): Failure mechanisms: oxidation</li>
+                                <li>Spallation</li>
+                                <li>Sintering</li>
+                                <li>Blade lifing techniques: life prediction models</li>
+                                <li>Inspection methods</li>
+                                <li>Nondestructive evaluation (NDE)</li>
+                                <li>Manufacturing of Gas Turbine Components: Casting techniques: equiaxed</li>
+                                <li>Directional solidification</li>
+                                <li>And single-crystal casting</li>
+                                <li>Forging and machining of rotating components</li>
+                                <li>Introduction to additive manufacturing (3D printing) for turbine blades</li>
+                                <li>Combustor liners</li>
+                                <li>And cooling structures</li>
+                                <li>Repair and refurbishment technologies: welding</li>
+                                <li>Brazing</li>
+                                <li>Recoating</li>
+                                <li>Quality control and testing of turbine parts during production</li>
+                                <li>Pollutant Formation and Emission Control: Formation of NOx</li>
+                                <li>CO</li>
+                                <li>UHC</li>
+                                <li>Soot in gas turbine combustors</li>
+                                <li>Factors influencing emission levels: temperature</li>
+                                <li>Pressure</li>
+                                <li>Residence time</li>
+                                <li>Fuel type: Emission control strategies: Lean Premixed Pre-vaporized (LPP) combustion
+                                </li>
+                                <li>Staged combustion</li>
+                                <li>Rich-quench-lean (RQL) design</li>
+                                <li>Catalytic combustion and post-combustion treatments</li>
+                                <li>Emission regulations: ICAO standards for aircraft engines and environmental norms
+                                    for power generation turbines</li>
+                                <li>Sustainable Gas Turbine Technologies and Future Trends: Integration with renewable
+                                    energy systems (e.g., CSP-GT hybrids, biomass co-firing)</li>
+                                <li>Use of alternative fuels: hydrogen</li>
+                                <li>Synthetic fuels</li>
+                                <li>Biofuels combustion characteristics and material compatibility: Role of
+                                    hybrid-electric propulsion systems in reducing emissions</li>
+                                <li>Advances in cooling technologies</li>
+                                <li>Digital twin models</li>
+                                <li>And predictive maintenance</li>
+                                <li>Path toward net-zero carbon gas turbine systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Gas Turbine Design and Optimisation</strong>
+                            <ul class="unit-topics">
+                                <li>Preliminary Design of Gas Turbine Engines: Identification of design requirements:
+                                    application-specific thrust or power needs</li>
+                                <li>Operating environment</li>
+                                <li>Efficiency goals</li>
+                                <li>Selection of cycle parameters: pressure ratio</li>
+                                <li>Turbine inlet temperature (TIT)</li>
+                                <li>Bypass ratio (for turbofans)</li>
+                                <li>And mass flow rate</li>
+                                <li>Estimation of specific work output and thermal efficiency</li>
+                                <li>Design considerations: size</li>
+                                <li>Weight</li>
+                                <li>Material limitations</li>
+                                <li>Cooling needs</li>
+                                <li>Block diagram of a gas turbine engine layout and design iterations</li>
+                                <li>Engine Performance Analysis and Evaluation: Calculation of key performance
+                                    parameters: Thrust</li>
+                                <li>Specific Thrust</li>
+                                <li>Thrust Specific Fuel Consumption (TSFC)</li>
+                                <li>Propulsive</li>
+                                <li>Thermal</li>
+                                <li>And overall efficiency</li>
+                                <li>Specific fuel consumption for shaft power applications: Effects of ambient
+                                    conditions</li>
+                                <li>Altitude</li>
+                                <li>And flight Mach number on engine performance</li>
+                                <li>Performance envelopes and limitations: surge margin</li>
+                                <li>Blade stress</li>
+                                <li>TIT limits</li>
+                                <li>Component and System Optimization: Matching of engine components: compressor</li>
+                                <li>Combustor</li>
+                                <li>Turbine</li>
+                                <li>Nozzle</li>
+                                <li>Off-design performance analysis and component map interpretation</li>
+                                <li>Optimization strategies for fuel efficiency</li>
+                                <li>Emission reduction</li>
+                                <li>And weight minimization</li>
+                                <li>Use of design tools: mean-line analysis</li>
+                                <li>Cycle simulation software</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Gas Turbine Applications and Case Studies</strong>
+                            <ul class="unit-topics">
+                                <li>Applications and Case Studies: Detailed study of modern jet engines: CFM56</li>
+                                <li>GE90</li>
+                                <li>PW1000G</li>
+                                <li>Trent XWB</li>
+                                <li>Industrial gas turbines for power generation: GE LM2500</li>
+                                <li>Siemens SGT-series: Marine and naval propulsion turbines</li>
+                                <li>Use of micro gas turbines in UAVs and distributed power</li>
+                                <li>Case study: performance and design evolution of a selected engine platform</li>
+                                <li>Role of gas turbines in combined cycle power plants (CCGT)</li>
+                                <li>Capstone Design Problem and Future Scope: Conceptual design of a basic gas turbine
+                                    engine for specific application (aerospace, marine, or power plant): Component
+                                    sizing</li>
+                                <li>Thermal efficiency estimation</li>
+                                <li>And performance prediction</li>
+                                <li>Environmental and economic trade-offs in engine design</li>
+                                <li>Future outlook: Electrification and hybrid propulsion</li>
+                                <li>Smart engines with digital twins</li>
+                                <li>Autonomous monitoring and adaptive engine control</li>
+                                <li>Preparation and presentation of design reports or mini-projects</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Mechanics and Thermodynamics of Propulsion, Hill, P. G., Peterson, C. R, 2nd ed.,
+                            Addison-Wesley Publishing Company, 1992.</li>
+                        <li>Gas Turbines, V. Ganesan, 3rd ed., Tata McGraw-Hill Education, 2010, ISBN-10: 9780070681927,
+                            ISBN-13: 978-0070681927.</li>
+                        <li>Fundamentals of Jet Propulsion with Applications, Flack. R. L, Cambridge University Press,
+                            2005, ISBN-10: 0521819830, ISBN-13: 978-0521819831.</li>
+                        <li>Aircraft Propulsion, Anvekar Mayur R., PHI Learning Pvt. 2016, ISBN-13: 978-8120352643.</li>
+                        <li>Jet Engines: Fundamentals of Theory, Design and Operation, Klaus Hunecke, The Crowood Press
+                            UK, 2010, ISBN-13: 978-1853108341.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116608" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Helicopter Engineering [116608]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basics of Helicopter Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Historical development of helicopter and overview</li>
+                                <li>Basic concepts</li>
+                                <li>Rotor blade motion flapping</li>
+                                <li>Feathering and lagging motion</li>
+                                <li>Rotor control: cyclic control and collective pitch control</li>
+                                <li>Rotor controls various types of rotor</li>
+                                <li>Geometry of the rotor</li>
+                                <li>Blade loading</li>
+                                <li>Effect of solidity</li>
+                                <li>Profile drag</li>
+                                <li>Compressibility etc.</li>
+                                <li>Blade area required</li>
+                                <li>Number of Blades</li>
+                                <li>Blade form</li>
+                                <li>Power losses</li>
+                                <li>Rotor efficiency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Rotary Aerodynamics theory</strong>
+                            <ul class="unit-topics">
+                                <li>Momentum theory for hover</li>
+                                <li>Figure of merit</li>
+                                <li>Momentum theory for vertical climb and Vertical descent</li>
+                                <li>Autorotation</li>
+                                <li>Momentum theory for forward flight</li>
+                                <li>Blade element theory for vertical flight: Thrust approximations</li>
+                                <li>Non-uniform inflow</li>
+                                <li>Ideal twist</li>
+                                <li>Power approximations</li>
+                                <li>Blade element theory for forward flight: Thrust</li>
+                                <li>Torque and power</li>
+                                <li>Flapping coefficients</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Helicopter Engines and Performance I</strong>
+                            <ul class="unit-topics">
+                                <li>Piston engines</li>
+                                <li>Gas turbines</li>
+                                <li>Ramjet principle</li>
+                                <li>Comparative performance</li>
+                                <li>Calculation of Induced Power</li>
+                                <li>High speed limitations</li>
+                                <li>Parasite drag</li>
+                                <li>Power loading</li>
+                                <li>Ground effect</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Helicopter Engines and Performance II</strong>
+                            <ul class="unit-topics">
+                                <li>Horsepower required</li>
+                                <li>Range and Endurance</li>
+                                <li>Rate of Climb</li>
+                                <li>Best Climbing speed</li>
+                                <li>Ceiling in vertical climb</li>
+                                <li>Optimum speeds</li>
+                                <li>Maximum level speed</li>
+                                <li>Rotor limits envelope</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Rotor Vibrations</strong>
+                            <ul class="unit-topics">
+                                <li>Dynamic model of the rotor</li>
+                                <li>Motion of the rigid blades</li>
+                                <li>Flapping motion</li>
+                                <li>Lagging motion</li>
+                                <li>Feathering motion</li>
+                                <li>Properties of vibrating system</li>
+                                <li>Phenomenon of vibration</li>
+                                <li>Fuselage response</li>
+                                <li>Vibration absorbers</li>
+                                <li>Measurement of vibration in flight</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Rotor Blade Design</strong>
+                            <ul class="unit-topics">
+                                <li>General considerations</li>
+                                <li>Airfoil selection</li>
+                                <li>Blade construction</li>
+                                <li>Materials</li>
+                                <li>Factors affecting weight and cost</li>
+                                <li>Design conditions</li>
+                                <li>Stress analysis</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Principles of Helicopter Aerodynamics, J. Gordon Leishman, Cambridge University Press, ISBN
+                            978-0-521-85860-1 Hardback ISBN 978-1-107-01335-3 Paperback.</li>
+                        <li>Helicopter Dynamics Bramwell, A.R. S, Butterworth Heinemann, 1976</li>
+                        <li>Rotorcraft Aeromechanics, Johnson, Wayne Dover Publications, 2013, ISBN 978-1-107-02807-4,
+                            Hardback.</li>
+                        <li>Principles of Helicopter Engineering Jacob Shapiro Temple Press limited, 1955</li>
+                        <li>Aerodynamics of V/STOL Flight, Barnes W. McCormick, Dover Publications, ISBN-10: 0486404609,
+                            ISBN-13: 978-0486404608.</li>
+                        <li>Helicopter Performance, Stability, and Control, Raymond W. Prouty, Krieger Publishing,
+                            ISBN-10: 1575242095, ISBN-13: 978-1575242095.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116609" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Hypersonic Aerodynamics [116609]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Governing Equations and Flow Characteristics of
+                                Hypersonic Aerodynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Comparison of subsonic</li>
+                                <li>Supersonic</li>
+                                <li>And hypersonic regimes</li>
+                                <li>Historical development and significance of hypersonic flight</li>
+                                <li>Applications in aerospace</li>
+                                <li>Defense</li>
+                                <li>And space exploration</li>
+                                <li>Conservation laws (mass, momentum, and energy)</li>
+                                <li>Hypersonic similarity parameters (Mach number, Reynolds number, Knudsen number)</li>
+                                <li>Thin shock-layer approximation</li>
+                                <li>Newtonian and modified Newtonian theory</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Shock Waves and Expansion Waves in Hypersonic
+                                Flow</strong>
+                            <ul class="unit-topics">
+                                <li>Oblique shocks and strong shock interactions</li>
+                                <li>Bow shocks and detached shock formation</li>
+                                <li>Prandtl-Meyer expansion waves</li>
+                                <li>Shock-boundary layer interactions and their effects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Heat transfer and Thermal Protection Systems
+                                (TPS)</strong>
+                            <ul class="unit-topics">
+                                <li>Thermodynamic properties of high-speed flows</li>
+                                <li>Real gas effects: dissociation</li>
+                                <li>Ionization</li>
+                                <li>And vibrational excitation</li>
+                                <li>Equilibrium and non-equilibrium flow models</li>
+                                <li>Chemical kinetics and air dissociation at hypersonic speeds</li>
+                                <li>Mechanisms of aerodynamic heating (conduction, convection, and radiation)</li>
+                                <li>Heat transfer analysis in hypersonic vehicles</li>
+                                <li>Thermal response of materials and ablation physics</li>
+                                <li>TPS design for re-entry vehicles and hypersonic aircraft</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Boundary Layers</strong>
+                            <ul class="unit-topics">
+                                <li>Laminar and turbulent boundary layers in hypersonic flows</li>
+                                <li>Transitional flow and Reynolds analogy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Rarefied Gas Effects</strong>
+                            <ul class="unit-topics">
+                                <li>Rarefied gas dynamics and the role of the Knudsen number</li>
+                                <li>Applications of Direct Simulation Monte Carlo (DSMC) method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Computational and Experimental Methods in
+                                Hypersonics</strong>
+                            <ul class="unit-topics">
+                                <li>Computational Fluid Dynamics (CFD) for hypersonic flow analysis</li>
+                                <li>Wind tunnel testing and ground-based experimental facilities</li>
+                                <li>Shock tunnels</li>
+                                <li>Arc jets</li>
+                                <li>And ballistic ranges</li>
+                                <li>Flight testing and validation of hypersonic vehicles</li>
+                                <li>Hypersonic missiles</li>
+                                <li>Space planes</li>
+                                <li>And re-entry capsules</li>
+                                <li>Space exploration applications (Mars entry, planetary probes)</li>
+                                <li>Challenges and future advancements in hypersonic technology</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Hypersonic and High-Temperature Gas Dynamics, John D. Anderson, AIAA Education Series, Third
+                            Edition, 2019. ISBN: 1624105149, 978-1624105142.</li>
+                        <li>Modern Compressible Flow: With Historical Perspective, John D. Anderson Jr., McGraw Hill,
+                            Fourth Edition, 2020, ISBN: 1260570827, 978-1260570823</li>
+                        <li>Hypersonic Slender Body Aerodynamics, Ethirajan Rathakrishnan, Wiley India Pvt Ltd; First
+                            edition 2025, ISBN: 978-1394285631.</li>
+                        <li>Dynamics and Thermodynamics of Compressible Fluid Flow, Ascher H. Shapiro, Krieger Pub Co,
+                            1983, ISBN: 0898745667, 978-0898745665.</li>
+                        <li>Hypersonic Airbreathing Propulsion, William H. Heiser, David T. Pratt, Daniel H. Daley,
+                            Unmeel B. Mehta, AIAA; Illustrated edition 1994, ISBN: 978-1563470356.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116610" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective-I: Wind Tunnel Techniques [116610]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Wind Tunnels & Aerodynamic
+                                Testing</strong>
+                            <ul class="unit-topics">
+                                <li>Importance of aerodynamic testing</li>
+                                <li>Comparison of Computational Fluid Dynamics (CFD) and wind tunnel testing</li>
+                                <li>Low-speed (subsonic)</li>
+                                <li>Transonic</li>
+                                <li>Supersonic</li>
+                                <li>And hypersonic wind tunnel</li>
+                                <li>Open-circuit vs. closed-circuit wind tunnels</li>
+                                <li>Special-purpose wind tunnels</li>
+                                <li>Dimensional analysis and similarity principles</li>
+                                <li>Reynolds number</li>
+                                <li>Mach number</li>
+                                <li>And Strouhal number</li>
+                                <li>Model scaling techniques and limitations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Wind Tunnel Components & Instrumentation</strong>
+                            <ul class="unit-topics">
+                                <li>Components: Test section</li>
+                                <li>Contraction cone</li>
+                                <li>Diffuser</li>
+                                <li>Drive system</li>
+                                <li>Flow conditioning devices: Honeycomb</li>
+                                <li>Screens</li>
+                                <li>Turbulence reduction techniques</li>
+                                <li>Flow velocity measurement: Pitot-static tubes</li>
+                                <li>Hot-wire anemometry</li>
+                                <li>Laser Doppler Anemometry (LDA)</li>
+                                <li>Particle Image Velocimetry (PIV)</li>
+                                <li>Force and moment measurements: Strain gauge balances</li>
+                                <li>Load cells</li>
+                                <li>Force transducers</li>
+                                <li>Pressure measurement: Pressure taps</li>
+                                <li>Manometers</li>
+                                <li>Electronic pressure sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Experimental Techniques in Wind Tunnels</strong>
+                            <ul class="unit-topics">
+                                <li>Lift</li>
+                                <li>Drag</li>
+                                <li>And pitching moment determination</li>
+                                <li>Calibration of force balance systems</li>
+                                <li>Smoke and dye injection methods</li>
+                                <li>Schlieren and shadowgraph technique</li>
+                                <li>Tuft and oil flow visualization</li>
+                                <li>Boundary layer measurement techniques</li>
+                                <li>Wake survey and drag estimation</li>
+                                <li>Flow separation and vortex shedding analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Applications of Wind Tunnel Testing</strong>
+                            <ul class="unit-topics">
+                                <li>Aircraft and UAV aerodynamic testing</li>
+                                <li>Propulsion system and jet plume studies</li>
+                                <li>High-speed flow testing (supersonic and hypersonic applications)</li>
+                                <li>Vehicle aerodynamics and drag reduction</li>
+                                <li>Wind effects on buildings</li>
+                                <li>Bridges</li>
+                                <li>And wind turbines</li>
+                                <li>Aerodynamic analysis of sports equipment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Data Analysis, Error Estimation & Case Studies
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Signal conditioning and digitization</li>
+                                <li>Data filtering and uncertainty analysis</li>
+                                <li>Experimental accuracy</li>
+                                <li>Repeatability</li>
+                                <li>And corrections</li>
+                                <li>Wind tunnel correction factors and blockage effects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Data Analysis, Error Estimation & Case Studies
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Real-world wind tunnel testing in aerospace industries</li>
+                                <li>Success stories and technological advancements in wind tunnel techniques</li>
+                                <li>Future trends in experimental aerodynamics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Instrumentation, Measurements, and Experiments in Fluids, Ethirajan Rathakrishnan, CRC Press
+                            Taylor & Francis, Second Edition, 2018. ISBN: 1138385875, 978-1138385870.</li>
+                        <li>Wind Tunnels: Aerodynamics, Models and Experiments, Justin D. Pereira, Nova Science
+                            Publishers, Inc, UK ed. 2011, ISBN: 1612092047, 978-1612092041.</li>
+                        <li>Low Speed Wind Tunnel Testing, Jewel B. Barlow, William H. Rae, Alan Pope Wiley India Pvt
+                            Ltd; Third edition 2010, ISBN: 8126525681, 978-8126525683.</li>
+                        <li>High-Speed Wind Tunnel Testing, Alan Pope, Kenneth L. Goin, John Wiley & Sons, Ist Edition
+                            1965, ISBN: 978-0471691228.</li>
+                        <li>Aerodynamic Measurements: From Physical Principles to Applied Computational Fluid Dynamics,
+                            Richard J. Goldstein, M. G. Lilley, W. J. G. Bragg, Taylor & Francis, 1st Edition 1996 ISBN:
+                            978-1560323064.</li>
+                        <li>Handbook of Experimental Fluid Mechanics. C. Tropea, J. F. Foss, A. Yarin, Springer, 1st
+                            Edition 2007, ISBN: 978-3540251415.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100615" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Basic of AΙ [100615]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to AI & Searching Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to artificial intelligence</li>
+                                <li>Types of AI and intelligent agents</li>
+                                <li>Breadth-first search</li>
+                                <li>Depth-first search</li>
+                                <li>Hill climbing</li>
+                                <li>And its variations</li>
+                                <li>Heuristic search techniques: best-first search</li>
+                                <li>A* algorithm</li>
+                                <li>Constraint satisfaction problem</li>
+                                <li>Means-end analysis</li>
+                                <li>Introduction to game playing</li>
+                                <li>Min-max</li>
+                                <li>And alpha-beta pruning algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Knowledge Representation</strong>
+                            <ul class="unit-topics">
+                                <li>Propositional logic</li>
+                                <li>First-Order Predicate Logic</li>
+                                <li>Resolution principle</li>
+                                <li>Unification</li>
+                                <li>Semantic nets</li>
+                                <li>Conceptual dependencies</li>
+                                <li>Frames</li>
+                                <li>Scripts</li>
+                                <li>And production rules</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Understanding Natural Languages I</strong>
+                            <ul class="unit-topics">
+                                <li>Components and steps of communication</li>
+                                <li>The contrast between formal and natural languages in the context of grammar</li>
+                                <li>Chomsky hierarchy of grammars</li>
+                                <li>Parsing</li>
+                                <li>And semantics</li>
+                                <li>Parsing Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Understanding Natural Languages II</strong>
+                            <ul class="unit-topics">
+                                <li>Context-Free and Transformational Grammar</li>
+                                <li>Recursive and Augmented Transition Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AI in Decision Making</strong>
+                            <ul class="unit-topics">
+                                <li>Utility theory</li>
+                                <li>Utility functions</li>
+                                <li>Decision networks</li>
+                                <li>Sequential decision problems</li>
+                                <li>Partially Observable Markov Decision Process (MDPs)</li>
+                                <li>Game Theory</li>
+                                <li>AI Solutions for real-time problems using ML</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: AI in Reinforcement Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Passive Reinforcement Learning (RL) and Active RL</li>
+                                <li>Generalization in RL</li>
+                                <li>Policy Search</li>
+                                <li>Deep Reinforcement Learning</li>
+                                <li>AI Solutions for real-time problems using RL</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Artificial Intelligence: A Modern Approach S. Russell and P. Norvig, Prentice Hall, Third
+                            Edition, 2015, ISBN-13: 978-0-13-604259-4, ISBN-10: 0-13-604259-7.</li>
+                        <li>Introduction to Artificial Intelligence & Expert Systems, Patterson Pearson, 1st ed. 2015,
+                            ISBN-10: 9332551944, ISBN-13: 978-8120307773.</li>
+                        <li>Intelligent Planning: A decomposition and abstraction-based approach Yang, Q, Springer
+                            Verlag, Berlin Heidelberg, 1997. ISBN-10: 354061901, ISBN-13978-3540619017.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100616" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Electrical and Hybrid Vehicles [100616]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Conventional Vehicles: Basics of vehicle performance</li>
+                                <li>Vehicle power source characterization</li>
+                                <li>Transmission characteristics</li>
+                                <li>Mathematical models to describe vehicle performance</li>
+                                <li>Introduction to Hybrid Electric Vehicles: History of hybrid and electric vehicles
+                                </li>
+                                <li>Social and environmental importance of hybrid and electric vehicles</li>
+                                <li>Impact of modern drive-trains on energy supplies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hybrid Electric Drive-trains</strong>
+                            <ul class="unit-topics">
+                                <li>Hybrid Electric Drive-trains: Basic concept of hybrid traction</li>
+                                <li>Introduction to various hybrid drive- train topologies</li>
+                                <li>Power flow control in hybrid drive-train topologies</li>
+                                <li>Fuel efficiency analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Electric Trains</strong>
+                            <ul class="unit-topics">
+                                <li>Electric Drive-trains: Basic concept of electric traction</li>
+                                <li>Introduction to various electric drive- train topologies</li>
+                                <li>Power flow control in electric drive-train topologies</li>
+                                <li>Fuel efficiency analysis</li>
+                                <li>Electric Propulsion unit: Introduction to electric components used in hybrid and
+                                    electric vehicles</li>
+                                <li>Configuration and control of DC Motor drives</li>
+                                <li>Configuration and control of Induction Motor drives</li>
+                                <li>Configuration and control of Permanent Magnet Motor drives</li>
+                                <li>Configuration and control of Switch Reluctance Motor drives</li>
+                                <li>Drive system efficiency</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Energy Storage</strong>
+                            <ul class="unit-topics">
+                                <li>Energy Storage: Introduction to Energy Storage Requirements in Hybrid and Electric
+                                    Vehicles</li>
+                                <li>Battery based energy storage and its analysis</li>
+                                <li>Fuel Cell based energy storage and its analysis</li>
+                                <li>Super Capacitor based energy storage and its analysis</li>
+                                <li>Flywheel based energy storage and its analysis</li>
+                                <li>Hybridization of different energy storage devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Sizing the drive system</strong>
+                            <ul class="unit-topics">
+                                <li>Sizing the drive system: Matching the electric machine and the internal combustion
+                                    engine (ICE)</li>
+                                <li>Sizing the propulsion motor</li>
+                                <li>Sizing the power electronics</li>
+                                <li>Selecting the energy storage technology</li>
+                                <li>Communications</li>
+                                <li>Supporting subsystems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Energy Management Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Energy Management Strategies: Introduction to energy management strategies used in
+                                    hybrid and electric vehicles</li>
+                                <li>Classification of different energy management strategies</li>
+                                <li>Comparison of different energy management strategies</li>
+                                <li>Implementation issues of energy management strategies</li>
+                                <li>Case Studies: Design of a Hybrid Electric Vehicle (HEV)</li>
+                                <li>Design of a Battery Electric Vehicle (BEV)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>C. Mi, M. A. Masrur and D. W.Gao, "Hybrid Electric Vehicles: Principles and Applications
+                            with Practical Perspectives", John Wiley & Sons, 2011.</li>
+                        <li>S. Onori, L. Serrao and G. Rizzoni, "Hybrid Electric Vehicles: Energy Management
+                            Strategies", Springer, 2015.</li>
+                        <li>M. Ehsani, Y. Gao, S. E. Gay and A. Emadi, "Modern Electric, Hybrid Electric, and FuelCell
+                            Vehicles: Fundamentals, Theory, and Design", CRC Press, 2004.</li>
+                        <li>T. Denton, "Electric and Hybrid Vehicles", Routledge, 2016.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100617" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Industrial Automation [100617]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Industrial Automation</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Industry 4.0 and its components</li>
+                                <li>Need of automation in industries</li>
+                                <li>Principles and strategies of automation</li>
+                                <li>Factory automation</li>
+                                <li>Process automation</li>
+                                <li>Basic elements of an automated system</li>
+                                <li>Structure of Industrial Automation</li>
+                                <li>Advanced automation functions</li>
+                                <li>Levels of automations</li>
+                                <li>Industrial control Systems- Process and Discrete system</li>
+                                <li>Types of automation system: Fixed</li>
+                                <li>Programmable</li>
+                                <li>Flexible</li>
+                                <li>Integrated Automation and its application</li>
+                                <li>Different systems used for Industrial automation: PLC</li>
+                                <li>HMI</li>
+                                <li>SCADA</li>
+                                <li>DCS</li>
+                                <li>Drives</li>
+                                <li>Introduction to Internet of Things (IoT) and Industrial Internet of Things (IIOT)
+                                    and its application in Automation</li>
+                                <li>Role of robots in automation and its components</li>
+                                <li>Fundamentals of automated production lines or transfer lines and its applications
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Sensors and Input Field Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Analog input devices Electromagnetic relays</li>
+                                <li>Contactors</li>
+                                <li>Motor starters</li>
+                                <li>Manually operated Switches Toggle switch</li>
+                                <li>Pushbutton switch</li>
+                                <li>Knife switch and selector switches</li>
+                                <li>Mechanically operated switches Limit switch</li>
+                                <li>Temperature switch (Thermostat)</li>
+                                <li>Pressure switch</li>
+                                <li>Level switch and their symbols</li>
+                                <li>Discrete/Digital Input devices</li>
+                                <li>Construction and working of Sensors</li>
+                                <li>Proximity sensors- Inductive</li>
+                                <li>Capacitive</li>
+                                <li>Optical and ultrasonic</li>
+                                <li>Advanced sensors- Construction and working of Temperature sensors- Thermistor</li>
+                                <li>Thermocouple and Resistance temperature Detector (RTD)</li>
+                                <li>Liquid level sensor -Capacitive and Ultrasonic</li>
+                                <li>Force Strain/Weight sensors</li>
+                                <li>Flow sensors turbine flow sensor</li>
+                                <li>Pressure sensors- Linear Variable</li>
+                                <li>Differential Transformer (LVDT)</li>
+                                <li>Inclination sensor -Inclinometer</li>
+                                <li>Acceleration sensor- Accelerometer</li>
+                                <li>Angular and linear position sensor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Actuators and Output Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to actuators</li>
+                                <li>Classification of actuators</li>
+                                <li>Mechanical actuators -Translational and rotational motion</li>
+                                <li>Kinematic chains</li>
+                                <li>Cams</li>
+                                <li>Gears</li>
+                                <li>Belt and chain drives</li>
+                                <li>Bearings</li>
+                                <li>Hydraulic and Pneumatic actuators linear and rotary actuators</li>
+                                <li>Single and double acting cylinder</li>
+                                <li>Directional</li>
+                                <li>Process and pressure control valves</li>
+                                <li>Electrical actuators</li>
+                                <li>Electromechanical actuators</li>
+                                <li>Construction</li>
+                                <li>Working and application of Stepper motors</li>
+                                <li>AC/DC Servo motors</li>
+                                <li>BLDC Motor (Very brief)</li>
+                                <li>Electrohydraulic Actuators-Solenoid Valve</li>
+                                <li>Thermal actuators and Magnetic actuators</li>
+                                <li>Selection of actuators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Other output Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Other Output devices- Indicators</li>
+                                <li>Alarms Pilot Lights</li>
+                                <li>Buzzers</li>
+                                <li>Valves</li>
+                                <li>Motor starters</li>
+                                <li>Horns and alarms</li>
+                                <li>Stack lights Control relays</li>
+                                <li>Pumps and Fans</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Control System</strong>
+                            <ul class="unit-topics">
+                                <li>Open and closed loop system</li>
+                                <li>Their transfer function</li>
+                                <li>First order and second order system and their output response and parameters</li>
+                                <li>Types of control On-off</li>
+                                <li>Feed forward</li>
+                                <li>Open loop and closed loop control and Transfer function</li>
+                                <li>Controllers in closed loop control</li>
+                                <li>Proportional Controller (P Controller)</li>
+                                <li>Integral Controller (I Controller)</li>
+                                <li>Derivative controller (D- Controller)</li>
+                                <li>P-I Controller</li>
+                                <li>P-D Controller</li>
+                                <li>PID Controller</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: SCADA and DCS</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Need</li>
+                                <li>Benefits and typical applications of SCADA and DCS</li>
+                                <li>SCADA Architecture Remote Terminal Units (RTUs)</li>
+                                <li>Master Terminal Units</li>
+                                <li>Various SCADA editors</li>
+                                <li>Communication protocols for SCADA</li>
+                                <li>Comparison of SCADA with DCS</li>
+                                <li>Interfacing SCADA system with PLC Typical connection diagram</li>
+                                <li>Object Linking and Embedding for Process Control (OPC) architecture</li>
+                                <li>Creating SCADA Screen HMI for simple object</li>
+                                <li>Steps for linking SCADA object (defining Tags and items, creating trends etc.,) with
+                                    PLC ladder program using OPC</li>
+                                <li>Configuring simple applications using SCADA: Traffic light control</li>
+                                <li>Water distribution</li>
+                                <li>Pipeline control</li>
+                                <li>Power generation</li>
+                                <li>Transmission and distribution etc.</li>
+                                <li>Procedure to maintain the SCADA based PLC system</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Industrial Automation with SCADA: Concepts, Communications and Security, K S Manoj Notion
+                            Press; 1st edition, 2019, ISBN-13: 978-1684668281.</li>
+                        <li>Introduction to Industrial Automation, Stamatios Manesis, George Nikolakopoulos, CRC Press,
+                            1st edition, 2020, ISBN 9780367571832.</li>
+                        <li>Industrial Automation Using PLC SCADA & DCS, R.G.Jamkar, Global Education Limited, 2018,
+                            ISBN-13: 978-8193579954.</li>
+                        <li>Industrial automation and Process control, Stenerson Jon, PHI Learning, New Delhi, 2003,
+                            ISBN: 9780130618900.</li>
+                        <li>Control System, Nagrath & Gopal, New Age International Pvt Ltd, ISBN: 9789386070111.</li>
+                        <li>Industrial automation and Process control, Stenerson Jon PHI Learning, New Delhi, 2003,
+                            ISBN: 9780130618900.</li>
+                        <li>Programmable Logic Controller, Jadhav, V. R., Khanna publishers, New Delhi, 2017, ISBN:
+                            9788174092281.</li>
+                        <li>Programmable Logic Controllers and Industrial Automation An introduction, Mitra,
+                            Madhuchandra; Sengupta, Samarjit Penram International Publication, 2015, ISBN:
+                            9788187972174.</li>
+                        <li>Supervisory Control and Data Acquisition, Boyar, S. A., ISA Publication, USA, ISBN:
+                            978-1936007097</li>
+                        <li>Practical SCADA for industry Bailey David; Wright Edwin Newnes (an imprint of Elsevier), UK
+                            2003, ISBN: 0750658053.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100618" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Basic of ML [100618]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Machine Learning and
+                                Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Machine Learning</li>
+                                <li>Supervised Learning</li>
+                                <li>Unsupervised Learning</li>
+                                <li>And Reinforcement Learning</li>
+                                <li>Machine learning basics: capacity</li>
+                                <li>Over fitting</li>
+                                <li>And under fitting</li>
+                                <li>Hyperparameters and validation sets</li>
+                                <li>Bias & variance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Bayesian Concepts and Decision Trees</strong>
+                            <ul class="unit-topics">
+                                <li>Bayes Theorem Concept Learning Maximum Likelihood classifier</li>
+                                <li>Bayesian Belief Networks</li>
+                                <li>Decision-trees</li>
+                                <li>Univariate and multivariate decision tree</li>
+                                <li>Network equivalent of decision trees</li>
+                                <li>Overfitting</li>
+                                <li>And evaluation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Instant-Based Learning and Support Vector
+                                Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Logistic Regression</li>
+                                <li>Support Vector Machine (SVM)</li>
+                                <li>Kernel function and Kernel SVM</li>
+                                <li>Instant- based Learning: k- Nearest Neighbour</li>
+                                <li>Locally weighted Regression</li>
+                                <li>Radial Basis Functions</li>
+                                <li>Case Based Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Clustering</strong>
+                            <ul class="unit-topics">
+                                <li>Clustering: k-means</li>
+                                <li>Adaptive hierarchical clustering</li>
+                                <li>And Gaussian mixture model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Neural Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Neural network: Perception</li>
+                                <li>Multilayer network</li>
+                                <li>Back propagation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Applications and Case Studies of Machine
+                                Learning</strong>
+                            <ul class="unit-topics">
+                                <li>Applications of machine learning (Case studies): Business Analytics</li>
+                                <li>Natural language processing</li>
+                                <li>Computer vision</li>
+                                <li>Internet of Things</li>
+                                <li>Bio-informatics etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Machine Learning, Tom M. Mitchell, McGraw-Hill Education (India) Private Limited, 2013, ISBN
+                            0070428077.</li>
+                        <li>Foundations of Machine Learning, Mohri, M., Rostamizadedh, A., and Talwalkar, A. The MIT
+                            Press, 2012, 9, ISBN 78-0-262-01825-8.</li>
+                        <li>Fundamentals of Machine Learning, Dr. M. Gopal, McGraw Hill Education (India),
+                            ISBN:978-9353161837.</li>
+                        <li>Machine Learning: Principles and Algorithms, P. K. Pattanayak, Universities Press (India)
+                            ISBN: 978-9386235513.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100619" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: AR VR Technology [100619]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Immersive Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Immersive Technologies: Augmented Reality (AR)</li>
+                                <li>Virtual Reality (VR)</li>
+                                <li>Mixed Reality (MR)</li>
+                                <li>And Extended Reality (XR)</li>
+                                <li>Applications in education</li>
+                                <li>Healthcare</li>
+                                <li>Entertainment</li>
+                                <li>And industry</li>
+                                <li>Key differences between AR</li>
+                                <li>VR</li>
+                                <li>MR and XR</li>
+                                <li>Challenges and Future Trends</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Hardware and Software Requirements</strong>
+                            <ul class="unit-topics">
+                                <li>AR/VR Headsets and Displays (e.g., Oculus, HoloLens, etc.)</li>
+                                <li>Sensors: Motion</li>
+                                <li>Depth</li>
+                                <li>And tracking systems</li>
+                                <li>Input Devices: Controllers</li>
+                                <li>Gloves</li>
+                                <li>And mobile devices</li>
+                                <li>System specifications of central processing unit (CPU)</li>
+                                <li>Graphical Processing Unit (GPU)</li>
+                                <li>Random Access Memory (RAM)</li>
+                                <li>Graphics Card and storage considerations</li>
+                                <li>AR/VR development platforms (overview): Unity</li>
+                                <li>Unreal Engine</li>
+                                <li>SDKs and APIs for AR</li>
+                                <li>VR: Vuforia</li>
+                                <li>ARKit</li>
+                                <li>ARCore</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Unity Software</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Unity software and its Features</li>
+                                <li>System requirements for Unity installation</li>
+                                <li>Unity's interface and basic functionalities</li>
+                                <li>Assets and its Types</li>
+                                <li>Sources of 2D and 3D assets</li>
+                                <li>Windows in Unity</li>
+                                <li>Game Objects and Their Types</li>
+                                <li>Rigid Bodies and Colliders</li>
+                                <li>Physics-Based Interactions</li>
+                                <li>Software Development Kit (SDK)-Vuforia</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Augmented Reality (AR)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of AR and its Working Mechanisms</li>
+                                <li>AR image and object recognition techniques</li>
+                                <li>Location-based and marker-based AR</li>
+                                <li>Introduction to various AR web-based applications</li>
+                                <li>AR design on Blippar or similar platforms</li>
+                                <li>Testing and publishing AR applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: AR Design and Development</strong>
+                            <ul class="unit-topics">
+                                <li>Anchoring and Detecting Objects in AR</li>
+                                <li>Development of AR application marker-based and marker less in Unity</li>
+                                <li>Deployment of AR app on Android/iOS devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Virtual Reality (VR)</strong>
+                            <ul class="unit-topics">
+                                <li>Principles and Technical requirements of Virtual Reality</li>
+                                <li>Types of VR systems: non-immersive</li>
+                                <li>Semi-immersive</li>
+                                <li>And fully immersive</li>
+                                <li>Key Elements of Immersive VR Experience</li>
+                                <li>Levels of Immersion in VR Environment</li>
+                                <li>360-degree media</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Learning Path Complete VR & AR Development with Unity, Jesse Glover & J. Linowes, Packt
+                            Publishers Ltd., ISBN-101838648186, ISBN-13: 978-1838648183.</li>
+                        <li>Mastering AR Development with Unity, Indika Wijesooriya, BPB.</li>
+                        <li>3D Game Development with Unity, Franz Lanzinger, CRC Press, ISBN-10: 0367349183, ISBN-13:
+                            978-0367349189.</li>
+                        <li>AR with Unity; AR Foundation - A Practical Guide, Jonathan Linowes, Packt Publishers Ltd.,
+                            ISBN: 978-1-83898-259-1.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100620" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Micro Electro Mechanical System (MEMS) Technology
+                        [100620]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Mems and Microfabrication</strong>
+                            <ul class="unit-topics">
+                                <li>History of MEMS Development</li>
+                                <li>Characteristics of MEMS</li>
+                                <li>Miniaturization</li>
+                                <li>Microelectronics integration</li>
+                                <li>Mass fabrication with precision</li>
+                                <li>Micro fabrication</li>
+                                <li>Microelectronics fabrication process: Silicon based MEMS processes</li>
+                                <li>New material and fabrication processing</li>
+                                <li>Points of consideration for processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Electrical and Mechanical Properties of Mems
+                                Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Conductivity of semiconductors</li>
+                                <li>Crystal plane and orientation</li>
+                                <li>Stress and stain: Definition</li>
+                                <li>Relationship between tensile stress and stain</li>
+                                <li>Mechanical properties of silicon and thin films</li>
+                                <li>Flexural beam bending analysis under single loading condition</li>
+                                <li>Types of beam: Deflection of beam</li>
+                                <li>Longitudinal stain under pure bending</li>
+                                <li>Spring constant</li>
+                                <li>Tensional deflection</li>
+                                <li>Intrinsic stress</li>
+                                <li>Resonance and quality factor</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensing and Actuation</strong>
+                            <ul class="unit-topics">
+                                <li>Electrostatic sensing and actuation: Parallel plate capacitor</li>
+                                <li>Application-Inertial sensor</li>
+                                <li>Pressure sensor and tactile sensor</li>
+                                <li>Parallel plate actuator and Comb drive</li>
+                                <li>Thermal sensing and Actuations: Thermal sensors</li>
+                                <li>Thermal actuators</li>
+                                <li>Application-Inertial</li>
+                                <li>Flow and Infrared sensors</li>
+                                <li>Piezoresistive sensors: Piezoresistive sensor material</li>
+                                <li>Stress in flexural cantilever and membrane- Application-Inertial</li>
+                                <li>Pressure</li>
+                                <li>Flow and tactile sensor</li>
+                                <li>Piezoelectric sensing and actuation:- Piezoelectric material
+                                    properties-quartz-PZT-PVDF-ZnO</li>
+                                <li>Application- Inertial</li>
+                                <li>Acoustic</li>
+                                <li>Tactile</li>
+                                <li>Flow-surface elastic waves</li>
+                                <li>Magnetic actuation:- Micro magnetic actuation principle</li>
+                                <li>Deposition of magnetic materials</li>
+                                <li>Design and fabrication of magnetic coil</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Bulk and Surface Micromachining</strong>
+                            <ul class="unit-topics">
+                                <li>Anisotropic wet etching</li>
+                                <li>Dry etching of silicon</li>
+                                <li>Deep reactive ion etching (DRIE)</li>
+                                <li>Isotropic wet etching</li>
+                                <li>Basic surface micromachining process</li>
+                                <li>Structural and sacrificial material</li>
+                                <li>Stiction and anti stiction methods</li>
+                                <li>Foundry process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Polymer Mems</strong>
+                            <ul class="unit-topics">
+                                <li>Polymers in MEMS</li>
+                                <li>Polymide-SU-8</li>
+                                <li>Liquid crystal polymer (LCP): PDMS</li>
+                                <li>PMMA</li>
+                                <li>Parylene</li>
+                                <li>Flurocorbon</li>
+                                <li>Application-Acceleration</li>
+                                <li>Pressure</li>
+                                <li>Flow and tactile sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Optical Mems</strong>
+                            <ul class="unit-topics">
+                                <li>Optical MEMS: Refraction</li>
+                                <li>Diffraction</li>
+                                <li>MOEMS components; digital mirror display (DMD)</li>
+                                <li>Grating light valve (GLV)</li>
+                                <li>Optical scanners</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Foundations of MEMS, Chang Liu, Pearson International Edition, 2006, ISBN-978-0132497367.
+                        </li>
+                        <li>RF MEMS Theory, Design and Technology, Gaberiel M.Rebiz, John Wiley & Sons, 2003,
+                            ISBN-978-0471201694.</li>
+                        <li>Introduction to nanotechnology, Charles P.Poole, Frank J.Owens, John Wiley & sons, 2003,
+                            ISBN-13: 978-0471079354.</li>
+                        <li>Microsensors, MEMS and Smart devices, Julian W.Gardner, Vijay K Varadhan, John Wiley & sons,
+                            2001, ISBN-978-0471861096.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-100621" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: Electronic Product Design & Packaging [100621]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Essentials of Electronic Product Design &
+                                Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Electronic Product Design</li>
+                                <li>Electronic Packaging Fundamentals</li>
+                                <li>Printed Circuit Board (PCB) Design and Fabrication</li>
+                                <li>Thermal</li>
+                                <li>Mechanical</li>
+                                <li>And EMI/EMC Considerations</li>
+                                <li>Prototyping</li>
+                                <li>Testing</li>
+                                <li>And Reliability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Design Aspects of Semiconductor Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Semiconductor Packaging Types: Dual In-line Package (DIP)</li>
+                                <li>QFP</li>
+                                <li>BGA</li>
+                                <li>CSP</li>
+                                <li>And 3D ICs</li>
+                                <li>Wire bonding</li>
+                                <li>Flip-chip</li>
+                                <li>And through-silicon vias (TSVs)</li>
+                                <li>Trends in package miniaturization and integration</li>
+                                <li>Thermal and Mechanical Design Considerations: Heat dissipation in semiconductor
+                                    packages</li>
+                                <li>Stress and strain due to thermal cycling</li>
+                                <li>Package warpage and delamination issues</li>
+                                <li>Electrical Design Aspects: Signal integrity and power integrity</li>
+                                <li>Parasitics: resistance</li>
+                                <li>Capacitance</li>
+                                <li>And inductance</li>
+                                <li>High-speed design challenges and mitigation techniques</li>
+                                <li>Materials and Substrate Technologies: Die attach materials</li>
+                                <li>Encapsulants</li>
+                                <li>And underfills</li>
+                                <li>Organic vs ceramic substrates</li>
+                                <li>Reliability and compatibility of packaging materials</li>
+                                <li>Packaging Process Flow and Testing: Wafer-level packaging and assembly steps</li>
+                                <li>Burn-in</li>
+                                <li>Electrical</li>
+                                <li>And reliability testing</li>
+                                <li>Design for testability (DFT) in semiconductor packaging</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Dicing & Inspection</strong>
+                            <ul class="unit-topics">
+                                <li>Wafer Dicing Techniques: Mechanical sawing (blade dicing)</li>
+                                <li>Laser dicing and stealth dicing</li>
+                                <li>Plasma dicing (dry etching methods)</li>
+                                <li>Comparison of dicing methods based on precision</li>
+                                <li>Cost</li>
+                                <li>And material type</li>
+                                <li>Dicing Process Parameters and Optimization: Cut depth</li>
+                                <li>Kerf width</li>
+                                <li>And feed rate</li>
+                                <li>Cooling and lubrication during dicing</li>
+                                <li>Minimizing chipping</li>
+                                <li>Cracking</li>
+                                <li>And contamination</li>
+                                <li>Wafer Mounting and Handling: Use of dicing tapes and frames</li>
+                                <li>Wafer alignment and chucking</li>
+                                <li>ESD precautions and cleanroom requirements</li>
+                                <li>Post-Dicing Cleaning and Debris Removal: Cleaning techniques (wet, dry, CO2 snow)
+                                </li>
+                                <li>Particle contamination control</li>
+                                <li>Inspection for surface damage or residues</li>
+                                <li>Wafer Inspection and Defect Analysis: Visual and automated optical inspection (AOI)
+                                </li>
+                                <li>Surface and edge defect detection</li>
+                                <li>Use of SEM</li>
+                                <li>X-ray</li>
+                                <li>And infrared imaging for deeper inspection</li>
+                                <li>Yield analysis and defect classification</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Conventional Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to Conventional Packaging Types: Dual In-line Package (DIP)</li>
+                                <li>Surface Mount Device (SMD)</li>
+                                <li>Chip-on-Board (COB) and Leadframe-based packaging</li>
+                                <li>Through-hole vs. surface-mount technologies</li>
+                                <li>Materials Used in Conventional Packaging: Encapsulants and molding compounds</li>
+                                <li>Leadframe materials (e.g., copper, brass, and alloys)</li>
+                                <li>Substrate materials: epoxy</li>
+                                <li>Ceramic</li>
+                                <li>And organic laminates</li>
+                                <li>Packaging Assembly Processes: Die attach methods: eutectic bonding</li>
+                                <li>Adhesive bonding</li>
+                                <li>Wire bonding techniques: gold</li>
+                                <li>Aluminum</li>
+                                <li>And copper wire</li>
+                                <li>Molding and encapsulation processes</li>
+                                <li>Electrical and Thermal Design in Conventional Packaging: Signal integrity in
+                                    conventional packages</li>
+                                <li>Heat dissipation and thermal management strategies</li>
+                                <li>Thermal cycling and reliability considerations</li>
+                                <li>Testing and Reliability of Conventional Packages: Standard testing methods:
+                                    electrical</li>
+                                <li>Thermal</li>
+                                <li>And mechanical tests</li>
+                                <li>Reliability testing: accelerated life testing (ALT)</li>
+                                <li>Burn-in tests</li>
+                                <li>Failure analysis techniques: decapsulation</li>
+                                <li>Cross-sectioning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Bonding, Sealing</strong>
+                            <ul class="unit-topics">
+                                <li>Bonding Techniques in Semiconductor Packaging: Wire bonding (gold, aluminum, copper)
+                                </li>
+                                <li>Flip-chip bonding and solder bumping</li>
+                                <li>Adhesive bonding and thermo-compression bonding</li>
+                                <li>Laser and ultrasonic bonding methods</li>
+                                <li>Sealing Methods in Semiconductor Packaging: Molding and encapsulation processes</li>
+                                <li>Hermetic sealing and its importance for high-reliability applications Use of sealing
+                                    materials: epoxy</li>
+                                <li>Silicone</li>
+                                <li>And elastomers</li>
+                                <li>Advanced sealing techniques for 3D and wafer-level packaging</li>
+                                <li>Reliability and Testing in Bonding and Sealing: Mechanical and thermal stress
+                                    testing in bonded and sealed packages</li>
+                                <li>Failure analysis methods: decapsulation</li>
+                                <li>Cross-sectioning</li>
+                                <li>And SEM analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Packaging</strong>
+                            <ul class="unit-topics">
+                                <li>Advanced Packaging Technologies: System-in-Package (SiP) and Package-on-Package
+                                    (PoP) technologies</li>
+                                <li>3D Integrated Circuits (3D ICs) and Through-Silicon Vias (TSVs)</li>
+                                <li>Wafer-Level Packaging (WLP) and Fan-Out Wafer-Level Packaging (FOWLP)</li>
+                                <li>Hybrid and Multi-Chip Module (MCM) integration</li>
+                                <li>Thermal and Electrical Considerations in Advanced Packaging: Thermal management
+                                    techniques in advanced packaging (heat sinks, thermal vias)</li>
+                                <li>Electrical performance challenges: signal integrity and power delivery in
+                                    high-density packages</li>
+                                <li>Power dissipation and interconnect strategies in 3D packaging</li>
+                                <li>Reliability testing standards for advanced packaging (e.g., JEDEC, MIL-STD)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Electronic Packaging and Interconnection Handbook, Charles Harper, ISBN-13, 978-0071430487,
+                            McGraw-Hill Professional, Edition: 4, Publication Date: 16 November 2004.</li>
+                        <li>"Electronic Product Design" A.E. Ward and J.A.S. Angus Chapman and Hall, ISBN:
+                            0-412-63200-4, 1996.</li>
+                        <li>Electronic Product Design, S.D. Mehta, S Chand Publishing ISBN: 9788121936156, 2011.</li>
+                        <li>Semiconductor Packaging Material Interaction and reliability, Chen, Andrea & Lo, Randy
+                            Hsiao-Yu, ISBN-13; 978-1439862056, CRC Press, 10 October 2011.</li>
+                        <li>Semiconductor Device Packaging, John H. Lau, Springer, ISBN-10: 9811613753, ISBN-13:
+                            978-9811613753.</li>
+                        <li>Microelectronics Packaging Handbook - Part 1, Part 2, Part 3, R. R. Tumalla, Springer US,
+                            ISBN-13: 978-0412084416, ISBN-13: 978-0412084416, ISBN-13: 978-0412084515.</li>
+                        <li>Advanced Electronics Packaging, Richard K. Ulrich Wiley-IEEE Press, ISBN-13: 978-0471466093.
+                        </li>
+                        <li>Integrated Circuit Packaging, Assembly and Interconnection, William J. Greig, Springer,
+                            ISBN-13: 978-0387281537.</li>
+                        <li>3D IC Integration and Packaging, John H Lau, McGraw-Hill Education, ISBN-13: 978-0071848060.
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="subject-100622" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective-II: 3D Printing and Design [100622]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Additive Manufacturing Introduction and CAD-CAM for 3D
+                                Printing</strong>
+                            <ul class="unit-topics">
+                                <li>Additive v/s Conventional Manufacturing processes</li>
+                                <li>Classification of 3D Printing Processes</li>
+                                <li>Working principle of various 3D Printing processes- Fused Deposition Modeling (FDM)
+                                </li>
+                                <li>Stereo lithography (SLA)</li>
+                                <li>Selective Laser Sintering (SLS)</li>
+                                <li>Binder Jetting</li>
+                                <li>Material Jetting</li>
+                                <li>Direct Energy Deposition and Laminate Object Manufacturing</li>
+                                <li>Additive Manufacturing application domains: Aerospace</li>
+                                <li>Electronics</li>
+                                <li>Health Care</li>
+                                <li>Defense</li>
+                                <li>Automotive</li>
+                                <li>Construction</li>
+                                <li>Food Processing</li>
+                                <li>Machine Tools</li>
+                                <li>Product design and prototyping</li>
+                                <li>Reverse Engineering for 3D Printing</li>
+                                <li>CAD-CAM and its integration</li>
+                                <li>CAD- Part and Surface modeling</li>
+                                <li>CAD file formats</li>
+                                <li>Process chain for 3D Printing</li>
+                                <li>STL interface Specification</li>
+                                <li>STL data generation</li>
+                                <li>STL data Manipulation</li>
+                                <li>Advantages and limitations of STL file format</li>
+                                <li>Open files</li>
+                                <li>Repair of STL files</li>
+                                <li>Alternative 3D Printing interfaces</li>
+                                <li>Part orientation and support generation</li>
+                                <li>Factors affecting part orientation</li>
+                                <li>Various models for part orientation determination</li>
+                                <li>The function of part supports</li>
+                                <li>Support structure design</li>
+                                <li>Automatic support structure generation</li>
+                                <li>Model Slicing and Contour Data organization</li>
+                                <li>Direct and adaptive slicing: Identification of peak features</li>
+                                <li>Adaptive layer thickness determination</li>
+                                <li>Tool path generation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: 3D Printing Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Various forms of 3D printing raw material- Liquid</li>
+                                <li>Solid</li>
+                                <li>Wire</li>
+                                <li>Powder</li>
+                                <li>Popular FDM</li>
+                                <li>SLA</li>
+                                <li>SLS</li>
+                                <li>Binder Jetting</li>
+                                <li>Material Jetting and Direct Energy deposition 3D printing materials</li>
+                                <li>Polymers</li>
+                                <li>Metals</li>
+                                <li>Non-Metals</li>
+                                <li>Ceramics</li>
+                                <li>Polymers and their properties</li>
+                                <li>Powder Preparation and their desired properties</li>
+                                <li>Choosing the right 3D Printing material on the basis of performance requirements and
+                                    material properties</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Solid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Basic principle and working of fused deposition modeling (FDM) process</li>
+                                <li>Construction details and working of established FDM based 3D printers for plastics
+                                    parts</li>
+                                <li>3D Printer software- Fusion 360</li>
+                                <li>Solidworks</li>
+                                <li>Onshape</li>
+                                <li>Tinkercad</li>
+                                <li>UltimakerCura</li>
+                                <li>MeshLab</li>
+                                <li>Simplyfy 3D</li>
+                                <li>Repetier host</li>
+                                <li>Slic3r</li>
+                                <li>Etc. use and operation of anyone</li>
+                                <li>3D Scanners and working</li>
+                                <li>Producing a part using FDM based 3D Printer</li>
+                                <li>Liquefaction</li>
+                                <li>Solidification and bonding</li>
+                                <li>Laminated Object Manufacturing process</li>
+                                <li>Cost estimation of FDM 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Liquid based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Photo polymerization</li>
+                                <li>Principle and working of stereo lithography apparatus</li>
+                                <li>SLA based 3D printing processes</li>
+                                <li>SLA based 3D printing process materials</li>
+                                <li>Scanning techniques</li>
+                                <li>Curing processes</li>
+                                <li>Cost estimation of SLA 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Powder based 3D Printing Processes</strong>
+                            <ul class="unit-topics">
+                                <li>Powder fusion mechanism</li>
+                                <li>Principle and working of Selective Laser Sintering (SLS) process</li>
+                                <li>SLS based 3D printers</li>
+                                <li>Laser Engineering Net Shaping process</li>
+                                <li>Electron Beam Melting</li>
+                                <li>Binder Jet 3D Printing</li>
+                                <li>Materials and Process parameters for SLS based 3D printing processes</li>
+                                <li>Cost estimation of SLS based 3D printed component</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Post Processing and Quality</strong>
+                            <ul class="unit-topics">
+                                <li>Need of post processing: Functional and Aesthetic reasons</li>
+                                <li>Steps of Post Processing: Cleaning/Support removal</li>
+                                <li>Fixing</li>
+                                <li>Curing or hardening</li>
+                                <li>Surface finishing</li>
+                                <li>Colouring</li>
+                                <li>Cleaning: Support Removal (FDM and Material Jetting)</li>
+                                <li>Powder Removal (SLS and Powder Bed Fusion)</li>
+                                <li>Washing (SLA and Photo polymerisation)</li>
+                                <li>Fixing: Filling</li>
+                                <li>Gluing</li>
+                                <li>Welding</li>
+                                <li>Surface finishing: Sanding</li>
+                                <li>Polishing</li>
+                                <li>Tumbling</li>
+                                <li>Hydro dipping</li>
+                                <li>Epoxy coating</li>
+                                <li>Electro Plating</li>
+                                <li>Vapour smoothing-Acetone treatment</li>
+                                <li>Colouring</li>
+                                <li>Coating</li>
+                                <li>Priming and Painting</li>
+                                <li>Inspection and testing: Digital</li>
+                                <li>Visual</li>
+                                <li>Physical</li>
+                                <li>Defects and their causes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference:</h3>
+                    <ol>
+                        <li>Fundamentals and Applications of Additive Manufacturing, Sharad K. Pradhan, Ankit Nayak,
+                            Surendra Singh Thakur, Vishal Francis, Aniket Nagargoje CRC Press, Taylor & Francis, ISBN
+                            9781032898049.</li>
+                        <li>Understanding Additive Manufacturing: Rapid Prototyping, Rapid Tooling, Rapid Manufacturing
+                            Andreas Gebhardt, Hanser Publisher, 2011, ISBN: 156990507X, 9781569905074.</li>
+                        <li>3D Printing and Design, Sabrie Soloman, Khanna Publishing House, Delhi, ISBN: 9789386173768.
+                        </li>
+                        <li>3D Printing and Rapid Prototyping- Principles and Applications, C.K. Chua, Kah Fai Leong
+                            World Scientific, 2017, ISBN: 9789813146754.</li>
+                        <li>Getting Started with 3D Printing: A Hands-on Guide to the Hardware, Software, and Services
+                            Behind the New Manufacturing Revolution, Liza Wallach Kloski, Nick Kloski Make Community,
+                            LLC; 2nd edition, 2021, ISBN: 9781680450200.</li>
+                    </ol>
+                </section>
+
+                <section id="subject-116603P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Aircraft Systems and Instruments Lab [116603P]</h2>
+                    <p>Perform all Experiments. List of Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Inspection of primary and secondary controls of Cessna/ Hansa Aircraft</li>
+                        <li>Demonstrate and testing of aircraft hydraulic system</li>
+                        <li>Demonstrate and testing of aircraft pneumatic system</li>
+                        <li>Demonstrate and testing of aircraft landing gear system</li>
+                        <li>Dismantling and assembly of aircraft piston engine</li>
+                        <li>Dismantling and assembly of jet engine</li>
+                        <li>Inspection of aircraft instruments and its functions in Cessna/ Hansa aircraft</li>
+                        <li>Troubleshoot various systems of aircraft</li>
+                        <li>Demonstrate and testing of aircraft brake system</li>
+                        <li>Demonstrate and testing of aircraft fuel system</li>
+                    </ul>
+                </section>
+
+                <section id="subject-116604P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Finite Element Method Lab [116604P]</h2>
+                    <p>Perform all Experiments. List of Experiments:</p>
+                    <ul class="unit-topics">
+                        <li>Beam deflection analysis using Hermite shape functions</li>
+                        <li>Torsional analysis of shafts using ID finite elements</li>
+                        <li>1D heat conduction in composite rod using FEM</li>
+                        <li>Heat transfer in straight fins using ID elements</li>
+                        <li>Fluid flow analysis in a pipe network using FEM</li>
+                        <li>Axisymmetric analysis of pressure vessel using triangular elements</li>
+                        <li>Stress analysis of a rectangular plate with a circular hole</li>
+                        <li>Modal analysis of a stepped shaft</li>
+                        <li>Structural analysis of aircraft wings and fuselages</li>
+                    </ul>
+                </section>
+
+                <section id="subject-116606P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Courses-I Lab [116606P]</h2>
+                    <p>Details for NPTEL Courses-I Lab will be provided by the department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

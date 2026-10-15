@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>Abhi PYQ – Coming Soon</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #2b51a4;
+            --bg-2: #0b2458;
+            --card: #050f26;
+            --card-2: #08193a;
+            --text: #ffffff;
+            --muted: #ffffff;
+            --accent: #00eeff;
+            --accent-2: #ffd54a;
+            --chip: #172d5f;
+            --ring: 0 0 0 2px rgba(25, 95, 111, .45), 0 8px 18px rgba(0, 0, 0, .35);
+            --shadow: 0 10px 20px rgba(0, 0, 0, .35);
+            --radius: 16px
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 300;
+            src: url('fonts/ubuntu-v20-latin-300.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-300.woff') format('woff')
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/ubuntu-v20-latin-regular.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-regular.woff') format('woff')
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 500;
+            src: url('fonts/ubuntu-v20-latin-500.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-500.woff') format('woff')
+        }
+
+        @font-face {
+            font-display: swap;
+            font-family: 'Ubuntu';
+            font-style: normal;
+            font-weight: 700;
+            src: url('fonts/ubuntu-v20-latin-700.woff2') format('woff2'), url('fonts/ubuntu-v20-latin-700.woff') format('woff')
+        }
+
+        html,
+        body {
+            height: 100%;
+            color: var(--text);
+            font-family: 'Ubuntu', Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: #000a1e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Crect fill='%23081b41' width='1000' height='120'/%3E%3Cg fill='none' stroke='%23172d5f' stroke-width='10' stroke-opacity='1'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: 250px 30px
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden
+        }
+
+        body.sidebar-open {
+            overflow: hidden
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .app {
+            position: relative;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            padding: 7px 12px;
+            background: linear-gradient(180deg, rgba(0, 42, 133, 0.8), rgba(12, 37, 89, .7));
+            backdrop-filter: blur(7px);
+            border-bottom: 1px solid rgba(129, 173, 255, 0.300)
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px
+        }
+
+        .brand-logo {
+            width: 30px;
+            height: 25px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: var(--ring);
+            background: #000
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .brand-name {
+            font-weight: 700;
+            letter-spacing: .2px
+        }
+
+        .menu-btn {
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, .07));
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 15;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+            transition: background .2s ease
+        }
+
+        .menu-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .1))
+        }
+
+        .menu-btn span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+            transform-origin: center
+        }
+
+        .menu-btn.is-open span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg)
+        }
+
+        .menu-btn.is-open span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px)
+        }
+
+        .menu-btn.is-open span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg)
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 64px;
+            right: 12px;
+            width: 260px;
+            background: linear-gradient(180deg, rgba(0, 28, 39, 0.9) 0%, rgba(8, 25, 58, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, .3);
+            border-radius: var(--radius);
+            transform: translateX(calc(100% + 24px)) scale(0.98);
+            transform-origin: top right;
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+            padding: 16px
+        }
+
+        .sidebar.is-open {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            visibility: visible
+        }
+
+        .sidebar-title {
+            text-align: center;
+            color: var(--accent);
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 16px;
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .05));
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--text);
+            font-weight: 500;
+            font-size: 16px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            transition: all .2s ease
+        }
+
+        .sidebar-nav a:hover {
+            background: linear-gradient(135deg, rgba(0, 238, 255, .15), rgba(0, 238, 255, .1));
+            color: var(--accent);
+            border-color: rgba(0, 238, 255, .3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .2)
+        }
+
+        .sidebar-nav .icon {
+            width: 22px;
+            height: 22px;
+            color: var(--accent);
+            transition: color .2s ease
+        }
+
+        .sidebar-footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            text-align: center
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 6px;
+            margin-bottom: 8px
+        }
+
+        .footer-links span {
+            color: rgba(255, 255, 255, 0.4)
+        }
+
+        .privacy-link {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 500;
+            background: linear-gradient(90deg, var(--accent), rgb(81, 255, 162));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .copyright-text {
+            margin: 0;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .5)
+        }
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease, visibility .3s ease
+        }
+
+        .menu-overlay.is-open {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 7px 7px 7px;
+            flex: 1;
+            display: flex;
+            flex-direction: column
+        }
+
+        @media (min-width:540px) {
+            .content {
+                min-width: 520px;
+                margin-inline: auto
+            }
+
+            .topbar {
+                padding-inline: 20px;
+                border-radius: 0 0 16px 16px;
+                width: min(520px, 100%);
+                margin: 0 auto
+            }
+        }
+
+        .card {
+            background: linear-gradient(180deg, #000a1d 0%, #001930 100%);
+            border-radius: var(--radius);
+            padding-bottom: 10px;
+            padding: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, .3);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center
+        }
+
+        .title {
+            text-align: center;
+            font-weight: 900;
+            font-size: 19px;
+            letter-spacing: .4px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin: 0px
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--muted);
+            opacity: .95;
+            font-size: 15px;
+            margin: 0 6px 14px;
+            line-height: 1.2
+        }
+
+        .qr-wrap {
+            display: grid;
+            place-items: center;
+            margin: 10px 0 7px
+        }
+
+        .qr {
+            width: 220px;
+            height: 220px;
+            border-radius: 7px;
+            overflow: hidden;
+            background: #fff;
+            padding: 0px;
+            border: 1px solid rgb(0, 0, 0);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .5), inset 0 0 0 1px rgba(255, 255, 255, .5);
+            display: grid;
+            place-items: center
+        }
+
+        .qr svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            image-rendering: crisp-edges;
+            image-rendering: -webkit-optimize-contrast
+        }
+
+        .btn-wrap {
+            display: grid;
+            place-items: center;
+            margin-top: 10px;
+            margin-bottom: 0px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 17px;
+            font-family: inherit;
+            letter-spacing: .1px;
+            background: linear-gradient(90deg, #00fff2, #00e1ff);
+            color: #03152f;
+            border: none;
+            box-shadow: 0 8px 20px rgba(0, 238, 255, 0.466), inset 0 0 0 1px rgb(0, 49, 11);
+            transition: transform .12s ease
+        }
+
+        .btn:hover {
+            transform: translateY(-1px)
+        }
+
+        .btn:active {
+            transform: translateY(0)
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px
+        }
+
+        .note {
+            text-align: center;
+            color: #dfeaff;
+            opacity: .9;
+            font-size: 13px;
+            margin-top: 10px
+        }
+
+        .dev {
+            background: linear-gradient(90deg, rgba(5, 54, 57, 0.5), rgba(124, 19, 5, 0.18));
+            border: 1px solid rgba(60, 216, 255, 0.315);
+            border-radius: 12px;
+            line-height: 22px;
+            padding: 15px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            color: #ffffff;
+            text-align: justify;
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 0px
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .btn {
+                transition: none
+            }
+        }
+
+        .features-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0px;
+            margin-top: 15px;
+            background: linear-gradient(90deg, rgba(0, 45, 48, 0.603), rgba(124, 19, 5, 0.18));
+            border-radius: var(--radius);
+            border: 1px solid rgba(60, 216, 255, 0.315);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .35)
+        }
+
+        .feature-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+            position: relative
+        }
+
+        .feature-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 100%;
+            width: 1px;
+            background-color: rgba(145, 255, 200, 0.24)
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 10px;
+            fill: #c9b4ff00
+        }
+
+        .feature-title {
+            font-weight: 700;
+            font-size: 10px;
+            margin: 0 0 5px 0;
+            color: var(--accent-2);
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        .feature-subtitle {
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.89);
+            line-height: 1.3;
+            margin: 0
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent
+        }
+
+        .coming-soon-icon-wrap {
+            display: grid;
+            place-items: center;
+            margin: 24px 0 20px
+        }
+
+        .coming-soon-icon {
+            width: 100px;
+            height: 100px;
+            color: var(--accent);
+            opacity: 0.8;
+            animation: spin 10s linear infinite
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ – Coming Soon">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <section class="card" aria-labelledby="page-title">
+                <p class="sub" style="margin-top: 0; font-size: 14px; opacity: 0.8; max-width: 300px;"> As per our
+                    sources, BEU has not realeased the syllabus for <b>VLSI 6th, 7th & 8th Sem</b> yet as this is a
+                    new branch introduced in 2023. </p>
+            </section>
+        </main>
+    </div>
+    <script>
+        (function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('menu-overlay');
+            const body = document.body;
+
+            if (!menuToggle || !sidebar || !overlay) return;
+
+            function toggleMenu() {
+                const isOpen = menuToggle.classList.toggle('is-open');
+                sidebar.classList.toggle('is-open');
+                overlay.classList.toggle('is-open');
+                body.classList.toggle('sidebar-open');
+
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                sidebar.setAttribute('aria-hidden', !isOpen);
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+                    toggleMenu();
+                }
+            });
+        })();
+    </script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

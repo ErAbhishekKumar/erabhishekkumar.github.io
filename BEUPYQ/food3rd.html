@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>3rd Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">3rd Semester Syllabus</h1>
+                <p class="page-subtitle">Food Processing and Preservation</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Engineering Mathematics -III (PDE, Prob/Stat) [115301]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Principles of Food Preservation [115302]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Food Processing Operations [115303]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Food Microbiology [115304]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Python Programming [115305]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Universal Human Values [115306]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Indian Knowledge System [115307]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Food Processing Operations Lab [115303P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Food Microbiology Lab [115304P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Python Programming Lab [115305P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Internship-I [115308]</td>
+                                <td colspan="3">2 Weeks</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>25</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-115301" data-type="theory">Engineering
+                        Mathematics-III</button>
+                    <button class="tab-btn" data-target="subject-115302" data-type="theory">Principles of Food
+                        Preservation</button>
+                    <button class="tab-btn" data-target="subject-115303" data-type="theory">Food Processing
+                        Operations</button>
+                    <button class="tab-btn" data-target="subject-115304" data-type="theory">Food Microbiology</button>
+                    <button class="tab-btn" data-target="subject-115305" data-type="theory">Python Programming</button>
+                    <button class="tab-btn" data-target="subject-115306" data-type="theory">Universal Human
+                        Values</button>
+                    <button class="tab-btn" data-target="subject-115307" data-type="theory">Indian Knowledge
+                        System</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-115303P" data-type="lab">Food Processing Operations
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-115304P" data-type="lab">Food Microbiology Lab</button>
+                    <button class="tab-btn" data-target="subject-115305P" data-type="lab">Python Programming
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-115308" data-type="lab">Internship-I</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-115301" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Engineering Mathematics-III (PDE, Prob/Stat)</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of partial differential equations</li>
+                                <li>First order partial differential equations</li>
+                                <li>Solutions of first order linear PDEs</li>
+                                <li>Solution to homogenous and non-homogenous linear partial differential equations of
+                                    second order by complimentary function and particular integral method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0</strong>
+                            <ul class="unit-topics">
+                                <li>Second-order linear equations and their classification</li>
+                                <li>Initial and boundary conditions</li>
+                                <li>D'Alembert's solution of the wave equation</li>
+                                <li>Duhamel's principle for one dimensional wave equation</li>
+                                <li>Heat diffusion and vibration problems</li>
+                                <li>Separation of variables method to simple problems in Cartesian coordinates</li>
+                                <li>The Laplacian in plane</li>
+                                <li>Cylindrical and spherical polar coordinates</li>
+                                <li>Solutions with Bessel functions and Legendre functions</li>
+                                <li>One dimensional diffusion equation and its solution by separation of variables</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0</strong>
+                            <ul class="unit-topics">
+                                <li>Probability spaces</li>
+                                <li>Conditional probability</li>
+                                <li>Independence</li>
+                                <li>Discrete random variables</li>
+                                <li>Independent random variables</li>
+                                <li>The multinomial distribution</li>
+                                <li>Poisson approximation to the binomial distribution</li>
+                                <li>Infinite sequences of Bernoulli trials</li>
+                                <li>Sums of independent random variables</li>
+                                <li>Expectation of discrete random variables</li>
+                                <li>Moments</li>
+                                <li>Variance of a sum</li>
+                                <li>Correlation coefficient</li>
+                                <li>Chebyshev's inequality</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0</strong>
+                            <ul class="unit-topics">
+                                <li>Continuous random variables and their properties</li>
+                                <li>Distribution functions and densities</li>
+                                <li>Normal</li>
+                                <li>Exponential and gamma densities</li>
+                                <li>Bivariate distributions and their properties</li>
+                                <li>Distribution of sums and quotients</li>
+                                <li>Conditional densities</li>
+                                <li>Bayes' rule</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0</strong>
+                            <ul class="unit-topics">
+                                <li>Basic statistics</li>
+                                <li>Measures of central tendency: moments</li>
+                                <li>Skewness and kurtosis</li>
+                                <li>Probability distributions: binomial</li>
+                                <li>Poisson and normal - evaluation of statistical parameters for these three
+                                    distributions</li>
+                                <li>Correlation and regression - rank correlation</li>
+                                <li>Curve fitting by the method of least squares fitting of straight lines</li>
+                                <li>Second degree parabolas and more general curves</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0</strong>
+                            <ul class="unit-topics">
+                                <li>Test of significance: large sample test for single proportion</li>
+                                <li>Difference of proportions</li>
+                                <li>Tests for single mean</li>
+                                <li>Difference of means</li>
+                                <li>And difference of standard deviations</li>
+                                <li>Test for ratio of variances - chi- square test for goodness of fit and independence
+                                    of attributes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Erwin Kreyszig, Advanced Engineering Mathematics, 9thEdition, John Wiley & Sons, 2006.</li>
+                        <li>N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications.</li>
+                        <li>P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book
+                            Stall.</li>
+                        <li>S. Ross, A First Course in Probability, 6th Ed., Pearson Education India, 2002.</li>
+                    </ol>
+                </section>
+                <section id="subject-115302" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Principles of Food Preservation</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Food Spoilage and Food Preservation</strong>
+                            <ul class="unit-topics">
+                                <li>Parameters of foods that affect their stability</li>
+                                <li>Causes of food spoilage</li>
+                                <li>Microorganisms and food spoilage</li>
+                                <li>Enzymatic reactions and chemical changes in foods</li>
+                                <li>Food preservation principles</li>
+                                <li>Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Thermal Processing of Food</strong>
+                            <ul class="unit-topics">
+                                <li>Thermal destruction of microbial cells and bacteria spores</li>
+                                <li>Kinetics of microbial death</li>
+                                <li>Heat penetration into foods</li>
+                                <li>Method of determining lethality of thermal processes</li>
+                                <li>Thermal destruction of enzymes</li>
+                                <li>Mechanisms of heat transfer in food</li>
+                                <li>Blanching</li>
+                                <li>Pasteurization</li>
+                                <li>And sterilization</li>
+                                <li>Thermal processing of foods in containers and outside containers</li>
+                                <li>Principle of aseptic technology</li>
+                                <li>Thermal destruction of nutrients and quality factors</li>
+                                <li>Optimization of the thermal processes fornutrient retention</li>
+                                <li>Thermal processing equipment and technology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Chilling of Food</strong>
+                            <ul class="unit-topics">
+                                <li>Chilling of food: normal behaviour of foods stored at chilling temperatures: animal
+                                    tissues</li>
+                                <li>Plant tissues and non-tissue food</li>
+                                <li>Quality loss in foods stored at chilling temperatures</li>
+                                <li>Temperature</li>
+                                <li>Relative humidity and other conditions selected for chilling storage</li>
+                                <li>Storage of food in chilled atmospheres of modified composition</li>
+                                <li>Chilling equipment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Freezing of Food</strong>
+                            <ul class="unit-topics">
+                                <li>Freezing of foods: effect of low temperature on microbial activity</li>
+                                <li>Enzymatic activity and rate of chemical changes</li>
+                                <li>Crystallization of water: nucleation</li>
+                                <li>Crystal growth</li>
+                                <li>Physical and chemical changes associated with ice formation</li>
+                                <li>Prefreezing treatments for major classes of natural food tissues</li>
+                                <li>Freezing methods and equipment</li>
+                                <li>Storage of frozen foods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Dehydration and Concentration of Food</strong>
+                            <ul class="unit-topics">
+                                <li>Water activity and food preservation: free and bound water in foods</li>
+                                <li>Water activity and sorption behaviour of foods</li>
+                                <li>Water activity and microbial spoilage</li>
+                                <li>Water activity and enzymatic reactions</li>
+                                <li>Effects of water activity on the chemical deterioration of foods</li>
+                                <li>Dehydration of foods: mass and heat balance in air drying</li>
+                                <li>Constant and falling rate period drying</li>
+                                <li>Psychometric chart</li>
+                                <li>Analysis of drying under constant external conditions</li>
+                                <li>Shrinkage during drying</li>
+                                <li>Nutrient destruction and other deteriorative reactions occurring during drying</li>
+                                <li>Industrial drying processes and equipment for foods</li>
+                                <li>Freeze drying</li>
+                                <li>Reconstitutability of dried foods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Other Methods of Food Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Recent developments in food processing: extrusion</li>
+                                <li>Food packaging</li>
+                                <li>Food irradiation</li>
+                                <li>High pressure processing</li>
+                                <li>Ultrasound technology</li>
+                                <li>Etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Food Processing: Principles and Applications, Ramaswamy, H and Marcotte, M, CRC Press 2006,
+                            ISBN-13: 978-1587160080.</li>
+                        <li>Food Processing Technology: Principles and Practices, Fellows, PJ Woodhead Publishing,
+                            ISBN-13 978-0081019078.</li>
+                    </ol>
+                </section>
+                <section id="subject-115303" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Food Processing Operations</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Unit Operations -Size Reduction</strong>
+                            <ul class="unit-topics">
+                                <li>Size reduction: theory of communition</li>
+                                <li>Ritinger's law</li>
+                                <li>Kick's law</li>
+                                <li>Bond's law and their applications in calculation of energy required in grinding</li>
+                                <li>Crushing efficiency</li>
+                                <li>Size reduction equipment used in food industry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Mixing</strong>
+                            <ul class="unit-topics">
+                                <li>Mixing: solid mixing</li>
+                                <li>Mixing index</li>
+                                <li>Rate of mixing</li>
+                                <li>Theory of liquid mixing</li>
+                                <li>Equipment for liquid and solid mixing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sieving and Sedimentation</strong>
+                            <ul class="unit-topics">
+                                <li>Separation based on size</li>
+                                <li>Effectiveness of screens</li>
+                                <li>Types of screens</li>
+                                <li>Factors affecting the sieving process</li>
+                                <li>Fineness modules and particle size distribution</li>
+                                <li>Gravitational sedimentation of particles in liquids and gases</li>
+                                <li>Sedimentation equipment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Centrifugal separation</strong>
+                            <ul class="unit-topics">
+                                <li>Basic equation</li>
+                                <li>Centrifugal clarification</li>
+                                <li>Equipment</li>
+                                <li>Filtration: fundamental equation for filtration</li>
+                                <li>Filtration equipment</li>
+                                <li>Crystallization: rate of crystallization</li>
+                                <li>Crystallization equilibrium</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Distillation</strong>
+                            <ul class="unit-topics">
+                                <li>Liquid vapor equilibrium</li>
+                                <li>Distillation of binary mixtures</li>
+                                <li>Simple distillation</li>
+                                <li>Continuous distillation</li>
+                                <li>Flash distillation</li>
+                                <li>Steam distillation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Leaching and extraction</strong>
+                            <ul class="unit-topics">
+                                <li>Gas - liquid equilibria</li>
+                                <li>Solid - liquid equilibria</li>
+                                <li>Extraction-solid liquid extraction</li>
+                                <li>Liquid- liquid extraction</li>
+                                <li>Stage equilibrium extraction</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Food Processing Technology, P. Fellows, Woodhead Publishing Series in Food Science,
+                            Technology and Nutrition, 2016, ISBN-13:978-0081019078.</li>
+                        <li>Unit Operations in Food, Processing R. L. Earle, ELSEVIER, 2nd, 1983, ISBN: 9781483293103.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-115304" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Food Microbiology</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Food Microbiology</strong>
+                            <ul class="unit-topics">
+                                <li>Developments in food microbiology</li>
+                                <li>Prokaryotic and eukaryotic cell</li>
+                                <li>Morphology</li>
+                                <li>Structure</li>
+                                <li>Microbiology and reproduction of bacteria</li>
+                                <li>Yeast and mould</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Culture and Microbial Growth</strong>
+                            <ul class="unit-topics">
+                                <li>Serial dilution</li>
+                                <li>Pour plate</li>
+                                <li>Streak plate</li>
+                                <li>Spread plate</li>
+                                <li>Slant broth and enrichment culture</li>
+                                <li>Lyophilization</li>
+                                <li>Growth curves</li>
+                                <li>Synchronous growth</li>
+                                <li>Doubling/generation time</li>
+                                <li>Intrinsic and extrinsic factors</li>
+                                <li>Relationship between number of generations and total number of microbes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Food Spoilage</strong>
+                            <ul class="unit-topics">
+                                <li>Microbiology of raw milk and fermented milk products viz. yoghurt</li>
+                                <li>Cheese</li>
+                                <li>Cereals products</li>
+                                <li>Fruits and vegetable</li>
+                                <li>Meat and meat products</li>
+                                <li>Egg and fish</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Spoilage and their effect on Human I</strong>
+                            <ul class="unit-topics">
+                                <li>Bacterial and fungal food spoilage</li>
+                                <li>Food poisoning</li>
+                                <li>Food borne infection</li>
+                                <li>Food borne intoxication</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Spoilage and their effect on Human II</strong>
+                            <ul class="unit-topics">
+                                <li>Toxins produced by Staphylococcus</li>
+                                <li>Clostridium</li>
+                                <li>Aspergillum</li>
+                                <li>Bacterial pathogens- Salmonella</li>
+                                <li>Bacillus</li>
+                                <li>Listeria</li>
+                                <li>E. coli</li>
+                                <li>Shigella</li>
+                                <li>Campylobacter</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Microbial Control</strong>
+                            <ul class="unit-topics">
+                                <li>Source of microorganisms</li>
+                                <li>Physical and chemical agents used in microbial control</li>
+                                <li>Disinfected agents and its dynamics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Food Microbiology: Fundamentals and Frontiers, Michael P. Doylel, Francisco DiezGonzalez,
+                            Colin Hill, ASM Press, Washington, DC, 2019 ISBN: 978- 1555819965.</li>
+                        <li>Modern Food Microbiology Jay, James M., Loessner, Martin J., Golden, David A, CBSPD ISBN:
+                            9788123904757.</li>
+                    </ol>
+                </section>
+                <section id="subject-115305" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Python Programming</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Basics Programming Syntax, Conditional and Iterative
+                                Statements</strong>
+                            <ul class="unit-topics">
+                                <li>Procedure oriented vs. object-oriented approach of programming</li>
+                                <li>Python character set</li>
+                                <li>Python tokens</li>
+                                <li>Variables</li>
+                                <li>Concept of lvalue and rvalue</li>
+                                <li>Use of comments</li>
+                                <li>Data types: number (integer, floating point, complex)</li>
+                                <li>Boolean</li>
+                                <li>Sequence (string, list, tuple)</li>
+                                <li>None</li>
+                                <li>Mapping</li>
+                                <li>(dictionary)</li>
+                                <li>Mutable and immutable data types</li>
+                                <li>Operators: arithmetic operators</li>
+                                <li>Relational operators</li>
+                                <li>Logical operators</li>
+                                <li>Assignment operator</li>
+                                <li>Augmented assignment operators</li>
+                                <li>Expressions</li>
+                                <li>Statement</li>
+                                <li>Type conversion & input/output: precedence of operators</li>
+                                <li>Expression</li>
+                                <li>Evaluation of expression</li>
+                                <li>Conditional statements: simple if statement</li>
+                                <li>If- else statement</li>
+                                <li>If- elif-else statement</li>
+                                <li>Iterative statements: while loop</li>
+                                <li>For loop</li>
+                                <li>Range function</li>
+                                <li>Break and continue statements</li>
+                                <li>Nested loops</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: String, List, Tuples, Set and Dictionary</strong>
+                            <ul class="unit-topics">
+                                <li>String: indexing</li>
+                                <li>String operations (concatenation, repetition, membership & slicing)</li>
+                                <li>Traversing a string using loops</li>
+                                <li>Built-in functions</li>
+                                <li>Lists: introduction</li>
+                                <li>Indexing</li>
+                                <li>List operations: concatenation</li>
+                                <li>Repetition</li>
+                                <li>Membership & slicing</li>
+                                <li>Traversing a list</li>
+                                <li>Built- in list functions</li>
+                                <li>Linear search on list of numbers and counting the frequency of elements in a list
+                                </li>
+                                <li>Tuples: creating</li>
+                                <li>Initializing</li>
+                                <li>Accessing elements</li>
+                                <li>Tuple assignment</li>
+                                <li>Performing operations on tuples</li>
+                                <li>Tuple methods and built-in functions</li>
+                                <li>Nested tuples</li>
+                                <li>Set: creating set</li>
+                                <li>Traversing</li>
+                                <li>Adding</li>
+                                <li>Removing data in set</li>
+                                <li>Performing set operations like join</li>
+                                <li>Union intersection</li>
+                                <li>Difference</li>
+                                <li>Dictionary: accessing items in a dictionary using keys</li>
+                                <li>Mutability of dictionary: adding a new item</li>
+                                <li>Modifying an existing item</li>
+                                <li>Built-in dictionary functions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Python Functions, Modules and Packages</strong>
+                            <ul class="unit-topics">
+                                <li>Functions: types of function (built- in functions, functions defined in module, user
+                                    defined functions)</li>
+                                <li>Creating user defined function</li>
+                                <li>Arguments and parameters</li>
+                                <li>Default parameters</li>
+                                <li>Positional parameters</li>
+                                <li>Lambda functions</li>
+                                <li>Returning value</li>
+                                <li>Scope of a variable: global scope</li>
+                                <li>Local scope</li>
+                                <li>Modules and packages: importing module using 'import' regular expressions</li>
+                                <li>Exception handling</li>
+                                <li>PyPI python package index</li>
+                                <li>Pip python package manager</li>
+                                <li>Importing libraries and functions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Object-Oriented Programming (OOP)</strong>
+                            <ul class="unit-topics">
+                                <li>OOPs object oriented programming concepts and approach</li>
+                                <li>Abstraction</li>
+                                <li>Encapsulation</li>
+                                <li>Class</li>
+                                <li>Object</li>
+                                <li>Class method vs static method in python</li>
+                                <li>Class and static variable</li>
+                                <li>Constructor and destructors in python</li>
+                                <li>Inheritance: types of inheritance: single</li>
+                                <li>Multiple</li>
+                                <li>Multilevel</li>
+                                <li>Hierarchical</li>
+                                <li>Polymorphism: polymorphism with class method</li>
+                                <li>Polymorphism with inheritance</li>
+                                <li>Method overriding</li>
+                                <li>Overloading</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Exception and File Handling in Python</strong>
+                            <ul class="unit-topics">
+                                <li>Exception handling: syntax errors</li>
+                                <li>Exceptions</li>
+                                <li>Need of exception handling</li>
+                                <li>User-defined exceptions</li>
+                                <li>Raising exceptions</li>
+                                <li>Handling exceptions</li>
+                                <li>Catching exceptions</li>
+                                <li>Try except - else clause</li>
+                                <li>Try - finally clause</li>
+                                <li>Recovering and continuing with finally</li>
+                                <li>Built-in exception classes</li>
+                                <li>File handling: text file and binary file</li>
+                                <li>File types</li>
+                                <li>Open and close files</li>
+                                <li>Reading and writing text files</li>
+                                <li>Reading and writing binary files</li>
+                                <li>File access modes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Data Analysis with Pandas</strong>
+                            <ul class="unit-topics">
+                                <li>Pandas data structures: series</li>
+                                <li>Declaration</li>
+                                <li>Selecting elements</li>
+                                <li>Assigning values</li>
+                                <li>Filtering values</li>
+                                <li>Operations</li>
+                                <li>Mathematical functions</li>
+                                <li>Evaluating values</li>
+                                <li>Handling missing data</li>
+                                <li>Creating series from dictionaries</li>
+                                <li>Adding two series</li>
+                                <li>Data frame: defining</li>
+                                <li>Selecting elements</li>
+                                <li>Assigning values</li>
+                                <li>Membership</li>
+                                <li>Deleting a column</li>
+                                <li>Filtering</li>
+                                <li>Index objects: indexing</li>
+                                <li>Re-indexing</li>
+                                <li>Dropping</li>
+                                <li>Sorting and ranking</li>
+                                <li>Descriptive statistics data loading: reading and writing csv</li>
+                                <li>Xls</li>
+                                <li>Text data files</li>
+                                <li>Data cleaning and preparation: handling missing data</li>
+                                <li>Removing duplicates</li>
+                                <li>Replacing values</li>
+                                <li>Vectorized string methods</li>
+                                <li>Hierarchical indexing</li>
+                                <li>Merging and combining</li>
+                                <li>Data aggregation and grouping</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Computing and Problem-Solving using Python, E. Balagurusamy, McGraw Hill
+                            Education (India)Pvt. Ltd. 1st Edition /2016, ISBN-10: 9352602587 ISBN-13: 978-9352602582.
+                        </li>
+                        <li>Core Python Applications Programming, Wesley J. Chun, 3rd Edition, Pearson Education, 2016,
+                            ISBN-10: 0132678209 ISBN-13: 978-0132678209.</li>
+                        <li>Python Cookbook, David Beazley, Brian Jones., Third Edition, Orelly Publication, 2013, ISBN
+                            978-1449340377.</li>
+                        <li>Python Data Analytics, Fabio Nelli, Apress, 2015, ISBN: 9781484209585.</li>
+                        <li>Python for Data Analysis: Data Wrangling with Pandas, Numpy, and IPython, Wes McKinney,
+                            O'REILLY, 2017, Second Edition ISBN-10: 1491957662 ISBN-13: 78- 1491957660.</li>
+                    </ol>
+                </section>
+                <section id="subject-115306" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Universal Human Values</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Value Education</strong>
+                            <ul class="unit-topics">
+                                <li>Right understanding</li>
+                                <li>Relationship and physical facility (holistic development and the role of education)
+                                </li>
+                                <li>Understanding value education sharing about oneself</li>
+                                <li>Self-exploration as the process for value education</li>
+                                <li>Continuous happiness and prosperity the basic human aspirations</li>
+                                <li>Exploring human consciousness</li>
+                                <li>Happiness and prosperity - current scenario</li>
+                                <li>Method to fulfill the basic human aspirations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Harmony in the Human Being</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding human being as the co-existence of the self and the body</li>
+                                <li>Distinguishing between the needs of the self and the body</li>
+                                <li>The body as an instrument of the self</li>
+                                <li>Understanding harmony in the self</li>
+                                <li>Harmony of the self with the body</li>
+                                <li>Programme to ensure self-regulation and health</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Harmony in the Family and Society</strong>
+                            <ul class="unit-topics">
+                                <li>Harmony in the family the basic unit of human interaction</li>
+                                <li>'Trust' the foundational value in relationship</li>
+                                <li>'Respect' as the right evaluation</li>
+                                <li>Other feelings</li>
+                                <li>Justice in human- to-human relationship</li>
+                                <li>Understanding harmony in the society</li>
+                                <li>Vision for the universal human order</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Harmony in the Nature/Existence</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding harmony in the nature</li>
+                                <li>Interconnectedness</li>
+                                <li>Self-regulation and mutual fulfilment among the four orders of nature</li>
+                                <li>Realizing existence as co-existence at all levels</li>
+                                <li>The holistic perception of harmony in existence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Implications of the Holistic Understanding - a Look at
+                                Professional</strong>
+                            <ul class="unit-topics">
+                                <li>Natural acceptance of human values</li>
+                                <li>Definitiveness of (ethical) human conduct</li>
+                                <li>A basis for humanistic education</li>
+                                <li>Humanistic constitution and universal human order</li>
+                                <li>Competence in professional ethics</li>
+                                <li>Holistic technologies</li>
+                                <li>Production systems and management models-typical case studies</li>
+                                <li>Strategies for transition towards value-based life and profession</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Competence in Professional Ethics</strong>
+                            <ul class="unit-topics">
+                                <li>Competence in professional ethics</li>
+                                <li>Holistic technologies</li>
+                                <li>Production systems and management models-typical case studies</li>
+                                <li>Strategies for transition towards value-based life and profession</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>A Foundation Course in Human Values and Professional Ethics, RR Gaur, R Asthana, G P
+                            Bagaria, 2nd Revised Edition, Excel Books, New Delhi, 2019. ISBN 978-93-8703447.</li>
+                        <li>Jeevan Vidya: EkParichaya, A Nagaraj, Jeevan VidyaPrakashan, Amarkantak, 1999.</li>
+                        <li>Human Values, A.N. Tripathi, New Age Intl. Publishers, New Delhi, 2004.</li>
+                        <li>The Story of Stuff (Book).</li>
+                        <li>The Story of My Experiments with Truth - by Mohandas Karamchand Gandhi.</li>
+                        <li>Small is Beautiful - E. F Schumacher.</li>
+                        <li>Slow is Beautiful - Cecile Andrews.</li>
+                        <li>Economy of Permanence - JC Kumarappa.</li>
+                        <li>Bharat Mein Angreji Raj - Pandit Sunderlal.</li>
+                        <li>Rediscovering India - by Dharampal.</li>
+                        <li>Hind Swaraj or Indian Home Rule - by Mohandas K. Gandhi.</li>
+                        <li>India Wins Freedom - Maulana Abdul Kalam Azad.</li>
+                        <li>Vivekananda - Romain Rolland (English)</li>
+                        <li>Gandhi - Romain Rolland (English)</li>
+                    </ol>
+                </section>
+                <section id="subject-115307" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Indian Knowledge System</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Indian Knowledge Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of IKS</li>
+                                <li>Organization of IKS</li>
+                                <li>Conception and constitution of knowledge in indian tradition</li>
+                                <li>The oral tradition</li>
+                                <li>Models and strategies of IKS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Overview of IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>The vedasas the basis of IKS</li>
+                                <li>Overview of all the six vedängas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Relevance in Current Technical Education System
+                                I</strong>
+                            <ul class="unit-topics">
+                                <li>Relevance of following IKS domains in present technical education system:
+                                    arthashastra (indian economics and political systems)</li>
+                                <li>Ganitaand jyamiti(indianmathematics</li>
+                                <li>Astronomy and geometry</li>
+                                <li>Rasayana (indianchemical sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Relevance in Current Technical Education System
+                                II</strong>
+                            <ul class="unit-topics">
+                                <li>Ayurveda (indian biological sciences / diet & nutrition)</li>
+                                <li>Jyotishvidya (observational astronomy and calendar systems)</li>
+                                <li>Prakriti vidya(indian system of terrestrial/ material sciences/ecology and
+                                    atmospheric sciences)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Relevance in Current Technical Education System
+                                III</strong>
+                            <ul class="unit-topics">
+                                <li>Vastu vidya(indian system of aesthetics-iconography and built-environment
+                                    /architecture)</li>
+                                <li>Nyayashastra(indian systems of social ethics</li>
+                                <li>Logic and law)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced IKS Domains</strong>
+                            <ul class="unit-topics">
+                                <li>Shilpa andnatyashastra (indian classical arts: performing and fine arts)</li>
+                                <li>Sankhyaand yoga darshna(indian psychology</li>
+                                <li>Yoga and consciousness studies)</li>
+                                <li>Vrikshayurveda(plant science/sustainable agriculture/food preservation methods)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Indian Knowledge System: Concepts and Applications, Archak, K.B. (2012).,
+                            Kaveri Books, New Delhi, ISBN-13:978-9391818203</li>
+                        <li>Introduction To Indian Knowledge System: Concepts and Applications, Mahadevan, B. Bhat,
+                            VinayakRajat, NagendraPavana R.N., PHI, ISBN: 9789391818203.</li>
+                        <li>Glimpse into Kautilya's Arthashastra Ramachandrudu P. (2010), Sanskrit Academy, Hyderabad,
+                            ISBN:9788380171074.</li>
+                        <li>"Introduction" in Studies in Epics and Purāņas, (Eds.), KM Munshi and N ChandrashekaraAiyer
+                            Bhartiya VidyaBhavan.</li>
+                    </ol>
+                </section>
+                <section id="subject-115303P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Food Processing Operations Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>D.F.Z value for a heating process meant for inactivation of microorganisms.</li>
+                        <li>Thermal process time by formula method</li>
+                        <li>Thermal process time by graphical method</li>
+                        <li>Steam properties using Mollier diagram</li>
+                        <li>Steam properties using steam tables</li>
+                        <li>Boiling point elevation</li>
+                        <li>Multiple effect evaporator</li>
+                        <li>Relative humidity and other thermodynamic properties of air using Psychrometric chart</li>
+                        <li>Drying characteristics of a food material during convective dehydration</li>
+                        <li>Moisture diffusivity of a food material during dehydration.</li>
+                        <li>Activation energy for dehydration of a food sample.</li>
+                        <li>Freeze drying time determined by experiment and from modified Plank's equation</li>
+                        <li>Freezing point depression of a food material.</li>
+                        <li>Freezing curve for pure water and a food material.</li>
+                        <li>Freezing time for a given food sample using Heislier charts or unsteady state heat transfer
+                            solutions.</li>
+                    </ol>
+                </section>
+                <section id="subject-115304P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Food Microbiology Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any 10 Experiments</h3>
+                    <ol>
+                        <li>Carbohydrates in the given food sample</li>
+                        <li>Browning reaction and inhibition of browning reaction.</li>
+                        <li>Acid value, RM value and Polenske value of given oil or fat sample</li>
+                        <li>Amount of fat in the given food samples</li>
+                        <li>Protein by Kjeldhal, electrophoresis methods</li>
+                        <li>Pectic substances and pectin in fruit</li>
+                        <li>Vitamins in foods</li>
+                        <li>Gram staining technique of bacteria</li>
+                        <li>Size of a given microbial cell</li>
+                        <li>Total viable count in a culture</li>
+                        <li>Growth curve of microorganisms.</li>
+                        <li>Pure culture using different techniques.</li>
+                        <li>Analysis of food sample by standard plate count (SPC) method.</li>
+                        <li>Quality of milk by methylene blue reduction (MBRT) tes</li>
+                        <li>Presumptive test for coliforms in milk.</li>
+                    </ol>
+                </section>
+                <section id="subject-115305P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Python Programming Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten experiments</h3>
+                    <ol>
+                        <li>
+                            a) Download and Install IDLE. Write and execute Python program to- <br>
+                            b) Calculate the Area of a Triangle where its three sides a, b, c are given. $s=(a+b+c)/2$
+                            Area=square root of $s(s-a)(s-b)(s-c)$ (write program without using function) <br>
+                            c) Swap Two Variables <br>
+                            d) Solve quadratic equation for real numbers.
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) Check if a Number is Positive, Negative or zero. <br>
+                            b) Check whether the given year is a Leap Year. <br>
+                            c) Print all Prime Numbers in an Interval. <br>
+                            d) Display the multiplication Table based on the given input. <br>
+                            e) Print the Fibonacci sequence. <br>
+                            f) Find the Factorial of a Number.
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) Check whether the string is Palindrome <br>
+                            b) Reverse words in a given String in Python <br>
+                            c) identify in a strings the name, position and counting of vowels. <br>
+                            d) Count the Number of matching characters in a pair of string (set) <br>
+                            e) Python program for removing i-th character from a string
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) find largest number in a given list without using max(). <br>
+                            b) find the common numbers from two lists. <br>
+                            c) create a list of even numbers and another list of odd numbers from a given list. <br>
+                            d) To find number of occurrences of given number without using built-in methods.
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) find the index of an item of a tuple. <br>
+                            b) find the length of a tuple. <br>
+                            c) to reverse a tuple. <br>
+                            d) Write a Python program to sort a list of tuple by its float element. Sample data:
+                            [('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')] Expected Output: [('item3',
+                            '24.5'), ('item2', '15.10'), ('item1', '12.20')]
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) create an intersection of sets. <br>
+                            b) create a union of sets. <br>
+                            c) create set difference. <br>
+                            d) check if two given sets have no elements in common.
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) Write a Python script to concatenate two dictionaries to create a new one <br>
+                            b) Write a Python script to merge two Python dictionaries. <br>
+                            c) Write a Python program to combine two dictionary adding values for common keys. d1= {'a':
+                            100, 'b': 200, 'c':300} d2= {'a': 300, 'b': 200, 'd': 400} Sample output: d({'a': 400, 'b':
+                            400, 'd': 400, 'c': 300})
+                        </li>
+                        <li>
+                            Write and execute Python program to- <br>
+                            a) Write a Python function for reversing a string and call it. <br>
+                            b) Write a Python function for calculating compound interest and call it. <br>
+                            c) Write a Python function for calculating the factorial of a number and call it to
+                            calculate $!n/(!r)*!(n-r)$ where symbol "!" stands for factorial.
+                        </li>
+                        <li>
+                            Write program using OOP approach to <br>
+                            a) create an instance of a specified class and display the namespace of the said instance
+                            <br>
+                            b) create a Python class named Student with two attributes: student_id, student_name. Add a
+                            new attribute: student class. Create a function to display all attributes and their values
+                            in the Student class. <br>
+                            c) Create a Python class named Student with two instances student1, student2 and assign
+                            values to the instances' attributes. Print all the attributes of the student1, student2
+                            instances <br>
+                            d) Write programs to demonstrate use of following types of inheritance: i. Single
+                            inheritance ii. Multiple inheritance iii. Multilevel inheritance <br>
+                            e) Demonstrate use of polymorphism with following situations: i. Polymorphism in operator
+                            ii. Polymorphism in user defined method iii. Polymorphism in built-in function iv.
+                            Polymorphism with class method v. Polymorphism with method overriding
+                        </li>
+                        <li>
+                            Using exception handling feature such as try...except, try finally- write minimum three
+                            programs to handle following types of exceptions. <br>
+                            a) i. TypeError ii. NameError iii. Index Error iv. KeyError v. ValueError vi. IOError vii.
+                            ZeroDivisionError <br>
+                            b) Write Python program to demonstrate file operations.
+                        </li>
+                        <li>
+                            Working with a Series using Pandas <br>
+                            a) Create a series using list and dictionary. 10b. Create a series using NumPy functions
+                            inPandas. <br>
+                            b) Print the index and values of series. <br>
+                            c) Print the first and last few rows from theseries.
+                        </li>
+                        <li>
+                            Working with Data Frame Rows <br>
+                            a) Slicing Data Frame using loc and iloc. 11b. Filter multiple rows using isin. <br>
+                            b) Select first n rows and last n rows <br>
+                            c) Select rows randomly n rows and fractions of rows (use df. sample method) <br>
+                            d) Count the number of rows with eachunique value of variables <br>
+                            e) Select nlargest and nsmallest values. 11g. Order/sort the rows
+                        </li>
+                        <li>
+                            Merge and combine data <br>
+                            a) Perform the append, concat and combinefirst operations on Data Frames. <br>
+                            b) Apply different types of merge on data. 12c. Use a query method to filter Data Frame <br>
+                            c) with multiple conditions.
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-115308" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Internship - I</h2>
+                    <h3 class="sub-heading lab-heading">Internship I Guidelines</h3>
+                    <p>Internship I is of a minimum duration of two weeks which can be completed in an
+                        Industry/Institute in consultation with concerned Engineering College/Institute. After
+                        completion of Internship a detailed report of the Internship mentioning the training undertaken
+                        along with certificate should be submitted.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

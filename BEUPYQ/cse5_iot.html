@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>5th Semester Syllabus - CSE (IoT)</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">5th Semester Syllabus</h1>
+                <p class="page-subtitle">Computer Science & Engineering (IoT)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>IoT Architecture & Design [155501]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Database Management System [155502]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Artificial Intelligence [155503]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Cryptography and Network Security [155504]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Seminar [155505]</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-I [1555XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Professional Practice, Law & Ethics</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-II [155511P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>6</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>NPTEL Course [155512P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>IoT Architecture & Design Lab [155501P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Database Management System Lab [155502P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>27</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-155501" data-type="theory">IoT
+                        Architecture & Design</button><button class="tab-btn" data-target="subject-155502"
+                        data-type="theory">Database Management System</button><button class="tab-btn"
+                        data-target="subject-155503" data-type="theory">Artificial Intelligence</button><button
+                        class="tab-btn" data-target="subject-155504" data-type="theory">Cryptography and Network
+                        Security</button><button class="tab-btn" data-target="subject-155505"
+                        data-type="theory">Seminar</button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective-I"
+                        data-modal-options='[ {"label": "IoT Communication Protocols [155506]", "target": "subject-155506", "btn-id": "btn-155506"}, {"label": "Data Analytics for IoT [155507]", "target": "subject-155507", "btn-id": "btn-155507"}, {"label": "Emerging Web Technology [155508]", "target": "subject-155508", "btn-id": "btn-155508"}, {"label": "Mathematical Foundation for IoT [155509]", "target": "subject-155509", "btn-id": "btn-155509"}, {"label": "Software Engineering [155510]", "target": "subject-155510", "btn-id": "btn-155510"} ]'>
+                        Program Elective-I </button><button class="tab-btn" data-target="subject-155507"
+                        data-type="theory" style="display:none;">Data Analytics for IoT</button><button class="tab-btn"
+                        data-target="subject-155508" data-type="theory" style="display:none;">Emerging Web
+                        Technology</button><button class="tab-btn" data-target="subject-155509" data-type="theory"
+                        style="display:none;">Mathematical Foundation</button><button class="tab-btn"
+                        data-target="subject-155510" data-type="theory" style="display:none;">Software
+                        Engineering</button><button class="tab-btn" data-target="subject-prof-practice"
+                        data-type="theory">Professional Practice, Law & Ethics</button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-155501P" data-type="lab">IoT
+                        Architecture & Design Lab</button><button class="tab-btn" data-target="subject-155502P"
+                        data-type="lab">Database Management System Lab</button><button class="tab-btn"
+                        data-target="subject-155511P" data-type="lab">Summer Entrepreneurship-II</button><button
+                        class="tab-btn" data-target="subject-155512P" data-type="lab">NPTEL Course</button></div>
+            </section>
+            <div id="syllabus-content"><!-- Core theory subjects -->
+                <section id="subject-155501" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">IoT Architecture & Design [155501]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: IoT - An Architectural Overview (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Definition</li>
+                                <li>Characteristics</li>
+                                <li>Evolution</li>
+                                <li>Applications</li>
+                                <li>Architectures</li>
+                                <li>Conceptual Framework</li>
+                                <li>Enabling Technologies</li>
+                                <li>Wireless Networks</li>
+                                <li>M2M Communication</li>
+                                <li>IoT System Layers</li>
+                                <li>Design Principles</li>
+                                <li>Communication Technologies</li>
+                                <li>IoT Protocols</li>
+                                <li>Business Processes</li>
+                                <li>Everything As A Service (Xaas)</li>
+                                <li>Role Of Cloud</li>
+                                <li>Security</li>
+                                <li>Privacy Aspects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Elements of IoT (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Hardware Components: Sensors</li>
+                                <li>Digital Sensors</li>
+                                <li>Actuators</li>
+                                <li>RFID Technology</li>
+                                <li>Wireless Sensor Networks</li>
+                                <li>Participatory Sensing Technology</li>
+                                <li>Embedded Platforms For IoT: Introduction To Arduino (Configuration And Use)</li>
+                                <li>Raspberry Pi (Basic Functionality Of Raspberry Pi B+ Board, Setup, Configuration,
+                                    And Use)</li>
+                                <li>Software Components: Programming APIs (Python/Node.js/Arduino) For Communication
+                                    Protocols - MQTT, ZigBee, Bluetooth, CoAP, UDP, TCP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensors and Actuators in IoT (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Sensors: Sensor Vs. Transducer</li>
+                                <li>Nature Of Sensors</li>
+                                <li>Sensor Output Characteristics</li>
+                                <li>Sensing Technologies</li>
+                                <li>Digital Output Sensors</li>
+                                <li>Types Of Sensors And Actuators: Humidity Sensors</li>
+                                <li>Ultrasonic Sensors</li>
+                                <li>Temperature Sensors</li>
+                                <li>Industrial Sensors - Description & Characteristics</li>
+                                <li>Evolution Of IoT Sensors: First- Generation</li>
+                                <li>Advanced Generation</li>
+                                <li>Integrated IoT Sensors</li>
+                                <li>Polytronics Systems</li>
+                                <li>Sensors' Swarm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: IoT Architecture (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To IoT Architecture: Overview</li>
+                                <li>Key Components</li>
+                                <li>Importance</li>
+                                <li>IoT Reference Architecture: Functional View</li>
+                                <li>Information View</li>
+                                <li>Deployment And Operational View</li>
+                                <li>Other Relevant Architectural Views</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: IoT APIs (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Representational State Transfer (REST)</li>
+                                <li>Uniform Resource Identifiers (URIs)</li>
+                                <li>Types Of APIs</li>
+                                <li>WebSocket</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: IoT Challenges, Applications, and Case Studies (8
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Challenges In IoT: Design Challenges</li>
+                                <li>Development Challenges</li>
+                                <li>Security Challenges</li>
+                                <li>Other Challenges</li>
+                                <li>IoT Applications & Case Studies: Smart Agriculture: Smart Irrigation System</li>
+                                <li>Temperature Controller</li>
+                                <li>Smart Home & Automation: Home Automation</li>
+                                <li>Smart Metering</li>
+                                <li>Healthcare: E- Health</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Internet of Things, Architecture and Design Principles Raj Kamal 1st edition, McGraw Hill
+                            Education, May 2017</li>
+                        <li>Internet of Things: A Hands-On Approach Arshdeep Baga and Vijay Madisetti 1st Edition,
+                            Universities press, 2015.</li>
+                        <li>IoT (Internet of Things Programming: A simple and fast way of Learning IoT David Etter
+                            Kindle edition 2016.</li>
+                        <li>Architecting the Internet of Things Bernd Scholz-Reiter and Florian Michahelles, ISBN 978-3-
+                            642-19156-5 e-ISBN 978-3-642-19157-2, Springer, 2016</li>
+                        <li>Programming the Raspberry Pi: Getting Started with Python Simon Monk, January 2012, McGraw
+                            Hill Professional.</li>
+                        <li>Getting Started with the Internet of Things Cuno Pfister O'Reilly Media, 2011, ISBN: 978-1-
+                            4493- 9357- 1.</li>
+                    </ol>
+                </section>
+                <section id="subject-155502" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Database Management System [155502]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Data Abstraction</li>
+                                <li>Data Independence</li>
+                                <li>Data Definition Language (DDL)</li>
+                                <li>Data Manipulation Language (DML)</li>
+                                <li>Data Models: Entity- Relationship Model</li>
+                                <li>Network Model</li>
+                                <li>Relational And Object Oriented Data Models</li>
+                                <li>Integrity Constraints</li>
+                                <li>Data Manipulation Operations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Relational Query Languages (10 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Relational Algebra</li>
+                                <li>Tuple And Domain Relational Calculus</li>
+                                <li>SQL3</li>
+                                <li>DDL And DML Constructs</li>
+                                <li>Open Source And Commercial DBMS - MYSQL, ORACLE, DB2, SQL Server</li>
+                                <li>Relational Database Design: Domain And Data Dependency</li>
+                                <li>Armstrong'S Axioms</li>
+                                <li>Normal Forms</li>
+                                <li>Dependency Preservation</li>
+                                <li>Lossless Design</li>
+                                <li>Query Processing And Optimization: Evaluation Of Relational Algebra Expressions</li>
+                                <li>Query Equivalence</li>
+                                <li>Join Strategies</li>
+                                <li>Query Optimization Algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Storage Strategies (4 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Indices</li>
+                                <li>B- Trees</li>
+                                <li>Hashing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Transaction Processing (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Concurrency Control</li>
+                                <li>ACID Property</li>
+                                <li>Serializability Of Scheduling</li>
+                                <li>Locking And Timestamp Based Schedulers</li>
+                                <li>Multi- Version And Optimistic Concurrency Control Schemes</li>
+                                <li>Database Recovery</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Database Security (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Authentication</li>
+                                <li>Authorization And Access Control</li>
+                                <li>DAC, MAC And RBAC Models</li>
+                                <li>Intrusion Detection</li>
+                                <li>SQL Injection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Topics (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Object Oriented And Object Relational Databases</li>
+                                <li>Logical Databases</li>
+                                <li>Web Databases</li>
+                                <li>Distributed Databases</li>
+                                <li>Data Warehousing And Data Mining</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Database System Concepts", 6th Edition by Abraham Silberschatz, Henry F. Korth, S.
+                            Sudarshan, McGraw- Hill.</li>
+                        <li>"Principles of Database and Knowledge - Base Systems", Vol 1 by J. D. Ullman, Computer
+                            Science Press.</li>
+                        <li>"Fundamentals of Database Systems", 5th Edition by R. Elmasri and S. Navathe, Pearson
+                            Education</li>
+                        <li>"Foundations of Databases", Reprint by Serge Abiteboul, Richard Hull, Victor Vianu, Addison
+                            - Wesley.</li>
+                    </ol>
+                </section>
+                <section id="subject-155503" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Artificial Intelligence [155503]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview</li>
+                                <li>Turing Test</li>
+                                <li>Intelligent Agents</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Problem Solving (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Solving Problems By Searching: Uninformed Search - Depth First Search</li>
+                                <li>Breadth First Search</li>
+                                <li>DFID</li>
+                                <li>Heuristic Search - Generate And Test</li>
+                                <li>Best First Search</li>
+                                <li>Beam Search</li>
+                                <li>Hill Climbing</li>
+                                <li>A*</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Problem Reduction Search & Game Playing (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>AND/OR Graphs</li>
+                                <li>AO*</li>
+                                <li>Constraint Satisfaction</li>
+                                <li>Means- Ends Analysis</li>
+                                <li>Stochastic Search Methods - Simulated Annealing</li>
+                                <li>Particle Swarm Optimization</li>
+                                <li>Game Playing - Minimax Algorithm</li>
+                                <li>Alpha- Beta Pruning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Knowledge and Reasoning (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Building A Knowledge Base - Propositional Logic</li>
+                                <li>First Order Logic</li>
+                                <li>Inference In First Order Logic</li>
+                                <li>Resolution - Refutation Proofs</li>
+                                <li>Theorem Proving In First Order Logic</li>
+                                <li>Planning</li>
+                                <li>Partial Order Planning</li>
+                                <li>Uncertain Knowledge And Reasoning</li>
+                                <li>Probabilities</li>
+                                <li>Bayesian Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Learning (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Different Forms Of Learning: Unsupervised</li>
+                                <li>Supervised</li>
+                                <li>Semi- Supervised</li>
+                                <li>K- Means Clustering Algorithm</li>
+                                <li>Decision Trees</li>
+                                <li>Neural Networks</li>
+                                <li>Deep Learning</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Topics (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Computer Vision</li>
+                                <li>Natural Language Processing</li>
+                                <li>Expert Systems</li>
+                                <li>Robotics</li>
+                                <li>Genetic Algorithm</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. Russell and P. Norvig, "Artificial Intelligence: A Modern Approach," Prentice Hall</li>
+                        <li>E. Rich, K. Knight and S. B. Nair, "Artificial Intelligence," TMH.</li>
+                        <li>C. Bishop,"Pattern Recognition and Machine Learning," Springer</li>
+                        <li>D. W. Patterson, "Introduction to artificial intelligence and expert systems," Prentice Hall
+                        </li>
+                        <li>A. C. Staugaard, Jr., "Robotics and AI: An Introduction to Applied Machine Intelligence,"
+                            Prentice Hall</li>
+                        <li>I. Bratko, "Prolog Programming for Artificial Intelligence," Addison-Wesley</li>
+                        <li>S. O. Haykin, "Neural Networks and Learning Machines," Prentice Hall</li>
+                        <li>D. Jurafsky and J. H. Martin, "Speech and Language Processing," Prentice Hall.</li>
+                    </ol>
+                </section>
+                <section id="subject-155504" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Cryptography and Network Security [155504]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Security Concepts (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>The Need For Security</li>
+                                <li>Security Approaches</li>
+                                <li>Principles Of Security</li>
+                                <li>Types Of Security Attacks</li>
+                                <li>Security Services</li>
+                                <li>Security Mechanisms</li>
+                                <li>A Model For Network Security</li>
+                                <li>Cryptography Concepts And Techniques: Introduction</li>
+                                <li>Plain Text And Cipher Text</li>
+                                <li>Substitution Techniques</li>
+                                <li>Transposition Techniques</li>
+                                <li>Encryption And Decryption</li>
+                                <li>Symmetric And Asymmetric Key Cryptography</li>
+                                <li>Stenography</li>
+                                <li>Key Range And Key Size</li>
+                                <li>Possible Types Of Attacks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Block Ciphers and Symmetric Key Cryptography (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Symmetric Key Ciphers: Block Cipher Principles- DES</li>
+                                <li>AES</li>
+                                <li>Blowfish</li>
+                                <li>RC5</li>
+                                <li>International Data Encryption Algorithm (IDEA)</li>
+                                <li>Block Cipher Operation Modes</li>
+                                <li>Stream Ciphers - RC4</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Number Theory and Asymmetric Key Cryptography (8
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Number Theory: Prime And Relatively Prime Numbers</li>
+                                <li>Modular Arithmetic</li>
+                                <li>Fermat'S And Euler'S Theorems</li>
+                                <li>Testing For Primality</li>
+                                <li>The Chinese Remainder Theorem</li>
+                                <li>Discrete Logarithms</li>
+                                <li>Asymmetric Key Ciphers: Principles Of Public Key Cryptosystems</li>
+                                <li>The RSA Algorithm</li>
+                                <li>Diffie Hellman Key Exchange</li>
+                                <li>Elgamal Encryption & Decryption</li>
+                                <li>Knapsack Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Cryptographic Hash Functions, Authentication, and
+                                Digital Signatures (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Cryptographic Hash Functions: Message Authentication</li>
+                                <li>Secure Hash Algorithm (SHA- 512)</li>
+                                <li>Message Authentication Codes: Authentication Requirements</li>
+                                <li>HMAC</li>
+                                <li>CMAC</li>
+                                <li>Digital Signatures</li>
+                                <li>Elgamal Digital Signature Scheme</li>
+                                <li>Key Management And Distribution: Symmetric Key Distribution Using Symmetric &
+                                    Asymmetric Encryption</li>
+                                <li>Distribution Of Public Keys</li>
+                                <li>Kerberos</li>
+                                <li>X.509 Authentication Service</li>
+                                <li>Public - Key Infrastructure</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Transport Layer Security and Wireless Network Security
+                                (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Transport- Level Security: Web Security Considerations</li>
+                                <li>Secure Socket Layer And Transport Layer Security</li>
+                                <li>HTTPS</li>
+                                <li>Secure Shell (SSH)</li>
+                                <li>Wireless Network Security: Wireless Security</li>
+                                <li>Mobile Device Security</li>
+                                <li>IEEE 802.11 Wireless LAN</li>
+                                <li>IEEE 802.11I Wireless LAN Security</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: E- Mail and IP Security: Concepts and Applications (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>E- Mail Security: Pretty Good Privacy</li>
+                                <li>S/MIME</li>
+                                <li>IP Security: IP Security Overview</li>
+                                <li>IP Security Architecture</li>
+                                <li>Authentication Header</li>
+                                <li>Encapsulating Security Payload</li>
+                                <li>Combining Security Associations</li>
+                                <li>Internet Key Exchange</li>
+                                <li>Case Studies On Cryptography And Security: Secure Multiparty Calculation</li>
+                                <li>Virtual Elections</li>
+                                <li>Single Sign On</li>
+                                <li>Secure Inter- Branch Payment Transactions</li>
+                                <li>Cross Site Scripting Vulnerability</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Cryptography and Network Security: Principles and Practice William, Stallings, Pearson
+                            Education, 8th Edition (2022), ISBN- 13: 978- 1292437480.</li>
+                        <li>Cryptography and Network Security, Atul Kahate, McGraw Hill Education India Pvt Ltd, 3rd
+                            Edition (2017), ISBN- 13: 978- 1259029882.</li>
+                        <li>Cryptography and Network Security, Behrouz A. Forouzan, McGraw Hill Education, 3rd Edition
+                            (2015), ISBN- 13: 978- 0070702080.</li>
+                        <li>Cryptography and Network Security, C.K. Shyamala, N. Harini, Dr. T.R. Padmanabhan, Wiley
+                            India, 1st Edition (2011), ISBN- 13: 978- 8126521793.</li>
+                        <li>Information Security: Principles and Practice Mark Stamp, Wiley, 2nd Edition (2011), ISBN-
+                            13: 978- 0470626399.</li>
+                        <li>Principles of Computer Security: CompTIA Security+ and Beyond Wm. Arthur Conklin, Greg
+                            White, McGraw Hill Education, 5th Edition (2018), ISBN- 13: 978- 1260026375.</li>
+                    </ol>
+                </section>
+                <section id="subject-155505" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Seminar [155505]</h2>
+                    <p>Seminar details and topics will be announced by the department.</p>
+                </section>
+                <section id="subject-prof-practice" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Practice, Law & Ethics</h2>
+                    <p>Syllabus to be provided by the department.</p>
+                </section><!-- Program Elective Cards (hidden initially) -->
+                <section id="subject-155506" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: IoT Communication Protocols [155506]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to IoT Communication Protocols (6
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of IoT Communication</li>
+                                <li>Need For Communication Protocols In IoT</li>
+                                <li>Comparison Of IoT Communication With Traditional Communication</li>
+                                <li>IoT Communication Stack (OSI & TCP/IP Model In IoT)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Data Link Layer Protocols in IoT Communication (8
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Role Of Data Link Layer In IoT</li>
+                                <li>PHY/MAC Layer (3GPP MTC, IEEE 802.11, IEEE 802.15)</li>
+                                <li>Wireless HART</li>
+                                <li>Z- Wave</li>
+                                <li>Bluetooth Low Energy</li>
+                                <li>Zigbee Smart Energy</li>
+                                <li>RFID And NFC</li>
+                                <li>DASH7</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Addressing and Network Layer Protocols in IoT (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>IPv4 Vs. IPv6</li>
+                                <li>6LoWPAN</li>
+                                <li>6TiSCH</li>
+                                <li>ND</li>
+                                <li>DHCP</li>
+                                <li>ICMP</li>
+                                <li>And IoT Routing Protocols (RPL, CORPL, CARP)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: IoT Transport Layer (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Connection Models</li>
+                                <li>Protocols</li>
+                                <li>And Secure Communication: Overview Of Transport Layer In IoT</li>
+                                <li>Connection- Oriented Vs. Connectionless Protocols</li>
+                                <li>Transport Protocols Used In IoT: TCP</li>
+                                <li>MPTCP</li>
+                                <li>UDP</li>
+                                <li>DCCP</li>
+                                <li>SCTP</li>
+                                <li>Security And Reliability In IoT Transport Layer: TLS</li>
+                                <li>DTLS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Session Layer in IoT Communication (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Role Of The Session Layer In IoT Data Exchange</li>
+                                <li>Key Requirements For IoT Application Protocols (Scalability, Security, Latency)</li>
+                                <li>Lightweight Protocols Vs Traditional Protocols</li>
+                                <li>Protocols For IoT Communication: HTTP</li>
+                                <li>CoAP</li>
+                                <li>XMPP</li>
+                                <li>AMQP</li>
+                                <li>MQTT</li>
+                                <li>DDS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: IoT Security & Emerging Communication Trend (6
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Security Challenges In IoT Communication</li>
+                                <li>Emerging IoT Communication Technologies: LoRaWAN</li>
+                                <li>5G And IoT Technologies</li>
+                                <li>Edge Computing & Fog Networking For IoT Communication</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Internet of Things: Architecture and Design Principles Raj Kamal McGraw Hill; 2nd Edition,
+                            (ISBN: 9789390727384).</li>
+                        <li>IoT Fundamentals: Networking Technologies, Protocols, and Use Cases for the Internet of
+                            Things, David Hanes, Gonzalo Salgueiro, Patrick Grossetete, Robert Barton, Jerome Henry,
+                            Pearson Education, 1st Edition, (ISBN: 978-1587144561).</li>
+                        <li>Building the Internet of Things with IPv6 and MIPv6: The Evolving World of M2M
+                            Communications, Daniel Minoli, Wiley Publications, 2016, (ISBN: 978-1-118-473474).</li>
+                    </ol>
+                </section>
+                <section id="subject-155507" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Data Analytics for IoT [155507]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to IoT and IoT Analytics (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To IoT</li>
+                                <li>Applications</li>
+                                <li>IoT Architectures And Components</li>
+                                <li>Fundamental To Analytics</li>
+                                <li>IoT Analytics Challenges</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: IoT Devices and Networking Protocols (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of IoT Devices And Sensors</li>
+                                <li>Basics Of Networking For IoT</li>
+                                <li>IoT Connectivity Protocols (E.G., Wi- Fi, Bluetooth, Zigbee, LoRaWAN)</li>
+                                <li>IoT Data Messaging Protocols (MQTT, CoAP, AMQP, Etc.)</li>
+                                <li>Analyzing Network Data To Infer Device Characteristics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: IoT Analytics for the Cloud (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Elastic Analytics</li>
+                                <li>Decouple Key Components</li>
+                                <li>Cloud Security And Analytics</li>
+                                <li>Designing Data Processing For Analytics</li>
+                                <li>Applying Big Data Technology To Storage</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Exploring IoT Data (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Exploring And Visualizing IoT Data</li>
+                                <li>Techniques To Assess Data Quality In IoT</li>
+                                <li>Preprocessing IoT Data For Analytics</li>
+                                <li>Basic Time Series Analysis In IoT</li>
+                                <li>Statistical Analysis For IoT Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Machine Learning and IoT Analytics (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Machine Learning For IoT</li>
+                                <li>Feature Engineering With IoT Data</li>
+                                <li>Validation Methods In IoT Analytics</li>
+                                <li>Need Of The Bias- Variance Tradeoff</li>
+                                <li>Use Cases Of Machine Learning In IoT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Advanced Topics in IoT Analytics (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Deep Learning Techniques For IoT Analytics</li>
+                                <li>Predictive Analytics And Anomaly Detection In IoT</li>
+                                <li>Edge AI And On- Device Analytics</li>
+                                <li>Ethical Considerations And Challenges In IoT Analytics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Empowering IoT with Big Data Analytics, Mohamed Adel Serhani, Elsevier, 1st Edition (2024),
+                            ISBN: 9780443216404.</li>
+                        <li>Internet of Things and Data Analytics Handbook, Hwaiyu Geng, Wiley, 1st Edition (2017),
+                            ISBN: 97811119173649.</li>
+                        <li>Innovations in Computational Intelligence, Big Data Analytics, and Internet of Things,
+                            Hounding Song, Information Age Publishing, 1st Edition (2023), ISBN: 9781648025281.</li>
+                        <li>Intelligent Network Design Driven by Big Data Analytics, IoT, AI, and Cloud Computing, D.
+                            Jude Hemanth, The Institution of Engineering and Technology, 1st Edition (2023), ISBN:
+                            9781839535338.</li>
+                    </ol>
+                </section>
+                <section id="subject-155508" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Emerging Web Technology [155508]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Web Development and AI (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Web Programming: Understanding The Fundamentals Of Web Development -
+                                    Including Client- Side And Server- Side Scripting Languages</li>
+                                <li>Introduction To Artificial Intelligence (AI): Definition, Scope And Applications Of
+                                    AI In Various Fields</li>
+                                <li>Intersection Of Web Development And AI: Exploring How AI Technologies Enhance Web
+                                    Applications And User Experiences</li>
+                                <li>Tools And Technologies: Introduction To Essential Tools And Technologies For Web
+                                    Development And AI Integration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Front end Development and AI Integration (8
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>What Is HTML: History, HTML Documents - Basic Structure - Creating An HTML Document
+                                    - Features And Limitations - Mark Up Tags - Heading- Paragraphs - Line Breaks - HTML
+                                    Tags - Formatting Tags</li>
+                                <li>Introduction To Elements Of HTML - Working With Text</li>
+                                <li>Working With Lists, Tables And Frames - Working With Hyperlinks - Images - Image
+                                    Format (Quality, Size, Type, ...) - Importing Images (Scanners) - Working With Forms
+                                    And Controls</li>
+                                <li>Responsive Web Design: Techniques For Creating Web Applications That Adapt To
+                                    Different Screen Sizes And Devices</li>
+                                <li>Introduction To AI Libraries And APIs: Overview Of Popular AI Libraries And APIs For
+                                    Frontend Integration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Introduction to Cascading Style Sheets (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Concept Of CSS - Creating Style Sheet, CSS Properties - CSS Styling (Background,
+                                    Text Format, Controlling Fonts) - Working With Block Elements And Objects - Working
+                                    With Lists And Tables - CSS Id And Class Box Model (Introduction, Border Properties,
+                                    Padding Properties, Margin Properties) - CSS Advanced (Grouping, Dimension, Display,
+                                    Positioning - Floating, Align, Pseudo Class - Navigation Bar - Image Sprites -
+                                    Attribute Sector) - CSS Color - Creating Page Layout And Site Designs</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Introduction to Web Publishing, Multimedia and Hosting
+                                (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Creating The Web Site - Saving The Site Working On The Web Site - Creating Web Site
+                                    Structure - Creating Titles For Web Pages Themes - Publishing Web Sites - Inserting
+                                    Audio Files - Video Files And Acceptable Formats (MPEG, Quick Time - Video For
+                                    Windows)</li>
+                                <li>Inserting Video Files - Screen Control Attributes (WIDTH, HEIGHT, ALIGN) - Start
+                                    Control Attributes (START, FILEOPEN, LOOP, LOOPDELAY, And MOUSEOVER) - Basic
+                                    Concepts Of Images: Digital Images And Digital Image Representation - Image Formats:
+                                    TIFF, BMP, JPG/JPEG, GIF, And PIC.PDF</li>
+                                <li>Hosting Basics - Types Of Hosting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Introduction to React and core concept (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview</li>
+                                <li>JSX</li>
+                                <li>And React Components</li>
+                                <li>Props</li>
+                                <li>State</li>
+                                <li>And Component Lifecycle Methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: React Router, State Management, Hooks (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Navigation And Routing In Single- Page Applications</li>
+                                <li>Context API And Redux For Global State</li>
+                                <li>Use State</li>
+                                <li>Use Effect</li>
+                                <li>And Custom Hooks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Building Intelligent Web Applications: How to Get Started with Artificial Intelligence-
+                            Driven Web Applications" by Mark Watson (Year: 2019)</li>
+                        <li>Web Development with Artificial Intelligence" by Ibrahim Naji (Year: 2020)</li>
+                        <li>"Learning React: Functional Web Development with React and Redux" by Alex Banks and Eve
+                            Porcello</li>
+                        <li>"React Design Patterns and Best Practices" by Carlos Santana Roldán</li>
+                        <li>AI for Web Development: Leverage the Power of Machine Learning and Deep Learning to Build
+                            Smart Web Applications" by Sandeep Kumar Patel (Year: 2019)</li>
+                        <li>"Full stack React: The Complete Guide to ReactJS and Friends" by Accomazzo, Murray, and
+                            Lerner.</li>
+                    </ol>
+                </section>
+                <section id="subject-155509" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Mathematical Foundation for IoT [155509]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Mathematical Logic and Set Theory (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Propositional Logic: Statements</li>
+                                <li>Connectives</li>
+                                <li>Well- Formed Formulas</li>
+                                <li>Truth Tables</li>
+                                <li>Tautologies Normal Forms</li>
+                                <li>Predicate Logic: Quantifiers</li>
+                                <li>Free And Bound Variables</li>
+                                <li>Inference Theory</li>
+                                <li>Set Theory: Operations On Sets</li>
+                                <li>Principle Of Inclusion- Exclusion</li>
+                                <li>Relations (Equivalence, Partial Ordering)</li>
+                                <li>Hasse Diagrams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Number Theory and Algebraic Structures (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Number Theory: Congruences</li>
+                                <li>Modular Arithmetic</li>
+                                <li>Fermat'S Theorem</li>
+                                <li>Euler'S Theorem</li>
+                                <li>Chinese Remainder Theorem</li>
+                                <li>Algebraic Structures: Groups</li>
+                                <li>Subgroups</li>
+                                <li>Cosets</li>
+                                <li>Normal Subgroups</li>
+                                <li>Lagrange'S Theorem</li>
+                                <li>Rings</li>
+                                <li>Fields</li>
+                                <li>Homomorphism & Isomorphism</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Probability and Statistics for IoT (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Counting Principles: Permutations And Combinations</li>
+                                <li>Binomial Theorem</li>
+                                <li>Probability: Conditional Probability</li>
+                                <li>Bayes' Theorem</li>
+                                <li>Random Variables: Discrete & Continuous</li>
+                                <li>Expectation</li>
+                                <li>Variance</li>
+                                <li>Distributions: Binomial</li>
+                                <li>Poisson</li>
+                                <li>Normal Distributions</li>
+                                <li>Moment Generating Functions</li>
+                                <li>Inequalities: Markov'S And Chebyshev'S Inequalities</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Graph Theory and Network Structures (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Graph Basics: Eulerian & Hamiltonian Graphs</li>
+                                <li>Adjacency & Incidence Matrices</li>
+                                <li>Graph Traversals: BFS</li>
+                                <li>DFS</li>
+                                <li>Shortest Path (Dijkstra'S, Floyd- Warshall)</li>
+                                <li>Graph Coloring & Covering: Chromatic Number</li>
+                                <li>Planar Graphs</li>
+                                <li>Kuratowski'S Theorem</li>
+                                <li>Trees: Spanning Trees</li>
+                                <li>Prim'S & Kruskal'S Algorithms</li>
+                                <li>Weighted Trees</li>
+                                <li>Max- Flow Min- Cut Theorem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Recurrence Relations and Generating Functions (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Recurrence Relations: Generating Functions</li>
+                                <li>Function Of Sequences</li>
+                                <li>Partial Fractions</li>
+                                <li>Calculating Coefficient Of Generating Functions</li>
+                                <li>Solving Homogeneous & Non- Homogeneous Recurrence Relations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Linear Algebra for IoT and Data Analysis (7
+                                hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Vector Spaces: Basis</li>
+                                <li>Dimension</li>
+                                <li>Linear Transformations</li>
+                                <li>Matrices: Rank</li>
+                                <li>Determinants</li>
+                                <li>Inverse</li>
+                                <li>Eigenvalues & Eigenvectors</li>
+                                <li>Orthogonality: Gram- Schmidt Process</li>
+                                <li>QR Factorization</li>
+                                <li>Applications In IoT: PCA For Data Reduction</li>
+                                <li>SVD For Signal Processing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Learning Techniques for the Internet of Things, Praveen Kumar Donta, Abhishek Hazra, Lauri
+                            Lovén, Springer; 1st Edition, ISBN- 13: 978- 3031505133</li>
+                        <li>Mathematical Foundations of Computing, American Institute of Mathematical Sciences.</li>
+                    </ol>
+                </section>
+                <section id="subject-155510" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Software Engineering [155510]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>What Is Software Engineering And Its History</li>
+                                <li>Software Crisis</li>
+                                <li>Evolution Of A Programming System Product</li>
+                                <li>Characteristics Of Software</li>
+                                <li>Brooks' No Silver Bullet</li>
+                                <li>And Software Myths</li>
+                                <li>Software Development Life Cycles: Software Development Process</li>
+                                <li>The Code- And- Fix Model</li>
+                                <li>The Waterfall Model</li>
+                                <li>The Evolutionary Model</li>
+                                <li>The Incremental Implementation</li>
+                                <li>Prototyping</li>
+                                <li>The Spiral Model</li>
+                                <li>Software Reuse</li>
+                                <li>Critical Comparisons Of SDLC Models</li>
+                                <li>An Introduction To Non- Traditional Software Development Process: Rational Unified
+                                    Process</li>
+                                <li>Rapid Application Development</li>
+                                <li>Agile Development Process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Requirements (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Importance Of Requirement Analysis</li>
+                                <li>User Needs</li>
+                                <li>Software Features And Software Requirements</li>
+                                <li>Classes Of User Requirements: Enduring And Volatile</li>
+                                <li>Sub Phases Of Requirement Analysis</li>
+                                <li>Functional And Nonfunctional Requirements</li>
+                                <li>Barriers To Eliciting User Requirements</li>
+                                <li>The Software Requirements Document And SRS Standards</li>
+                                <li>Requirements Engineering</li>
+                                <li>Case Study Of SRS For A Real Time System</li>
+                                <li>Tools For Requirements Gathering: Document Flow Chart</li>
+                                <li>Decision Table</li>
+                                <li>Decision Tree</li>
+                                <li>Introduction To Nontraditional Requirements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Software Design (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Goals Of Good Software Design</li>
+                                <li>Design Strategies And Methodologies</li>
+                                <li>Data Oriented Software Design</li>
+                                <li>Coupling</li>
+                                <li>Cohesion</li>
+                                <li>Modular Structure</li>
+                                <li>Packaging</li>
+                                <li>Structured Analysis: DFD</li>
+                                <li>Data Dictionary</li>
+                                <li>Structured Design: Structure Chart</li>
+                                <li>Object Oriented Design</li>
+                                <li>Top- Down And Bottom- Up Approach</li>
+                                <li>UML</li>
+                                <li>UML Diagrams</li>
+                                <li>Design Patterns</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Software Project Management (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Project Manager Responsibilities & Project Planning</li>
+                                <li>Software Measurement And Metrics: Line Of Code (LOC)</li>
+                                <li>Function Point (FP) Based Measures</li>
+                                <li>Various Size Oriented Measures: Halstead'S Software Science</li>
+                                <li>Project Size Estimation Metrics Project Estimation</li>
+                                <li>Techniques</li>
+                                <li>COCOMO</li>
+                                <li>Staffing Level Estimation</li>
+                                <li>Scheduling</li>
+                                <li>Organization & Team Structures Staffing</li>
+                                <li>Risk Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Software Coding & Testing (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Development: Selecting A Language</li>
+                                <li>Coding Guidelines</li>
+                                <li>Writing Code</li>
+                                <li>Code Documentation</li>
+                                <li>Testing Process</li>
+                                <li>Design Of Test Cases</li>
+                                <li>Functional Testing: Boundary Value Analysis</li>
+                                <li>Equivalence Class Testing</li>
+                                <li>Decision Table Testing</li>
+                                <li>Cause Effect Graphing</li>
+                                <li>Structural Testing</li>
+                                <li>Cyclomatic Complexity Measures: Control Flow Graphs</li>
+                                <li>Path Testing</li>
+                                <li>Data Flow And Mutation Testing</li>
+                                <li>Unit Testing</li>
+                                <li>Integration And System Testing</li>
+                                <li>Debugging</li>
+                                <li>Alpha & Beta Testing</li>
+                                <li>Testing Tools & Standards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Software Maintenance (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Management Of Maintenance</li>
+                                <li>Maintenance Process</li>
+                                <li>Maintenance Models</li>
+                                <li>Regression Testing</li>
+                                <li>Reverse Engineering</li>
+                                <li>Software Reengineering</li>
+                                <li>Configuration Management</li>
+                                <li>Documentation</li>
+                                <li>Software Reliability & Quality Management: Introduction To Reliability And Metrics
+                                    To Reliability Measure</li>
+                                <li>Overview Of S/W Quality Management System ISO 9000</li>
+                                <li>SEI CMM</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Software Engineering: A Practitioner's Approach, R. S. Pressman, McGraw Hill</li>
+                        <li>Fundamental of Software Engg. By Rajib Mall 4th edition PHI</li>
+                        <li>A Concise Introduction to Software Engineering By Pankaj Jalote.</li>
+                        <li>Zero Defect Software, G. G. Schulmeyer, McGraw-Hill</li>
+                        <li>Object Oriented Modeling and Design, J. Rumbaugh, Prentice Hall</li>
+                        <li>Software Engineering, K.K. Aggarwal, Yogesh Singh, New Age International Publishers</li>
+                    </ol>
+                </section><!-- Lab subjects -->
+                <section id="subject-155501P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">IoT Architecture & Design Lab [155501P]</h2>
+                    <p>Perform any 10 experiments from the following list:</p>
+                    <ul class="unit-topics">
+                        <li>Introduction to IoT Platforms: Setting Up Arduino, Raspberry Pi, and NodeMCU a.
+                            Familiarization with hardware, software installation, and basic connectivity.</li>
+                        <li>Interfacing Ultrasonic Sensor for Distance Measurement Using Arduino, Raspberry Pi, and
+                            NodeMCU a. Measure distance and display the data on a serial monitor.</li>
+                        <li>IoT-Based LED Control Using Arduino, Raspberry Pi, and NodeMCU a. Implement LED control
+                            through GPIO pins and cloud-based control.</li>
+                        <li>Temperature Monitoring and Notification System Using LM35 and NodeMCU a. Measure temperature
+                            and send alerts via IoT cloud services.</li>
+                        <li>Intrusion Detection System Using Ultrasonic Sensor and Arduino a. Detect motion and trigger
+                            an alarm for security applications.</li>
+                        <li>IoT-Based Smart Lighting System Using LDR and Arduino a. Implement an automatic night lamp
+                            based on ambient light conditions.</li>
+                        <li>Air Quality Monitoring Using MQ135 Sensor and IoT Cloud Integration a. Measure pollution
+                            levels and display data on an LCD or IoT dashboard.</li>
+                        <li>Wi-Fi-Based IoT Connectivity: Connecting Arduino to Available Networks a. Establish a Wi-Fi
+                            connection and send sensor data to an IoT cloud platform.</li>
+                        <li>Bluetooth-Based Home Automation Using Arduino and Relay Module a. Control home appliances
+                            using a mobile app and Bluetooth module.</li>
+                        <li>Smart Agriculture: Sensor-Based Monitoring Using NodeMCU. a. Implement soil moisture and
+                            environmental sensors for precision farming.</li>
+                    </ul>
+                </section>
+                <section id="subject-155502P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Database Management System Lab [155502P]</h2>
+                    <p>Perform any 10 experiments from the following list:</p>
+                    <ul class="unit-topics">
+                        <li>Student should decide on a case study and formulate the problem statement.</li>
+                        <li>Conceptual Designing using ER Diagrams (Identifying entities, attributes, keys and
+                            relationships between entities, cardinalities, generalization, specialization etc.) Note:
+                            Student is required to submit a document by drawing ER Diagram to the Lab teacher.</li>
+                        <li>Converting ER Model to Relational Model (Represent entities and relationships in Tabular
+                            form, Represent attributes as columns, identifying keys) Note: Student is required to submit
+                            a document showing the database tables created from ER Model.</li>
+                        <li>Normalization -To remove the redundancies and anomalies in the above relational tables,
+                            Normalize up to Third Normal Form.</li>
+                        <li>Creation of Tables using SQL-Overview of using SQL tool, Data types in SQL, Creating Tables
+                            (along with Primary and Foreign keys), Altering Tables and Dropping Tables.</li>
+                        <li>Practicing DML commands-Insert, Select, Update, Delete.</li>
+                        <li>Practicing Queries using ANY, ALL, IN, EXISTS, NOT EXISTS, UNION, INTERSECT, CONSTRAINTS
+                            etc.</li>
+                        <li>Practicing Sub queries (Nested, Correlated) and Joins (Inner, Outer and Equi).</li>
+                        <li>Practice Queries using COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING, VIEWS Creation and
+                            Dropping.</li>
+                        <li>Practicing on Triggers - creation of trigger, Insertion using trigger, Deletion using
+                            trigger, Updating using trigger.</li>
+                    </ul>
+                </section>
+                <section id="subject-155511P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-II [155511P]</h2>
+                    <p>6 weeks entrepreneurship training/project work. Details to be announced.</p>
+                </section>
+                <section id="subject-155512P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">NPTEL Course [155512P]</h2>
+                    <p>NPTEL course of 4 credits. Details to be announced by the department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

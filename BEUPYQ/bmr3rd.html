@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>3rd Semester Syllabus – BMR</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">3rd Semester Syllabus</h1>
+                <p class="page-subtitle">Bio Medical & Robotics Engineering</p>
+            </div>
+            <!-- <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Electronic Devices & Circuits [105311]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Fundamentals of Robotics [105312]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Basic Human Anatomy & Physiology [105313]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Materials Science & Biomaterials [105314]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Python Programming [105315]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Engineering Mathematics – III [105316]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Electronics Lab [105311P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Robotics Lab [105312P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>21</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> -->
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-105311" data-type="theory">Electronic Devices</button>
+                    <button class="tab-btn" data-target="subject-105312" data-type="theory">Robotics</button>
+                    <button class="tab-btn" data-target="subject-105313" data-type="theory">Anatomy &
+                        Physiology</button>
+                    <button class="tab-btn" data-target="subject-105314" data-type="theory">Materials Science</button>
+                    <button class="tab-btn" data-target="subject-105315" data-type="theory">Python Programming</button>
+                    <button class="tab-btn" data-target="subject-105316" data-type="theory">Mathematics – III</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-105311P" data-type="lab">Electronics Lab</button>
+                    <button class="tab-btn" data-target="subject-105312P" data-type="lab">Robotics Lab</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <!-- Electronic Devices & Circuits (105311) -->
+                <section id="subject-105311" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electronic Devices & Circuits</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Semiconductor & PN Junction Diode</strong>
+                            <ul class="unit-topics">
+                                <li>Intrinsic Semiconductor</li>
+                                <li>Extrinsic Semiconductor</li>
+                                <li>N-Type & P-Type Semiconductor</li>
+                                <li>Formation Of PN Junction</li>
+                                <li>Depletion Region</li>
+                                <li>Barrier Potential</li>
+                                <li>Working Of PN Junction Under Open Circuit</li>
+                                <li>Working Under Forward Bias</li>
+                                <li>Working Under Reverse Bias</li>
+                                <li>Diode Current Equation</li>
+                                <li>V-I Characteristics Of PN Junction Diode</li>
+                                <li>Special Type Of Diode: Zener Diode</li>
+                                <li>Light Emitting Diode (LED)</li>
+                                <li>Laser Diode</li>
+                                <li>Photodiode</li>
+                                <li>Solar Diode</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Bipolar Junction Transistor (BJT)</strong>
+                            <ul class="unit-topics">
+                                <li>Physical Structure And Operation Modes</li>
+                                <li>Active Region Operation Of Transistor</li>
+                                <li>D.C. Analysis Of Transistor Circuits</li>
+                                <li>Transistor As An Amplifier</li>
+                                <li>BJT Biasing: Fixed Bias</li>
+                                <li>Emitter Feedback Bias</li>
+                                <li>Collector Feedback Bias</li>
+                                <li>Voltage Divider Bias</li>
+                                <li>Basic BJT Amplifier Configuration: Common Emitter</li>
+                                <li>Common Base</li>
+                                <li>Common Collector Amplifiers</li>
+                                <li>Transistor As A Switch: Cut-Off And Saturation Modes</li>
+                                <li>High Frequency Model Of BJT Amplifier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Field Effect Transistor (FET)</strong>
+                            <ul class="unit-topics">
+                                <li>JFET Construction, Operation And Biasing</li>
+                                <li>Types Of MOSFET</li>
+                                <li>Enhancement-Type MOSFET: Structure And Physical Operation</li>
+                                <li>Current-Voltage Characteristics</li>
+                                <li>D.C. Operation Of MOSFET Circuits</li>
+                                <li>MOSFET As An Amplifier</li>
+                                <li>Biasing In MOSFET Amplifiers</li>
+                                <li>Basic MOSFET Amplifier Configuration: Common Source</li>
+                                <li>Common Gate</li>
+                                <li>Common Drain Types</li>
+                                <li>High Frequency Model Of MOSFET Amplifier</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Amplifiers And Oscillators</strong>
+                            <ul class="unit-topics">
+                                <li>Multistage Amplifier</li>
+                                <li>Multistage Amplifier Configuration</li>
+                                <li>Multistage Or Cascade Amplifier</li>
+                                <li>Classification Of Multi-Stage Amplifier</li>
+                                <li>Coupling And Frequency Response Of Cascaded Systems</li>
+                                <li>Effect Of Cascading On Multiuser Amplifier Gain, Impedances, Bandwidth</li>
+                                <li>Miller Theorem</li>
+                                <li>Darlington Pair</li>
+                                <li>Bootstrap Circuit</li>
+                                <li>Power Amplifier: Class A Large Amplifiers</li>
+                                <li>Class B Amplifier</li>
+                                <li>Class AB Operation Push Pull</li>
+                                <li>Class C Power Amplifiers</li>
+                                <li>Tuned Amplifier: Single Tuned</li>
+                                <li>Double Tuned</li>
+                                <li>Stagger Tuned Amplifiers Characteristics</li>
+                                <li>Feedback Amplifiers: Concept Of Feedback</li>
+                                <li>Positive And Negative Feedback</li>
+                                <li>Voltage And Current Feedback</li>
+                                <li>Oscillators: Condition For Sustained Oscillation</li>
+                                <li>R-C Phase Shift Oscillator</li>
+                                <li>Hartley Oscillator</li>
+                                <li>Colpitts Oscillator</li>
+                                <li>Crystal Oscillator</li>
+                                <li>Wein Bridge Oscillator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Combinational Circuit</strong>
+                            <ul class="unit-topics">
+                                <li>Boolean Function And Logic Gates</li>
+                                <li>DeMorgan's Theorem</li>
+                                <li>Simplification Of Boolean Function</li>
+                                <li>Arithmetic Circuits: Half Adders</li>
+                                <li>Full Adders</li>
+                                <li>Combinational Logic Circuits: Multiplexer</li>
+                                <li>De-Multiplexer</li>
+                                <li>Encoder</li>
+                                <li>Decoder</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Sequential Circuits & Logic Families</strong>
+                            <ul class="unit-topics">
+                                <li>Flip-Flop</li>
+                                <li>Counters</li>
+                                <li>Shift Register</li>
+                                <li>Logic Family: RTL</li>
+                                <li>TTL</li>
+                                <li>HTL</li>
+                                <li>ECL</li>
+                                <li>CMOS Family</li>
+                                <li>Modulus Of Counter</li>
+                                <li>Asynchronous Counter: Ripple Up/Down Counter</li>
+                                <li>Decade Counter</li>
+                                <li>Synchronous Counter: Ring Counter</li>
+                                <li>Johnson Counter</li>
+                                <li>D/A Converter</li>
+                                <li>A/D Converters</li>
+                                <li>Sample And Hold Circuits</li>
+                                <li>Multi-Vibrators: Astable</li>
+                                <li>Monostable</li>
+                                <li>Bistable</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Robert L Boylestad and Louis Nashelsky, "Electronic Devices and Circuit Theory", 10th
+                            Edition, Pearson Prentice Hall, 2009.</li>
+                        <li>David A. Bell, "Electronic Devices and Circuits", 5th Edition, Oxford University Press,
+                            2008.</li>
+                        <li>Jacob Millman, Christos C. Halkias, "Integrated Electronics: Analog and Digital Circuits and
+                            Systems", McGraw-Hill, 2015.</li>
+                        <li>Charles H. Roth Jr, Larry L. Kinney, "Fundamentals of Logic Design", 7th Edition, Cengage
+                            Learning, ISBN: 978-1133628477.</li>
+                        <li>Morris Mano, "Digital Logic and Computer Design", Pearson, 2016, ISBN: 9789332542525.</li>
+                        <li>Tomas Lang, Milos Ercegovac, Jaime H. Moreno, "Introduction to Digital System", Wiley, 2005,
+                            ISBN: 978-8126522514.</li>
+                        <li>John M. Yarbrough, "Digital Logic Applications & Design", Cengage Delmar Learning India Pvt,
+                            2015, ISBN: 9788131500583.</li>
+                    </ol>
+                </section>
+                <!-- Fundamentals of Robotics (105312) -->
+                <section id="subject-105312" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Fundamentals of Robotics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction Of Robot</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Robotics And Automation</li>
+                                <li>Laws Of Robot</li>
+                                <li>Brief History Of Robotics</li>
+                                <li>Basic Components Of Robot</li>
+                                <li>Robot Specifications</li>
+                                <li>Classification Of Robots</li>
+                                <li>Human System And Robotics</li>
+                                <li>Industrial Robots</li>
+                                <li>Robot Anatomy - Four Common Configurations Of Robot</li>
+                                <li>Robot Motions - Linear, Rotational, Revolving, Twisting, Cylindrical, Spherical</li>
+                                <li>Degrees Of Freedom Of Robot</li>
+                                <li>Introduction To Degrees Of Freedom</li>
+                                <li>Three Degrees Of Freedom Associated With Arm And Body Polar Robot</li>
+                                <li>Three Degrees Of Freedom Associated With Robot Wrist</li>
+                                <li>Joint Notation Scheme</li>
+                                <li>Work Volume</li>
+                                <li>Links And Joints</li>
+                                <li>Spatial Resolution</li>
+                                <li>Accuracy</li>
+                                <li>Repeatability</li>
+                                <li>Compliance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Mechanical Components And Robot Drive Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Drive Systems For Robots, Salient Features And Comparison</li>
+                                <li>Different Types Of End Effectors, Design, Applications</li>
+                                <li>Grippers</li>
+                                <li>Welding And Soldering Tools</li>
+                                <li>Cutting And Milling Tools</li>
+                                <li>Gearing Systems And Transmissions</li>
+                                <li>Bearings And Linkages In Robot Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Sensor Evaluation And Selection</li>
+                                <li>Piezoelectric Sensors</li>
+                                <li>Linear Position And Displacement Sensing</li>
+                                <li>Revolvers</li>
+                                <li>Encoders</li>
+                                <li>Velocity Measurement</li>
+                                <li>Proximity, Tactile, Compliance And Range Sensing</li>
+                                <li>Image Processing And Object Recognition</li>
+                                <li>Cameras</li>
+                                <li>LiDAR</li>
+                                <li>Ultrasonic Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: CAD Tools For Robotics</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of CAD And Its Significance In Robotics</li>
+                                <li>Introduction Of CAD Software</li>
+                                <li>User Interface And Navigation Within CAD Software</li>
+                                <li>Sketching And Basic 2D Drawing Tools</li>
+                                <li>Dimensioning And Annotations In CAD</li>
+                                <li>Techniques For Assembling Components In CAD</li>
+                                <li>Introduction To Simulation Tools Within CAD Software</li>
+                                <li>Motion Analysis And Simulation Of Robotic Movements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Safety And Economy Of Robots</strong>
+                            <ul class="unit-topics">
+                                <li>Work Cycle Time Analysis</li>
+                                <li>Economics And Effectiveness Of Robots</li>
+                                <li>Safety Systems And Devices</li>
+                                <li>Concepts Of Testing Methods And Acceptance Rule For Industrial Robots</li>
+                                <li>Robot Integration With CAD/CAM/CIM</li>
+                                <li>Collision Free Motion Planning</li>
+                                <li>Robot Applications In Engineering And Specific Applications In Healthcare/Biomedical
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>R.K. Mittal and J. Nagarath, "Robotics and Control", Tata McGraw Hill, 1995. ISBN:
+                            9780070482937.</li>
+                        <li>Robert J. Schilling, "Fundamentals of Robotics", Pearson, Facsimile edition, 2003. ISBN:
+                            9780133444339.</li>
+                        <li>Richard D. Klafter, "Robotics Engineering", PHI, 2003. ISBN: 9780134687520.</li>
+                        <li>Mikell P. Groover, "Industrial Robotics - Technology, Programming and Applications", 2nd
+                            Edition, Tata McGraw Hill. ISBN: 9781259006210.</li>
+                        <li>K.S. Fu, R.C. Gonzales, Lee, "Robotics", McGraw Hill International, 2008. ISBN:
+                            9780070226258.</li>
+                        <li>Ganesh S. Hegde, "Industrial Robotics", Laxmi Publications, Second edition, 2015.</li>
+                    </ol>
+                </section>
+                <!-- Basic Human Anatomy & Physiology (105313) -->
+                <section id="subject-105313" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Basic Human Anatomy & Physiology</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: General Anatomy And Physiology</strong>
+                            <ul class="unit-topics">
+                                <li>Homeostasis: Levels Of Structural Complexity</li>
+                                <li>The Internal Environment And Homeostasis</li>
+                                <li>Communication</li>
+                                <li>Movement Of Substances Within The Body</li>
+                                <li>Body Fluids</li>
+                                <li>Cell Structure And Functions</li>
+                                <li>Tissues: Epithelial Tissue (All Types)</li>
+                                <li>Connective Tissue (All Types)</li>
+                                <li>Cartilage - Hyaline Cartilage, Fibrocartilage, Elastic Cartilage</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Cardiovascular System</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Blood Vessels - Arteries And Arterioles</li>
+                                <li>Veins And Venules</li>
+                                <li>Capillaries</li>
+                                <li>Control Of Blood Vessel Diameter</li>
+                                <li>Blood Supply - Internal Respiration, Cell Nutrition</li>
+                                <li>Heart - Position, Structure - Pericardium, Myocardium, Endocardium</li>
+                                <li>Interior Of The Heart</li>
+                                <li>Flow Of Blood Through The Heart</li>
+                                <li>Blood Supply To Heart</li>
+                                <li>Conducting System Of The Heart</li>
+                                <li>Factors Affecting Heart Rate</li>
+                                <li>Cardiac Cycle</li>
+                                <li>Cardiac Output</li>
+                                <li>Blood Pressure</li>
+                                <li>Control Of Blood Pressure</li>
+                                <li>Pulse And Factors Affecting The Pulse Rate</li>
+                                <li>Circulation Of The Blood - Pulmonary Circulation</li>
+                                <li>Systemic Circulation - Aorta (Different Parts Of Aorta & Their Blood Supply, In
+                                    Brief)</li>
+                                <li>Summary Of The Main Blood Vessels (Arteries & Veins, Brief Explanation With Flow
+                                    Diagram Only)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Nervous System</strong>
+                            <ul class="unit-topics">
+                                <li>Functional Components Of Nervous System</li>
+                                <li>Neurons: Properties Of Neurons</li>
+                                <li>Cell Bodies</li>
+                                <li>Axon And Dendrites</li>
+                                <li>Nerve Impulse (Action Potential)</li>
+                                <li>Types Of Nerves</li>
+                                <li>Synapse And Neurotransmitters</li>
+                                <li>Neuromuscular Junction</li>
+                                <li>Central Nervous System: Meninges</li>
+                                <li>Ventricles Of The Brain And CSF</li>
+                                <li>Brain: Cerebrum, Functions Of Cerebrum</li>
+                                <li>Functional Areas Of The Cerebrum</li>
+                                <li>Brainstem</li>
+                                <li>Cerebellum</li>
+                                <li>Spinal Cord - Grey Matter, White Matter</li>
+                                <li>Spinal Nerves (In Brief List & Functions Only)</li>
+                                <li>Cranial Nerves (In Brief List & Functions Only)</li>
+                                <li>Autonomic Nervous System (In Brief) - Functions And Effects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Respiratory System</strong>
+                            <ul class="unit-topics">
+                                <li>Organs Of Respiration</li>
+                                <li>Nose And Nasal Cavity - Position, Structure And Functions</li>
+                                <li>Pharynx - Position, Structure, Functions</li>
+                                <li>Larynx - Position, Structure And Functions</li>
+                                <li>Trachea - Position, Structure, Functions</li>
+                                <li>Bronchi, Bronchioles And Alveoli - Structure And Functions</li>
+                                <li>Lungs - Position, Associated Structure, Pleura And Pleural Cavity</li>
+                                <li>Respiration - Muscles Of Respiration</li>
+                                <li>Cycle Of Respiration</li>
+                                <li>Variables Affecting Respiration</li>
+                                <li>Lung Volumes And Capacity</li>
+                                <li>Digestive System: Introduction</li>
+                                <li>Organs Of The Digestive System</li>
+                                <li>Basic Structure Of The Alimentary Canal</li>
+                                <li>Stomach - Structure, Gastric Juice And Functions Of Stomach</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Urinary System And Skeletal System</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Kidneys - Gross Structure Of Kidney</li>
+                                <li>Microscopic Structure Of Kidney</li>
+                                <li>Functions Of Kidney</li>
+                                <li>Bone - Types Of Bone</li>
+                                <li>Bone Structure</li>
+                                <li>Microscopic Structure Of Bone</li>
+                                <li>Functions Of Bone</li>
+                                <li>Skull Bones (Name And Position Only)</li>
+                                <li>Sinuses</li>
+                                <li>Fontanelles</li>
+                                <li>Vertebral Column - Characteristics Of Typical Vertebra</li>
+                                <li>Different Parts Of Vertebral Column (Name And Position Only)</li>
+                                <li>Features Of Vertebral Column</li>
+                                <li>Functions Of Vertebral Column</li>
+                                <li>Bones Of Thoracic Cage (Name And Position Only)</li>
+                                <li>Bones Of Shoulder Girdle And Upper Limb (Name And Position Only)</li>
+                                <li>Bones Of Pelvic Girdle And Lower Limb (Name And Position Only)</li>
+                                <li>Muscle Tissue: Skeletal Muscle, Smooth Muscle, Cardiac Muscle</li>
+                                <li>Functions Of Muscle Tissue</li>
+                                <li>Types Of Joint - Fibrous, Cartilaginous, Synovial</li>
+                                <li>Characteristics Of Synovial Joints</li>
+                                <li>Shoulder Joint</li>
+                                <li>Hip Joint</li>
+                                <li>Knee Joint</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Anne Waugh and Allison Grant, "Ross & Wilson's Anatomy and Physiology in Health and
+                            Illness", 9th Edition, Churchill Livingstone Publications. ASIN: B0CGXM68YX.</li>
+                        <li>Guyton and Hall, "Textbook of Medical Physiology", 14th Edition, Elsevier.
+                            ISBN-978-0323597128.</li>
+                        <li>William F. Ganong, "Review of Medical Physiology", 26th Edition, McGraw-Hill Education /
+                            Medical Publications. ISBN-10: 1260122409.</li>
+                        <li>Lauralee Sherwood, "Human Physiology: From Cells to Systems", 6th Edition, Thomson India
+                            Edition, 2007. ISBN: 978-0495110590.</li>
+                    </ol>
+                </section>
+                <!-- Materials Science & Biomaterials (105314) -->
+                <section id="subject-105314" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Materials Science & Biomaterials</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction To Biomaterials & Ferrous Alloys</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction Of Biomaterials</li>
+                                <li>Classification Of Biomaterials</li>
+                                <li>General Applications</li>
+                                <li>The Iron-Carbon Equilibrium Diagram - Phases, Invariant Reactions</li>
+                                <li>Microstructure Of Slowly Cooled Steels - Eutectoid Steel, Hypo And Hypereutectoid
+                                    Steels</li>
+                                <li>Effect Of Alloying Elements On The Fe-C System</li>
+                                <li>Diffusion In Solids - Fick's Laws</li>
+                                <li>Phase Transformations - T-T-T Diagram For Eutectoid Steel</li>
+                                <li>Pearlitic, Bainitic And Martensitic Transformations</li>
+                                <li>Tempering Of Martensite</li>
+                                <li>Steels - Stainless Steels</li>
+                                <li>Cast Irons</li>
+                                <li>Composite Biomaterials: Properties, Classification And Applications In Fabrication
+                                    Of Biodvices And Implants</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Mechanical And Biological Testing Of Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Tensile Test - Plastic Deformation Mechanisms - Slip And Twinning</li>
+                                <li>Role Of Dislocations In Slip</li>
+                                <li>Strengthening Methods - Strain Hardening</li>
+                                <li>Refinement Of The Grain Size</li>
+                                <li>Solid Solution Strengthening</li>
+                                <li>Precipitation Hardening</li>
+                                <li>Creep Resistance - Creep Curves</li>
+                                <li>Mechanisms Of Creep</li>
+                                <li>Creep-Resistant Materials</li>
+                                <li>Fracture - The Griffith Criterion</li>
+                                <li>Critical Stress Intensity Factor And Its Determination</li>
+                                <li>Fatigue Failure - Fatigue Tests</li>
+                                <li>Methods Of Increasing Fatigue Life</li>
+                                <li>Hardness - Rockwell And Brinell Hardness</li>
+                                <li>Knoop And Vickers Micro Hardness</li>
+                                <li>Physiochemical Test</li>
+                                <li>Invitro And Invivo Types</li>
+                                <li>Different Forms Of Corrosion</li>
+                                <li>Wear</li>
+                                <li>Electrochemical Corrosion Testing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Magnetic, Dielectric And Superconducting
+                                Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Ferromagnetism - Domain Theory</li>
+                                <li>Types Of Energy - Hysteresis</li>
+                                <li>Hard And Soft Magnetic Materials</li>
+                                <li>Ferrites</li>
+                                <li>Dielectric Materials - Types Of Polarization</li>
+                                <li>Langevin-Debye Equation</li>
+                                <li>Frequency Effects On Polarization</li>
+                                <li>Dielectric Breakdown</li>
+                                <li>Insulating Materials</li>
+                                <li>Properties And Applications Of Metallic Biomaterials And Its Biocompatibility:
+                                    Stainless Steel</li>
+                                <li>Titanium, Titanium Based Alloys</li>
+                                <li>Cobalt - Chromium Alloys In Fabrication Of Bio-Devices And Implants</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Semi-Conductor Materials, Polymeric And Degradable
+                                Biomaterials</strong>
+                            <ul class="unit-topics">
+                                <li>Energy Bands Of Solids: Conductors, Semiconductors, On Conductors</li>
+                                <li>Types Of Semiconductors</li>
+                                <li>Diffusion, Hall Effect</li>
+                                <li>Thermal And Electrical Conductivity Of Semiconductor Materials</li>
+                                <li>Materials For Fabrication Of Semiconductor Devices</li>
+                                <li>Classification, Polyurethanes, PTFE, Polyethylene, Polypropylene, Polyacrylates,
+                                    PMMA, PHEMA</li>
+                                <li>Hydrogel</li>
+                                <li>Silicone Rubber</li>
+                                <li>Biopolymer In Fabrication Of Biodvices And Implants</li>
+                                <li>Thermoplastic And Thermosetting Plastics</li>
+                                <li>Degradable Biomaterials (PGA And PLA)</li>
+                                <li>Applications In Drug Delivery Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Micro-Electronic Components And New Materials</strong>
+                            <ul class="unit-topics">
+                                <li>Photoemissive Material</li>
+                                <li>Impurities Used To Emit Different Colours Of Light/Wavelength</li>
+                                <li>Electroluminescence And Junction LASERS</li>
+                                <li>Material For Flexible And Wearable Antennas</li>
+                                <li>Photovoltaic Material</li>
+                                <li>Materials Used And Application Micro Motors, Micro Relay And Micro Switches</li>
+                                <li>Ceramics - Types And Applications</li>
+                                <li>Composites: Classification, Role Of Matrix And Reinforcement</li>
+                                <li>Processing Of Fiber Reinforced Plastics</li>
+                                <li>Metallic Glasses: Types, Glass Forming Ability Of Alloys</li>
+                                <li>Melt Spinning Process, Applications</li>
+                                <li>Shape Memory Alloys: Phases, Shape Memory Effect</li>
+                                <li>Pseudoelastic Effect, NiTi Alloy, Applications</li>
+                                <li>Nanomaterials: Preparation (Bottom Up And Top Down Approaches), Properties And
+                                    Applications</li>
+                                <li>Carbon Nanotubes: Types</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Balasubramaniam, R., "Callister's Materials Science and Engineering", Wiley India Pvt. Ltd.,
+                            2014. ISBN: 9788126541607.</li>
+                        <li>Raghavan, V., "Physical Metallurgy: Principles and Practice", PHI Learning, 2015. ASIN:
+                            B0198B86X4.</li>
+                        <li>J.V. Park, "Biomaterial Science and Engineering", Plenum Press, New York. ISBN:
+                            978-0306416897.</li>
+                        <li>Callister, William D., "Material Science and Engineering", 2nd Edition, Wiley India. ISBN:
+                            9788126541607.</li>
+                        <li>Raghavan, V., "Materials Science and Engineering: A First Course", PHI Learning, 2015. ISBN:
+                            13:9788120350922.</li>
+                        <li>Askeland, D., "Materials Science and Engineering", Brooks/Cole, 2010. ISBN: 978-0495296027.
+                        </li>
+                        <li>Smith, W.F., Hashemi, J. & Prakash, R., "Materials Science and Engineering", Tata McGraw
+                            Hill Education Pvt. Ltd., 2014. ISBN: 978-1259062759.</li>
+                        <li>Wahab, M.A., "Solid State Physics: Structure and Properties of Materials", Narosa Publishing
+                            House, 2009. ISBN: 978-8173192661.</li>
+                    </ol>
+                </section>
+                <!-- Python Programming (105315) -->
+                <section id="subject-105315" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Python Programming</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1: Introduction To Python</strong>
+                            <ul class="unit-topics">
+                                <li>What Is Python And History Of Python?</li>
+                                <li>Unique Features Of Python</li>
+                                <li>Python-2 And Python-3 Differences</li>
+                                <li>Install Python And Environment Setup</li>
+                                <li>First Python Program</li>
+                                <li>Python Identifiers, Keywords And Indentation</li>
+                                <li>Comments And Document Interlude In Python</li>
+                                <li>Command Line Arguments</li>
+                                <li>Getting User Input</li>
+                                <li>Python Data Types: What Are Variables?</li>
+                                <li>Python Core Objects And Functions</li>
+                                <li>Number And Maths</li>
+                                <li>Week 1 Assignments</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2: List, Ranges & Tuples In Python</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction Lists In Python</li>
+                                <li>More About Lists</li>
+                                <li>Understanding Iterators</li>
+                                <li>Generators, Comprehensions And Lambda Expressions</li>
+                                <li>Introduction Generators And Yield</li>
+                                <li>Next And Ranges</li>
+                                <li>Understanding And Using Ranges</li>
+                                <li>More About Ranges</li>
+                                <li>Ordered Sets With Tuples</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3: Python Dictionaries And Sets</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To The Section</li>
+                                <li>Python Dictionaries</li>
+                                <li>More On Dictionaries</li>
+                                <li>Sets Python Sets Examples</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4: Input And Output In Python</strong>
+                            <ul class="unit-topics">
+                                <li>Reading And Writing Text Files</li>
+                                <li>Writing Text Files</li>
+                                <li>Appending To Files And Challenge</li>
+                                <li>Writing Binary Files Manually</li>
+                                <li>Using Pickle To Write Binary Files</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5: Python Functions And Modules</strong>
+                            <ul class="unit-topics">
+                                <li>Python Built In Function</li>
+                                <li>Python User Defined Functions</li>
+                                <li>Python Packages Functions</li>
+                                <li>Defining And Calling Function</li>
+                                <li>The Anonymous Functions</li>
+                                <li>Loops And Statement In Python</li>
+                                <li>Python Modules & Packages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6: Python Object Oriented</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of OOP</li>
+                                <li>Creating Classes And Objects</li>
+                                <li>Accessing Attributes</li>
+                                <li>Built-In Class Attributes</li>
+                                <li>Destroying Objects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 7: Python Exceptions Handling</strong>
+                            <ul class="unit-topics">
+                                <li>What Is Exception?</li>
+                                <li>Handling An Exception Try….Except…Else</li>
+                                <li>Try-Finally Clause</li>
+                                <li>Argument Of An Exception</li>
+                                <li>Python Standard Exceptions</li>
+                                <li>Raising An Exceptions</li>
+                                <li>User-Defined Exceptions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 8: Python Regular Expressions</strong>
+                            <ul class="unit-topics">
+                                <li>What Are Regular Expressions?</li>
+                                <li>The Match Function</li>
+                                <li>The Search Function</li>
+                                <li>Matching Vs Searching</li>
+                                <li>Search And Replace</li>
+                                <li>Extended Regular Expressions</li>
+                                <li>Wildcard</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 9: Python Multithreaded Programming</strong>
+                            <ul class="unit-topics">
+                                <li>What Is Multithreading?</li>
+                                <li>Starting A New Thread</li>
+                                <li>The Threading Module</li>
+                                <li>Synchronizing Threads</li>
+                                <li>Multithreaded Priority Queue</li>
+                                <li>Python Spreadsheet Interfaces</li>
+                                <li>Python XML Interfaces</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 10: Using Databases In Python</strong>
+                            <ul class="unit-topics">
+                                <li>Python MySQL Database Access</li>
+                                <li>Install The MySQLdb And Other Packages</li>
+                                <li>Create Database Connection</li>
+                                <li>CREATE, INSERT, READ, UPDATE And DELETE Operation</li>
+                                <li>DML And DDL Operation With Databases</li>
+                                <li>Performing Transactions</li>
+                                <li>Handling Database Errors</li>
+                                <li>Web Scraping In Python</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 11: Python For Data Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Numpy: Introduction To Numpy</li>
+                                <li>Creating Arrays</li>
+                                <li>Using Arrays And Scalars</li>
+                                <li>Indexing Arrays</li>
+                                <li>Array Transposition</li>
+                                <li>Universal Array Function</li>
+                                <li>Array Processing</li>
+                                <li>Array Input And Output</li>
+                                <li>Pandas: What Is Pandas? Where It Is Used?</li>
+                                <li>Series In Pandas</li>
+                                <li>Index Objects</li>
+                                <li>Reindex</li>
+                                <li>Drop Entry</li>
+                                <li>Selecting Entries</li>
+                                <li>Data Alignment</li>
+                                <li>Rank And Sort</li>
+                                <li>Summary Statics</li>
+                                <li>Missing Data</li>
+                                <li>Index Hierarchy</li>
+                                <li>Matplotlib: Python For Data Visualization</li>
+                                <li>Welcome To The Data Visualization Section</li>
+                                <li>Introduction To Matplotlib</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 12: Django Web Framework In Python</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Django And Full Stack Web Development</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- Engineering Mathematics – III (105316) -->
+                <section id="subject-105316" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Engineering Mathematics – III</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1: Partial Differential Equations</strong>
+                            <ul class="unit-topics">
+                                <li>Definition Of Partial Differential Equations</li>
+                                <li>First Order Partial Differential Equations</li>
+                                <li>Solutions Of First Order Linear PDEs</li>
+                                <li>Solution To Homogenous And Non-Homogenous Linear Partial Differential Equations Of
+                                    Second Order By Complimentary Function And Particular Integral Method</li>
+                                <li>Second-Order Linear Equations And Their Classification</li>
+                                <li>Initial And Boundary Conditions</li>
+                                <li>D'Alembert's Solution Of The Wave Equation</li>
+                                <li>Duhamel's Principle For One Dimensional Wave Equation</li>
+                                <li>Heat Diffusion And Vibration Problems</li>
+                                <li>Separation Of Variables Method To Simple Problems In Cartesian Coordinates</li>
+                                <li>The Laplacian In Plane, Cylindrical And Spherical Polar Coordinates</li>
+                                <li>Solutions With Bessel Functions And Legendre Functions</li>
+                                <li>One Dimensional Diffusion Equation And Its Solution By Separation Of Variables</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2: Probability Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Probability Spaces</li>
+                                <li>Conditional Probability</li>
+                                <li>Independence</li>
+                                <li>Discrete Random Variables</li>
+                                <li>Independent Random Variables</li>
+                                <li>The Multinomial Distribution</li>
+                                <li>Poisson Approximation To The Binomial Distribution</li>
+                                <li>Infinite Sequences Of Bernoulli Trials</li>
+                                <li>Sums Of Independent Random Variables</li>
+                                <li>Expectation Of Discrete Random Variables</li>
+                                <li>Moments</li>
+                                <li>Variance Of A Sum</li>
+                                <li>Correlation Coefficient</li>
+                                <li>Chebyshev's Inequality</li>
+                                <li>Continuous Random Variables And Their Properties</li>
+                                <li>Distribution Functions And Densities</li>
+                                <li>Normal, Exponential And Gamma Densities</li>
+                                <li>Bivariate Distributions And Their Properties</li>
+                                <li>Distribution Of Sums And Quotients</li>
+                                <li>Conditional Densities</li>
+                                <li>Bayes' Rule</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3: Basic Statistics & Distributions</strong>
+                            <ul class="unit-topics">
+                                <li>Measures Of Central Tendency: Moments, Skewness And Kurtosis</li>
+                                <li>Probability Distributions: Binomial, Poisson And Normal - Evaluation Of Statistical
+                                    Parameters For These Three Distributions</li>
+                                <li>Correlation And Regression - Rank Correlation</li>
+                                <li>Curve Fitting By The Method Of Least Squares - Fitting Of Straight Lines, Second
+                                    Degree Parabolas And More General Curves</li>
+                                <li>Test Of Significance: Large Sample Test For Single Proportion, Difference Of
+                                    Proportions</li>
+                                <li>Tests For Single Mean, Difference Of Means, And Difference Of Standard Deviations
+                                </li>
+                                <li>Test For Ratio Of Variances - Chi-Square Test For Goodness Of Fit And Independence
+                                    Of Attributes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Erwin Kreyszig, "Advanced Engineering Mathematics", 9th Edition, John Wiley & Sons, 2006.
+                        </li>
+                        <li>N.P. Bali and Manish Goyal, "A Text Book Of Engineering Mathematics", Laxmi Publications,
+                            Reprint, 2010.</li>
+                        <li>P. G. Hoel, S. C. Port and C. J. Stone, "Introduction To Probability Theory", Universal Book
+                            Stall, 2003 (Reprint).</li>
+                        <li>S. Ross, "A First Course In Probability", 6th Ed., Pearson Education India, 2002.</li>
+                    </ol>
+                </section>
+                <!-- Electronics Lab (105311P) -->
+                <section id="subject-105311P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Electronics Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all experiments</h3>
+                    <ol>
+                        <li>To Observe The Waveform Of Clamper Circuit.</li>
+                        <li>To Observe The Waveform Of Clipper Circuit.</li>
+                        <li>Construct The Circuit And Plot The V-I Characteristics Of The PN Junction Diode And Measure
+                            The Cut In Voltage.</li>
+                        <li>Construct The Circuit And Plot The Characteristics Of A Zener Diode. Find The Breakdown
+                            Voltage.</li>
+                        <li>Plot The Input And Output Characteristics Of CE Transistor.</li>
+                        <li>Plot The Drain And Transfer Characteristics Of FET.</li>
+                        <li>Determine Frequency Response Of CE Amplifier With And Without Bypass Capacitor.</li>
+                        <li>Determine Frequency Response Of CC Amplifier And Find The Input And Output Impedances.</li>
+                        <li>Realization Of Half And Full Adders, Half And Full Subtractor Using Logic Gates.</li>
+                        <li>a. Build Half And Full Adders Using The IC's – MUX–74153.<br>b. Build 3 – Bit Binary To Gray
+                            And BCD To Excess–3 Code Converters Using IC DEMUX – 74139.</li>
+                        <li>Operational Verification Of Flip–Flops: (i) T Type (ii) D Type And (iii) J–K Master Slave.
+                        </li>
+                        <li>Construct Decade Counter (0-9) Using IC 7490.<br>Or Construct Decade Counter (0-9) Using IC
+                            7490 On EDA/Simulation Tool.</li>
+                    </ol>
+                </section>
+                <!-- Robotics Lab (105312P) -->
+                <section id="subject-105312P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Robotics Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform all experiments</h3>
+                    <ol>
+                        <li>Identify Components Of Real Robot And Its DH Parameters.</li>
+                        <li>Identify The Different Types Of Mechanical Components (E.g., Gears, Bearings, Shafts)
+                            Commonly Used In Robotic Systems.</li>
+                        <li>Analyze Gear Ratios, Torque Transmission, And Speed Control Using Different Gear
+                            Configurations.</li>
+                        <li>Integration Of Assorted Sensors (IR, Potentiometer, Strain Gauges Etc.) In A Robotic System.
+                        </li>
+                        <li>Navigate The CAD Software, Create Simple Sketches, And Explore Various Tool Options.</li>
+                        <li>Create 2D Sketches Using Different Tools And Apply Constraints And Dimensions.</li>
+                        <li>Control Experiment Using Available Hardware/Software.</li>
+                        <li>Assemble Components, Apply Constraints, And Generate An Exploded View.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

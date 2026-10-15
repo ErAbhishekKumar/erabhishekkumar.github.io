@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">Electronics & Communication Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Business Analytics [104701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Cost Management of Engineering Projects [104702]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Graduate Employability Skills and Competitive Courses [100705]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective - III [1047xx]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective - II [1047xx]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Wireless Communication [104703]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-I [100709]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship-III [100702]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>16</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>29</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-104701"
+                        data-type="theory">Business Analytics</button><button class="tab-btn"
+                        data-target="subject-104702" data-type="theory">Cost Management of Engineering
+                        Projects</button><button class="tab-btn" data-target="subject-100705"
+                        data-type="theory">Graduate Employability Skills</button><button class="tab-btn"
+                        data-target="subject-104703" data-type="theory">Wireless Communication</button><button
+                        class="tab-btn" data-modal-trigger="elective-modal" data-type="theory"
+                        data-modal-title="Program Electives - II"
+                        data-modal-options='[ {"label": "Antennas and Wave Propagation", "target": "subject-104704", "btn-id": "btn-104704"}, {"label": "Optical Fiber Communication", "target": "subject-104705", "btn-id": "btn-104705"}, {"label": "Micro and Nano Electronics", "target": "subject-104706", "btn-id": "btn-104706"}, {"label": "Embedded System", "target": "subject-104707", "btn-id": "btn-104707"}, {"label": "High Speed Electronics", "target": "subject-104708", "btn-id": "btn-104708"}, {"label": "Digital System Design", "target": "subject-104709", "btn-id": "btn-104709"}, {"label": "VLSI Technology", "target": "subject-104710", "btn-id": "btn-104710"}, {"label": "Information and Coding Theory", "target": "subject-104711", "btn-id": "btn-104711"} ]'>
+                        Program Electives - II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Electives - III"
+                        data-modal-options='[ {"label": "Antennas and Wave Propagation", "target": "subject-104704", "btn-id": "btn-104704"}, {"label": "Optical Fiber Communication", "target": "subject-104705", "btn-id": "btn-104705"}, {"label": "Micro and Nano Electronics", "target": "subject-104706", "btn-id": "btn-104706"}, {"label": "Embedded System", "target": "subject-104707", "btn-id": "btn-104707"}, {"label": "High Speed Electronics", "target": "subject-104708", "btn-id": "btn-104708"}, {"label": "Digital System Design", "target": "subject-104709", "btn-id": "btn-104709"}, {"label": "VLSI Technology", "target": "subject-104710", "btn-id": "btn-104710"}, {"label": "Information and Coding Theory", "target": "subject-104711", "btn-id": "btn-104711"} ]'>
+                        Program Electives - III </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100709"
+                        data-type="lab">Project-I</button><button class="tab-btn" data-target="subject-100702"
+                        data-type="lab">Summer Entrepreneurship-III</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-104701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Business Analytics [104701]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Business Analytics</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Business Analytics</li>
+                                <li>Scope Of Business Analytics</li>
+                                <li>Business Analytics Process</li>
+                                <li>Relationship Of Business Analytics Process And Organisation</li>
+                                <li>Competitive Advantages Of Business Analytics</li>
+                                <li>Statistical Tools: Statistical Notation</li>
+                                <li>Descriptive Statistical Methods</li>
+                                <li>Review Of Probability Distribution And Data Modelling</li>
+                                <li>Sampling And Estimation Methods Overview</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Trendiness and Regression Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Modelling Relationships And Trends In Data</li>
+                                <li>Simple Linear Regression</li>
+                                <li>Important Resources</li>
+                                <li>Business Analytics Personnel</li>
+                                <li>Data And Models For Business Analytics</li>
+                                <li>Problem Solving</li>
+                                <li>Visualizing And Exploring Data</li>
+                                <li>Business Analytics Technology</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Organization Structures of Business Analytics</strong>
+                            <ul class="unit-topics">
+                                <li>Team Management</li>
+                                <li>Management Issues</li>
+                                <li>Designing Information Policy</li>
+                                <li>Outsourcing</li>
+                                <li>Ensuring Data Quality</li>
+                                <li>Measuring Contribution Of Business Analytics</li>
+                                <li>Managing Changes</li>
+                                <li>Descriptive Analytics</li>
+                                <li>Predictive Analytics</li>
+                                <li>Predictive Modelling Predictive Analytics Analysis</li>
+                                <li>Data Mining</li>
+                                <li>Data Mining Methodologies</li>
+                                <li>Prescriptive Analytics And Its Step In The Business Analytics Process</li>
+                                <li>Prescriptive Modelling</li>
+                                <li>Nonlinear Optimization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Forecasting Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Qualitative And Judgmental Forecasting</li>
+                                <li>Statistical Forecasting Models</li>
+                                <li>Forecasting Models For Stationary Time Series</li>
+                                <li>Forecasting Models For Time Series With A Linear Trend</li>
+                                <li>Forecasting Time Series With Seasonality</li>
+                                <li>Regression Forecasting With Causal Variables</li>
+                                <li>Selecting Appropriate Forecasting Models</li>
+                                <li>Monte Carlo Simulation And Risk Analysis</li>
+                                <li>Monte Carlo Simulation Using Analytic Solver Platform</li>
+                                <li>New Product Development Model</li>
+                                <li>Newsvendor Model</li>
+                                <li>Overbooking Model</li>
+                                <li>Cash Budget Model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Decision Analysis and Recent Trends</strong>
+                            <ul class="unit-topics">
+                                <li>Decision Analysis: Formulating Decision Problems</li>
+                                <li>Decision Strategies With The Without Outcome Probabilities</li>
+                                <li>Decision Trees</li>
+                                <li>The Value Of Information</li>
+                                <li>Utility And Decision Making</li>
+                                <li>Recent Trends: In Embedded And Collaborative Business Intelligence</li>
+                                <li>Visual Data Recovery</li>
+                                <li>Data Storytelling And Data Journalism</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Business Analytics Principles, Concepts, and Applications by Marc J.Schniederjans, Dara G.
+                            Schniederjans, Christopher M. Starkey, Pearson FT Press.</li>
+                        <li>Business Analytics by James Evans, Pearson Education</li>
+                    </ol>
+                </section>
+                <section id="subject-104702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Cost Management of Engineering Projects [104702]</h2>
+                    <p>This is a placeholder for Cost Management of Engineering Projects. The detailed syllabus content
+                        is not provided in the source document.</p>
+                </section>
+                <section id="subject-100705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Graduate Employability Skills and Competitive Courses [100705]</h2>
+                    <p>This course focuses on preparing students for competitive exams like GATE, IES, etc., and
+                        developing employability skills. The detailed syllabus content is not provided in the source
+                        document.</p>
+                </section>
+                <section id="subject-104703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Wireless Communication [104703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to Wireless Communication Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution Of Mobile Radio Communications</li>
+                                <li>Examples Of Wireless Communication Systems</li>
+                                <li>Paging Systems</li>
+                                <li>Cordless Telephone Systems</li>
+                                <li>Overview Of Generations Of Cellular Systems</li>
+                                <li>Comparison Of Various Wireless Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Introduction to Personal Communication Services (PCS)
+                                and The Cellular Concept</strong>
+                            <ul class="unit-topics">
+                                <li>Pcs Architecture</li>
+                                <li>Mobility Management</li>
+                                <li>Networks Signalling</li>
+                                <li>A Basic Cellular System</li>
+                                <li>Frequency Reuse Basic Theory Of Hexagonal Cell Layout</li>
+                                <li>Spectrum Efficiency</li>
+                                <li>Fdm/tdm</li>
+                                <li>Cellular System</li>
+                                <li>Channel Allocation Schemes</li>
+                                <li>Handover Analysis</li>
+                                <li>Cellular Cdma</li>
+                                <li>Soft Capacity</li>
+                                <li>Erlang Capacity Comparison</li>
+                                <li>Multiple Access Techniques: Fdma, Tdma, Cdma</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: 2G Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Second Generation, Digital, Wireless Systems: Gsm, I S136 (d-amps), Is-95 Cdma</li>
+                                <li>Global System For Mobile Communication (gsm) System Overview</li>
+                                <li>Gsm Architecture</li>
+                                <li>Mobility Management</li>
+                                <li>Network Signalling</li>
+                                <li>Mobile Management</li>
+                                <li>Voice Signal Processing And Coding</li>
+                                <li>Spread Spectrum Systems</li>
+                                <li>Cellular Code Division Access Systems-principle</li>
+                                <li>Power Control</li>
+                                <li>Effects Of Multipath Propagation On Code Division Multiple Access</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: 2.5G Mobile Data Networks and 3G Mobile
+                                Services</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Mobile Data Networks</li>
+                                <li>General Packet Radio Services (gprs)</li>
+                                <li>Gprs Architecture</li>
+                                <li>Gprs Network Nodes</li>
+                                <li>Edge</li>
+                                <li>Wireless Lans, (ieee 802.11)</li>
+                                <li>Mobile Ip</li>
+                                <li>Third Generation (3g) Mobile Services</li>
+                                <li>Introduction To International Mobile Telecommunications 2000 (imt 2000) Vision</li>
+                                <li>Wideband Code Division Multiple Access (w-cdma), And Cdma 2000</li>
+                                <li>Quality Of Services In 3g</li>
+                                <li>Introduction To 4g</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Introduction to Wireless Channels and
+                                Diversity</strong>
+                            <ul class="unit-topics">
+                                <li>Fast Fading Wireless Channel Modelling</li>
+                                <li>Rayleigh/rician Fading Channels</li>
+                                <li>Ber Performance In Fading Channels</li>
+                                <li>Introduction To Diversity Modelling For Wireless Communications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Theodore S. Rappaport, "Wireless Communications: Principles and Practice" 2nd Edition (2008)
+                        </li>
+                        <li>Andrew J Viterbi, "CDMA Principles of spread spectrum communications", Addition Wesley, 1995
+                        </li>
+                        <li>J S Lee and L E Miller, "CDMA systems engineering handbook", Artech House,1998</li>
+                        <li>Marvin K Simon, Jim K Omura, Robert A Scholtz, Bary Klevit, "Spread Spectrum
+                            Communications", 1995</li>
+                        <li>Sergio Verdu, "Multiuser Detection", Cambridge University Press, 1998</li>
+                        <li>Andrew S Tanenbaum, "Computer Network", Pearson/ PHI, 4th edition, 2009</li>
+                    </ol>
+                </section>
+                <section id="subject-100709" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-I [100709]</h2>
+                    <p>Details for Project-I will be provided by the department. This component carries 6 credits.</p>
+                </section>
+                <section id="subject-100702" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship-III [100702]</h2>
+                    <p>Details for Summer Entrepreneurship-III will be provided by the department. This component
+                        carries 8 credits.</p>
+                </section>
+                <section id="subject-104704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Antennas and Wave Propagation [104704]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Fundamental Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Physical Concept Of Radiation</li>
+                                <li>Radiation Pattern</li>
+                                <li>Near And Far-field Regions</li>
+                                <li>Reciprocity</li>
+                                <li>Directivity And Gain</li>
+                                <li>Effective Aperture</li>
+                                <li>Polarization</li>
+                                <li>Input Impedance</li>
+                                <li>Efficiency</li>
+                                <li>Friis Transmission Equation</li>
+                                <li>Radiation Integrals And Auxiliary Potential Functions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Radiation</strong>
+                            <ul class="unit-topics">
+                                <li>Potential Function And Electromagnetic Fields</li>
+                                <li>A Small Current Element Radiation</li>
+                                <li>Power Radiated By Current Element And Radiation Resistance</li>
+                                <li>Radiation From Quarter Wave Monopole And Half Wave Dipole</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Antenna Arrays</strong>
+                            <ul class="unit-topics">
+                                <li>Analysis Of Uniformly Spaced Arrays With Uniform And Non-uniform Excitation
+                                    Amplitudes</li>
+                                <li>Extension To Planar Arrays</li>
+                                <li>Synthesis Of Antenna Arrays Using Schelkun Off Polynomial Method</li>
+                                <li>Woodward-lawson Method</li>
+                                <li>Aperture And Reflector Antennas-huygens' Principle</li>
+                                <li>Radiation From Rectangular And Circular Apertures</li>
+                                <li>Design Considerations</li>
+                                <li>Babinet's Principle</li>
+                                <li>Radiation From Sectoral And Pyramidal Horns</li>
+                                <li>Design Concepts</li>
+                                <li>Prime-focus Parabolic Reflector And Cassegrain Antennas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Broadband Antennas</strong>
+                            <ul class="unit-topics">
+                                <li>Log-periodic And Yagi-uda Antennas</li>
+                                <li>Frequency Independent Antennas</li>
+                                <li>Broadcast Antennas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Microstrip Antennas</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Characteristics Of Micro Strip Antennas</li>
+                                <li>Feeding Methods</li>
+                                <li>Methods Of Analysis</li>
+                                <li>Design Of Rectangular And Circular Patch Antennas</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Basic Concepts of Smart Antennas</strong>
+                            <ul class="unit-topics">
+                                <li>Concept And Benefits Of Smart Antennas</li>
+                                <li>Fixed Weight Beamforming Basics</li>
+                                <li>Adaptive Beamforming</li>
+                                <li>Different Modes Of Radio Wave Propagation Used In Current Practice</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Guided waves and waveguides</strong>
+                            <ul class="unit-topics">
+                                <li>Waves Between Parallel Planes</li>
+                                <li>Tm And Te Waves</li>
+                                <li>Their Propagation And Attenuation In Parallel Plane Guides</li>
+                                <li>Rectangular Waveguides Te And Tm Waves In Rectangular Guides</li>
+                                <li>Wave Impedance</li>
+                                <li>Circular Waveguides</li>
+                                <li>Introduction To Resonators</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>"Antennas", J.D. Kraus, McGraw Hill, 1988</li>
+                        <li>"Antenna Theory - Analysis and Design", C.A. Balanis, John Wiley, 1982</li>
+                        <li>"Antenna Engineering Handbook", McGraw Hill, 1984</li>
+                        <li>"Micro Strip Antennas", I.J. Bahl and P. Bhartia, Artech House, 1980</li>
+                        <li>"Electromagnetic Waves", R.K. Shevgaonkar, Tata McGraw Hill, 2005</li>
+                        <li>"Electromagnetic Waves and Radiating Systems", (Prentice-Hall Electrical Engineering Series)
+                            by Edward C. Jordan, 2006</li>
+                        <li>"Antennas and Radio Wave Propagation", R.E. Collin, McGraw Hill, 1985</li>
+                    </ol>
+                </section>
+                <section id="subject-104705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Optical Fiber Communication [104705]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Optical Fiber Structures</li>
+                                <li>Waveguiding And Fabrication Nature Of Light</li>
+                                <li>Basic Optical Laws And Definition</li>
+                                <li>Optical Fiber Modes And Configuration</li>
+                                <li>Mode Theory For Circular Waveguides</li>
+                                <li>Single Mode Fibers</li>
+                                <li>Graded Index Fiber</li>
+                                <li>Fiber Materials</li>
+                                <li>Fabrication And Mechanical Properties</li>
+                                <li>Fiber Optic Cables</li>
+                                <li>Basic Optical Communication System</li>
+                                <li>Advantage Of Optical Communication System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Attenuation in Optical Fibers</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Absorption</li>
+                                <li>Scattering</li>
+                                <li>Very Low Loss Materials</li>
+                                <li>All Plastic And Polymer-clad-silica Fibers</li>
+                                <li>Wave Propagation: Wave Propagation In Step-index And Graded Index Fiber</li>
+                                <li>Overall Fiber Dispersion-single Mode Fibers</li>
+                                <li>Multimode Fibers</li>
+                                <li>Dispersion Shifted Fiber</li>
+                                <li>Dispersion Flattened Fiber</li>
+                                <li>Polarization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Source and Detectors</strong>
+                            <ul class="unit-topics">
+                                <li>Design And Led's For Optical Communication</li>
+                                <li>Semiconductor Lasers For Optical Fiber Communication System And Their Types</li>
+                                <li>Semiconductor Photodiode Detectors</li>
+                                <li>Avalanche Photodiode Detectors And Photomultiplier Tubes</li>
+                                <li>Source To Fiber Power Launching Output Patterns</li>
+                                <li>Power Coupling</li>
+                                <li>Power Launching</li>
+                                <li>Equilibrium Numerical Aperture</li>
+                                <li>Laser Diode To Fiber Coupling</li>
+                                <li>Optical Detectors- Physical Principles Of Pin And Apd</li>
+                                <li>Detector Response Time</li>
+                                <li>Temperature Effect On Avalanche Gain</li>
+                                <li>Comparison Of Photo Detectors</li>
+                                <li>Optical Receiver Operation Fundamental Receiver Operation</li>
+                                <li>Digital Signal Transmission</li>
+                                <li>Error Sources</li>
+                                <li>Receiver Configuration</li>
+                                <li>Digital Receiver Performance</li>
+                                <li>Probability Of Error</li>
+                                <li>Quantum Limit</li>
+                                <li>Analog Receivers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Optical Fiber Communication Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Data Communication Networks Network Topologies</li>
+                                <li>Mac Protocols</li>
+                                <li>Analog System</li>
+                                <li>Advanced Multiplexing Strategies Optical Tdm</li>
+                                <li>Sub Carrier Multiplexing</li>
+                                <li>Wdm Network</li>
+                                <li>Architectures: Sonet/sdh</li>
+                                <li>Optical Transport Network</li>
+                                <li>Optical Access Network</li>
+                                <li>Optical Premise Network</li>
+                                <li>Applications-military Applications</li>
+                                <li>Civil, Consumer And Industrial Applications</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>"Optical Communication System", Gowar, IEEE Press - 2nd Edition</li>
+                        <li>"Fiber Optics and Opto Electronics", R.P.Khare, Oxford Publication</li>
+                        <li>"Optical Information Processing", F. T. S. Yu, Wiley, Newyork, 1983</li>
+                        <li>"Fiber optic Communication Systems", John Wiley and sons, New York, 1992</li>
+                        <li>"An Introduction to Fiber Optics", A. Ghatak, K. Thyagarajan, Cambridge University Press
+                        </li>
+                        <li>"Optical Communication Components and Systems", J. H. Franz and V. K. Jain, Narosa Publish,
+                            2013</li>
+                        <li>"Optical Fiber Communications", John M. Senior, PEARSON, 3rd Edition,2010</li>
+                    </ol>
+                </section>
+                <section id="subject-104706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Micro and Nano Electronics [104706]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Evolution of Nanoelectronics</strong>
+                            <ul class="unit-topics">
+                                <li>Moore's Law</li>
+                                <li>Silicon Electronics</li>
+                                <li>Limitations</li>
+                                <li>Discussion Of The International Technology Roadmap Characteristics</li>
+                                <li>Need For New Concepts In Electronics</li>
+                                <li>Silicon Mos Transistor From Micro To Nano</li>
+                                <li>Future Opportunities</li>
+                                <li>Nanocomputing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Tunnel Junctions and Applications of Tunneling</strong>
+                            <ul class="unit-topics">
+                                <li>Tunneling Through A Potential Barrier</li>
+                                <li>Potential Energy Profiles For Material Interfaces Metal Insulator</li>
+                                <li>Metal Semiconductor, And Metal Insulator Metal Junctions</li>
+                                <li>Applications Of Tunneling</li>
+                                <li>Field Emission</li>
+                                <li>Gate Oxide Tunneling And Hot Electron Effects In Mosfets</li>
+                                <li>Double Barrier Tunneling And The Resonant Tunneling Diode</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Ballistic and Spin Transport</strong>
+                            <ul class="unit-topics">
+                                <li>Coulomb Blockade</li>
+                                <li>Tunnel Junction Excited By A Current Source</li>
+                                <li>Coulomb Blockade In A Quantum Dot Circuit</li>
+                                <li>Single Electron Transistor</li>
+                                <li>Ballistic Transport</li>
+                                <li>Electron Collisions And Length Scales</li>
+                                <li>Ballistic Transport Model</li>
+                                <li>Quantum Resistance And Conductance</li>
+                                <li>Transport Of Spin And Spintronics Devices</li>
+                                <li>Applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Molecular Electronics</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Molecular Electronics An Atomistic View Of Electrical Resistance
+                                </li>
+                                <li>Schrodinger Equation</li>
+                                <li>Self Consistent Field</li>
+                                <li>Band Structure</li>
+                                <li>Level Broadening</li>
+                                <li>Coherent Transport</li>
+                                <li>Non-coherent Transport In Molecular Electronics Devices</li>
+                                <li>Molecular Devices</li>
+                                <li>Logic Switches</li>
+                                <li>Interface Engineering Issues</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>George W. Hanson, "Fundamentals of Nanoelectronics", Prentice Hall, 2007</li>
+                        <li>Karl Goser et.al, "Nanoelectronics and Nanosystems: From Transistors to Molecular and
+                            Quantum devices", Springer, 2005</li>
+                        <li>Mark. A. Reed and Takhee, "Molecular Electronics", American Scientific Publishers, 2003</li>
+                        <li>Mitin V., V. Kochelap, and M. Stroscio, "Introduction to Nanoelectronics", Cambridge
+                            University Press, 2008</li>
+                        <li>Michael C. Petty, "Molecular Electronics: From Principles to Practice", John Wiley and Sons,
+                            Ltd, 2007</li>
+                        <li>Ramachandran K. I. et.al, "Computational Chemistry and Molecular Modeling", Springer,2008
+                        </li>
+                        <li>J. H. Franz and V. K. Jain, "Optical Communication Components and Systems", Narosa Publish,
+                            2013</li>
+                        <li>John M. Senior, "Optical Fiber Communications", PEARSON, 3rd Edition, 2010</li>
+                    </ol>
+                </section>
+                <section id="subject-104707" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Embedded System [104707]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to Embedded Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Definition Of Embedded System</li>
+                                <li>Embedded Systems Vs General Computing Systems</li>
+                                <li>History Of Embedded Systems</li>
+                                <li>Classification</li>
+                                <li>Major Application Areas</li>
+                                <li>Purpose Of Embedded Systems</li>
+                                <li>Characteristics And Quality Attributes Of Embedded Systems</li>
+                                <li>Typical Embedded System</li>
+                                <li>Core Of The Embedded System</li>
+                                <li>General Purpose And Domain Specific Processors</li>
+                                <li>Asics</li>
+                                <li>Plds</li>
+                                <li>Commercial Off-the-shelf Components (cots)</li>
+                                <li>Memory: Rom, Ram</li>
+                                <li>Memory According To The Type Of Interface</li>
+                                <li>Memory Shadowing</li>
+                                <li>Memory Selection For Embedded Systems</li>
+                                <li>Sensors And Actuators</li>
+                                <li>Communication Interface: On Board And External Communication Interfaces</li>
+                                <li>Programming</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Embedded Firmware</strong>
+                            <ul class="unit-topics">
+                                <li>Reset Circuit</li>
+                                <li>Brown-out Protection Circuit</li>
+                                <li>Oscillator Unit</li>
+                                <li>Real Time Clock</li>
+                                <li>Watchdog Timer</li>
+                                <li>Embedded Firmware Design Approaches And Development Languages</li>
+                                <li>Rtos Based Embedded System Design</li>
+                                <li>Operating System Basics</li>
+                                <li>Types Of Operating Systems</li>
+                                <li>Tasks</li>
+                                <li>Process And Threads</li>
+                                <li>Multiprocessing And Multitasking</li>
+                                <li>Task Scheduling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Task Communication and Synchronization</strong>
+                            <ul class="unit-topics">
+                                <li>Task Communication: Shared Memory</li>
+                                <li>Message Passing</li>
+                                <li>Remote Procedure Call And Sockets</li>
+                                <li>Task Synchronization</li>
+                                <li>Task Communication/synchronization Issues</li>
+                                <li>Task Synchronization Techniques</li>
+                                <li>Device Drivers</li>
+                                <li>How To Choose An Rtos</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Introduction to ARM</strong>
+                            <ul class="unit-topics">
+                                <li>Arm Architecture Arm Design Philosophy</li>
+                                <li>Registers</li>
+                                <li>Program Status Register</li>
+                                <li>Instruction Pipeline Interrupts And Vector Table</li>
+                                <li>Architecture Revision</li>
+                                <li>Arm Processor Families</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: ARM Programming</strong>
+                            <ul class="unit-topics">
+                                <li>Instruction Set</li>
+                                <li>Data Processing Instructions</li>
+                                <li>Addressing Modes</li>
+                                <li>Branch</li>
+                                <li>Load</li>
+                                <li>Store Instructions</li>
+                                <li>Psr Instructions</li>
+                                <li>Conditional Instructions</li>
+                                <li>Thumb Instruction Set</li>
+                                <li>Register Usage</li>
+                                <li>Other Branch Instructions</li>
+                                <li>Data Processing Instructions</li>
+                                <li>Single-register And Multi Register Load Store Instructions</li>
+                                <li>Stack</li>
+                                <li>Software Interrupt Instructions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: ARM Programming in C</strong>
+                            <ul class="unit-topics">
+                                <li>Simple C Programs Using Function Calls</li>
+                                <li>Pointers</li>
+                                <li>Structures</li>
+                                <li>Integer And Floating Point Arithmetic</li>
+                                <li>Assembly Code Using Instruction Scheduling</li>
+                                <li>Register Allocation</li>
+                                <li>Conditional Execution And Loops</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Embedded System Design - Frank Vahid, Tony Givargis, John Wiley</li>
+                        <li>C - Michael J. Pont, 2nd Ed, Pearson Education, 2008</li>
+                        <li>ARM Systems Developer's Guides-Designing and Optimizing System Software Andrew N. Sloss,
+                            Dominic Symes, Chris Wright, 2008, Elsevier</li>
+                        <li>Introduction to Embedded Systems - Shibu K.V, McGraw Hill</li>
+                    </ol>
+                </section>
+                <section id="subject-104708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: High Speed Electronics [104708]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Transmission line theory</strong>
+                            <ul class="unit-topics">
+                                <li>Basics</li>
+                                <li>Crosstalk And Non-ideal Effects</li>
+                                <li>Signal Integrity</li>
+                                <li>Impact Of Packages</li>
+                                <li>Vias</li>
+                                <li>Traces</li>
+                                <li>Connectors</li>
+                                <li>Non-ideal Return Current Paths</li>
+                                <li>High Frequency Power Delivery</li>
+                                <li>Methodologies For Design Of High Speed Buses</li>
+                                <li>Radiated Emissions And Minimizing System Noise</li>
+                                <li>Noise Analysis</li>
+                                <li>Sources</li>
+                                <li>Noise Figure</li>
+                                <li>Gain Compression</li>
+                                <li>Harmonic Distortion</li>
+                                <li>Inter Modulation</li>
+                                <li>Cross Modulation</li>
+                                <li>Dynamic Range</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Devices</strong>
+                            <ul class="unit-topics">
+                                <li>Passive And Active</li>
+                                <li>Lumped Passive Devices (models)</li>
+                                <li>Active (models, Low Vs High Frequency)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: RF Amplifier Design</strong>
+                            <ul class="unit-topics">
+                                <li>Stability</li>
+                                <li>Low Noise Amplifiers</li>
+                                <li>Broadband Amplifiers (and Distributed) Power Amplifiers</li>
+                                <li>Class A, B, Ab And C, D E Integrated Circuit Realizations</li>
+                                <li>Cross-over Distortion Efficiency Rf Power Output Stages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Mixers and Oscillators</strong>
+                            <ul class="unit-topics">
+                                <li>Mixers</li>
+                                <li>Up Conversion Down Conversion</li>
+                                <li>Conversion Gain And Spurious Response</li>
+                                <li>Oscillators Principles</li>
+                                <li>Pll Transceiver Architectures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Printed Circuit Board</strong>
+                            <ul class="unit-topics">
+                                <li>Printed Circuit Board Anatomy</li>
+                                <li>Cad Tools For Pcb Design</li>
+                                <li>Standard Fabrication</li>
+                                <li>Microvia Boards</li>
+                                <li>Board Assembly</li>
+                                <li>Surface Mount Technology</li>
+                                <li>Through Hole Technology</li>
+                                <li>Process Control And Design Challenges</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>"High-Speed Digital System Design: A Handbook of Interconnect Theory and Design Practices",
+                            Stephen H. Hall, Garrett W. Hall, James A. McCall, Wiley-IEEE Press,2000</li>
+                        <li>"The Design of CMOS Radio-Frequency Integrated Circuits", Thomas H. Lee, Cambridge
+                            University Press, 2004</li>
+                        <li>"RF Microelectronics", Behzad Razavi, Prentice-Hall, 1998</li>
+                        <li>"Microwave Transistor Amplifiers", Guillermo Gonzalez, 2nd Edition, Prentice Hall</li>
+                        <li>"RF and Microwave Wireless systems", Kai Chang, Wiley</li>
+                        <li>"Electronic Product design", R.G. Kaduskar and V.B.Baru, Wiley India, 2011</li>
+                    </ol>
+                </section>
+                <section id="subject-104709" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Digital System Design [104709]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to Digital Design Concepts</strong>
+                            <ul class="unit-topics">
+                                <li>Review Of Digital Design Fundamentals</li>
+                                <li>Minimization And Design Of Combinational Circuits</li>
+                                <li>Sequential Machine Fundamentals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Clocked Sequential Finite State Machines</strong>
+                            <ul class="unit-topics">
+                                <li>State Diagram</li>
+                                <li>Analysis Of Synchronous Circuits</li>
+                                <li>Derivation Of State Graphs And Tables</li>
+                                <li>Reduction Of State Tables</li>
+                                <li>State Assignment</li>
+                                <li>Design Of Sequence Detectors</li>
+                                <li>Serial Data Code Conversion</li>
+                                <li>Design Of Synchronous Sequential State Machine</li>
+                                <li>Design And Applications Of Counters And Shift Registers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Multinput System Controllers Design</strong>
+                            <ul class="unit-topics">
+                                <li>System Controller</li>
+                                <li>Controller Design Principles</li>
+                                <li>Timing And Frequency Considerations</li>
+                                <li>Dfd Development</li>
+                                <li>Controller Architecture Design</li>
+                                <li>Asynchronous Input Handling</li>
+                                <li>State Assignment Concepts</li>
+                                <li>Flip-flop Level Implementation Using Vem's</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Sequential Design using LSI & MSI circuits</strong>
+                            <ul class="unit-topics">
+                                <li>Using Decoders, Multiplexers In Sequential Circuits</li>
+                                <li>Sequential Network Design Using Roms, Plas And Pals</li>
+                                <li>Programmable Gate Arrays (pgas)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Asynchronous Sequential Finite State Machines</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction</li>
+                                <li>Analysis Of Asynchronous Networks</li>
+                                <li>Races And Cycles</li>
+                                <li>Derivation Of Primitive Flow Tables</li>
+                                <li>Reduction Of Primitive Flow Tables</li>
+                                <li>State Assignments</li>
+                                <li>Hazards</li>
+                                <li>Asynchronous Sequential Network Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: VHDL</strong>
+                            <ul class="unit-topics">
+                                <li>Why Vhdl?</li>
+                                <li>Basic Language Elements</li>
+                                <li>Data Objects, Classes And Data Types</li>
+                                <li>Operators</li>
+                                <li>Overloading</li>
+                                <li>Logical Operators</li>
+                                <li>Vhdl Representation Of Digital Design</li>
+                                <li>Entity And Architectural Declarations</li>
+                                <li>Introduction To Behavioral, Dataflow And Structural Models</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>William I Fletcher "An Engineering Approach to Digital Design", PHI, 3rd Indian reprint,
+                            (1994)</li>
+                        <li>Z Navabi "VHDL-Analysis and Modelling of Digital Systems", McGraw Hill, 2nd Edition (1997)
+                        </li>
+                        <li>Kevin Skahill "VHDL for Programmable Logic", Pearson Education, 1st Indian Reprint (2004)
+                        </li>
+                        <li>Jr. Charles H. Roth, "Fundamentals of Logic Design", Jaico Publishers, 4th Edition, (2002)
+                        </li>
+                        <li>M Morris Mano "Digital Design", Pearson Education, 3rd Edition (2002)</li>
+                    </ol>
+                </section>
+                <section id="subject-104710" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: VLSI Technology [104710]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to MOS technology</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Ic Technology</li>
+                                <li>Mos And Related Vlsi Technology</li>
+                                <li>Basic Mos Transistors (enhancement Mode And Depletion Mode)</li>
+                                <li>Nmos Process</li>
+                                <li>Cmos Process (p Well, N Well, Twin Tub Processes)</li>
+                                <li>Bi Cmos Process Flow</li>
+                                <li>Aspects Of Cmos And Bi Cmos Devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Brief introduction of VLSI</strong>
+                            <ul class="unit-topics">
+                                <li>Architecture Definition</li>
+                                <li>Functional Design</li>
+                                <li>Logic Design</li>
+                                <li>Circuit Design And Physical Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Crystal growth and doping</strong>
+                            <ul class="unit-topics">
+                                <li>Starting Materials</li>
+                                <li>Czochralski Technique</li>
+                                <li>Gradient Freeze Technique</li>
+                                <li>Considerations For Proper Crystal Growth (role Of Point Defects, Thermal Gradients,
+                                    Turbulences, Pull And Spin Rate, Crystal Orientation, Crystal Hardening Techniques)
+                                </li>
+                                <li>Doping (rapid Stirring Conditions, Partial Stirring Conditions, Radial Doping
+                                    Variations)</li>
+                                <li>Zone Processes (zone Refining, Zone Leveling, Neutron Transmutation Doping)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Diffusion</strong>
+                            <ul class="unit-topics">
+                                <li>Diffusion In A Concentration Gradient</li>
+                                <li>Diffusion Equation</li>
+                                <li>Impurity Behavior In Silicon</li>
+                                <li>Diffusion Systems For Silicon</li>
+                                <li>Redistribution During Oxide Growth</li>
+                                <li>Diffusion During Oxide Growth</li>
+                                <li>Cooperative Diffusion</li>
+                                <li>Evaluation Techniques For Diffused Layers In Silicon</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Epitaxy</strong>
+                            <ul class="unit-topics">
+                                <li>Nucleation And Growth</li>
+                                <li>Doping</li>
+                                <li>Dislocation</li>
+                                <li>Thermally Induced Strain</li>
+                                <li>Molecular Beam Epitaxy</li>
+                                <li>Vapor Phase Epitaxy For Silicon</li>
+                                <li>Liquid Phase Epitaxy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Ion-Implantation</strong>
+                            <ul class="unit-topics">
+                                <li>Penetration Range (nuclear And Electronic Stopping, Transverse Effects)</li>
+                                <li>Implantation Damage</li>
+                                <li>Annealing</li>
+                                <li>Ion Implantation Systems</li>
+                                <li>Process Consideration</li>
+                                <li>High Energy And High Current Implants</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Native Films</strong>
+                            <ul class="unit-topics">
+                                <li>Thermal Oxidation Of Silicon (kinetics Of Oxide Growth, Oxidation Systems, Oxidation
+                                    Induced Stacking Faults, Properties Of Thermal Oxides)</li>
+                                <li>Thermal Nitridation Of Silicon</li>
+                                <li>Plasma</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Deposited Films</strong>
+                            <ul class="unit-topics">
+                                <li>Films Deposition Methods (vacuum Evaporation, Sputter Deposition, Chemical Vapor
+                                    Deposition)</li>
+                                <li>Film Characteristics (step Coverage, Grown Habit, Mechanical Stress,
+                                    Electromigration)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 8: Etching and Cleaning</strong>
+                            <ul class="unit-topics">
+                                <li>Wet Chemical Etching In Silicon Based Processes</li>
+                                <li>Dry Physical Etching</li>
+                                <li>Dry Chemical Etching</li>
+                                <li>Reactive Ion Etching</li>
+                                <li>Etch Induced Damage</li>
+                                <li>Cleaning (wet And Dry)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 9: Lithography</strong>
+                            <ul class="unit-topics">
+                                <li>Photo Reactive Materials</li>
+                                <li>Pattern Generation And Mask Making</li>
+                                <li>Pattern Transfer Optical Printing</li>
+                                <li>Advanced Techniques (short Wavelength, Multi Layer Resist, Phase Shifting Masks,
+                                    Electron Beam Techniques, Xray Printing)</li>
+                                <li>Mask Defects</li>
+                                <li>Pattern Transfer Defects</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 10: Process integration</strong>
+                            <ul class="unit-topics">
+                                <li>Isolation (p-n Junction, Mesa, Oxide)</li>
+                                <li>Self Alignment</li>
+                                <li>Local Oxidation</li>
+                                <li>Planarization</li>
+                                <li>Metallization</li>
+                                <li>Gettering</li>
+                                <li>Process Flow For Cmos</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>'Basic VLSI Design by Pucknell and Eshraghian</li>
+                        <li>VLSI Fabrication Principles by Sorab Gandhi</li>
+                        <li>The science and engineering of Microelectronic Fabrication by Stephen Campbell</li>
+                        <li>VLSI Design by Sujata Pandey and Manoj Pandey</li>
+                        <li>CMOS VLSI design by Wolfe</li>
+                    </ol>
+                </section>
+                <section id="subject-104711" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Information and Coding Theory [104711]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Information Theory</strong>
+                            <ul class="unit-topics">
+                                <li>Definition Of Information</li>
+                                <li>Entropy</li>
+                                <li>Mutual Information</li>
+                                <li>Properties Of Mutual Information</li>
+                                <li>Fundamental Inequality</li>
+                                <li>I.t. Inequality</li>
+                                <li>Divergence</li>
+                                <li>Properties Of Divergence</li>
+                                <li>Divergence Inequality</li>
+                                <li>Relationship Between Entropy And Mutual Information</li>
+                                <li>Chain Rules For Entropy, Relative Entropy And Mutual Information</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Channel Capacity</strong>
+                            <ul class="unit-topics">
+                                <li>Uniform Dispersive Channel</li>
+                                <li>Uniform Focusing Channel</li>
+                                <li>Strongly Symmetric Channel</li>
+                                <li>Binary Symmetric Channel</li>
+                                <li>Binary Erasure Channel</li>
+                                <li>Channel Capacity Of All These Channels</li>
+                                <li>Channel Coding Theorem</li>
+                                <li>Shannon-hartley Theorem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Data Compression</strong>
+                            <ul class="unit-topics">
+                                <li>Kraft Inequality</li>
+                                <li>Huffman Codes</li>
+                                <li>Shannon-fano Coding</li>
+                                <li>Arithmetic Coding</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Linear Block Codes</strong>
+                            <ul class="unit-topics">
+                                <li>Systematic Linear Codes And Optimum Decoding For The Binary Symmetric Channel</li>
+                                <li>Generator And Parity Check Matrices</li>
+                                <li>Syndrome Decoding On Symmetric Channels</li>
+                                <li>Hamming Codes</li>
+                                <li>Weight Enumerators And The Macwilliams Identities</li>
+                                <li>Perfect Codes</li>
+                                <li>Cyclic Codes</li>
+                                <li>Bch Codes</li>
+                                <li>Reed Solomon Codes</li>
+                                <li>Justeen Codes</li>
+                                <li>Mds Codes</li>
+                                <li>Alterant, Goppa And Generalized Bch Codes</li>
+                                <li>Spectral Properties Of Cyclic Codes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Decoding of BCH codes</strong>
+                            <ul class="unit-topics">
+                                <li>Berlekamp's Decoding Algorithm</li>
+                                <li>Massey's Minimum Shift-register Synthesis Technique And Its Relation To Berlekamp's
+                                    Algorithm</li>
+                                <li>A Fast Berlekamp Massey Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Convolution codes</strong>
+                            <ul class="unit-topics">
+                                <li>Wozencraft's Sequential Decoding Algorithm</li>
+                                <li>Fann's Algorithm And Other Sequential Decoding Algorithms</li>
+                                <li>Viterbi Decoding Algorithm</li>
+                                <li>Turbo Codes</li>
+                                <li>Concatenated Code</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>Simon Haykin, "Communication Systems", 4th Edition, John Wiley and Sons, 2001</li>
+                        <li>ArijitSaha, "Information Theory, Coding and Cryptography", Pearson Education, 2013</li>
+                        <li>Thomas M. Cover, Joy A. Thomas, "Elements of Information Theory", Wiley India Pvt. Ltd, 2nd
+                            Edition, 2013</li>
+                        <li>J.Mary Jones, "Information and Coding Theory", Springer, 2000</li>
+                        <li>Ranjan Bose, "Information Theory, Coding and Cryptography", Tata Mc-Graw Hill, 2nd Edition,
+                            2008</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

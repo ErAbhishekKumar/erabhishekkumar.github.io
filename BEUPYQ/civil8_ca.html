@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>8th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3);
+            display: flex;
+            flex-direction: column;
+            max-height: 85vh
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">8th Semester Syllabus</h1>
+                <p class="page-subtitle">Civil Engineering with Computer Application</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Open Elective-II</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-IV</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-V</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-VI</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-II</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>18</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective- II"
+                        data-modal-options='[ {"label": "Economic Policies in India", "target": "subject-100830", "btn-id": "btn-100830"}, {"label": "Metro Systems and Engineering", "target": "subject-100831", "btn-id": "btn-100831"} ]'>
+                        Open Elective- II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- IV"
+                        data-modal-options='[ {"label": "Soft Computing", "target": "subject-119801", "btn-id": "btn-119801"}, {"label": "Distributed Database", "target": "subject-119802", "btn-id": "btn-119802"}, {"label": "Mobile and Wireless Computing", "target": "subject-119803", "btn-id": "btn-119803"}, {"label": "Cloud Computing", "target": "subject-119804", "btn-id": "btn-119804"}, {"label": "Data Mining", "target": "subject-119805", "btn-id": "btn-119805"} ]'>
+                        Program Elective- IV </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- V"
+                        data-modal-options='[ {"label": "Software Engineering", "target": "subject-119806", "btn-id": "btn-119806"}, {"label": "Embedded System", "target": "subject-119807", "btn-id": "btn-119807"}, {"label": "Information Retrieval and Web search", "target": "subject-119808", "btn-id": "btn-119808"}, {"label": "Computer Graphics", "target": "subject-119809", "btn-id": "btn-119809"} ]'>
+                        Program Elective- V </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- VI"
+                        data-modal-options='[ {"label": "Hydraulic Modeling", "target": "subject-119810", "btn-id": "btn-119810"}, {"label": "Biological Processes for Contaminant Removal", "target": "subject-119811", "btn-id": "btn-119811"}, {"label": "Rural Water Supply and Onsite Sanitation Systems", "target": "subject-119812", "btn-id": "btn-119812"}, {"label": "Sustainable Construction Methods", "target": "subject-119813", "btn-id": "btn-119813"}, {"label": "Construction Engineering Materials", "target": "subject-119814", "btn-id": "btn-119814"}, {"label": "Solid and Hazardous Waste Management", "target": "subject-119815", "btn-id": "btn-119815"}, {"label": "Bridge Engineering", "target": "subject-119816", "btn-id": "btn-119816"} ]'>
+                        Program Elective- VI </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-Project-II"
+                        data-type="lab">Project- II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-Project-II" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project- II [100801P]</h2>
+                    <p>Details for Project-II will be provided by the department. This component carries 6 credits.</p>
+                </section>
+                <section id="subject-100830" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Economic Policies in India [100830]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (10 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Framework Of Indian Economy: National Income - Trends And Structure Of National
+                                    Income</li>
+                                <li>Demographic Features And Indicators Of Economic Growth</li>
+                                <li>Development Rural-Urban Migration And Issues Related To Urbanization</li>
+                                <li>Poverty Debate And Inequality</li>
+                                <li>Nature</li>
+                                <li>Policy And Implications</li>
+                                <li>Unemployment-Nature</li>
+                                <li>Central And State Government's Policies</li>
+                                <li>Policy Implications</li>
+                                <li>Employment Trends In Organized And Unorganized Sector</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Development Strategies In India: Agricultural- Pricing</li>
+                                <li>Marketing And Financing Of Primary Sector</li>
+                                <li>Economic Reforms- Rationale Of Economic Reforms</li>
+                                <li>Liberalization</li>
+                                <li>Privatization And Globalization Of The Economy</li>
+                                <li>Changing Structure Of India's Foreign Trade</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Role Of Public Sector- Redefining The Role Of Public Sector</li>
+                                <li>Government Policy Towards Public Sector</li>
+                                <li>Problems Associated With Privatization</li>
+                                <li>Issues Regarding Deregulation- Disinvestment And Future Of Economic Reforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>The Economic Policy And Infrastructure Development: Energy And Transport</li>
+                                <li>Social Infrastructure- Education</li>
+                                <li>Health And Gender Related Issues</li>
+                                <li>Social Inclusion</li>
+                                <li>Issues And Policies In Financing Infrastructure Development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Indian Financial System- Issues Of Financial Inclusion</li>
+                                <li>Financial Sector Reforms-Review Of Monetary Policy Of R.B.I. Capital Market In India
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (10 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>The Economic Policy And Industrial Sector: Industrial Sector In Pre-Reforms Period
+                                </li>
+                                <li>Growth And Pattern Of Industrialization</li>
+                                <li>Industrial Sector In Post-Reform Period- Growth And Pattern Of Micro</li>
+                                <li>Small</li>
+                                <li>Medium Enterprises S</li>
+                                <li>Problems Of India's Industrial Exports</li>
+                                <li>Labor Market- Issues In Labor Market Reforms And Approaches To Employment Generation
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Dhingra, Ishwar C. [2006], 'Indian Economy, Sultan Chand and Sons, New Delhi.</li>
+                        <li>Datt, Ruddar and Sundaram, K.P.M. [Latest edition], 'Indian Economy,' S. Chand and Co, New
+                            Delhi.</li>
+                        <li>Brahmananda, P.R. and V.A. Panchmukhi. [2001], Ed. 'Development Experience in Indian
+                            Economy, Inter-state Perspective, Bookwell, New Delhi.</li>
+                        <li>Gupta,S.P. [1989], 'Planning and Development in India: A Critique, Allied Publishers Private
+                            Limited, New Delhi.</li>
+                        <li>Bhagwati, Jagdish. [2004], 'In Defense of Globalization, Oxford University Press, U.K.</li>
+                    </ol>
+                </section>
+                <section id="subject-100831" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Metro Systems and Engineering [100831]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>GENERAL: Overview Of Metro Systems</li>
+                                <li>Need For Metros</li>
+                                <li>Routing Studies</li>
+                                <li>Basic Planning And Financials</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>CIVIL ENGINEERING-Overview And Construction Methods For: Elevated And Underground
+                                    Stations</li>
+                                <li>Viaduct Spans And Bridges</li>
+                                <li>Underground Tunnels</li>
+                                <li>Depots</li>
+                                <li>Commercial And Service Buildings</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Initial Surveys & Investigations</li>
+                                <li>Basics Of Construction Planning & Management</li>
+                                <li>Construction Quality & Safety Systems</li>
+                                <li>Traffic Integration</li>
+                                <li>Multimodal Transfers And Pedestrian Facilities</li>
+                                <li>Environmental And Social Safeguards</li>
+                                <li>Track Systems-Permanent Way</li>
+                                <li>Facilities Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>ELECTRONICS AND COMMUNICATION ENGINEERING- Signaling Systems</li>
+                                <li>Automatic Fare Collection</li>
+                                <li>Operation Control Centre (OCC And BCC)</li>
+                                <li>SCADA And Other Control Systems</li>
+                                <li>Platform Screen Doors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>MECHANICAL & TV + AC: Rolling Stock</li>
+                                <li>Vehicle Dynamics And Structure</li>
+                                <li>Tunnel Ventilation Systems</li>
+                                <li>Air Conditioning For Stations And Buildings</li>
+                                <li>Fire Control Systems</li>
+                                <li>Lifts And Escalators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>ELECTRICAL: OHE</li>
+                                <li>Traction Power</li>
+                                <li>Substations- TSS And ASS</li>
+                                <li>Power SCADA</li>
+                                <li>Standby And Back-Up Systems</li>
+                                <li>Green Buildings</li>
+                                <li>Carbon Credits And Clear Air Mechanics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Bondyopadhyay, G. (2023). Civil Engineering 101: Beginner's Guide for Metro Rail System &
+                            Engineering. New Delhi: Blue Rose Publishers.</li>
+                        <li>Vuchic, V. R. (2007). Urban Transit Systems and Technology. Hoboken, NJ: John Wiley & Sons.
+                        </li>
+                        <li>Pasha, C. (2026). Rolling Stock: Introduction to Advanced Metro Rail. New Delhi: Blue Rose
+                            Publishers.</li>
+                        <li>Chakroborty, P., & Das, A. (2017). Principles of Transportation Engineering (2nd ed.). New
+                            Delhi: PHI Learning Pvt. Ltd.</li>
+                        <li>García-Loygorri, J. M. (2025). Telecommunication Systems for Modern Railways. Cham: Springer
+                            Nature.</li>
+                        <li>Garbutt, P. (1997). World Metro Systems. Middlesex: Capital Transport Publishing.</li>
+                        <li>Kand, C. V. (2013). Design of Bridges. New Delhi: PHI Learning Pvt. Ltd.</li>
+                    </ol>
+                </section>
+                <section id="subject-119801" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Soft Computing [119801]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Soft Computing: Evolution Of Computing</li>
+                                <li>Soft Computing Constituents</li>
+                                <li>Soft Vs Hard Computing</li>
+                                <li>From Conventional AI To Computational Intelligence: Machine Learning Basics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Neural Networks: Machine Learning Using Neural Network</li>
+                                <li>Adaptive Networks</li>
+                                <li>Feed Forward Networks</li>
+                                <li>Supervised Learning Neural Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Radial Basis Function Networks: Reinforcement Learning</li>
+                                <li>Unsupervised Learning Neural Networks</li>
+                                <li>Adaptive Resonance Architectures</li>
+                                <li>Advances In Neural Networks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Fuzzy Systems: Fuzzy Sets</li>
+                                <li>Operations On Fuzzy Sets</li>
+                                <li>Fuzzy Relations</li>
+                                <li>Membership Functions: Fuzzy Rules And Fuzzy Reasoning</li>
+                                <li>Fuzzy Inference Systems</li>
+                                <li>Fuzzy Expert Systems</li>
+                                <li>Fuzzy Decision Making</li>
+                                <li>Fuzzy Based Back Propagation Network</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Genetic Algorithm: Introduction To Genetic Algorithms (GA)</li>
+                                <li>Applications Of GA In Machine Learning: Machine Learning Approach To Knowledge
+                                    Acquisition</li>
+                                <li>GA Based Back P</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Matlab/Python Lib: Introduction To Matlab/Python</li>
+                                <li>Arrays And Array Operations</li>
+                                <li>Functions And Files</li>
+                                <li>Study Of Neural Network Toolbox And Fuzzy Logic Toolbox</li>
+                                <li>Simple Implementation Of Artificial Neural Network And Fuzzy Logic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Principles Of Soft Computing, 2nd Ed (With CD) Book by S. N. Deepa and S. N. Sivanandam</li>
+                        <li>Soft Computing, D. K. Pratihar, Narosa, 2008.</li>
+                        <li>Neural Networks, Fuzzy Logic and Genetic Algorithms: Synthesis & Applications,
+                            S.Rajasekaran, G. A. Vijayalakshami, PHI.</li>
+                        <li>Genetic Algorithms: Search and Optimization, E. Goldberg.</li>
+                        <li>Neuro-Fuzzy Systems, Chin Teng Lin, C. S. George Lee, PHI</li>
+                        <li>Build Neural Network With MS Excel sample by Joe choong.</li>
+                    </ol>
+                </section>
+                <section id="subject-119802" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Distributed Database [119802]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Concept And Overview Distributed Database System: What Is Distributed Database
+                                    System (DDBS)</li>
+                                <li>Features Of DDBS</li>
+                                <li>Promises Of DDBS</li>
+                                <li>Design Issue In DDBS</li>
+                                <li>Distributed DBMS Architecture:- Client/Server System</li>
+                                <li>Peer-To-Peer</li>
+                                <li>Multi-Database System</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed Database Design: Distributed Database Design Concept</li>
+                                <li>Objective Of Data Distribution</li>
+                                <li>Data Fragmentation</li>
+                                <li>The Allocation Of Fragment</li>
+                                <li>Transparencies In Distributed Database Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed Transaction And Concurrency Control: Basic Concept Of Transaction
+                                    Management</li>
+                                <li>Objective Distributed Transaction Management</li>
+                                <li>Model For Transaction Management Distributed Concurrency Control:- Objective</li>
+                                <li>Concurrency Control Anomalies</li>
+                                <li>Distributed Serializability</li>
+                                <li>Locking Based Algorithm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed Deadlock And Recovery: Introduction To Deadlock</li>
+                                <li>Distributed Deadlock Prevention</li>
+                                <li>Avoidance</li>
+                                <li>Detection And Recovery</li>
+                                <li>Two-Phase And Three-Phase Commit Protocol</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed Query Processing And Optimization: Concepts</li>
+                                <li>Objective</li>
+                                <li>And Phases Of Distributed Query Processing</li>
+                                <li>Join Strategies In Fragment Relation</li>
+                                <li>Global Query Optimization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Heterogeneous Database: Architecture Of Heterogeneous Database</li>
+                                <li>Database Integration: Schema Translation And Schema Integration</li>
+                                <li>Query Processing Issues In Heterogeneous Database</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Silberschatz A, KorthHF, Sudarshan S, Database System Concepts, McGrall Hill.</li>
+                        <li>Ceri S, Pelagatti G, Distributed Databases - Principles and Systems, McGraw Hill.</li>
+                    </ol>
+                </section>
+                <section id="subject-119803" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Mobile and Wireless Computing [119803]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Wireless Networks: Applications</li>
+                                <li>History</li>
+                                <li>Simplified Reference Model</li>
+                                <li>Wireless Transmission</li>
+                                <li>Frequencies</li>
+                                <li>Signals</li>
+                                <li>Antennas</li>
+                                <li>Signal Propagation</li>
+                                <li>Multiplexing</li>
+                                <li>Modulation</li>
+                                <li>Spread Spectrum</li>
+                                <li>Cellular Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>MAC: Motivation</li>
+                                <li>SDMA</li>
+                                <li>FDMA</li>
+                                <li>TDMA</li>
+                                <li>CDMA</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Telecommunication Systems: GSM</li>
+                                <li>DECT</li>
+                                <li>TETRA. UMTS</li>
+                                <li>MT-2000</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Wireless LAN</li>
+                                <li>Infrared Vs Radio Transmission</li>
+                                <li>Infrastructure</li>
+                                <li>Adhoc Network</li>
+                                <li>802.11</li>
+                                <li>HIPERLAN</li>
+                                <li>Bluetooth</li>
+                                <li>Mobile Network Layer</li>
+                                <li>Mobile IP</li>
+                                <li>Dynamic Host Configuration Protocol</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Adhoc Networks</li>
+                                <li>Mobile Transport Layer</li>
+                                <li>Traditional TCP</li>
+                                <li>Indirect TCP</li>
+                                <li>Snooping TCP</li>
+                                <li>Mobile TCP</li>
+                                <li>Fast Retransmit / Fast Recovery</li>
+                                <li>Transmission / Time-Out Freezing</li>
+                                <li>Selective Retransmission</li>
+                                <li>Transaction Oriented TCP</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Support For Mobility</li>
+                                <li>File Systems</li>
+                                <li>WWW</li>
+                                <li>Wireless Application Protocol</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Jochen Schiller, "Mobile Communications", Pearson Education, Asia Publications, 2000.</li>
+                        <li>William Stallings, "Wireless Communication and Networks", PHI/Pearson Education, 2002.</li>
+                        <li>Kaveh Pahlavan, Prasanth Krishnamoorthy, "Principles of Wireless Networks", PHI/Pearson
+                            Education, 2003.</li>
+                        <li>Hazyszt of Wesolowshi, "Mobile Communication Systems", John Wiley and Sons Ltd, 2002.</li>
+                    </ol>
+                </section>
+                <section id="subject-119804" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Cloud Computing [119804]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Distributed Computing And Enabling Technologies</li>
+                                <li>Cloud Fundamentals: Cloud Definition</li>
+                                <li>Evolution</li>
+                                <li>Architecture</li>
+                                <li>Applications</li>
+                                <li>Deployment Models</li>
+                                <li>And Service Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Virtualization (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Issues With Virtualization</li>
+                                <li>Virtualization Technologies And Architectures</li>
+                                <li>Internals Of Virtual Machine Monitors/Hypervisors</li>
+                                <li>Virtualization Of Data Centers</li>
+                                <li>And Issues With Multi-Tenancy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Implementation (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Study Of Cloud Computing Systems Like Amazon EC2 And S3</li>
+                                <li>Google App Engine</li>
+                                <li>And Microsoft Azure</li>
+                                <li>Build Private/Hybrid Cloud Using Open Source Tools</li>
+                                <li>SLA Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Resource Management (10 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Cloud Resource Provisioning Plan (Advance Reservation</li>
+                                <li>On Demand Plan</li>
+                                <li>Spot Instances)</li>
+                                <li>Various Scheduling And Load Balancing Techniques To Improve QoS Parameters</li>
+                                <li>Resource Optimization Algorithms</li>
+                                <li>Task Migration And VM Migration Technique</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Security (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Vulnerability Issues And Security Threats</li>
+                                <li>Application-Level Security</li>
+                                <li>Data Level Security</li>
+                                <li>And Virtual Machine Level Security</li>
+                                <li>Infrastructure Security</li>
+                                <li>And Multi-Tenancy Issues</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Advances (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Green Cloud</li>
+                                <li>Mobile Cloud Computing</li>
+                                <li>Fog Computing</li>
+                                <li>Internet Of Things</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Cloud Computing Principles and Paradigms, Rajkumar Buyya, James Broberg, Andrzej Goscinski,
+                            Wiley Publishers 2011</li>
+                        <li>Cloud Computing Bible, Barrie Sosinsky, Wiley Publishers 2010</li>
+                        <li>Mastering Cloud computing, Rajkumar Buyya, Christian Vacchiola, S Thamarai Selvi, McGraw
+                            Hill 2013</li>
+                        <li>Cloud Security and Privacy: An Enterprise Perspective on Risks and Compliance, Tim Mather,
+                            Subra Kumaraswamy, Shahed Latif, O'Reilly 2010</li>
+                        <li>Cloud Computing by Shailendra Singh 2018</li>
+                    </ol>
+                </section>
+                <section id="subject-119805" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Data Mining [119805]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Data Warehousing And Business Analysis: - Data Warehousing Components -Building A
+                                    Data Warehouse -Data Warehouse Architecture DBMS Schemas For Decision Support Data
+                                    Extraction</li>
+                                <li>Cleanup</li>
+                                <li>And Transformation Tools -Metadata Reporting Query Tools And Applications Online
+                                    Analytical Processing (OLAP) OLAP And Multidimensional Data Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Data Mining: Data Mining Functionalities - Data Preprocessing - Data Cleaning - Data
+                                    Integration And Transformation Data Reduction Data Discretization And Concept
+                                    Hierarchy Generation- Architecture Of A Typical Data Mining Systems</li>
+                                <li>Classification Of Data Mining Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Association Rule Mining: Efficient And Scalable Frequent Item Set Mining Methods
+                                    Mining Various Kinds Of Association Rules - Association Mining To Correlation
+                                    Analysis Constraint Based Association Mining</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Classification And Prediction: Issues Regarding Classification And Prediction
+                                    Classification By Decision Tree Introduction Bayesian Classification Rule Based
+                                    Classification - Classification By Back Propagation - Support Vector Machines -
+                                    Associative Classification - Lazy Learners - Other Classification Methods -
+                                    Prediction - Accuracy And Error Measures - Evaluating The Accuracy Of A Classifier
+                                    Or Predictor - Ensemble Methods - Model Section</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Cluster Analysis: - Types Of Data In Cluster Analysis - A Categorization Of Major
+                                    Clustering Methods - Partitioning Methods - Hierarchical Methods - Density-Based
+                                    Methods - Grid-Based Methods - Model-Based Clustering Methods - Clustering
+                                    High-Dimensional Data Constraint-Based Cluster Analysis - Outlier Analysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Mining Object</li>
+                                <li>Spatial</li>
+                                <li>Multimedia</li>
+                                <li>Text And Web Data: Multidimensional Analysis And Descriptive Mining Of Complex Data
+                                    Objects Spatial Data Mining Multimedia Data Mining - Text Mining - Mining The World
+                                    Wide Web</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Jiawei Han, MichelineKamber and Jian Pei, "Data Mining Concepts and Techniques", Third
+                            Edition, Elsevier, 2011.</li>
+                        <li>Alex Berson and Stephen J. Smith "Data Warehousing, Data Mining &OLAP", Tata McGraw-Hill
+                            Edition, Tenth Reprint 2007.</li>
+                        <li>K.P. Soman, ShyamDiwakar and V. Ajay "Insight into Data mining Theory and Practice", Easter
+                            Economy Edition, Prentice Hall of India, 2006.</li>
+                        <li>G. K. Gupta "Introduction to Data Mining with Case Studies", Easter Economy Edition,
+                            Prentice Hall of India, 2006.</li>
+                        <li>Pang-Ning Tan, Michael Steinbach and Vipin Kumar "Introduction to Data Mining", Pearson
+                            Education, 2007.</li>
+                    </ol>
+                </section>
+                <section id="subject-119806" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Software Engineering [119806]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit- 1.0: Introduction: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>What Is Software Engineering And Its History</li>
+                                <li>Software Crisis</li>
+                                <li>Evolution Of A Programming System Product</li>
+                                <li>Characteristics Of Software</li>
+                                <li>Brooks' No Silver Bullet</li>
+                                <li>And Software Myths</li>
+                                <li>Software Development Life Cycles: Software Development Process</li>
+                                <li>The Code-And-Fix Model</li>
+                                <li>The Waterfall Model</li>
+                                <li>The Evolutionary Model</li>
+                                <li>The Incremental Implementation</li>
+                                <li>Prototyping</li>
+                                <li>The Spiral Model</li>
+                                <li>Software Reuse</li>
+                                <li>Critical Comparisons Of SDLC Models</li>
+                                <li>An Introduction To Non-Traditional Software Development Process: Rational Unified
+                                    Process</li>
+                                <li>Rapid Application Development</li>
+                                <li>Agile Development Process</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 2.0: Requirements: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Importance Of Requirement Analysis</li>
+                                <li>User Needs</li>
+                                <li>Software Features And Software Requirements</li>
+                                <li>Classes Of User Requirements: Enduring And Volatile</li>
+                                <li>Sub Phases Of Requirement Analysis</li>
+                                <li>Functional And Nonfunctional Requirements</li>
+                                <li>Barriers To Eliciting User Requirements</li>
+                                <li>The Software Requirements Document And SRS Standards</li>
+                                <li>Requirements Engineering</li>
+                                <li>Case Study Of SRS For A Real Time System</li>
+                                <li>Tools For Requirements Gathering: Document Flow Chart</li>
+                                <li>Decision Table</li>
+                                <li>Decision Tree</li>
+                                <li>Introduction To Nontraditional Requirements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 3.0: Software Design: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Goals Of Good Software Design</li>
+                                <li>Design Strategies And Methodologies</li>
+                                <li>Data Oriented Software Design</li>
+                                <li>Coupling</li>
+                                <li>Cohesion</li>
+                                <li>Modular Structure</li>
+                                <li>Packaging</li>
+                                <li>Structured Analysis: DFD</li>
+                                <li>Data Dictionary</li>
+                                <li>Structured Design: Structure Chart</li>
+                                <li>Object Oriented Design</li>
+                                <li>Top-Down And Bottom-Up Approach</li>
+                                <li>UML</li>
+                                <li>UML Diagrams</li>
+                                <li>Design Patterns</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 4.0: Software Project Management: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview Of Project Manager Responsibilities & Project Planning</li>
+                                <li>Software Measurement And Metrics: Line Of Code (LOC)</li>
+                                <li>Function Point (FP) Based Measures</li>
+                                <li>Various Size Oriented Measures: Halstead's Software Science</li>
+                                <li>Project Size Estimation Metrics Project Estimation</li>
+                                <li>Techniques</li>
+                                <li>COCOMO</li>
+                                <li>Staffing Level Estimation</li>
+                                <li>Scheduling</li>
+                                <li>Organization & Team Structures Staffing</li>
+                                <li>Risk Management</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 5.0: Software Coding & Testing: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Development: Selecting A Language</li>
+                                <li>Coding Guidelines</li>
+                                <li>Writing Code</li>
+                                <li>Code Documentation</li>
+                                <li>Testing Process</li>
+                                <li>Design Of Test Cases</li>
+                                <li>Functional Testing: Boundary Value Analysis</li>
+                                <li>Equivalence Class Testing</li>
+                                <li>Decision Table Testing</li>
+                                <li>Cause Effect Graphing</li>
+                                <li>Structural Testing</li>
+                                <li>Cyclomatic Complexity Measures: Control Flow Graphs</li>
+                                <li>Path Testing</li>
+                                <li>Data Flow And Mutation Testing</li>
+                                <li>Unit Testing</li>
+                                <li>Integration And System Testing</li>
+                                <li>Debugging</li>
+                                <li>Alpha & Beta Testing</li>
+                                <li>Testing Tools & Standards</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit- 6.0: Software Maintenance: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Management Of Maintenance</li>
+                                <li>Maintenance Process</li>
+                                <li>Maintenance Models</li>
+                                <li>Regression Testing</li>
+                                <li>Reverse Engineering</li>
+                                <li>Software Reengineering</li>
+                                <li>Configuration Management</li>
+                                <li>Documentation</li>
+                                <li>Software Reliability & Quality Management: Introduction To Reliability And Metrics
+                                    To Reliability Measure</li>
+                                <li>Overview Of S/W Quality Management System ISO 9000</li>
+                                <li>SEI CMM</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Software Engineering: A Practitioner's Approach, R. S. Pressman, McGraw Hill</li>
+                        <li>Fundamental of Software Engg. By Rajib Mall 4th edition PHI</li>
+                        <li>A Concise Introduction to Software Engineering By Pankaj Jalote.</li>
+                        <li>Zero Defect Software, G. G. Schulmeyer, McGraw-Hill</li>
+                        <li>Object Oriented Modeling and Design, J. Rumbaugh, Prentice Hall</li>
+                        <li>Software Engineering, K.K. Aggarwal, Yogesh Singh, New Age International Publishers</li>
+                    </ol>
+                </section>
+                <section id="subject-119807" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Embedded System [119807]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Embedded Systems: Definition Of Embedded System</li>
+                                <li>Embedded Systems Vs General Computing Systems</li>
+                                <li>History Of Embedded Systems</li>
+                                <li>Classification</li>
+                                <li>Major Application Areas</li>
+                                <li>Purpose Of Embedded Systems</li>
+                                <li>Characteristics And Quality Attributes Of Embedded Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Typical Embedded System: Core Of The Embedded System: General Purpose And Domain
+                                    Specific Processors</li>
+                                <li>ASICS</li>
+                                <li>PLDs</li>
+                                <li>Commercial Off-The-Shelf Components (COTS)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Memory: ROM</li>
+                                <li>RAM</li>
+                                <li>Memory According To The Type Of Interface</li>
+                                <li>Memory Shadowing</li>
+                                <li>Memory Selection For Embedded Systems</li>
+                                <li>Sensors And Actuators</li>
+                                <li>Communication Interface: Onboard And External Communication Interfaces</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Embedded Firmware: Reset Circuit</li>
+                                <li>Brown-Out Protection Circuit</li>
+                                <li>Oscillator Unit</li>
+                                <li>Real Time Clock</li>
+                                <li>Watchdog Timer</li>
+                                <li>Embedded Firmware Design Approaches And Development Languages</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>RTOS Based Embedded System Design: Operating System Basics</li>
+                                <li>Types Of Operating Systems</li>
+                                <li>Tasks</li>
+                                <li>Process And Threads</li>
+                                <li>Multiprocessing And Multitasking</li>
+                                <li>Task Scheduling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Task Communication: Shared Memory</li>
+                                <li>Message Passing</li>
+                                <li>Remote Procedure Call And Sockets</li>
+                                <li>Task Synchronization: Task Communication/Synchronization Issues</li>
+                                <li>Task Synchronization Techniques</li>
+                                <li>Device Drivers</li>
+                                <li>How To Choose An RTOS</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Introduction to Embedded Systems - Shibu K.V, Mc Graw Hill.</li>
+                        <li>Embedded Systems - Raj Kamal, MC GRAW HILL EDUCATION.</li>
+                        <li>Embedded System Design - Frank Vahid, Tony Givargis, John Wiley.</li>
+                        <li>Embedded Systems - Lyla, Pearson, 2013</li>
+                        <li>An Embedded Software Primer - David E. Simon, Pearson Education.</li>
+                    </ol>
+                </section>
+                <section id="subject-119808" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Information Retrieval and Web search [119808]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Information Retrieval: Goals And History Of IR</li>
+                                <li>The Impact Of The Web On IR</li>
+                                <li>Unstructured And Semi-Structured Text</li>
+                                <li>Basic IR Models Inverted Index And Boolean Queries</li>
+                                <li>Boolean And Vector-Space Retrieval Models</li>
+                                <li>Ranked Retrieval</li>
+                                <li>Text-Similarity Metrics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Vector-Space Retrieval Model: Text-Similarity Metrics</li>
+                                <li>TF-IDF (term Frequency-Inverse Document Frequency) Weighting</li>
+                                <li>Cosine Similarity</li>
+                                <li>Ranked Retrieval Concepts</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Tokenization And Indexing: Basic Tokenizing</li>
+                                <li>Stop-Word Removal</li>
+                                <li>Stemming</li>
+                                <li>Inverted Index Structure</li>
+                                <li>Efficient Processing Of Sparse Vectors</li>
+                                <li>Implementation Aspects (e.g., Java)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Evaluation Of IR Systems: Recall</li>
+                                <li>Precision</li>
+                                <li>F-Measure</li>
+                                <li>NDCG (Normalized Discounted Cumulative Gain)</li>
+                                <li>Experimental Evaluation On Benchmark Text Collections</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Text Representation</li>
+                                <li>Classification &amp; Clustering: Text Classification Problem</li>
+                                <li>Naive Bayes Classification</li>
+                                <li>K-Nearest Neighbours</li>
+                                <li>Support Vector Machines (SVM)</li>
+                                <li>Feature Selection</li>
+                                <li>Text Clustering Principles</li>
+                                <li>Word Statistics (Zipf's Law, Morphology)</li>
+                                <li>Porter Stemmer</li>
+                                <li>Thesauri And Index Term Selection</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Query Operations: Relevance Feedback</li>
+                                <li>Query Expansion Web Search Internals: Spidering And Metacrawlers</li>
+                                <li>Directed Crawling</li>
+                                <li>Link Analysis (HITS, PageRank)</li>
+                                <li>Shopping Agents</li>
+                                <li>Information Extraction And Integration: Semantic Web Basics</li>
+                                <li>Ethical Issues In IR: Privacy</li>
+                                <li>Fairness</li>
+                                <li>Fake News &amp; Disinformation</li>
+                                <li>Filter Bubbles</li>
+                                <li>Viewpoint Diversity</li>
+                                <li>Internet Addiction</li>
+                                <li>Extremism Concerns IR Applications: Information Extraction</li>
+                                <li>Question Answering</li>
+                                <li>Opinion Summarization</li>
+                                <li>Social Network</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"Introduction to Information Retrieval"; Christopher D. Manning, "Cambridge
+                            UniversityPress."</li>
+                        <li>"Search Engines: Information Retrieval"; W, Bruce Croft, D. Metzler, T. Strohman, "Pearson".
+                        </li>
+                        <li>"Introduction to Information Retrieval"; Christopher D. Manning Prabhakar Raghavan and
+                            Hinrich Schütze, "Cambridge University Press."</li>
+                        <li>"Statistical Language Models for Information Retrieval (Synthesis Lectures Series on Human
+                            Language Technologies)"; Cheng Xiang Zhai, "Morgan &amp; Claypool Publishers".</li>
+                    </ol>
+                </section>
+                <section id="subject-119809" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computer Graphics [119809]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction And Line Generation: Types Of Computer Graphics</li>
+                                <li>Graphic Displays- Random Scan Displays</li>
+                                <li>Raster Scan Displays</li>
+                                <li>Frame Buffer And Video Controller</li>
+                                <li>RGB Color Model</li>
+                                <li>Direct Coding</li>
+                                <li>Lookup Table</li>
+                                <li>Storage Tube Graphics Display</li>
+                                <li>Raster Scan Display</li>
+                                <li>3D Viewing Devices</li>
+                                <li>Plotters</li>
+                                <li>Printers</li>
+                                <li>Digitizers</li>
+                                <li>Light Pens Etc.</li>
+                                <li>Active & Passive Graphics Devices</li>
+                                <li>Computer Graphics Software</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Points And Lines</li>
+                                <li>Line Drawing Algorithms</li>
+                                <li>DDA Algorithm</li>
+                                <li>Bresenham's Line Algorithm</li>
+                                <li>Circle Generating Algorithms</li>
+                                <li>Mid-Point Circle Generating Algorithm</li>
+                                <li>And Parallel Version Of These Algorithms</li>
+                                <li>Ellipse Generating Algorithm</li>
+                                <li>Scan Line Polygon</li>
+                                <li>Fill Algorithm</li>
+                                <li>Boundary Fill Algorithm</li>
+                                <li>Flood Fill Algorithm</li>
+                                <li>Transformations: Basic Transformation</li>
+                                <li>Matrix Representations And Homogenous Coordinates</li>
+                                <li>Composite Transformations</li>
+                                <li>Reflections And Shearing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Windowing And Clipping: Viewing Pipeline</li>
+                                <li>Viewing Transformations</li>
+                                <li>2-D Clipping Algorithms- Line Clipping Algorithms Such As Cohen Sutherland Line
+                                    Clipping Algorithm</li>
+                                <li>Liang Barsky Algorithm</li>
+                                <li>Line Clipping Against Non-Rectangular Clip Windows</li>
+                                <li>Polygon Clipping Sutherland Hodgeman Polygon Clipping</li>
+                                <li>Weiler And Atherton Polygon Clipping</li>
+                                <li>Curve Clipping</li>
+                                <li>Text Clipping</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (4 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Three Dimensional: 3-D Geometric Primitives</li>
+                                <li>3-D Object Representation</li>
+                                <li>3-D Transformation</li>
+                                <li>3-D Viewing</li>
+                                <li>Projections</li>
+                                <li>3-D Clipping</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Curves And Surfaces: Quadric Surfaces</li>
+                                <li>Spheres</li>
+                                <li>Ellipsoid</li>
+                                <li>Blobby Objects</li>
+                                <li>Introductory Concepts Of Spline</li>
+                                <li>Bspline And Bezier Curves And Surfaces</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Hidden Lines And Surfaces: Back Face Detection Algorithm</li>
+                                <li>Depth Buffer Method</li>
+                                <li>A- Buffer Method</li>
+                                <li>Scan Line Method</li>
+                                <li>Basic Illumination Models- Ambient Light</li>
+                                <li>Diffuse Reflection</li>
+                                <li>Specular Reflection And Phong Model</li>
+                                <li>Combined Approach</li>
+                                <li>Warn Model</li>
+                                <li>Intensity Attenuation</li>
+                                <li>Color Consideration</li>
+                                <li>Transparency And Shadows</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Donald Hearn and M Pauline Baker, "Computer Graphics C Version", Pearson Education.</li>
+                        <li>Foley, Vandam, Feiner, Hughes - "Computer Graphics principle", Pearson Education.</li>
+                        <li>Rogers, "Procedural Elements of Computer Graphics", McGraw Hill.</li>
+                        <li>Donald Hearn and M Pauline Baker, "Computer Graphics with OpenGL", Pearson education.</li>
+                    </ol>
+                </section>
+                <section id="subject-119810" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Hydraulic Modeling [119810]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Basics Of Hydraulic Modelling (similarity Mechanics</li>
+                                <li>Model Laws</li>
+                                <li>Distinction Between Numerical And Hydraulic Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Classification Of Hydraulic Modelling</li>
+                                <li>Materials Used In The Model</li>
+                                <li>Scale Effect</li>
+                                <li>Design</li>
+                                <li>Construction</li>
+                                <li>Operation And Interpretation Of The Results)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Role Of Instrumentation And Data Processing</li>
+                                <li>Gravity Dominated Models (modelling Of Energy Dissipaters</li>
+                                <li>Overflow Spillways</li>
+                                <li>Siphon Spillways</li>
+                                <li>Bridge Piers</li>
+                                <li>Vortex Formation</li>
+                                <li>Cavitation</li>
+                                <li>Flow Induced Vibrations)</li>
+                                <li>Gravity Friction Models: (pumped Flow Models</li>
+                                <li>Ship Models</li>
+                                <li>Surge Tank Models)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Friction Dominated Models</li>
+                                <li>River Models With Fixed And Mobile Bed</li>
+                                <li>Basin And Reservoir Models</li>
+                                <li>Tidal Models With Fixed And Mobile Bed</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Estuarine Models</li>
+                                <li>Harbor And Breakwater Models</li>
+                                <li>Models Of Offshore Structures</li>
+                                <li>Hybrid And Analogue Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Scope And Limitations Of Hydraulic Modelling</li>
+                                <li>Complementary Aspects Of Numerical And Hydraulic Modelling</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Chanson, H. (2004). The Hydraulics of Open Channel Flow: An Introduction. Burlington, MA:
+                            Elsevier Butterworth-Heinemann. (Covers Units 1, 2, and 3 regarding similarity and spillway
+                            modeling).</li>
+                        <li>Novak, P., Guillen, J. J., & Nalluri, C. (2017). Hydraulic Structures (4th ed.). London: CRC
+                            Press. (Essential for Units 3 and 4 regarding gravity-dominated models and river
+                            engineering).</li>
+                        <li>Hughes, S. A. (1993). Physical Models and Laboratory Techniques in Coastal Engineering.
+                            Singapore: World Scientific Publishing. (Primary reference for Units 4 and 5 regarding
+                            tidal, harbor, and breakwater models).</li>
+                        <li>Chaudhry, M. H. (2008). Applied Hydrologic Modeling. New York, NY: Springer. (Useful for
+                            Unit 6 regarding the integration of numerical and physical models).</li>
+                        <li>Ettema, R. (Ed.). (2000). Hydraulic Modeling: Concepts and Practice (ASCE Manuals and
+                            Reports on Engineering Practice No. 97). Reston, VA: American Society of Civil Engineers.
+                            (Comprehensive for Units 1 through 6).</li>
+                        <li>Heller, V. (2011). "Scale effects in physical hydraulic engineering models." Journal of
+                            Hydraulic Research, 49(3), 293-306. (Specific reference for Unit 2: Scale Effects).</li>
+                        <li>Julien, P. Y. (2002). River Mechanics. Cambridge: Cambridge University Press. (Detailed
+                            theory for Unit 4: Mobile Bed Models).</li>
+                        <li>Kobayashi, N. (2015). Coastal Engineering: Processes, Theory and Design Practice.</li>
+                    </ol>
+                </section>
+                <section id="subject-119811" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Biological Processes for Contaminant Removal [119811]
+                    </h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Basics Of Hydraulic Modelling (similarity Mechanics</li>
+                                <li>Model Laws</li>
+                                <li>Distinction Between Numerical And Hydraulic Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Classification Of Hydraulic Modelling</li>
+                                <li>Materials Used In The Model</li>
+                                <li>Scale Effect</li>
+                                <li>Design</li>
+                                <li>Construction</li>
+                                <li>Operation And Interpretation Of The Results)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Role Of Instrumentation And Data Processing</li>
+                                <li>Gravity Dominated Models (modelling Of Energy Dissipaters</li>
+                                <li>Overflow Spillways</li>
+                                <li>Siphon Spillways</li>
+                                <li>Bridge Piers</li>
+                                <li>Vortex Formation</li>
+                                <li>Cavitation</li>
+                                <li>Flow Induced Vibrations)</li>
+                                <li>Gravity Friction Models: (pumped Flow Models</li>
+                                <li>Ship Models</li>
+                                <li>Surge Tank Models)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Friction Dominated Models</li>
+                                <li>River Models With Fixed And Mobile Bed</li>
+                                <li>Basin And Reservoir Models</li>
+                                <li>Tidal Models With Fixed And Mobile Bed</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Estuarine Models</li>
+                                <li>Harbor And Breakwater Models</li>
+                                <li>Models Of Offshore Structures</li>
+                                <li>Hybrid And Analogue Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Scope And Limitations Of Hydraulic Modelling</li>
+                                <li>Complementary Aspects Of Numerical And Hydraulic Modelling</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Chanson, H. (2004). The Hydraulics of Open Channel Flow: An Introduction. Burlington, MA:
+                            Elsevier Butterworth-Heinemann. (Covers Units 1, 2, and 3 regarding similarity and spillway
+                            modeling).</li>
+                        <li>Novak, P., Guillen, J. J., & Nalluri, C. (2017). Hydraulic Structures (4th ed.). London: CRC
+                            Press. (Essential for Units 3 and 4 regarding gravity-dominated models and river
+                            engineering).</li>
+                        <li>Hughes, S. A. (1993). Physical Models and Laboratory Techniques in Coastal Engineering.
+                            Singapore: World Scientific Publishing. (Primary reference for Units 4 and 5 regarding
+                            tidal, harbor, and breakwater models).</li>
+                        <li>Chaudhry, M. H. (2008). Applied Hydrologic Modeling. New York, NY: Springer. (Useful for
+                            Unit 6 regarding the integration of numerical and physical models).</li>
+                        <li>Ettema, R. (Ed.). (2000). Hydraulic Modeling: Concepts and Practice (ASCE Manuals and
+                            Reports on Engineering Practice No. 97). Reston, VA: American Society of Civil Engineers.
+                            (Comprehensive for Units 1 through 6).</li>
+                        <li>Heller, V. (2011). "Scale effects in physical hydraulic engineering models." Journal of
+                            Hydraulic Research, 49(3), 293-306. (Specific reference for Unit 2: Scale Effects).</li>
+                        <li>Julien, P. Y. (2002). River Mechanics. Cambridge: Cambridge University Press. (Detailed
+                            theory for Unit 4: Mobile Bed Models).</li>
+                        <li>Kobayashi, N. (2015). Coastal Engineering: Processes, Theory and Design Practice. Singapore:
+                            World Scientific. (Reference for Unit 5: Offshore Structures and Harbors).</li>
+                    </ol>
+                </section>
+                <section id="subject-119812" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Rural Water Supply and Onsite Sanitation Systems
+                        [119812]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (8 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Attributes Of Water Supply Systems</li>
+                                <li>Drinking Water Quality</li>
+                                <li>Relationships Between Diseases And Water Quality</li>
+                                <li>Hygiene And Sanitation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Need For Water Treatment</li>
+                                <li>Point Of Use Water Treatment Systems</li>
+                                <li>Filters</li>
+                                <li>Bio-Sand Filters</li>
+                                <li>Disinfection Systems For Rural Areas</li>
+                                <li>Chlorination</li>
+                                <li>Solar Disinfection Systems</li>
+                                <li>Removal Of Arsenic</li>
+                                <li>Fluoride And Iron</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Onsite Sanitation Systems: Nexus Between Water Quality And Sanitation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (6 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Importance Of Hydrogeology On Selection Of Onsite Sanitation Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Design Of Septic Tanks</li>
+                                <li>Single Pit And Double Pit Toilets</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Small Bore Systems</li>
+                                <li>Bio Digesters</li>
+                                <li>Reed Beds</li>
+                                <li>Constructed Wetlands</li>
+                                <li>Sludge/Septage Management Systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Peavy, H. S., Rowe, D. R., & Tchobanoglous, G. (1985). Environmental Engineering.
+                            McGraw-Hill Education. (Excellent for Unit 1, 2, and 5).</li>
+                        <li>Punmia, B. C., Jain, A. K., & Jain, A. K. (2005). Water Supply Engineering and Waste Water
+                            Engineering. Laxmi Publications. (Standard references for Unit 5 and 6 design).</li>
+                        <li>Garg, S. K. (2010). Water Supply Engineering and Sewage Disposal and Air Pollution
+                            Engineering. Khanna Publishers. (Highly detailed for Indian rural contexts)</li>
+                        <li>Cairncross, S., & Feachem, R. (2018). Environmental Health Engineering in the Tropics:
+                            Water, Sanitation and Hygiene (WASH) and Health. Routledge.</li>
+                        <li>Tilley, E., Ulrich, L., Lüthi, C., Reymond, Ph., & Zurbrügg, C. (2014). Compendium of
+                            Sanitation Systems and Technologies. 2nd Revised Edition. Eawag-Sandec.</li>
+                        <li>WHO. (2011). Guidelines for Drinking-water Quality. 4th Edition. World Health Organization.
+                        </li>
+                        <li>Franceys, R., Pickford, J., & Reed, R. (1992). A Guide to the Development of On-site
+                            Sanitation. World Health Organization.</li>
+                        <li>CPHEEO. (Latest Editions). Manual on Water Supply and Treatment and Manual on Sewerage and
+                            Sewage Treatment. Ministry of Urban Development, Government of India</li>
+                    </ol>
+                </section>
+                <section id="subject-119813" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Sustainable Construction Methods [119813]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Foundations And Construction Methods</li>
+                                <li>Basics Of Formwork And Staging</li>
+                                <li>Common Building Construction Methods (conventional Walls And Slabs</li>
+                                <li>Conventional Framed Structure With Blockwork Walls)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Modular Construction Methods For Repetitive Works</li>
+                                <li>Precast Concrete Construction Methods</li>
+                                <li>Basics Of Slip Forming For Tall Structures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Construction Methods For Steel Structures</li>
+                                <li>Basics Of Construction Methods For Bridges</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (9 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Identification Of Cutting Edge Sustainable Construction Materials</li>
+                                <li>Technologies</li>
+                                <li>And Project Management Strategies For Use In The Construction Industry And
+                                    Evaluation Of Their Potential To Reduce The Negative Environmental Impacts Of
+                                    Construction Activity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Examination Of The Current LEED For New Construction Rating System</li>
+                                <li>And Case Study Analysis Of Highly Successful Recent "green Construction Projects"
+                                    Through Student Team Assignments And Presentations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (5 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Preparation For The LEED Green Associate Professional Licensing Exam</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Chudley, R., & Greeno, R. (2020). Building Construction Handbook. 12th Edition. Routledge.
+                        </li>
+                        <li>Punamia, B. C., Jain, A. K., & Jain, Α. Κ. (2016). Building Construction. Laxmi
+                            Publications. Wiginton, I. (2015). Precast Concrete Structures. CRC Press.</li>
+                        <li>Duggal, S. K. (2017). Design of Steel Structures. Tata McGraw-Hill.</li>
+                        <li>Kibert, C. J. (2016). Sustainable Construction: Green Building Design and Delivery. 4th
+                            Edition. John Wiley & Sons.</li>
+                        <li>Spence, W. P., & Kultermann, E. (2016). Construction Materials, Methods and Techniques.
+                            Cengage Learning.</li>
+                        <li>Mora, E. P. (2007). "Life cycle, sustainability and the environmental impact of construction
+                            materials." Proceedings of the Institution of Civil Engineers-Engineering Sustainability.
+                        </li>
+                        <li>U.S. Green Building Council (USGBC). (2013). LEED Reference Guide for Building Design and
+                            Construction (v4).</li>
+                        <li>Cottrell, H. (2014). Guide to the LEED Green Associate V4 Exam. Wiley.</li>
+                    </ol>
+                </section>
+                <section id="subject-119814" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Construction Engineering Materials [119814]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Design</li>
+                                <li>Production</li>
+                                <li>Application Of Construction Materials Unique To Civil Engineering</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Specification</li>
+                                <li>And Quality Control Of Construction Materials Unique To Civil Engineering</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Stones</li>
+                                <li>Bricks</li>
+                                <li>Mortars</li>
+                                <li>Plain</li>
+                                <li>Reinforced & Prestressed Concrete</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Construction Chemicals</li>
+                                <li>Structural Steel</li>
+                                <li>High Tensile Steel</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Carbon Composites</li>
+                                <li>Plastics In Construction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>3D Printing</li>
+                                <li>Recycling Of Construction & Demolition Wastes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Gambhir, M. L., & Jamwal, N. (2017). Building Materials: Products, Properties and Systems.
+                            McGraw-Hill Education. (Comprehensive for design, production, and quality control).</li>
+                        <li>Shetty, M. S., & Agarwal, A. K. (2019). Concrete Technology (Theory and Practice). S. Chand
+                            Publishing. (The primary reference for Unit 3: Plain, Reinforced, and Prestressed Concrete).
+                        </li>
+                        <li>Duggal, S. K. (2017). Building Materials. 5th Edition. New Age International Publishers.
+                        </li>
+                        <li>Varghese, P. C. (2015). Building Materials. PHI Learning Pvt. Ltd.</li>
+                        <li>Hollaway, L. C. (2010). Advanced Fibre-Reinforced Polymer (FRP) Composites for Structural
+                            Applications. Woodhead Publishing.</li>
+                        <li>Buswell, R. A., et al. (2018). "3D printing using concrete materials: Opportunities and
+                            challenges." Cement and Concrete Research. Vol. 112.</li>
+                    </ol>
+                </section>
+                <section id="subject-119815" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Solid and Hazardous Waste Management [119815]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Solid Wastes: Origin</li>
+                                <li>Analysis</li>
+                                <li>Composition And Characteristics</li>
+                                <li>Integrated Solid Waste Management System: Collection</li>
+                                <li>Storage</li>
+                                <li>Segregation</li>
+                                <li>Reuse And Recycling Possibilities</li>
+                                <li>Transportation</li>
+                                <li>Treatment / Processing And Transformation Techniques</li>
+                                <li>Final Disposal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Management Of: Municipal</li>
+                                <li>Biomedical</li>
+                                <li>Nuclear</li>
+                                <li>Electronic And Industrial Solid Wastes And The Rules And Regulations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Hazardous Wastes</li>
+                                <li>Definition Of Hazardous Waste</li>
+                                <li>The Magnitude Of The Problem</li>
+                                <li>Hazardous Waste: Risk Assessment</li>
+                                <li>Environmental Legislation</li>
+                                <li>Characterization And Site Assessment</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Waste Minimization And Resource Recovery</li>
+                                <li>Transportation Of Hazardous Waste</li>
+                                <li>Physical</li>
+                                <li>Chemical And Biological Treatment</li>
+                                <li>Ground Water Contamination</li>
+                                <li>Landfill Disposal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Current Management Practices</li>
+                                <li>Environmental Audit</li>
+                                <li>Pollution Prevention</li>
+                                <li>Facility Development And Operation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Site Remediation: Quantitative Risk Assessment</li>
+                                <li>Site And Subsurface Characterization</li>
+                                <li>Containment</li>
+                                <li>Remedial Alternatives</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Tchobanoglous, G., Theisen, H., & Vigil, S. A. (1993). Integrated Solid Waste Management:
+                            Engineering Principles and Management Issues. McGraw-Hill Education.</li>
+                        <li>Peavy, H. S., Rowe, D. R., & Tchobanoglous, G. (2017). Environmental Engineering.
+                            McGraw-Hill Education.</li>
+                        <li>Bhide, A. D., & Sundaresan, B. B. (1983). Solid Waste Management in Developing Countries.
+                            Indian National Scientific Documentation Centre (INSDOC).</li>
+                        <li>LaGrega, M. D., Buckingham, P. L., & Evans, J. C. (2010). Hazardous Waste Management.
+                            Waveland Press.</li>
+                        <li>Blackman, W. C. (2001). Basic Hazardous Waste Management. CRC Press.</li>
+                        <li>Wentz, C. A. (1995). Hazardous Waste Management. McGraw-Hill.</li>
+                        <li>Sharma, H. D., & Reddy, K. R. (2004). Geoenvironmental Engineering: Site Remediation, Waste
+                            Containment, and Emerging Waste Management Technologies. John Wiley & Sons.</li>
+                        <li>Das, A. K. (2010). Fundamental of Hazardous Waste Site Remediation. CRC Press.</li>
+                    </ol>
+                </section>
+                <section id="subject-119816" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Bridge Engineering [119816]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>General</li>
+                                <li>Classification Of Bridges</li>
+                                <li>Site Selection</li>
+                                <li>Geometric And Hydraulic Design Consideration</li>
+                                <li>Loading Standards For Highway And Railway Bridges</li>
+                                <li>General Design Consideration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Optimum Spans</li>
+                                <li>Concrete Bridges: Culverts</li>
+                                <li>Slab</li>
+                                <li>T-Beam</li>
+                                <li>Box Girder Bridges</li>
+                                <li>Balanced Cantilever Bridge</li>
+                                <li>Cable Stayed Bridge</li>
+                                <li>Extrados Bridges</li>
+                                <li>Arch Bridge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Special Requirements For Prestressed Concrete Bridges</li>
+                                <li>Steel Bridges: Plate Girder Bridge</li>
+                                <li>Truss Bridge</li>
+                                <li>Suspension Cable Bridge</li>
+                                <li>Cable Stayed Bridge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Substructures: Design Of Piers And Abutments</li>
+                                <li>Pile And Well Foundations</li>
+                                <li>Bearings And Expansion Joints</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Special Wearing Coats</li>
+                                <li>Seismic Design Considerations</li>
+                                <li>Aerodynamic Stability Considerations</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: (7 hrs)</strong>
+                            <ul class="unit-topics">
+                                <li>Special Durability Measures</li>
+                                <li>Provisions For Inspection And Maintenance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Ponnuswamy, S. (2017). Bridge Engineering. 3rd Edition. McGraw-Hill Education. (Excellent
+                            for general classification, site selection, and multi-material bridge types).</li>
+                        <li>Krishna Raju, N. (2019). Design of Bridges. 5th Edition. Oxford & IBH Publishing. (The
+                            standard text for concrete, T-beam, and prestressed bridge design).</li>
+                        <li>Victor, D. J. (2017). Essentials of Bridge Engineering. 6th Edition. Oxford & IBH
+                            Publishing.</li>
+                        <li>Jagadeesh, T. R., & Jayaram, M. A. (2020). Design of Bridge Structures. PHI Learning. (Good
+                            coverage of steel plate girders and truss bridges).</li>
+                        <li>Pai-Hsuan, W. (2014). Bridge Engineering: Classification, Design Procedures, and
+                            Construction Methods. Elsevier. (Useful for cable-stayed and extradosed bridges).</li>
+                        <li>Saran, S. (2006). Analysis and Design of Substructures. Oxford & IBH Publishing.</li>
+                        <li>Indian Roads Congress (IRC). IRC:6 (Standard Specifications and Code of Practice for Road
+                            Bridges - Loads and Stresses).</li>
+                        <li>Indian Roads Congress (IRC). IRC:112 (Code of Practice for Concrete Road Bridges).</li>
+                        <li>Indian Railways. IRS Bridge Rules (Steel and Concrete Codes).</li>
+                        <li>Ryall, M. J. (2010). Bridge Management. Butterworth-Heinemann.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

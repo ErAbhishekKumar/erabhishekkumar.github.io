@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Electrical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Digital Signal Processing</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Introduction to VLSI Design</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+
+                            <tr class="theory-row">
+                                <td>Power Systems – II (Operation and Control)</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Professional Skill Development</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective – III</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective- II</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>MOOCs / SWAYAM / NPTEL Courses - 2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital Signal Processing Lab</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Electronics Design Lab (Practical)</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Introduction to VLSI Design Lab</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Power Systems Lab – II</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>26</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-dsp" data-type="theory">Digital
+                        Signal Processing</button><button class="tab-btn" data-target="subject-vlsi"
+                        data-type="theory">Introduction to VLSI Design</button><button class="tab-btn"
+                        data-target="subject-powersystems2" data-type="theory">Power Systems – II</button><button
+                        class="tab-btn" data-target="subject-professional" data-type="theory">Professional Skill
+                        Development</button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective- II"
+                        data-modal-options='[ {"label": "Computer Architecture", "target": "subject-ca", "btn-id": "btn-ca"}, {"label": "Industrial Electrical Systems", "target": "subject-industrial", "btn-id": "btn-industrial"}, {"label": "Electrical Drives", "target": "subject-drives", "btn-id": "btn-drives"} ]'>
+                        Program Elective- II </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Elective – III"
+                        data-modal-options='[ {"label": "Computer Architecture", "target": "subject-ca", "btn-id": "btn-ca"}, {"label": "Industrial Electrical Systems", "target": "subject-industrial", "btn-id": "btn-industrial"}, {"label": "Electrical Drives", "target": "subject-drives", "btn-id": "btn-drives"} ]'>
+                        Program Elective – III </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-moocs2" data-type="theory">MOOCs
+                        / SWAYAM / NPTEL Courses -
+                        2</button><button class="tab-btn" data-target="subject-dsp-lab" data-type="lab">Digital
+                        Signal Processing Lab</button><button class="tab-btn" data-target="subject-electronicslab"
+                        data-type="lab">Electronics Design Lab</button><button class="tab-btn"
+                        data-target="subject-vlsi-lab" data-type="lab">Introduction to VLSI Design Lab</button><button
+                        class="tab-btn" data-target="subject-powersystemslab2" data-type="lab">Power Systems Lab –
+                        II</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-dsp" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital Signal Processing [100606]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to:</p>
+                    <ul>
+                        <li>Represent signals mathematically in continuous and discrete-time, and in the frequency
+                            domain.</li>
+                        <li>Analyse discrete-time systems using z-transform.</li>
+                        <li>Understand the Discrete-Fourier Transform (DFT) and the FFT algorithms.</li>
+                        <li>Design digital filters for various applications.</li>
+                        <li>Apply digital signal processing for the analysis of real-life signals.</li>
+                    </ul>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Discrete-time signals and systems (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Discrete time signals and systems: Sequences; representation of signals on
+                                    orthogonal basis</li>
+                                <li>Representation of discrete systems using difference equations</li>
+                                <li>Sampling and reconstruction of signals aliasing; Sampling theorem and Nyquist rate
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Z-transform (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>z-Transform, Region of Convergence</li>
+                                <li>Analysis of Linear Shift Invariant systems using z-transform</li>
+                                <li>Properties of z-transform for causal signals</li>
+                                <li>Interpretation of stability in z-domain, Inverse z-transforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Discrete Fourier Transform (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Frequency Domain Analysis, Discrete Fourier Transform (DFT)</li>
+                                <li>Properties of DFT, Convolution of signals</li>
+                                <li>Fast Fourier Transform Algorithm</li>
+                                <li>Parseval's Identity, Implementation of Discrete Time Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Design of Digital filters (12 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Design of FIR Digital filters: Window method, Park-McClellan's method</li>
+                                <li>Design of IIR Digital Filters: Butterworth, Chebyshev and Elliptic Approximations
+                                </li>
+                                <li>Low-pass, Band-pass, Band-stop and High-pass filters</li>
+                                <li>Effect of finite register length in FIR filter design</li>
+                                <li>Parametric and non-parametric spectral estimation</li>
+                                <li>Introduction to multi-rate signal processing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Applications of Digital Signal Processing (6
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Correlation Functions and Power Spectra</li>
+                                <li>Stationary Processes</li>
+                                <li>Optimal filtering using ARMA Model</li>
+                                <li>Linear Mean-Square Estimation, Wiener Filter</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. K. Mitra, "Digital Signal Processing: A computer based approach", McGraw Hill, 2011</li>
+                        <li>A.V. Oppenheim and R. W. Schafer, "Discrete Time Signal Processing", Prentice Hall, 1989
+                        </li>
+                        <li>J. G. Proakis and D.G. Manolakis, "Digital Signal Processing: Principles, Algorithms And
+                            Applications", Prentice Hall, 1997</li>
+                        <li>L. R. Rabiner and B. Gold, "Theory and Application of Digital Signal Processing", Prentice
+                            Hall, 1992</li>
+                        <li>J. R. Johnson, "Introduction to Digital Signal Processing", Prentice Hall, 1992</li>
+                        <li>D. J. DeFatta, J. G. Lucas and W. S. Hodgkiss, "Digital Signal Processing", John Wiley &
+                            Sons, 1988</li>
+                    </ol>
+                </section>
+                <section id="subject-dsp-lab" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital Signal Processing Lab [100606P]</h2>
+                    <p>Hands-on/Computer experiments related to the course contents of Digital Signal Processing.</p>
+                </section>
+                <section id="subject-vlsi" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Introduction to VLSI Design [100607]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to:</p>
+                    <ol>
+                        <li>Understand the mathematical methods and circuit analysis models in analysis of CMOS digital
+                            electronics circuits, including logic components and their inter connect.</li>
+                        <li>Understand the CMOS technology-specific layout rules in the placement and routing of
+                            transistors and interconnect, and to verify the functionality, timing, power, and parasitic
+                            effects</li>
+                        <li>Understand the concepts and techniques of modern integrated circuit design and testing (CMOS
+                            VLSI).</li>
+                    </ol>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>MOSFET, threshold voltage, current, Channel length modulation, body bias effect and
+                                    short channel effects</li>
+                                <li>MOS switch, MOSFET capacitances, MOSFET models for calculation</li>
+                                <li>Transistors and Layout, CMOS layout elements, parasitics, wires and vias-design
+                                    rules-layout design</li>
+                                <li>SPICE simulation of MOSFET I-V characteristics and parameter extraction</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: CMOS inverter (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Static characteristics, noise margin, effect of process variation, supply scaling
+                                </li>
+                                <li>Dynamic characteristics, inverter design for a given VTC and speed</li>
+                                <li>Effect of input rise time and fall time, static and dynamic power dissipation</li>
+                                <li>Energy & power delay product, sizing chain of inverters, latch up effect</li>
+                                <li>Simulation of static and dynamic characteristics, layout, post layout simulation
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Static and Dynamic CMOS design (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Static CMOS design, Complementary CMOS, static properties, propagation delay, Elmore
+                                    delay model</li>
+                                <li>Power consumption, low power design techniques, logical effort for transistor sizing
+                                </li>
+                                <li>Ratioed logic, pseudo NMOS inverter, DCVSL, PTL, DPTL & Transmission gate logic</li>
+                                <li>Dynamic CMOS design, speed and power considerations</li>
+                                <li>Domino logic and its derivatives, C2MOS, TSPC registers, NORA CMOS</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Circuit design considerations (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Arithmetic circuits, shifter</li>
+                                <li>CMOS memory design - SRAM and DRAM</li>
+                                <li>BiCMOS logic - static and dynamic behaviour</li>
+                                <li>Delay and power consumption in BiCMOS Logic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>David A. Hodges, Horace G. Jackson, and Resve A. Saleh, "Analysis and Design of Digital
+                            Integrated Circuits", McGraw-Hill, Third edition, 2004</li>
+                        <li>R. J. Baker, H. W. Li, and D. E. Boyce, "MOS circuit design, layout, and simulation",
+                            Wiley-IEEE Press, 2007</li>
+                        <li>Sung-Mo Kang & Yusuf Leblebici, "CMOS Digital Integrated Circuits - Analysis & Design", Tata
+                            McGraw Hill, Third edition, 2003</li>
+                        <li>Wayne Wolf, "Modern VLSI design", Pearson Education, 2003</li>
+                        <li>Christopher Saint and Judy Saint, "IC layout basics: A practical guide", Tata McGraw Hill
+                            Professional, 2001</li>
+                    </ol>
+                </section>
+                <section id="subject-vlsi-lab" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Introduction to VLSI Design Lab [100607P]</h2>
+                    <p>Hands-on/Computer experiments related to the course contents of Introduction to VLSI Design.</p>
+                </section>
+                <section id="subject-powersystems2" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Power Systems – II (Operation and Control) [103601]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to:</p>
+                    <ul>
+                        <li>Use numerical methods to analyse a power system in steady state.</li>
+                        <li>Understand stability constraints in a synchronous grid.</li>
+                        <li>Understand methods to control the voltage, frequency and power flow.</li>
+                        <li>Understand the monitoring and control of a power system.</li>
+                        <li>Understand the basics of power system economics.</li>
+                    </ul>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Power Flow Analysis (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of the structure of a Power System and its components</li>
+                                <li>Analysis of Power Flows: Formation of Bus Admittance Matrix</li>
+                                <li>Real and reactive power balance equations at a node</li>
+                                <li>Load and Generator Specifications</li>
+                                <li>Application of numerical methods for solution of non-linear algebraic equations –
+                                    Gauss Seidel and Newton-Raphson methods for the solution of the power flow equations
+                                </li>
+                                <li>Computational Issues in Large-scale Power Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Stability Constraints in synchronous grids (8
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Swing Equations of a synchronous machine connected to an infinite bus</li>
+                                <li>Power angle curve</li>
+                                <li>Description of the phenomena of loss of synchronism in a single-machine infinite bus
+                                    system following a disturbance like a three-phase fault</li>
+                                <li>Analysis using numerical integration of swing equations (using methods like Forward
+                                    Euler, Runge-Kutta 4th order methods), as well as the Equal Area Criterion</li>
+                                <li>Impact of stability constraints on Power System Operation</li>
+                                <li>Effect of generation rescheduling and series compensation of transmission lines on
+                                    stability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Control of Frequency and Voltage (7 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Turbines and Speed-Governors, Frequency dependence of loads</li>
+                                <li>Droop Control and Power Sharing</li>
+                                <li>Automatic Generation Control</li>
+                                <li>Generation and absorption of reactive power by various components of a Power System
+                                </li>
+                                <li>Excitation System Control in synchronous generators, Automatic Voltage Regulators
+                                </li>
+                                <li>Shunt Compensators, Static VAR compensators and STATCOMs</li>
+                                <li>Tap Changing Transformers</li>
+                                <li>Power flow control using embedded dc links, phase shifters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Monitoring and Control (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of Energy Control Centre Functions: SCADA systems</li>
+                                <li>Phasor Measurement Units and Wide-Area Measurement Systems</li>
+                                <li>State-estimation, System Security Assessment</li>
+                                <li>Normal, Alert, Emergency, Extremis states of a Power System</li>
+                                <li>Contingency Analysis, Preventive Control and Emergency Control</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Fault Analysis and Protection Systems (10
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Method of Symmetrical Components (positive, negative and zero sequences)</li>
+                                <li>Balanced and Unbalanced Faults</li>
+                                <li>Representation of generators, lines and transformers in sequence networks</li>
+                                <li>Computation of Fault Currents, Neutral Grounding</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>J. Grainger and W. D. Stevenson, "Power System Analysis", McGraw Hill Education, 1994</li>
+                        <li>O. I. Elgerd, "Electric Energy Systems Theory", McGraw Hill Education, 1995</li>
+                        <li>A. R. Bergen and V. Vittal, "Power System Analysis", Pearson Education Inc., 1999</li>
+                        <li>D. P. Kothari and I. J. Nagrath, "Modern Power System Analysis", McGraw Hill Education, 2003
+                        </li>
+                        <li>B. M. Weedy, B. J. Cory, N. Jenkins, J. Ekanayake and G. Strbac, "Electric Power Systems",
+                            Wiley, 2012</li>
+                    </ol>
+                </section>
+                <section id="subject-powersystemslab2" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Power Systems Lab – II [103601P]</h2>
+                    <p>Hands-on and computational experiments related to the course contents of Power Systems – II. This
+                        should include programming of numerical methods for solution of the power flow problem and
+                        stability analysis. Visit to load dispatch centre is suggested.</p>
+                </section>
+                <section id="subject-moocs2" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">MOOCs / SWAYAM / NPTEL Courses - 2 [100604]</h2>
+                    <p>Details for this course will be provided by the department based on the selected course.</p>
+                </section>
+                <section id="subject-professional" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Professional Skill Development [100608]</h2>
+                    <p><strong>Objectives of the course:</strong></p>
+                    <ol>
+                        <li>To learn various interpersonal skills</li>
+                        <li>To help in developing various professionals skills.</li>
+                        <li>To cover the facets of verbal and non-verbal languages, public speech, reading gestures and
+                            body languages, preparing for group discussion and enhancing presentations skills.</li>
+                        <li>To enable learners to speak fluently and flawlessly in all kinds of communicative Contexts
+                            with speakers of all nationalities.</li>
+                    </ol>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Communication skills (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Public speaking</li>
+                                <li>Group discussion</li>
+                                <li>Gestures and body language & professional presentation skills</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Interpersonal skills (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Group dynamics</li>
+                                <li>Negotiation skills</li>
+                                <li>Leadership</li>
+                                <li>Emotional intelligence</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Employability and Corporate Skills (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Time management and effective planning</li>
+                                <li>Stress management</li>
+                                <li>People skills, Team work, development of leadership qualities</li>
+                                <li>Decision making and Negotiation skills</li>
+                                <li>Positive attitude, Self-motivation, Professional ethics</li>
+                                <li>Business etiquettes, balancing board room</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Business writing skills (10 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Resume Writing, Interview Skills</li>
+                                <li>Technical Presentation</li>
+                                <li>Guest Lecture, Professional Ethics</li>
+                                <li>Project Management, Entrepreneurship</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested reference books:</h3>
+                    <ol>
+                        <li>"Personality Development and Soft Skills", Barun Mitra, Oxford University Press</li>
+                        <li>"Managing Soft Skills for Personality Development", B.N. Ghosh, McGraw Hill</li>
+                        <li>"Communication Skills and Soft Skills: An Integrated Approach", E. Suresh Kumar, Pearson
+                        </li>
+                        <li>"Communication to Win", Richard Denny, Kogan Page India Pvt. Ltd</li>
+                    </ol>
+                </section>
+                <section id="subject-electronicslab" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electronics Design Lab</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of the course, students will demonstrate the ability
+                        to:</p>
+                    <ul>
+                        <li>Understand the practical issues related to practical implementation of applications using
+                            electronic circuits.</li>
+                        <li>Choose appropriate components, software and hardware platforms.</li>
+                        <li>Design a Printed Circuit Board, get it made and populate/solder it with components.</li>
+                        <li>Work as a team with other students to implement an application.</li>
+                    </ul>
+                    <p><strong>Course Content:</strong></p>
+                    <ul class="unit-topics">
+                        <li>Basic concepts on measurements</li>
+                        <li>Noise in electronic systems</li>
+                        <li>Sensors and signal conditioning circuits</li>
+                        <li>Introduction to electronic instrumentation and PC based data acquisition</li>
+                        <li>Electronic system design</li>
+                        <li>Analog system design</li>
+                        <li>Interfacing of analog and digital systems</li>
+                        <li>Embedded systems</li>
+                        <li>Electronic system design employing microcontrollers, CPLDs, and FPGAs</li>
+                        <li>PCB design and layout</li>
+                        <li>System assembly considerations</li>
+                        <li>Group projects involving electronic hardware (Analog, Digital, mixed signal) leading to
+                            implementation of an application</li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>A. S. Sedra and K. C. Smith, "Microelectronic circuits", Oxford University Press, 2007</li>
+                        <li>P. Horowitz and W. Hill, "The Art of Electronics", Cambridge University Press, 1997</li>
+                        <li>H. W. Ott, "Noise Reduction Techniques in Electronic Systems", Wiley, 1989</li>
+                        <li>W.C. Bosshart, "Printed Circuit Boards: Design and Technology", Tata McGraw Hill, 1983</li>
+                        <li>G.L. Ginsberg, "Printed Circuit Design", McGraw Hill, 1991</li>
+                    </ol>
+                </section>
+                <section id="subject-electronicslab" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Electronics Design Lab [100609P]</h2>
+                    <p>Hands-on/Computer experiments related to the course contents of Electronics Design Lab.</p>
+                </section>
+                <section id="subject-ca" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Computer Architecture [100611]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction to computer organization (6
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Architecture and function of general computer system</li>
+                                <li>CISC Vs RISC</li>
+                                <li>Data types</li>
+                                <li>Integer Arithmetic - Multiplication, Division</li>
+                                <li>Fixed and Floating point representation and arithmetic</li>
+                                <li>Control unit operation</li>
+                                <li>Hardware implementation of CPU with Micro instruction, microprogramming</li>
+                                <li>System buses, Multi-bus organization</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Memory organization (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>System memory</li>
+                                <li>Cache memory - types and organization</li>
+                                <li>Virtual memory and its implementation</li>
+                                <li>Memory management unit</li>
+                                <li>Magnetic Hard disks</li>
+                                <li>Optical Disks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Input – output Organization (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Accessing I/O devices</li>
+                                <li>Direct Memory Access and DMA controller</li>
+                                <li>Interrupts and Interrupt Controllers</li>
+                                <li>Arbitration</li>
+                                <li>Multilevel Bus Architecture</li>
+                                <li>Interface circuits - Parallel and serial port</li>
+                                <li>Features of PCI and PCI Express bus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: 16 and 32 microprocessors (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>80x86 Architecture, IA – 32 and IA – 64</li>
+                                <li>Programming model</li>
+                                <li>Concurrent operation of EU and BIU</li>
+                                <li>Real mode addressing, Segmentation</li>
+                                <li>Addressing modes of 80x86</li>
+                                <li>Instruction set of 80x86</li>
+                                <li>I/O addressing in 80x86</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Pipelining (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to pipelining</li>
+                                <li>Instruction level pipelining (ILP)</li>
+                                <li>Compiler techniques for ILP</li>
+                                <li>Data hazards, Dynamic scheduling, Dependability</li>
+                                <li>Branch cost, Branch Prediction</li>
+                                <li>Influence on instruction set</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Different Architectures (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>VLIW Architecture</li>
+                                <li>DSP Architecture</li>
+                                <li>SoC architecture</li>
+                                <li>MIPS Processor and programming</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-drives" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Electrical Drives [100613]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of this course, students will demonstrate the
+                        ability to:</p>
+                    <ul>
+                        <li>Understand the characteristics of dc motors and induction motors.</li>
+                        <li>Understand the principles of speed-control of dc motors and induction motors.</li>
+                        <li>Understand the power electronic converters used for dc motor and induction motor speed
+                            control.</li>
+                    </ul>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: DC motor characteristics (5 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of emf and torque equations of DC machine</li>
+                                <li>Review of torque-speed characteristics of separately excited dc motor</li>
+                                <li>Change in torque-speed curve with armature voltage</li>
+                                <li>Example load torque-speed characteristics, operating point</li>
+                                <li>Armature voltage control for varying motor speed, flux weakening for high speed
+                                    operation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Chopper fed DC drive (5 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of dc chopper and duty ratio control</li>
+                                <li>Chopper fed dc motor for speed control</li>
+                                <li>Steady state operation of a chopper fed drive</li>
+                                <li>Armature current waveform and ripple</li>
+                                <li>Calculation of losses in dc motor and chopper, efficiency of dc drive, smooth
+                                    starting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Multi-quadrant DC drive (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of motoring and generating modes operation of a separately excited dc machine
+                                </li>
+                                <li>Four quadrant operation of dc machine</li>
+                                <li>Single-quadrant, two-quadrant and four-quadrant choppers</li>
+                                <li>Steady-state operation of multi-quadrant chopper fed dc drive, regenerative braking
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Closed-loop control of DC Drive (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Control structure of DC drive, inner current loop and outer speed loop</li>
+                                <li>Dynamic model of dc motor – dynamic equations and transfer functions</li>
+                                <li>Modeling of chopper as gain with switching delay, plant transfer function for
+                                    controller design</li>
+                                <li>Current controller specification and design, speed controller specification and
+                                    design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Induction motor characteristics (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of induction motor equivalent circuit and torque-speed characteristic</li>
+                                <li>Variation of torque-speed curve with (i) applied voltage, (ii) applied frequency and
+                                    (iii) applied voltage and frequency</li>
+                                <li>Typical torque-speed curves of fan and pump loads, operating point</li>
+                                <li>Constant flux operation, flux weakening operation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Scalar control or constant V/f control of induction
+                                motor (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Review of three-phase voltage source inverter</li>
+                                <li>Generation of three-phase PWM signals, sinusoidal modulation, space vector theory,
+                                    conventional space vector modulation</li>
+                                <li>Constant V/f control of induction motor</li>
+                                <li>Steady-state performance analysis based on equivalent circuit</li>
+                                <li>Speed drop with loading, slip regulation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Control of slip ring induction motor (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Impact of rotor resistance of the induction motor torque-speed curve</li>
+                                <li>Operation of slip-ring induction motor with external rotor resistance</li>
+                                <li>Starting torque, power electronic based rotor side control of slip ring motor</li>
+                                <li>Slip power recovery</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>G. K. Dubey, "Power Semiconductor Controlled Drives", Prentice Hall, 1989</li>
+                        <li>R. Krishnan, "Electric Motor Drives: Modeling, Analysis and Control", Prentice Hall, 2001
+                        </li>
+                        <li>G. K. Dubey, "Fundamentals of Electrical Drives", CRC Press, 2002</li>
+                        <li>W. Leonhard, "Control of Electric Drives", Springer Science & Business Media, 2001</li>
+                    </ol>
+                </section>
+                <section id="subject-hv" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: High Voltage Engineering [103605]</h2>
+                    <p><strong>Course Outcomes:</strong> At the end of the course, the student will demonstrate:</p>
+                    <ul>
+                        <li>Understand the basic physics related to various breakdown processes in solid, liquid and
+                            gaseous insulating materials.</li>
+                        <li>Knowledge of generation and measurement of D. C., A.C., & Impulse voltages.</li>
+                        <li>Knowledge of tests on H. V. equipment and on insulating materials, as per the standards.
+                        </li>
+                        <li>Knowledge of how over-voltages arise in a power system, and protection against these
+                            over-voltages.</li>
+                    </ul>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Breakdown in Gases (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Ionization processes and de-ionization processes</li>
+                                <li>Types of Discharge, Gases as insulating materials</li>
+                                <li>Breakdown in Uniform gap, non-uniform gaps</li>
+                                <li>Townsend's theory, Streamer mechanism, Corona discharge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Breakdown in liquid and solid Insulating materials (7
+                                Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Breakdown in pure and commercial liquids</li>
+                                <li>Solid dielectrics and composite dielectrics</li>
+                                <li>Intrinsic breakdown, electromechanical breakdown and thermal breakdown</li>
+                                <li>Partial discharge, applications of insulating materials</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Generation of High Voltages (7 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Generation of high voltages</li>
+                                <li>Generation of high D. C. and A.C. voltages</li>
+                                <li>Generation of impulse voltages</li>
+                                <li>Generation of impulse currents, tripping and control of impulse generators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Measurements of High Voltages and Currents (7
+                                Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Peak voltage, impulse voltage and high direct current measurement method</li>
+                                <li>Cathode ray oscillographs for impulse voltage and current measurement</li>
+                                <li>Measurement of dielectric constant and loss factor</li>
+                                <li>Partial discharge measurements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Lightning and Switching Over-voltages (7
+                                Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Charge formation in clouds, Stepped leader, Dart leader, Lightning Surges</li>
+                                <li>Switching over-voltages</li>
+                                <li>Protection against over-voltages, Surge diverters, Surge modifiers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: High Voltage Testing of Electrical Apparatus and High
+                                Voltage Laboratories (7 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Various standards for HV Testing of electrical apparatus, IS, IEC standards</li>
+                                <li>Testing of insulators and bushings, testing of isolators and circuit breakers</li>
+                                <li>Testing of cables, power transformers and some high voltage equipment</li>
+                                <li>High voltage Lab layout, indoor and outdoor laboratories</li>
+                                <li>Testing facility requirements, safety precautions in H. V. Labs</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>M. S. Naidu and V. Kamaraju, "High Voltage Engineering", McGraw Hill Education, 2013</li>
+                        <li>C. L. Wadhwa, "High Voltage Engineering", New Age International Publishers, 2007</li>
+                        <li>D. V. Razevig (Translated by Dr. M. P. Chourasia), "High Voltage Engineering Fundamentals",
+                            Khanna Publishers, 1993</li>
+                    </ol>
+                </section>
+                <section id="subject-industrial" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Industrial Electrical Systems [103606]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Electrical System Components (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>LT system wiring components, selection of cables, wires, switches, distribution box,
+                                    metering system</li>
+                                <li>Tariff structure</li>
+                                <li>Protection components- Fuse, MCB, MCCB, ELCB, inverse current characteristics,
+                                    symbols</li>
+                                <li>Single line diagram (SLD) of a wiring system</li>
+                                <li>Contactor, Isolator, Relays, MPCB</li>
+                                <li>Electric shock and Electrical safety practices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Residential and Commercial Electrical Systems (8
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Types of residential and commercial wiring systems</li>
+                                <li>General rules and guidelines for installation</li>
+                                <li>Load calculation and sizing of wire, rating of main switch, distribution board and
+                                    protection devices</li>
+                                <li>Earthing system calculations</li>
+                                <li>Requirements of commercial installation</li>
+                                <li>Deciding lighting scheme and number of lamps, earthing of commercial installation
+                                </li>
+                                <li>Selection and sizing of components</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Illumination Systems (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Understanding various terms regarding light, lumen, intensity, candle power, lamp
+                                    efficiency, specific consumption, glare, space to height ratio, waste light factor,
+                                    depreciation factor</li>
+                                <li>Various illumination schemes</li>
+                                <li>Incandescent lamps and modern luminaries like CFL, LED and their operation</li>
+                                <li>Energy saving in illumination systems</li>
+                                <li>Design of a lighting scheme for a residential and commercial premises</li>
+                                <li>Flood lighting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Industrial Electrical Systems I (8 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>HT connection, industrial substation</li>
+                                <li>Transformer selection</li>
+                                <li>Industrial loads, motors, starting of motors</li>
+                                <li>SLD, Cable and Switchgear selection</li>
+                                <li>Lightning Protection, Earthing design</li>
+                                <li>Power factor correction – kVAR calculations, type of compensation</li>
+                                <li>Introduction to PCC, MCC panels</li>
+                                <li>Specifications of LT Breakers, MCB and other LT panel components</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Industrial Electrical Systems II (6 hours)</strong>
+                            <ul class="unit-topics">
+                                <li>DG Systems, UPS System</li>
+                                <li>Electrical Systems for the elevators</li>
+                                <li>Battery banks</li>
+                                <li>Sizing the DG, UPS and Battery Banks</li>
+                                <li>Selection of UPS and Battery Banks</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Industrial Electrical System Automation (6
+                                hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Study of basic PLC</li>
+                                <li>Role of in automation, advantages of process automation</li>
+                                <li>PLC based control system design</li>
+                                <li>Panel Metering</li>
+                                <li>Introduction to SCADA system for distribution automation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

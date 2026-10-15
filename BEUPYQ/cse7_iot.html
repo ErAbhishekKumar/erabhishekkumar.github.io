@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>7th Semester Syllabus – CSE (IoT)</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">7th Semester Syllabus</h1>
+                <p class="page-subtitle">CSE (Internet of Things)</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Biology for Engineers [100708]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Deep Learning [155701]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Program Elective-IV [1557XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Open Elective-I [1007XX]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Deep Learning Lab [155701P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Summer Entrepreneurship – III [100707]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>8</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Project-I [100709P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>6</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>27</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100708"
+                        data-type="theory">Biology for Engineers</button><button class="tab-btn"
+                        data-target="subject-155701" data-type="theory">Deep Learning</button><button class="tab-btn"
+                        data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective-IV"
+                        data-modal-options='[ {"label": "Privacy and Security in IoT", "target": "subject-155702", "btn-id": "btn-155702"}, {"label": "Application of IoT in Robotics", "target": "subject-155703", "btn-id": "btn-155703"}, {"label": "Programming for IoT Boards", "target": "subject-155704", "btn-id": "btn-155704"}, {"label": "Pattern Recognition", "target": "subject-155705", "btn-id": "btn-155705"}, {"label": "Sensors and Actuator Devices for IoT", "target": "subject-155706", "btn-id": "btn-155706"} ]'>
+                        Program Elective-IV </button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Open Elective-I"
+                        data-modal-options='[ {"label": "Soft Skills and Interpersonal Communication", "target": "subject-100728", "btn-id": "btn-100728"}, {"label": "Introduction to VLSI Design", "target": "subject-100729", "btn-id": "btn-100729"}, {"label": "Sales and Marketing", "target": "subject-100734", "btn-id": "btn-100734"}, {"label": "Digital Signal Processing", "target": "subject-100735", "btn-id": "btn-100735"}, {"label": "Control System", "target": "subject-100736", "btn-id": "btn-100736"} ]'>
+                        Open Elective-I </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab / Project</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-155701P" data-type="lab">Deep
+                        Learning Lab</button><button class="tab-btn" data-target="subject-100707" data-type="lab">Summer
+                        Entrepreneurship – III</button><button class="tab-btn" data-target="subject-100709P"
+                        data-type="lab">Project-I</button></div>
+            </section>
+            <div id="syllabus-content"><!-- core theory subjects -->
+                <section id="subject-100708" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Biology for Engineers [100708]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction Biology for Engineers</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To convey that Biology is as important a scientific discipline as
+                                    Mathematics, Physics and Chemistry</li>
+                                <li>Bring out the fundamental differences between science and engineering by drawing a
+                                    comparison between eye and camera, Bird flying and aircraft</li>
+                                <li>Mention the most exciting aspect of biology as an independent scientific discipline
+                                </li>
+                                <li>Why we need to study biology?</li>
+                                <li>Discuss how biological observations of 18th Century that lead to major discoveries
+                                </li>
+                                <li>Examples from Brownian motion and the origin of thermodynamics by referring to the
+                                    original observation of Robert Brown and Julius Mayor</li>
+                                <li>These examples highlight the fundamental importance of observations in any
+                                    scientific inquiry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Classification</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To convey that classification per se is not what biology is all about. The
+                                    underlying criterion, such as morphological, biochemical or ecological be
+                                    highlighted</li>
+                                <li>Hierarchy of life forms at phenomenological level</li>
+                                <li>A common thread weaves this hierarchy Classification</li>
+                                <li>Discuss classification based on (a) cellularity- Unicellular or multicellular (b)
+                                    ultrastructure- prokaryotes or eucaryotes (c) energy and Carbon utilization -
+                                    Autotrophs, heterotrophs, lithotopes (d) Ammonia excretion - aminotelic, urocotelic,
+                                    ureotelic (e) Habitat- acquatic or terrestrial (f) Molecular taxonomy- three major
+                                    kingdoms of life</li>
+                                <li>A given organism can come under different category based on classification</li>
+                                <li>Model organisms for the study of biology come from different groups. E.coli,
+                                    S.cerevisiae, D. Melanogaster, C. elegance, A. Thaliana, M. musculus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Genetics and Biomolecules</strong>
+                            <ul class="unit-topics">
+                                <li>Genetics: Purpose: To convey that "Genetics is to biology what Newton's laws are to
+                                    Physical Sciences"</li>
+                                <li>Mendel's Concept of segregation and independent Gene mapping, Gene interaction,
+                                    Epistasis</li>
+                                <li>Meiosis and Mitosis be taught as a part of genetics. Emphasis to be give not to the
+                                    mechanics of cell division nor the phases but how genetic material passes from
+                                    parent to offspring</li>
+                                <li>Concepts of recessiveness and dominance</li>
+                                <li>Concept of mapping of phenotype to genes</li>
+                                <li>Discuss about the single gene disorders in humans</li>
+                                <li>Discuss the concept of complementation using human genetics</li>
+                                <li>Biomolecules: Purpose: To convey that all forms of life has the same building blocks
+                                    and yet the manifestations are as diverse as one can imagine</li>
+                                <li>Molecules of life. In this context discuss monomeric units and polymeric structures
+                                </li>
+                                <li>Discuss about sugars, starch and cellulose. Amino acids and proteins. Nucleotides
+                                    and DNA/RNA. Two carbon units and lipids</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Enzymes and Information Transfer</strong>
+                            <ul class="unit-topics">
+                                <li>Enzymes: Purpose: To convey that without catalysis life would not have existed on
+                                    earth</li>
+                                <li>Enzymology: How to monitor enzyme catalysed reactions</li>
+                                <li>How does an enzyme catalyse reactions? Enzyme classification. Mechanism of enzyme
+                                    action. Discuss at least two examples. Enzyme kinetics and kinetic parameters. Why
+                                    should we know these parameters to understand biology? RNA catalysis</li>
+                                <li>Information Transfer: Purpose: The molecular basis of coding and decoding genetic
+                                    information is universal</li>
+                                <li>Molecular basis of information transfer. DNA as a genetic material. Hierarchy of DNA
+                                    structure- from single stranded to double helix to nucleosomes. Concept of genetic
+                                    code. Universality and degeneracy of genetic code. Define gene in terms of
+                                    complementation and recombination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Macromolecular Analysis and Metabolism</strong>
+                            <ul class="unit-topics">
+                                <li>Macromolecular Analysis: Purpose: To analyse biological processes at the
+                                    reductionistic level. Proteins- structure and function. Hierarch in protein
+                                    structure. Primary secondary, tertiary and quaternary structure. Proteins as
+                                    enzymes, transporters, receptors and structural elements</li>
+                                <li>Metabolism: Purpose: The fundamental principles of energy transactions are the same
+                                    in physical and biological world. Thermodynamics as applied to biological systems.
+                                    Exothermic and endothermic versus endergonic and exergonic reactions. Concept of Keq
+                                    and its relation to standard free energy. Spontaneity. ATP as an energy currency.
+                                    This should include the breakdown of glucose to CO2 + H2O (Glycolysis and Krebs
+                                    cycle) and synthesis of glucose from CO2 and H2O (Photosynthesis). Energy yielding
+                                    and energy consuming reactions. Concept of Energy charge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Microbiology</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of single celled organisms. Concept of species and strains. Identification
+                                    and classification of microorganisms. Microscopy. Ecological aspects of single
+                                    celled organisms. Sterilization and media compositions. Growth kinetics</li>
+                                <li>Plant Physiology covering, Transpiration; Mineral nutrition Ecology covering,
+                                    Ecosystems- Components, types, flow of matter and energy in an ecosystem; Community
+                                    ecology- Characteristics, frequency, life forms, and biological spectrum; Ecosystem
+                                    structure- Biotic and abiotic factors, food chain, food web, ecological pyramids
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>N. A. Campbell, J. B. Reece, L. Urry, M. L. Cain and S. A. Wasserman, "Biology: A global
+                            approach", Pearson Education Ltd, 2014</li>
+                        <li>E. E. Conn, P. K. Stumpf, G. Bruening and R. H. Doi, "Outlines of Biochemistry", John Wiley
+                            and Sons, 2009</li>
+                        <li>D. L. Nelson and M. M. Cox, "Principles of Biochemistry", W.H. Freeman and Company, 2012
+                        </li>
+                        <li>G. S. Stent and R. Calendar, "Molecular Genetics", Freeman and company, 1978</li>
+                        <li>L. M. Prescott, J. P. Harley and C. A. Klein, "Microbiology", McGraw Hill Higher Education,
+                            2005</li>
+                    </ol>
+                </section>
+                <section id="subject-155701" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Deep Learning [155701]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Definition of AI, Machine Learning, Deep Learning</li>
+                                <li>Human Brain vs Artificial Neuron, Biological neuron and artificial neuron analogy
+                                </li>
+                                <li>Neuron Models: McCulloch-Pitts neuron, Activation functions (Sigmoid, Tanh, ReLU,
+                                    Leaky ReLU, Softmax)</li>
+                                <li>Perceptron, Multilayer Perceptrons, Back-Propagation Algorithm, XOR Problem</li>
+                                <li>Difficulty of training deep neural networks, Discussion on deep learning frameworks
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Optimization & Hyperparameter Tuning</strong>
+                            <ul class="unit-topics">
+                                <li>Gradient Descent, stochastic gradient, momentum, RMSProp, ADAM</li>
+                                <li>Regularization for Deep Learning: Parameter Norm Penalties - L2 Parameter
+                                    Regularization, Dataset Augmentation, Semi-Supervised Learning</li>
+                                <li>Optimization for Training Deep Models</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Convolutional Neural Networks (CNN)</strong>
+                            <ul class="unit-topics">
+                                <li>Convolution operation, Filters, Padding, Stride, Pooling, Normalization</li>
+                                <li>Modern CNN architectures: LeNet, AlexNet, VGG, GoogLeNet, ResNet, Inception,
+                                    EfficientNet</li>
+                                <li>Transfer Learning & Fine-tuning, Image Augmentation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Sequence Modeling</strong>
+                            <ul class="unit-topics">
+                                <li>RNN, Vanishing Gradient in RNN, LSTM & GRU networks, Bidirectional RNNs</li>
+                                <li>Applications: Text generation, Sentiment analysis, Time-series forecasting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Attention and Transformers</strong>
+                            <ul class="unit-topics">
+                                <li>Attention mechanism (Self-attention, Multi-head)</li>
+                                <li>Positional Autoencoders, Encoder-Decoder architecture, Sparse Autoencoders,
+                                    Denoising Autoencoders, Variational Autoencoders (VAE)</li>
+                                <li>Transformer architecture, BERT, GPT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Generative Models</strong>
+                            <ul class="unit-topics">
+                                <li>Basics, GANs (Generative Adversarial Networks)- Generator & Discriminator, DCGAN,
+                                    CycleGAN, StyleGAN</li>
+                                <li>Applications of GANs</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Ian Goodfellow, Yoshua Bengio, Aaron Courville, "Deep Learning," MIT Press, 2016</li>
+                        <li>Christopher Bishop, "Pattern Recognition and Machine Learning," Springer, 2006</li>
+                        <li>Aston Zhang, Zachary C. Lipton, Mu Li, Alex J. Smola, "Dive into Deep Learning (D2L)," 2020
+                            (Free online book)</li>
+                        <li>François Chollet, "Deep Learning with Python," Manning Publications, 2018</li>
+                        <li>Christoph Molnar, "Interpretable Machine Learning," 2020 (For Explainable AI)</li>
+                    </ol>
+                </section><!-- program electives (hidden by default) -->
+                <section id="subject-155702" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Privacy and Security in IoT [155702]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Security in IoT</strong>
+                            <ul class="unit-topics">
+                                <li>IoT security: Vulnerabilities, Attacks and Countermeasures</li>
+                                <li>Security Engineering for IoT development</li>
+                                <li>IoT security lifecycle</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Network Robustness and Malware Propagation Control in
+                                IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Network Robustness</li>
+                                <li>Fusion Based Defense Scheme</li>
+                                <li>Sequential Defense Scheme</li>
+                                <li>Location Certificate Based Scheme</li>
+                                <li>Sybil node detection scheme</li>
+                                <li>Formal Modeling and Verification</li>
+                                <li>Sybil Attack Detection in Vehicular Networks</li>
+                                <li>Performance evaluation of various Malware Dynamics Models</li>
+                                <li>Analysis of Attack Vectors on Smart Home Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Crypto Foundations</strong>
+                            <ul class="unit-topics">
+                                <li>Block ciphers, message integrity, authenticated encryption, hash functions, Merkle
+                                    trees, elliptic curves</li>
+                                <li>Public-key crypto (PKI), signature algorithms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Privacy Preservation in IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Privacy Preservation Data Dissemination: Network Model, Threat Model - Problem
+                                    formulation and definition - Baseline data dissemination - Spatial Privacy Graph
+                                    based data dissemination - Experiment Validation</li>
+                                <li>Smart building concept- Privacy Threats in Smart Building - Privacy Preserving
+                                    Approaches in Smart Building - Smart Meter Privacy Preserving Approaches</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Trust Models for IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Trust Model Concepts - Public Key Infrastructures Architecture Components - Public
+                                    Key Certificate Formats - Design Considerations for Digital Certificates - Public
+                                    Key Reference Infrastructure for the IoT</li>
+                                <li>Authentication in IoT - Computational Security for IoT</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Security Protocols for IoT Access Networks</strong>
+                            <ul class="unit-topics">
+                                <li>Time Based Secure Key Generation - Security Access Algorithm: Unidirectional,
+                                    Bidirectional Transmission - Cognitive Security - IoT Security Framework - Secure
+                                    IoT Layers - Secure Communication Links in IoT - Secure Resource Management, Secure
+                                    IoT Databases</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>William Stallings, "Cryptography and Network Security", Pearson Education/PHI, 2006</li>
+                        <li>V.K. Jain, "Cryptography and Network Security", Khanna Publishing House</li>
+                        <li>Gupta Sarika, "Information and Cyber Security", Khanna Publishing House, Delhi</li>
+                        <li>Russell, Brian and Drew Van Duren. Practical Internet of Things Security, 2016,1st edition,
+                            PACKT Publishing Ltd, UK</li>
+                        <li>Kim, S., Deka, G. C., & Zhang, P. (2019). Role of blockchain technology in IoT applications.
+                            Academic Press</li>
+                        <li>Whitehouse O Security of things: An Implementers' guide to cyber security for internet of
+                            things devices and beyond, 2014, 1st edition, NCC Group, UK</li>
+                        <li>Hu, Fei. Security and Privacy in Internet of Things (IoTs): Models, Algorithms, and
+                            Implementations, 2016, 1st edition, CRC Press, USA</li>
+                    </ol>
+                </section>
+                <section id="subject-155703" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Application of IoT in Robotics [155703]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction To Robotics and IoT</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction of Robotics: Definition, history, and application of robotics</li>
+                                <li>Types of robots: mobile robots, autonomous robots, industrial robots</li>
+                                <li>Introduction to IoT: Definition, components, and architecture</li>
+                                <li>Evolution of IoT & enabling technologies (RFID, WSN, Cloud, Big Data)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: IoT Sensors and Actuators</strong>
+                            <ul class="unit-topics">
+                                <li>Types of IoT Sensors: Temperature, humidity, pressure, proximity</li>
+                                <li>Actuators in IoT: DC motors, servo motors, stepper motors, solenoids</li>
+                                <li>Selection criteria of sensors and actuators into robotic systems</li>
+                                <li>Robotic perception enhancement using IoT sensors</li>
+                                <li>Integration of cameras, LiDAR, ultrasonic sensors with IoT</li>
+                                <li>Real-time control of robotic actuators using IoT data</li>
+                                <li>Interfacing sensors/actuators with microcontrollers (Arduino/RPi/NodeMCU)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Design Principles for Connected Devices</strong>
+                            <ul class="unit-topics">
+                                <li>IoT/M2M System Layers and Design Standardization</li>
+                                <li>Communication technologies: Wi-Fi, BLE, ZigBee, LoRa, RFID</li>
+                                <li>Data Enrichment, Data Consolidation and Device Management at Gateway</li>
+                                <li>Web communication protocols (HTTP, MQTT, CoAP, WebSockets)</li>
+                                <li>Message Communication Protocols; Internet Connectivity; Internet connectivity and IP
+                                    addressing in IoT devices</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: IoT Platforms and Middleware</strong>
+                            <ul class="unit-topics">
+                                <li>Overview of IoT platforms: AWS IoT, Azure IoT, Google Cloud IoT</li>
+                                <li>Middleware for integrating IoT devices and robotics</li>
+                                <li>Hands-on experience with setting up and using IoT platforms for robotics
+                                    applications</li>
+                                <li>Introduction to edge computing and its relevance in robotics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Data Acquisition and Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Data acquisition from IoT sensors and actuators in robotic systems</li>
+                                <li>Data logging formats: JSON, CSV, MQTT payloads</li>
+                                <li>Data processing techniques: Filtering, aggregation, normalization</li>
+                                <li>Real-time data analysis in robotics applications</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: IoT-Enabled Robotic Applications & Case
+                                Studies</strong>
+                            <ul class="unit-topics">
+                                <li>Robotic Applications: Smart robotic systems using IoT; IoT-based mobile robots;
+                                    Industrial IoT (IIoT) robotics applications; Healthcare & service robots with IoT;
+                                    Autonomous delivery robots</li>
+                                <li>Case studies: Drones, warehouse robots, smart agriculture robots; Mini-project
+                                    discussion: IoT-controlled robot</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Raj Kamal, "Internet of Things: Architecture and Design Principles", McGraw Hill, Latest
+                            Edition</li>
+                        <li>K. S. Fu, R. C. Gonzalez, "Robotics: Control, Sensing, Vision, and Intelligence",
+                            McGraw-Hill</li>
+                        <li>Claire Rowland, "Designing Connected Products for IoT", O'Reilly, Latest Edition</li>
+                        <li>Hanes, Salgueiro, Grossetete, "IoT Fundamentals: Networking Technologies, Protocols, and Use
+                            Cases", Cisco Press, Latest Edition</li>
+                    </ol>
+                </section>
+                <section id="subject-155704" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Programming for IoT Boards [155704]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: IoT Ecosystem and Enabling Technologies</strong>
+                            <ul class="unit-topics">
+                                <li>IoT Ecosystem, Challenges and Levels of Implementation, Enabling Technologies</li>
+                                <li>Overview of Processing Elements and Peripherals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Programming for Prototyping Boards</strong>
+                            <ul class="unit-topics">
+                                <li>Environment: Board, IDE, shields</li>
+                                <li>Programming: syntax, variables, types, operators, constructs and functions</li>
+                                <li>Sketch: skeleton, compile and upload, accessing pins</li>
+                                <li>Debugging: UART communication protocol and serial library</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Interfacing with Prototyping Boards</strong>
+                            <ul class="unit-topics">
+                                <li>Circuits: design, wiring, passive components</li>
+                                <li>Sensors and Actuators: Interfacing, Read/Write</li>
+                                <li>Software libraries; Shields - interfacing and libraries</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Single Board Computers: Programming &
+                                Interfacing</strong>
+                            <ul class="unit-topics">
+                                <li>SBC Architecture & Schematic Board schematic</li>
+                                <li>Setup, Configure & Use, OS implications: Linux - basics, file system and processes,
+                                    Shell CLI & GUI</li>
+                                <li>Programming APIs - RPi. GPIO - PWM library to access pins - Tkinter GUI</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: IoT Networking, Protocols & Cloud Integration</strong>
+                            <ul class="unit-topics">
+                                <li>Networking & Internet Connectivity, Standard Internet Protocols - MQTT & CoAP</li>
+                                <li>Networking Socket Interface - Cloud - Public APIs and SDK's for accessing cloud
+                                    services</li>
+                                <li>Social Network APIs - Interfacing - sensors and actuators - Pi Camera, Servo - APIs
+                                    for data conversion</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Embedded Programming and RTOS</strong>
+                            <ul class="unit-topics">
+                                <li>Embedded Programming: MCU, GPIO, WDT, timers/counters - I/O - A/D - D/A, PWM,
+                                    Interrupts, Memory; serial communication UART - I2C - SPI, Peripheral Interfacing
+                                </li>
+                                <li>OS - basics - types - tasks - process - threads (POSIX Threads), thread preemption -
+                                    Preemptive Task Scheduling Policies - Priority Inversion - Task communication - Task
+                                    Synchronization issues - racing and deadlock - binary and counting semaphores (Mutex
+                                    example) - choosing RTOS</li>
+                                <li>Real World Projects: IoT Integrated Primary Health Care, Face Detection by AI, Cloud
+                                    IoT Systems for Smart Agriculture, Smart Home Gadgets, Autonomous Car Features,
+                                    Speed and horn intensity control</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Yamanoor, Sai, and Srihari Yamanoor. Python Programming with Raspberry Pi, 2017, 1st
+                            edition, Packt Publishing Ltd., UK</li>
+                        <li>Donald Norris, The Internet of Things: Do-It-Yourself Projects with Arduino, Raspberry Pi,
+                            and BeagleBone Black, 2015, 1st edition, McGraw Hill Education, India</li>
+                        <li>Marco Schwartz, Home Automation with Arduino, 3rd edition, Open Home Automation 2014.
+                            Schwartz, Marco. Internet of things with arduino cookbook, 2016, 1st edition, Packt
+                            Publishing Ltd., UK</li>
+                        <li>Kooijman, Matthijs. Building Wireless Sensor Networks Using Arduino, 2015, 1st edition,
+                            Packt Publishing Ltd., UK</li>
+                    </ol>
+                </section>
+                <section id="subject-155705" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Pattern Recognition [155705]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction fundamentals and definitions, Feature vectors, Classifiers, Supervised
+                                    and Unsupervised learning, Bayesian decision theory</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Features</strong>
+                            <ul class="unit-topics">
+                                <li>Types and traits, scaling ordering, measurements, normalization, invariance, feature
+                                    properties</li>
+                                <li>Dimensionality reduction of feature space, dimensionality reduction by feature
+                                    selection, PCA, KPCA, ICA</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Parameter estimation</strong>
+                            <ul class="unit-topics">
+                                <li>Maximum likelihood estimation (MLE), least squares estimation (LSE), Method of
+                                    minimum variance & unbiased Estimation (MVUE); parameter free methods: KNN,
+                                    Clustering</li>
+                                <li>Special classifiers: linear regression, LDA, SVM, CNN</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Classifiers and learning</strong>
+                            <ul class="unit-topics">
+                                <li>Fundamentals of classifiers, Linear Classifiers, Nonlinear Classifiers. Unsupervised
+                                    and semi supervised learning: Learning from unclassified data, Characteristics
+                                    analysis of different classifiers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Clustering</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Concepts of clustering, Hierarchical agglomerative clustering, K-means
+                                    partitional clustering, semi supervised learning with expectation maximization using
+                                    labelled and unlabelled data</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Classification and Ensemble Learning
+                                Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Classification with nominal features : decision tree, random forest; classifier
+                                    independent concepts, Combinations of classifiers: boosting, voting, stacking</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Christopher Bishop, Pattern Recognition and Machine Learning, Springer, 2nd printing
+                            edition, 2011</li>
+                        <li>Richard O. Duda, Peter E. Hart, David G. Stork, Pattern Classification, John Wiley, 2nd
+                            edition, 2002</li>
+                        <li>Kevin P. Murphy, Machine Learning: A Probabilistic Perspective, The MIT Press; Illustrated
+                            edition, 2012</li>
+                        <li>S. Theodoridis, K. Koutroumbas, "Pattern Recognition", Academic Press, 4th edition, 2008
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-155706" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Sensors and Actuator Devices for IoT [155706]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Principles of sensing, classification and characteristics, Static and dynamic
+                                    parameters, Environmental Parameters (EP), Sensor Characterization</li>
+                                <li>Electromechanical Sensors: Introduction, Resistive Potentiometer, Strain Gauge,
+                                    Resistance Strain Gauge, Semiconductor Strain Gauges</li>
+                                <li>Inductive Sensors: Sensitivity and Linearity of the Sensor, Types; Capacitive
+                                    Sensors: Electrostatic Transducer, Force/Stress Sensors Using Quartz Resonators,
+                                    Ultrasonic Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Thermal and Magnetic Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Thermal Sensors: Gas Thermometric Sensors, Thermal Expansion Type Thermometric
+                                    Sensors, Acoustic Temperature Sensor, Dielectric Constant and Refractive Index
+                                    Thermosensors, Helium Low Temperature Thermometer, Nuclear and Magnetic Thermometer,
+                                    Resistance Change Type Thermometric Sensors, Junction Semiconductor Types</li>
+                                <li>Magnetic Sensors: Working Principles, Types and Characteristics, Force &
+                                    displacement Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Radiation Sensors</strong>
+                            <ul class="unit-topics">
+                                <li>Radiation Sensors: Introduction, Basic Characteristics, Types of Photoresistors
+                                    /Photodetectors, X-ray and Nuclear Radiation Sensors, Fiber Optic Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Smart Sensors & Interfacing</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction, Primary Sensors, Excitation, Amplification, Filters, Converters
+                                    (ADC/DAC), Compensation, Information Coding and Processing, Data Communication,
+                                    Standards for Smart Sensor Interface, Sensor Nodes & Automation Interfaces</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Sensors Applications</strong>
+                            <ul class="unit-topics">
+                                <li>On-board Automobile Sensors, Home Appliance Sensors, Medical Diagnostic Sensors,
+                                    Sensors for Manufacturing, Environmental Monitoring Sensors</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Actuators</strong>
+                            <ul class="unit-topics">
+                                <li>Pneumatic and Hydraulic Actuation Systems, Valves and Rotary actuators, Mechanical
+                                    Actuation Systems, Electrical Actuation Systems (Solenoids, Motors, Relays)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>D. Patranabis-Sensors and Transducers, PHI Learning Private Limited</li>
+                        <li>W. Bolton-Mechatronics, Pearson Education Limited. Reference Books</li>
+                        <li>Patranabis-Sensors and Actuators-2nd Ed., PHI, 2013</li>
+                        <li>Robert H. Bishop-The Mechatronics Handbook, 2nd Ed., Mechatronic Systems, Sensors and
+                            Actuators, fundamentals and modelling e- Resources & other digital material</li>
+                    </ol>
+                </section><!-- open electives -->
+                <section id="subject-100728" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Soft Skills and Interpersonal Communication [100728]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Self-Discovery and Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Self-Analysis: SWOT Analysis, Who am I, Attributes, Importance of Self-Confidence,
+                                    Self-Esteem</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Creative and Innovative Thinking</strong>
+                            <ul class="unit-topics">
+                                <li>Creativity: Out of Box Thinking, Lateral Thinking</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Attitude and Motivation</strong>
+                            <ul class="unit-topics">
+                                <li>Attitude: Factors Influencing Attitude, Challenges and Lessons from Attitude,
+                                    Etiquette</li>
+                                <li>Motivation: Factors of Motivation, Self-Talk, Intrinsic & Extrinsic Motivators</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Strategic Goal Setting</strong>
+                            <ul class="unit-topics">
+                                <li>Goal Setting: Wish List, SMART Goals, Blue Print for Success, Short Term, Long Term,
+                                    Life Time Goals</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Effective Time Management</strong>
+                            <ul class="unit-topics">
+                                <li>Time Management: Value of Time, Diagnosing Time Management, Weekly Planner, To Do
+                                    List, Prioritizing Work</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Interpersonal Skills and Teamwork</strong>
+                            <ul class="unit-topics">
+                                <li>Interpersonal Skills: Gratitude - Understanding the relationship between Leadership
+                                    Networking & Team work. Assessing Interpersonal Skills Situation description of
+                                    Interpersonal Skill</li>
+                                <li>Team Work - Necessity of Team Work Personally, Socially and Educationally</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Soft Skills, 2015, Career Development Centre, Green Pearl Publications</li>
+                        <li>Covey Sean, Seven Habits of Highly Effective Teens, New York, Fireside Publishers, 1998</li>
+                        <li>Carnegie Dale, How to win Friends and Influence People, New York: Simon & Schuster, 1998
+                        </li>
+                    </ol>
+                </section>
+                <section id="subject-100729" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Introduction to VLSI Design [100729]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction MOSFET, threshold voltage, current,
+                                Channel length modulation, body bias effect and short channel effects, MOS switch,
+                                MOSFET capacitances, MOSFET models for calculation- Transistors and Layout, CMOS layout
+                                elements, parasitics, wires and vias- design rules- layout design SPICE simulation of
+                                MOSFET I-V characteristics and parameter extraction</strong></li>
+                        <li><strong class="unit-title">Unit 2.0: CMOS inverter, static characteristics, noise margin,
+                                effect of process variation, supply scaling, dynamic characteristics, inverter design
+                                for a given VTC and speed, effect of input rise time and fall time, static and dynamic
+                                power dissipation, energy & power delay product, sizing chain of inverters, latch up
+                                effect- Simulation of static and dynamic characteristics, layout, post layout
+                                simulation</strong></li>
+                        <li><strong class="unit-title">Unit 3.0: Static CMOS design, Complementary CMOS, static
+                                properties, propagation delay, Elmore delay model, power consumption, low power design
+                                techniques, logical effort for transistor sizing, ratioed logic</strong></li>
+                        <li><strong class="unit-title">Unit 4.0: Pseudo NMOS inverter, DCVSL, PTL, DPTL & Transmission
+                                gate logic, dynamic CMOS design, speed and power considerations, Domino logic and its
+                                derivatives, C2MOS, TSPC registers, NORA CMOS - Course project</strong></li>
+                        <li><strong class="unit-title">Unit 5.0: Circuit design considerations of Arithmetic circuits,
+                                shifter, CMOS memory design - SRAM and DRAM</strong></li>
+                        <li><strong class="unit-title">Unit 6.0: BiCMOS logic - static and dynamic behaviour - Delay and
+                                power consumption in BiCMOS Logic</strong></li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Principles of CMOS VLSI design: a system perspective by Neil H.E. Weste and Kamran
+                            Eshraghian; Addision Wesley pub</li>
+                        <li>Digital integrated circuits by Demassa & Ciccone. Wiley pub</li>
+                        <li>Modern VLSI Design system on silicon by Wayne Wolf: Addision Wesley Longman Publisher</li>
+                        <li>Basic VLSI Design by Douglas A Pucknell & Kamran Eshraghian; PHI</li>
+                        <li>Digital Integrated Circuits: A Design Perspective by Jan M Rabaey; PHI</li>
+                    </ol>
+                </section>
+                <section id="subject-100734" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Sales and Marketing [100734]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Introduction to Sales and Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Marketing: Definition, importance, and evolution of marketing concepts</li>
+                                <li>Sales: Definition, role of sales in a business, and the relationship between sales
+                                    and marketing</li>
+                                <li>Marketing Mix (4Ps): Product, Price, Place (Distribution), and Promotion</li>
+                                <li>Consumer Behavior: Understanding consumer motivations, buying decisions, and factors
+                                    influencing purchasing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Market Analysis and Strategy</strong>
+                            <ul class="unit-topics">
+                                <li>Market Segmentation, Targeting, and Positioning (STP): Identifying target markets,
+                                    developing positioning strategies</li>
+                                <li>Market Research: Understanding the purpose of market research, types of research
+                                    methods, and data analysis</li>
+                                <li>Competitive Analysis: Identifying competitors, analyzing their strengths and
+                                    weaknesses, and developing competitive strategies</li>
+                                <li>Strategic Marketing Planning: Developing marketing plans, setting objectives, and
+                                    measuring performance</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Sales Management and Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Sales Processes and Strategies: Understanding different sales strategies, lead
+                                    generation, and sales techniques</li>
+                                <li>Sales Force Management: Recruiting, training, motivating, and managing sales
+                                    personnel</li>
+                                <li>Customer Relationship Management (CRM): Understanding the importance of CRM,
+                                    managing customer interactions, and building strong relationships</li>
+                                <li>Sales Communication and Negotiation: Developing effective communication skills,
+                                    negotiation techniques, and closing sales</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Marketing Communication and Promotion</strong>
+                            <ul class="unit-topics">
+                                <li>Advertising: Understanding different advertising media, campaign planning, and media
+                                    buying</li>
+                                <li>Sales Promotion: Understanding different types of sales promotions, couponing, and
+                                    loyalty programs</li>
+                                <li>Public Relations (PR): Building positive relationships with the public, media
+                                    relations, and crisis communication</li>
+                                <li>Digital Marketing: Understanding online marketing channels, social media marketing,
+                                    SEO, and email marketing</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Product, Branding, and Pricing Strategies</strong>
+                            <ul class="unit-topics">
+                                <li>Product and Brand Management: Developing and managing product lines, branding
+                                    strategies, and brand equity</li>
+                                <li>Pricing Strategies: Understanding different pricing methods, pricing objectives, and
+                                    pricing policies</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Distribution Channels and Ethics in Sales &
+                                Marketing</strong>
+                            <ul class="unit-topics">
+                                <li>Distribution Channels: Understanding different distribution channels, logistics, and
+                                    supply chain management</li>
+                                <li>Ethics in Sales and Marketing: Understanding ethical issues in sales and marketing,
+                                    and responsible marketing practices</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>K.S. Chandrasekar, Marketing Management Text And Cases, Tata Mcgraw- Hill Publication, New
+                            Delhi.2010</li>
+                        <li>Govindarajan, Marketing Management Concepts, Cases, Chhallenges And Trends, Prentice Hall Of
+                            India, New Delhi. 2009</li>
+                        <li>Philip Kotler, Marketing Management- Analysis Planning And Control, Prentice Hall Of India,
+                            New Delhi,</li>
+                        <li>Ramaswamy. V S & Namakumari. S, Marketing Management-Planning Implementation And Control,
+                            Macmillan Business Books, New Delhi, 2002</li>
+                        <li>Balaram Dogra & Karminder Ghuman, Rural Marketing: Concept & Cases, Tata Mcgraw- Hill
+                            Publishing Company, New Delhi, 2008</li>
+                        <li>Ravi Shanker, Services Marketing: The Indian Perspective, Excel Books, New Delhi, 2008</li>
+                    </ol>
+                </section>
+                <section id="subject-100735" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Digital Signal Processing [100735]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Discrete-time signals and systems</strong>
+                            <ul class="unit-topics">
+                                <li>Discrete time signals and systems: Sequences; representation of signals on
+                                    orthogonal basis; Representation of discrete systems using difference equations,
+                                    Sampling and reconstruction of signals - aliasing; Sampling theorem and Nyquist rate
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Z-transform</strong>
+                            <ul class="unit-topics">
+                                <li>Z-Transform, Region of Convergence, Analysis of Linear Shift Invariant systems using
+                                    z-transform, Properties of z-transform for causal signals, Interpretation of
+                                    stability in z-domain, Inverse z-transforms</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Discrete Fourier Transform</strong>
+                            <ul class="unit-topics">
+                                <li>Frequency Domain Analysis, Discrete Fourier Transform (DFT), Properties of DFT,
+                                    Convolution of signals, Fast Fourier Transform Algorithm, Parseval's Identity,
+                                    Implementation of Discrete Time Systems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: Design of Digital filters</strong>
+                            <ul class="unit-topics">
+                                <li>Design of FIR Digital filters: Window method, Park-McClellan's method. Design of IIR
+                                    Digital Filters: Butterworth, Chebyshev and Elliptic Approximations; Low-pass,
+                                    Bandpass, Band-stop and Highpass filters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Effect of finite register length in FIR filter design,
+                                Parametric and non-parametric spectral estimation. Introduction to multi-rate signal
+                                processing</strong></li>
+                        <li><strong class="unit-title">Unit 6.0: Applications of Digital Signal Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Correlation Functions and Power Spectra, Stationary Processes, Optimal filtering
+                                    using ARMA Model, Linear Mean-Square Estimation, Wiener Filter</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>S. K. Mitra, "Digital Signal Processing: A computer based approach", McGraw Hill, 2011</li>
+                        <li>A.V. Oppenheim and R. W. Schafer, "Discrete Time Signal Processing", Prentice Hall, 1989
+                        </li>
+                        <li>J. G. Proakis and D.G. Manolakis, "Digital Signal Processing: Principles, Algorithms and
+                            Applications", Prentice Hall, 1997</li>
+                        <li>L. R. Rabiner and B. Gold, "Theory and Application of Digital Signal Processing", Prentice
+                            Hall, 1992</li>
+                        <li>J. R. Johnson, "Introduction to Digital Signal Processing", Prentice Hall, 1992</li>
+                        <li>D. J. DeFatta, J. G. Lucas and W. S. Hodgkiss, "Digital Signal Processing", John Wiley &
+                            Sons, 1988</li>
+                    </ol>
+                </section>
+                <section id="subject-100736" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Open Elective: Control System [100736]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit 1.0: Discrete Representation of Continuous Systems</strong>
+                            <ul class="unit-topics">
+                                <li>Basics of Digital Control Systems. Discrete representation of continuous systems.
+                                    Sample and hold circuit. Mathematical Modelling of sample and hold circuit. Effects
+                                    of Sampling and Quantization. Choice of sampling frequency. ZOH equivalent</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 2.0: Discrete System Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Z-Transform and Inverse Z Transform for analyzing discrete time systems. Pulse
+                                    Transfer function. Pulse transfer function of closed loop systems. Mapping from
+                                    s-plane to z plane. Solution of Discrete time systems. Time response of discrete
+                                    time system</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 3.0: Stability of Discrete Time System</strong>
+                            <ul class="unit-topics">
+                                <li>Stability analysis using Jury test, Stability analysis using bilinear
+                                    transformation, Design of digital control system with dead beat response, Practical
+                                    issues with dead beat response design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 4.0: State Space Approach for discrete time systems</strong>
+                            <ul class="unit-topics">
+                                <li>State space models of discrete systems, State space analysis. Lyapunov Stability.
+                                    Controllability, reach-ability, Re-constructibility and observability analysis.
+                                    Effect of pole zero cancellation on the controllability & observability</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 5.0: Design of Digital Control System</strong>
+                            <ul class="unit-topics">
+                                <li>Design of Discrete PID Controller, Design of discrete state feedback controller.
+                                    Design of set point tracker. Design of Discrete Observer for LTI System. Design of
+                                    Discrete compensator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit 6.0: Discrete output feedback control</strong>
+                            <ul class="unit-topics">
+                                <li>Design of discrete output feedback control. Fast output sampling (FOS) and periodic
+                                    output feedback controller design for discrete time systems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>K. Ogata, "Digital Control Engineering", Prentice Hall, Englewood Cliffs, 1995</li>
+                        <li>M. Gopal, "Digital Control Engineering", Wiley Eastern, 1988</li>
+                        <li>G. F. Franklin, J. D. Powell and M. L. Workman, "Digital Control of Dynamic Systems",
+                            Addison-Wesley, 1998</li>
+                        <li>B.C. Kuo, "Digital Control System", Holt, Rinehart and Winston, 1980</li>
+                    </ol>
+                </section><!-- lab cards -->
+                <section id="subject-155701P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Deep Learning Lab [155701P]</h2>
+                    <p>Perform any 10 experiments from the following list:</p>
+                    <ul class="unit-topics">
+                        <li>Write a program to implement a single-layer perceptron for binary classification</li>
+                        <li>Build an MLP classifier using a custom forward pass and backpropagation</li>
+                        <li>Implement Backward propagation neural network</li>
+                        <li>Implement Gradient Descent, SGD, and Momentum on a simple function and plot convergence</li>
+                        <li>Write a program to perform manual convolution on an image using a custom filter (edge
+                            detection / blur)</li>
+                        <li>Build a CNN on MNIST / CIFAR-10 using PyTorch or TensorFlow</li>
+                        <li>Train, test, and report accuracy</li>
+                        <li>Use a pretrained model (VGG16 / ResNet50) and fine-tune it on a small dataset</li>
+                        <li>RNN / LSTM for Text Generation, sentiment analysis</li>
+                        <li>Implement LSTM-based text generation on a small text corpus (e.g., nursery rhymes)</li>
+                        <li>Build a Denoising Autoencoder to remove noise from images (MNIST/CIFAR-10)</li>
+                    </ul>
+                </section>
+                <section id="subject-100707" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Summer Entrepreneurship – III [100707]</h2>
+                    <p>Details for Summer Entrepreneurship – III will be provided by the department.</p>
+                </section>
+                <section id="subject-100709P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Project-I [100709P]</h2>
+                    <p>Details for Project-I will be provided by the supervisor / department.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

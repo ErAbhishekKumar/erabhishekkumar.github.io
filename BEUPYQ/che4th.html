@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>4th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">4th Semester Syllabus</h1>
+                <p class="page-subtitle">Chemical Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span>Credits Table</span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Chemical Process Technology [114401]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Heat Transfer Operation [114402]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Chemical Engineering Thermodynamics [114403]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Hazard and Risk analysis [114404]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Process Equipment Design and Drawing [114405]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Energy, Environment and Sustainability [114406]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Chemical Process Technology Lab [114401P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Heat Transfer Operation Lab [114402P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Process Equipment Design and Drawing Lab [114405P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>NPTEL-I (Open course) [114407]</td>
+                                <td colspan="3">12 Weeks</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>21</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114401" data-type="theory">Chemical Process
+                        Technology</button>
+                    <button class="tab-btn" data-target="subject-114402" data-type="theory">Heat Transfer
+                        Operation</button>
+                    <button class="tab-btn" data-target="subject-114403" data-type="theory">Chemical Engineering
+                        Thermodynamics</button>
+                    <button class="tab-btn" data-target="subject-114404" data-type="theory">Hazard and Risk
+                        analysis</button>
+                    <button class="tab-btn" data-target="subject-114405" data-type="theory">Process Equipment Design and
+                        Drawing</button>
+                    <button class="tab-btn" data-target="subject-114406" data-type="theory">Energy, Environment and
+                        Sustainability</button>
+                    <button class="tab-btn" data-target="subject-114407" data-type="theory">NPTEL-I</button>
+                </div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects</h3>
+                <div class="syllabus-tabs">
+                    <button class="tab-btn" data-target="subject-114401P" data-type="lab">Chemical Process Technology
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-114402P" data-type="lab">Heat Transfer Operation
+                        Lab</button>
+                    <button class="tab-btn" data-target="subject-114405P" data-type="lab">Process Equipment Design and
+                        Drawing Lab</button>
+                </div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-114401" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Chemical Process Technology</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Chemical Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction to process technology</li>
+                                <li>Worldwide scenario of chemical industries</li>
+                                <li>Unit operations like distillation</li>
+                                <li>Absorption</li>
+                                <li>Extraction etc</li>
+                                <li>Unit processes like sulphonation</li>
+                                <li>Hydrogenation etc</li>
+                                <li>General principles applied in chemical industry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Industrial Gases</strong>
+                            <ul class="unit-topics">
+                                <li>Preparation, properties & application of water gas</li>
+                                <li>Preparation, properties & application of coke oven gas</li>
+                                <li>Synthesis, properties, application of natural gas and LPG</li>
+                                <li>Synthesis, properties, application of oxygen and nitrogen production</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Inorganic Chemical Industries</strong>
+                            <ul class="unit-topics">
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of sulphur industry (sulphuric acid)</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of nitrogen industry (ammonia and nitric acid)</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application phosphorous industry (phosphorous, phosphoric acid, soda ash)</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of fertilizer industry (urea, ammonium nitrate)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Organic Chemicals Industry</strong>
+                            <ul class="unit-topics">
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of methanol production</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of formaldehyde production</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of ethylene production</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of acetic acid production</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Acetone and Phenol Synthesis and Production</strong>
+                            <ul class="unit-topics">
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of acetone production</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of cumene production</li>
+                                <li>Synthesis method</li>
+                                <li>Properties</li>
+                                <li>Application of phenol production</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Natural Product Industries</strong>
+                            <ul class="unit-topics">
+                                <li>Synthesis</li>
+                                <li>Properties of edible oil</li>
+                                <li>Synthesis</li>
+                                <li>Properties and application of Soap and detergent</li>
+                                <li>Synthesis</li>
+                                <li>Properties</li>
+                                <li>Application of Paints and varnishes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Dryden's Outlines of Chemical Technology, GopalRao M.and Sittig M, East-West Press Pvt Ltd,
+                            3rd Edition, ISBN:9788185938790</li>
+                        <li>Shreve's Chemical Process Industries, George T. Austin, McGraw Hill Book 5th edition.
+                            Company, ISBN:9780070571471</li>
+                        <li>Text book of Chemical Technology, Shukla S.D. and Pandey G.N., Vikas Publishing House
+                            Private, Limited, ISBN: 070690463X, 9780706904635</li>
+                        <li>Chemical Technology, I & III manuals of Chemical Technology, D. Venkteshwaralu Chemical
+                            Engineering. Ed. Dev. III Madras</li>
+                        <li>Chemical Process Technology, Moulijn J. K; Makkee M. and van Diepen A, Wiley, ISBN-10:
+                            1444320254 ISBN-13: 978-1444320251</li>
+                        <li>Perry's chemical Engineer's Handbook, Perry R. H., Green D. W. McGraw Hill, New York
+                            ISBN-10: 0071422943 ISBN-13: 978-0071422949</li>
+                    </ol>
+                </section>
+                <section id="subject-114402" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Heat Transfer Operation</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Conduction</strong>
+                            <ul class="unit-topics">
+                                <li>Basics concept of Heat Transfer</li>
+                                <li>Steady state & unsteady state heat transfer</li>
+                                <li>Concept of driving force & Fourier's law of heat transfer</li>
+                                <li>Modes of heat transfer</li>
+                                <li>Conduction</li>
+                                <li>Convention & radiation</li>
+                                <li>Concept of Thermal Conductivity</li>
+                                <li>Calculation of Thermal Conductivity for solid</li>
+                                <li>Liquid & gases</li>
+                                <li>Rate of heat transfer from plane wall</li>
+                                <li>Composite wall</li>
+                                <li>Sphere & cylinder</li>
+                                <li>Concept of Thermal Diffusivity</li>
+                                <li>Lagging of pipes</li>
+                                <li>Concept & importance of insulation</li>
+                                <li>Critical thickness of insulation</li>
+                                <li>Unsteady state conduction: Biot number</li>
+                                <li>Fourier number</li>
+                                <li>Numerical based on above topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Convection</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of convection mode of heat transfer</li>
+                                <li>Concept of heat transfer coefficient</li>
+                                <li>Derivation for individual & overall heat transfer coefficient</li>
+                                <li>Natural Convection: Introduction convection current</li>
+                                <li>Coefficient of thermal expansion</li>
+                                <li>Significance of Dimensionless number</li>
+                                <li>Dimensionless analysis</li>
+                                <li>Forced Convection: Introduction</li>
+                                <li>Thermal & hydrodynamic boundary layer</li>
+                                <li>Heat transfer in laminar & turbulent flow inside & outside tube</li>
+                                <li>Heat transfer analogies</li>
+                                <li>Reynold's Analogy</li>
+                                <li>Prandtl Analogy</li>
+                                <li>Concept of condensation</li>
+                                <li>Types & Nusselt's theory</li>
+                                <li>Heat transfer to boiling liquids & Corelations</li>
+                                <li>Film wise & dropwise condensation on vertical & horizontal surfaces</li>
+                                <li>Numerical on above topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Radiation</strong>
+                            <ul class="unit-topics">
+                                <li>Radiation mode of heat transfer</li>
+                                <li>Maxwell's electromagnetic theory</li>
+                                <li>Max Planck's theory</li>
+                                <li>Radiative properties: Absorptivity</li>
+                                <li>Transitivity</li>
+                                <li>Reflectivity</li>
+                                <li>Black body</li>
+                                <li>Spectral Black body radiation intensity</li>
+                                <li>Gray body</li>
+                                <li>Black body emission power</li>
+                                <li>Wein's displacement law</li>
+                                <li>Stephan's Boltzmann's law</li>
+                                <li>Opaque body</li>
+                                <li>Kirchhoff's Law</li>
+                                <li>Heat transfer between black bodies for finite & infinite distances</li>
+                                <li>Radiation shield</li>
+                                <li>Numerical on Radiation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Heat Exchanger</strong>
+                            <ul class="unit-topics">
+                                <li>Heat Exchanger: Concept</li>
+                                <li>Importance & classification</li>
+                                <li>Calculation of overall heat transfer coefficient for heat exchanger</li>
+                                <li>Fouling: Concept of fouling</li>
+                                <li>Reasons of fouling</li>
+                                <li>Methods to reduce fouling</li>
+                                <li>Fouling factors</li>
+                                <li>Log Mean Temperature: Concept of LMTD</li>
+                                <li>Calculation of LMTD for single pass</li>
+                                <li>Multipass</li>
+                                <li>Parallel</li>
+                                <li>Cocurrent & Counter current flow</li>
+                                <li>Concept of N.T.U</li>
+                                <li>Calculation of effectiveness for co current & counter current mode of heat transfer
+                                </li>
+                                <li>Heat Exchanger Construction</li>
+                                <li>Working</li>
+                                <li>Merits</li>
+                                <li>Demerits of Shell & Tube heat exchanger</li>
+                                <li>Double pipe heat exchanger</li>
+                                <li>Reboiler</li>
+                                <li>Plate type heat exchanger</li>
+                                <li>Fins: Concept of fins</li>
+                                <li>Fin efficiency & effectiveness</li>
+                                <li>Numerical based on above topics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Evaporators I</strong>
+                            <ul class="unit-topics">
+                                <li>Evaporation: Concept of evaporation</li>
+                                <li>Difference between evaporation & drying</li>
+                                <li>Evaporator: Capacity & economy</li>
+                                <li>Single effect & Multiple effect evaporator</li>
+                                <li>Forward feed</li>
+                                <li>Backward feed & mixed feed to evaporator</li>
+                                <li>Vapor recompression</li>
+                                <li>Mass & enthalpy balance for single effect evaporator</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Evaporators I</strong>
+                            <ul class="unit-topics">
+                                <li>Construction</li>
+                                <li>Working & application of evaporators such as: Falling film</li>
+                                <li>Thin film</li>
+                                <li>Forced circulation</li>
+                                <li>Agitated Thin film & Multiple effect evaporator</li>
+                                <li>Numerical on above topics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Process Heat Transfer, D. Q. Kern, McGraw hill, 1997, ISBN-13: 978-0-07-463217-8; ISBN-10:
+                            0-07-463217-5.</li>
+                        <li>Unit Operations of Chemical Engineering, Ma Cabe W. L., Smith J. C., Harriot P, 5th edition,
+                            McGraw Hill, 1993, ISBN: 0-07-112738-0.</li>
+                        <li>Chemical Engineering Design, R. K. Sinnot, Coulson & Richardsons, Vol 1 & 6, Elsevier
+                            Science & Technology Books, ISBN: 0-7506-6538-6.</li>
+                        <li>Heat Transfer, Holman J. P, 9th Edition, McGraw Hill, 2008., ISBN: 9780070634510,
+                            0070634513.</li>
+                    </ol>
+                </section>
+                <section id="subject-114403" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Chemical Engineering Thermodynamics</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: First Law of Thermodynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Introductory concepts of thermodynamic systems and variables</li>
+                                <li>Work</li>
+                                <li>Heat</li>
+                                <li>Internal energy</li>
+                                <li>Enthalpy</li>
+                                <li>Heat capacity</li>
+                                <li>Thermodynamic equilibrium</li>
+                                <li>Reversible and irreversible processes</li>
+                                <li>Phase rule: significance of chemical engineering thermodynamics</li>
+                                <li>First law of thermodynamics for flow and non-flow processes</li>
+                                <li>Calculation of heat and work for various types of processes</li>
+                                <li>Numerical</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Second Law of Thermodynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Second Law of Thermodynamics</li>
+                                <li>Concepts of heat engine</li>
+                                <li>Heat pump and refrigerator</li>
+                                <li>Carnot principle and carnot cycle</li>
+                                <li>Clausius Inequality</li>
+                                <li>Concept of entropy and estimation of entropy change of various processes</li>
+                                <li>Third law of Thermodynamics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Volumetric Properties of Fluid: P-V-T behavior of pure
+                                fluids</strong>
+                            <ul class="unit-topics">
+                                <li>Equation of state for real gases: van der waals EOS</li>
+                                <li>Redlich-Kwong</li>
+                                <li>Redlich-Kwong-Soave EOS and virial equation of state</li>
+                                <li>Principle of corresponding states and generalized compressibility charts</li>
+                                <li>Thermodynamic properties of pure fluids</li>
+                                <li>Maxwell's equations</li>
+                                <li>Joule-thomson Effect</li>
+                                <li>Enthalpy and Entropy departure functions (van der waals and redlich-Kwong EOS)</li>
+                                <li>Application of the laws of thermodynamics to flow process and refrigeration</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Properties of Mixture</strong>
+                            <ul class="unit-topics">
+                                <li>Properties of ideal mixtures and solutions</li>
+                                <li>Non-idealities of solutions and mixtures</li>
+                                <li>Partial molar properties</li>
+                                <li>Chemical potential</li>
+                                <li>Activity and activity coefficients</li>
+                                <li>Gibbs-duhem equation</li>
+                                <li>Vapour-liquid equilibrium in ideal and non-ideal solutions</li>
+                                <li>Estimation of activity coefficients using margules equations</li>
+                                <li>Vanderwall equation and Wilson equation</li>
+                                <li>Introduction to Vanderwall equation</li>
+                                <li>UNIQUAC equation and UNIFAC method</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Chemical Reaction Equilibrium & Solution
+                                Thermodynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of chemical reaction equilibrium</li>
+                                <li>The standard Gibbs free energy change and equilibrium constant</li>
+                                <li>Effect of temperature and pressure</li>
+                                <li>Other factors affecting equilibrium conversion</li>
+                                <li>Homogeneous liquid phase reactions</li>
+                                <li>Heterogeneous reactions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Solution Thermodynamics</strong>
+                            <ul class="unit-topics">
+                                <li>Fugacity & fugacity coefficient</li>
+                                <li>Pure species & species in solution</li>
+                                <li>Excess properties</li>
+                                <li>Excess gibbs free energy and activity coefficient</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Introduction to Chemical Engineering Thermodynamics, Smith J.M and Van Ness H.C; McGraw
+                            Hill, Seventh Edition ISBN: 978-0070145870</li>
+                        <li>Chemical Engineering Thermodynamics, Rao Y.V.C University Press, ISBN: 978-8173710483</li>
+                        <li>A textbook of Chemical Engineering Thermodynamics, K.V Narayanan, PHI learning. Second
+                            Edition ISBN: 978-8120347472</li>
+                        <li>Fundamentals of Engineering Thermodynamics, M.J. Moran, H.N. Shapiro, D.D. Boettner, M.B.
+                            Bailey, Wiley, 2018, 9th Edition ISBN: 978-1118412930</li>
+                        <li>Introductory Chemical Engineering Thermodynamics, J. Richard Elliot and Carl T. Lira
+                            Prentice Hall, 2012, 2nd Edition ISBN: 978-0136068549</li>
+                    </ol>
+                </section>
+                <section id="subject-114404" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Hazard and Risk analysis</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Industrial Safety</strong>
+                            <ul class="unit-topics">
+                                <li>Importance of safety in chemical industries</li>
+                                <li>Concept of safety</li>
+                                <li>Hazard and risk</li>
+                                <li>Types of accidents in industries</li>
+                                <li>Factors responsible for different types of accidents in industry</li>
+                                <li>Direct & indirect effect of accidents</li>
+                                <li>Different types of protective equipments</li>
+                                <li>Safety rules/regulations for accidents/incidents preventions</li>
+                                <li>Awareness of reactive chemicals hazards</li>
+                                <li>Safety in plant startup & shut down</li>
+                                <li>Different color coding in pipeline</li>
+                                <li>Safety for workers in chemical industries</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Industrial Fire & Explosion</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of Fire & Explosion</li>
+                                <li>Differentiate between fire & explosion</li>
+                                <li>Factor responsible for fire & explosion</li>
+                                <li>Classification of Fire</li>
+                                <li>Concept of fire triangle</li>
+                                <li>Flammability characteristics</li>
+                                <li>Autoignition</li>
+                                <li>Electrostatic ignition</li>
+                                <li>Autooxidation</li>
+                                <li>Types of explosions</li>
+                                <li>Detonation</li>
+                                <li>Deflagration</li>
+                                <li>Confined & unconfined explosion</li>
+                                <li>Concept of Vapor cloud explosion</li>
+                                <li>Boiling liquid</li>
+                                <li>Boiling liquid expanding vapor explosion</li>
+                                <li>Fire extinguisher & Hydrants: Types</li>
+                                <li>Installation</li>
+                                <li>Operating procedure and application</li>
+                                <li>Inerting & Purging methods</li>
+                                <li>Control of Static electricity</li>
+                                <li>Dip pipe system</li>
+                                <li>Grounding</li>
+                                <li>Room ventilation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Industrial Toxic Release & Relief System</strong>
+                            <ul class="unit-topics">
+                                <li>Toxic gases from industry</li>
+                                <li>Biological effects of toxic gases on human health</li>
+                                <li>Injection & elimination of toxic gases from biological system</li>
+                                <li>Storage & handling of flammable & toxic releases</li>
+                                <li>Source model & Dispersion model for toxic release</li>
+                                <li>Factors affecting on dispersion</li>
+                                <li>Equipment/ system (Deep Dry Scrubber System, Toxic gas detection system, Exhaust
+                                    flow alarm system) for prevention of release of toxic gases</li>
+                                <li>Importance of relief system</li>
+                                <li>Type of relief system</li>
+                                <li>Location of relief system</li>
+                                <li>Safety features of pressure relief system</li>
+                                <li>Application of relief system in industries</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Hazards identification method &</strong>
+                            <ul class="unit-topics">
+                                <li>Hazards identification methods such as HAZOP (Hazard & Operability Analysis)</li>
+                                <li>HAZAN (Hazard Analysis)</li>
+                                <li>Hazard analysis: Process Hazards survey & checklist</li>
+                                <li>Safety Audit: Importance</li>
+                                <li>Procedure & committee for safety audit</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Risk assessment</strong>
+                            <ul class="unit-topics">
+                                <li>Risk assessment technique: Reactive approach & Proactive approach Event tree & fault
+                                    tree analysis with numerical</li>
+                                <li>Maximum Credible Accident Analysis (MCAA)</li>
+                                <li>Quantative Risk Assessment (QRA)</li>
+                                <li>Advantages & disadvantages of assessment methods</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Investigation of Chemical Accidents</strong>
+                            <ul class="unit-topics">
+                                <li>Accident investigation: Concept</li>
+                                <li>Steps in accident investigation</li>
+                                <li>Learning from accidents: Case studies: Bhopal Gas Tragedy</li>
+                                <li>Flixborough England</li>
+                                <li>Seveso Italy</li>
+                                <li>Preventative measures to mitigate the accidents</li>
+                                <li>Safety: Laws & Regulation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Chemical Process Safety: Fundamentals with Applications, Daniel A. Crowl, Joseph F. Louvar,
+                            Pearson Education, 2001, 9780132440554.</li>
+                        <li>Chemical Process Safety, Learning from Case Histories, Roy E. Sandler's, Butterworth, Fourth
+                            Editon ISBN 978-0-12-801425-7.</li>
+                        <li>Hazards in Chemical Units, Pandya C. L., Oxford & IBH Publishing Co Pvt.Ltd 1989, ISBN
+                            8120402421.</li>
+                        <li>Lees,s Loss Prevention in Process Industries. Vol 1,2 & 3, Lees F. P. Sam Mannan,
+                            Butterworth-Heinemann Fourth Edition 2012, ISBN 978-0123971890.</li>
+                    </ol>
+                </section>
+                <section id="subject-114405" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Process Equipment Design and Drawing</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Introduction to Chemical Process Equipment
+                                Design</strong>
+                            <ul class="unit-topics">
+                                <li>Basic consideration in process equipment design</li>
+                                <li>Nature of process equipment</li>
+                                <li>Equipment classification & selection</li>
+                                <li>Material of construction for chemical process equipment</li>
+                                <li>Standards</li>
+                                <li>Codes & their significance</li>
+                                <li>Design preliminaries</li>
+                                <li>Equipment Inspection and Non- destructive methods</li>
+                                <li>Process flow diagrams</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Pressure Vessel</strong>
+                            <ul class="unit-topics">
+                                <li>Type of pressure vessels</li>
+                                <li>Code & standard for pressure vessels (IS: 2825:1969)</li>
+                                <li>Pressure vessel subjected to internal pressure</li>
+                                <li>Complete design of cylindrical pressure vessel (study, Shell, Head, nozzles, Flanged
+                                    joints)</li>
+                                <li>Theories of failure</li>
+                                <li>Constructional method of high- Pressure vessels</li>
+                                <li>Design of multi layered high pressure vessels (stress distribution diagram)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Reaction Vessel and Agitators</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of reaction vessels</li>
+                                <li>Types of jackets& design of jackets</li>
+                                <li>Types of agitators & their application</li>
+                                <li>Components of agitation system</li>
+                                <li>Power requirement of agitators</li>
+                                <li>System which includes design of shaft based on equivalent bending moment and
+                                    critical speed</li>
+                                <li>Design of blades & blade assembly</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Heat Exchangers</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of heat exchangers</li>
+                                <li>Design of shell and tube heat exchanger (U-tube and fixed tube sheet) IS: 4503</li>
+                                <li>TEMA standards (shell, Tube, Tube sheets, Channel and channel cover, Flanged joints)
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Evaporators</strong>
+                            <ul class="unit-topics">
+                                <li>Classification of evaporators</li>
+                                <li>Design of standard vertical evaporator with design of calendria and tube</li>
+                                <li>Flange evaporator drums and heads</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Tall Column, Storage Vessel and Supports</strong>
+                            <ul class="unit-topics">
+                                <li>Basic features of columns</li>
+                                <li>Stresses in column shell</li>
+                                <li>Shell thickness determination at various heights</li>
+                                <li>Study of type of column internals</li>
+                                <li>Study of various types of storage vessels and application</li>
+                                <li>Various types of roofs used for storage vessels</li>
+                                <li>Calculation of variation in thickness with height only</li>
+                                <li>Introduction & classification of support (Study)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Process Equipment Design, M.V. Joshi, Macmillan India ISBN-139780333924181</li>
+                        <li>Process Equipment Vessel Design, E. Brownell and Edwin, H. Young, John Wiley, New York 1963.
+                        </li>
+                        <li>Chemical Engineering Design Volume 6, J.M Coulson, J.F. Richardson Pregamovr press,
+                            International edition 1989, Volume 6</li>
+                        <li>Introduction to Chemical Equipment Design- Mechanical aspects, B.C. Bhattacharya, CBS
+                            Publications ISBN-10 : 9788123909455 ISBN-13 : 978-8123909455</li>
+                        <li>Chemical Engineering Design, Ray Sinnott and Gavin Towler, Elsevier, Butterworth- Heinemann
+                            Publications, Fifth edition ISBN: 9780080942490</li>
+                    </ol>
+                </section>
+                <section id="subject-114406" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Energy, Environment and Sustainability</h2>
+                    <ul>
+                        <li><strong class="unit-title">Unit-1.0: Ecosystem and Biodiversity</strong>
+                            <ul class="unit-topics">
+                                <li>Ecosystem definition</li>
+                                <li>Types aquatic and terrestrial ecosystem</li>
+                                <li>Structure of a basic ecosystem</li>
+                                <li>Food chain and food web</li>
+                                <li>Cycles in ecosystem water</li>
+                                <li>Carbon</li>
+                                <li>Nitrogen</li>
+                                <li>Sulphur and phosphorus</li>
+                                <li>Biodiversity definition</li>
+                                <li>Types-genetic</li>
+                                <li>Species and ecosystem biodiversity</li>
+                                <li>Threats -Habitat loss</li>
+                                <li>Poaching of wild life</li>
+                                <li>Man-wild life conflicts-endangered and endemic species of India</li>
+                                <li>Conservation of biodiversity</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-2.0: Sustainable Energy Sources</strong>
+                            <ul class="unit-topics">
+                                <li>Sustainable/ Renewable energy sources solar energy</li>
+                                <li>Wind energy</li>
+                                <li>Small hydro energy</li>
+                                <li>Bio energy</li>
+                                <li>Geothermal</li>
+                                <li>And new energy sources hydrogen energy</li>
+                                <li>Ocean energy and tidal energy</li>
+                                <li>Definition of energy audit</li>
+                                <li>Energy conservation</li>
+                                <li>Energy efficiency and energy management (definition only with one/two examples)</li>
+                                <li>Solar Energy (i) Solar thermal energy conversionprinciple and applications solar
+                                    water heater</li>
+                                <li>Solar dryers</li>
+                                <li>Solar stills distillation</li>
+                                <li>Solar cooker</li>
+                                <li>Solar ponds</li>
+                                <li>(ii) PV system energy conversionprinciple</li>
+                                <li>Solar cell technologies</li>
+                                <li>Thin film generations</li>
+                                <li>Solar cell</li>
+                                <li>Unit-</li>
+                                <li>Array</li>
+                                <li>Series parallel combinations and operations</li>
+                                <li>Applications standalone</li>
+                                <li>SPV water pump</li>
+                                <li>Wind Energy</li>
+                                <li>Wind plant and its parts</li>
+                                <li>Types horizontal and vertical axis</li>
+                                <li>Principle of harnessing wind energy</li>
+                                <li>Advantages and challenges of harnessing wind energy</li>
+                                <li>Small hydro energy - Principle</li>
+                                <li>Types-Mini</li>
+                                <li>Micro and Pico</li>
+                                <li>Advantages and disadvantages</li>
+                                <li>Biomass -biomass energy sources and their energy content</li>
+                                <li>Biological conversion technologies -thermo-chemical conversion</li>
+                                <li>Bio-chemical conversion and oil extraction</li>
+                                <li>Biogas production</li>
+                                <li>Types of biogas plant- floating (gobar gas) and fixed type</li>
+                                <li>New Energy Sources: hydrogen energy</li>
+                                <li>Geothermal</li>
+                                <li>Ocean tidal and wave energy</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-3.0: Environmental Pollution</strong>
+                            <ul class="unit-topics">
+                                <li>Environment pollution air</li>
+                                <li>Water</li>
+                                <li>Noise and soil</li>
+                                <li>Air pollution- sources of air pollution- chemical</li>
+                                <li>Photochemical</li>
+                                <li>Greenhouse effect</li>
+                                <li>Ozone layer depletion and acid rain</li>
+                                <li>Air pollutants classification-primary and secondary pollutants</li>
+                                <li>Adverse effects of air pollution on human</li>
+                                <li>Plant and animal</li>
+                                <li>Air monitoring system and air pollutioncontrol</li>
+                                <li>Water pollution sources of water pollution</li>
+                                <li>Adverse effects of water pollution</li>
+                                <li>Control of water pollution</li>
+                                <li>Physical and chemical standard of domestic water as per indianstandard</li>
+                                <li>Sound Pollution causes</li>
+                                <li>Controlling measures</li>
+                                <li>Measurement of sound pollution (deciblage)</li>
+                                <li>Industrial and non industrial</li>
+                                <li>Soil Pollution soil profile</li>
+                                <li>Pollutants in soil</li>
+                                <li>Their adverse effects</li>
+                                <li>Controlling measures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-4.0: Climate Change</strong>
+                            <ul class="unit-topics">
+                                <li>Impact of climate change</li>
+                                <li>Factor contributing to climate change</li>
+                                <li>Global warming causes and effect</li>
+                                <li>Comparison of climate change with global warming</li>
+                                <li>Action plan on climate change- India</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-5.0: Sustainable Development</strong>
+                            <ul class="unit-topics">
+                                <li>Concept of sustainability</li>
+                                <li>Social</li>
+                                <li>Environmental and economic aspect of sustainability</li>
+                                <li>Origins of sustainable development: definition</li>
+                                <li>Evolution and principles</li>
+                                <li>Brundtl and report</li>
+                                <li>Sustainable development goals (SDGs)</li>
+                                <li>Strategies for sustainable development</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Unit-6.0: Sustainability Practices</strong>
+                            <ul class="unit-topics">
+                                <li>Environment management system and planning</li>
+                                <li>Environment protection acts</li>
+                                <li>Legislation and laws</li>
+                                <li>Zero waste and R concept</li>
+                                <li>Circular economyenvironmental management standards</li>
+                                <li>ISO 14000 series</li>
+                                <li>Material life cycle analysis (LCA)</li>
+                                <li>Scope and goal</li>
+                                <li>Bio-mimicking</li>
+                                <li>Environment impact assessment (EIA)</li>
+                                <li>Procedures of EIA in India</li>
+                                <li>Energy cycles- carbon cycle</li>
+                                <li>Emission and sequestration</li>
+                                <li>Zero carbon foot-print building for sustainable construction</li>
+                                <li>Green engineering: sustainable urbanization- socio- economic and technological
+                                    change</li>
+                                <li>Sustainable habitat-(i)Green buildings</li>
+                                <li>(ii) Green and sustainable materials -5R concept</li>
+                                <li>(iii) Sustainable/green transports</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books</h3>
+                    <ol>
+                        <li>Ecology and Control of the Natural Environment, Izrael, Y.A., Kluwer Academic Publisher,
+                            eBook ISBN: 978-94-011-3390-6.</li>
+                        <li>Renewable Energy Sources and Emerging Technologies, Kothari, D.P. Singal, K.C., Ranjan,
+                            Rakesh, PHI Learning, New Delhi, 2009, ISBN-13-978-8120344709</li>
+                        <li>Green Technologies and Environmental Sustainability, Singh, Ritu, Kumar, Sanjeev, Springer
+                            International Publishing, 2017 eBook ISBN 978-3-319-50654-8.</li>
+                        <li>Coping with Natural Hazards: Copyright content of A.p.n.a B.E.U, K. S. Valadia Orient Longman, ISBN-
+                            10:8125027351, ISBN-13: 978-8125027355.</li>
+                        <li>Introduction to Engineering and Environment, Edward S. Rubin McGraw Hill Publications
+                            ISBN-10: 0071181857, ISBN-13: 978-0071181853.</li>
+                        <li>Environmental Science, Subrat Roy, Khanna Book Publishing Co. (P) Ltd., ISBN- 978:
+                            93-91505-65-3.</li>
+                    </ol>
+                </section>
+                <section id="subject-114407" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">NPTEL-I (Open Course)</h2>
+                    <ul>
+                        <li><strong class="unit-title">12 Weeks (3 Credits)</strong>
+                            <ul class="unit-topics">
+                                <li>NPTEL (Open Course) Guidelines: NPTEL (Open Course) should be taken from the course
+                                    other than core subjects of the branch.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section id="subject-114401P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Chemical Process Technology Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten experiments</h3>
+                    <ol>
+                        <li>Preparation of soap from given oil sample.</li>
+                        <li>Preparation of the alum from given raw materials.</li>
+                        <li>Preparation of thiokolrubber from given raw materials.</li>
+                        <li>Preparation of rubber ball from rubber latex at laboratory scale.</li>
+                        <li>Preparation of p-Bromonitrobenzene from Bromobenzene at laboratory scale.</li>
+                        <li>Preparation of detergent from given sample</li>
+                        <li>Preparation of biodiesel from vegetable oil sample.</li>
+                        <li>Preparation of adhesive from given sample.</li>
+                        <li>Preparation of food product from given sample.</li>
+                        <li>Preparation of hand sanitizer from given sample.</li>
+                        <li>Determine % of essential oils extracted from given sample.</li>
+                        <li>Preparation of phenyl from given sample.</li>
+                        <li>Preparation of phenol-formaldehyde (P-F) resin from given sample.</li>
+                        <li>Preparation of urea-formaldehyde (U-F) resin.</li>
+                    </ol>
+                </section>
+                <section id="subject-114402P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Heat Transfer Operation Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten experiments</h3>
+                    <ol>
+                        <li>Determination of thermal conductivity of metal rod.</li>
+                        <li>Determination of thermal conductivity of liquid.</li>
+                        <li>Determination of thermal conductivity of insulating materials</li>
+                        <li>Determination of thermal conductivity of composite wall.</li>
+                        <li>Determination of heat transfer coefficient for natural convention</li>
+                        <li>Determination of heat transfer coefficient for forced convention.</li>
+                        <li>Determination heat transfer coefficient for Drop wise condensation.</li>
+                        <li>Determination heat transfer coefficient for film wise condensation.</li>
+                        <li>Determination of emissivity for given material.</li>
+                        <li>Determine Steafan Boltzmann's constant</li>
+                        <li>Determination of overall heat transfer coefficient for Shell & Tube heat exchanger for Co-
+                            current flow.</li>
+                        <li>Determination of overall heat transfer coefficient for Shell & Tube heat exchanger for
+                            Counter- current flow.</li>
+                        <li>Determination of overall heat transfer coefficient for Double pipe heat exchanger for
+                            Counter- current flow.</li>
+                        <li>Design heat exchanger using given software e.g. CAD</li>
+                        <li>Determination of efficiency of given fin.</li>
+                        <li>Determination of overall heat transfer coefficient of evaporator.</li>
+                        <li>Design evaporator using given software.</li>
+                    </ol>
+                </section>
+                <section id="subject-114405P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Process Equipment Design and Drawing Lab</h2>
+                    <h3 class="sub-heading lab-heading">Perform any ten experiments</h3>
+                    <ol>
+                        <li>Draw non-destructive testing.</li>
+                        <li>Design pressure vessel for given parameter.</li>
+                        <li>Design high pressure vessel for given parameter.</li>
+                        <li>Design reaction vessel for given parameter.</li>
+                        <li>Design agitator for given reaction vessels.</li>
+                        <li>Design of heat exchanger for given parameter.</li>
+                        <li>Design of evaporator for given parameter.</li>
+                        <li>Design tall column for given parameter.</li>
+                        <li>Design storage tank for given parameter.</li>
+                        <li>Draw different supports for given vessels.</li>
+                        <li>Draw process flow diagram for given process.</li>
+                        <li>Draw piping instrumentation diagram</li>
+                        <li>Draw plant layout/Equipment layout.</li>
+                        <li>Draw any one equipment using software like AUTOCAD/EDRAW etc.</li>
+                    </ol>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

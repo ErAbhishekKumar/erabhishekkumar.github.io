@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>6th Semester Syllabus</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
+    <link rel="stylesheet" href="portal-theme.css">
+    <link rel="stylesheet" href="home-navigation.css">
+</head>
+
+<body>
+    <div class="app" role="application" aria-label="Abhi PYQ - Syllabus">
+        <header class="topbar" aria-label="Top bar">
+            <div class="brand">
+                <div class="brand-logo"><img src="img/AbhiPYQ.jpg" alt="Abhi PYQ logo"></div>
+                <div class="brand-name">Abhi PYQ</div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">6th Semester Syllabus</h1>
+                <p class="page-subtitle">Electronics & Communication Engineering</p>
+            </div>
+            <section class="info-card">
+                <h2 id="credits-toggle"><span> Credits Table </span><svg class="chevron-icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></h2>
+                <div id="credits-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">Course Title</th>
+                                <th>L</th>
+                                <th>T</th>
+                                <th>P</th>
+                                <th>Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="theory-row">
+                                <td>Biology For Engineers [100601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Computer Organization And Architecture [104601]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Digital Communication [104602]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+                            <tr class="theory-row">
+                                <td>Electronics Instruments And Measurement [104604]</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><strong>4</strong></td>
+                            </tr>
+
+                            <tr class="theory-row">
+                                <td>Program Elective- I [1046xx]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Moocs / Swayam / Nptel Courses -2 [100604]</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Workshop/Heads On Training/Soft Skill [100605]</td>
+                                <td>3</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Digital Communication Lab [104602P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="lab-row">
+                                <td>Electronics Instruments And Measurement Lab [104604P]</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL</strong></td>
+                                <td colspan="3"></td>
+                                <td><strong>21</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="info-card" id="filter-controls">
+                <h3 class="sub-heading theory-heading" style="margin-top: 0;">Theory Subjects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100601"
+                        data-type="theory">Biology For Engineers</button><button class="tab-btn"
+                        data-target="subject-104602" data-type="theory">Digital Communication</button><button
+                        class="tab-btn" data-target="subject-104601" data-type="lab">Computer Organization And
+                        Architecture</button><button class="tab-btn" data-target="subject-104604"
+                        data-type="theory">Electronics Instruments And
+                        Measurement</button><button class="tab-btn" data-modal-trigger="elective-modal"
+                        data-type="theory" data-modal-title="Program Electives - I"
+                        data-modal-options='[ {"label": "Digital CMOS VLSI Design", "target": "subject-cmos-vlsi", "btn-id": "btn-104709"}, {"label": "Digital Image and Video Processing", "target": "subject-image-video", "btn-id": "btn-104710"}, {"label": "Scientific Computing", "target": "subject-scientific", "btn-id": "btn-104711"} ]'>
+                        Program Electives - I </button></div>
+                <h3 class="sub-heading lab-heading" style="margin-top: 20px;">Lab Subjects & Projects</h3>
+                <div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100604" data-type="theory">Moocs
+                        / Swayam / Nptel Courses -2</button><button class="tab-btn" data-target="subject-104602P"
+                        data-type="lab">Digital Communication Lab</button><button class="tab-btn"
+                        data-target="subject-104604P" data-type="lab">Electronics Instruments And Measurement
+                        Lab</button><button class="tab-btn" data-target="subject-100605" data-type="lab">Workshop/Heads
+                        On Training/Soft Skill</button></div>
+            </section>
+            <div id="syllabus-content">
+                <section id="subject-100601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Biology For Engineers [100601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To Convey That Biology Is As Important A Scientific Discipline As
+                                    Mathematics, Physics And Chemistry</li>
+                                <li>Bring Out The Fundamental Differences Between Science And Engineering By Drawing A
+                                    Comparison Between Eye And Camera, Bird Flying And Aircraft</li>
+                                <li>Mention The Most Exciting Aspect Of Biology As An Independent Scientific Discipline
+                                </li>
+                                <li>Why Do We Need To Study Biology</li>
+                                <li>Discuss How Biological Observations Of 18th Century That Lead To Major Discoveries
+                                </li>
+                                <li>Examples From Brownian Motion And The Origin Of Thermodynamics By Referring To The
+                                    Original Observation Of Robert Brown And Julius Mayor</li>
+                                <li>These Examples Will Highlight The Fundamental Importance Of Observations In Any
+                                    Scientific Inquiry</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Classification</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To Convey That Classification Per Se Is Not What Biology Is All About</li>
+                                <li>The Underlying Criterion, Such As Morphological, Biochemical Or Ecological Be
+                                    Highlighted</li>
+                                <li>Hierarchy Of Life Forms At Phenomenological Level</li>
+                                <li>A Common Thread Weaves This Hierarchy Classification</li>
+                                <li>Discuss Classification Based On (A) Cellularity- Unicellular Or Multicellular (B)
+                                    Ultrastructure- Prokaryotes Or Eukaryotes</li>
+                                <li>(C) Energy And Carbon Utilization -Autotrophs, Heterotrophs, Lithotrophs (D) Ammonia
+                                    Excretion - Ammonotelic, Uricotelic, Ureotelic</li>
+                                <li>(E) Habitat- Aquatic Or Terrestrial (E) Molecular Taxonomy- Three Major Kingdoms Of
+                                    Life</li>
+                                <li>A Given Organism Can Come Under Different Categories Based On Classification</li>
+                                <li>Model Organisms For The Study Of Biology Come From Different Groups</li>
+                                <li>E.Coli, S.Cerevisiae, D. Melanogaster, C. Elegance, A. Thaliana, M. Musculus</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Genetics</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To Convey That Genetics Is To Biology What Newton's Laws Are To Physical
+                                    Sciences</li>
+                                <li>Mendel's Laws, Concept Of Segregation And Independent Assortment</li>
+                                <li>Concept Of Allele</li>
+                                <li>Gene Mapping, Gene Interaction, Epistasis</li>
+                                <li>Meiosis And Mitosis Be Taught As A Part Of Genetics</li>
+                                <li>Emphasis To Be Give Not To The Mechanics Of Cell Division Nor The Phases But How
+                                    Genetic Material Passed From Parent To Offspring</li>
+                                <li>Concepts Of Recessiveness And Dominance</li>
+                                <li>Concept Of Mapping Of Phenotype To Genes</li>
+                                <li>Discuss About The Single Gene Disorders In Humans</li>
+                                <li>Discuss The Concept Of Complementation Using Human Genetics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Biomolecule</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To Convey That All Forms Of Life Has The Same Building Blocks And Yet The
+                                    Manifestations Are As Diverse As One Can Imagine Molecules Of Life</li>
+                                <li>In This Context Discuss Monomeric Units And Polymeric Structures</li>
+                                <li>Discuss About Sugars, Starch And Cellulose</li>
+                                <li>Amino Acids And Proteins</li>
+                                <li>Nucleotides And Dna/Rna</li>
+                                <li>Two Carbon Units And Lipids</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Enzymes</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: To Convey That Without Catalysis Life Would Not Have Existed On Earth
+                                    Enzymology</li>
+                                <li>How To Monitor Enzyme Catalyzed Reactions</li>
+                                <li>How Does An Enzyme Catalyzed Reactions</li>
+                                <li>Enzyme Classification</li>
+                                <li>Mechanism Of Enzyme Action</li>
+                                <li>Discuss At Least Two Examples</li>
+                                <li>Enzyme Kinetics And Kinetic Parameters</li>
+                                <li>Why Should We Know These Parameters To Understand Biology</li>
+                                <li>Rna Catalysis</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Information Transfer</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: The Molecular Basis Of Coding And Decoding Genetic Information Is Universal
+                                    Molecular Basis Of Information Transfer</li>
+                                <li>Dna As A Genetic Material</li>
+                                <li>Hierarchy Of Dna Structure- From Single Stranded To Double Helix To Nucleosomes</li>
+                                <li>Concept Of Genetic Code</li>
+                                <li>Universality And Degeneracy Of Genetic Code</li>
+                                <li>Define Gene In Terms Of Complementation And Recombination</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Macromolecular Analysis</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: How To Analyze Biological Processes At The Reductionistic Level</li>
+                                <li>Proteins- Structure And Function</li>
+                                <li>Hierarchy In Protein Structure</li>
+                                <li>Primary Secondary, Tertiary And Quaternary Structure</li>
+                                <li>Proteins As Enzymes, Transporters, Receptors And Structural Elements</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 8: Metabolism</strong>
+                            <ul class="unit-topics">
+                                <li>Purpose: The Fundamental Principles Of Energy Transactions Are The Same In Physical
+                                    And Biological World</li>
+                                <li>Thermodynamics As Applied To Biological Systems</li>
+                                <li>Exothermic And Endothermic Versus Endergonic And Exergonic Reactions</li>
+                                <li>Concept Of Keq And Its Relation To Standard Free Energy</li>
+                                <li>Spontaneity</li>
+                                <li>Atp As An Energy Currency</li>
+                                <li>This Should Include The Breakdown Of Glucose To Co2 + H2o (Glycolysis And Krebs
+                                    Cycle) And Synthesis Of Glucose From Co2 And H2o (Photosynthesis)</li>
+                                <li>Energy Yielding And Energy Consuming Reactions</li>
+                                <li>Concept Of Energy Charge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 9: Microbiology</strong>
+                            <ul class="unit-topics">
+                                <li>Concept Of Single Celled Organisms</li>
+                                <li>Concept Of Species And Strains</li>
+                                <li>Identification And Classification Of Microorganisms</li>
+                                <li>Microscopy</li>
+                                <li>Ecological Aspects Of Single Celled Organisms</li>
+                                <li>Sterilization And Media Compositions</li>
+                                <li>Growth Kinetics</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 10A: Plant Physiology</strong>
+                            <ul class="unit-topics">
+                                <li>Transpiration</li>
+                                <li>Mineral Nutrition</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 10B: Ecology</strong>
+                            <ul class="unit-topics">
+                                <li>Ecosystems: Components, Types, Flow Of Matter And Energy In An Ecosystem</li>
+                                <li>Community Ecology- Characteristics, Frequency, Life Forms, And Biological Spectrum
+                                </li>
+                                <li>Ecosystem Structure- Biotic And Abiotic Factors, Food Chain, Food Web, Ecological
+                                    Pyramids</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Text Books:</h3>
+                    <ol>
+                        <li>Biology: A Global Approach: Campbell, N. A.; Reece, J. B.; Urry, Lisa; Cain, M, L.;
+                            Wasserman, S. A.; Minorsky, P. V.; Jackson, R. B. Pearson Education Ltd</li>
+                        <li>Outlines Of Biochemistry, Conn, E.E; Stumpf, P.K; Bruening, G; Doi, R.H., John Wiley And
+                            Sons</li>
+                        <li>Principles Of Biochemistry (V Edition), By Nelson, D. L.; And Cox, M. M.W.H. Freeman And
+                            Company</li>
+                        <li>Molecular Genetics (Second Edition), Stent, G. S.; And Calendar, R.W.H. Freeman And Company,
+                            Distributed By Satish Kumar Jain For Cbs Publisher</li>
+                        <li>Microbiology, Prescott, L.M J.P. Harley And C.A. Klein 1995. 2nd Edition Wm, C. Brown
+                            Publishers</li>
+                    </ol>
+                </section>
+                <section id="subject-104601" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Computer Organization And Architecture [104601]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Computer Arithmetic</li>
+                                <li>Instruction Sets</li>
+                                <li>Introduction To Computer Organization</li>
+                                <li>Cpu Design</li>
+                                <li>Micro Programmed Control: Control Memory, Address Sequencing, Micro Programming,
+                                    Sequencing And Execution Of Microinstructions</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Memory System</strong>
+                            <ul class="unit-topics">
+                                <li>Hierarchical Memory Structure</li>
+                                <li>Cache Memories</li>
+                                <li>Set Associative Memory</li>
+                                <li>Virtual Memory</li>
+                                <li>Paging</li>
+                                <li>Segmentation</li>
+                                <li>Input-Output Inter- Face</li>
+                                <li>Asynchronous Data Transfer</li>
+                                <li>Programmed I/O</li>
+                                <li>Interrupts</li>
+                                <li>Direct Memory Access</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Input-Output Organization</strong>
+                            <ul class="unit-topics">
+                                <li>Basic Input/Output Structure Of Computers</li>
+                                <li>Serial And Parallel Communications</li>
+                                <li>Asynchronous Data Communication</li>
+                                <li>Programmed I/O</li>
+                                <li>Interrupt Driven I/O</li>
+                                <li>Interrupt Controller</li>
+                                <li>Dma</li>
+                                <li>Device Drivers</li>
+                                <li>Buses</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Introduction To Parallel Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Evolution Of Computer Systems (Risc Vs. Cisc)</li>
+                                <li>Parallelism In Uniprocessor Systems</li>
+                                <li>Architectural Classification Schemes</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Principles Of Pipelining And Vector Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Pipeline Strategy</li>
+                                <li>Pipeline Performance</li>
+                                <li>Controls And Data Paths</li>
+                                <li>Overlapped Parallelism</li>
+                                <li>Principles Of Designing Pipelined Processors</li>
+                                <li>Vector Processing Requirements</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Text Books:</h3>
+                    <ol>
+                        <li>Computer System Architecture By M. Morris Mano</li>
+                        <li>Computer Architecture And Parallel Processing By Kai Hwang, Briggs, Mcgraw Hill</li>
+                        <li>Computer Architecture By Carter, Tata Mcgraw Hill</li>
+                        <li>Computer System Organization And Architecture By John D. Carpinelli, Pearson Education</li>
+                    </ol>
+                </section>
+                <section id="subject-104602" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Digital Communication [104602]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Block Diagram Of Digital Communication System</li>
+                                <li>Advantages Of Digital Communication System Over Analog Communication Systems</li>
+                                <li>Sampling Theorem</li>
+                                <li>Signal Reconstruction In Time Domain</li>
+                                <li>Practical And Flat Top Sampling</li>
+                                <li>Sampling Of Band-Pass Signal</li>
+                                <li>Aliasing Problem</li>
+                                <li>Uniform And Non-Uniform Quantization</li>
+                                <li>Signal To Quantization Ratio Of Quantized Signal</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Baseband Transmission</strong>
+                            <ul class="unit-topics">
+                                <li>Line Coding And Its Properties</li>
+                                <li>Various Types Of Pcm Waveforms</li>
+                                <li>Attributes Of Pcm Waveforms</li>
+                                <li>Mary Pulse Modulation Waveforms</li>
+                                <li>Differential Pulse Code Modulation</li>
+                                <li>Multiplexing Of Pcm Signals</li>
+                                <li>Delta Modulation</li>
+                                <li>Idling Noise And Slope Overload</li>
+                                <li>Adaptive Delta Modulation</li>
+                                <li>Adaptive Dpcm</li>
+                                <li>Comparison Of Pcm And Dm</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Baseband Detection</strong>
+                            <ul class="unit-topics">
+                                <li>Error Performance Degradation In Communication Systems</li>
+                                <li>Eb/No Parameter</li>
+                                <li>Matched Filter And Its Derivation</li>
+                                <li>Inter-Symbol Interference (Isi)</li>
+                                <li>Nyquist Criterion For Zero Isi And Raised Cosine Spectrum</li>
+                                <li>Correlation Detector: Decision Threshold And Error Probability For Binary, Unipolar
+                                    (On-Off ) Signalling</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Band-Pass Modulation And Demodulation</strong>
+                            <ul class="unit-topics">
+                                <li>Types Of Digital Modulation</li>
+                                <li>Waveforms For Amplitude, Frequency And Phase Shift Keying</li>
+                                <li>Method Of Generation And Detection Of Coherent And Non-Coherent Binary Ask, Fsk And
+                                    Psk</li>
+                                <li>Differential Phase Shift Keying</li>
+                                <li>Quadrature Modulation Techniques</li>
+                                <li>M- Ary Fsk</li>
+                                <li>Minimum Shift Keying (Msk)</li>
+                                <li>Probability Of Error And Comparison Of Various Digital Modulation Techniques</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Error</strong>
+                            <ul class="unit-topics">
+                                <li>A Baseband Signal Receiver</li>
+                                <li>Probability Of Error</li>
+                                <li>The Optimum Filter</li>
+                                <li>Matched Filter</li>
+                                <li>Probability Of Error In Matched Filter</li>
+                                <li>Coherent Reception</li>
+                                <li>Coherent Reception Of Ask, Psk And Fsk</li>
+                                <li>Non-Coherent Reception Of Ask, Fsk, Psk And Qpsk</li>
+                                <li>Calculation Of Bit Error Probability Of Bpsk And Bfsk</li>
+                                <li>Error Probability For Qpsk</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Multiple Access Techniques</strong>
+                            <ul class="unit-topics">
+                                <li>Time Division Multiplexing</li>
+                                <li>Frequency Division Multiplexing</li>
+                                <li>Code Division Multiplexing</li>
+                                <li>Introduction To Upcoming Techniques Of Transmission</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Text Books:</h3>
+                    <ol>
+                        <li>Communication Systems, Simon Haykin, Wiley Publication, 4th Edition, 2004</li>
+                        <li>Digital Communication Fundamentals And Applications, Bernard Sklar, Pearson Education India,
+                            2nd Edition, 2009</li>
+                        <li>Modern Electronic Communication, Miller Gary M, Prentice-Hall, 6th Edition, 1999</li>
+                        <li>Digital Communications, John Proakis, Tata Mc Graw Hill, 5th Edition, 2007</li>
+                        <li>Electronic Communication Systems, Fundamentals Through Advanced, Wayne Tomsi, Pearson
+                            Education, 4th Edition, 2001</li>
+                    </ol>
+                </section>
+                <section id="subject-104602P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Digital Communication Lab [104602P]</h2>
+                    <p>Hands-on experiments related to the course contents of 104602.</p>
+                </section>
+                <section id="subject-104603" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Disaster Management [104603]</h2>
+                    <p>Details for Disaster Management will be provided by the department. This component carries 4
+                        credits.</p>
+                </section>
+                <section id="subject-104604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Electronics Instruments And Measurement [104604]</h2>
+                    <ul>
+                        <li><strong class="unit-title">Module 1: Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Introduction To Standards Of Measurement</li>
+                                <li>Errors And Their Evaluation</li>
+                                <li>Calibration</li>
+                                <li>Accuracy</li>
+                                <li>Precision Sensitivity</li>
+                                <li>Resolution</li>
+                                <li>Noise, Etc</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 2: Measurements Of Voltage, Current, Power And
+                                Energy</strong>
+                            <ul class="unit-topics">
+                                <li>Moving Iron, Moving Coil, Thermal, Induction And Rectifier Type</li>
+                                <li>Measurements Of Power Factor And Frequency</li>
+                                <li>Dynamometer And Moving Iron Single And Three Phase Power Factor Meters</li>
+                                <li>Resonance, Moving Coil And Moving Iron Frequency Meters</li>
+                                <li>Range Extension Of Voltmeter, Ammeter, Wattmeter And Energy Meter</li>
+                                <li>Voltmeter Multipliers</li>
+                                <li>Ammeter Shunt</li>
+                                <li>Current And Potential Transformers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 3: Galvanometer</strong>
+                            <ul class="unit-topics">
+                                <li>D' Arsonval</li>
+                                <li>Vibration And Ballistic Galvanometers</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 4: Bridges</strong>
+                            <ul class="unit-topics">
+                                <li>D.C. Bridges: Kelvin Double Bridge, Wheatstone Bridge And Carey-Foster Bridge</li>
+                                <li>A.C. Bridges: Maxwell Bridge, Hay And Owen Bridges, Anderson Bridge, Wien Bridge,
+                                    Schering Bridge And Heaviside-Campbell Bridge</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 5: Potentiometer's Principle, Standardization And
+                                Application</strong>
+                            <ul class="unit-topics">
+                                <li>D.C. Potentiometers: Crompton And Vernier Potentiometers</li>
+                                <li>A.C. Potentiometers: Coordinate Type And Polar Type</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 6: Magnetic Measurements</strong>
+                            <ul class="unit-topics">
+                                <li>Measurement Of Magnetic Flux By Ballistic Galvanometer And Fluxmeter</li>
+                                <li>Determination Of B-H Curve And Hysteresis Loop</li>
+                                <li>Separation Of Iron Loss Into Hysteresis And Eddy Current Losses</li>
+                                <li>Measurement Of Iron Loss And Its Separation On Lloyd-Fisher Squares</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">Module 7: Digital Measurements</strong>
+                            <ul class="unit-topics">
+                                <li>Digital Voltmeter And Multimeter Universal Counter And Its Uses For Measurements Of
+                                    Frequency</li>
+                                <li>Ratio Of Two Frequencies</li>
+                                <li>Time Period And Pulse Width</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Suggested Text/Reference Books:</h3>
+                    <ol>
+                        <li>Measurement System, Application And Design, E O Doeblin, Tmh</li>
+                        <li>Course In Electrical And Electronic Measurement And Instrumentation, A K Sawhney, Dhanpat
+                            Rai And Sons</li>
+                        <li>Electronic Measurements And Instrumentation, Rajendra Prasad, Khanna Publishers</li>
+                        <li>Basic Electrical Measurements, M.B. Stout, Prentice Hall</li>
+                    </ol>
+                </section>
+                <section id="subject-104604P" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Electronics Instruments And Measurements Lab [104604P]</h2>
+                    <p>Hands-on experiments related to the course contents of EC116.</p>
+                </section>
+                <section id="subject-100604" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Moocs / Swayam / Nptel Courses -2 [100604]</h2>
+                    <p>This is a placeholder for Moocs / Swayam / Nptel Courses -2. The specific subject and syllabus
+                        will be as per the course chosen by the student from the options provided by the university.</p>
+                </section>
+                <section id="subject-cmos-vlsi" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Digital CMOS VLSI Design</h2>
+                    <ul>
+                        <li><strong class="unit-title">1. MOS transistor theory and modelling (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>The Metal Oxide Semiconductor (MOS) Structure</li>
+                                <li>MOS System under External Bias</li>
+                                <li>Structure and Operation of MOS Transistor (MOSFET)</li>
+                                <li>Current-Voltage Characteristics</li>
+                                <li>Scaling and Small-geometry Effects</li>
+                                <li>MOSFET modelling</li>
+                                <li>Small-signal model</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">2. Fabrication and Layout of CMOS ICS (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Fabrication Process Flow: Basic Steps</li>
+                                <li>CMOS Well Process</li>
+                                <li>Layout Design Rules</li>
+                                <li>Full-Custom Mask Layout Design</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">3. MOS INVERTERS (10 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li><strong>Static characteristics:</strong> Resistive-Load Inverter, Inverters with
+                                    n-Type MOSFET Load, CMOS Inverter</li>
+                                <li><strong>Switching characteristics and interconnect effects:</strong> Delay-Time
+                                    definitions, Calculation of Delay times, Inverter Design with Delay Constraints</li>
+                                <li>Estimation of Interconnect Parasitics, Calculation of Interconnect Delay</li>
+                                <li>Switching Power Dissipation of CMOS Inverters</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">4. Combinational MOS logic circuits (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>MOS Logic Circuits with Depletion nMOS Loads</li>
+                                <li>CMOS Logic Circuits</li>
+                                <li>Complex Logic Circuits</li>
+                                <li>CMOS Transmission Gates (Pass Gates)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">5. Sequential MOS logic circuits (8 Hours)</strong>
+                            <ul class="unit-topics">
+                                <li>Behaviour of Bistable elements</li>
+                                <li>The SR Latch Circuit</li>
+                                <li>Clocked Latch and Flip-Flop Circuits</li>
+                                <li>CMOS D-Latch and Edge-Triggered Flip-Flop</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Total: 42 Hours</strong></p>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>"CMOS: Digital Integrated Circuits", by Sung-Mo Kang and Yusuf Leblibici, 3rd edition,
+                            McGraw-Hill Higher Education, 2003</li>
+                        <li>"CMOS Logic Circuit Design", by John P. Uyemura, Kluwer Academic Publishers, 2001</li>
+                        <li>"CMOS VLSI Design: A Circuits and Systems Perspective", by Neil Weste and David Harris, 4th
+                            Edition</li>
+                        <li>"CMOS: Circuit Design, Layout and Simulation", by R. Jacob Baker, 3rd edition, IEEE press,
+                            2010</li>
+                    </ol>
+                </section>
+                <section id="subject-image-video" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Digital Image and Video Processing</h2>
+                    <ul>
+                        <li><strong class="unit-title">1. Digital Image Fundamentals</strong>
+                            <ul class="unit-topics">
+                                <li>Elements of visual perception</li>
+                                <li>Image sensing and acquisition</li>
+                                <li>Image sampling and quantization</li>
+                                <li>Basic relationships between pixels – neighborhood, adjacency, connectivity, distance
+                                    measures</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">2. Image Enhancements and Filtering</strong>
+                            <ul class="unit-topics">
+                                <li>Gray level transformations</li>
+                                <li>Histogram equalization and specifications</li>
+                                <li>Pixel-domain smoothing filters – linear and order-statistics</li>
+                                <li>Pixel-domain sharpening filters – first and second derivative</li>
+                                <li>Two-dimensional DFT and its inverse</li>
+                                <li>Frequency domain filters – low-pass and high-pass</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">3. Color Image Processing</strong>
+                            <ul class="unit-topics">
+                                <li>Color models–RGB, YUV, HSI</li>
+                                <li>Color transformations– formulation, color complements, color slicing, tone and color
+                                    corrections</li>
+                                <li>Color image smoothing and sharpening</li>
+                                <li>Color Segmentation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">4. Image Segmentation</strong>
+                            <ul class="unit-topics">
+                                <li>Detection of discontinuities</li>
+                                <li>Edge linking and boundary detection</li>
+                                <li>Thresholding– global and adaptive</li>
+                                <li>Region-based segmentation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">5. Wavelets and Multi-resolution image processing</strong>
+                            <ul class="unit-topics">
+                                <li>Uncertainty principles of Fourier Transform</li>
+                                <li>Time frequency localization</li>
+                                <li>Continuous wavelet transforms</li>
+                                <li>Wavelet bases and multi-resolution analysis</li>
+                                <li>Wavelets and Subband filter banks, wavelet packets</li>
+                                <li><strong>Image Compression:</strong> Redundancy–inter-pixel and psycho-visual;
+                                    Lossless compression – predictive, entropy; Lossy compression predictive and
+                                    transform coding; Discrete Cosine Transform; Still image compression standards–JPEG
+                                    and JPEG-2000</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">6. Fundamentals of Video Coding</strong>
+                            <ul class="unit-topics">
+                                <li>Inter-frame redundancy</li>
+                                <li>Motion estimation techniques – full-search, fast search strategies, forward and
+                                    backward motion prediction</li>
+                                <li>Frame classification – I, P and B</li>
+                                <li>Video sequence hierarchy–Group of pictures, frames, slices, macro-blocks and blocks
+                                </li>
+                                <li>Elements of a video encoder and decoder</li>
+                                <li>Video coding standards – MPEG and H.26X</li>
+                                <li><strong>Video Segmentation:</strong> Temporal segmentation–shot boundary detection,
+                                    hard cuts and soft-cuts; spatial segmentation–motion-based; Video object detection
+                                    and tracking</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>R.C. Gonzalez and R.E. Woods, "Digital Image Processing", Second Edition, Pearson Education,
+                            3rd edition 2008</li>
+                        <li>Anil Kumar Jain, "Fundamentals of Digital Image Processing", Prentice Hall of India, 2nd
+                            edition 2004</li>
+                        <li>Murat Tekalp, "Digital Video Processing", Prentice Hall, 2nd edition 2015</li>
+                    </ol>
+                </section>
+                <section id="subject-scientific" class="info-card theory-card subject-card tab-content">
+                    <h2 class="theory-heading">Program Elective: Scientific Computing</h2>
+                    <ul>
+                        <li><strong class="unit-title">1. Introduction</strong>
+                            <ul class="unit-topics">
+                                <li>Sources of Approximations</li>
+                                <li>Data Error and Computational</li>
+                                <li>Truncation Error and Rounding Error</li>
+                                <li>Absolute Error and Relative Error</li>
+                                <li>Sensitivity and Conditioning</li>
+                                <li>Backward Error Analysis</li>
+                                <li>Stability and Accuracy</li>
+                                <li><strong>Computer Arithmetic:</strong> Floating Point Numbers, Normalization,
+                                    Properties of Floating Point System, Rounding, Machine Precision, Subnormal and
+                                    Gradual Underflow, Exceptional Values, Floating-Point Arithmetic, Cancellation</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">2. System of Linear Equations</strong>
+                            <ul class="unit-topics">
+                                <li>Linear Systems, Solving Linear Systems</li>
+                                <li>Gaussian elimination, Pivoting, Gauss-Jordan</li>
+                                <li>Norms and Condition Numbers</li>
+                                <li>Symmetric Positive Definite Systems and Indefinite System</li>
+                                <li>Iterative Methods for Linear Systems</li>
+                                <li><strong>Linear least squares:</strong> Data Fitting, Linear Least Squares, Normal
+                                    Equations Method, Orthogonalization Methods, QR factorization, Gram-Schmidt
+                                    Orthogonalization, Rank Deficiency, and Column Pivoting</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">3. Eigenvalues, Singular Values, Nonlinear Equations, and
+                                Optimization</strong>
+                            <ul class="unit-topics">
+                                <li><strong>Eigenvalues and singular values:</strong> Eigenvalues and Eigenvectors,
+                                    Methods for Computing All Eigenvalues, Jacobi Method, Methods for Computing Selected
+                                    Eigenvalues, Singular Values Decomposition, Application of SVD</li>
+                                <li><strong>Nonlinear equations:</strong> Fixed Point Iteration, Newton's Method,
+                                    Inverse Interpolation Method</li>
+                                <li><strong>Optimization:</strong> One-Dimensional Optimization, Multidimensional
+                                    Unconstrained Optimization, Nonlinear Least Squares</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">4. Interpolation, Numerical Integration, and Differential
+                                Equations</strong>
+                            <ul class="unit-topics">
+                                <li><strong>Interpolation:</strong> Purpose for Interpolation, Choice of Interpolating
+                                    Function, Polynomial Interpolation, Piecewise Polynomial Interpolation</li>
+                                <li><strong>Numerical Integration And Differentiation:</strong> Quadrature Rule,
+                                    Newton-Cotes Rule, Gaussian Quadrature Rule, Finite Difference Approximation</li>
+                                <li><strong>Initial Value Problems for ODEs:</strong> Euler's Method, Taylor Series
+                                    Method, Runga-Kutta Method, Extrapolation Methods</li>
+                                <li><strong>Boundary Value Problems For ODEs:</strong> Finite Difference Methods, Finite
+                                    Element Method, Eigenvalue Problems</li>
+                            </ul>
+                        </li>
+                        <li><strong class="unit-title">5. Advanced Topics</strong>
+                            <ul class="unit-topics">
+                                <li><strong>Partial Differential Equations:</strong> Time Dependent Problems, Time
+                                    Independent Problems, Solution for Sparse Linear Systems, Iterative Methods</li>
+                                <li><strong>Fast Fourier Transform:</strong> FFT Algorithm, Limitations, DFT, Fast
+                                    polynomial Multiplication</li>
+                                <li>Wavelets</li>
+                                <li><strong>Random Numbers And Simulation:</strong> Stochastic Simulation, Random Number
+                                    Generators, Quasi-Random Sequences</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="sub-heading theory-heading">Text/Reference Books:</h3>
+                    <ol>
+                        <li>Heath Michael T., "Scientific Computing: An Introductory Survey", McGraw-Hill, 2nd Ed., 2002
+                        </li>
+                        <li>Press William H., Saul A. Teukolsky, Vetterling William T and Brian P. Flannery, "Numerical
+                            Recipes: The Art of Scientific Computing", Cambridge University Press, 3rd Ed., 2007</li>
+                        <li>Xin-she Yang (Ed.), "Introduction To Computational Mathematics", World Scientific Publishing
+                            Co., 2nd Ed., 2008</li>
+                        <li>Kiryanov D. and Kiryanova E., "Computational Science", Infinity Science Press, 1st Ed., 2006
+                        </li>
+                        <li>Quarteroni, Alfio, Saleri, Fausto, Gervasio and Paola, "Scientific Computing With MATLAB And
+                            Octave", Springer, 3rd Ed., 2010</li>
+                    </ol>
+                </section>
+                <section id="subject-100605" class="info-card lab-card subject-card tab-content">
+                    <h2 class="lab-heading">Workshop/Heads On Training/Soft Skill [100605]</h2>
+                    <p>Details for Workshop/Heads On Training/Soft Skill will be provided by the department. This
+                        component carries 0 credits.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="elective-modal" class="modal-overlay">
+        <div class="modal-content"><button id="modal-close" class="modal-close-btn">&times;</button>
+            <h2 id="modal-title">Select an Elective</h2>
+            <div id="modal-options"></div>
+        </div>
+    </div>
+    <script src="syllabus.js"></script>
+    <a class="beu-pyq-home-link" href="pyq%26syllabus.html" aria-label="Back to BEU PYQ home">&larr; BEU PYQ Home</a>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+:root {
+    --bg: #274139;
+    --bg-2: #14271f;
+    --card: #152820;
+    --card-2: #20382d;
+    --card-bg: rgba(20, 40, 31, .82);
+    --text: #f4f6f1;
+    --muted: #c0cbc3;
+    --accent: #a7f3d0;
+    --accent-2: #ffd28a;
+    --chip: #2a4437;
+    --ring: 0 0 0 2px rgba(167, 243, 208, .2), 0 8px 20px rgba(0, 0, 0, .28);
+    --shadow: 0 12px 28px rgba(0, 0, 0, .24);
+}
+
+html,
+body {
+    background-color: #101a2c;
+    background-image:
+        radial-gradient(ellipse at 82% 0%, rgba(36, 127, 134, .22), transparent 35rem),
+        radial-gradient(ellipse at 0% 50%, rgba(89, 95, 151, .14), transparent 35rem);
+    background-attachment: fixed;
+}
+
+a,
+button,
+.tile,
+.info-card,
+.card,
+.list-row,
+.semester-item {
+    transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+}
+
+.tile:hover,
+.info-card:hover,
+.card:hover,
+.list-row:hover,
+.semester-item:hover {
+    border-color: rgba(167, 243, 208, .38);
+}
+
+.app > main,
+.content {
+    animation: portal-enter .4s ease-out both;
+}
+
+@keyframes portal-enter {
+    from { opacity: 0; transform: translateY(8px) }
+    to { opacity: 1; transform: translateY(0) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
