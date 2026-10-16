@@ -148,6 +148,73 @@
         return;
     }
 
+    function applySearchMetadata() {
+        const pageTitle = document.querySelector('.page-title')?.textContent.trim() || '1st Semester Syllabus';
+        const branch = document.querySelector('.page-subtitle')?.textContent.trim() || 'Bihar Engineering University';
+        const courseNames = groupData.credits.map((course) => course.title).join(', ');
+        const title = `${branch} | ${pageTitle} | BEU PYQ`;
+        const description = `${branch} for Bihar Engineering University B.Tech 1st semester. Course-wise syllabus, theory topics, lab experiments, outcomes, reference books and credits: ${courseNames}.`;
+        const pathname = window.location.pathname.replace(/\\/g, '/');
+        const beuPathStart = pathname.indexOf('/BEUPYQ/');
+        const canonicalPath = beuPathStart >= 0 ? pathname.slice(beuPathStart) : pathname;
+        const canonicalUrl = `https://erabhishekkumar.github.io${canonicalPath}`;
+
+        document.title = title;
+
+        const setMeta = (attributes, contentValue) => {
+            let element = document.head.querySelector(`meta[${attributes.name ? `name="${attributes.name}"` : `property="${attributes.property}"`}]`);
+            if (!element) {
+                element = document.createElement('meta');
+                Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+                document.head.append(element);
+            }
+            element.setAttribute('content', contentValue);
+        };
+
+        setMeta({ name: 'description' }, description);
+        setMeta({ name: 'robots' }, 'index, follow, max-image-preview:large');
+        setMeta({ name: 'keywords' }, `${branch}, BEU syllabus, B.Tech 1st semester syllabus, ${courseNames}`);
+        setMeta({ property: 'og:title' }, title);
+        setMeta({ property: 'og:description' }, description);
+        setMeta({ property: 'og:type' }, 'website');
+        setMeta({ property: 'og:url' }, canonicalUrl);
+
+        let canonical = document.head.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.rel = 'canonical';
+            document.head.append(canonical);
+        }
+        canonical.href = canonicalUrl;
+
+        const existingSchema = document.head.querySelector('script[data-first-semester-schema]');
+        existingSchema?.remove();
+        const schema = document.createElement('script');
+        schema.type = 'application/ld+json';
+        schema.dataset.firstSemesterSchema = 'true';
+        schema.textContent = JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Course',
+            name: title,
+            description,
+            url: canonicalUrl,
+            courseCode: `BEU-${groupId}-1ST`,
+            provider: {
+                '@type': 'Organization',
+                name: 'Bihar Engineering University'
+            },
+            hasCourseInstance: {
+                '@type': 'CourseInstance',
+                courseMode: 'onsite',
+                name: 'B.Tech 1st Semester'
+            },
+            about: groupData.credits.map((course) => course.title)
+        });
+        document.head.append(schema);
+    }
+
+    applySearchMetadata();
+
     function renderCreditsTable() {
         const tbody = creditsTable?.querySelector('tbody');
         if (!tbody) {
