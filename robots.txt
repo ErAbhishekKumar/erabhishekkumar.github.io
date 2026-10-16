@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erabhishekkumar.github.io/sitemap.xml
