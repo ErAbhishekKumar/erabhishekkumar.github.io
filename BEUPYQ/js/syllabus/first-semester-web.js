@@ -94,8 +94,22 @@
             ]
         },
         '1st_g3': {
-            '100101': null,
-            '100102': null,
+            '100101': [
+                book('Communicative English for Engineers and Professionals', 'Nitin Bhatnagar, Mamta Bhatnagar', 'Publisher: Pearson Education; Edition: 1st Edition, Year: 2010; ISBN: 978-8131724323'),
+                book('Oxford Communicative English', 'Oxford University Press', 'Edition: Latest Revised Edition; Year: 2014, ISBN: 978-0198076018'),
+                book('Technical Communication: Principles and Practice', 'Meenakshi Raman, Sangeeta Sharma', 'Edition: 3rd Edition, Year: 2015; ISBN: 978-0199452132'),
+                book('Communication Skills in English', 'Dr. Anjana Tiwari', 'Khanna Publishers, New Delhi'),
+                book('Business Communication', 'Dr. Nishith Rajaram Dubey, Anupam Singh', 'Indra Publishing House, 2023; ISBN-978-93-93577-69-6'),
+                book('Employability Skills', 'Dr. Nishith Rajaram Dubey, Anupam Singh', 'Indra Publishing House, 2023; ISBN 978-93-93577-68-9'),
+                book('Essential English Grammar in Use', 'Raymond Murphy', 'Cambridge University Press')
+            ],
+            '100102': [
+                book('Higher Engineering Mathematics', 'B. S. Grewal', 'Khanna Publishers, 44 Ed. ISBN No:9788174091154'),
+                book('Higher Engineering Mathematics', 'B. V. Ramana', 'Tata McGraw Hill New Delhi, 11th Ed, 2010, ISBN-13-978-0070634190'),
+                book('Advanced Engineering Mathematics', 'Erwing Kreyszig', 'John Wiley & Sons, 10th Ed, ISBN-978-0470-15836-5'),
+                book('A Textbook of Engineering Mathematics', 'N. P. Bali & Dr. Manish Goyal', 'University Science Press, 13th Ed, ISBN-978-93-83828-63-0'),
+                book('Understanding Engineering Mathematics', 'John Bird', 'Routledge; First Edition ISBN 9780415662840')
+            ],
             '100103': [
                 book('Engineering Chemistry', 'Jain and Jain', 'Dhanpat Rai Publishing Co., 17th Ed. (ISBN: 978-9383182626)'),
                 book('A Textbook of Engineering Chemistry', 'Shashi Chawla', 'Dhanpat Rai & Co., 2024 Ed. (ISBN: 978-8127262143)'),

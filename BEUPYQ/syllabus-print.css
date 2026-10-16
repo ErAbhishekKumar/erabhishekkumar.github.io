@@ -37,7 +37,7 @@
 @media print {
     @page {
         size: A4;
-        margin: 27mm 14mm 18mm;
+        margin: 25mm 14mm 18mm;
     }
 
     html,
@@ -85,32 +85,45 @@
     }
 
     #syllabus-print-header {
-        position: static;
+        position: fixed;
+        top: 7mm;
+        left: 14mm;
+        right: 14mm;
+        z-index: 20;
         display: block !important;
         box-sizing: border-box;
-        margin: 0 0 7mm;
-        padding: 0 0 3mm;
-        border-bottom: 1.5pt solid #1d4ed8;
-        background: #fff !important;
-        color: #172033 !important;
-        font: 8.5pt/1.4 Arial, sans-serif;
+        min-height: 12mm;
+        margin: 0;
+        padding: 2.5mm 4mm;
+        border: 0;
+        border-radius: 3mm;
+        background: linear-gradient(110deg, #172554 0%, #1d4ed8 55%, #0891b2 100%) !important;
+        color: #fff !important;
+        font: 8.5pt/1.35 Arial, sans-serif;
+        box-shadow: 0 1.5mm 3mm rgba(15, 23, 42, .24);
     }
 
     #syllabus-print-heading {
-        display: block;
-        margin-bottom: 2px;
-        color: #172033 !important;
+        display: inline-block;
+        margin: 0 5mm 0 0;
+        color: #fff !important;
         font-size: 10pt;
         font-weight: 700;
     }
 
     #syllabus-print-source {
-        color: #475569 !important;
+        display: inline-block;
+        color: #dbeafe !important;
     }
 
     #syllabus-print-source a {
-        color: #1458a6 !important;
-        text-decoration: underline !important;
+        display: inline-block;
+        padding: 1mm 2.5mm;
+        border: 1px solid rgba(255, 255, 255, .7);
+        border-radius: 999px;
+        color: #fff !important;
+        text-decoration: none !important;
+        font-weight: 700;
         overflow-wrap: anywhere;
     }
 
@@ -203,6 +216,11 @@
     .subject-card {
         margin: 0 0 5mm !important;
         padding: 4mm !important;
+        border-top: 2.5pt solid #2563eb !important;
+    }
+
+    .subject-card:nth-of-type(odd) {
+        border-top-color: #0891b2 !important;
     }
 
     #syllabus-content > .subject-card {
@@ -309,6 +327,10 @@
         background: #eef3fb !important;
         color: #1e3a8a !important;
         font-weight: 700 !important;
+    }
+
+    tbody tr:nth-child(even) td {
+        background: #f8fbff !important;
     }
 
     tr,
