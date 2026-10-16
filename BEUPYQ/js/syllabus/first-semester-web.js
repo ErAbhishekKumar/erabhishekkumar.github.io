@@ -3,52 +3,99 @@
         return;
     }
 
-    window.firstSemesterWebOutcomes = window.firstSemesterWebOutcomes || {};
-    window.firstSemesterWebOutcomes['100101'] = {
-        1: [
-            'TSO 1a. Structure sentences by selecting appropriate vocabulary.',
-            'TSO 1b. Assess the nature of word formation',
-            'TSO 1c. Create new words with prefixes and suffixes ensuring root words',
-            'TSO 1d. Use expressions in English.',
-            'TSO 1e. Distinguish abbreviations and acronyms for clarity and appropriateness in formal and informal communication'
-        ],
-        2: [
-            'TSO 2a. Use the concept of the fundamental Grammar and its uses in communication.',
-            'TSO 2b. Apply articles and prepositions to construct correct sentences.',
-            'TSO 2c. Develop complex sentences',
-            'TSO 2d. Apply tense and voice for correct sentences',
-            'TSO 2e. Distinguish redundancies and clichés to avoid unnecessary repetition.'
-        ],
-        3: [
-            'TSO 3a. Apply analytical and persuasive writing techniques',
-            'TSO 3b. Record accurate proceedings, decisions and action points',
-            'TSO 3c. Incorporate the purpose of internal communication',
-            'TSO 3d. Prepare a professional resume/CV highlighting skills and experience',
-            'TSO 3e. Develop the ability to write coherent and well-structured essays'
-        ],
-        4: [
-            'TSO 4a. Apply analytical and persuasive writing techniques',
-            'TSO 4b. Record accurate proceedings, decisions and action points',
-            'TSO 4c. Develop internal communication process in an organisation',
-            'TSO 4d. Prepare a professional resume',
-            'TSO 4e. Write coherent and well-structured essays'
-        ],
-        5: [
-            'TSO 5a. Explain the literary text',
-            'TSO 5b. Illustrate central ideas and messages',
-            'TSO 5c. Interpret the text effectively',
-            'TSO 5d. Illustrate unfamiliar texts effectively'
-        ]
-    };
-
-    const syllabusData = window.firstSemesterWebData;
-    const buttons = [...document.querySelectorAll('.tab-btn[data-target]')];
+    const groupScript = [...document.scripts].find((script) => /1st_g[123]\.js(?:[?#]|$)/.test(script.src));
+    const groupId = groupScript?.src.match(/1st_g[123]/)?.[0];
+    const groupData = groupId ? window.firstSemesterGroups?.[groupId] : null;
+    const syllabusData = groupData?.courses;
+    let buttons = [];
     const content = document.getElementById('syllabus-content');
     const creditsToggle = document.getElementById('credits-toggle');
     const creditsTable = document.getElementById('credits-table-container');
+    const filterControls = document.getElementById('filter-controls');
 
-    if (!syllabusData || !buttons.length || !content) {
-        console.error('First-semester web syllabus could not initialize: required data or page elements are missing.');
+    if (!groupData || !syllabusData || !content || !filterControls) {
+        console.error('First-semester web syllabus could not initialize: group data or page elements are missing.');
+        return;
+    }
+
+    function renderCreditsTable() {
+        const tbody = creditsTable?.querySelector('tbody');
+        if (!tbody) {
+            console.error('First-semester credit table could not initialize: table body is missing.');
+            return false;
+        }
+
+        const rows = groupData.credits.map((course) => {
+            const row = document.createElement('tr');
+            row.className = course.id.endsWith('P') ? 'lab-row' : 'theory-row';
+
+            const title = document.createElement('td');
+            title.textContent = `${course.title} [${course.id}]`;
+            row.append(title);
+
+            [...course.hours, course.credits].forEach((value, index) => {
+                const cell = document.createElement('td');
+                if (index === 3) {
+                    const strong = document.createElement('strong');
+                    strong.textContent = String(value);
+                    cell.append(strong);
+                } else {
+                    cell.textContent = String(value);
+                }
+                row.append(cell);
+            });
+
+            return row;
+        });
+
+        const totalRow = document.createElement('tr');
+        totalRow.className = 'total-row';
+        const totalLabel = document.createElement('td');
+        const totalStrong = document.createElement('strong');
+        totalStrong.textContent = 'TOTAL';
+        totalLabel.append(totalStrong);
+        totalRow.append(totalLabel);
+
+        const spacer = document.createElement('td');
+        spacer.colSpan = 3;
+        totalRow.append(spacer);
+
+        const totalCell = document.createElement('td');
+        const totalValue = document.createElement('strong');
+        totalValue.textContent = String(groupData.credits.reduce((sum, course) => sum + course.credits, 0));
+        totalCell.append(totalValue);
+        totalRow.append(totalCell);
+        rows.push(totalRow);
+        tbody.replaceChildren(...rows);
+        return true;
+    }
+
+    function renderSubjectTabs() {
+        const tabContainers = [...filterControls.querySelectorAll('.syllabus-tabs')];
+        if (tabContainers.length < 2) {
+            console.error('First-semester subject tabs could not initialize: theory or lab tab container is missing.');
+            return false;
+        }
+
+        const theoryTabs = [];
+        const labTabs = [];
+        groupData.credits.forEach((course) => {
+            const button = document.createElement('button');
+            button.className = 'tab-btn';
+            button.dataset.target = `subject-${course.id}`;
+            button.dataset.type = course.id.endsWith('P') ? 'lab' : 'theory';
+            button.textContent = course.title;
+            (course.id.endsWith('P') ? labTabs : theoryTabs).push(button);
+        });
+
+        tabContainers[0].replaceChildren(...theoryTabs);
+        tabContainers[1].replaceChildren(...labTabs);
+        buttons = [...filterControls.querySelectorAll('.tab-btn[data-target]')];
+        return buttons.length === groupData.credits.length;
+    }
+
+    if (!renderCreditsTable() || !renderSubjectTabs()) {
+        console.error(`First-semester ${groupData.name} data does not match the page structure.`);
         return;
     }
 
@@ -79,13 +126,41 @@
         parent.append(details);
     }
 
-    function appendCourseContent(card, course, subjectId) {
+    function appendCourseOutcomes(parent, outcomes) {
+        if (!outcomes?.length) {
+            return;
+        }
+
+        appendOutcomeDetails(parent, 'Course Outcomes (COs)', outcomes.map((outcome, index) => `CO${index + 1}. ${outcome}`));
+    }
+
+    function appendReferenceBooks(parent, references) {
+        if (!references?.length) {
+            return;
+        }
+
+        const heading = document.createElement('h3');
+        heading.className = 'sub-heading';
+        heading.textContent = 'Text/Reference Books';
+        parent.append(heading);
+
+        const list = document.createElement('ol');
+        list.className = 'reference-list';
+        references.forEach((reference) => {
+            const item = document.createElement('li');
+            item.textContent = reference;
+            list.append(item);
+        });
+        parent.append(list);
+    }
+
+    function appendCourseContent(card, course) {
         const body = document.createElement('div');
         const unitList = document.createElement('ul');
         unitList.className = 'subject-units';
         body.append(unitList);
 
-        const courseOutcomes = window.firstSemesterWebOutcomes?.[subjectId] || {};
+        const courseOutcomes = course.outcomes || {};
         let unitItem;
         let unitTitle = '';
         let unitIndex = 0;
@@ -209,6 +284,7 @@
         });
 
         card.append(body);
+        appendReferenceBooks(card, course.references);
     }
 
     function topicTextWithoutActions(topic) {
@@ -359,6 +435,29 @@
         }
     });
 
+    function createSubjectCard(button) {
+        const subjectId = button.dataset.target.replace(/^subject-/, '');
+        const course = syllabusData[subjectId];
+        const card = document.createElement('section');
+        card.className = `info-card subject-card ${button.dataset.type === 'lab' ? 'lab-card' : 'theory-card'}`;
+
+        const heading = document.createElement('h2');
+        heading.className = button.dataset.type === 'lab' ? 'lab-heading' : 'theory-heading';
+        heading.textContent = button.textContent.trim();
+        card.append(heading);
+
+        if (!course || !course.content?.length) {
+            const message = document.createElement('p');
+            message.textContent = `Syllabus content is unavailable for subject ${subjectId}.`;
+            card.append(message);
+        } else {
+            appendCourseOutcomes(card, course.courseOutcomes);
+            appendCourseContent(card, course);
+        }
+
+        return card;
+    }
+
     function renderSubject(button) {
         buttons.forEach((item) => {
             const active = item === button;
@@ -368,29 +467,28 @@
             item.setAttribute('aria-pressed', String(active));
         });
 
-        const subjectId = button.dataset.target.replace(/^subject-/, '');
-        const course = syllabusData[subjectId];
-        content.replaceChildren();
-
-        const card = document.createElement('section');
-        card.className = `info-card subject-card ${button.dataset.type === 'lab' ? 'lab-card' : 'theory-card'}`;
-
-        const heading = document.createElement('h2');
-        heading.className = button.dataset.type === 'lab' ? 'lab-heading' : 'theory-heading';
-        heading.textContent = button.textContent.trim();
-        card.append(heading);
-
-        if (!course || !course.content.length) {
-            const message = document.createElement('p');
-            message.textContent = `Syllabus content is unavailable for subject ${subjectId}.`;
-            card.append(message);
-        } else {
-            appendCourseContent(card, course, subjectId);
-        }
-
-        content.append(card);
+        content.replaceChildren(createSubjectCard(button));
         addTopicActionControls();
     }
+
+    let printContentSnapshot = null;
+    window.addEventListener('beforeprint', () => {
+        if (printContentSnapshot) {
+            return;
+        }
+
+        printContentSnapshot = [...content.childNodes];
+        content.replaceChildren(...buttons.map(createSubjectCard));
+    });
+
+    window.addEventListener('afterprint', () => {
+        if (!printContentSnapshot) {
+            return;
+        }
+
+        content.replaceChildren(...printContentSnapshot);
+        printContentSnapshot = null;
+    });
 
     document.addEventListener('click', (event) => {
         const button = event.target.closest('.tab-btn[data-target]');
@@ -423,6 +521,6 @@
 
     const firstTheorySubject = buttons.find((button) => button.dataset.type === 'theory');
     if (firstTheorySubject) {
-        renderSubject(firstTheorySubject);
+        window.setTimeout(() => renderSubject(firstTheorySubject), 150);
     }
 })();
