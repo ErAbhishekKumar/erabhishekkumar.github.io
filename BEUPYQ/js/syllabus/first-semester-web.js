@@ -7,6 +7,122 @@
     const groupId = groupScript?.src.match(/1st_g[123]/)?.[0];
     const groupData = groupId ? window.firstSemesterGroups?.[groupId] : null;
     const syllabusData = groupData?.courses;
+    const book = (title, authors, details) => ({ title, authors, details });
+    const referenceBooks = {
+        '1st_g1': {
+            '100102': [
+                book('Higher Engineering Mathematics', 'B. S. Grewal', 'Khanna Publishers, 44 Ed. ISBN No:9788174091154'),
+                book('Higher Engineering Mathematics', 'B. V. Ramana', 'Tata McGraw Hill New Delhi, 11th Ed, 2010, ISBN-13-978-0070634190'),
+                book('Advanced Engineering Mathematics', 'Erwing Kreyszig', 'John Wiley & Sons, 10th Ed, ISBN-978-0470-15836-5'),
+                book('A Textbook of Engineering Mathematics', 'N. P. Bali & Dr. Manish Goyal', 'University Science Press, 13th Ed, ISBN-978-93-83828-63-0'),
+                book('Understanding Engineering Mathematics', 'John Bird', 'Routledge; First Edition ISBN 9780415662840')
+            ],
+            '100104': [
+                book('Optics', 'Ajay Ghatak', 'Mcgraw Hill Education, 2012, 5th Edition, ISBN-10: 1259004340'),
+                book('Principles of Lasers', 'O. Svelto', 'Springer Science & Business Media, 2010, 5th Ed, ISBN-10: 1441913017'),
+                book('Introduction to Electrodynamics', 'David J. Griffiths', 'Pearson Education Cambridge University Press, 2023, 5th Edition, ISBN-10: 1009397729'),
+                book('Principles of Electronic Materials and Devices', 'S. O. Kasap', 'McGraw Hill Education, Third Edition, 2006, ISBN-10: 0073104647'),
+                book('Semiconductor Physics and Devices', 'Donald A. Neuman', 'McGraw-Hill Education, Fourth Edition, 2011, ISBN-10: 0073529583'),
+                book('Introduction to Quantum Mechanics', 'David J. Griffiths', 'Pearson Education Cambridge University Press, 2016, 2nd Edition, ISBN-10: 1107179866')
+            ],
+            '100111': [
+                book('Basic Electrical Engineering', 'D. P. Kothari, I. J. Nagrath', 'McGraw-Hill Education, 2019, ISBN: 978-9353165727'),
+                book('Electronic Device & Circuit Theory', 'Robert L. Boylestad and Louis Nashelsky', 'Pearson, 2013, ISBN: 978-1292025636'),
+                book('Digital Logic and Computer Design', 'M. Morris Mano', 'Pearson India, 2017, ISBN: 978-9332586048'),
+                book('Electrical Machinery', 'P. S. Bimbhra', 'Khanna Publishers, 2024, ISBN: 978-9389139105')
+            ],
+            '100105': [
+                book('Artificial Intelligence: A Modern Approach', 'Stuart Russell, Peter Norvig', 'Pearson; 4th Ed., 2020. ISBN: 978-0134610993'),
+                book('AI for Everyone', 'Saptarsi Goswami, Amit Kumar Das, Amlan Chakrabarti', 'Pearson Education: ISBN-10: 9361591754, ISBN-13: 978-9361591754'),
+                book('Introduction to Artificial Intelligence and Expert Systems', 'Dan W. Patterson', 'PHI Learning; 2015. ISBN: 978-8120307775'),
+                book('Artificial Intelligence', 'Elaine Rich, Kevin Knight, Shivashankar B. Nair', 'McGraw-Hill; 3rd Ed., 2017. ISBN: 978-1259029420')
+            ],
+            '100108': [
+                book('Computer Fundamentals', 'P. K. Sinha and Priti Sinha', 'BPB Publications, 6th Edition, ISBN: 978-8176567527'),
+                book('Introduction to Computers', 'Peter Norton', 'McGraw Hill, 7th Edition, ISBN: 978-0070636774'),
+                book('Data Representation and Computer Logic', 'Charles M. Gilmore', 'McGraw Hill, ISBN: 978-0070245754'),
+                book('Operating System Concepts', 'Abraham Silberschatz, Peter B. Galvin and Greg Gagne', 'Wiley, 10th Edition, ISBN: 978-1119456339'),
+                book('Data Communications and Networking', 'Behrouz A. Forouzan', 'McGraw Hill, 5th Edition, ISBN: 978-0073376226'),
+                book('IoT for Beginners: Architecture, Principles and Applications', 'Amita Kapoor, Vinay Chopra', 'BPB Publications, 1st Edition, ISBN: 978-9355510063'),
+                book('Fundamentals of Cyber Security', 'Mayank Bhushan, Rajkumar Singh Rathore, Aatif Jamshed', 'BPB Publications, 1st Edition, ISBN: 9789386551559'),
+                book('Artificial Intelligence: A Guide for Thinking Humans', 'Melanie Mitchell', 'Farrar, Straus and Giroux, 1st Edition, ISBN: 9780374257835')
+            ]
+        },
+        '1st_g2': {
+            '100101': [
+                book('Communicative English for Engineers and Professionals', 'Nitin Bhatnagar, Mamta Bhatnagar', 'Publisher: Pearson Education; Edition: 1st Edition, Year: 2010; ISBN: 978-8131724323'),
+                book('Oxford Communicative English', 'Oxford University Press', 'Edition: Latest Revised Edition; Year: 2014, ISBN: 978-0198076018'),
+                book('Technical Communication: Principles and Practice', 'Meenakshi Raman, Sangeeta Sharma', 'Edition: 3rd Edition, Year: 2015; ISBN: 978-0199452132'),
+                book('Communication Skills in English', 'Dr. Anjana Tiwari', 'Khanna Publishers, New Delhi'),
+                book('Business Communication', 'Dr. Nishith Rajaram Dubey, Anupam Singh', 'Indra Publishing House, 2023; ISBN-978-93-93577-69-6'),
+                book('Employability Skills', 'Dr. Nishith Rajaram Dubey, Anupam Singh', 'Indra Publishing House, 2023; ISBN 978-93-93577-68-9'),
+                book('Essential English Grammar in Use', 'Raymond Murphy', 'Cambridge University Press')
+            ],
+            '100102': [
+                book('Higher Engineering Mathematics', 'B. S. Grewal', 'Khanna Publishers, 44 Ed. ISBN No:9788174091154'),
+                book('Higher Engineering Mathematics', 'B. V. Ramana', 'Tata McGraw Hill New Delhi, 11th Ed, 2010, ISBN-13-978-0070634190'),
+                book('Advanced Engineering Mathematics', 'Erwing Kreyszig', 'John Wiley & Sons, 10th Ed, ISBN-978-0470-15836-5'),
+                book('A Textbook of Engineering Mathematics', 'N. P. Bali & Dr. Manish Goyal', 'University Science Press, 13th Ed, ISBN-978-93-83828-63-0'),
+                book('Understanding Engineering Mathematics', 'John Bird', 'Routledge; First Edition ISBN 9780415662840')
+            ],
+            '100104': [
+                book('Optics', 'Ajay Ghatak', 'Mcgraw Hill Education, 2012, 5th Edition, ISBN-10: 1259004340'),
+                book('Principles of Lasers', 'O. Svelto', 'Springer Science & Business Media, 2010, 5th Ed, ISBN-10: 1441913017'),
+                book('Introduction to Electrodynamics', 'David J. Griffiths', 'Pearson Education Cambridge University Press, 2023, 5th Edition, ISBN-10: 1009397729'),
+                book('Principles of Electronic Materials and Devices', 'S. O. Kasap', 'McGraw Hill Education, Third Edition, 2006, ISBN-10: 0073104647'),
+                book('Semiconductor Physics and Devices', 'Donald A. Neuman', 'McGraw-Hill Education, Fourth Edition, 2011, ISBN-10: 0073529583'),
+                book('Introduction to Quantum Mechanics', 'David J. Griffiths', 'Pearson Education Cambridge University Press, 2016, 2nd Edition, ISBN-10: 1107179866'),
+                book('Nanotechnology: Principles and Practices', 'Sulabha K. Kulkarni', 'Springer Nature, Third Edition, 2014, ISBN-10: 3319091700'),
+                book('Concepts of Engineering Physics', 'S. K. Roy', 'Novelty Publication, 1st Edition, 2016-17'),
+                book('Concepts of Engineering Physics', 'Kumari Mamta and Raj Kumar Singh', 'CRC Press-Taylor and Francis, United Kingdom, 1st Edition, ISBN 9781041191834')
+            ],
+            '100106': [
+                book('Basic Electrical and Electronics Engineering', 'Vinoth Kumar K., Saravanakumar R., Jegathesan V., Kowsalya M., Mahesh M.', 'Wiley India, New Delhi, 2nd Ed., 2022, ISBN: 978-9354643194'),
+                book('Fundamentals of Electrical and Electronics Engineering (with Lab Manual)', 'Susan S. Mathew and Saji T. Chacko', 'Khanna Book Publishing Co., 2021, ISBN: 978-9391505592'),
+                book('Basic Electrical Engineering', 'V. Mittle, Arvind Mittle', 'McGraw Hill Education, 2017, ISBN: 978-0070593572'),
+                book('Basic Electrical Engineering', 'D. C. Kulshreshtha', 'Tata McGraw-Hill, 3rd Ed., 2019, ISBN: 978-0070083929'),
+                book('Basic Electrical and Electronics Engineering', 'D. P. Kothari & I. J. Nagrath', 'Tata McGraw Hill, 2nd Ed., 2020, ISBN: 978-9389811247'),
+                book('Principles of Electrical Engineering', 'V. K. Mehta and Rohit Mehta', 'S. Chand & Co., 2nd Ed., 2018')
+            ],
+            '100105': [
+                book('Artificial Intelligence: A Modern Approach', 'Stuart Russell, Peter Norvig', 'Pearson; 4th Ed., 2020. ISBN: 978-0134610993'),
+                book('AI for Everyone', 'Saptarsi Goswami, Amit Kumar Das, Amlan Chakrabarti', 'Pearson Education: ISBN-10: 9361591754, ISBN-13: 978-9361591754'),
+                book('Introduction to Artificial Intelligence and Expert Systems', 'Dan W. Patterson', 'PHI Learning; 2015. ISBN: 978-8120307775'),
+                book('Artificial Intelligence', 'Elaine Rich, Kevin Knight, Shivashankar B. Nair', 'McGraw-Hill; 3rd Ed., 2017. ISBN: 978-1259029420'),
+                book('Artificial Intelligence - A Modern Approach', 'Dilip Narayan Sahu, Kishore Kumar Dash, Abahy Kolhe, Agilandeswari Devarajan', 'ISBN-10: 9355151446; ISBN-13: 978-9355151445'),
+                book('Machine Learning Essentials', 'Dhairya Parikh', 'Vibrant Publishers; ISBN-10: 1636513778, ISBN-13: 978-1636513775')
+            ]
+        },
+        '1st_g3': {
+            '100101': null,
+            '100102': null,
+            '100103': [
+                book('Engineering Chemistry', 'Jain and Jain', 'Dhanpat Rai Publishing Co., 17th Ed. (ISBN: 978-9383182626)'),
+                book('A Textbook of Engineering Chemistry', 'Shashi Chawla', 'Dhanpat Rai & Co., 2024 Ed. (ISBN: 978-8127262143)'),
+                book('Principles of Materials Science and Engineering', 'William F. Smith', 'McGraw-Hill Education, 3rd Ed. (ISBN: 978-0070592025)'),
+                book('Concise Inorganic Chemistry', 'J. D. Lee', 'Oxford University Press, 5th Ed. (ISBN: 978-0632052936)')
+            ],
+            '100107': [
+                book('Engineering Drawing', 'N. D. Bhatt', 'Charotar Publishing House'),
+                book('Engineering Drawing', 'P. J. Shah', 'S. Chand Publisher'),
+                book('Engineering Drawing', 'K. Venu Gopal & V. Prabu Raja', 'New Age Publications'),
+                book('Engineering Drawing and Graphics + AutoCAD', 'Venugopal K.', 'New Age International Publishers, Delhi, 2022, ISBN: 978-8122472752'),
+                book('Engineering Drawing', 'Basant Agrawal and Agrawal C. M.', 'Tata McGraw Hill, New Delhi, 2013, ISBN: 978-1259062889'),
+                book('Engineering Graphics', 'S. K. Pradhan, K. K. Jain', 'Khanna Book Publishing Company Pvt. Ltd., New Delhi, ASIN: B0BM5BMMXT, ISBN-10: 9355381891'),
+                book('Bureau of Indian Standards, Engineering Drawing Practice for Schools and Colleges IS: SP-46, BIS', 'BIS, Government of India', 'BIS, Government of India, Third Reprint, October 1998; ISBN: 81-7061-091-2')
+            ],
+            '100105': [
+                book('Artificial Intelligence: A Modern Approach', 'Stuart Russell, Peter Norvig', 'Pearson; 4th Ed., 2020. ISBN: 978-0134610993'),
+                book('AI for Everyone', 'Saptarsi Goswami, Amit Kumar Das, Amlan Chakrabarti', 'Pearson Education: ISBN-10: 9361591754, ISBN-13: 978-9361591754'),
+                book('Introduction to Artificial Intelligence and Expert Systems', 'Dan W. Patterson', 'PHI Learning; 2015. ISBN: 978-8120307775'),
+                book('Artificial Intelligence', 'Elaine Rich, Kevin Knight, Shivashankar B. Nair', 'McGraw-Hill; 3rd Ed., 2017. ISBN: 978-1259029420'),
+                book('Artificial Intelligence - A Modern Approach', 'Dilip Narayan Sahu, Kishore Kumar Dash, Abahy Kolhe, Agilandeswari Devarajan', 'ISBN-10: 9355151446; ISBN-13: 978-9355151445'),
+                book('Machine Learning Essentials', 'Dhairya Parikh', 'Vibrant Publishers; ISBN-10: 1636513778, ISBN-13: 978-1636513775')
+            ]
+        }
+    };
+    referenceBooks['1st_g3']['100101'] = referenceBooks['1st_g2']['100101'].slice(0, 6);
+    referenceBooks['1st_g3']['100102'] = referenceBooks['1st_g2']['100102'];
     let buttons = [];
     const content = document.getElementById('syllabus-content');
     const creditsToggle = document.getElementById('credits-toggle');
@@ -139,22 +255,47 @@
             return;
         }
 
-        const heading = document.createElement('h3');
-        heading.className = 'sub-heading';
-        heading.textContent = 'Text/Reference Books';
-        parent.append(heading);
+        const table = document.createElement('table');
+        table.className = 'reference-table';
 
-        const list = document.createElement('ol');
-        list.className = 'reference-list';
-        references.forEach((reference) => {
-            const item = document.createElement('li');
-            item.textContent = reference;
-            list.append(item);
+        const caption = document.createElement('caption');
+        caption.textContent = 'Text/Reference Books';
+        table.append(caption);
+
+        const head = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        ['S. No.', 'Titles', 'Author(s)', 'Publisher and Edition with ISBN'].forEach((label) => {
+            const cell = document.createElement('th');
+            cell.textContent = label;
+            headRow.append(cell);
         });
-        parent.append(list);
+        head.append(headRow);
+        table.append(head);
+
+        const body = document.createElement('tbody');
+        table.append(body);
+
+        references.forEach((reference) => {
+            const row = document.createElement('tr');
+            const number = document.createElement('td');
+            number.textContent = String(body.children.length + 1);
+            const title = document.createElement('td');
+            const authors = document.createElement('td');
+            const details = document.createElement('td');
+            if (typeof reference === 'string') {
+                title.textContent = reference.replace(/^\d+\.\s*/, '');
+            } else {
+                title.textContent = reference.title || '';
+                authors.textContent = reference.authors || '';
+                details.textContent = reference.details || '';
+            }
+            row.append(number, title, authors, details);
+            body.append(row);
+        });
+        parent.append(table);
     }
 
-    function appendCourseContent(card, course) {
+    function appendCourseContent(card, course, courseId) {
         const body = document.createElement('div');
         const unitList = document.createElement('ul');
         unitList.className = 'subject-units';
@@ -167,6 +308,7 @@
         let topics;
         let references;
         let pendingReference = false;
+        let referenceNumber = '';
 
         course.content.forEach((line) => {
             if (/^[\u2022\u25cf\u25e6\u25aa\u00b7\s]+$/.test(line)) {
@@ -207,7 +349,6 @@
             }
 
             if (/^Practical\/Lab Session Outcomes/.test(line)) {
-                appendOutcomeDetails(body, line, courseOutcomes.practical || []);
                 topics = document.createElement('ul');
                 topics.className = 'unit-topics';
                 unitList.append(topics);
@@ -215,11 +356,17 @@
                 return;
             }
 
-            if (line === 'List of Experiments' || /^Perform any \d+ Experiments$/i.test(line)) {
+            if (
+                line === 'List of Experiments' ||
+                line === 'Laboratory Experiment/ Practical Titles' ||
+                line === 'Practical Titles' ||
+                line === 'Titles' ||
+                /^Perform any \d+ Experiments$/i.test(line)
+            ) {
                 const heading = document.createElement('h3');
                 heading.className = 'sub-heading';
                 heading.textContent = line;
-                body.append(heading);
+                body.insertBefore(heading, unitList);
                 topics = document.createElement('ul');
                 topics.className = 'unit-topics';
                 unitList.append(topics);
@@ -228,16 +375,29 @@
             }
 
             if (/^Text\/Reference Books$/i.test(line)) {
-                const heading = document.createElement('h3');
-                heading.className = 'sub-heading';
-                heading.textContent = line;
-                body.append(heading);
-                references = document.createElement('ol');
-                references.className = 'reference-list';
-                body.append(references);
+                const table = document.createElement('table');
+                table.className = 'reference-table';
+                const caption = document.createElement('caption');
+                caption.textContent = line;
+                table.append(caption);
+
+                const head = document.createElement('thead');
+                const headRow = document.createElement('tr');
+                ['S. No.', 'Titles', 'Author(s)', 'Publisher and Edition with ISBN'].forEach((label) => {
+                    const cell = document.createElement('th');
+                    cell.textContent = label;
+                    headRow.append(cell);
+                });
+                head.append(headRow);
+                table.append(head);
+
+                references = document.createElement('tbody');
+                table.append(references);
+                body.append(table);
                 topics = null;
                 unitItem = null;
                 pendingReference = false;
+                referenceNumber = '';
                 return;
             }
 
@@ -248,21 +408,36 @@
                     unitList.append(topics);
                 }
                 const item = document.createElement('li');
-                item.textContent = line;
+                const experimentNumber = line.match(/^LE[-\s]*(\d+)/i)?.[1];
+                const labOutcomes = (courseOutcomes.practical || []).filter((outcome) =>
+                    new RegExp(`^LSO\\s+${experimentNumber}\\.`).test(outcome)
+                );
+                if (labOutcomes.length) {
+                    appendOutcomeDetails(item, 'Lab Session Outcomes (LSOs)', labOutcomes);
+                }
+                item.append(line);
                 topics.append(item);
                 return;
             }
 
             if (references && /^\d+\.$/.test(line)) {
                 pendingReference = true;
+                referenceNumber = line.replace('.', '');
                 return;
             }
 
             if (references && pendingReference) {
-                const item = document.createElement('li');
-                item.textContent = line;
-                references.append(item);
+                const row = document.createElement('tr');
+                const number = document.createElement('td');
+                number.textContent = referenceNumber;
+                const book = document.createElement('td');
+                book.textContent = line.replace(/^\d+\.\s*/, '');
+                const authors = document.createElement('td');
+                const details = document.createElement('td');
+                row.append(number, book, authors, details);
+                references.append(row);
                 pendingReference = false;
+                referenceNumber = '';
                 return;
             }
 
@@ -274,7 +449,10 @@
             }
 
             if (references && references.lastElementChild) {
-                references.lastElementChild.textContent += ` ${line}`;
+                const book = references.lastElementChild.lastElementChild;
+                if (book) {
+                    book.textContent += ` ${line}`;
+                }
                 return;
             }
 
@@ -284,7 +462,9 @@
         });
 
         card.append(body);
-        appendReferenceBooks(card, course.references);
+        if (!card.querySelector('.reference-table')) {
+            appendReferenceBooks(card, referenceBooks[groupId]?.[courseId] ?? course.references);
+        }
     }
 
     function topicTextWithoutActions(topic) {
@@ -452,7 +632,7 @@
             card.append(message);
         } else {
             appendCourseOutcomes(card, course.courseOutcomes);
-            appendCourseContent(card, course);
+            appendCourseContent(card, course, subjectId);
         }
 
         return card;
