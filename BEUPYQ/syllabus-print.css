@@ -34,6 +34,10 @@
     display: none;
 }
 
+#syllabus-print-footer {
+    display: none;
+}
+
 @media print {
     @page {
         size: A4;
@@ -85,11 +89,7 @@
     }
 
     #syllabus-print-header {
-        position: fixed;
-        top: 7mm;
-        left: 14mm;
-        right: 14mm;
-        z-index: 20;
+        position: static;
         display: block !important;
         box-sizing: border-box;
         min-height: 12mm;
@@ -131,6 +131,24 @@
         /* The clickable source link is enough; printing the full URL can wrap
            the fixed header over the syllabus content. */
         display: none !important;
+    }
+
+    #syllabus-print-footer {
+        position: fixed;
+        right: 14mm;
+        bottom: 6mm;
+        left: 14mm;
+        display: block !important;
+        padding-top: 2mm;
+        border-top: 1px solid #cbd5e1;
+        color: #64748b !important;
+        font: 8pt/1.25 Arial, sans-serif;
+        text-align: center;
+    }
+
+    #syllabus-print-footer a {
+        color: #1d4ed8 !important;
+        text-decoration: underline !important;
     }
 
     .page-header {

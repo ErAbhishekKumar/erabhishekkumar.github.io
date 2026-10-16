@@ -39,16 +39,25 @@
         source.append(link, url);
         header.append(heading, source);
 
+        const footer = document.createElement('div');
+        footer.id = 'syllabus-print-footer';
+        footer.append(`${printTitle}  |  Source: `);
+        const footerLink = document.createElement('a');
+        footerLink.href = sourceUrl;
+        footerLink.textContent = 'Syllabus';
+        footer.append(footerLink);
+
         const pageHeader = document.querySelector('.page-header');
         if (pageHeader) {
             pageHeader.after(actions);
         } else {
             document.querySelector('main, .content, body')?.prepend(actions);
         }
-        // Keep the print header in normal document flow. A fixed header is
-        // repeated on every PDF page and hides the first topics on page 2+.
+        // Keep the print header in normal document flow. Chromium's paged
+        // print layout can place fixed elements over content at page breaks.
         const printContainer = document.querySelector('.app') || document.body;
         printContainer.prepend(header);
+        printContainer.append(footer);
 
         let detailsState = null;
         let creditsState = null;

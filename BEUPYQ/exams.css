@@ -306,14 +306,15 @@ img {
 
 @media (min-width:540px) {
     .content {
-        max-width: 520px;
+        width: min(1400px, calc(100% - 40px));
+        max-width: none;
         margin-inline: auto
     }
 
     .topbar {
         padding-inline: 20px;
         border-radius: 0 0 16px 16px;
-        width: min(520px, 100%);
+        width: min(1400px, calc(100% - 40px));
         margin: 0 auto
     }
 }

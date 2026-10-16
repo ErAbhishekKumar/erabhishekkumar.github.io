@@ -318,16 +318,21 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 520px;
+            max-width: none;
             margin: auto;
         }
 
         @media (min-width:540px) {
+            .content {
+                width: min(1400px, calc(100% - 40px));
+                max-width: none;
+            }
+
             .topbar {
                 padding-inline: 20px;
                 border-radius: 0 0 16px 16px;
-                width: 100%;
-                max-width: 520px;
+                width: min(1400px, calc(100% - 40px));
+                max-width: none;
                 margin: 0 auto;
             }
         }
