@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NCERT Quiz - Logical Abhishek</title>
+    <title>NCERT Quiz | Practice by Class, Subject & Chapter</title>
+    <meta name="description" content="Practice chapter-wise NCERT Science quizzes for Classes 6 and 7.">
 
      <!-- Google Ads & Tag Manager -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
@@ -22,277 +23,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
     
     <style>
-        html {
-            height: 100%;
-        }
-        body {
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .container {
-            flex: 1;
-            padding: 0 20px;
-        }
-
-        /* Update AdSense container spacing */
-        .adsense-container {
-            margin: 5px 0;
-        }
-
-        .footer {
-            background-color: white;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            margin-top: auto;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-            min-height: 50px; /* Fixed height to prevent layout shift */
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        .input-container {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        input[type="number"] {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-right: 10px; /* Space between input and buttons */
-        }
-
-        .button-container {  /* 4 buttons in one row and 4 in another row */
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-            gap: 10px; /* Space between buttons */
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            flex: 1 1 ; /* Make buttons responsive */
-            margin: 2px; /* Space between buttons */
-        }
-
-        button:hover {
-            background-color: #0d23e6;
-        }
-
-        .active {
-            background-color: #0d23e6; /* Highlight color for active button */
-        }
-
-        #formContainer {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e7f3fe;
-            border-left: 6px solid #2196F3;
-        }
-
-        .result p {
-            margin: 5px 0;
-        }
-
-        .clear-button {
-            background: #f00;
-            border: #333;  
-            cursor: pointer;
-            font-size: 20px;
-            color: #1500ff;
-            margin-left: 5px; /* Adjust position */
-        }
-
-        .clear-button:hover {
-            color: #f00; /* Change color on hover */
-        }
-
-        /* Add navigation menu styles */
-        .nav-menu {
-            background: white;
-            padding: 10px;
-            margin-bottom: 10px;  /* Reduced from 20px */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .nav-menu a {
-            color: #1e88e5;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-        }
-        
-        .nav-menu a:hover {
-            background-color: #f0f2f5;
-        }
-
-        /* Update header styles to match index.html */
-        .header {
-            background: linear-gradient(135deg, #1e88e5, #1565c0);
-            color: white;
-            padding: 1.5rem;  /* Reduced from 2rem */
-            text-align: center;
-            margin-bottom: 1rem;  /* Reduced from 2rem */
-        }
-        
-        .header h1 {
-            margin: 0;
-            color: white;
-            font-size: 2.5rem;
-        }
-
-        #dynamicHeading {
-            margin: 0;  /* Remove default margin */
-            color: #4CAF50;
-            min-height: 50px;
-            margin-bottom: 15px;
-        }
-
-        /* Quiz specific styles */
-        .quiz-container {
-            max-width: 600px;
-            margin: 30px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            padding: 24px 18px;
-        }
-        .quiz-question {
-            font-size: 1.2rem;
-            margin-bottom: 18px;
-        }
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .quiz-option-btn {
-            padding: 10px;
-            border-radius: 5px;
-            color: black; /* Ensure text color is set */
-            border: 1px solid #ddd;
-            background: #ffffff;
-            cursor: pointer;
-            font-size: 1rem;
-            text-align: left;
-            transition: background 0.2s;
-        }
-        .quiz-option-btn.correct {
-            background: #c8f7c5 !important;
-            border-color: #2ecc40;
-        }
-        .quiz-option-btn.incorrect {
-            background: #ffd6d6 !important;
-            border-color: #e74c3c;
-        }
-        .quiz-explanation {
-            margin-top: 12px;
-            background: #e7f3fe;
-            border-left: 4px solid #2196F3;
-            padding: 10px;
-            border-radius: 4px;
-        }
-        .quiz-nav {
-            margin-top: 18px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .quiz-nav button {
-            padding: 8px 18px;
-            border-radius: 4px;
-            border: none;
-            background: #1e88e5;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .quiz-nav button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-        .dropdown-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 30px 0 10px 0;
-        }
-        select {
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid #aaa;
-            font-size: 1rem;
-        }
-
-        /* Mobile Responsive Styles */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            #dynamicHeading {
-                font-size: 1.2rem;
-            }
-            .button-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on mobile */
-            }
-            input[type="number"] {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            .input-container {
-                flex-direction: column;
-            }
-            .clear-button, #incrementButton, #decrementButton {
-                width: 100%;
-                margin: 5px 0;
-            }
-            .nav-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 5px;
-            }
-            .nav-menu a {
-                margin: 2px;
-                font-size: 0.9rem;
-            }
-        }
+        :root{color-scheme:light;--ink:#172554;--muted:#64748b;--brand:#4f46e5;--line:#e2e8f0;--surface:#fff;--bg:#f5f7fc}
+        *{box-sizing:border-box}html{min-height:100%;scroll-behavior:smooth}body{min-height:100vh;margin:0;display:flex;flex-direction:column;background:var(--bg);color:#1e293b;font-family:Inter,"Segoe UI",Arial,sans-serif}
+        .header{padding:52px 20px 58px;text-align:center;color:white;background:radial-gradient(ellipse at 15% 0%,#818cf8 0,transparent 42%),linear-gradient(130deg,#312e81,#4f46e5 60%,#0f766e)}.header h1{margin:0;font-size:clamp(2rem,5vw,3.3rem);letter-spacing:-.04em}.header p{margin:12px 0 0;color:#e0e7ff;font-size:1.05rem}
+        .nav-menu{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:12px 20px;background:#fff;border-bottom:1px solid var(--line)}.nav-menu a{padding:9px 13px;color:#475569;text-decoration:none;border-radius:10px;font-size:.93rem;font-weight:600}.nav-menu a:hover,.nav-menu a[href="ncertquiz.html"]{background:#eef2ff;color:var(--brand)}
+        .container{width:min(100% - 32px,1000px);flex:1;margin:34px auto 56px;padding:0}.dropdown-container{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 auto 24px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 32px #1e293b0b}
+        select{width:100%;min-height:52px;padding:0 42px 0 15px;border:1px solid #cbd5e1;border-radius:12px;background:#fff;color:var(--ink);font-family:inherit;font-size:1rem;font-weight:600;outline:none}select:focus{border-color:var(--brand);box-shadow:0 0 0 3px #4f46e522}select:disabled{background:#f8fafc;color:#94a3b8}
+        .quiz-container{max-width:760px;margin:24px auto;padding:clamp(20px,4vw,34px);background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 16px 45px #1e293b0d}.quiz-question{margin:24px 0;font-size:1.25rem;line-height:1.65;color:var(--ink)}.quiz-options{display:grid;gap:11px}.quiz-option-btn{width:100%;margin:0;padding:15px 17px;border:1px solid #dbe3ef;border-radius:12px;background:#fff;color:#334155;text-align:left;font-size:1rem;line-height:1.5;cursor:pointer;transition:.18s}.quiz-option-btn:hover:not(:disabled){border-color:#818cf8;background:#f5f3ff;transform:translateY(-1px)}.quiz-option-btn.correct{background:#dcfce7!important;border-color:#22c55e}.quiz-option-btn.incorrect{background:#fee2e2!important;border-color:#ef4444}.quiz-explanation,.result{margin-top:16px;padding:15px 17px;background:#eff6ff;border-left:4px solid #3b82f6;border-radius:10px;line-height:1.6}.quiz-nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}.quiz-nav button,.quiz-container>button,.quiz-container button:not(.quiz-option-btn){width:auto;min-width:120px;padding:11px 18px;border:0;border-radius:11px;background:var(--brand);color:#fff;font-weight:700;cursor:pointer}.quiz-nav button:hover,.quiz-container button:not(.quiz-option-btn):hover{background:#3730a3}.quiz-nav button:disabled{background:#cbd5e1;cursor:not-allowed}.footer{margin-top:auto;padding:24px 16px;text-align:center;background:#fff;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.footer p{margin:6px}.footer a{color:var(--brand)}
+        @media(max-width:680px){.header{padding:38px 16px 44px}.dropdown-container{grid-template-columns:1fr;padding:15px;border-radius:15px}.container{width:min(100% - 24px,1000px);margin:22px auto 40px}.quiz-container{border-radius:16px}.quiz-question{font-size:1.1rem}}
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
      crossorigin="anonymous"></script>
@@ -305,7 +43,7 @@
     
     <header class="header">
         <h1>NCERT Quiz</h1>
-        <p>Practice NCERT MCQs for Class 6-10</p>
+        <p>Build confidence one chapter at a time · NCERT Science, Classes 6–7</p>
     </header>
 
     <nav class="nav-menu">
@@ -330,29 +68,23 @@
         </script>
     </div>
 
-    <div class="container">
+    <main class="container">
         <div class="dropdown-container">
             <select id="classDropdown">
                 <option value="">Select Class</option>
                 <option value="6">Class 6</option>
                 <option value="7">Class 7</option>
-                <option value="8">Class 8</option>
-                <option value="9">Class 9</option>
-                <option value="10">Class 10</option>
             </select>
             <select id="subjectDropdown" disabled>
                 <option value="">Select Subject</option>
                 <option value="science">Science</option>
-                <option value="history">History</option>
-                <option value="polity">Polity</option>
-                <option value="geography">Geography</option>
             </select>
             <select id="chapterDropdown" disabled>
                 <option value="">Select Chapter</option>
             </select>
         </div>
         <div id="quizSection"></div>
-    </div>
+    </main>
 
     <footer class="footer">
         <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
@@ -361,7 +93,7 @@
     </footer>
 
     <script>
-        // Static chapters data (example, update as needed)
+        // Chapter titles and counts follow the NCERT books listed in NCERT.html.
         const chaptersData = {
             "6": {
                 "science": [
@@ -377,21 +109,6 @@
                     "Chapter:10 Living Creatures: Exploring their Characteristics",
                     "Chapter:11 Nature’s Treasures",
                     "Chapter:12 Beyond Earth"
-                ],
-                "history": [
-                    "What, Where, How and When",
-                    "On the Trail of the Earliest People"
-                    // ...add more chapters as needed
-                ],
-                "polity": [
-                    "Understanding Diversity",
-                    "Diversity and Discrimination"
-                    // ...add more chapters as needed
-                ],
-                "geography": [
-                    "The Earth in the Solar System",
-                    "Globe: Latitudes and Longitudes"
-                    // ...add more chapters as needed
                 ]
             },
             "7": {
@@ -408,37 +125,8 @@
                     "Chapter:10 Life Processes in Plants",
                     "Chapter:11 Light: Shadows and Reflections",
                     "Chapter:12 Earth, Moon, and the Sun"
-                ],
-                "history": [
-                    "Tracing Changes Through a Thousand Years",
-                    "New Kings and Kingdoms"
-                    // ...add more chapters as needed
-                ],
-                "polity": [
-                    "On Equality",
-                    "Role of the Government in Health"
-                    // ...add more chapters as needed
-                ],
-                "geography": [
-                    "Environment",
-                    "Inside Our Earth"
-                    // ...add more chapters as needed
                 ]
             },
-            "8": {
-                "science": [
-                    "Crop Production and Management",
-                    "Microorganisms: Friend and Foe"
-                    // ...add more chapters as needed
-                ],
-                // ...other subjects
-            },
-            "9": {
-                // ...subjects and chapters
-            },
-            "10": {
-                // ...subjects and chapters
-            }
         };
 
         let quizFileQuestions = []; // Store all questions from file for chapter filtering
