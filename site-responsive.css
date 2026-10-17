@@ -1,0 +1,129 @@
+/* Shared responsive foundation for the standalone site pages. */
+:root {
+    color-scheme: light;
+    --site-ink: #172033;
+    --site-muted: #5d687b;
+    --site-brand: #1768d2;
+    --site-brand-dark: #104fa8;
+    --site-surface: #fff;
+    --site-border: #dce4ef;
+    --site-shadow: 0 12px 32px rgba(25, 48, 82, .09);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video, canvas, iframe { max-width: 100%; }
+img { height: auto; }
+
+button, input, select, textarea { max-width: 100%; font: inherit; }
+button, [type="button"], [type="submit"], a { -webkit-tap-highlight-color: transparent; }
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid #f2a900;
+    outline-offset: 3px;
+}
+
+/* Common page shells and content panels. */
+:where(.container, .wrapper, .main-container, .content, main) {
+    min-width: 0;
+}
+
+:where(.card, .tool-card, .result-card, .calculator, .panel, .section-card) {
+    border-radius: 16px;
+    box-shadow: var(--site-shadow);
+}
+
+:where(input, select, textarea) {
+    min-height: 44px;
+}
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+@media (max-width: 760px) {
+    body { font-size: 16px; }
+
+    :where(.container, .wrapper, .main-container, .content, main) {
+        width: min(100% - 28px, 100%);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    :where(.grid, .tools-grid, .cards, .card-grid, .row) {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    :where(button, .btn, .button, input[type="submit"]) {
+        min-height: 44px;
+    }
+
+    :where(table, pre, .table-wrap, .table-responsive) {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    :where(h1) { font-size: clamp(1.65rem, 7vw, 2.35rem); }
+    :where(h2) { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+.site-seo-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    width: min(100% - 28px, 1100px);
+    margin: .75rem auto;
+    padding: .6rem .8rem;
+    color: #eaf2ff;
+    border: 1px solid rgba(148, 163, 184, .28);
+    border-radius: 14px;
+    background: linear-gradient(135deg, #132b4d, #183b68);
+    box-shadow: 0 8px 24px rgba(15, 35, 65, .16);
+}
+
+.site-seo-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: .4rem .85rem;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 999px;
+    font-size: .92rem;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.site-seo-nav a:hover,
+.site-seo-nav a:focus-visible {
+    color: #fff;
+    background: #1768d2;
+}

@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,follow">
+    <title>Result Download Utility</title>
+</head>
 <body>
-<form method="POST" action="https://oneresult.onrender.com/fetch">
-<input name="reg" placeholder="Enter RegNo" />
-<button type="submit">Download</button>
-</form>
+    <form method="POST" action="https://oneresult.onrender.com/fetch">
+        <label for="reg">Registration number</label>
+        <input id="reg" name="reg" placeholder="Enter RegNo" required>
+        <button type="submit">Download</button>
+    </form>
 </body>
 </html>

@@ -13,6 +13,84 @@
     --shadow: 0 12px 28px rgba(0, 0, 0, .24);
 }
 
+/* Shared responsive polish for every BEUPYQ page using the portal theme. */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-width: 320px;
+    line-height: 1.55;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--accent-2, #ffd28a);
+    outline-offset: 3px;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+    max-width: 100%;
+}
+
+table {
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .app,
+    .content,
+    main {
+        max-width: 100%;
+    }
+
+    .content {
+        padding-right: max(14px, env(safe-area-inset-right));
+        padding-left: max(14px, env(safe-area-inset-left));
+    }
+
+    .topbar {
+        padding-right: max(10px, env(safe-area-inset-right));
+        padding-left: max(10px, env(safe-area-inset-left));
+    }
+
+    .sidebar {
+        right: max(8px, env(safe-area-inset-right));
+        width: min(300px, calc(100vw - 16px));
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
+    }
+
+    pre,
+    .table-wrap,
+    .table-responsive {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    :where(button, .btn, .button, .sidebar-nav a) {
+        min-height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
 html,
 body {
     background-color: #101a2c;
