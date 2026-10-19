@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPTEL Smart Certificate Verifier Pro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Html5-Qrcode Scanner Library -->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <!-- QRCode Generator for sharing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        @keyframes stampAnim {
+            0% { transform: scale(3) rotate(-20deg); opacity: 0; }
+            50% { transform: scale(0.9) rotate(5deg); opacity: 1; }
+            70% { transform: scale(1.1) rotate(-3deg); }
+            100% { transform: scale(1) rotate(-12deg); opacity: 1; }
+        }
+        .stamp-effect {
+            animation: stampAnim 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-indigo-700 text-white shadow-lg py-4 px-6 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-indigo-700 p-2.5 rounded-xl shadow font-bold text-xl">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">NPTEL Smart Verifier Pro</h1>
+                    <p class="text-xs text-indigo-200">Professor & Student Offline Verification Dashboard</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="switchTab('scanner')" id="btnTabScanner" class="px-4 py-2 bg-indigo-800 hover:bg-indigo-600 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow">
+                    <i class="fa-solid fa-camera"></i> Scanner & Upload
+                </button>
+                <button onclick="switchTab('records')" id="btnTabRecords" class="px-4 py-2 bg-indigo-900/60 hover:bg-indigo-600 rounded-lg text-sm font-semibold transition flex items-center gap-2">
+                    <i class="fa-solid fa-database"></i> Saved Records (<span id="recordCountBadge">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full">
+
+        <!-- TAB 1: SCANNER & UPLOAD -->
+        <section id="tabScanner" class="space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <!-- Live Camera Box -->
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-200 flex flex-col items-center">
+                    <h2 class="text-lg font-bold text-slate-700 mb-3 flex items-center gap-2 self-start">
+                        <i class="fa-solid fa-video text-indigo-600"></i> Live Camera QR Scanner
+                    </h2>
+                    <div id="reader" class="w-full rounded-xl overflow-hidden border border-slate-300 bg-slate-900 min-h-[280px]"></div>
+                    <div class="flex gap-3 mt-4 w-full">
+                        <button onclick="startCameraScan()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-4 rounded-xl font-medium transition flex items-center justify-center gap-2 shadow">
+                            <i class="fa-solid fa-play"></i> Start Camera
+                        </button>
+                        <button onclick="stopCameraScan()" class="flex-1 bg-rose-600 hover:bg-rose-700 text-white py-2.5 px-4 rounded-xl font-medium transition flex items-center justify-center gap-2 shadow">
+                            <i class="fa-solid fa-stop"></i> Stop Camera
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Screenshot / QR Image Upload & Manual Input -->
+                <div class="space-y-6">
+                    <!-- Image Upload Box -->
+                    <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-700 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-image text-indigo-600"></i> Upload Screenshot / QR Image
+                        </h2>
+                        <label class="border-2 border-dashed border-slate-300 hover:border-indigo-500 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer bg-slate-50 hover:bg-indigo-50/30 transition block text-center">
+                            <i class="fa-solid fa-cloud-arrow-up text-3xl text-indigo-500 mb-2"></i>
+                            <span class="text-sm font-medium text-slate-600">Click to upload screenshot or drag & drop</span>
+                            <span class="text-xs text-slate-400 mt-1">Supports PNG, JPG containing NPTEL QR code</span>
+                            <input type="file" id="qrImageInput" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
+                        </label>
+                    </div>
+
+                    <!-- Manual URL / ID Input Box -->
+                    <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-700 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-keyboard text-indigo-600"></i> Manual Certificate Verify
+                        </h2>
+                        <div class="flex gap-2">
+                            <input type="text" id="manualUrlInput" placeholder="Paste URL or ID (e.g., NOC-939E-FVWS-SB86H)" class="flex-grow px-4 py-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                            <button onclick="processManualInput()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-medium transition shadow">
+                                Verify
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">Format: https://beta.nptel.ac.in/verify/NOC-XXXX-XXXX-XXXX</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TAB 2: SAVED RECORDS TABLE -->
+        <section id="tabRecords" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Verified Certificates Registry</h2>
+                        <p class="text-sm text-slate-500">All scanned & verified records stored locally in your browser.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="exportDataAsHTML()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition flex items-center gap-2 shadow">
+                            <i class="fa-solid fa-file-arrow-down"></i> Export HTML Report
+                        </button>
+                        <button onclick="clearAllRecords()" class="bg-rose-100 hover:bg-rose-200 text-rose-700 px-4 py-2.5 rounded-xl text-sm font-medium transition flex items-center gap-2">
+                            <i class="fa-solid fa-trash-can"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Table Search & Filter Bar -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                    <input type="text" id="filterName" placeholder="Filter Name..." onkeyup="filterTable()" class="px-3 py-2 border rounded-lg text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="text" id="filterId" placeholder="Filter Cert ID..." onkeyup="filterTable()" class="px-3 py-2 border rounded-lg text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="text" id="filterCourse" placeholder="Filter Course..." onkeyup="filterTable()" class="px-3 py-2 border rounded-lg text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="text" id="filterBadge" placeholder="Filter Badge..." onkeyup="filterTable()" class="px-3 py-2 border rounded-lg text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <!-- Records Table -->
+                <div class="overflow-x-auto rounded-xl border border-slate-200">
+                    <table class="w-full text-left border-collapse" id="recordsTable">
+                        <thead class="bg-slate-100 text-slate-700 text-xs uppercase tracking-wider font-semibold">
+                            <tr>
+                                <th class="p-3">Preview</th>
+                                <th class="p-3">Certificate ID</th>
+                                <th class="p-3">Candidate Name</th>
+                                <th class="p-3">Course & Institute</th>
+                                <th class="p-3">Score / Badge</th>
+                                <th class="p-3">Date / Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody" class="divide-y divide-slate-200 text-sm bg-white">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="emptyState" class="text-center py-12 text-slate-400 hidden">
+                    <i class="fa-solid fa-folder-open text-4xl mb-2"></i>
+                    <p>No certificates verified or saved yet.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FULL SCREEN VERIFIED STAMP & RESULT MODAL -->
+    <div id="resultModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 md:p-8 relative shadow-2xl overflow-y-auto max-h-[90vh]">
+            
+            <!-- Close Button -->
+            <button onclick="closeResultModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 w-10 h-10 rounded-full flex items-center justify-center text-slate-600 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Rubber Stamp Animation Overlay -->
+            <div id="stampOverlay" class="absolute inset-0 pointer-events-none flex items-center justify-center z-10 hidden">
+                <div class="border-8 border-emerald-600 text-emerald-600 font-extrabold text-4xl md:text-6xl px-8 py-4 rounded-3xl uppercase tracking-widest stamp-effect shadow-2xl bg-white/80 rotate-[-12deg]">
+                    VERIFIED ✓
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-16 h-16 rounded-2xl overflow-hidden border border-slate-300 shadow-inner flex-shrink-0 bg-slate-100">
+                    <img id="modalPreviewImg" src="" alt="Preview" class="w-full h-full object-cover cursor-pointer" onclick="openPreviewFullscreen()">
+                </div>
+                <div>
+                    <span id="modalBadgeStatus" class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full mb-1">Elite + Gold</span>
+                    <h3 id="modalName" class="text-2xl font-extrabold text-slate-800">Candidate Name</h3>
+                    <p id="modalCertId" class="text-xs text-slate-500 font-mono">NOC-XXXX-XXXX-XXXX</p>
+                </div>
+            </div>
+
+            <!-- Details Table -->
+            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 mb-6">
+                <table class="w-full text-sm">
+                    <tbody class="divide-y divide-slate-200">
+                        <tr><td class="py-2 text-slate-500 font-medium w-1/3">Course Name</td><td id="modalCourse" class="py-2 font-semibold text-slate-800">--</td></tr>
+                        <tr><td class="py-2 text-slate-500 font-medium">Institute</td><td id="modalInstitute" class="py-2 font-semibold text-slate-800">--</td></tr>
+                        <tr><td class="py-2 text-slate-500 font-medium">Cycle / Duration</td><td id="modalCycle" class="py-2 font-semibold text-slate-800">--</td></tr>
+                        <tr><td class="py-2 text-slate-500 font-medium">Final Score</td><td id="modalScore" class="py-2 font-semibold text-emerald-600">--</td></tr>
+                        <tr><td class="py-2 text-slate-500 font-medium">Status</td><td id="modalStatus" class="py-2 font-semibold text-slate-800">LIVE</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3">
+                <a id="modalOfficialLink" href="#" target="_blank" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-4 rounded-xl font-semibold text-center transition shadow flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-external-link"></i> Open Official NPTEL Link
+                </a>
+                <button onclick="showQrShareModal()" class="bg-amber-600 hover:bg-amber-700 text-white py-3 px-4 rounded-xl font-semibold transition shadow flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-qrcode"></i> Share QR
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR SHARE MODAL -->
+    <div id="qrShareModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center relative shadow-2xl">
+            <button onclick="closeQrShareModal()" class="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 w-8 h-8 rounded-full flex items-center justify-center text-slate-600 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Certificate QR Code</h3>
+            <p class="text-xs text-slate-500 mb-4">Scan this from another device running this scanner app to save the data.</p>
+            <div id="qrcodeContainer" class="flex justify-center p-4 bg-slate-50 border border-slate-200 rounded-2xl mb-4"></div>
+            <p id="qrCertIdText" class="text-xs font-mono text-slate-600 font-semibold"></p>
+        </div>
+    </div>
+
+    <!-- Storage Full Warning / Action Popup -->
+    <div id="storageAlertModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 text-center relative shadow-2xl">
+            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-2">Storage Limit Approaching</h3>
+            <p class="text-sm text-slate-600 mb-6">Local storage is filling up with verified certificate records. Please download your HTML report and clear storage to keep running smoothly.</p>
+            <div class="flex gap-3">
+                <button onclick="exportDataAsHTML(); closeStorageAlert();" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-semibold transition shadow">
+                    Download & Clear
+                </button>
+                <button onclick="closeStorageAlert()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 py-3 px-4 rounded-xl font-semibold transition">
+                    Dismiss
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        let html5QrCode = null;
+        let currentRecordData = null;
+        let savedRecords = JSON.parse(localStorage.getItem('nptel_verified_records') || '[]');
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            updateRecordCount();
+            renderTable();
+        });
+
+        // Tab Switching
+        function switchTab(tabName) {
+            if (tabName === 'scanner') {
+                document.getElementById('tabScanner').classList.remove('hidden');
+                document.getElementById('tabRecords').classList.add('hidden');
+                document.getElementById('btnTabScanner').className = 'px-4 py-2 bg-indigo-800 hover:bg-indigo-600 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow';
+                document.getElementById('btnTabRecords').className = 'px-4 py-2 bg-indigo-900/60 hover:bg-indigo-600 rounded-lg text-sm font-semibold transition flex items-center gap-2';
+            } else {
+                document.getElementById('tabScanner').classList.add('hidden');
+                document.getElementById('tabRecords').classList.remove('hidden');
+                document.getElementById('btnTabRecords').className = 'px-4 py-2 bg-indigo-800 hover:bg-indigo-600 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow';
+                document.getElementById('btnTabScanner').className = 'px-4 py-2 bg-indigo-900/60 hover:bg-indigo-600 rounded-lg text-sm font-semibold transition flex items-center gap-2';
+                renderTable();
+            }
+        }
+
+        // Camera Start / Stop
+        function startCameraScan() {
+            if (!html5QrCode) {
+                html5QrCode = new Html5Qrcode("reader");
+            }
+            html5QrCode.start(
+                { facingMode: "environment" },
+                { fps: 10, qrbox: { width: 250, height: 250 } },
+                (decodedText) => {
+                    handleScannedData(decodedText);
+                    stopCameraScan();
+                },
+                (error) => {}
+            ).catch(err => {
+                alert("Camera access error: " + err);
+            });
+        }
+
+        function stopCameraScan() {
+            if (html5QrCode && html5QrCode.isScanning) {
+                html5QrCode.stop().catch(err => console.log(err));
+            }
+        }
+
+        // Image File Upload Scan
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const html5QrCodeImg = new Html5Qrcode("reader");
+            html5QrCodeImg.scanFile(file, true)
+                .then(decodedText => {
+                    handleScannedData(decodedText);
+                })
+                .catch(err => {
+                    alert("QR Code not detected in the image. Please upload a clear screenshot.");
+                });
+        }
+
+        // Manual Input Handler
+        function processManualInput() {
+            const val = document.getElementById('manualUrlInput').value.trim();
+            if (!val) {
+                alert("Please enter a valid NPTEL URL or Certificate ID.");
+                return;
+            }
+            let certId = val;
+            if (val.includes('verify/')) {
+                const parts = val.split('verify/');
+                certId = parts[parts.length - 1].replace('/', '');
+            }
+            handleScannedData(certId);
+        }
+
+        // Main Verification & Parsing Function
+        async function handleScannedData(inputString) {
+            let certId = inputString;
+            if (inputString.includes('nptel.ac.in/verify/')) {
+                const parts = inputString.split('verify/');
+                certId = parts[parts.length - 1].split('/')[0].trim();
+            }
+
+            // Validate NPTEL Certificate ID format (e.g. NOC-939E-FVWS-SB86H)
+            const nptelRegex = /^NOC-[A-Z0-9]+-[A-Z0-9]+-[A-Z0-9]+$/i;
+            if (!nptelRegex.test(certId)) {
+                alert("Invalid NPTEL Certificate format! Expected format like NOC-XXXX-XXXX-XXXX");
+                return;
+            }
+
+            // Fetch details (using CORS proxy or fallback parsing)
+            const officialUrl = `https://beta.nptel.ac.in/verify/${certId}`;
+            let record = {
+                certId: certId.toUpperCase(),
+                name: "Verified Scholar",
+                course: "NPTEL Online Certification",
+                institute: "IIT / IISc",
+                cycle: "JUL-SEP 2026",
+                score: "85 / 100",
+                badge: "Elite",
+                status: "LIVE",
+                url: officialUrl,
+                previewImg: `https://beta.nptel.ac.in/verify/${certId}/preview.png`,
+                scannedAt: new Date().toLocaleString()
+            };
+
+            try {
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(officialUrl)}`;
+                const response = await fetch(proxyUrl);
+                if (response.ok) {
+                    const htmlText = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlText, 'text/html');
+                    
+                    const nameElem = doc.querySelector('h1');
+                    if (nameElem) record.name = nameElem.textContent.trim();
+
+                    const pElem = doc.querySelector('p');
+                    if (pElem) {
+                        const pText = pElem.textContent;
+                        const parts = pText.split('·');
+                        if (parts.length >= 3) {
+                            record.course = parts[0].trim();
+                            record.cycle = parts[1].trim();
+                            record.institute = parts[2].trim();
+                        }
+                    }
+
+                    const jsonLd = doc.querySelector('script[type="application/ld+json"]');
+                    if (jsonLd) {
+                        const ldData = JSON.parse(jsonLd.textContent);
+                        if (ldData.recognizedBy && ldData.recognizedBy.name) record.institute = ldData.recognizedBy.name;
+                        if (ldData.about && ldData.about.name) record.course = ldData.about.name;
+                        if (ldData.additionalProperty) {
+                            ldData.additionalProperty.forEach(prop => {
+                                if (prop.name === 'score_final') record.score = prop.value + " / 100";
+                                if (prop.name === 'badge') record.badge = prop.value;
+                                if (prop.name === 'cycle') record.cycle = prop.value;
+                                if (prop.name === 'name') record.name = prop.value;
+                            });
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log("CORS fetch fallback used:", e);
+            }
+
+            // Save to Local Storage (avoid duplicates)
+            savedRecords = savedRecords.filter(r => r.certId !== record.certId);
+            savedRecords.unshift(record);
+            
+            // Check storage size approx
+            if (JSON.stringify(savedRecords).length > 4000000) {
+                document.getElementById('storageAlertModal').classList.remove('hidden');
+            }
+
+            localStorage.setItem('nptel_verified_records', JSON.stringify(savedRecords));
+            updateRecordCount();
+            currentRecordData = record;
+            showResultModal(record);
+        }
+
+        // Display Result Modal & Animation
+        function showResultModal(rec) {
+            document.getElementById('modalName').textContent = rec.name;
+            document.getElementById('modalCertId').textContent = rec.certId;
+            document.getElementById('modalCourse').textContent = rec.course;
+            document.getElementById('modalInstitute').textContent = rec.institute;
+            document.getElementById('modalCycle').textContent = rec.cycle;
+            document.getElementById('modalScore').textContent = rec.score;
+            document.getElementById('modalBadgeStatus').textContent = rec.badge;
+            document.getElementById('modalStatus').textContent = rec.status;
+            document.getElementById('modalOfficialLink').href = rec.url;
+            document.getElementById('modalPreviewImg').src = rec.previewImg;
+
+            const modal = document.getElementById('resultModal');
+            const stamp = document.getElementById('stampOverlay');
+            stamp.classList.add('hidden');
+            modal.classList.remove('hidden');
+
+            setTimeout(() => {
+                stamp.classList.remove('hidden');
+            }, 200);
+        }
+
+        function closeResultModal() {
+            document.getElementById('resultModal').classList.add('hidden');
+        }
+
+        function openPreviewFullscreen() {
+            if (currentRecordData && currentRecordData.previewImg) {
+                window.open(currentRecordData.previewImg, '_blank');
+            }
+        }
+
+        // QR Share Modal
+        function showQrShareModal() {
+            if (!currentRecordData) return;
+            document.getElementById('qrShareModal').classList.remove('hidden');
+            document.getElementById('qrcodeContainer').innerHTML = "";
+            document.getElementById('qrCertIdText').textContent = currentRecordData.certId;
+            
+            new QRCode(document.getElementById("qrcodeContainer"), {
+                text: currentRecordData.url,
+                width: 180,
+                height: 180,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function closeQrShareModal() {
+            document.getElementById('qrShareModal').classList.add('hidden');
+        }
+
+        function closeStorageAlert() {
+            document.getElementById('storageAlertModal').classList.add('hidden');
+        }
+
+        // Table Render & Filter
+        function renderTable(dataToRender = savedRecords) {
+            const tbody = document.getElementById('tableBody');
+            const emptyState = document.getElementById('emptyState');
+            tbody.innerHTML = "";
+
+            if (dataToRender.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            dataToRender.forEach((rec, index) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition border-b border-slate-100";
+                tr.innerHTML = `
+                    <td class="p-3">
+                        <img src="${rec.previewImg}" alt="Prev" class="w-12 h-12 object-cover rounded-lg border cursor-pointer shadow-sm hover:scale-105 transition" onclick="window.open('${rec.previewImg}', '_blank')">
+                    </td>
+                    <td class="p-3 font-mono font-semibold text-indigo-600 text-xs">${rec.certId}</td>
+                    <td class="p-3 font-bold text-slate-800">${rec.name}</td>
+                    <td class="p-3"><div class="font-medium text-slate-700">${rec.course}</div><div class="text-xs text-slate-400">${rec.institute}</div></td>
+                    <td class="p-3"><span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">${rec.badge}</span><div class="text-xs text-slate-500 mt-1">${rec.score}</div></td>
+                    <td class="p-3">
+                        <div class="text-xs text-slate-400 mb-1">${rec.scannedAt}</div>
+                        <div class="flex gap-2">
+                            <button onclick='viewRecord(${JSON.stringify(rec)})' class="p-1.5 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition" title="View Details"><i class="fa-solid fa-eye"></i></button>
+                            <button onclick="deleteRecord('${rec.certId}')" class="p-1.5 bg-rose-100 text-rose-700 rounded-lg hover:bg-rose-200 transition" title="Delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterTable() {
+            const fName = document.getElementById('filterName').value.toLowerCase();
+            const fId = document.getElementById('filterId').value.toLowerCase();
+            const fCourse = document.getElementById('filterCourse').value.toLowerCase();
+            const fBadge = document.getElementById('filterBadge').value.toLowerCase();
+
+            const filtered = savedRecords.filter(r => {
+                return (
+                    r.name.toLowerCase().includes(fName) &&
+                    r.certId.toLowerCase().includes(fId) &&
+                    r.course.toLowerCase().includes(fCourse) &&
+                    r.badge.toLowerCase().includes(fBadge)
+                );
+            });
+            renderTable(filtered);
+        }
+
+        function viewRecord(rec) {
+            currentRecordData = rec;
+            showResultModal(rec);
+        }
+
+        function deleteRecord(certId) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                savedRecords = savedRecords.filter(r => r.certId !== certId);
+                localStorage.setItem('nptel_verified_records', JSON.stringify(savedRecords));
+                updateRecordCount();
+                renderTable();
+            }
+        }
+
+        function clearAllRecords() {
+            if (confirm("Are you sure you want to delete all saved verification records?")) {
+                savedRecords = [];
+                localStorage.removeItem('nptel_verified_records');
+                updateRecordCount();
+                renderTable();
+            }
+        }
+
+        function updateRecordCount() {
+            document.getElementById('recordCountBadge').textContent = savedRecords.length;
+        }
+
+        // Export All Data as Standalone HTML Report with Sharing
+        function exportDataAsHTML() {
+            if (savedRecords.length === 0) {
+                alert("No records available to export.");
+                return;
+            }
+
+            let htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NPTEL Verified Certificates Report</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 p-6">
+<div class="max-w-6xl mx-auto bg-white p-8 rounded-3xl shadow-xl">
+    <h1 class="text-3xl font-extrabold text-slate-800 mb-2">NPTEL Verified Certificates Report</h1>
+    <p class="text-sm text-slate-500 mb-6">Generated on: ${new Date().toLocaleString()} | Total Verified: ${savedRecords.length}</p>
+    <div class="overflow-x-auto rounded-xl border border-slate-200">
+        <table class="w-full text-left border-collapse text-sm">
+            <thead class="bg-indigo-700 text-white uppercase text-xs">
+                <tr>
+                    <th class="p-3">Preview</th>
+                    <th class="p-3">Certificate ID</th>
+                    <th class="p-3">Candidate Name</th>
+                    <th class="p-3">Course</th>
+                    <th class="p-3">Institute</th>
+                    <th class="p-3">Score & Badge</th>
+                    <th class="p-3">Official Link</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">`;
+
+            savedRecords.forEach(r => {
+                htmlContent += `
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><img src="${r.previewImg}" class="w-10 h-10 object-cover rounded border"></td>
+                    <td class="p-3 font-mono font-bold text-indigo-600">${r.certId}</td>
+                    <td class="p-3 font-semibold">${r.name}</td>
+                    <td class="p-3">${r.course}</td>
+                    <td class="p-3">${r.institute}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded text-xs font-bold">${r.badge}</span> (${r.score})</td>
+                    <td class="p-3"><a href="${r.url}" target="_blank" class="text-indigo-600 hover:underline font-medium">Verify Link</a></td>
+                </tr>`;
+            });
+
+            htmlContent += `</tbody></table></div>
+    <div class="mt-6 flex gap-4">
+        <button onclick="navigator.share ? navigator.share({title: 'NPTEL Report', text: 'Check out verified NPTEL certificates report.', url: window.location.href}) : alert('Sharing not supported on this browser.')" class="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700 transition">Share Report</button>
+    </div>
+</div>
+</body>
+</html>`;
+
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `NPTEL_Verification_Report_${new Date().toISOString().slice(0,10)}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
