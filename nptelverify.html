@@ -472,7 +472,7 @@
             document.getElementById('storageAlertModal').classList.add('hidden');
         }
 
-        // Table Render & Filter (Fixed Template Literal & Quote Issue)
+        // Table Render & Filter
         function renderTable(dataToRender = savedRecords) {
             const tbody = document.getElementById('tableBody');
             const emptyState = document.getElementById('emptyState');
@@ -554,19 +554,31 @@
             document.getElementById('recordCountBadge').textContent = savedRecords.length;
         }
 
-        // Export All Data as Standalone HTML Report with Sharing
+        // Export All Data as Standalone HTML Report (Error-free syntax fixed)
         function exportDataAsHTML() {
             if (savedRecords.length === 0) {
                 alert("No records available to export.");
                 return;
             }
 
-            let htmlContent = `<!DOCTYPE html>
+            const rowsHTML = savedRecords.map(r => `
+                <tr class="hover:bg-slate-50 border-b border-slate-100">
+                    <td class="p-3"><img src="${r.previewImg}" class="w-12 h-12 object-cover rounded border"></td>
+                    <td class="p-3 font-mono font-bold text-indigo-600">${r.certId}</td>
+                    <td class="p-3 font-semibold text-slate-800">${r.name}</td>
+                    <td class="p-3 text-slate-700">${r.course}</td>
+                    <td class="p-3 text-slate-500">${r.institute}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded text-xs font-bold">${r.badge}</span> (${r.score})</td>
+                    <td class="p-3"><a href="${r.url}" target="_blank" class="text-indigo-600 hover:underline font-medium">Verify Link</a></td>
+                </tr>
+            `).join('');
+
+            const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>NPTEL Verified Certificates Report</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"><\/script>
 </head>
 <body class="bg-slate-50 p-6">
 <div class="max-w-6xl mx-auto bg-white p-8 rounded-3xl shadow-xl">
@@ -585,22 +597,11 @@
                     <th class="p-3">Official Link</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-slate-200">`;
-
-            savedRecords.forEach(r => {
-                htmlContent += `
-                <tr class="hover:bg-slate-50">
-                    <td class="p-3"><img src="${r.previewImg}" class="w-10 h-10 object-cover rounded border"></td>
-                    <td class="p-3 font-mono font-bold text-indigo-600">${r.certId}</td>
-                    <td class="p-3 font-semibold">${r.name}</td>
-                    <td class="p-3">${r.course}</td>
-                    <td class="p-3">${r.institute}</td>
-                    <td class="p-3"><span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded text-xs font-bold">${r.badge}</span> (${r.score})</td>
-                    <td class="p-3"><a href="${r.url}" target="_blank" class="text-indigo-600 hover:underline font-medium">Verify Link</a></td>
-                </tr>`;
-            });
-
-            htmlContent += `</tbody></table></div>
+            <tbody class="divide-y divide-slate-200">
+                ${rowsHTML}
+            </tbody>
+        </table>
+    </div>
     <div class="mt-6 flex gap-4">
         <button onclick="navigator.share ? navigator.share({title: 'NPTEL Report', text: 'Check out verified NPTEL certificates report.', url: window.location.href}) : alert('Sharing not supported on this browser.')" class="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-indigo-700 transition">Share Report</button>
     </div>
