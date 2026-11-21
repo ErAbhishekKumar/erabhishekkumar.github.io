@@ -1009,6 +1009,31 @@ code, pre { font-family: var(--font-mono); }
   100% { transform: translateX(-100%); }
 }
 
+@keyframes marquee-fast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-ultrafast {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Slower marquee for readability - 20s */
+.notification-content.fast {
+  animation: marquee-fast 20s linear infinite;
+}
+
+/* Ultra fast marquee - 8s */
+.notification-content.ultrafast {
+  animation: marquee-ultrafast 8s linear infinite;
+}
+
+/* Normal readable speed - 25s */
+.notification-content.readable {
+  animation: marquee 25s linear infinite;
+}
+
 /* --- Footer --- */
 .footer {
   padding: var(--space-2xl) var(--space-lg);
