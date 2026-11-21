@@ -4,10 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="connect-src 'self' https://sbteonline.bihar.gov.in https://sbte-api.anantdrishti.com;">
-    <title>SBTE Result(Unofficial)</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701"
-     crossorigin="anonymous"></script>
+    <meta name="description" content="Check SBTE Results online. Unofficial SBTE Result portal for Bihar Polytechnic students.">
+    <title>SBTE Result (Unofficial) | Logical Abhishek</title>
+
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6429074331864701" crossorigin="anonymous"></script>
+
+    <!-- Modern 3D Design System -->
+    <link rel="stylesheet" href="assets/css/modern-3d.css">
+    <link rel="stylesheet" href="site-responsive.css">
+    <link rel="canonical" href="https://erabhishekkumar.github.io/SBTEResult.html">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6L9J7XHXW"></script>
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P6L9J7XHXW');
+    </script>
+</head>
+<body>
+    <nav class="site-seo-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="BEUPYQ/beupyqs.html">BEU PYQ</a>
+        <a href="BEUPYQ/beusyllabus.html">BEU Syllabus</a>
+    </nav>
+
+    <!-- Top Navigation Bar -->
+    <header class="topbar">
+        <div class="topbar-brand">
+            <div class="topbar-logo">
+                <img src="favicon.ico" alt="Logical Abhishek logo" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--color-accent), var(--color-accent-2))';">
+            </div>
+            <span class="topbar-title">Logical Abhishek</span>
+        </div>
+
+        <nav class="topbar-nav">
+            <a href="index.html" class="topbar-link">Home</a>
+            <a href="BEUPYQ/beupyqs.html" class="topbar-link">BEU PYQ</a>
+            <a href="BEUPYQ/beusyllabus.html" class="topbar-link">BEU Syllabus</a>
+            <a href="SBTEResult.html" class="topbar-link active">SBTE Result</a>
+        </nav>
+
+        <div class="topbar-actions">
+            <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">SBTE Result Portal</h1>
+            <p class="hero-subtitle">Check and Download SBTE Polytechnic Results Online</p>
+        </div>
+    </section>
+
+    <button class="btn btn-primary donate-btn btn-lg" data-donate>₹ Donate</button>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="section">
+            <div class="section-header">
+                <span class="section-tag">Result Portal</span>
+                <h2 class="section-title">SBTE Result Checker</h2>
+                <p class="section-description">Check your Bihar Polytechnic results by entering your roll number</p>
+            </div>
+
+            <div class="card-3d" style="max-width: 600px; margin: 0 auto;">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Enter Roll Number</h3>
+
+                <div class="form-group">
+                    <label for="rollNo">Roll Number (12 digits)</label>
+                    <input type="text" id="rollNo" placeholder="Enter 12-digit roll number" maxlength="12" pattern="[0-9]{12}" style="font-family: var(--font-mono); text-align: center; font-size: 1.25rem; letter-spacing: 0.1em;">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Result Type:</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label class="form-input" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">
+                            <input type="radio" name="rollType" id="checkbox1" value="type1" onchange="toggleCheckbox(this)" style="width: auto; margin: 0;">
+                            <span>Roll No 001 to 060</span>
+                        </label>
+                        <label class="form-input" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">
+                            <input type="radio" name="rollType" id="checkbox2" value="type2" onchange="toggleCheckbox(this)" style="width: auto; margin: 0;">
+                            <span>Roll No 001 to 120</span>
+                        </label>
+                        <label class="form-input" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; padding: 1rem; background: var(--color-bg); border: 1px solid var(--color-border);">
+                            <input type="radio" name="rollType" id="checkbox3" value="type3" onchange="toggleCheckbox(this)" style="width: auto; margin: 0;">
+                            <span>Single Student Roll No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="submitForm()" style="margin-top: 1rem;">Submit & Get Result</button>
+
+                <div id="loading" class="hidden" style="text-align: center; padding: 1rem;">
+                    <div class="spinner" style="margin: 0 auto 1rem;"></div>
+                    <p>Fetching results...</p>
+                </div>
+
+                <div id="generated-link" class="generated-link hidden" style="margin-top: 1rem; padding: 1rem; background: var(--color-success-dim); border-radius: var(--radius-md); border: 1px solid var(--color-success);">
+                    <p>Results generated! <a href="#" id="result-link" target="_blank">View Results</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-tag">Instructions</span>
+                <h2 class="section-title">How to Use</h2>
+            </div>
+
+            <div class="tools-grid">
+                <article class="tool-card card-3d">
+                    <h3>Single Student</h3>
+                    <p>Enter your 12-digit roll number and select "Single Student Roll No" to get your individual result.</p>
+                </article>
+                <article class="tool-card card-3d">
+                    <h3>Batch Results (001-060)</h3>
+                    <p>Select this option if you need results for roll numbers 001 to 060 of your branch.</p>
+                </article>
+                <article class="tool-card card-3d">
+                    <h3>Batch Results (001-120)</h3>
+                    <p>Select this option for results of roll numbers 001 to 120.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
+        <p><small>This website is made for the purpose of information and All the data shown is available in public.</small></p>
+        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank">Telegram</a></p>
+    </footer>
+
+    <!-- Modern 3D Design System JS -->
+    <script src="assets/js/modern-3d.js"></script>
+    <script src="assets/js/page-template.js"></script>
+
+    <script>
+        // Security check - prevent iframe embedding
+        if (window.top !== window.self) {
+            document.documentElement.innerHTML = "<div style='font-family:var(--font-sans);padding:40px;text-align:center;color:var(--color-text);background:var(--color-bg);min-height:100vh;display:flex;align-items:center;justify-content:center;'><div style='max-width:400px;'><h2 style='color:var(--color-accent);'>Embedding not allowed</h2><p>This page cannot be displayed inside an iframe.</p></div></div>";
+            throw new Error("Blocked: page loaded inside iframe");
+        }
+
         // Function to ensure only one checkbox is checked
         function toggleCheckbox(selected) {
             var checkboxes = document.getElementsByName("rollType");
@@ -27,22 +191,23 @@
 
             if (rollNo.length === 12) {
                 var url = "https://sbte-api.anantdrishti.com/util/downloadResult?rollNumber=";
-                var rollPrefix = rollNo.slice(0, 9);  // First 9 digits (fixed part)
-                var openedTabs = [];  // Store opened tab references
+                var rollPrefix = rollNo.slice(0, 9);
+                var openedTabs = [];
 
-                // Function to handle PDF download
                 function handleDownload(tab, url) {
                     setTimeout(function() {
-                        var currentUrl = tab.location.href;
-                        if (currentUrl === url || currentUrl.includes("pdf")) {
-                            // PDF downloaded, tab can be closed
-                            tab.close();
+                        try {
+                            var currentUrl = tab.location.href;
+                            if (currentUrl === url || currentUrl.includes("pdf")) {
+                                tab.close();
+                            }
+                        } catch (e) {
+                            // Cross-origin, ignore
                         }
-                    }, 5000); // Check after 5 seconds
+                    }, 5000);
                 }
 
                 if (checkbox1.checked) {
-                    // Roll No 001 to 060
                     var rollLastThree = rollNo.slice(-3);
                     if (parseInt(rollLastThree) >= 1 && parseInt(rollLastThree) <= 60) {
                         for (let i = 1; i <= 60; i++) {
@@ -50,7 +215,7 @@
                             let tab = window.open(url + formattedRoll, "_blank");
                             if (tab) {
                                 openedTabs.push(tab);
-                                handleDownload(tab, url + formattedRoll); // Handle download and auto-close
+                                handleDownload(tab, url + formattedRoll);
                             } else {
                                 alert("Popup blocked! Please enable popups.");
                                 break;
@@ -60,7 +225,6 @@
                         alert("Please enter a roll number between 001 and 060.");
                     }
                 } else if (checkbox2.checked) {
-                    // Roll No 001 to 120
                     var rollLastThree = rollNo.slice(-3);
                     if (parseInt(rollLastThree) >= 1 && parseInt(rollLastThree) <= 120) {
                         for (let i = 1; i <= 120; i++) {
@@ -68,7 +232,7 @@
                             let tab = window.open(url + formattedRoll, "_blank");
                             if (tab) {
                                 openedTabs.push(tab);
-                                handleDownload(tab, url + formattedRoll); // Handle download and auto-close
+                                handleDownload(tab, url + formattedRoll);
                             } else {
                                 alert("Popup blocked! Please enable popups.");
                                 break;
@@ -78,11 +242,10 @@
                         alert("Please enter a roll number between 001 and 120.");
                     }
                 } else if (checkbox3.checked) {
-                    // Single Student Roll No
                     var tab = window.open(url + rollNo, "_blank");
                     if (tab) {
                         openedTabs.push(tab);
-                        handleDownload(tab, url + rollNo); // Handle download and auto-close
+                        handleDownload(tab, url + rollNo);
                     } else {
                         alert("Popup blocked! Please enable popups.");
                     }
@@ -94,221 +257,5 @@
             }
         }
     </script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #1e88e5, #1565c0);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .header h1 {
-            margin: 0;
-            color: white;
-            font-size: 2.5rem;
-        }
-
-        .header p {
-            margin: 10px 0 0;
-            opacity: 0.9;
-        }
-
-        .nav-menu {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-
-        .nav-menu a {
-            color: #1e88e5;
-            text-decoration: none;
-            margin: 0 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-        }
-
-        .nav-menu a:hover {
-            background-color: #f0f2f5;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Update footer to not overlap content */
-        .footer {
-            background-color: white;
-            padding: 15px 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            margin-top: 40px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Mobile Responsive Styles */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 5px;
-            }
-            .nav-menu a {
-                margin: 2px;
-                font-size: 0.9rem;
-            }
-            .container {
-                padding: 10px;
-            }
-            input, select, button {
-                width: 100%;
-                margin: 5px 0;
-            }
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            .result-container {
-                overflow-x: auto;
-            }
-        }
-    </style>
-<link rel="stylesheet" href="site-responsive.css">
-    <meta name="description" content="Explore SBTE Result(Unofficial) on Logical Abhishek. Access useful Bihar engineering, education, result and study resources online.">
-    <link rel="canonical" href="https://erabhishekkumar.github.io/SBTEResult.html">
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6L9J7XHXW"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-P6L9J7XHXW');
-    </script>
-</head>
-<body>
-<nav class="site-seo-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="BEUPYQ/beupyqs.html">BEU PYQ</a><a href="BEUPYQ/beusyllabus.html">BEU Syllabus</a></nav>
-    <header class="header">
-        <h1>SBTE Result</h1>
-        <p>Unofficial Result Portal</p>
-    </header>
-
-    <nav class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="beuresult.html">BEU Result</a>
-        <a href="SBTEResult.html">SBTE Result</a>
-        <a href="rankcheck.html">Rank Check</a>
-        <a href="colleges.html">College Codes</a>
-        <a href="gecsheikhpura/branch.html">GEC Sheikhpura</a>
-        <a href="wifibookmark.html">WiFi Tools</a>
-    </nav>
-    <h1>SBTE Result (Unofficial)</h1><br>
-    <div id="result1"></div> 
-
-
-
-    <script>
-
-        const apiUrl = "https://sbte-api.anantdrishti.com/util/resultNotice"; // Replace with your API endpoint
-
-
-
-        fetch(apiUrl)
-
-            .then(response => response.json())
-
-            .then(data => {
-
-                // Display fetched data
-
-                const resultElement = document.getElementById("result1");
-
-                resultElement.textContent = JSON.stringify(data, null, 2); // Pretty-print JSON
-
-            })
-
-            .catch(error => {
-
-                console.error("Error fetching data:", error);
-
-            });
-
-    </script>
-
-    <div class="container">
-        <label for="rollNo">Enter Roll Number:</label>
-        <input type="text" id="rollNo" maxlength="12" placeholder="Enter 12-digit roll number" required>
-        <br><br>
-
-        <label>
-            <input type="checkbox" id="checkbox1" name="rollType" onclick="toggleCheckbox(this)">
-            Roll No 001 to 060
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="checkbox2" name="rollType" onclick="toggleCheckbox(this)">
-            Roll No 001 to 120
-        </label><br>
-
-        <label>
-            <input type="checkbox" id="checkbox3" name="rollType" onclick="toggleCheckbox(this)" checked>
-            Single Student Roll No
-        </label><br><br>
-
-        <button onclick="submitForm()">Submit</button>
-        <br>
-        <p>
-        <div id="result"></div> </p>
-    </div>
-
-
-
-    <script>
-
-        const apiUrl = "https://sbte-api.anantdrishti.com/util/notices"; // Replace with your API endpoint
-
-
-
-        fetch(apiUrl)
-
-            .then(response => response.json())
-
-            .then(data => {
-
-                // Display fetched data
-
-                const resultElement = document.getElementById("result");
-
-                resultElement.textContent = JSON.stringify(data, null, 2); // Pretty-print JSON
-
-            })
-
-            .catch(error => {
-
-                console.error("Error fetching data:", error);
-
-            });
-
-    </script>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>Copyright © All rights reserved. Design and Developed by ErAbhishekKumar</p>
-        <p><small>This website is made for the purpose of information and All the data shown is available in public.</small></p>
-        <p>Contact: <a href="https://t.me/erabhishekkumar" target="_blank">Telegram</a></p>
-    </footer>
 </body>
 </html>
