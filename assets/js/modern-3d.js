@@ -284,7 +284,7 @@
             <img src="${base64QR}" alt="UPI QR Code" style="width: 256px; height: 256px; display: block; margin: 0 auto;">
           </div>
           <p class="qr-label">Use any UPI app (GPay, PhonePe, Paytm, etc.)</p>
-          <div class="qr-upi-id">${CONFIG.upiId}</div>
+          <div class="qr-upi-id">abhisheshinkar365@oksbi</div>
           <p class="qr-label" style="margin-top: 16px; font-size: 0.875rem;">Amount: <strong>Any amount</strong> (enter in your UPI app)</p>
         </div>
       `;
