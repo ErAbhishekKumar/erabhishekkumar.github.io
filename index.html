@@ -204,10 +204,11 @@
                     const noticesText = data
                         .map(notice => {
                             // Links are relative to https://beu-bih.ac.in/backend/
-                            const link = `https://beu-bih.ac.in/backend/${notice.link}`;
+                            // URL encode the link to handle spaces and special characters
+                            const link = `https://beu-bih.ac.in/backend/${encodeURIComponent(notice.link)}`;
                             return `📢 <a href="${link}" target="_blank" rel="noopener noreferrer">${notice.board}</a>`;
                         })
-                        .join(' | ');
+                        .join('   •   ');
 
                     document.getElementById('beuNotices').innerHTML =
                         `<span class="notification-prefix">By BEU:</span> ${noticesText}`;
